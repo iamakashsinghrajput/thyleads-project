@@ -13,11 +13,32 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://thyleads.com'),
   title: "Thyleads - Outbound for SaaS That Drives Revenue",
   description: "Scalable, AI-powered outbound systems for SaaS companies. Get responses, book meetings, and win logos with personalized, data-backed outreach.",
   icons: {
     icon: '/thylead.svg',
     apple: '/thylead.svg',
+  },
+  openGraph: {
+    title: "Thyleads - Outbound for SaaS That Drives Revenue",
+    description: "Scalable, AI-powered outbound systems for SaaS companies. Get responses, book meetings, and win logos with personalized, data-backed outreach.",
+    url: 'https://thyleads.com',
+    siteName: 'Thyleads',
+    images: [
+      {
+        url: '/thyleads.svg',
+        alt: 'Thyleads - Outbound for SaaS',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Thyleads - Outbound for SaaS That Drives Revenue",
+    description: "Scalable, AI-powered outbound systems for SaaS companies. Get responses, book meetings, and win logos with personalized, data-backed outreach.",
+    images: ['/thyleads.svg'],
   },
 };
 

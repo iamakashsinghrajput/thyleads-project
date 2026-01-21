@@ -63,10 +63,10 @@ const Footer: React.FC = () => {
             </p>
             {/* Social Links */}
             <div className="flex gap-3">
-              <a href="https://twitter.com" className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-purple-600 hover:border-purple-600 transition-colors group">
+              <a href="https://twitter.com/thyleads" className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-purple-600 hover:border-purple-600 transition-colors group">
                 <Twitter className="w-4 h-4 text-neutral-400 group-hover:text-white" />
               </a>
-              <a href="https://www.linkedin.com" className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-purple-600 hover:border-purple-600 transition-colors group">
+              <a href="https://www.linkedin.com/company/thylead/" className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-purple-600 hover:border-purple-600 transition-colors group">
                 <Linkedin className="w-4 h-4 text-neutral-400 group-hover:text-white" />
               </a>
               <a href="mailto:sales@thyleads.com" className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-purple-600 hover:border-purple-600 transition-colors group">
