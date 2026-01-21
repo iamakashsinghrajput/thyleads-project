@@ -19,12 +19,14 @@ const Footer: React.FC = () => {
       { name: 'Dice', href: '/casestudies/dice' },
       { name: 'Pazo', href: '/casestudies/pazo' },
       { name: 'VWO', href: '/casestudies/vwo' },
+      { name: 'View All', href: '/casestudies' },
     ],
-    'Get Started': [
-      { name: 'Book a Call', href: '/contact' },
-      { name: 'Explore How It Works', href: '/howitworks' },
-      { name: 'Read the Blog', href: '/blog' },
-      { name: 'See Case Studies', href: '/casestudies' },
+    Services: [
+      { name: 'Outbound Strategy', href: '/howitworks' },
+      { name: 'Lead Generation', href: '/howitworks' },
+      { name: 'Meeting Booking', href: '/howitworks' },
+      { name: 'Pipeline Management', href: '/howitworks' },
+      { name: 'GTM Execution', href: '/howitworks' },
     ],
   };
 
@@ -37,11 +39,11 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Main Footer Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-32">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-12 mb-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-20">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-10 mb-16">
           {/* Brand Column */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
+          <div className="col-span-2 md:col-span-3 lg:col-span-2">
+            <div className="flex items-center space-x-3 mb-5">
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                 <div className="relative w-10 h-10 rounded-lg overflow-hidden bg-black border border-white/10">
@@ -54,26 +56,21 @@ const Footer: React.FC = () => {
                   />
                 </div>
               </div>
-              <span className="text-2xl font-bold tracking-tight text-white uppercase">Thyleads</span>
+              <span className="text-2xl font-bold tracking-normal text-white">Thyleads</span>
             </div>
-            <p className="text-neutral-400 mb-6 max-w-sm">
-              AI-powered outbound systems for SaaS companies. Get responses, book meetings, and win logos with personalized outreach.
+            <p className="text-neutral-400 mb-5 max-w-xs text-sm">
+              AI-powered outbound systems for SaaS companies. Get responses, book meetings, and win logos.
             </p>
-            <div className="space-y-3 text-sm text-neutral-500 mb-6">
-              <p>Always-on pipeline engineering.</p>
-              <p>Multi-channel outreach + intent signals.</p>
-              <p>Operational GTM execution for SaaS teams.</p>
-            </div>
             {/* Social Links */}
-            <div className="flex gap-4">
-              <a href="https://twitter.com" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-purple-600 hover:border-purple-600 transition-colors group">
-                <Twitter className="w-5 h-5 text-neutral-400 group-hover:text-white" />
+            <div className="flex gap-3">
+              <a href="https://twitter.com" className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-purple-600 hover:border-purple-600 transition-colors group">
+                <Twitter className="w-4 h-4 text-neutral-400 group-hover:text-white" />
               </a>
-              <a href="https://www.linkedin.com" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-purple-600 hover:border-purple-600 transition-colors group">
-                <Linkedin className="w-5 h-5 text-neutral-400 group-hover:text-white" />
+              <a href="https://www.linkedin.com" className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-purple-600 hover:border-purple-600 transition-colors group">
+                <Linkedin className="w-4 h-4 text-neutral-400 group-hover:text-white" />
               </a>
-              <a href="mailto:hello@thyleads.com" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-purple-600 hover:border-purple-600 transition-colors group">
-                <Mail className="w-5 h-5 text-neutral-400 group-hover:text-white" />
+              <a href="mailto:sales@thyleads.com" className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-purple-600 hover:border-purple-600 transition-colors group">
+                <Mail className="w-4 h-4 text-neutral-400 group-hover:text-white" />
               </a>
             </div>
           </div>
@@ -99,46 +96,57 @@ const Footer: React.FC = () => {
             </div>
           ))}
 
-          {/* Contact Column */}
+          {/* Contact & Legal Column */}
           <div>
             <h3 className="text-white font-bold text-sm uppercase tracking-wider mb-4">
-              Contact
+              Get in Touch
             </h3>
             <ul className="space-y-3 text-sm text-neutral-400">
               <li>
-                <span className="block text-neutral-500 text-xs uppercase tracking-wider">Email</span>
-                <Link href="mailto:hello@thyleads.com" className="hover:text-white transition-colors">
-                  hello@thyleads.com
+                <Link href="mailto:sales@thyleads.com" className="hover:text-white transition-colors">
+                  sales@thyleads.com
                 </Link>
               </li>
               <li>
-                <span className="block text-neutral-500 text-xs uppercase tracking-wider">Phone</span>
-                <Link href="tel:+1-555-012-2024" className="hover:text-white transition-colors">
-                  +1 (555) 012-2024
+                <Link href="tel:+918769673818" className="hover:text-white transition-colors">
+                  +91 87696 73818
                 </Link>
               </li>
               <li>
-                <span className="block text-neutral-500 text-xs uppercase tracking-wider">HQ</span>
-                San Francisco, CA
+                <Link href="/contact" className="hover:text-white transition-colors">
+                  Book a Call
+                </Link>
               </li>
               <li>
-                <span className="block text-neutral-500 text-xs uppercase tracking-wider">Hours</span>
-                Mon–Fri, 9am–6pm PT
+                <Link href="/privacy-policy" className="hover:text-white transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms-and-conditions" className="hover:text-white transition-colors">
+                  Terms & Conditions
+                </Link>
               </li>
             </ul>
           </div>
+        </div>
 
-          <div>
-            <h3 className="text-white font-bold text-sm uppercase tracking-wider mb-4">
-              Highlights
-            </h3>
-            <ul className="space-y-3 text-sm text-neutral-400">
-              <li>Signal-driven account prioritization</li>
-              <li>Personalized outreach at scale</li>
-              <li>Calendar-ready meetings</li>
-              <li>Pipeline momentum workflows</li>
-            </ul>
-          </div>
+        {/* Highlights Row */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 py-8 border-y border-white/5">
+          {[
+            { label: "Intent-Driven Prospecting", desc: "Signal-Based Targeting" },
+            { label: "Multi-Channel Outreach", desc: "Email + LinkedIn" },
+            { label: "Calendar-Ready Meetings", desc: "Qualified Appointments" },
+            { label: "Full-Funnel Support", desc: "From ICP to Close" },
+          ].map((item, i) => (
+            <div key={i} className="flex items-start gap-3">
+              <div className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-2 shrink-0" />
+              <div>
+                <p className="text-sm text-white/80 font-medium">{item.label}</p>
+                <p className="text-xs text-neutral-500">{item.desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Bottom Bar */}
@@ -146,19 +154,19 @@ const Footer: React.FC = () => {
           <p className="text-neutral-500 text-sm">
             © {new Date().getFullYear()} Thyleads. All rights reserved.
           </p>
-          <div className="flex gap-6 text-sm text-neutral-500">
-            <Link href="/" className="hover:text-white transition-colors">
-              Home
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-neutral-500">
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">
+              Privacy Policy
             </Link>
-            <Link href="/blog" className="hover:text-white transition-colors">
-              Blog
+            <Link href="/terms-and-conditions" className="hover:text-white transition-colors">
+              Terms & Conditions
             </Link>
             <Link href="/contact" className="hover:text-white transition-colors">
               Contact
             </Link>
           </div>
         </div>
-        <div className="pt-4 text-center text-xs text-neutral-500">
+        <div className="pt-4 text-center text-xs text-neutral-600">
           Designed and developed by Skymiq.com
         </div>
       </div>

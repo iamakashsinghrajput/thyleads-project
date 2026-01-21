@@ -683,7 +683,7 @@ const ProcessJourney = () => {
                 Ready to activate GTM?
                 </h2>
                 <p className="text-neutral-400 text-sm max-w-sm">
-                Deploy the protocol and start generating predictable revenue in the Indian market.
+                Deploy the protocol and start generating predictable revenue globally.
                 </p>
             </div>
 

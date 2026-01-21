@@ -58,7 +58,7 @@ const testimonials = [
     brandColor: 'text-[#146EF5]',
     quote: "Thyleads gets highly sales qualified leads within the provided target regions from the very first month of our partnership",
     personName: 'Ishan Acharya',
-    personTitle: 'Director-Business Operators',
+    personTitle: 'VP of Business Operations',
     personImage: '/dice.png',
     stats: { label: 'ROI', value: '10:1' }
   },
@@ -73,6 +73,30 @@ const testimonials = [
     personTitle: 'Senior Manager-APAC',
     personImage: '/vwo.png',
     stats: { label: 'Show Rate', value: '95%' }
+  },
+  {
+    id: 'novabenefit',
+    category: 'finance',
+    companyName: 'NovaBenefits',
+    logo: '/images/NovaBenefits.svg',
+    brandColor: 'text-[#003580]',
+    quote: "Thyleads brings strong on the ground experience in managing sales SDR teams and comes highly recommended for any B2B companies looking to build a strong top of funnel.",
+    personName: 'Saransh Garg',
+    personTitle: 'Co-Founder',
+    personImage: '/saransh.png',
+    stats: { label: 'Qualified', value: '100%' }
+  },
+  {
+    id: 'epiplex',
+    category: 'finance',
+    companyName: 'Epiplex',
+    logo: '/images/epiplex.svg',
+    brandColor: 'text-[#003580]',
+    quote: "Partnering with Thyleads for market outreach delivered strong results strategic lead generation expanded Epiplex.ai’s client base and clearly communicated its value across the GCC.",
+    personName: 'Vivek Patial',
+    personTitle: 'Head of Marketing',
+    personImage: '/pipelex.png',
+    stats: { label: 'Qualified', value: '100%' }
   }
 ];
 
@@ -178,10 +202,13 @@ export default function CaseStudiesPage() {
             {[...carouselStories, ...carouselStories, ...carouselStories].map(
               (story, idx) => {
                 const isTazapay = story.id === "tazapay";
+                const isNovaBenefits = story.id === "novabenefit";
+                const isEpiplex = story.id === "epiplex";
+                const isNonClickable = isTazapay || isNovaBenefits || isEpiplex;
                 const Card = (
                   <div
                     className={`w-[85vw] sm:w-[360px] lg:w-[400px] h-[420px] sm:h-[440px] lg:h-[460px] flex-shrink-0 group relative bg-white rounded-3xl overflow-hidden border-2 border-transparent transition-all duration-300 flex flex-col p-6 sm:p-8 shadow-lg ${
-                      isTazapay ? "cursor-default" : "hover:border-purple-300 cursor-pointer"
+                      isNonClickable ? "cursor-default" : "hover:border-purple-300 cursor-pointer"
                     }`}
                   >
                     <div className="flex justify-between items-start mb-6">
@@ -192,7 +219,7 @@ export default function CaseStudiesPage() {
                         height={40}
                         className="h-8 sm:h-10 w-auto object-contain"
                       />
-                      {!isTazapay && (
+                      {!isNonClickable && (
                         <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 transform scale-0 group-hover:scale-110">
                           <ArrowRight className="w-6 h-6 text-purple-600" />
                         </div>
@@ -217,7 +244,7 @@ export default function CaseStudiesPage() {
                   </div>
                 );
 
-                return isTazapay ? (
+                return isNonClickable ? (
                   <div key={`${story.id}-${idx}`}>{Card}</div>
                 ) : (
                   <Link key={`${story.id}-${idx}`} href={`/casestudies/${story.id}`}>

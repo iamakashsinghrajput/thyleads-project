@@ -27,7 +27,7 @@ const testimonials: Testimonial[] = [
     companyName: 'CleverTap',
     logo: '/images/CleverTap.svg',
     brandColor: 'text-[#003580]',
-    quote: "I've been burned by agencies in the past and Thyleads has exceeded my expectations because of their commitments to our sucess",
+    quote: "I've been burned by agencies in the past and Thyleads has exceeded my expectations because of their commitments to our success",
     personName: 'Roopesh Balakrishna',
     personTitle: 'Regional VP',
     personImage: '/clevertap.png'
@@ -49,7 +49,7 @@ const testimonials: Testimonial[] = [
     brandColor: 'text-[#146EF5]',
     quote: "Thyleads gets highly sales qualified leads within the provided target regions from the very first month of our partnership",
     personName: 'Ishan Acharya',
-    personTitle: 'Director-Business Operators',
+    personTitle: 'VP of Business Operations',
     personImage: '/dice.png'
   },
   {

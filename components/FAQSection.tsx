@@ -3,29 +3,46 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Plus, Minus, MessageCircle, HelpCircle } from 'lucide-react';
 
+interface FAQ {
+  question: string;
+  answer: string;
+  bullets?: string[];
+}
+
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(0);
 
-  const faqs = [
+  const faqs: FAQ[] = [
     {
-      question: "How does the AI personalization actually work?",
-      answer: "Our AI analyzes your prospect's public data (LinkedIn, company news, website) to construct a unique mental model. It then generates outreach messages that reference specific, relevant details—just like a human researcher would, but instantly and at scale."
+      question: "What kind of SaaS companies do you work with?",
+      answer: "We work with B2B SaaS companies of all stages from seed to Series D+ across verticals like HRTech, FinTech, MarTech, and RetailTech. If you sell to mid-market or enterprise and your product has a considered sales process, we’re likely a great fit."
     },
     {
-      question: "Can I integrate Thyleads with my existing CRM?",
-      answer: "Absolutely. We offer native 2-way sync with Salesforce, HubSpot, Pipedrive, and Zoho. You can also use our Zapier integration to connect with over 5,000+ other tools in your stack."
+      question: "Can you customize outreach messaging based on our product’s use cases or integrations?",
+      answer: "Absolutely. Each client has a dedicated GTM pod that understands your market, use case, and product nuances. We also A/B test hooks, offers, and personalization frameworks for each segment."
     },
     {
-      question: "What happens after the 14-day free trial?",
-      answer: "At the end of your trial, you can choose a plan that fits your volume needs. If you're not ready to commit, your account will switch to our Free Tier, which allows for 50 AI-generated credits per month forever."
+      question: "Will prospects know Thyleads is running outreach on our behalf?",
+      answer: "Outreach is sent using brand-aligned sender identities and domains that closely resemble your company, so communication feels native to your organization. Messaging is written in your voice and aligned to your positioning, so prospects experience it as a natural extension of your internal GTM motion."
     },
     {
-      question: "Is my data and my prospect's data secure?",
-      answer: "Security is our top priority. We are SOC2 Type II compliant and GDPR ready. We use enterprise-grade encryption for all data in transit and at rest, and we never sell your data to third parties."
+      question: "What level of visibility will we have into the process?",
+      answer: "Full visibility. You get:",
+      bullets: [
+        "Shared access to your prospect pipeline (via Airtable or CRM)",
+        "Weekly campaign performance dashboards",
+        "Live campaign boards (sequence views, response tags, QA feedback)",
+        "A dedicated Slack channel + weekly syncs with your GTM Engineer"
+      ]
     },
     {
-      question: "Do you offer enterprise-level support?",
-      answer: "Yes, our Enterprise plan includes a dedicated Customer Success Manager, priority 24/7 support, and custom onboarding sessions to ensure your team gets the most out of the platform."
+      question: "Do you need training or onboarding from our team?",
+      answer: "Not in the traditional sense. We do a deep discovery call and study your:",
+      bullets: [
+        "Sales deck, demo video, case studies, and past deals",
+        "Last 5-10 closed accounts to understand personas & triggers",
+        "We reverse-engineer your GTM motion. If needed, we'll request brief 1:1s with sales or founders to align on messaging tone & product nuance"
+      ]
     }
   ];
 
@@ -88,13 +105,27 @@ const FAQSection = () => {
                     </span>
                   </button>
                   
-                  <div 
+                  <div
                     className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                      openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                      openIndex === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
                     }`}
                   >
                     <div className="px-6 pb-6 text-slate-600 leading-relaxed">
-                      {faq.answer}
+                      {faq.bullets ? (
+                        <>
+                          <p className="mb-3">{faq.answer}</p>
+                          <ul className="space-y-2">
+                            {faq.bullets.map((bullet, i) => (
+                              <li key={i} className="flex items-start gap-2">
+                                <span className="text-blue-500 mt-0.5">→</span>
+                                <span>{bullet}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </>
+                      ) : (
+                        faq.answer
+                      )}
                     </div>
                   </div>
                 </div>

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { m, motion } from 'framer-motion';
 
 const TrustedBy: React.FC = () => {
   const companies = [
@@ -11,6 +11,12 @@ const TrustedBy: React.FC = () => {
     { name: 'Dice', logo: '/images/dice.png' },
     { name: 'Tazapay', logo: '/images/Tazapay.svg' },
     { name: 'VWO', logo: '/images/VWO.svg' },
+    { name: 'Increff', logo: '/images/Increff.svg'},
+    { name: 'Airmeet',  logo: '/images/Airmeet.svg'},
+    { name: 'Nurix', logo: '/images/Nurix.svg'},
+    { name: 'MYND',  logo: '/images/MYND.svg'},
+    { name: 'Epiplex',  logo: '/images/epiplex.svg'},
+    { name: 'NovaBenefits',  logo: '/images/NovaBenefits.svg'}
   ];
 
   // Duplicate companies for seamless loop

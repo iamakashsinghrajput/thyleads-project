@@ -4,6 +4,7 @@ import TrustedBy from "../components/TrustedBy";
 import CaseStudies from "@/components/CaseStudies";
 import StrategicProcessRedesign from "@/components/StrategicProcess";
 import MessyMiddle from "@/components/MessyMiddle";
+import Testimonial from "@/components/Testimonial";
 import ComparisonSection from "@/components/ComparisionSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero />
         <TrustedBy />
         <MessyMiddle/>
+        <Testimonial/>
         <ComparisonSection/>
         <StrategicProcessRedesign/>
         <CaseStudies/>

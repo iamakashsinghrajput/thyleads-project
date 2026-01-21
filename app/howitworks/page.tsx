@@ -351,8 +351,8 @@ const SystemLayerSection = () => {
                     <p className="text-xs uppercase tracking-[0.3em] text-indigo-400">Layer 1: Architecture</p>
                 </motion.div>
                 <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-                    The engine runs <br/>
-                    <span className="text-white/40">continuously.</span>
+                    The Engine Runs <br/>
+                    <span className="text-white/40">Continuously.</span>
                 </motion.h2>
                 <motion.p variants={fadeUp} className="text-white/60 text-lg leading-relaxed mb-10">
                     Once live, signals trigger a cascade of actions. From intake to reporting, every step is automated yet strictly qualified.
@@ -599,7 +599,7 @@ const TimelineSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <p className="text-xs uppercase tracking-[0.4em] text-blue-400 mb-4">Activation Sequence</p>
-          <h2 className="text-4xl md:text-5xl font-bold">4 Weeks to <span className="text-blue-400">Velocity</span></h2>
+          <h2 className="text-4xl md:text-5xl font-bold">4 Weeks to <span className="text-gray-300">Velocity</span></h2>
         </div>
 
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12" ref={containerRef}>
@@ -829,28 +829,54 @@ const TimelineSection = () => {
 };
 
 const DealAssistSection = () => {
+    const features = [
+        {
+            title: "Ghost-free follow-ups",
+            description: "Automated sequences that feel personal, ensuring no prospect falls through the cracks"
+        },
+        {
+            title: "Strategic content visibility",
+            description: "Targeted content placement across LinkedIn feeds to reinforce your value proposition"
+        },
+        {
+            title: "Competitor displacement",
+            description: "Stay top-of-mind while competitors fade into the background noise"
+        },
+        {
+            title: "Multi-touch engagement",
+            description: "Coordinated touchpoints across email, LinkedIn, and retargeting channels"
+        },
+        {
+            title: "Intent-based timing",
+            description: "Reach prospects at the exact moment they are researching solutions like yours"
+        }
+    ];
+
     return (
-        <section className="py-32 px-6 overflow-hidden">
-            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        <section className="py-24 px-6 overflow-hidden">
+            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
                 <motion.div variants={staggerContainer} initial="hidden" whileInView="show" viewport={{ once: true }}>
                     <motion.div variants={fadeUp} className="flex items-center gap-2 mb-4">
                          <span className="flex h-2 w-2 rounded-full bg-blue-500"></span>
                          <span className="text-xs font-mono text-blue-400 uppercase">Always On</span>
                     </motion.div>
-                    <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-bold mb-6">
-                        The Invisible <br/>
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Salesperson</span>
+                    <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold mb-4">
+                        The Invisible {" "}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">Salesperson</span>
                     </motion.h2>
-                    <motion.p variants={fadeUp} className="text-white/60 text-lg mb-8 leading-relaxed">
+                    <motion.p variants={fadeUp} className="text-white/60 text-base mb-6 leading-relaxed">
                         Deals don&apos;t close in the inbox. They close in the mind. We surround your prospects with strategic visibility across LinkedIn and news feeds, keeping you top-of-mind without being annoying.
                     </motion.p>
                     <motion.ul variants={fadeUp} className="space-y-4">
-                        {["Ghost-free follow-ups", "Strategic content visibility", "Competitor displacement"].map((item, i) => (
-                            <li key={i} className="flex items-center gap-3">
-                                <div className="h-5 w-5 rounded-full bg-blue-500/20 flex items-center justify-center">
-                                    <CheckCircle2 className="w-3 h-3 text-blue-400" />
+                        {features.map((feature, i) => (
+                            <li key={i} className="flex items-start gap-4">
+                                <div className="h-8 w-8 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                                    <CheckCircle2 className="w-5 h-5 text-blue-400" />
                                 </div>
-                                <span className="text-white/80">{item}</span>
+                                <div>
+                                    <span className="text-white font-medium block">{feature.title}</span>
+                                    <span className="text-white/50 text-sm">{feature.description}</span>
+                                </div>
                             </li>
                         ))}
                     </motion.ul>
@@ -995,7 +1021,7 @@ const DealAssistSection = () => {
 const SignalIntelligenceSection = () => {
     const [paused, setPaused] = useState(false);
     const [activeSignal, setActiveSignal] = useState(0);
-    const containerRef = useRef(null);
+    const containerRef = useRef<HTMLDivElement>(null);
     const radius = 220;
     const [rotation, setRotation] = useState(0);
     const [innerRingRotation, setInnerRingRotation] = useState(0);
@@ -1003,48 +1029,47 @@ const SignalIntelligenceSection = () => {
 
     useAnimationFrame((_, delta) => {
       if (!paused) {
-        setRotation(prev => (prev + (delta * 0.05)) % 360); // Faster main rotation
-        setInnerRingRotation(prev => (prev + (delta * 0.03)) % 360); // Counter-rotating inner ring
-        setOuterRingRotation(prev => (prev - (delta * 0.015)) % 360); // Slower outer ring opposite direction
+        setRotation(prev => (prev + (delta * 0.008)) % 360);
+        setInnerRingRotation(prev => (prev + (delta * 0.005)) % 360);
+        setOuterRingRotation(prev => (prev - (delta * 0.003)) % 360);
       }
     });
 
-    // Auto-cycle through signals when not paused - faster cycle
+    // Auto-cycle through signals when not paused
     useEffect(() => {
       if (paused) return;
       const interval = setInterval(() => {
         setActiveSignal(prev => (prev + 1) % signalIntelligence.length);
-      }, 2000); // Faster cycling
+      }, 4000); // Slower cycling - 4 seconds per signal
       return () => clearInterval(interval);
     }, [paused]);
 
     const active = signalIntelligence[activeSignal];
 
     return (
-      <section className="relative py-32 px-6 bg-black overflow-hidden">
+      <section className="relative py-16 md:py-20 px-6 bg-black overflow-hidden">
         {/* Background Grid */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20" />
 
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.2fr_0.8fr] gap-8 lg:gap-12 items-center">
             {/* Orbit Visual */}
-            <div className="relative h-[650px] flex items-center justify-center">
+            <div className="relative h-[320px] md:h-[450px] lg:h-[520px] flex items-center justify-center will-change-transform">
                 {/* Multi-layer outer glow */}
-                <div className="absolute w-[600px] h-[600px] rounded-full bg-indigo-500/5 blur-[100px] animate-pulse" />
-                <div className="absolute w-[450px] h-[450px] rounded-full bg-purple-500/5 blur-[80px]" style={{ animation: 'pulse 3s ease-in-out infinite alternate' }} />
+                <div className="absolute w-[300px] md:w-[450px] lg:w-[550px] h-[300px] md:h-[450px] lg:h-[550px] rounded-full bg-indigo-500/5 blur-[80px]" />
 
                 {/* Animated particle ring - outer */}
                 <div
-                    className="absolute w-[560px] h-[560px] rounded-full"
-                    style={{ transform: `rotate(${outerRingRotation}deg)` }}
+                    className="absolute w-[280px] md:w-[420px] lg:w-[520px] h-[280px] md:h-[420px] lg:h-[520px] rounded-full will-change-transform"
+                    style={{ transform: `rotate(${outerRingRotation}deg) translateZ(0)` }}
                 >
-                    {[...Array(12)].map((_, i) => (
+                    {[...Array(8)].map((_, i) => (
                         <div
                             key={i}
-                            className="absolute w-1.5 h-1.5 rounded-full bg-indigo-400/40"
+                            className="absolute w-1 md:w-1.5 h-1 md:h-1.5 rounded-full bg-indigo-400/40"
                             style={{
                                 top: '50%',
                                 left: '50%',
-                                transform: `rotate(${i * 30}deg) translateX(280px) translateY(-50%)`,
+                                transform: `rotate(${i * 45}deg) translateX(140px) md:translateX(210px) lg:translateX(260px) translateY(-50%)`,
                             }}
                         />
                     ))}
@@ -1052,24 +1077,24 @@ const SignalIntelligenceSection = () => {
 
                 {/* Inner animated ring with gradient */}
                 <div
-                    className="absolute w-[380px] h-[380px] rounded-full border-2 border-transparent"
+                    className="absolute w-[200px] md:w-[300px] lg:w-[360px] h-[200px] md:h-[300px] lg:h-[360px] rounded-full border-2 border-transparent will-change-transform"
                     style={{
-                        transform: `rotate(${innerRingRotation}deg)`,
+                        transform: `rotate(${innerRingRotation}deg) translateZ(0)`,
                         background: 'linear-gradient(black, black) padding-box, linear-gradient(135deg, rgba(129,140,248,0.5), rgba(168,85,247,0.5), rgba(34,211,238,0.2)) border-box'
                     }}
                 />
 
                 {/* Main orbit ring with glow effect */}
-                <div className="absolute w-[440px] h-[440px] rounded-full border border-indigo-500/20 shadow-[0_0_30px_rgba(129,140,248,0.1),inset_0_0_30px_rgba(34,211,238,0.05)]" />
+                <div className="absolute w-[240px] md:w-[360px] lg:w-[440px] h-[240px] md:h-[360px] lg:h-[440px] rounded-full border border-indigo-500/20 shadow-[0_0_30px_rgba(129,140,248,0.1)]" />
 
                 {/* Outer dashed ring - animated */}
                 <div
-                    className="absolute w-[520px] h-[520px] rounded-full border border-white/10 border-dashed"
-                    style={{ transform: `rotate(${outerRingRotation * 0.5}deg)` }}
+                    className="absolute w-[270px] md:w-[400px] lg:w-[500px] h-[270px] md:h-[400px] lg:h-[500px] rounded-full border border-white/10 border-dashed will-change-transform"
+                    style={{ transform: `rotate(${outerRingRotation * 0.5}deg) translateZ(0)` }}
                 />
 
                 {/* Energy arc segments */}
-                <svg className="absolute w-[500px] h-[500px]" style={{ transform: `rotate(${rotation * 0.3}deg)` }}>
+                <svg className="absolute w-[260px] md:w-[380px] lg:w-[480px] h-[260px] md:h-[380px] lg:h-[480px] will-change-transform" style={{ transform: `rotate(${rotation * 0.3}deg) translateZ(0)` }}>
                     <defs>
                         <linearGradient id="arcGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" stopColor="rgba(34,211,238,0)" />
@@ -1077,27 +1102,24 @@ const SignalIntelligenceSection = () => {
                             <stop offset="100%" stopColor="rgba(34,211,238,0)" />
                         </linearGradient>
                     </defs>
-                    <circle cx="250" cy="250" r="245" fill="none" stroke="url(#arcGradient)" strokeWidth="2" strokeDasharray="100 200" />
+                    <circle cx="50%" cy="50%" r="48%" fill="none" stroke="url(#arcGradient)" strokeWidth="2" strokeDasharray="100 200" />
                 </svg>
 
                 {/* Center Sun - Enhanced */}
-                <div className="absolute w-36 h-36 rounded-full bg-gradient-to-br from-indigo-900/40 via-black to-purple-900/20 border-2 border-indigo-500/50 backdrop-blur-md z-20 flex flex-col items-center justify-center shadow-[0_0_80px_rgba(129,140,248,0.3),inset_0_0_40px_rgba(129,140,248,0.1)]">
-                    {/* Inner glow ring */}
+                <div className="absolute w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 rounded-full bg-gradient-to-br from-indigo-900/40 via-black to-purple-900/20 border-2 border-indigo-500/50 backdrop-blur-md z-20 flex flex-col items-center justify-center shadow-[0_0_60px_rgba(129,140,248,0.3)]">
                     <div className="absolute inset-2 rounded-full border border-indigo-400/30" />
-                    <span className="text-4xl font-bold text-white drop-shadow-[0_0_10px_rgba(129,140,248,0.5)]">ICP</span>
-                    <span className="text-[11px] uppercase tracking-widest text-indigo-400 mt-1">Core</span>
-                    {/* Pulsing center dot */}
-                    <div className="absolute w-2 h-2 rounded-full bg-indigo-400 animate-ping opacity-50" style={{ animationDuration: '1.5s' }} />
+                    <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">ICP</span>
+                    <span className="text-[9px] md:text-[10px] lg:text-[11px] uppercase tracking-widest text-indigo-400 mt-1">Core</span>
                 </div>
 
                 {/* Click hint */}
-                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2 text-white/40 text-xs">
-                    <span className="inline-block w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
+                <div className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2 text-white/40 text-[10px] md:text-xs">
+                    <span className="inline-block w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-indigo-500 animate-pulse" />
                     Click any signal to explore
                 </div>
 
-                {/* Orbiting Signals */}
-                <div className="absolute inset-0 z-30" ref={containerRef}>
+                {/* Orbiting Signals - Scaled container for responsiveness */}
+                <div className="absolute inset-0 z-30 scale-[0.55] md:scale-[0.8] lg:scale-100 will-change-transform" ref={containerRef}>
                     {signalIntelligence.map((signal, index) => {
                         const offsetAngle = (360 / signalIntelligence.length) * index;
                         const currentAngle = rotation + offsetAngle;
@@ -1108,72 +1130,47 @@ const SignalIntelligenceSection = () => {
 
                         const isActive = index === activeSignal;
 
-                        // Trail positions for comet effect
-                        const trailAngles = [8, 16, 24].map(offset => {
-                            const trailRadian = ((currentAngle - offset) * Math.PI) / 180;
-                            return {
-                                x: Math.cos(trailRadian) * radius,
-                                y: Math.sin(trailRadian) * radius,
-                                opacity: 1 - (offset / 30)
-                            };
-                        });
-
                         return (
                             <React.Fragment key={index}>
-                                {/* Comet trail effect */}
-                                {isActive && trailAngles.map((trail, i) => (
-                                    <div
-                                        key={i}
-                                        className="absolute left-1/2 top-1/2 w-3 h-3 rounded-full bg-indigo-400 blur-sm pointer-events-none"
-                                        style={{
-                                            transform: `translate(${trail.x - 6}px, ${trail.y - 6}px)`,
-                                            opacity: trail.opacity * 0.4
-                                        }}
-                                    />
-                                ))}
-
-                                {/* Connecting Line - Enhanced with gradient */}
+                                {/* Connecting Line */}
                                 <div
-                                    className={`absolute left-1/2 top-1/2 h-[2px] origin-left transition-all duration-300 ${isActive ? "opacity-100" : "opacity-30"}`}
+                                    className={`absolute left-1/2 top-1/2 h-[1px] origin-left will-change-transform ${isActive ? "opacity-60" : "opacity-20"}`}
                                     style={{
-                                        width: radius - 20,
-                                        transform: `rotate(${currentAngle}deg)`,
+                                        width: radius - 30,
+                                        transform: `rotate(${currentAngle}deg) translateZ(0)`,
                                         background: isActive
                                             ? 'linear-gradient(90deg, rgba(129,140,248,0.5), rgba(129,140,248,0.1))'
-                                            : 'linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02))'
+                                            : 'linear-gradient(90deg, rgba(255,255,255,0.1), transparent)'
                                     }}
                                 />
 
-                                {/* Signal Button - Enhanced */}
+                                {/* Signal Button */}
                                 <button
                                     onClick={() => { setActiveSignal(index); setPaused(true); setTimeout(() => setPaused(false), 4000); }}
-                                    className={`absolute left-1/2 top-1/2 -ml-7 -mt-7 w-14 h-14 rounded-full border-2 flex items-center justify-center transition-all duration-200 group cursor-pointer z-20
+                                    className={`absolute left-1/2 top-1/2 -ml-6 -mt-6 w-12 h-12 rounded-full border-2 flex items-center justify-center group cursor-pointer z-20 will-change-transform
                                         ${isActive
-                                            ? "bg-gradient-to-br from-indigo-400 to-indigo-600 border-indigo-300 shadow-[0_0_40px_rgba(168,85,247,0.8),0_0_80px_rgba(129,140,248,0.4)] scale-125 z-30"
-                                            : "bg-black/90 border-white/20 hover:border-indigo-400/60 hover:bg-black hover:scale-115 hover:shadow-[0_0_25px_rgba(129,140,248,0.4)]"
+                                            ? "bg-gradient-to-br from-indigo-400 to-indigo-600 border-indigo-300 shadow-[0_0_30px_rgba(129,140,248,0.6)] scale-110 z-30"
+                                            : "bg-black/90 border-white/20 hover:border-indigo-400/60 hover:bg-black"
                                         }`}
                                     style={{
-                                        transform: `translate(${x}px, ${y}px)`
+                                        transform: `translate(${x}px, ${y}px) translateZ(0)`
                                     }}
                                 >
-                                    <signal.icon className={`w-5 h-5 transition-colors duration-200 ${isActive ? "text-black" : "text-white/70 group-hover:text-indigo-400"}`} />
+                                    <signal.icon className={`w-4 h-4 ${isActive ? "text-black" : "text-white/70 group-hover:text-indigo-400"}`} />
 
-                                    {/* Always visible label for active, hover for others */}
-                                    <div className={`absolute -bottom-9 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-black/95 border rounded-lg text-[11px] whitespace-nowrap backdrop-blur-md pointer-events-none transition-all duration-200 font-semibold
+                                    {/* Label */}
+                                    <div className={`absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-black/95 border rounded-md text-[10px] whitespace-nowrap pointer-events-none font-medium
                                         ${isActive
-                                            ? "opacity-100 border-indigo-500/60 text-indigo-300 shadow-[0_0_20px_rgba(129,140,248,0.3)]"
+                                            ? "opacity-100 border-indigo-500/60 text-indigo-300"
                                             : "opacity-0 group-hover:opacity-100 border-white/20 text-white/90"
                                         }
                                     `}>
                                         {signal.name}
                                     </div>
 
-                                    {/* Multiple pulse rings for active */}
+                                    {/* Pulse ring for active */}
                                     {isActive && (
-                                        <>
-                                            <span className="absolute inset-0 rounded-full border-2 border-indigo-400 animate-ping opacity-40" style={{ animationDuration: '1s' }} />
-                                            <span className="absolute -inset-2 rounded-full border border-indigo-400/50 animate-ping opacity-20" style={{ animationDuration: '1.5s' }} />
-                                        </>
+                                        <span className="absolute inset-0 rounded-full border-2 border-indigo-400 animate-ping opacity-30" style={{ animationDuration: '1.5s' }} />
                                     )}
                                 </button>
                             </React.Fragment>
@@ -1239,7 +1236,7 @@ const TalentSection = () => {
         <section className="py-24 px-6 bg-[#080808]">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
-                     <h2 className="text-3xl md:text-5xl font-bold">Human Expertise, <span className="text-purple-400">Algorithmic Scale</span></h2>
+                     <h2 className="text-3xl md:text-5xl font-bold">Human Expertise, <span className="text-gray-300">Algorithmic Scale</span></h2>
                 </div>
                 <div className="grid md:grid-cols-3 gap-8">
                     {talentPillars.map((pillar, i) => (
@@ -1278,13 +1275,13 @@ const PerformancePhilosophySection = () => {
                  <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20" />
                  
                  <div className="relative z-10">
-                    <p className="text-xs uppercase tracking-[0.3em] text-purple-500 mb-6">Philosophy</p>
+                    <p className="text-xs uppercase tracking-[0.3em] text-blue-500 mb-6">Philosophy</p>
                     <h2 className="text-3xl md:text-4xl font-bold mb-10">We reject &quot;Spray and Pray&quot;.</h2>
                     
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {principles.map((p, i) => (
                             <div key={i} className="flex items-center gap-3 p-4 bg-black/40 border border-white/10 rounded-lg text-left">
-                                <CheckCircle2 className="w-5 h-5 text-purple-500 shrink-0" />
+                                <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0" />
                                 <span className="font-medium text-white/90">{p}</span>
                             </div>
                         ))}
@@ -1301,14 +1298,18 @@ const TestimonialSection = () => (
             <div className="mb-8 flex justify-center">
                 {[1,2,3,4,5].map(i => <span key={i} className="text-purple-400 text-2xl">★</span>)}
             </div>
-            <h2 className="text-2xl md:text-4xl font-medium leading-tight mb-8">
-                &quot;Thyleads exceeded my expectations because of their commitment to our success. They aren&apos;t just booking meetings; <span className="text-white/50">they are managing our pipeline.</span>&quot;
+            <h2 className="text-2xl md:text-2xl font-medium leading-relaxed mb-8">
+                &quot;At Epiplex.ai, partnering with Thyleads for market outreach has yielded outstanding results. Their strategic lead generation has expanded our client base and effectively communicated Epiplex&apos;s value in the GCC.&quot;
             </h2>
             <div className="flex items-center justify-center gap-4">
-                <div className="h-12 w-12 rounded-full bg-white/20" />
+                <img
+                    src="/pipelex.png"
+                    alt="Vivek Patial"
+                    className="h-12 w-12 rounded-full object-cover border border-white/20"
+                />
                 <div className="text-left">
-                    <div className="font-bold">Sarah Jenkins</div>
-                    <div className="text-xs text-white/50 uppercase tracking-wider">VP Sales, TechFlow</div>
+                    <div className="font-bold">Vivek Patial</div>
+                    <div className="text-xs text-white/50 uppercase tracking-wider">Head of Marketing, Epipplex.ai</div>
                 </div>
             </div>
         </div>
@@ -1320,7 +1321,7 @@ const FinalCTASection = () => (
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-indigo-900/10" />
         <div className="max-w-4xl mx-auto text-center relative z-10">
             <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8">
-                Ready to <span className="text-indigo-400">Scale?</span>
+                Ready to <span className="text-gray-300">Scale?</span>
             </h2>
             <p className="text-xl text-white/60 mb-12 max-w-2xl mx-auto">
                 Stop relying on luck. Start engineering your revenue with a system built for the modern SaaS landscape.

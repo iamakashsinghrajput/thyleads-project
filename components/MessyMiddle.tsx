@@ -23,7 +23,7 @@ const MessyMiddle = () => {
         <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-12 text-transparent bg-clip-text bg-gradient-to-r from-neutral-500 via-white to-neutral-700 leading-[1.1]">
             3 Pillars to Solve RevOps for <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-500 via-white to-neutral-700">SaaS Selling in India</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-500 via-white to-neutral-700">B2B SaaS Sales</span>
           </h2>
 
           <p className="text-base md:text-lg text-neutral-400 leading-relaxed mb-12 max-w-3xl">
@@ -150,7 +150,7 @@ const MessyMiddle = () => {
                 </h4>
 
                 <p className="text-sm text-neutral-400 leading-relaxed mb-8 border-b border-white/5 pb-6">
-                    Indian deals need relentless follow-up, stakeholder mapping, and nudging.
+                    Complex deals need relentless follow-up, stakeholder mapping, and nudging.
                 </p>
 
                 <div className="space-y-4 mt-auto">

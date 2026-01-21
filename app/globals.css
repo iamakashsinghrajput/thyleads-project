@@ -80,3 +80,13 @@ body {
 .font-polysans * {
   font-family: 'Polysans Neutral', sans-serif !important;
 }
+
+/* Hide scrollbar utility */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
