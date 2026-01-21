@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   title: "Thyleads - Outbound for SaaS That Drives Revenue",
   description: "Scalable, AI-powered outbound systems for SaaS companies. Get responses, book meetings, and win logos with personalized, data-backed outreach.",
   icons: {
-    icon: '/thylead.svg',
-    apple: '/thylead.svg',
+    icon: '/thyleads.svg',
+    apple: '/thyleads.svg',
   },
   openGraph: {
     title: "Thyleads - Outbound for SaaS That Drives Revenue",
