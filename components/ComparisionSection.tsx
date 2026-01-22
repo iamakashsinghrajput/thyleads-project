@@ -80,12 +80,12 @@ const ComparisonSection = () => {
           </div>
 
           <div className="space-y-6 md:text-right flex flex-col items-end">
-            <OldWayItem text="Messy inbound handovers and broken nurturing" delay={0.2} />
-            <OldWayItem text="Junk leads eating AE time" delay={0.4} />
-            <OldWayItem text="Poor data freshness and CRM hygiene" delay={0.6} />
-            <OldWayItem text="More AEs hired to fix a quality problem" delay={0.8} />
-            <OldWayItem text="Deals stall after the first meeting" delay={1.0} />
-            <OldWayItem text="Follow-ups depend entirely on AEs" delay={1.2} />
+            <OldWayItem text="Messy inbound handovers and broken nurturing" delay={0.05} />
+            <OldWayItem text="Junk leads eating AE time" delay={0.1} />
+            <OldWayItem text="Poor data freshness and CRM hygiene" delay={0.15} />
+            <OldWayItem text="More AEs hired to fix a quality problem" delay={0.2} />
+            <OldWayItem text="Deals stall after the first meeting" delay={0.25} />
+            <OldWayItem text="Follow-ups depend entirely on AEs" delay={0.3} />
           </div>
         </div>
 
@@ -100,12 +100,12 @@ const ComparisonSection = () => {
           </div>
 
           <div className="space-y-6">
-            <ThyleadsItem text="Structured inbound + outbound with clear qualification stages" delay={1.4} />
-            <ThyleadsItem text="Only qualified, pre-scheduled revenue conversations" delay={1.6} />
-            <ThyleadsItem text="Live pipeline updates with disciplined CRM ownership" delay={1.8} />
-            <ThyleadsItem text="Automation allows 1 AE to handle the work of 10 AEs with ease" delay={2.0} />
-            <ThyleadsItem text="Deal momentum ensured with intent-intelligent follow-ups and stakeholder mapping" delay={2.2} />
-            <ThyleadsItem text="No right opportunity left untouched." delay={2.4} />
+            <ThyleadsItem text="Structured inbound + outbound with clear qualification stages" delay={0.35} />
+            <ThyleadsItem text="Only qualified, pre-scheduled revenue conversations" delay={0.4} />
+            <ThyleadsItem text="Live pipeline updates with disciplined CRM ownership" delay={0.45} />
+            <ThyleadsItem text="Automation allows 1 AE to handle the work of 10 AEs with ease" delay={0.5} />
+            <ThyleadsItem text="Deal momentum ensured with intent-intelligent follow-ups and stakeholder mapping" delay={0.55} />
+            <ThyleadsItem text="No right opportunity left untouched." delay={0.6} />
           </div>
         </div>
       </div>
@@ -120,7 +120,7 @@ const OldWayItem = ({ text, delay }: { text: string; delay: number }) => {
       whileInView={{
         opacity: 0.6,
         x: 0,
-        transition: { delay, duration: 0.5 }
+        transition: { delay, duration: 0.3 }
       }}
       whileHover={{ x: -5, opacity: 0.8 }}
       viewport={{ once: true }}
@@ -151,7 +151,7 @@ const ThyleadsItem = ({ text, delay }: { text: string; delay: number }) => {
         opacity: 1,
         x: 0,
         scale: 1,
-        transition: { delay, type: "spring", stiffness: 100 }
+        transition: { delay, type: "spring", stiffness: 200, damping: 20 }
       }}
       whileHover={{ scale: 1.02, x: 5 }}
       viewport={{ once: true }}

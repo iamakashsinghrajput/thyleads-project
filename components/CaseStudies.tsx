@@ -314,11 +314,11 @@ export default function TestimonialSection() {
                 </div>
 
                 {/* Mobile image */}
-                <div className="relative h-56 md:hidden">
+                <div className="relative aspect-[3/2] md:hidden overflow-hidden">
                   <img
                     src={testimonial.personImage}
                     alt={testimonial.personName}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover object-top"
                   />
                   {/* Black to transparent gradient at bottom */}
                   <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />

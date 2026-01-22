@@ -135,12 +135,12 @@ export default function CaseStudiesPage() {
           href={`/casestudies/${featuredCaseStudy.id}`}
           className="block relative w-full rounded-3xl overflow-hidden shadow-2xl bg-[#0c0c12] grid grid-cols-1 lg:grid-cols-2 min-h-[420px] group transition-all duration-500 hover:shadow-purple-900/30 border border-white/10"
         >
-          {/* Image Side with gradient background */}
-          <div className="relative h-[300px] lg:h-auto order-1 lg:order-1 overflow-hidden bg-gradient-to-br from-[#1b1430] via-[#121220] to-[#0b0b12]">
+          {/* Image Side */}
+          <div className="relative aspect-[4/3] lg:aspect-auto lg:h-auto order-1 lg:order-1 overflow-hidden">
             <img
               src={featuredCaseStudy.personImage}
               alt="Featured Customer"
-              className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-105"
+              className="absolute inset-0 w-full h-full object-contain lg:object-cover object-center lg:object-top transition-transform duration-1000 group-hover:scale-105"
             />
             {/* Bottom gradient for text readability */}
             <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -264,13 +264,13 @@ export default function CaseStudiesPage() {
             <p className="text-xs uppercase tracking-[0.3em] text-slate-500 mb-3">Case Studies</p>
             <h3 className="text-3xl md:text-4xl font-bold text-slate-900">Explore the full library</h3>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* CleverTap Card */}
             <Link
               href="/casestudies/clevertap"
-              className="group w-[405px] h-[411px] rounded-2xl overflow-hidden border border-gray-200 bg-white hover:shadow-lg transition-all duration-300 flex flex-col"
+              className="group w-full max-w-[405px] mx-auto rounded-2xl overflow-hidden border border-gray-200 bg-white hover:shadow-lg transition-all duration-300 flex flex-col"
             >
-              <div className="h-[221px] bg-gradient-to-br from-yellow-100 via-pink-100 to-orange-50 relative overflow-hidden flex items-center justify-center">
+              <div className="aspect-[16/9] md:h-[221px] md:aspect-auto bg-gradient-to-br from-yellow-100 via-pink-100 to-orange-50 relative overflow-hidden flex items-center justify-center">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.8),transparent_60%)]" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(255,200,200,0.3),transparent_50%)]" />
                 <Image
@@ -281,11 +281,11 @@ export default function CaseStudiesPage() {
                   className="relative z-10 h-10 w-auto object-contain"
                 />
               </div>
-              <div className="h-[190px] p-6 bg-white flex flex-col justify-between">
-                <p className="text-slate-800 font-medium text-[21px] leading-relaxed">
+              <div className="flex-1 p-5 md:p-6 bg-white flex flex-col justify-between min-h-[160px] md:min-h-[190px]">
+                <p className="text-slate-800 font-medium text-lg md:text-[21px] leading-relaxed">
                   How CleverTap 3X&apos;d their pipeline with precision outbound through Thyleads
                 </p>
-                <span className="text-slate-500 text-md font-normal group-hover:text-slate-600 transition-colors flex items-center gap-1">
+                <span className="text-slate-500 text-md font-normal group-hover:text-slate-600 transition-colors flex items-center gap-1 mt-4">
                   Read the case study <ArrowRight className="w-3 h-3" />
                 </span>
               </div>
@@ -294,9 +294,9 @@ export default function CaseStudiesPage() {
             {/* Dice Card */}
             <Link
               href="/casestudies/dice"
-              className="group w-[405px] h-[411px] rounded-2xl overflow-hidden border border-gray-200 bg-white hover:shadow-lg transition-all duration-300 flex flex-col"
+              className="group w-full max-w-[405px] mx-auto rounded-2xl overflow-hidden border border-gray-200 bg-white hover:shadow-lg transition-all duration-300 flex flex-col"
             >
-              <div className="h-[221px] bg-gradient-to-br from-orange-100 via-amber-100 to-yellow-50 relative overflow-hidden flex items-center justify-center">
+              <div className="aspect-[16/9] md:h-[221px] md:aspect-auto bg-gradient-to-br from-orange-100 via-amber-100 to-yellow-50 relative overflow-hidden flex items-center justify-center">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_20%,rgba(255,255,255,0.9),transparent_50%)]" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(255,220,180,0.4),transparent_50%)]" />
                 <Image
@@ -307,11 +307,11 @@ export default function CaseStudiesPage() {
                   className="relative z-10 h-10 w-auto object-contain"
                 />
               </div>
-              <div className="h-[190px] p-6 bg-white flex flex-col justify-between">
-                <p className="text-slate-800 font-medium text-[21px] leading-relaxed">
+              <div className="flex-1 p-5 md:p-6 bg-white flex flex-col justify-between min-h-[160px] md:min-h-[190px]">
+                <p className="text-slate-800 font-medium text-lg md:text-[21px] leading-relaxed">
                   How Dice achieved 10:1 ROI through strategic GTM positioning
                 </p>
-                <span className="text-slate-500 text-md font-normal group-hover:text-slate-600 transition-colors flex items-center gap-1">
+                <span className="text-slate-500 text-md font-normal group-hover:text-slate-600 transition-colors flex items-center gap-1 mt-4">
                   Read the case study <ArrowRight className="w-3 h-3" />
                 </span>
               </div>
@@ -320,9 +320,9 @@ export default function CaseStudiesPage() {
             {/* Pazo Card */}
             <Link
               href="/casestudies/pazo"
-              className="group w-[405px] h-[411px] rounded-2xl overflow-hidden border border-gray-200 bg-white hover:shadow-lg transition-all duration-300 flex flex-col"
+              className="group w-full max-w-[405px] mx-auto rounded-2xl overflow-hidden border border-gray-200 bg-white hover:shadow-lg transition-all duration-300 flex flex-col"
             >
-              <div className="h-[221px] bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 relative overflow-hidden flex items-center justify-center">
+              <div className="aspect-[16/9] md:h-[221px] md:aspect-auto bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 relative overflow-hidden flex items-center justify-center">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_40%,rgba(255,255,255,0.9),transparent_50%)]" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(255,235,200,0.5),transparent_50%)]" />
                 <Image
@@ -333,11 +333,11 @@ export default function CaseStudiesPage() {
                   className="relative z-10 h-10 w-auto object-contain"
                 />
               </div>
-              <div className="h-[190px] p-6 bg-white flex flex-col justify-between">
-                <p className="text-slate-800 font-medium text-[21px] leading-relaxed">
+              <div className="flex-1 p-5 md:p-6 bg-white flex flex-col justify-between min-h-[160px] md:min-h-[190px]">
+                <p className="text-slate-800 font-medium text-lg md:text-[21px] leading-relaxed">
                   How Pazo connected with right buyers using intent-led outreach
                 </p>
-                <span className="text-slate-500 text-md font-normal group-hover:text-slate-600 transition-colors flex items-center gap-1">
+                <span className="text-slate-500 text-md font-normal group-hover:text-slate-600 transition-colors flex items-center gap-1 mt-4">
                   Read the case study <ArrowRight className="w-3 h-3" />
                 </span>
               </div>
@@ -346,9 +346,9 @@ export default function CaseStudiesPage() {
             {/* VWO Card */}
             <Link
               href="/casestudies/vwo"
-              className="group w-[405px] h-[411px] rounded-2xl overflow-hidden border border-gray-200 bg-white hover:shadow-lg transition-all duration-300 flex flex-col"
+              className="group w-full max-w-[405px] mx-auto rounded-2xl overflow-hidden border border-gray-200 bg-white hover:shadow-lg transition-all duration-300 flex flex-col"
             >
-              <div className="h-[221px] bg-gradient-to-br from-pink-100 via-purple-100 to-blue-100 relative overflow-hidden flex items-center justify-center">
+              <div className="aspect-[16/9] md:h-[221px] md:aspect-auto bg-gradient-to-br from-pink-100 via-purple-100 to-blue-100 relative overflow-hidden flex items-center justify-center">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.8),transparent_50%)]" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(200,200,255,0.4),transparent_50%)]" />
                 <Image
@@ -359,45 +359,45 @@ export default function CaseStudiesPage() {
                   className="relative z-10 h-10 w-auto object-contain"
                 />
               </div>
-              <div className="h-[190px] p-6 bg-white flex flex-col justify-between">
-                <p className="text-slate-800 font-normal text-[21px] leading-relaxed">
+              <div className="flex-1 p-5 md:p-6 bg-white flex flex-col justify-between min-h-[160px] md:min-h-[190px]">
+                <p className="text-slate-800 font-normal text-lg md:text-[21px] leading-relaxed">
                   How VWO cracked the code with AI-driven personalization
                 </p>
-                <span className="text-slate-500 text-md font-normal group-hover:text-slate-600 transition-colors flex items-center gap-1">
+                <span className="text-slate-500 text-md font-normal group-hover:text-slate-600 transition-colors flex items-center gap-1 mt-4">
                   Read the case study <ArrowRight className="w-3 h-3" />
                 </span>
               </div>
             </Link>
 
             {/* Placeholder Card 1 */}
-            <div className="w-[405px] h-[411px] rounded-2xl overflow-hidden border border-gray-200 bg-white flex flex-col">
-              <div className="h-[221px] bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 relative overflow-hidden flex items-center justify-center">
+            <div className="w-full max-w-[405px] mx-auto rounded-2xl overflow-hidden border border-gray-200 bg-white flex flex-col">
+              <div className="aspect-[16/9] md:h-[221px] md:aspect-auto bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 relative overflow-hidden flex items-center justify-center">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(255,255,255,0.9),transparent_50%)]" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(200,255,220,0.4),transparent_50%)]" />
                 <span className="relative z-10 text-xl font-bold text-slate-400">Coming Soon</span>
               </div>
-              <div className="h-[190px] p-6 bg-white flex flex-col justify-between">
-                <p className="text-slate-400 font-normal text-[21px] leading-relaxed">
+              <div className="flex-1 p-5 md:p-6 bg-white flex flex-col justify-between min-h-[160px] md:min-h-[190px]">
+                <p className="text-slate-400 font-normal text-lg md:text-[21px] leading-relaxed">
                   More success stories on the way
                 </p>
-                <span className="text-slate-400 text-md font-normal">
+                <span className="text-slate-400 text-md font-normal mt-4">
                   Stay tuned
                 </span>
               </div>
             </div>
 
             {/* Placeholder Card 2 */}
-            <div className="w-[405px] h-[411px] rounded-2xl overflow-hidden border border-gray-200 bg-white flex flex-col">
-              <div className="h-[221px] bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden flex items-center justify-center">
+            <div className="w-full max-w-[405px] mx-auto rounded-2xl overflow-hidden border border-gray-200 bg-white flex flex-col">
+              <div className="aspect-[16/9] md:h-[221px] md:aspect-auto bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden flex items-center justify-center">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_30%,rgba(255,255,255,0.9),transparent_50%)]" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_80%,rgba(200,210,255,0.4),transparent_50%)]" />
                 <span className="relative z-10 text-xl font-bold text-slate-400">Coming Soon</span>
               </div>
-              <div className="h-[190px] p-6 bg-white flex flex-col justify-between">
-                <p className="text-slate-400 font-normal text-[21px] leading-relaxed">
+              <div className="flex-1 p-5 md:p-6 bg-white flex flex-col justify-between min-h-[160px] md:min-h-[190px]">
+                <p className="text-slate-400 font-normal text-lg md:text-[21px] leading-relaxed">
                   More success stories on the way
                 </p>
-                <span className="text-slate-400 text-md font-normal">
+                <span className="text-slate-400 text-md font-normal mt-4">
                   Stay tuned
                 </span>
               </div>

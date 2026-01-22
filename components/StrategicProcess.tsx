@@ -579,7 +579,7 @@ const SaaSOutboundFramework: React.FC = () => {
   }, []);
 
   return (
-    // Outer container with extra height for scroll space (reduced on mobile)
+    // Outer container with extra height for scroll space (desktop only)
     <div ref={containerRef} className="relative h-auto lg:h-[350vh]">
       {/* Sticky inner section that stays in place */}
       <section className="lg:sticky top-0 w-full py-12 lg:py-0 lg:h-screen bg-[#030305] text-white flex flex-col items-center px-4 lg:px-8 overflow-hidden font-sans">
@@ -593,7 +593,7 @@ const SaaSOutboundFramework: React.FC = () => {
       <div className="relative z-10 w-full max-w-7xl flex flex-col h-full py-8 lg:py-16">
 
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-4 lg:mb-10 border-b border-white/10 pb-4 lg:pb-6 shrink-0">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 lg:mb-10 border-b border-white/10 pb-4 lg:pb-6 shrink-0">
            <div>
              <h2 className="text-2xl md:text-5xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-400">
                How Thyleads Runs Your GTM
@@ -604,49 +604,131 @@ const SaaSOutboundFramework: React.FC = () => {
            </div>
         </div>
 
-        {/* Interface: Split Deck */}
-        <div className="grid lg:grid-cols-[320px_1fr] gap-4 lg:gap-16 flex-1 min-h-0">
+        {/* MOBILE: Accordion-style vertical layout */}
+        <div className="lg:hidden flex flex-col gap-3">
+          {steps.map((step, idx) => {
+            const isActive = activeStep === idx;
+            return (
+              <div key={idx} className="w-full">
+                {/* Step Header - Always visible */}
+                <button
+                  onClick={() => setActiveStep(idx)}
+                  className={`w-full text-left p-4 rounded-xl transition-all duration-300 border ${
+                    isActive
+                      ? `bg-white/5 ${step.border} shadow-lg`
+                      : 'bg-white/[0.02] border-white/5'
+                  }`}
+                >
+                  <div className="flex items-center gap-4">
+                    {/* Phase Number */}
+                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center font-black text-lg ${
+                      isActive ? `${step.bg} text-white` : 'bg-white/5 text-white/30'
+                    }`}>
+                      {step.phase}
+                    </div>
 
-           {/* LEFT: Navigation - Redesigned Layout */}
-           <div className="flex lg:flex-col gap-2 lg:gap-3 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0 lg:pr-2 pl-1 lg:pl-0 relative lg:justify-center snap-x snap-mandatory lg:snap-none scrollbar-hide">
-              {/* Spacer for first item visibility on mobile */}
-              <div className="flex-shrink-0 w-1 lg:hidden" aria-hidden="true" />
+                    {/* Title */}
+                    <div className="flex-1">
+                      <h4 className={`text-sm font-bold ${isActive ? 'text-white' : 'text-white/60'}`}>
+                        {step.title}
+                      </h4>
+                      <p className={`text-xs mt-0.5 ${isActive ? step.color : 'text-white/30'}`}>
+                        {step.subtitle}
+                      </p>
+                    </div>
 
+                    {/* Expand Icon */}
+                    <ChevronRight
+                      className={`w-5 h-5 transition-transform duration-300 ${
+                        isActive ? `rotate-90 ${step.color}` : 'text-white/20'
+                      }`}
+                    />
+                  </div>
+                </button>
+
+                {/* Expanded Content */}
+                <AnimatePresence>
+                  {isActive && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.5 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pt-3 pb-2">
+                        {/* Description */}
+                        <p className="text-white/60 text-sm leading-relaxed mb-4 px-1">
+                          {step.description}
+                        </p>
+
+                        {/* Details Grid */}
+                        <div className="grid grid-cols-2 gap-2 mb-4">
+                          {step.details.map((detail, i) => (
+                            <div key={i} className="flex items-center gap-2 bg-white/[0.03] rounded-lg px-3 py-2">
+                              <div className={`w-1.5 h-1.5 rounded-full ${step.bg}`} />
+                              <span className="text-xs font-medium text-white/70">{detail}</span>
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* Graphic Preview */}
+                        <div className={`relative h-48 rounded-xl overflow-hidden border ${step.border} bg-[#08080a]`}>
+                          <div className={`absolute inset-0 bg-gradient-to-br ${step.color.replace('text-', 'from-').replace('400', '500')}/10 to-transparent opacity-50`} />
+                          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px]" />
+                          <div className="w-full h-full flex items-center justify-center scale-75">
+                            {step.graphic}
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* DESKTOP: Original split layout with scroll */}
+        <div className="hidden lg:grid lg:grid-cols-[320px_1fr] gap-16 flex-1 min-h-0">
+
+           {/* LEFT: Navigation */}
+           <div className="flex flex-col gap-3 pr-2 relative justify-center">
               {steps.map((step, idx) => {
                 const isActive = activeStep === idx;
                 return (
                   <button
                     key={idx}
                     onClick={() => setActiveStep(idx)}
-                    className={`group relative shrink-0 w-[140px] sm:w-[180px] lg:w-full text-left p-3 rounded-xl transition-all duration-300 border overflow-hidden snap-center ${
+                    className={`group relative w-full text-left p-3 rounded-xl transition-all duration-300 border overflow-hidden ${
                       isActive
                         ? 'bg-white/5 border-white/10 shadow-xl'
-                        : 'bg-transparent border-white/5 lg:border-transparent hover:bg-white/[0.02] hover:border-white/5'
+                        : 'bg-transparent border-transparent hover:bg-white/[0.02] hover:border-white/5'
                     }`}
                   >
-                    {/* Active Accent Bar (Left on desktop, Bottom on mobile) */}
+                    {/* Active Accent Bar */}
                     {isActive && (
                       <motion.div
-                        layoutId="activeHighlight"
-                        className={`absolute left-0 bottom-0 lg:top-0 lg:bottom-0 w-full lg:w-1 h-1 lg:h-full ${step.bg}`}
+                        layoutId="activeHighlightDesktop"
+                        className={`absolute left-0 top-0 bottom-0 w-1 ${step.bg}`}
                         transition={{ type: "spring", stiffness: 300, damping: 30 }}
                       />
                     )}
 
-                    <div className="flex flex-col lg:flex-row lg:items-start gap-1 lg:gap-4">
+                    <div className="flex items-start gap-4">
                       {/* Number */}
-                      <span className={`text-lg lg:text-2xl font-black transition-colors duration-300 leading-none lg:mt-1 ${
-                        isActive ? 'text-white' : 'text-white/20 lg:text-white/10 group-hover:text-white/20'
+                      <span className={`text-2xl font-black transition-colors duration-300 leading-none mt-1 ${
+                        isActive ? 'text-white' : 'text-white/10 group-hover:text-white/20'
                       }`}>
                         {step.phase}
                       </span>
 
                       {/* Content */}
                       <div className="flex-1 z-10">
-                         <h4 className={`text-xs lg:text-sm font-bold transition-colors line-clamp-2 lg:line-clamp-none ${isActive ? 'text-white' : 'text-white/60 group-hover:text-white'}`}>
+                         <h4 className={`text-sm font-bold transition-colors ${isActive ? 'text-white' : 'text-white/60 group-hover:text-white'}`}>
                            {step.title}
                          </h4>
-                         <p className={`hidden lg:block text-[11px] mt-1.5 font-medium uppercase tracking-wide transition-all duration-300 ${
+                         <p className={`text-[11px] mt-1.5 font-medium uppercase tracking-wide transition-all duration-300 ${
                            isActive ? `opacity-100 ${step.color}` : 'opacity-40 text-white/30'
                          }`}>
                            {step.subtitle}
@@ -656,15 +738,13 @@ const SaaSOutboundFramework: React.FC = () => {
                   </button>
                 )
               })}
-              {/* Spacer for last item visibility on mobile */}
-              <div className="flex-shrink-0 w-1 lg:hidden" aria-hidden="true" />
            </div>
 
            {/* RIGHT: Viewport */}
-           <div className="relative min-h-[500px] lg:min-h-0 lg:h-full bg-[#08080a] border border-white/10 rounded-2xl lg:rounded-[2rem] overflow-hidden flex flex-col lg:flex-row shadow-2xl">
-              
+           <div className="relative h-full bg-[#08080a] border border-white/10 rounded-[2rem] overflow-hidden flex flex-row shadow-2xl">
+
               <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px]" />
-              
+
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeStep}
@@ -672,41 +752,41 @@ const SaaSOutboundFramework: React.FC = () => {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.4 }}
-                  className="relative z-10 w-full h-full flex flex-col lg:flex-row"
+                  className="relative z-10 w-full h-full flex flex-row"
                 >
-                   
+
                    {/* Graphic Section */}
-                   <div className="w-full lg:w-1/2 order-2 lg:order-1 h-48 sm:h-64 lg:h-full flex items-center justify-center p-4 lg:p-8 relative overflow-hidden">
+                   <div className="w-1/2 h-full flex items-center justify-center p-8 relative overflow-hidden">
                       <div className={`absolute inset-0 bg-gradient-to-br ${steps[activeStep].color.replace('text-', 'from-').replace('400', '500')}/10 to-transparent opacity-50`} />
-                      <div className="scale-75 sm:scale-100 lg:scale-125 relative z-20 w-full h-full max-w-[320px] max-h-[320px]">
+                      <div className="scale-125 relative z-20 w-full h-full max-w-[320px] max-h-[320px]">
                          {steps[activeStep].graphic}
                       </div>
                    </div>
 
                    {/* Content Section */}
-                   <div className="w-full lg:w-1/2 order-1 lg:order-2 p-4 sm:p-6 lg:p-12 flex flex-col justify-center bg-white/[0.02] border-b lg:border-b-0 lg:border-l border-white/5 backdrop-blur-sm">
-                      <motion.div 
+                   <div className="w-1/2 p-12 flex flex-col justify-center bg-white/[0.02] border-l border-white/5 backdrop-blur-sm">
+                      <motion.div
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.1 }}
                       >
-                        <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest mb-4 lg:mb-6 ${steps[activeStep].color}`}>
+                        <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest mb-6 ${steps[activeStep].color}`}>
                            Step {steps[activeStep].phase} — Workflow
                         </div>
-                        
-                        <h3 className="text-xl lg:text-3xl font-bold text-white mb-3 lg:mb-4 leading-tight">
+
+                        <h3 className="text-3xl font-bold text-white mb-4 leading-tight">
                           {steps[activeStep].title}
                         </h3>
-                        
-                        <p className="text-white/60 text-sm lg:text-base leading-relaxed mb-6 lg:mb-8">
+
+                        <p className="text-white/60 text-base leading-relaxed mb-8">
                           {steps[activeStep].description}
                         </p>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4">
+                        <div className="grid grid-cols-2 gap-y-2 gap-x-4">
                            {steps[activeStep].details.map((detail, i) => (
                              <div key={i} className="flex items-center gap-3">
                                 <div className={`w-1.5 h-1.5 rounded-full ${steps[activeStep].bg}`} />
-                                <span className="text-xs lg:text-sm font-medium text-white/80">{detail}</span>
+                                <span className="text-sm font-medium text-white/80">{detail}</span>
                              </div>
                            ))}
                         </div>

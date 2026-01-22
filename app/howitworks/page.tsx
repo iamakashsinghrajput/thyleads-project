@@ -264,7 +264,7 @@ const HeroSection = () => {
         </motion.h1>
         
         <motion.p variants={fadeUp} className="mt-6 text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
-          Most systems look busy, but book nothing. We built a core GTM function engineered for SaaS teams that need <span className="text-white font-medium">revenue movement</span>, not activity theatre.
+          Most systems look busy, but book nothing. We built a core GTM function engineered for SaaS teams that need <span className="text-white font-medium">revenue movement.</span>
         </motion.p>
         
         <motion.div variants={fadeUp} className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-5">
@@ -1051,25 +1051,119 @@ const SignalIntelligenceSection = () => {
         {/* Background Grid */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20" />
 
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.2fr_0.8fr] gap-8 lg:gap-12 items-center">
+        {/* MOBILE LAYOUT */}
+        <div className="lg:hidden max-w-2xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-8">
+            <p className="text-xs uppercase tracking-[0.3em] text-indigo-400 mb-4">Signal Intelligence</p>
+            <h2 className="text-3xl font-bold mb-4">11 Signals, One Source of Truth.</h2>
+            <p className="text-white/60 text-sm">
+              We don&apos;t just guess. We listen. Tap any signal to understand why it matters.
+            </p>
+          </div>
+
+          {/* ICP Core Badge */}
+          <div className="flex justify-center mb-6">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-indigo-900/40 via-black to-purple-900/20 border-2 border-indigo-500/50 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(129,140,248,0.3)]">
+              <span className="text-xl font-bold text-white">ICP</span>
+              <span className="text-[8px] uppercase tracking-widest text-indigo-400">Core</span>
+            </div>
+          </div>
+
+          {/* Signals Grid */}
+          <div className="grid grid-cols-3 gap-3 mb-6">
+            {signalIntelligence.map((signal, index) => {
+              const isActive = index === activeSignal;
+              return (
+                <button
+                  key={index}
+                  onClick={() => { setActiveSignal(index); setPaused(true); setTimeout(() => setPaused(false), 5000); }}
+                  className={`relative p-3 rounded-xl border transition-all duration-300 flex flex-col items-center gap-2 ${
+                    isActive
+                      ? 'bg-indigo-500/20 border-indigo-500/50 shadow-[0_0_20px_rgba(129,140,248,0.3)]'
+                      : 'bg-white/[0.02] border-white/10 hover:border-white/20'
+                  }`}
+                >
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
+                    isActive
+                      ? 'bg-indigo-500 text-black'
+                      : 'bg-white/5 text-white/50'
+                  }`}>
+                    <signal.icon className="w-5 h-5" />
+                  </div>
+                  <span className={`text-[10px] font-medium text-center leading-tight transition-colors ${
+                    isActive ? 'text-white' : 'text-white/50'
+                  }`}>
+                    {signal.name}
+                  </span>
+                  {isActive && (
+                    <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-indigo-400 animate-pulse" />
+                  )}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Active Signal Detail Card */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={active.name}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.25 }}
+              className="bg-white/5 border border-indigo-500/30 p-5 rounded-2xl relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 p-3 opacity-5">
+                <active.icon className="w-20 h-20 text-white" />
+              </div>
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="p-2 bg-indigo-500/20 rounded-lg">
+                    <active.icon className="w-5 h-5 text-indigo-400" />
+                  </div>
+                  <h3 className="text-base font-semibold">{active.name}</h3>
+                </div>
+                <p className="text-sm text-white/80 leading-relaxed mb-4">
+                  {active.reason}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-2 py-1 rounded-full text-[9px] uppercase tracking-wider bg-white/5 border border-white/10 text-white/50">High Intent</span>
+                  <span className="px-2 py-1 rounded-full text-[9px] uppercase tracking-wider bg-white/5 border border-white/10 text-white/50">Real-time</span>
+                </div>
+              </div>
+              {paused && (
+                <motion.div
+                  initial={{ width: "100%" }}
+                  animate={{ width: "0%" }}
+                  transition={{ duration: 5, ease: "linear" }}
+                  className="absolute bottom-0 left-0 h-1 bg-indigo-500 rounded-b-2xl"
+                />
+              )}
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* DESKTOP LAYOUT - Original Orbit */}
+        <div className="hidden lg:grid max-w-7xl mx-auto lg:grid-cols-[1.2fr_0.8fr] gap-8 lg:gap-12 items-center">
             {/* Orbit Visual */}
-            <div className="relative h-[320px] md:h-[450px] lg:h-[520px] flex items-center justify-center will-change-transform">
+            <div className="relative h-[520px] flex items-center justify-center will-change-transform">
                 {/* Multi-layer outer glow */}
-                <div className="absolute w-[300px] md:w-[450px] lg:w-[550px] h-[300px] md:h-[450px] lg:h-[550px] rounded-full bg-indigo-500/5 blur-[80px]" />
+                <div className="absolute w-[550px] h-[550px] rounded-full bg-indigo-500/5 blur-[80px]" />
 
                 {/* Animated particle ring - outer */}
                 <div
-                    className="absolute w-[280px] md:w-[420px] lg:w-[520px] h-[280px] md:h-[420px] lg:h-[520px] rounded-full will-change-transform"
+                    className="absolute w-[520px] h-[520px] rounded-full will-change-transform"
                     style={{ transform: `rotate(${outerRingRotation}deg) translateZ(0)` }}
                 >
                     {[...Array(8)].map((_, i) => (
                         <div
                             key={i}
-                            className="absolute w-1 md:w-1.5 h-1 md:h-1.5 rounded-full bg-indigo-400/40"
+                            className="absolute w-1.5 h-1.5 rounded-full bg-indigo-400/40"
                             style={{
                                 top: '50%',
                                 left: '50%',
-                                transform: `rotate(${i * 45}deg) translateX(140px) md:translateX(210px) lg:translateX(260px) translateY(-50%)`,
+                                transform: `rotate(${i * 45}deg) translateX(260px) translateY(-50%)`,
                             }}
                         />
                     ))}
@@ -1077,7 +1171,7 @@ const SignalIntelligenceSection = () => {
 
                 {/* Inner animated ring with gradient */}
                 <div
-                    className="absolute w-[200px] md:w-[300px] lg:w-[360px] h-[200px] md:h-[300px] lg:h-[360px] rounded-full border-2 border-transparent will-change-transform"
+                    className="absolute w-[360px] h-[360px] rounded-full border-2 border-transparent will-change-transform"
                     style={{
                         transform: `rotate(${innerRingRotation}deg) translateZ(0)`,
                         background: 'linear-gradient(black, black) padding-box, linear-gradient(135deg, rgba(129,140,248,0.5), rgba(168,85,247,0.5), rgba(34,211,238,0.2)) border-box'
@@ -1085,16 +1179,16 @@ const SignalIntelligenceSection = () => {
                 />
 
                 {/* Main orbit ring with glow effect */}
-                <div className="absolute w-[240px] md:w-[360px] lg:w-[440px] h-[240px] md:h-[360px] lg:h-[440px] rounded-full border border-indigo-500/20 shadow-[0_0_30px_rgba(129,140,248,0.1)]" />
+                <div className="absolute w-[440px] h-[440px] rounded-full border border-indigo-500/20 shadow-[0_0_30px_rgba(129,140,248,0.1)]" />
 
                 {/* Outer dashed ring - animated */}
                 <div
-                    className="absolute w-[270px] md:w-[400px] lg:w-[500px] h-[270px] md:h-[400px] lg:h-[500px] rounded-full border border-white/10 border-dashed will-change-transform"
+                    className="absolute w-[500px] h-[500px] rounded-full border border-white/10 border-dashed will-change-transform"
                     style={{ transform: `rotate(${outerRingRotation * 0.5}deg) translateZ(0)` }}
                 />
 
                 {/* Energy arc segments */}
-                <svg className="absolute w-[260px] md:w-[380px] lg:w-[480px] h-[260px] md:h-[380px] lg:h-[480px] will-change-transform" style={{ transform: `rotate(${rotation * 0.3}deg) translateZ(0)` }}>
+                <svg className="absolute w-[480px] h-[480px] will-change-transform" style={{ transform: `rotate(${rotation * 0.3}deg) translateZ(0)` }}>
                     <defs>
                         <linearGradient id="arcGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" stopColor="rgba(34,211,238,0)" />
@@ -1106,20 +1200,20 @@ const SignalIntelligenceSection = () => {
                 </svg>
 
                 {/* Center Sun - Enhanced */}
-                <div className="absolute w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 rounded-full bg-gradient-to-br from-indigo-900/40 via-black to-purple-900/20 border-2 border-indigo-500/50 backdrop-blur-md z-20 flex flex-col items-center justify-center shadow-[0_0_60px_rgba(129,140,248,0.3)]">
+                <div className="absolute w-36 h-36 rounded-full bg-gradient-to-br from-indigo-900/40 via-black to-purple-900/20 border-2 border-indigo-500/50 backdrop-blur-md z-20 flex flex-col items-center justify-center shadow-[0_0_60px_rgba(129,140,248,0.3)]">
                     <div className="absolute inset-2 rounded-full border border-indigo-400/30" />
-                    <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">ICP</span>
-                    <span className="text-[9px] md:text-[10px] lg:text-[11px] uppercase tracking-widest text-indigo-400 mt-1">Core</span>
+                    <span className="text-4xl font-bold text-white">ICP</span>
+                    <span className="text-[11px] uppercase tracking-widest text-indigo-400 mt-1">Core</span>
                 </div>
 
                 {/* Click hint */}
-                <div className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2 text-white/40 text-[10px] md:text-xs">
-                    <span className="inline-block w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-indigo-500 animate-pulse" />
+                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2 text-white/40 text-xs">
+                    <span className="inline-block w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
                     Click any signal to explore
                 </div>
 
-                {/* Orbiting Signals - Scaled container for responsiveness */}
-                <div className="absolute inset-0 z-30 scale-[0.55] md:scale-[0.8] lg:scale-100 will-change-transform" ref={containerRef}>
+                {/* Orbiting Signals */}
+                <div className="absolute inset-0 z-30 will-change-transform" ref={containerRef}>
                     {signalIntelligence.map((signal, index) => {
                         const offsetAngle = (360 / signalIntelligence.length) * index;
                         const currentAngle = rotation + offsetAngle;
