@@ -59,27 +59,27 @@ const CTASection: React.FC<CTASectionProps> = ({ theme = 'dark' }) => {
 
         <div className={`relative rounded-[23px] p-10 md:p-16 text-center ${
           isLight
-            ? 'bg-purple-50 shadow-lg'
+            ? 'bg-gradient-to-br from-purple-900 via-violet-500 to-indigo-700 shadow-2xl shadow-purple-500/30'
             : 'bg-black'
         }`}>
           <h2 className={`text-3xl md:text-5xl font-bold mb-6 ${
             isLight
-              ? 'text-gray-900'
+              ? 'text-white'
               : 'text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400'
           }`}>
             Ready to Transform Your Outbound?
           </h2>
           <p className={`text-lg md:text-xl mb-8 max-w-2xl mx-auto ${
-            isLight ? 'text-gray-600' : 'text-neutral-300'
+            isLight ? 'text-purple-100' : 'text-neutral-300'
           }`}>
             Join hundreds of SaaS companies using Thyleads to scale their revenue with AI-powered outbound.
           </p>
           <div className="justify-center">
             <Link
               href="/contact"
-              className={`px-8 py-4 rounded-full font-bold transition-colors text-lg inline-flex items-center justify-center ${
+              className={`px-8 py-4 rounded-full font-bold transition-all text-lg inline-flex items-center justify-center ${
                 isLight
-                  ? 'border border-gray-300 text-gray-700 hover:bg-gray-50'
+                  ? 'bg-white text-purple-700 hover:bg-purple-50 shadow-lg shadow-black/10'
                   : 'text-white border border-white/20 hover:bg-white/10'
               }`}
             >

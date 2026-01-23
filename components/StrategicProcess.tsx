@@ -549,6 +549,8 @@ const SaaSOutboundFramework: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      // Only apply scroll behavior on desktop (lg breakpoint = 1024px)
+      if (window.innerWidth < 1024) return;
       if (!containerRef.current) return;
 
       const container = containerRef.current;
