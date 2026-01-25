@@ -16,11 +16,12 @@ const TrustedBy: React.FC = () => {
     { name: 'Nurix', logo: '/images/Nurix.svg'},
     { name: 'MYND',  logo: '/images/mynd.svg'},
     { name: 'Epiplex',  logo: '/images/epiplex.svg'},
-    { name: 'NovaBenefits',  logo: '/images/NovaBenefits.svg'}
+    { name: 'NovaBenefits',  logo: '/images/NovaBenefits.svg'},
+    { name: 'OneCap',  logo: '/images/onecap.png', large: true},
+    { name: 'TeamLease',  logo: '/images/teamlease.png', extraLarge: true},
+    { name: 'zigital',  logo: '/images/zigital.png', large: true},
+    { name: 'Actyv', logo: '/images/actyv.png', extraLarge: true}
   ];
-
-  // Duplicate companies for seamless loop
-  const duplicatedCompanies = [...companies, ...companies];
 
   return (
     <section className="relative w-full py-16 px-6 sm:px-12 bg-[#050505] overflow-hidden">
@@ -43,35 +44,42 @@ const TrustedBy: React.FC = () => {
             <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#050505] to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#050505] to-transparent z-10 pointer-events-none" />
 
-            <motion.div
-              className="flex items-center gap-16 lg:gap-20"
-              animate={{
-                x: [0, -50 * companies.length * 2]
-              }}
-              transition={{
-                x: {
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  duration: 30,
-                  ease: "linear"
-                }
-              }}
-            >
-              {duplicatedCompanies.map((company, index) => (
-                <div
-                  key={`${company.name}-${index}`}
-                  className="flex items-center justify-center shrink-0 group cursor-pointer"
-                >
-                  <Image
-                    src={company.logo}
-                    alt={`${company.name} logo`}
-                    width={90}
-                    height={24}
-                    className="h-5 md:h-7 w-auto object-contain brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity duration-500"
-                  />
-                </div>
-              ))}
-            </motion.div>
+            <div className="flex w-max scroll-container">
+              {/* First track */}
+              <div className="flex items-center">
+                {companies.map((company, index) => (
+                  <div
+                    key={`first-${company.name}-${index}`}
+                    className="flex items-center justify-center shrink-0 group cursor-pointer mx-8 lg:mx-10"
+                  >
+                    <Image
+                      src={company.logo}
+                      alt={`${company.name} logo`}
+                      width={company.extraLarge ? 220 : company.large ? 180 : 90}
+                      height={company.extraLarge ? 72 : company.large ? 56 : 24}
+                      className={`${company.extraLarge ? 'h-16 md:h-20' : company.large ? 'h-12 md:h-14' : 'h-5 md:h-7'} w-auto object-contain brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity duration-500`}
+                    />
+                  </div>
+                ))}
+              </div>
+              {/* Second track (duplicate for seamless loop) */}
+              <div className="flex items-center">
+                {companies.map((company, index) => (
+                  <div
+                    key={`second-${company.name}-${index}`}
+                    className="flex items-center justify-center shrink-0 group cursor-pointer mx-8 lg:mx-10"
+                  >
+                    <Image
+                      src={company.logo}
+                      alt={`${company.name} logo`}
+                      width={company.extraLarge ? 220 : company.large ? 180 : 90}
+                      height={company.extraLarge ? 72 : company.large ? 56 : 24}
+                      className={`${company.extraLarge ? 'h-16 md:h-20' : company.large ? 'h-12 md:h-14' : 'h-5 md:h-7'} w-auto object-contain brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity duration-500`}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>

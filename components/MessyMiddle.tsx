@@ -66,7 +66,7 @@ const MessyMiddle = () => {
                 </div>
 
                 <h4 className="text-2xl font-bold text-white mb-3">
-                    Intent-Led Outbound
+                    AI-Powered Outbound
                 </h4>
                 
                 <p className="text-sm text-neutral-400 leading-relaxed mb-8 border-b border-white/5 pb-6">
@@ -75,9 +75,11 @@ const MessyMiddle = () => {
 
                 <div className="space-y-4 mt-auto">
                     {[
-                        "Vertical-focused GTM pods",
-                        "Alignment with Hiring & tech-stack signals",
-                        "Dummy Point"
+                        "Vertical-focused GTM Pods",
+                        "Multichannel Outreach & Custom Workflows",
+                        "Qualification before scheduling",
+                        "No-show handling and Rescheduling",
+                        "Weekly execution updates and Reporting"
                     ].map((point, i) => (
                         <div key={i} className="flex items-start gap-3">
                             <CheckCircle2 className="w-5 h-5 text-purple-500 shrink-0" />
@@ -106,7 +108,7 @@ const MessyMiddle = () => {
                 </div>
 
                 <h4 className="text-2xl font-bold text-white mb-3">
-                    Revenue Inbound
+                    Inbound Qualification
                 </h4>
 
                 <p className="text-sm text-neutral-400 leading-relaxed mb-8 border-b border-white/5 pb-6">
@@ -116,8 +118,10 @@ const MessyMiddle = () => {
                 <div className="space-y-4 mt-auto">
                     {[
                         "Speed-to-lead SLAs",
-                        "Fit + intent qualification",
-                        "Only serious demand reaches AEs"
+                        "Fit + Intent Qualification",
+                        "Only serious demand reaches AEs",
+                        "Calendar coordination with your sales team",
+                        "Extensive Reporting and Weekly Review"
                     ].map((point, i) => (
                         <div key={i} className="flex items-start gap-3">
                             <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0" />
@@ -155,9 +159,11 @@ const MessyMiddle = () => {
 
                 <div className="space-y-4 mt-auto">
                     {[
-                        "Thyleads completely owns the back-and-forth grind, so AEs focus purely on closing",
-                        "Fit + intent qualification",
-                        "Only serious demand reaches AEs"
+                        "Post Demo Follow-ups",
+                        "Second/third meeting scheduling",
+                        "LinkedIn Branding aligned with Outbound Campaigns",
+                        "Multi-Threading and Nurture Sequences",
+                        "AI-powered Momentum and Stakeholder tracking"
                     ].map((point, i) => (
                         <div key={i} className="flex items-start gap-3">
                             <CheckCircle2 className="w-5 h-5 text-orange-500 shrink-0" />

@@ -14,6 +14,15 @@ const config: Config = {
       fontSize: {
         base: ['16px', '1.5'], // 16px with a line-height of 1.5
       },
+      animation: {
+        scroll: 'scroll 40s linear infinite',
+      },
+      keyframes: {
+        scroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
     },
   },
   plugins: [],
