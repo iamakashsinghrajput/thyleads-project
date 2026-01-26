@@ -16,9 +16,8 @@ const TrustedBy: React.FC = () => {
     { name: 'Nurix', logo: '/images/Nurix.svg'},
     { name: 'MYND',  logo: '/images/mynd.svg'},
     { name: 'Epiplex',  logo: '/images/epiplex.svg'},
-    { name: 'NovaBenefits',  logo: '/images/NovaBenefits.svg'},
-    { name: 'OneCap',  logo: '/images/onecap.png', large: true},
-    { name: 'TeamLease',  logo: '/images/teamlease.png', extraLarge: true},
+    { name: 'OneCap',  logo: 'https://www.onecap.ai/revamp/OneCap%20logo.svg'},
+    { name: 'TeamLease',  logo: '/images/teamlease.png', veryextraLarge: true},
     { name: 'zigital',  logo: '/images/zigital.png', large: true},
     { name: 'Actyv', logo: '/images/actyv.png', extraLarge: true}
   ];
@@ -55,9 +54,9 @@ const TrustedBy: React.FC = () => {
                     <Image
                       src={company.logo}
                       alt={`${company.name} logo`}
-                      width={company.extraLarge ? 220 : company.large ? 180 : 90}
-                      height={company.extraLarge ? 72 : company.large ? 56 : 24}
-                      className={`${company.extraLarge ? 'h-16 md:h-20' : company.large ? 'h-12 md:h-14' : 'h-5 md:h-7'} w-auto object-contain brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity duration-500`}
+                      width={company.veryextraLarge? 290 : company.extraLarge ? 290 : company.large ? 220 : 90}
+                      height={company.veryextraLarge? 90 : company.extraLarge ? 90 : company.large ? 84 : 52}
+                      className={`${company.veryextraLarge ?'h-36 md:h-36' : company.extraLarge ? 'h-24 md:h-24' : company.large ? 'h-16 md:h-16' : 'h-5 md:h-7'} w-auto object-contain brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity duration-500`}
                     />
                   </div>
                 ))}
