@@ -1,13 +1,9 @@
 "use client";
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import Link from "next/link";
 import {
   motion,
   useInView,
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
   AnimatePresence,
   useAnimationFrame
 } from "framer-motion";
@@ -31,6 +27,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+
 // --- Data Constants ---
 
 const systemStages = [
@@ -48,8 +45,17 @@ const weeklyTimeline = [
     subtitle: "Signals → Intake & Qualification",
     goal: "Build a Zero-Waste intake engine. We design the technical and strategic base of your campaign.",
     whatWeDo: [
+      "Blueprinting",
+      "Omni-channel Approach",
+      "Competitor Analysis",
+      "CRM Integration",
+      "Domain Setup",
+      "Email Warm-up",
+      "Intake Engine Config",
+    ],
+    whatWeDoFull: [
       "Blueprinting: Defining ICP, persona nuances, and success benchmarks",
-      "Channel selection (Email, LinkedIn, Calls, etc.)",
+      "Omni-channel approach: Email, LinkedIn, Calls, etc.",
       "Competitor & account-based targeting analysis",
       "CRM integration & automation workflows",
       "Domain setup + deliverability configuration",
@@ -68,7 +74,19 @@ const weeklyTimeline = [
     subtitle: "Intake Engine → Outreach Activation",
     goal: "Turning data into high-relevance messaging. We use account-based data scraping and AI-fueled personalization to ensure every touchpoint feels 1-to-1.",
     whatWeDo: [
-      "Monitor real buying signals: Website visitors, New hires & job posts, Funding rounds, Expansion news, Competitor engagement, Social signals",
+      "Buying Signals",
+      "Raw Intelligence",
+      "Data Scraping",
+      "Intent Scoring",
+      "Context Mapping",
+      "Messaging Creation",
+      "AI Personalization",
+      "A/B Testing",
+      "Automation Testing",
+      "Email Warm-up",
+    ],
+    whatWeDoFull: [
+      "Monitor real buying signals: Website visitors, New hires & job posts, Funding rounds, Expansion news",
       "Aggregating raw intelligence from company websites, articles, and LinkedIn profiles",
       "ICP-based data scraping & enrichment",
       "Intent scoring & account prioritization",
@@ -91,6 +109,15 @@ const weeklyTimeline = [
     subtitle: "Outreach → Sales-Ready Conversations",
     goal: "Aggressive, multi-channel engagement.",
     whatWeDo: [
+      "Launch Outreach",
+      "Monitor Engagement",
+      "Daily Optimization",
+      "Appointment Booking",
+      "No-show Handling",
+      "Warm Transfer",
+      "Complete Warm-up",
+    ],
+    whatWeDoFull: [
       "Launch multi-channel outreach",
       "Monitor replies, bounces & engagement",
       "Daily optimization of copy, timing, and channel mix",
@@ -110,6 +137,17 @@ const weeklyTimeline = [
     subtitle: "Post-Demo Momentum + Reporting",
     goal: "Optimizing for ROI and expanding the pipeline.",
     whatWeDo: [
+      "Post-Demo Momentum",
+      "Auto Follow-ups",
+      "Performance Review",
+      "Funnel Analysis",
+      "Segment Analysis",
+      "Copy Optimization",
+      "Scale Volumes",
+      "LinkedIn Alignment",
+      "Multi-threading",
+    ],
+    whatWeDoFull: [
       "Activate Post-Demo Momentum — the Thyleads edge: Stakeholder nurture starts the moment a call ends",
       "Follow-ups, consensus building, and multi-threading kick in automatically",
       "Weekly performance review",
@@ -130,82 +168,62 @@ const weeklyTimeline = [
 
 const signalIntelligence = [
   {
-    name: "Funding Events",
-    reason: "Capital unlocks urgency and budget alignment windows.",
+    name: "The Mirror (Look-Alikes)",
+    reason: "We study your best customers and go looking for their twins. With that, we replicate your past successes with them",
     icon: Zap
   },
   {
-    name: "Hiring Velocity",
-    reason: "Hiring spikes reveal operational strain and growth intent.",
+    name: "The Alumni (Past Champions)",
+    reason: "When a champion leaves one organization for another, the door is already open. We track your fans as they change roles, turning their career growth into your expansion.",
     icon: Users
   },
   {
-    name: "Tech Stack Shifts",
-    reason: "Stack changes signal evaluation cycles and replacement risk.",
+    name: "The Semantic Pulse (Keywords)",
+    reason: "We tune in to the online discourse. By identifying individuals engaging with specific topics on LinkedIn and X, we find the people who are currently vocalizing their pain points.",
     icon: Cpu
   },
   {
-    name: "ICP Expansion",
-    reason: "New geo or segment launches widen pain points you can solve.",
+    name: "The Ad-Spenders (B2B2C)",
+    reason: "We identify companies aggressively spending on Meta/Instagram. If they are investing in growth, they are primed for tools that optimize that spend or handle the resulting scale.",
     icon: Radar
   },
   {
-    name: "Leadership Changes",
-    reason: "New leaders create new priorities and reset vendor decisions.",
+    name: "The Momentum Trigger (News/RSS)",
+    reason: "Funding rounds, new store launches, and expansions aren't just news; they are Capacity Gaps. We strike when a company has the budget and the immediate need to scale.",
     icon: Users
   },
   {
-    name: "Website Surge",
-    reason: "Repeated visits show active research before demo requests.",
+    name: "The Hiring Signal (Job Postings)",
+    reason: "A job post is a public admission of a problem. If they are hiring for a role your software replaces or augments, we present your solution as the faster, more scalable hire.",
     icon: Activity
   },
   {
-    name: "Pricing Page Visits",
-    reason: "Pricing intent is a near-term buying signal.",
+    name: "The Fresh Start (Job Changes)",
+    reason: "New leaders have the 90-Day Mandate to make an impact. We catch them in their first weeks, before they’ve settled for the status quo or locked in a competitor.",
     icon: BarChart3
   },
   {
-    name: "Competitor Comparisons",
-    reason: "Side-by-side research means the shortlist is forming.",
+    name: "The Rivalry (Competitor Engagement)",
+    reason: "We monitor your competitors' social feeds. When a lead engages with their content, they are officially in-market. We ensure your brand is the alternative they see next.",
     icon: Search
   },
   {
-    name: "Product Review Signals",
-    reason: "Review activity reveals category exploration and urgency.",
+    name: "The Ecosystem (Indirect Competitors)",
+    reason: "We identify leads buying from Adjacent services, tools that serve the same ICP but don't compete with you. This creates a high-relevance, collaborative entry point.",
     icon: MessageCircle
   },
   {
-    name: "Compliance Triggers",
-    reason: "Security and governance events force tooling changes.",
+    name: "The Gathering (Event Attendees)",
+    reason: "Digital and physical events are high-intent hubs. We connect the gap between just attending and actively solving, engaging prospects while the event themes are still top-of-mind.",
     icon: Lock
   },
   {
-    name: "Intent Keyword Spikes",
-    reason: "Sudden topic spikes show timing that can be actioned.",
+    name: "The Digital Footprint (Website Visitors)",
+    reason: "When an account visits your site, they’ve already self-identified. We de-anonymize that traffic and route the high-value intent directly to GTM Engineers for immediate activation.",
     icon: Activity
   },
 ];
 
-const talentPillars = [
-  {
-    title: "GTM Engineers",
-    description:
-      "Architect the operating system, tune signals, and maintain mechanical precision.",
-    icon: Cpu,
-  },
-  {
-    title: "Account Managers",
-    description:
-      "Keep sequencing, cadence, and stakeholder context accurate and aligned.",
-    icon: Users,
-  },
-  {
-    title: "Content Writers",
-    description:
-      "Translate intent into credible, contextual messaging at scale.",
-    icon: MessageCircle,
-  },
-];
 
 // --- Main Page Component ---
 
@@ -221,6 +239,7 @@ const HowItWorksPage = () => {
         <TimelineSection />
         <DealAssistSection />
         <SignalIntelligenceSection />
+        <TeamSection />
         <TalentSection />
         <PerformancePhilosophySection />
         <TestimonialSection />
@@ -234,10 +253,6 @@ const HowItWorksPage = () => {
 // --- Sections ---
 
 const HeroSection = () => {
-    const { scrollY } = useScroll();
-    const y1 = useTransform(scrollY, [0, 500], [0, 200]);
-    const y2 = useTransform(scrollY, [0, 500], [0, -150]);
-
   return (
     <section
       className="relative min-h-screen flex items-center justify-center px-6 pt-32 pb-16 overflow-hidden"
@@ -245,7 +260,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,_rgba(168,85,247,0.2),transparent_45%),radial-gradient(circle_at_80%_30%,_rgba(99,102,241,0.16),transparent_50%),linear-gradient(180deg,_#050608_0%,_#080610_45%,_#020306_100%)]" />
       <div className="absolute inset-0 bg-[conic-gradient(from_120deg_at_60%_40%,_rgba(168,85,247,0.14),_rgba(99,102,241,0.1),_transparent_60%)] mix-blend-screen opacity-70" />
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:120px_120px] [mask-image:radial-gradient(ellipse_at_center,black_35%,transparent_75%)]" />
-      
+       
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
          {/* Animated Grid Lines */}
         {/* Lines removed as requested */}
@@ -264,18 +279,18 @@ const HeroSection = () => {
         </motion.h1>
         
         <motion.p variants={fadeUp} className="mt-6 text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
-          Most systems look busy, but book nothing. We built a core GTM function engineered for SaaS teams that need <span className="text-white font-medium">revenue movement.</span>
+          Most systems look busy, but book nothing. For SaaS teams who rely on revenue mobility, we developed it as a key <span className="text-white font-medium">GTM function.</span>
         </motion.p>
         
         <motion.div variants={fadeUp} className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-5">
-          <Link
+          <a
             href="/contact"
             className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-white px-8 font-medium text-black transition-all hover:bg-white/90 hover:scale-105"
           >
             <span className="mr-2 uppercase tracking-widest text-xs font-bold">Start Building</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             <div className="absolute inset-0 -z-10 bg-gradient-to-r from-purple-400 to-indigo-400 opacity-0 transition-opacity group-hover:opacity-10" />
-          </Link>
+          </a>
           <a href="#system" className="group inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">
             See the logic <ChevronDown className="w-4 h-4 transition-transform group-hover:translate-y-1" />
           </a>
@@ -348,20 +363,20 @@ const SystemLayerSection = () => {
             <motion.div variants={staggerContainer} className="relative z-10">
                 <motion.div variants={fadeUp} className="flex items-center gap-3 mb-6">
                     <div className="h-px w-8 bg-indigo-500" />
-                    <p className="text-xs uppercase tracking-[0.3em] text-indigo-400">Layer 1: Architecture</p>
+                    <p className="text-xs uppercase tracking-[0.3em] text-indigo-400">Layer 1: The Thyleads Revenue Engine</p>
                 </motion.div>
                 <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-                    The Engine Runs <br/>
-                    <span className="text-white/40">Continuously.</span>
+                    Our Process From <br/>
+                    <span className="text-white/40">Meeting To Growth </span>
                 </motion.h2>
                 <motion.p variants={fadeUp} className="text-white/60 text-lg leading-relaxed mb-10">
                     Once live, signals trigger a cascade of actions. From intake to reporting, every step is automated yet strictly qualified.
                 </motion.p>
                 
                 <motion.div variants={fadeUp} className="space-y-3 relative">
-                     {/* Connecting Line for List */}
-                     <div className="absolute left-[11px] top-4 bottom-4 w-[2px] bg-white/5 rounded-full" />
-                     
+                      {/* Connecting Line for List */}
+                      <div className="absolute left-[11px] top-4 bottom-4 w-[2px] bg-white/5 rounded-full" />
+                      
                     {systemStages.map((stage, index) => (
                         <div 
                             key={index} 
@@ -553,52 +568,210 @@ const SystemNode = ({
     </motion.div>
 )
 
+const VelocityTimeline = ({ items, activeIndex }: { items: string[]; activeIndex: number }) => {
+    // Configuration
+    const columns = 4; // Set to 4 columns as requested (1->2->3->4)
+    const itemWidth = 28; // Balanced node size
+    const itemHeight = 28;
+    const xGap = 36; // Optimized horizontal spacing
+    const yGap = 36; // Optimized vertical spacing
+  
+    // Calculate total width/height for SVG viewBox
+    const totalWidth = columns * itemWidth + (columns - 1) * xGap;
+    // Calculate SVG height based on number of rows
+    const rows = Math.ceil(items.length / columns);
+    const totalHeight = rows * itemHeight + (rows - 1) * yGap;
+  
+    // Helper to get coordinates for a node index
+    const getCoords = (i: number) => {
+      const row = Math.floor(i / columns);
+      let col = i % columns;
+  
+      // Snake logic: If row is odd, reverse column order
+      if (row % 2 !== 0) {
+        col = columns - 1 - col;
+      }
+  
+      const x = col * (itemWidth + xGap) + itemWidth / 2;
+      const y = row * (itemHeight + yGap) + itemHeight / 2;
+      return { x, y };
+    };
+  
+    // Generate the Snake Path Definition string (d attribute)
+    const generatePath = () => {
+      let path = "";
+      for (let i = 0; i < items.length - 1; i++) {
+        const current = getCoords(i);
+        const next = getCoords(i + 1);
+  
+        if (i === 0) {
+          path += `M ${current.x} ${current.y} `;
+        }
+  
+        const rowCurrent = Math.floor(i / columns);
+        const rowNext = Math.floor((i + 1) / columns);
+  
+        if (rowCurrent === rowNext) {
+          // Same row: Straight line
+          path += `L ${next.x} ${next.y} `;
+        } else {
+          // Different row: Curve down
+          // Determine direction (are we on right or left edge?)
+          // If we are on the right edge (col index is columns-1), bulge right.
+          // If we are on the left edge (col index is 0), bulge left.
+          
+          const isRightEdge = current.x > totalWidth / 2;
+          const controlX = isRightEdge ? current.x + 35 : current.x - 35; // Curve magnitude
+  
+          // C (control point 1) (control point 2) (end point)
+          path += `C ${controlX} ${current.y}, ${controlX} ${next.y}, ${next.x} ${next.y} `;
+        }
+      }
+      return path;
+    };
+  
+    const pathD = useMemo(() => generatePath(), [items]);
+    const totalPoints = items.length;
+    // Calculate percentage for path drawing
+    // We want the line to stop exactly at the center of the active node
+    // Total segments = totalPoints - 1. 
+    const pathProgress = Math.min(activeIndex / (totalPoints - 1), 1);
+  
+    return (
+      <div className="relative w-full flex justify-center py-4 select-none">
+        <div className="relative" style={{ width: totalWidth, height: totalHeight }}>
+          
+          {/* 1. The Track (Background Line) */}
+          <svg className="absolute inset-0 w-full h-full overflow-visible z-0 pointer-events-none">
+            <path
+                d={pathD}
+                stroke="rgba(255,255,255,0.06)"
+                strokeWidth="2"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            {/* 2. The Velocity Beam (Foreground Line) */}
+            <motion.path
+                d={pathD}
+                stroke="url(#velocity-gradient)"
+                strokeWidth="2"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: pathProgress }}
+                transition={{ duration: 0.5, ease: "linear" }}
+            />
+            <defs>
+                <linearGradient id="velocity-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#3b82f6" />
+                    <stop offset="100%" stopColor="#60a5fa" />
+                </linearGradient>
+            </defs>
+          </svg>
+  
+          {/* 3. The Nodes (Absolute Positioned) */}
+          {items.map((item, i) => {
+            const { x, y } = getCoords(i);
+            const isActive = i <= activeIndex;
+            const isCurrent = i === activeIndex;
+            
+            // Adjust position to center div
+            const style = {
+                left: x - itemWidth / 2,
+                top: y - itemHeight / 2,
+                width: itemWidth,
+                height: itemWidth // square/circle
+            };
+  
+            return (
+              <motion.div
+                key={i}
+                className="absolute flex flex-col items-center justify-center z-10 group"
+                style={style}
+                animate={{ scale: isCurrent ? 1.2 : 1 }}
+              >
+                  {/* Node Circle */}
+                  <div className={`
+                    w-full h-full rounded-full border-2 flex items-center justify-center text-[10px] font-bold transition-all duration-300 relative bg-[#0a0a0f]
+                    ${isActive
+                        ? "border-blue-500 text-white shadow-[0_0_12px_rgba(59,130,246,0.6)]"
+                        : "border-white/10 text-white/30"
+                    }
+                  `}>
+                      <span className="relative z-10">{i + 1}</span>
+                  </div>
+  
+                  {/* Label (Tooltip style or Text below) */}
+                  <div className="absolute top-full mt-1.5 w-24 text-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity z-50">
+                        <div className="bg-black/90 border border-white/10 rounded px-2 py-1 text-[9px] text-white backdrop-blur-sm shadow-xl">
+                            {item}
+                        </div>
+                  </div>
+              </motion.div>
+            );
+          })}
+  
+          {/* 4. The Glowing Head (Follows the path end) */}
+          {(() => {
+             const { x, y } = getCoords(activeIndex);
+             return (
+                 <motion.div
+                    className="absolute z-20 w-7 h-7 pointer-events-none"
+                    animate={{ 
+                        left: x - 14, // center offset
+                        top: y - 14
+                    }}
+                    transition={{ 
+                        type: "spring", stiffness: 300, damping: 30 
+                    }}
+                 >
+                     <div className="absolute inset-0 bg-blue-500 rounded-full blur-xl opacity-40" />
+                     <div className="absolute inset-2 bg-white rounded-full blur-sm opacity-80" />
+                 </motion.div>
+             )
+          })()}
+  
+        </div>
+      </div>
+    );
+  };
+
 const TimelineSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef(null);
   const [tick, setTick] = useState(0);
-  const listContainer = {
-    hidden: {},
-    show: { transition: { staggerChildren: 0.04 } },
-  };
-  const listItem = {
-    hidden: { opacity: 0, y: 8 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.25 } },
-  };
+
+  useEffect(() => {
+    // Reset tick when changing weeks so animation restarts nicely
+    setTick(0);
+  }, [activeIndex]);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setTick((prev) => prev + 1);
-    }, 2000);
+    }, 1200); // Speed of the velocity animation
     return () => clearInterval(interval);
-  }, []);
+  }, [activeIndex]);
 
-  const makeShortLabel = (text: string) => {
-    const base = text.split(":")[0];
-    if (base.length <= 26) return base;
-    return `${base.slice(0, 26).trim()}...`;
-  };
-
-  const makeBrief = (items: string[], count: number) => {
-    if (items.length <= count) return items;
-    const step = Math.max(1, Math.floor(items.length / count));
-    const picked = items.filter((_, index) => index % step === 0).slice(0, count);
-    return picked.length ? picked : items.slice(0, count);
-  };
-
-  // Auto-advance if not hovering? Or simpler manual control for clarity
-  // Let's stick to scroll-based or simpler click-based for reliability in demo
+  const currentWeek = weeklyTimeline[activeIndex];
+  const execBrief = currentWeek.whatWeDo;
+  const youBrief = currentWeek.whatYouDo; // Show all items
   
-  const execBrief = makeBrief(weeklyTimeline[activeIndex].whatWeDo, 3);
-  const youBrief = makeBrief(weeklyTimeline[activeIndex].whatYouDo, 2);
-  const activeExecIndex = tick % execBrief.length;
+  // Calculate the active execution step based on tick
+  // Cycle through: 0 -> length -> pause -> 0
+  const activeExecIndex = tick % (execBrief.length + 3); // +3 for a pause at the end
+  const clampedExecIndex = Math.min(activeExecIndex, execBrief.length - 1);
+  
   const activeYouIndex = tick % youBrief.length;
+  const execFullDescriptions = (currentWeek as typeof currentWeek & { whatWeDoFull?: string[] }).whatWeDoFull;
 
   return (
     <section className="relative py-32 px-6 bg-white/[0.02]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <p className="text-xs uppercase tracking-[0.4em] text-blue-400 mb-4">Activation Sequence</p>
+          <p className="text-xs uppercase tracking-[0.4em] text-blue-400 mb-4">Layer 2 - Weekly Execution & Go-Live Timeline</p>
           <h2 className="text-4xl md:text-5xl font-bold">4 Weeks to <span className="text-gray-300">Velocity</span></h2>
         </div>
 
@@ -644,7 +817,6 @@ const TimelineSection = () => {
                                 </AnimatePresence>
                             </div>
                         </div>
-                        {/* Left border removed as requested */}
                     </div>
                 ))}
             </div>
@@ -654,7 +826,7 @@ const TimelineSection = () => {
                 {/* Background Glow */}
                 <div className="absolute -inset-4 bg-blue-500/10 blur-3xl rounded-full opacity-50" />
 
-                <div className="relative rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.1] via-white/[0.04] to-transparent overflow-hidden flex flex-col w-full h-full">
+                <div className="relative rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.1] via-white/[0.04] to-transparent overflow-hidden flex flex-col w-full">
                     {/* Header */}
                     <div className="border-b border-white/10 px-5 py-4 flex flex-wrap items-center justify-between gap-3">
                         <div className="flex items-center gap-3">
@@ -671,20 +843,10 @@ const TimelineSection = () => {
                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
                                 <span className="text-[10px] text-blue-400 font-medium">Active</span>
                             </div>
-                            <div className="flex items-center gap-1.5">
-                                {weeklyTimeline.map((_, i) => (
-                                    <span
-                                        key={i}
-                                        className={`h-1.5 w-6 rounded-full transition-colors ${
-                                            i === activeIndex ? "bg-blue-400" : "bg-white/10"
-                                        }`}
-                                    />
-                                ))}
-                            </div>
                         </div>
                     </div>
 
-                    <div className="p-5 flex flex-col h-full">
+                    <div className="p-5 flex flex-col flex-1">
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={activeIndex}
@@ -695,107 +857,77 @@ const TimelineSection = () => {
                                 className="flex flex-col gap-4 h-full"
                             >
                                 {/* Animated Visual Brief */}
-                                <div className="grid lg:grid-cols-2 gap-4">
-                                    <div className="rounded-2xl border border-blue-500/20 bg-blue-500/5 p-4">
-                                        <div className="flex items-center justify-between mb-4">
+                                <div className="grid md:grid-cols-2 gap-4">
+                                    <div className="rounded-2xl border border-blue-500/20 bg-blue-500/5 p-4 relative overflow-hidden flex flex-col">
+                                        <div className="flex items-center justify-between mb-2 relative z-10">
                                             <div className="flex items-center gap-2">
-                                                <div className="w-7 h-7 rounded-lg bg-blue-500/20 flex items-center justify-center">
-                                                    <CheckCircle2 className="w-4 h-4 text-blue-400" />
+                                                <div className="w-6 h-6 rounded-lg bg-blue-500/20 flex items-center justify-center">
+                                                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" />
                                                 </div>
-                                                <h4 className="text-xs font-semibold text-blue-400 uppercase tracking-wider">Execution Flow</h4>
+                                                <h4 className="text-xs font-semibold text-blue-400 uppercase tracking-wider">What we do</h4>
                                             </div>
                                             <span className="text-[10px] text-blue-300/80">
-                                                {weeklyTimeline[activeIndex].whatWeDo.length} actions
+                                                {weeklyTimeline[activeIndex].whatWeDo.length} steps
                                             </span>
                                         </div>
-                                        <div className="relative flex items-center justify-between gap-3">
-                                            <div className="absolute left-3 right-3 top-4 h-px bg-blue-500/20" />
-                                            {execBrief.map((item, i) => {
-                                                const isActive = i === activeExecIndex;
-                                                return (
-                                                    <div key={item} className="relative z-10 flex flex-col items-center text-center gap-2">
-                                                        <motion.div
-                                                            animate={{
-                                                                scale: isActive ? 1.05 : 1,
-                                                                boxShadow: isActive
-                                                                    ? "0 0 18px rgba(59,130,246,0.4)"
-                                                                    : "0 0 0 rgba(0,0,0,0)",
-                                                            }}
-                                                            className={`h-8 w-8 rounded-full border flex items-center justify-center transition-colors ${
-                                                                isActive
-                                                                    ? "border-blue-400 bg-blue-400/20 text-blue-200"
-                                                                    : "border-white/20 bg-black/40 text-white/40"
-                                                            }`}
-                                                        >
-                                                            {i + 1}
-                                                        </motion.div>
-                                                        <span className={`text-[10px] uppercase tracking-wider ${isActive ? "text-white" : "text-white/40"}`}>
-                                                            {makeShortLabel(item)}
-                                                        </span>
-                                                    </div>
-                                                );
-                                            })}
+
+                                        {/* NEW VELOCITY TIMELINE COMPONENT */}
+                                        <div className="relative z-10 flex-1 flex items-center justify-center py-2">
+                                            <VelocityTimeline
+                                                items={weeklyTimeline[activeIndex].whatWeDo}
+                                                activeIndex={clampedExecIndex}
+                                            />
                                         </div>
+
                                         <AnimatePresence mode="wait">
                                             <motion.div
-                                                key={`exec-detail-${activeIndex}-${activeExecIndex}`}
+                                                key={`exec-detail-${activeIndex}-${clampedExecIndex}`}
                                                 initial={{ opacity: 0, y: 6 }}
                                                 animate={{ opacity: 1, y: 0 }}
                                                 exit={{ opacity: 0, y: -6 }}
                                                 transition={{ duration: 0.2 }}
-                                                className="mt-4 rounded-lg border border-blue-500/20 bg-blue-500/10 px-3 py-2 text-[11px] text-white/80"
+                                                className="mt-2 rounded-lg border border-blue-500/20 bg-blue-500/10 px-3 py-2 text-[10px] text-blue-50 leading-relaxed text-center relative z-10"
                                             >
-                                                {execBrief[activeExecIndex]}
+                                                <span className="font-semibold text-blue-400 mr-2">Step {clampedExecIndex + 1}:</span>
+                                                {execFullDescriptions && execFullDescriptions[clampedExecIndex]
+                                                    ? execFullDescriptions[clampedExecIndex]
+                                                    : execBrief[clampedExecIndex]}
                                             </motion.div>
                                         </AnimatePresence>
+
+                                        {/* Background Decoration */}
+                                        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none" />
                                     </div>
 
-                                    <div className="rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-4">
-                                        <div className="flex items-center justify-between mb-4">
-                                            <div className="flex items-center gap-2">
-                                                <div className="w-7 h-7 rounded-lg bg-indigo-500/20 flex items-center justify-center">
-                                                    <Users className="w-4 h-4 text-indigo-400" />
-                                                </div>
-                                                <h4 className="text-xs font-semibold text-indigo-400 uppercase tracking-wider">Your Inputs</h4>
-                                            </div>
-                                            <span className="text-[10px] text-indigo-300/80">
-                                                {weeklyTimeline[activeIndex].whatYouDo.length} inputs
-                                            </span>
+                                    {/* Secondary Inputs Section */}
+                                    <div className="rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-4 flex flex-col">
+                                        <div className="flex items-center gap-2 mb-4">
+                                            <Users className="w-4 h-4 text-indigo-400" />
+                                            <h4 className="text-xs font-semibold text-indigo-400 uppercase tracking-wider">what you do</h4>
                                         </div>
-                                        <div className="flex flex-wrap gap-2">
+                                        <div className="flex flex-col gap-2 flex-1">
                                             {youBrief.map((item, i) => {
                                                 const isActive = i === activeYouIndex;
                                                 return (
                                                     <motion.div
                                                         key={item}
                                                         animate={{
-                                                            scale: isActive ? 1.04 : 1,
+                                                            scale: isActive ? 1.02 : 1,
                                                             borderColor: isActive ? "rgba(99,102,241,0.6)" : "rgba(255,255,255,0.1)",
+                                                            backgroundColor: isActive ? "rgba(99,102,241,0.1)" : "rgba(0,0,0,0.2)"
                                                         }}
-                                                        className="flex items-center gap-2 rounded-full border bg-black/40 px-3 py-2 text-[11px] text-white/70"
+                                                        className="px-3 py-2.5 rounded-lg border text-[11px] text-white/80 flex items-center gap-3"
                                                     >
-                                                        <span className={`h-1.5 w-1.5 rounded-full ${isActive ? "bg-indigo-300" : "bg-white/30"}`} />
-                                                        {makeShortLabel(item)}
+                                                        <div className={`w-1.5 h-1.5 rounded-full shrink-0 ${isActive ? "bg-indigo-400" : "bg-white/20"}`} />
+                                                        <span className="leading-tight">{item}</span>
                                                     </motion.div>
                                                 );
                                             })}
                                         </div>
-                                        <AnimatePresence mode="wait">
-                                            <motion.div
-                                                key={`you-detail-${activeIndex}-${activeYouIndex}`}
-                                                initial={{ opacity: 0, y: 6 }}
-                                                animate={{ opacity: 1, y: 0 }}
-                                                exit={{ opacity: 0, y: -6 }}
-                                                transition={{ duration: 0.2 }}
-                                                className="mt-4 rounded-lg border border-indigo-500/20 bg-indigo-500/10 px-3 py-2 text-[11px] text-white/80"
-                                            >
-                                                {youBrief[activeYouIndex]}
-                                            </motion.div>
-                                        </AnimatePresence>
                                     </div>
                                 </div>
 
-                                {/* Key Outcome - Full Width */}
+                                {/* Key Outcome - Bottom */}
                                 <motion.div
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
@@ -809,7 +941,6 @@ const TimelineSection = () => {
                                         <div className="flex-1 min-w-0">
                                             <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-1 flex items-center gap-2">
                                                 Key Outcome
-                                                <span className="px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-200 text-[9px] font-semibold">Result</span>
                                             </h4>
                                             <p className="text-white/90 text-sm leading-relaxed">
                                                 {weeklyTimeline[activeIndex].outcome}
@@ -831,24 +962,24 @@ const TimelineSection = () => {
 const DealAssistSection = () => {
     const features = [
         {
-            title: "Ghost-free follow-ups",
-            description: "Automated sequences that feel personal, ensuring no prospect falls through the cracks"
+            title: "Rapport-first connections",
+            description: "We send connection requests right after the demo when the conversation is warm, and familiarity already exists, not cold and forced."
         },
         {
-            title: "Strategic content visibility",
-            description: "Targeted content placement across LinkedIn feeds to reinforce your value proposition"
+            title: "Echo-chamber content",
+            description: "We publish posts that reflect the exact problems discussed on the call, so your perspective keeps showing up while the prospect is thinking through options."
         },
         {
-            title: "Competitor displacement",
-            description: "Stay top-of-mind while competitors fade into the background noise"
+            title: "High value engagement",
+            description: "No drive-by likes. We engage with prospect content through thoughtful comments that add context and signal real intent to collaborate."
         },
         {
-            title: "Multi-touch engagement",
-            description: "Coordinated touchpoints across email, LinkedIn, and retargeting channels"
+            title: "Intentional presence",
+            description: "Subtle profile interactions and well-timed skill endorsements keep your team visible without ever feeling pushy or salesy."
         },
         {
-            title: "Intent-based timing",
-            description: "Reach prospects at the exact moment they are researching solutions like yours"
+            title: "Multi-node visibility",
+            description: "Prospects don’t just see you in their inbox. Your expertise shows up across the channels where decisions are actually taking shape."
         }
     ];
 
@@ -856,16 +987,12 @@ const DealAssistSection = () => {
         <section className="py-24 px-6 overflow-hidden">
             <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
                 <motion.div variants={staggerContainer} initial="hidden" whileInView="show" viewport={{ once: true }}>
-                    <motion.div variants={fadeUp} className="flex items-center gap-2 mb-4">
-                         <span className="flex h-2 w-2 rounded-full bg-blue-500"></span>
-                         <span className="text-xs font-mono text-blue-400 uppercase">Always On</span>
-                    </motion.div>
                     <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold mb-4">
-                        The Invisible {" "}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">Salesperson</span>
+                        Deal Assist - For Where Deals {" "}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">Get Won (or Lost)</span>
                     </motion.h2>
                     <motion.p variants={fadeUp} className="text-white/60 text-base mb-6 leading-relaxed">
-                        Deals don&apos;t close in the inbox. They close in the mind. We surround your prospects with strategic visibility across LinkedIn and news feeds, keeping you top-of-mind without being annoying.
+                        The inbox is not the place to close deals. They close in the mind. Deal Assist is our proprietary Invisible Salesperson to surround your prospects with strategic visibility across LinkedIn and news feeds, keeping you top-of-mind without being annoying.
                     </motion.p>
                     <motion.ul variants={fadeUp} className="space-y-4">
                         {features.map((feature, i) => (
@@ -883,25 +1010,25 @@ const DealAssistSection = () => {
                 </motion.div>
 
                 {/* Simulated Feed UI - Realistic LinkedIn Style */}
-                <motion.div
+                <motion.div 
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
                     className="relative"
                 >
                     <div className="absolute -inset-8 bg-blue-500/20 blur-[60px] rounded-full opacity-30" />
-
+                    
                     {/* Main Feed Card */}
                     <div className="relative bg-[#1B1F23] border border-white/10 rounded-xl shadow-2xl max-w-md mx-auto overflow-hidden">
-
+                        
                          {/* LinkedIn Post Header */}
                          <div className="p-4 pb-3">
                              <div className="flex gap-3">
                                  {/* Profile Picture */}
                                  <div className="relative">
-                                     <img
-                                         src="/images/ss.png"
-                                         alt="Rahul Dev"
+                                     <img 
+                                         src="/images/ss.png" 
+                                         alt="Rahul Dev" 
                                          className="w-12 h-12 rounded-full object-cover"
                                      />
                                      <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-[#0A66C2] rounded-full border-2 border-[#1B1F23] flex items-center justify-center">
@@ -1056,9 +1183,9 @@ const SignalIntelligenceSection = () => {
           {/* Header */}
           <div className="text-center mb-8">
             <p className="text-xs uppercase tracking-[0.3em] text-indigo-400 mb-4">Signal Intelligence</p>
-            <h2 className="text-3xl font-bold mb-4">11 Signals, One Source of Truth.</h2>
+            <h2 className="text-3xl font-bold mb-4">Campaign Intelligence, We Operate With.</h2>
             <p className="text-white/60 text-sm">
-              We don&apos;t just guess. We listen. Tap any signal to understand why it matters.
+              We work across 11 signal categories, each chosen for a specific strategic reason
             </p>
           </div>
 
@@ -1235,7 +1362,7 @@ const SignalIntelligenceSection = () => {
                                         background: isActive
                                             ? 'linear-gradient(90deg, rgba(129,140,248,0.5), rgba(129,140,248,0.1))'
                                             : 'linear-gradient(90deg, rgba(255,255,255,0.1), transparent)'
-                                    }}
+                                   }}
                                 />
 
                                 {/* Signal Button */}
@@ -1276,9 +1403,9 @@ const SignalIntelligenceSection = () => {
             {/* Info Card */}
             <div className="flex flex-col">
                 <p className="text-xs uppercase tracking-[0.3em] text-indigo-400 mb-4">Signal Intelligence</p>
-                <h2 className="text-4xl font-bold mb-6">11 Signals, <br/> One Source of Truth.</h2>
+                <h2 className="text-4xl font-bold mb-6">Campaign Intelligence, <br/> We Operate With</h2>
                 <p className="text-white/60 mb-6">
-                    We don&apos;t just guess. We listen. Click any signal to understand why it matters for your pipeline.
+                    We work across 11 signal categories, each chosen for a specific strategic reason
                 </p>
 
                 {/* Active Signal Detail Card */}
@@ -1325,28 +1452,279 @@ const SignalIntelligenceSection = () => {
     );
 };
 
+// Team Section Data
+const accountManagerTasks = [
+    "Owning and qualifying every positive response received",
+    "Conducting thorough pre-meeting qualification to confirm fit, relevance, and urgency",
+    "Sending structured assessment notes before every meeting",
+    "Handling all scheduling and rescheduling friction",
+    "Supporting objection handling with context-aware rebuttals",
+    "Tracking each deal across stages with full visibility",
+    "Attending weekly pipeline calls to report progress and surface risks"
+];
+
+const qualificationChecks = [
+    { label: "Fit of the use case", icon: "check" },
+    { label: "Relevance to stakeholders", icon: "check" },
+    { label: "Purchase purpose and urgency", icon: "check" }
+];
+
+const contentResearcherPoints = [
+    {
+        title: "Intelligence-led foundation",
+        description: "Every campaign begins with deep ICP research and strategic framing, built around how different roles justify decisions internally."
+    },
+    {
+        title: "LinkedIn-native personalization",
+        description: "Persona-specific pain points are fused with LinkedIn-sourced signals so outreach reflects how prospects already think and communicate."
+    },
+    {
+        title: "Proof-backed value",
+        description: "Content translates your product features into ROI conversations using use cases and social proof."
+    }
+];
+
+const TeamSection = () => {
+    return (
+        <section className="py-24 px-6 bg-[#050508] relative overflow-hidden">
+            {/* Background Elements */}
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px] opacity-30" />
+            <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[120px]" />
+            <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[100px]" />
+
+            <div className="max-w-6xl mx-auto relative z-10">
+                {/* Section Header */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-16"
+                >
+                    <p className="text-xs uppercase tracking-[0.3em] text-indigo-400 mb-4">The Human Layer</p>
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+                        Your Extended <span className="text-white/40">Revenue Team</span>
+                    </h2>
+                    <p className="text-white/50 max-w-2xl mx-auto">
+                        Dedicated specialists who operate as an extension of your sales organization
+                    </p>
+                </motion.div>
+
+                {/* Two Column Layout */}
+                <div className="grid lg:grid-cols-2 gap-8">
+                    {/* Account Managers Card */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="relative group"
+                    >
+                        <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-transparent rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="relative bg-white/[0.03] border border-white/10 rounded-3xl p-8 h-full hover:border-indigo-500/30 transition-colors duration-300">
+                            {/* Header */}
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="w-12 h-12 rounded-2xl bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center">
+                                    <Users className="w-6 h-6 text-indigo-400" />
+                                </div>
+                                <div>
+                                    <h3 className="text-xl font-bold text-white">Account Managers</h3>
+                                    <p className="text-xs text-indigo-400 uppercase tracking-wider">Dedicated to Your Success</p>
+                                </div>
+                            </div>
+
+                            {/* Description */}
+                            <p className="text-white/60 text-sm leading-relaxed mb-6">
+                                Every client is assigned a dedicated Account Manager deeply trained on your product, ICP, and sales motion. They operate as an extension of your sales team, owning everything from the first positive response to deal closure.
+                            </p>
+
+                            {/* Qualification Checks */}
+                            <div className="bg-white/[0.02] border border-white/5 rounded-xl p-4 mb-6">
+                                <p className="text-xs text-white/40 uppercase tracking-wider mb-3">Pre-Meeting Qualification</p>
+                                <div className="space-y-2">
+                                    {qualificationChecks.map((check, i) => (
+                                        <div key={i} className="flex items-center gap-3">
+                                            <div className="w-5 h-5 rounded-full bg-indigo-500/20 flex items-center justify-center">
+                                                <CheckCircle2 className="w-3 h-3 text-indigo-400" />
+                                            </div>
+                                            <span className="text-sm text-white/70">{check.label}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Tasks List */}
+                            <div className="space-y-3">
+                                <p className="text-xs text-white/40 uppercase tracking-wider mb-2">Their Mandate Spans</p>
+                                {accountManagerTasks.slice(0, 5).map((task, i) => (
+                                    <div key={i} className="flex items-start gap-3">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2 shrink-0" />
+                                        <span className="text-sm text-white/60 leading-relaxed">{task}</span>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* Weekly Pipeline Badge */}
+                            <div className="mt-6 pt-6 border-t border-white/5">
+                                <div className="flex items-center gap-3 text-sm">
+                                    <div className="px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20">
+                                        <span className="text-indigo-400 text-xs font-medium">Weekly Pipeline Calls</span>
+                                    </div>
+                                    <span className="text-white/40 text-xs">Report progress • Surface risks • Align actions</span>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    {/* Content Researchers Card */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="relative group"
+                    >
+                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="relative bg-white/[0.03] border border-white/10 rounded-3xl p-8 h-full hover:border-purple-500/30 transition-colors duration-300">
+                            {/* Header */}
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="w-12 h-12 rounded-2xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center">
+                                    <MessageCircle className="w-6 h-6 text-purple-400" />
+                                </div>
+                                <div>
+                                    <h3 className="text-xl font-bold text-white">Content Researchers</h3>
+                                    <p className="text-xs text-purple-400 uppercase tracking-wider">Strategic Messaging</p>
+                                </div>
+                            </div>
+
+                            {/* Tagline */}
+                            <div className="bg-gradient-to-r from-purple-500/10 to-indigo-500/10 border border-purple-500/20 rounded-xl p-4 mb-6">
+                                <p className="text-white/90 font-medium text-sm">
+                                    Bypassing the Sales Filters of the C-Suite
+                                </p>
+                                <p className="text-white/50 text-xs mt-1">
+                                    Writing messaging flows that trigger stakeholder consensus and dissolve resistance
+                                </p>
+                            </div>
+
+                            {/* Key Points */}
+                            <div className="space-y-5">
+                                {contentResearcherPoints.map((point, i) => (
+                                    <div key={i} className="group/item">
+                                        <div className="flex items-start gap-3">
+                                            <div className="w-6 h-6 rounded-lg bg-purple-500/20 flex items-center justify-center mt-0.5 shrink-0">
+                                                <span className="text-purple-400 text-xs font-bold">{i + 1}</span>
+                                            </div>
+                                            <div>
+                                                <h4 className="text-sm font-semibold text-white mb-1">{point.title}</h4>
+                                                <p className="text-xs text-white/50 leading-relaxed">{point.description}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* Bottom Highlight */}
+                            <div className="mt-6 pt-6 border-t border-white/5">
+                                <div className="flex flex-wrap gap-2">
+                                    <span className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-white/50">ICP Research</span>
+                                    <span className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-white/50">LinkedIn Signals</span>
+                                    <span className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-white/50">ROI Messaging</span>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+const performancePhilosophy = [
+    {
+        title: "Momentum > Noise",
+        description: "We ignore Open Rates to focus on Deal Velocity and Opportunity Tracking."
+    },
+    {
+        title: "Human-in-the-loop",
+        description: "Every lead handoff is human-verified and context-heavy."
+    },
+    {
+        title: "1 AE = 10 AEs",
+        description: "Your team handles 3x more volume because we've removed the chasing phase."
+    },
+    {
+        title: "No siloed reporting",
+        description: "Our weekly reviews focus on Opportunity Tracking, not just activity logs."
+    },
+    {
+        title: "Growth that is expected",
+        description: "An intent-led GTM engine that is systematic and can scale to meet your revenue targets."
+    }
+];
+
 const TalentSection = () => {
     return (
-        <section className="py-24 px-6 bg-[#080808]">
-            <div className="max-w-7xl mx-auto">
-                <div className="text-center mb-16">
-                     <h2 className="text-3xl md:text-5xl font-bold">Human Expertise, <span className="text-gray-300">Algorithmic Scale</span></h2>
-                </div>
-                <div className="grid md:grid-cols-3 gap-8">
-                    {talentPillars.map((pillar, i) => (
+        <section className="py-20 px-6 bg-[#080808] relative overflow-hidden">
+            {/* Background */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(168,85,247,0.08),transparent_50%)]" />
+
+            <div className="max-w-5xl mx-auto relative z-10">
+                {/* Header - Centered */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-12"
+                >
+                    <p className="text-xs uppercase tracking-[0.3em] text-purple-400 mb-4">Philosophy</p>
+                    <h2 className="text-3xl md:text-4xl font-bold">
+                        Our Performance <span className="text-white/40">Philosophy</span>
+                    </h2>
+                </motion.div>
+
+                {/* Philosophy Grid - 3 top, 2 bottom centered */}
+                <div className="grid md:grid-cols-3 gap-x-8 gap-y-6">
+                    {performancePhilosophy.slice(0, 3).map((item, i) => (
                         <motion.div
                             key={i}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 15 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: i * 0.2 }}
-                            className="group p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/10 hover:bg-white/[0.04] transition-all"
+                            transition={{ delay: i * 0.1 }}
+                            className="group text-center"
                         >
-                            <div className="mb-6 inline-flex p-3 rounded-xl bg-gradient-to-br from-gray-800 to-black border border-white/10 group-hover:border-purple-500/50 transition-colors">
-                                <pillar.icon className="w-6 h-6 text-white group-hover:text-purple-400 transition-colors" />
+                            <div className="inline-flex w-10 h-10 rounded-full bg-purple-500/10 border border-purple-500/20 items-center justify-center mb-3 group-hover:bg-purple-500/20 transition-colors">
+                                <CheckCircle2 className="w-5 h-5 text-purple-400" />
                             </div>
-                            <h3 className="text-xl font-bold mb-3">{pillar.title}</h3>
-                            <p className="text-white/50 text-sm leading-relaxed">{pillar.description}</p>
+                            <h3 className="text-base font-semibold text-white mb-1.5 group-hover:text-purple-300 transition-colors">
+                                {item.title}
+                            </h3>
+                            <p className="text-white/50 text-sm leading-relaxed">
+                                {item.description}
+                            </p>
+                        </motion.div>
+                    ))}
+                </div>
+
+                {/* Bottom 2 items - centered */}
+                <div className="grid md:grid-cols-2 gap-x-8 gap-y-6 mt-6 max-w-2xl mx-auto">
+                    {performancePhilosophy.slice(3).map((item, i) => (
+                        <motion.div
+                            key={i + 3}
+                            initial={{ opacity: 0, y: 15 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: (i + 3) * 0.1 }}
+                            className="group text-center"
+                        >
+                            <div className="inline-flex w-10 h-10 rounded-full bg-purple-500/10 border border-purple-500/20 items-center justify-center mb-3 group-hover:bg-purple-500/20 transition-colors">
+                                <CheckCircle2 className="w-5 h-5 text-purple-400" />
+                            </div>
+                            <h3 className="text-base font-semibold text-white mb-1.5 group-hover:text-purple-300 transition-colors">
+                                {item.title}
+                            </h3>
+                            <p className="text-white/50 text-sm leading-relaxed">
+                                {item.description}
+                            </p>
                         </motion.div>
                     ))}
                 </div>
@@ -1420,12 +1798,12 @@ const FinalCTASection = () => (
             <p className="text-xl text-white/60 mb-12 max-w-2xl mx-auto">
                 Stop relying on luck. Start engineering your revenue with a system built for the modern SaaS landscape.
             </p>
-            <Link
+            <a
               href="/contact"
               className="bg-white text-black px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform flex justify-center w-fit items-center gap-2 mx-auto"
             >
               Build Your Predictable Pipeline <ArrowRight className="w-5 h-5" />
-            </Link>
+            </a>
         </div>
     </section>
 )
