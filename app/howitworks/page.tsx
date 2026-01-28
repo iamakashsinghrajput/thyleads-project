@@ -571,10 +571,10 @@ const SystemNode = ({
 const VelocityTimeline = ({ items, activeIndex }: { items: string[]; activeIndex: number }) => {
     // Configuration
     const columns = 4; // Set to 4 columns as requested (1->2->3->4)
-    const itemWidth = 28; // Balanced node size
-    const itemHeight = 28;
-    const xGap = 36; // Optimized horizontal spacing
-    const yGap = 36; // Optimized vertical spacing
+    const itemWidth = 40; // Larger node size for bigger numbers
+    const itemHeight = 40;
+    const xGap = 32; // Adjusted horizontal spacing
+    const yGap = 32; // Adjusted vertical spacing
   
     // Calculate total width/height for SVG viewBox
     const totalWidth = columns * itemWidth + (columns - 1) * xGap;
@@ -694,7 +694,7 @@ const VelocityTimeline = ({ items, activeIndex }: { items: string[]; activeIndex
               >
                   {/* Node Circle */}
                   <div className={`
-                    w-full h-full rounded-full border-2 flex items-center justify-center text-[10px] font-bold transition-all duration-300 relative bg-[#0a0a0f]
+                    w-full h-full rounded-full border-2 flex items-center justify-center text-sm font-bold transition-all duration-300 relative bg-[#0a0a0f]
                     ${isActive
                         ? "border-blue-500 text-white shadow-[0_0_12px_rgba(59,130,246,0.6)]"
                         : "border-white/10 text-white/30"
@@ -713,25 +713,6 @@ const VelocityTimeline = ({ items, activeIndex }: { items: string[]; activeIndex
             );
           })}
   
-          {/* 4. The Glowing Head (Follows the path end) */}
-          {(() => {
-             const { x, y } = getCoords(activeIndex);
-             return (
-                 <motion.div
-                    className="absolute z-20 w-7 h-7 pointer-events-none"
-                    animate={{ 
-                        left: x - 14, // center offset
-                        top: y - 14
-                    }}
-                    transition={{ 
-                        type: "spring", stiffness: 300, damping: 30 
-                    }}
-                 >
-                     <div className="absolute inset-0 bg-blue-500 rounded-full blur-xl opacity-40" />
-                     <div className="absolute inset-2 bg-white rounded-full blur-sm opacity-80" />
-                 </motion.div>
-             )
-          })()}
   
         </div>
       </div>
