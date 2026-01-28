@@ -1793,7 +1793,7 @@ const FinalCTASection = () => (
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-indigo-900/10" />
         <div className="max-w-4xl mx-auto text-center relative z-10">
             <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8">
-                Ready to <span className="text-gray-300">Scale?</span>
+                Ready to change meetings into <span className="text-gray-300">closed wons?</span>
             </h2>
             <p className="text-xl text-white/60 mb-12 max-w-2xl mx-auto">
                 Stop relying on luck. Start engineering your revenue with a system built for the modern SaaS landscape.
@@ -1802,7 +1802,7 @@ const FinalCTASection = () => (
               href="/contact"
               className="bg-white text-black px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform flex justify-center w-fit items-center gap-2 mx-auto"
             >
-              Build Your Predictable Pipeline <ArrowRight className="w-5 h-5" />
+              Book a Demo <ArrowRight className="w-5 h-5" />
             </a>
         </div>
     </section>
