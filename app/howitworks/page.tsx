@@ -1289,7 +1289,7 @@ const TeamSection = () => {
 
                             {/* Description */}
                             <p className="text-white/60 text-sm leading-relaxed mb-5">
-                                Dedicated Account Manager trained on your product, ICP, and sales motion. They own everything from first response to deal closure.
+                                Dedicated Account Manager trained on your product, ICP, and sales motion. They manage the back-and-forth and keep momentum alive so your Sales Rep can focus on closing.
                             </p>
 
                             {/* Qualification Checks */}
