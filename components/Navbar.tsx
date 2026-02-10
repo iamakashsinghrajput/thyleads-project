@@ -9,31 +9,14 @@ import Link from 'next/link';
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [visible, setVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      // Update scrolled state
-      setScrolled(currentScrollY > 20);
-
-      // Show navbar when scrolling up, hide when scrolling down
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down
-        setVisible(false);
-      } else {
-        // Scrolling up
-        setVisible(true);
-      }
-
-      setLastScrollY(currentScrollY);
+      setScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   const navLinks = [
     { name: 'HOW IT WORKS?', href: '/howitworks' },
@@ -42,7 +25,7 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className={`fixed left-1/2 -translate-x-1/2 z-50 w-full max-w-4xl px-6 transition-all duration-500 ease-in-out ${visible ? 'top-6 opacity-100' : '-top-24 opacity-0'}`}>
+    <nav className="fixed left-1/2 -translate-x-1/2 z-50 w-full max-w-4xl px-6 top-6">
       <div className={`flex items-center justify-between border border-white/10 rounded-2xl backdrop-blur-md bg-black/20 py-3 px-6 lg:px-8 transition-all duration-300 ${scrolled ? 'bg-black/60' : 'bg-black/20'}`}>
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-1 cursor-pointer hover:opacity-80 transition-opacity">
@@ -74,14 +57,19 @@ const Navbar: React.FC = () => {
           ))}
         </div>
 
-        {/* Action Button: Pill-shaped with Aceternity Border Beam Effect */}
+        {/* Action Button: Animated rotating border */}
         <div className="hidden md:block">
           <Link
             href="/contact"
-            className="flex items-center space-x-2 px-6 py-2.5 bg-black border border-white/10 rounded-full hover:bg-white hover:text-black transition-all duration-300 group cursor-pointer"
+            className="relative inline-flex items-center justify-center rounded-full p-[1.5px] overflow-hidden group cursor-pointer"
           >
-            <span className="text-[11px] font-bold uppercase tracking-[0.1em]">Let&apos;s Talk</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            {/* Rotating gradient border */}
+            <span className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0%,transparent_30%,#a855f7_50%,#ffffff_60%,transparent_70%,transparent_100%)]" />
+            {/* Inner button content */}
+            <span className="relative flex items-center space-x-2 px-6 py-2.5 bg-black rounded-full group-hover:bg-white group-hover:text-black transition-all duration-300">
+              <span className="text-[11px] font-bold uppercase tracking-[0.1em]">Let&apos;s Talk</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </span>
           </Link>
         </div>
 

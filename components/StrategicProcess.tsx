@@ -584,7 +584,7 @@ const SaaSOutboundFramework: React.FC = () => {
     // Outer container with extra height for scroll space (desktop only)
     <div ref={containerRef} className="relative h-auto lg:h-[350vh]">
       {/* Sticky inner section that stays in place */}
-      <section className="lg:sticky top-0 w-full py-12 lg:py-0 lg:h-screen bg-[#030305] text-white flex flex-col items-center px-4 lg:px-8 overflow-hidden font-sans">
+      <section className="lg:sticky lg:top-5 w-full pt-12 pb-12 lg:pb-0 lg:h-[calc(100vh-5rem)] bg-[#030305] text-white flex flex-col items-center px-4 lg:px-8 overflow-hidden font-sans">
 
       {/* Background Ambience */}
       <div className="absolute inset-0 pointer-events-none">
