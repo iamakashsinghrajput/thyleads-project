@@ -1,0 +1,862 @@
+THYLEADS — GOOGLE ADS CAMPAIGN BLUEPRINT
+FinTech & MarTech Verticals
+========================================================================================================================
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+CAMPAIGN 1: FINTECH VERTICAL
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+————————————————————————————————————————
+STEP 1: CHOOSE YOUR OBJECTIVE
+————————————————————————————————————————
+
+Select:                 Leads
+Goal:                   Website visits, Phone calls, Form submissions
+Conversion goals:       Form fill on /contact page, Book-a-call button click
+
+
+————————————————————————————————————————
+STEP 2: SELECT CAMPAIGN TYPE
+————————————————————————————————————————
+
+Select:                 Search
+
+
+————————————————————————————————————————
+STEP 3: CAMPAIGN NAME & NETWORK SETTINGS
+————————————————————————————————————————
+
+Campaign name:          ThyLeads — FinTech — Search — Lead Gen
+
+Networks:
+  Google Search Network:    ON
+  Google Search Partners:   OFF
+  Google Display Network:   OFF  (uncheck this — it wastes budget on Search campaigns)
+
+
+————————————————————————————————————————
+STEP 4: BIDDING
+————————————————————————————————————————
+
+Bid strategy:           Maximize Conversions
+Target CPA:             Leave blank for the first 2 weeks.
+                        After 30+ conversions, set target CPA based on actual data.
+                        Aim for $30–60 per lead depending on geo.
+
+
+————————————————————————————————————————
+STEP 5: CAMPAIGN SETTINGS
+————————————————————————————————————————
+
+LOCATIONS
+  Target these countries:
+    - India
+    - United States
+    - United Kingdom
+    - Singapore
+    - UAE (Dubai)
+    - Southeast Asia (if relevant)
+
+  Location options:     Select "Presence: People in or regularly in your targeted locations"
+                        DO NOT select "Presence or interest" — that wastes budget.
+
+LANGUAGES
+  Select:               English
+
+AUDIENCES (Observation Mode — Don't restrict targeting, just bid higher)
+  In-market segments:
+    - Financial Services
+    - Business Financial Services
+    - Accounting & Finance Software
+    - Business Services > Business Technology
+
+  Custom segment (create new):
+    Name:               FinTech Decision Makers
+    People who searched for:
+      fintech sales pipeline
+      b2b fintech lead generation
+      fintech outbound sales
+      sell to banks
+      sell to financial institutions
+      fintech saas growth
+      fintech sdr hiring
+      financial services outbound
+
+AD SCHEDULE
+  Monday to Friday:     8:00 AM – 8:00 PM (target timezone)
+  Saturday:             9:00 AM – 2:00 PM
+  Sunday:               OFF
+
+START & END DATE
+  Start date:           Your launch date
+  End date:             None (run continuously, optimize weekly)
+
+
+————————————————————————————————————————
+STEP 6: AD GROUPS
+————————————————————————————————————————
+
+
+- - - - - - - - - - - - - - - - - - - -
+AD GROUP 1: FinTech — Outbound Agency
+- - - - - - - - - - - - - - - - - - - -
+
+KEYWORDS (copy-paste into Google Ads keyword field):
+
+Exact match:
+  [b2b lead generation for fintech]
+  [fintech outbound agency]
+  [fintech sales agency]
+  [lead generation for financial services]
+  [outbound sales for fintech companies]
+  [fintech appointment setting]
+  [sell to banks and financial institutions]
+
+Phrase match:
+  "fintech lead generation agency"
+  "outbound agency for fintech"
+  "b2b sales for fintech"
+  "financial services lead generation"
+  "fintech demand generation"
+  "fintech sdr outsourcing"
+
+Broad match modifier:
+  +fintech +lead +generation +agency
+  +fintech +outbound +sales
+  +financial +services +outbound +agency
+  +fintech +b2b +pipeline
+
+
+NEGATIVE KEYWORDS (add at campaign level):
+  free
+  template
+  course
+  jobs
+  hiring
+  intern
+  salary
+  tutorial
+  DIY
+  software tool
+  platform download
+  crypto
+  cryptocurrency
+  personal finance
+  stock trading
+  insurance agent
+  loan leads
+  mortgage leads
+
+
+RESPONSIVE SEARCH AD 1:
+
+  Headlines (max 30 characters each — Google shows 3 at a time):
+
+    H1:   FinTech Outbound Agency              (23 chars)    [PIN to Position 1]
+    H2:   90+ Meetings in 90 Days              (24 chars)
+    H3:   Sell to Banks & Enterprises           (28 chars)
+    H4:   10:1 ROI — Proven Results             (26 chars)
+    H5:   AI-Powered FinTech Pipeline           (28 chars)
+    H6:   Book Free Strategy Call               (24 chars)    [PIN to Position 3]
+    H7:   3X Your FinTech Pipeline              (25 chars)
+    H8:   No Junk Leads — Only SQLs             (26 chars)
+    H9:   Trusted by SaaS Leaders               (24 chars)
+    H10:  Dedicated FinTech GTM Pod             (26 chars)
+    H11:  Scale Without Hiring SDRs             (26 chars)
+    H12:  Multi-Channel Outbound                (23 chars)
+    H13:  95%+ Meeting Show Rate                (23 chars)
+    H14:  Non-Compete Guarantee                 (22 chars)
+    H15:  30% SQL-to-Close Rate                 (22 chars)
+
+  Descriptions (max 90 characters each — Google shows 2 at a time):
+
+    D1:   We help FinTech SaaS companies book qualified meetings with banking & finance decision-makers.
+    D2:   AI-powered outbound + human context. Email, LinkedIn, Calls & WhatsApp. 95%+ show rate.
+    D3:   Dedicated GTM pod for FinTech. Intent-driven targeting. Live dashboards. Weekly syncs.
+    D4:   Stop chasing cold leads. We deliver pre-qualified meetings with CFOs, CTOs & VPs at banks.
+
+  Final URL:        https://thyleads.com
+  Display Path 1:   fintech
+  Display Path 2:   outbound
+  (Ad will show as: thyleads.com/fintech/outbound)
+
+
+RESPONSIVE SEARCH AD 2:
+
+  Headlines:
+
+    H1:   FinTech Lead Gen Agency               (23 chars)
+    H2:   Reach Banking Decision-Makers          (30 chars)
+    H3:   Pipeline Built in 3 Weeks              (26 chars)
+    H4:   SaaS-Only FinTech Experts              (26 chars)
+    H5:   Get Your Free Pipeline Audit           (29 chars)
+    H6:   Outbound That Closes Deals             (27 chars)
+    H7:   Signal-Driven, Not Spam                (24 chars)
+    H8:   6-Week Full Setup Included             (27 chars)
+    H9:   CRM Integration Built In               (25 chars)
+    H10:  From ICP to Booked Meetings            (28 chars)
+    H11:  FinTech Sales, Systematized            (28 chars)
+    H12:  60% Faster Deal Velocity               (25 chars)
+    H13:  Fraction of In-House Cost              (26 chars)
+    H14:  Compliance-Aware Outreach              (26 chars)
+    H15:  Book a Demo — It's Free                (24 chars)
+
+  Descriptions:
+
+    D1:   FinTech sales cycles are long. We shorten them with multi-threaded outbound and deal assist.
+    D2:   Sell to banks, NBFCs, insurers & payment cos. We build the pipeline — your AEs close it.
+    D3:   Waterfall enrichment. Intent data. Multi-channel strike. Built for FinTech sales complexity.
+    D4:   Your FinTech buyers are hard to reach. We map stakeholders and book meetings that stick.
+
+  Final URL:        https://thyleads.com/howitworks
+  Display Path 1:   fintech
+  Display Path 2:   leads
+
+
+- - - - - - - - - - - - - - - - - - - -
+AD GROUP 2: FinTech — SDR Outsourcing
+- - - - - - - - - - - - - - - - - - - -
+
+KEYWORDS:
+
+Exact match:
+  [outsource sdr fintech]
+  [fintech sdr as a service]
+  [outsourced sales team fintech]
+  [fintech sales outsourcing]
+  [virtual sdr team for fintech]
+
+Phrase match:
+  "fintech sdr outsourcing"
+  "outsource fintech sales team"
+  "fintech sales development outsourcing"
+  "hire sdr team fintech"
+
+Broad match modifier:
+  +outsource +sdr +fintech
+  +fintech +sales +development +outsource
+
+
+RESPONSIVE SEARCH AD:
+
+  Headlines:
+
+    H1:   Outsource FinTech SDR Team             (27 chars)
+    H2:   Scale Without Hiring                   (20 chars)
+    H3:   Dedicated FinTech GTM Pod              (26 chars)
+    H4:   Results from Week 3                    (20 chars)
+    H5:   Fraction of In-House Cost              (26 chars)
+    H6:   Book Free Strategy Call                (24 chars)
+    H7:   AI + Human Outbound System             (27 chars)
+    H8:   90+ Qualified Meetings                 (22 chars)
+    H9:   Full Pipeline Visibility               (25 chars)
+    H10:  No Lock-In Contracts                   (21 chars)
+    H11:  Weekly GTM Syncs Included              (26 chars)
+    H12:  Live Dashboards & Reports              (26 chars)
+    H13:  Email + LinkedIn + Calls               (25 chars)
+    H14:  FinTech Industry Experts               (25 chars)
+    H15:  Non-Compete Assurance                  (22 chars)
+
+  Descriptions:
+
+    D1:   Why hire 3 SDRs when one GTM pod delivers 90+ qualified FinTech meetings in 90 days?
+    D2:   Dedicated Slack channel, weekly syncs, live dashboards. Full visibility — no black box.
+    D3:   We handle ICP targeting, enrichment, outreach & qualification. You just close the deals.
+    D4:   FinTech-focused SDR team with compliance-aware outreach. CRM integrated from day one.
+
+  Final URL:        https://thyleads.com
+  Display Path 1:   fintech
+  Display Path 2:   sdr-team
+
+
+- - - - - - - - - - - - - - - - - - - -
+AD GROUP 3: FinTech — Pipeline & Growth
+- - - - - - - - - - - - - - - - - - - -
+
+KEYWORDS:
+
+Exact match:
+  [fintech pipeline generation]
+  [grow fintech saas revenue]
+  [fintech demand generation agency]
+  [b2b fintech growth agency]
+  [fintech go to market agency]
+
+Phrase match:
+  "fintech pipeline building"
+  "scale fintech saas"
+  "fintech gtm agency"
+  "fintech growth partner"
+
+Broad match modifier:
+  +fintech +pipeline +generation
+  +fintech +demand +generation
+  +fintech +gtm +agency
+
+
+RESPONSIVE SEARCH AD:
+
+  Headlines:
+
+    H1:   Grow Your FinTech Pipeline             (27 chars)
+    H2:   3X Pipeline in 90 Days                 (22 chars)
+    H3:   FinTech GTM Engineered                 (23 chars)
+    H4:   Signal-Driven Outbound                 (23 chars)
+    H5:   Book Free Pipeline Audit               (25 chars)
+    H6:   10:1 ROI — Case Studies                (24 chars)
+    H7:   Reach CFOs & CTOs Faster               (25 chars)
+    H8:   Intent Data + AI Outreach              (26 chars)
+    H9:   Multi-Channel Execution                (24 chars)
+    H10:  Deal Assist Included                   (21 chars)
+    H11:  From Signal to Close                   (21 chars)
+    H12:  95%+ Show Rate Meetings                (24 chars)
+    H13:  Verified Decision-Makers               (25 chars)
+    H14:  Dedicated FinTech Team                 (23 chars)
+    H15:  Stop Guessing — Start Closing          (30 chars)
+
+  Descriptions:
+
+    D1:   Your FinTech pipeline shouldn't depend on luck. We engineer repeatable outbound systems.
+    D2:   Intent signals + AI personalization + human context = meetings with buyers ready to talk.
+    D3:   From seed to Series D — we've scaled FinTech pipelines across payments, lending & banking.
+    D4:   Deal momentum. Multi-threading. Stakeholder mapping. We don't stop at the first meeting.
+
+  Final URL:        https://thyleads.com/casestudies
+  Display Path 1:   fintech
+  Display Path 2:   pipeline
+
+
+————————————————————————————————————————
+STEP 7: AD EXTENSIONS (FinTech Campaign)
+————————————————————————————————————————
+
+SITELINK EXTENSIONS (add 4 sitelinks):
+
+  Sitelink 1:
+    Sitelink text:          How It Works
+    Description line 1:     6-week setup. Results by week 3.
+    Description line 2:     See our full process breakdown.
+    Final URL:              https://thyleads.com/howitworks
+
+  Sitelink 2:
+    Sitelink text:          CleverTap: 3X Pipeline
+    Description line 1:     90+ qualified meetings in 90 days
+    Description line 2:     30% SQL-to-close rate achieved.
+    Final URL:              https://thyleads.com/casestudies/clevertap
+
+  Sitelink 3:
+    Sitelink text:          VWO: 95%+ Show Rate
+    Description line 1:     Low no-show. High-quality leads.
+    Description line 2:     Quick adaptation. Real results.
+    Final URL:              https://thyleads.com/casestudies/vwo
+
+  Sitelink 4:
+    Sitelink text:          Book a Strategy Call
+    Description line 1:     Free 30-min pipeline audit.
+    Description line 2:     No commitment required.
+    Final URL:              https://thyleads.com/contact
+
+
+CALLOUT EXTENSIONS (add all 10):
+  1.  95%+ Show Rate
+  2.  Non-Compete Guarantee
+  3.  AI + Human Outbound
+  4.  FinTech Specialists
+  5.  10:1 ROI Proven
+  6.  6-Week Full Setup
+  7.  Live Pipeline Dashboards
+  8.  Weekly GTM Syncs
+  9.  CRM Integration Included
+  10. Multi-Channel Outreach
+
+
+STRUCTURED SNIPPET EXTENSIONS:
+
+  Snippet 1:
+    Header:     Services
+    Values:     Outbound Lead Gen, Inbound Qualification, Deal Assist, CRM Integration, SDR Outsourcing, Pipeline Reporting
+
+  Snippet 2:
+    Header:     Types
+    Values:     Email Outbound, LinkedIn Outreach, Cold Calling, WhatsApp Outreach, Multi-Threading, Nurture Sequences
+
+
+CALL EXTENSION:
+  Phone number:     Your business number
+  Show on:          Mobile + Desktop
+
+
+IMAGE EXTENSIONS:
+  Upload these images:
+    - Client logo strip (showing CleverTap, VWO, etc.)
+    - Dashboard screenshot
+    - Team photo
+  Minimum sizes: 600x314 (landscape), 300x300 (square)
+
+
+————————————————————————————————————————
+STEP 8: BUDGET
+————————————————————————————————————————
+
+Daily budget:           Rs 4,000 – 6,000 per day  ($50 – $75 USD)
+Note:                   Start with this for 2 weeks, then optimize based on CPA.
+
+
+————————————————————————————————————————
+STEP 9: REVIEW & LAUNCH
+————————————————————————————————————————
+
+Review all settings and click PUBLISH.
+
+
+
+========================================================================================================================
+========================================================================================================================
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+CAMPAIGN 2: MARTECH VERTICAL
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+————————————————————————————————————————
+STEP 1: CHOOSE YOUR OBJECTIVE
+————————————————————————————————————————
+
+Select:                 Leads
+Goal:                   Website visits, Phone calls, Form submissions
+Conversion goals:       Form fill on /contact page, Book-a-call button click
+
+
+————————————————————————————————————————
+STEP 2: SELECT CAMPAIGN TYPE
+————————————————————————————————————————
+
+Select:                 Search
+
+
+————————————————————————————————————————
+STEP 3: CAMPAIGN NAME & NETWORK SETTINGS
+————————————————————————————————————————
+
+Campaign name:          ThyLeads — MarTech — Search — Lead Gen
+
+Networks:
+  Google Search Network:    ON
+  Google Search Partners:   OFF
+  Google Display Network:   OFF
+
+
+————————————————————————————————————————
+STEP 4: BIDDING
+————————————————————————————————————————
+
+Bid strategy:           Maximize Conversions
+Target CPA:             Leave blank initially. Set after 30+ conversions.
+
+
+————————————————————————————————————————
+STEP 5: CAMPAIGN SETTINGS
+————————————————————————————————————————
+
+LOCATIONS
+  Target these countries:
+    - India
+    - United States
+    - United Kingdom
+    - Singapore
+    - UAE
+    - Canada
+    - Australia
+
+  Location options:     Select "Presence: People in or regularly in your targeted locations"
+
+LANGUAGES
+  Select:               English
+
+AUDIENCES (Observation Mode)
+  In-market segments:
+    - Marketing Services
+    - Advertising & Marketing Software
+    - SEO & SEM Services
+    - Business Services > Business Technology
+
+  Custom segment (create new):
+    Name:               MarTech Decision Makers
+    People who searched for:
+      martech sales pipeline
+      sell marketing software
+      b2b martech lead generation
+      marketing technology outbound
+      sell to CMOs
+      sell to marketing teams
+      martech saas growth
+      martech sdr hiring
+      marketing automation outbound sales
+
+AD SCHEDULE
+  Monday to Friday:     8:00 AM – 8:00 PM
+  Saturday:             9:00 AM – 2:00 PM
+  Sunday:               OFF
+
+START & END DATE
+  Start date:           Your launch date
+  End date:             None
+
+
+————————————————————————————————————————
+STEP 6: AD GROUPS
+————————————————————————————————————————
+
+
+- - - - - - - - - - - - - - - - - - - -
+AD GROUP 1: MarTech — Outbound Agency
+- - - - - - - - - - - - - - - - - - - -
+
+KEYWORDS:
+
+Exact match:
+  [b2b lead generation for martech]
+  [martech outbound agency]
+  [martech sales agency]
+  [lead generation for marketing technology]
+  [outbound sales for martech companies]
+  [martech appointment setting]
+  [sell to cmos and marketing leaders]
+
+Phrase match:
+  "martech lead generation agency"
+  "outbound agency for martech"
+  "b2b sales for marketing technology"
+  "marketing technology lead generation"
+  "martech demand generation"
+  "martech sdr outsourcing"
+  "sell marketing software to enterprises"
+
+Broad match modifier:
+  +martech +lead +generation +agency
+  +martech +outbound +sales
+  +marketing +technology +outbound +agency
+  +martech +b2b +pipeline
+
+
+NEGATIVE KEYWORDS (add at campaign level):
+  free
+  template
+  course
+  jobs
+  hiring
+  intern
+  salary
+  tutorial
+  DIY
+  software tool
+  platform download
+  marketing agency
+  digital marketing
+  social media marketing
+  content marketing
+  seo agency
+  google ads agency
+
+
+RESPONSIVE SEARCH AD 1:
+
+  Headlines (max 30 characters each — Google shows 3 at a time):
+
+    H1:   MarTech Outbound Agency               (23 chars)    [PIN to Position 1]
+    H2:   90+ Meetings in 90 Days               (24 chars)
+    H3:   Reach CMOs & VPs Marketing             (27 chars)
+    H4:   10:1 ROI — Proven Results              (26 chars)
+    H5:   AI-Powered MarTech Pipeline            (28 chars)
+    H6:   Book Free Strategy Call                (24 chars)    [PIN to Position 3]
+    H7:   3X Your MarTech Pipeline               (25 chars)
+    H8:   No Junk Leads — Only SQLs              (26 chars)
+    H9:   Trusted by SaaS Leaders                (24 chars)
+    H10:  Dedicated MarTech GTM Pod              (26 chars)
+    H11:  Scale Without Hiring SDRs              (26 chars)
+    H12:  Multi-Channel Outbound                 (23 chars)
+    H13:  95%+ Meeting Show Rate                 (23 chars)
+    H14:  Non-Compete Guarantee                  (22 chars)
+    H15:  30% SQL-to-Close Rate                  (22 chars)
+
+  Descriptions (max 90 characters each — Google shows 2 at a time):
+
+    D1:   We help MarTech SaaS companies book qualified meetings with CMOs & marketing decision-makers.
+    D2:   AI-powered outbound + human context. Email, LinkedIn, Calls & WhatsApp. 95%+ show rate.
+    D3:   Dedicated GTM pod for MarTech. Intent-driven targeting. Live dashboards. Weekly syncs.
+    D4:   Stop chasing cold leads. We deliver pre-qualified meetings with marketing buyers who convert.
+
+  Final URL:        https://thyleads.com
+  Display Path 1:   martech
+  Display Path 2:   outbound
+  (Ad will show as: thyleads.com/martech/outbound)
+
+
+RESPONSIVE SEARCH AD 2:
+
+  Headlines:
+
+    H1:   MarTech Lead Gen Agency                (23 chars)
+    H2:   Sell to Marketing Leaders              (26 chars)
+    H3:   Pipeline Built in 3 Weeks              (26 chars)
+    H4:   SaaS-Only MarTech Experts              (26 chars)
+    H5:   Get Your Free Pipeline Audit           (29 chars)
+    H6:   Outbound That Closes Deals             (27 chars)
+    H7:   Signal-Driven, Not Spam                (24 chars)
+    H8:   6-Week Full Setup Included             (27 chars)
+    H9:   CRM Integration Built In               (25 chars)
+    H10:  From ICP to Booked Meetings            (28 chars)
+    H11:  MarTech Sales, Systematized            (28 chars)
+    H12:  60% Faster Deal Velocity               (25 chars)
+    H13:  Fraction of In-House Cost              (26 chars)
+    H14:  Category-Aware Positioning             (27 chars)
+    H15:  Book a Demo — It's Free                (24 chars)
+
+  Descriptions:
+
+    D1:   MarTech is crowded. Stand out with targeted outbound that reaches buyers already evaluating.
+    D2:   Sell to marketing teams at enterprise companies. We build pipeline — your AEs close it.
+    D3:   Waterfall enrichment. Intent data. Multi-channel strike. Built for MarTech sales complexity.
+    D4:   Your MarTech buyers get 100 cold emails daily. Our signal-driven approach cuts through noise.
+
+  Final URL:        https://thyleads.com/howitworks
+  Display Path 1:   martech
+  Display Path 2:   leads
+
+
+- - - - - - - - - - - - - - - - - - - -
+AD GROUP 2: MarTech — SDR Outsourcing
+- - - - - - - - - - - - - - - - - - - -
+
+KEYWORDS:
+
+Exact match:
+  [outsource sdr martech]
+  [martech sdr as a service]
+  [outsourced sales team martech]
+  [martech sales outsourcing]
+  [virtual sdr team for martech]
+
+Phrase match:
+  "martech sdr outsourcing"
+  "outsource martech sales team"
+  "martech sales development outsourcing"
+  "hire sdr team martech"
+
+Broad match modifier:
+  +outsource +sdr +martech
+  +martech +sales +development +outsource
+  +marketing +technology +sdr +outsource
+
+
+RESPONSIVE SEARCH AD:
+
+  Headlines:
+
+    H1:   Outsource MarTech SDR Team             (27 chars)
+    H2:   Scale Without Hiring                   (20 chars)
+    H3:   Dedicated MarTech GTM Pod              (26 chars)
+    H4:   Results from Week 3                    (20 chars)
+    H5:   Fraction of In-House Cost              (26 chars)
+    H6:   Book Free Strategy Call                (24 chars)
+    H7:   AI + Human Outbound System             (27 chars)
+    H8:   90+ Qualified Meetings                 (22 chars)
+    H9:   Full Pipeline Visibility               (25 chars)
+    H10:  No Lock-In Contracts                   (21 chars)
+    H11:  Weekly GTM Syncs Included              (26 chars)
+    H12:  Live Dashboards & Reports              (26 chars)
+    H13:  Email + LinkedIn + Calls               (25 chars)
+    H14:  MarTech Industry Experts               (25 chars)
+    H15:  Non-Compete Assurance                  (22 chars)
+
+  Descriptions:
+
+    D1:   Why hire 3 SDRs when one GTM pod delivers 90+ qualified MarTech meetings in 90 days?
+    D2:   Dedicated Slack channel, weekly syncs, live dashboards. Full visibility — no black box.
+    D3:   We handle ICP targeting, enrichment, outreach & qualification. You just close the deals.
+    D4:   MarTech-focused SDR team with category-aware positioning. CRM integrated from day one.
+
+  Final URL:        https://thyleads.com
+  Display Path 1:   martech
+  Display Path 2:   sdr-team
+
+
+- - - - - - - - - - - - - - - - - - - -
+AD GROUP 3: MarTech — Pipeline & Growth
+- - - - - - - - - - - - - - - - - - - -
+
+KEYWORDS:
+
+Exact match:
+  [martech pipeline generation]
+  [grow martech saas revenue]
+  [martech demand generation agency]
+  [b2b martech growth agency]
+  [martech go to market agency]
+
+Phrase match:
+  "martech pipeline building"
+  "scale martech saas"
+  "martech gtm agency"
+  "martech growth partner"
+  "marketing technology pipeline"
+
+Broad match modifier:
+  +martech +pipeline +generation
+  +martech +demand +generation
+  +martech +gtm +agency
+
+
+RESPONSIVE SEARCH AD:
+
+  Headlines:
+
+    H1:   Grow Your MarTech Pipeline             (27 chars)
+    H2:   3X Pipeline in 90 Days                 (22 chars)
+    H3:   MarTech GTM Engineered                 (23 chars)
+    H4:   Signal-Driven Outbound                 (23 chars)
+    H5:   Book Free Pipeline Audit               (25 chars)
+    H6:   10:1 ROI — Case Studies                (24 chars)
+    H7:   Reach CMOs & VPs Faster                (24 chars)
+    H8:   Intent Data + AI Outreach              (26 chars)
+    H9:   Multi-Channel Execution                (24 chars)
+    H10:  Deal Assist Included                   (21 chars)
+    H11:  From Signal to Close                   (21 chars)
+    H12:  95%+ Show Rate Meetings                (24 chars)
+    H13:  Verified Decision-Makers               (25 chars)
+    H14:  Dedicated MarTech Team                 (23 chars)
+    H15:  Cut Through the Noise                  (22 chars)
+
+  Descriptions:
+
+    D1:   MarTech is saturated. We find buyers showing active intent — not cold lists that waste time.
+    D2:   Intent signals + AI personalization + human context = meetings with buyers ready to evaluate.
+    D3:   From seed to Series D — we've scaled MarTech pipelines across analytics, CX, CDP & automation.
+    D4:   Deal momentum. Multi-threading. Stakeholder mapping. We don't stop at the first meeting.
+
+  Final URL:        https://thyleads.com/casestudies
+  Display Path 1:   martech
+  Display Path 2:   pipeline
+
+
+————————————————————————————————————————
+STEP 7: AD EXTENSIONS (MarTech Campaign)
+————————————————————————————————————————
+
+SITELINK EXTENSIONS (add 4 sitelinks):
+
+  Sitelink 1:
+    Sitelink text:          How It Works
+    Description line 1:     6-week setup. Results by week 3.
+    Description line 2:     See our full process breakdown.
+    Final URL:              https://thyleads.com/howitworks
+
+  Sitelink 2:
+    Sitelink text:          CleverTap: 3X Pipeline
+    Description line 1:     90+ qualified meetings in 90 days
+    Description line 2:     30% SQL-to-close rate achieved.
+    Final URL:              https://thyleads.com/casestudies/clevertap
+
+  Sitelink 3:
+    Sitelink text:          VWO: 95%+ Show Rate
+    Description line 1:     Low no-show. High-quality leads.
+    Description line 2:     Quick adaptation. Real results.
+    Final URL:              https://thyleads.com/casestudies/vwo
+
+  Sitelink 4:
+    Sitelink text:          Book a Strategy Call
+    Description line 1:     Free 30-min pipeline audit.
+    Description line 2:     No commitment required.
+    Final URL:              https://thyleads.com/contact
+
+
+CALLOUT EXTENSIONS (add all 10):
+  1.  95%+ Show Rate
+  2.  Non-Compete Guarantee
+  3.  AI + Human Outbound
+  4.  MarTech Specialists
+  5.  10:1 ROI Proven
+  6.  6-Week Full Setup
+  7.  Live Pipeline Dashboards
+  8.  Weekly GTM Syncs
+  9.  CRM Integration Included
+  10. Multi-Channel Outreach
+
+
+STRUCTURED SNIPPET EXTENSIONS:
+
+  Snippet 1:
+    Header:     Services
+    Values:     Outbound Lead Gen, Inbound Qualification, Deal Assist, CRM Integration, SDR Outsourcing, Pipeline Reporting
+
+  Snippet 2:
+    Header:     Types
+    Values:     Email Outbound, LinkedIn Outreach, Cold Calling, WhatsApp Outreach, Multi-Threading, Nurture Sequences
+
+
+CALL EXTENSION:
+  Phone number:     Your business number
+  Show on:          Mobile + Desktop
+
+
+IMAGE EXTENSIONS:
+  Upload these images:
+    - Client logo strip (showing CleverTap, VWO, etc.)
+    - Dashboard screenshot
+    - Team photo
+  Minimum sizes: 600x314 (landscape), 300x300 (square)
+
+
+————————————————————————————————————————
+STEP 8: BUDGET
+————————————————————————————————————————
+
+Daily budget:           Rs 4,000 – 6,000 per day  ($50 – $75 USD)
+Note:                   Start with this for 2 weeks, then optimize based on CPA.
+
+
+————————————————————————————————————————
+STEP 9: REVIEW & LAUNCH
+————————————————————————————————————————
+
+Review all settings and click PUBLISH.
+
+
+
+========================================================================================================================
+========================================================================================================================
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+QUICK REFERENCE — BOTH CAMPAIGNS SIDE BY SIDE
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                            FINTECH CAMPAIGN                        MARTECH CAMPAIGN
+Campaign Name:              ThyLeads — FinTech — Search — Lead Gen  ThyLeads — MarTech — Search — Lead Gen
+Ad Groups:                  3 (Outbound, SDR, Pipeline)             3 (Outbound, SDR, Pipeline)
+Buyer Personas:             CFOs, CTOs, VPs at banks/NBFCs          CMOs, VPs Marketing, Heads of Growth
+Bid Strategy:               Maximize Conversions                    Maximize Conversions
+Daily Budget:               Rs 4,000–6,000                         Rs 4,000–6,000
+Networks:                   Search only                             Search only
+Ad Schedule:                Mon-Fri 8am-8pm, Sat 9am-2pm           Mon-Fri 8am-8pm, Sat 9am-2pm
+Total Ads:                  6 Responsive Search Ads                 6 Responsive Search Ads
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+WEEK 1 OPTIMIZATION CHECKLIST
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Check these DAILY for the first week after launch:
+
+  1. SEARCH TERMS REPORT     — Add irrelevant search terms as negative keywords immediately
+  2. AD STRENGTH              — Ensure all RSAs show "Good" or "Excellent" rating
+  3. QUALITY SCORE            — Check keyword quality scores, pause anything below 4
+  4. CTR (Click-Through Rate) — Aim for 3%+ on Search. Below 2% means rewrite that ad group
+  5. CPC (Cost Per Click)     — Monitor cost per click, adjust bids if too high
+  6. CONVERSION TRACKING      — Verify conversions are actually firing on /contact form submissions

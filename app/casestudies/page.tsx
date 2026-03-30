@@ -105,7 +105,7 @@ export default function CaseStudiesPage() {
   const carouselStories = testimonials.slice(1);
 
   return (
-    <div className="min-h-screen bg-black font-sans selection:bg-purple-600/20">
+    <div className="min-h-screen bg-black font-sans selection:bg-purple-600/20 overflow-x-hidden">
       <Navbar />
 
       {/* Background Decorative Elements */}

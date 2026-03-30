@@ -6,13 +6,13 @@ import { ChevronLeft, Quote, Clock, TrendingUp, CheckCircle2 } from 'lucide-reac
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-export default function VWOCaseStudy() {
+export default function DiceCaseStudy() {
   const testimonial = {
-    companyName: 'VWO',
-    personName: 'Harsh Sharma',
-    personTitle: 'Senior Manager',
-    personImage: '/vwo.png',
-    quote: "Working with Thyleads has significantly boosted our outbound efforts at Wingify. Their speed and ability to deliver qualified meetings from month one, even with minimal product training, were impressive."
+    companyName: 'Actyv AI',
+    personName: 'Ishan Acharya',
+    personTitle: 'Director of Business Operations',
+    personImage: '/actyv.png',
+    quote: "Cracking the GCC Enterprise market with Process Intelligence is tough. We struggled to translate technical value into business urgency until Thyleads stepped in. They adapted our strategy to local nuances and cut through the noise, finally connecting us with the major players we’d been chasing for months."
   };
 
   return (
@@ -42,7 +42,7 @@ export default function VWOCaseStudy() {
           <div className="flex flex-col md:flex-row md:items-center gap-6 mb-10">
             <div className="flex items-center gap-4">
               <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-lg shadow-white/10">
-                <Image src="/images/VWO.svg" alt="VWO logo" width={48} height={48} className="w-12 h-12 object-contain" />
+                <Image src="/images/actyv.png" alt="Dice logo" width={120} height={120} className="w-fit h-fit object-contain" />
               </div>
               <div>
                 <div className="text-white font-bold text-2xl">{testimonial.companyName}</div>
@@ -58,9 +58,9 @@ export default function VWOCaseStudy() {
 
           {/* Main Headline */}
           <h1 className="text-2xl md:text-4xl lg:text-5xl font-medium text-white tracking-tight leading-[1.1] mb-10 max-w-5xl">
-            How Thyleads generated 40+ appointments across{' '}
+            How Thyleads engineered the ROI Ledger for actyv.ai and{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-[#C3F53C]">
-               high-traffic brands and made VWO the &quot;missing piece&quot; of the modern tech stack.
+                solved the enterprise AI Misconception.
             </span>
           </h1>
         </div>
@@ -117,11 +117,12 @@ export default function VWOCaseStudy() {
             {/* Intro */}
             <div className="prose prose-lg md:prose-xl max-w-none text-slate-600">
               <p className="lead text-2xl font-normal leading-relaxed text-slate-900 mb-8">
-                As the global gold standard for A/B testing and conversion rate optimization, VWO (Wingify) is the brain behind the world’s most data-driven brands.
+                Leading the charge in Enterprise GenAI Readiness, actyv.ai is the &quot;Black Box&quot; decoder for modern business, deciphering millions of silent digital interactions into a clear, actionable blueprint for efficiency
               </p>
               <p>
-                Across e-commerce, SaaS, BFSI, and fintech, VWO enables companies to put an end to guesswork and begin expanding. To scale their enterprise presence, they needed an outbound motion that matched their product’s sophistication, a system that could turn cold prospects into high-intent partners by proving that a tech stack without VWO is a stack incomplete.
+                By converting raw user interactions and log data into actionable Found Capacity, they enable GCC giants to visualize, optimize, and automate their operations in weeks, not years.
               </p>
+              <p>But precision technology alone doesn’t open enterprise doors. To stay dominant, actyv.ai needed a GTM motion as precise as their underwriting. They didn&apos;t need leads but a surgical entry into the boardrooms of COOs and Digital Transformation Heads who were tired of blind automation and the heavy fog of consultant audits.</p>
             </div>
 
             {/* Blockquote */}
@@ -143,19 +144,17 @@ export default function VWOCaseStudy() {
             </div>
 
             <div id="challenge" className="prose prose-lg max-w-none text-slate-600 scroll-mt-32">
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">The Challenge: Outbound Was Active, But Interest Was Flat</h3>
-              <p className="mb-3">
-                In MarTech saturation, even a titan can be miscategorized. And VWO’s challenge was a Category Blur.
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">The Challenge: The Transformation Black Box</h3>
+              <p className="mb-6">
+                Despite widespread interest in GenAI, COOs were paralysed by ROI Skepticism. They were trapped in a cycle of Proof of Concept gap, running automation pilots that never hit the bottom line.
               </p>
-              <p className='mb-6'>The prospects were into observation tools (Google Analytics, Hotjar) and viewed Experimentation as a luxury, not a necessity. To scale, VWO needed to stop asking for a seat at the table and start proving the table was broken without them.</p>
-              <p className="text-xl font-semibold text-slate-800 mb-6">But when they reached to us, the friction was two-fold: perception and deliverability. </p>
+              <p className='mb-6'>Large enterprises were still relying on archaic time-motion studies and gut-feel restructuring, while IT executives lacked the detailed data necessary to securely implement AI agents.</p>
+              <p className="text-xl font-semibold text-slate-800 mb-6">The Turmoil:</p>
               <ul className="space-y-4 my-8">
                 {[
-                  'Prospects took VWO as "just another analytics tool".',
-                  'Discovery calls were spent educating the market, not advancing deals',
-                  'Even strong messaging failed to land due to email deliverability fatigue',
-                  'Domains were throttled, inbox placement suffered, and replies declined',
-                  'Personalization existed, but use cases weren’t mapped to account reality'
+                  'Moving a COO from Employee Monitoring scepticism to Process Discovery buy-in requires a bridge of trust, not a tool pitch.',
+                  'Deals required a synchronised ‘Yes’ from Operations, IT, and Finance already a complex balance of efficiency, privacy, and budget.',
+                  'High-value domains were filtering out anything that sounded like simple employee tracking, causing critical operational insights to be ignored.'
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <CheckCircle2 className="w-6 h-6 text-blue-500 shrink-0 mt-0.5" />
@@ -167,9 +166,9 @@ export default function VWOCaseStudy() {
 
             {/* The Solution */}
             <div id="solution" className="prose prose-lg max-w-none text-slate-600 scroll-mt-32">
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">The Solution: Next-Step Positioning & Fresh GTM Setup</h3>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">The Solution: Building an ROI-First GTM Lab</h3>
               <p className="mb-6">
-                Thyleads didn&apos;t treat this as a lead-gen project; we changed the entire entry point into VWO’s target accounts.
+                Thyleads approached actyv.ai’s outbound not as sales, but as Consultative Diagnostics. We didn&apos;t pitch software; we sold the cure for Operational Dark Matter.
               </p>
 
               {/* Solution Cards */}
@@ -179,17 +178,10 @@ export default function VWOCaseStudy() {
                   <div className="flex items-start gap-4">
                     <span className="shrink-0 w-8 h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold text-sm">I</span>
                     <div>
-                      <h4 className="text-lg font-bold text-slate-900 mb-2">The Sequence-of-Events Pivot</h4>
+                      <h4 className="text-lg font-bold text-slate-900 mb-2">From Monitoring to GenAI Readiness:</h4>
                       <p className="text-slate-600 mb-3">
-                        We abandoned the direct pitch. Instead, we aligned VWO’s value to the prospect’s current pain: Data Latency. Our whole focus turned from Testing to Activation.
+                        We abandoned the generic ‘boost productivity’ fluff. Instead, we built messaging around GenAI Readiness and Process Simulation. We targeted leaders who had automation budgets but lacked the map to deploy them. We positioned actyv.ai as the Prerequisite to AI that validates an executive&apos;s transformation roadmap before they spend a dime.
                       </p>
-                      <p className="text-slate-600 mb-3">Serving consultative GTM:</p>
-                      <ul className="space-y-2">
-                        <li className="flex items-start gap-2">
-                          <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
-                          <span className="text-slate-700">We approached and consulted leaders who already had the data but lacked the mechanism to act on it, positioning VWO as the Missing Link that builds analytics insights into ROI.</span>
-                        </li>
-                      </ul>
                     </div>
                   </div>
                 </div>
@@ -199,9 +191,9 @@ export default function VWOCaseStudy() {
                   <div className="flex items-start gap-4">
                     <span className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold text-sm">II</span>
                     <div>
-                      <h4 className="text-lg font-bold text-slate-900 mb-2">Tactical Infrastructure Hardening</h4>
+                      <h4 className="text-lg font-bold text-slate-900 mb-2">Infrastructure Hardening & Domain Partitioning:</h4>
                       <p className="text-slate-600 mb-3">
-                        To solve the deliverability problem, we deployed a Regional Grid System. By partitioning outreach across 100+ dedicated nodes with localized IP clusters (NA, EMEA, APAC), we mimicked high-integrity human patterns. This almost made sure that VWO’s insights arrived in the Primary Inbox, not the landfill of the Promotions tab.
+                        To ensure actyv.ai reached the primary inboxes of Global Business Services (GBS) leaders, we deployed a Multi-Node Regional Grid. By isolating outreach across dedicated nodes for the US, DACH region, and APAC, we maintained 99%+ deliverability, bypassing the aggressive firewalls used by Tier-1 financial and logistics firms.
                       </p>
                     </div>
                   </div>
@@ -212,10 +204,25 @@ export default function VWOCaseStudy() {
                   <div className="flex items-start gap-4">
                     <span className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold text-sm">III</span>
                     <div>
-                      <h4 className="text-lg font-bold text-slate-900 mb-2">Lookalike Neural Mapping</h4>
-                      <p className="text-slate-600 mb-2">
-                        We used VWO’s social proof. Instead of generic pitches, we built Lookalike Segments, sending E-commerce case studies to E-commerce leads and Fintech wins to Fintech leads. Each segment received vertical-specific proof, increasing relevance and reply intent.
-                      </p>
+                      <h4 className="text-lg font-bold text-slate-900 mb-2">Signal-Led Efficiency Mapping:</h4>
+                      {/* <p className="text-slate-600 mb-2">
+                        Thyleads used expert writers and SDRs to deconstruct messaging for Dice’s product modules. Similarly, we removed the fluff and adopted the Controller&apos;s terminology.
+                      </p> */}
+                      <p className='text-slate-600 mb-3'>We used a live enrichment stack to hunt for Friction Signals rather than just job titles. We targeted companies with:</p>
+                      <ul className="space-y-2">
+                        <li className="flex items-start gap-2">
+                          <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+                          <span className="text-slate-700">Announcements of new Shared Services Centers (GBS).</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+                          <span className="text-slate-700">Public commitments to GenAI Integration (indicating a need for clean process data).</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+                          <span className="text-slate-700">Recent mergers or acquisitions (signaling a need for operational consolidation).</span>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -225,9 +232,22 @@ export default function VWOCaseStudy() {
                   <div className="flex items-start gap-4">
                     <span className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold text-sm">IV</span>
                     <div>
-                      <h4 className="text-lg font-bold text-slate-900 mb-2">Multi-Threaded Persona Mapping</h4>
+                      <h4 className="text-lg font-bold text-slate-900 mb-2">Multi-Threaded Persona Logic:</h4>
                       <p className="text-slate-600 mb-2">
-                        Enterprise buying decisions are never linear. We targeted 3-5 interconnected personas: Product, Growth, and Engineering, simultaneously. By seeding the same discussion across departments, Thyleads created internal consensus before the first meeting.
+                        Enterprise decisions are a web. We hit the COO with ‘Found Capacity’ logic, the CIO with ‘Tech Debt Visualization,’ and the CFO with ‘ROI Validation’ proof. By solving three different versions of the ‘blind spot’ problem simultaneously, we created internal gravity toward a deal.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* V. Feedback Flywheel */}
+                <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+                  <div className="flex items-start gap-4">
+                    <span className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold text-sm">V</span>
+                    <div>
+                      <h4 className="text-lg font-bold text-slate-900 mb-2">The Intelligence Loop:</h4>
+                      <p className="text-slate-600">
+                        Every interaction was treated as a telemetry point. We used the objections from replies (e.g., privacy concerns vs. efficiency needs) to refine actyv.ai&apos;s Risk/Reward Scripts, ensuring that every GTM send made their sales team smarter, faster, and more authoritative.
                       </p>
                     </div>
                   </div>
@@ -239,11 +259,7 @@ export default function VWOCaseStudy() {
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Key Results</h3>
               <ul className="space-y-2 my-4">
                 {[
-                  '40+ Net-New Appointments booked with Growth and Product leaders in 90 days.',
-                  '11 Dormant Enterprise Accounts reactivated after 12+ months of silence.',
-                  '6 Pilot Programs launched with a specific focus on tooling consolidation.',
-                  '10+ High-Intent Accounts warmed up and engaged ahead of a major ABM rollout.',
-                  'The Missing Piece for the industry: We successfully shifted VWO from an optional tool to the required activation layer for the modern marketing stack.'
+                  'Zero-Lag Market Entry: Secured Tier-1 enterprise conversations within the first 5 days of deployment.'
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <CheckCircle2 className="w-6 h-6 text-blue-500 shrink-0 mt-0.5" />
@@ -257,10 +273,10 @@ export default function VWOCaseStudy() {
             <div id="future-outlook" className="prose prose-lg max-w-none text-slate-600 scroll-mt-32">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Future Outlook</h3>
               <p className="mb-4">
-                VWO is no longer chasing the market; they are anticipating it. The next phase of the Thyleads-VWO partnership involves Intent-Sensing GTM. 
+                The infrastructure is now optimised for scale. The next phase moves from finding pain to Predicting Bottlenecks.
               </p>
               <p>
-                We are building a system that monitors tech-stack maturity signals across the globe, triggering an automated, hyper-personalized VWO &quot;activation play&quot; the moment a company’s data volume outweighs their ability to test it.
+                By integrating real-time hiring and restructuring signals into the [OneCap]-KYP.ai engine, we are building a ‘Predictive GTM’ that identifies operational drag in global enterprises before the COO even reviews the monthly P&L.
               </p>
             </div>
           </article>
@@ -273,10 +289,10 @@ export default function VWOCaseStudy() {
             <div className="absolute top-[-50%] left-[-10%] w-[1000px] h-[1000px] rounded-full bg-blue-600 blur-[100px]" />
         </div>
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">If your outbound looks like &quot;just another tool&quot; to your prospects, It’s time to change the architecture with Thyleads.</h2>
-          {/* <p className="text-xl text-blue-200 mb-10 max-w-2xl mx-auto">
-            It’s time to start solving workflows.
-          </p> */}
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">If your solution is getting lost in the GenAI hype</h2>
+          <p className="text-xl text-blue-200 mb-10 max-w-2xl mx-auto">
+            It’s time to engineer a GTM that solidifies your value
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"

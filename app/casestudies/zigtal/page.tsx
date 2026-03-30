@@ -8,11 +8,11 @@ import Footer from '@/components/Footer';
 
 export default function VWOCaseStudy() {
   const testimonial = {
-    companyName: 'VWO',
+    companyName: 'Zigtal',
     personName: 'Harsh Sharma',
     personTitle: 'Senior Manager',
-    personImage: '/vwo.png',
-    quote: "Working with Thyleads has significantly boosted our outbound efforts at Wingify. Their speed and ability to deliver qualified meetings from month one, even with minimal product training, were impressive."
+    personImage: '/zigital.png',
+    quote: "The HR tech market is incredibly noisy, and our outreach was falling flat. Thyleads fixed this by re-engineering our messaging to finally resonate with decision-makers. They transformed our struggle into a consistent pipeline of qualified demos."
   };
 
   return (
@@ -42,7 +42,7 @@ export default function VWOCaseStudy() {
           <div className="flex flex-col md:flex-row md:items-center gap-6 mb-10">
             <div className="flex items-center gap-4">
               <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-lg shadow-white/10">
-                <Image src="/images/VWO.svg" alt="VWO logo" width={48} height={48} className="w-12 h-12 object-contain" />
+                <Image src="/images/zigital.png" alt="VWO logo" width={48} height={48} className="w-12 h-12 object-contain" />
               </div>
               <div>
                 <div className="text-white font-bold text-2xl">{testimonial.companyName}</div>
@@ -58,9 +58,9 @@ export default function VWOCaseStudy() {
 
           {/* Main Headline */}
           <h1 className="text-2xl md:text-4xl lg:text-5xl font-medium text-white tracking-tight leading-[1.1] mb-10 max-w-5xl">
-            How Thyleads generated 40+ appointments across{' '}
+            How Thyleads re-engineered Zigtal’s GTM to move past the just HR{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-[#C3F53C]">
-               high-traffic brands and made VWO the &quot;missing piece&quot; of the modern tech stack.
+               Tool category and capture real enterprise intelligence
             </span>
           </h1>
         </div>
@@ -117,10 +117,10 @@ export default function VWOCaseStudy() {
             {/* Intro */}
             <div className="prose prose-lg md:prose-xl max-w-none text-slate-600">
               <p className="lead text-2xl font-normal leading-relaxed text-slate-900 mb-8">
-                As the global gold standard for A/B testing and conversion rate optimization, VWO (Wingify) is the brain behind the world’s most data-driven brands.
+                Zigtal entered the market as a pioneer of Collective Intelligence to close the growing gap between business strategy and the latent skills of employees. Using a proprietary model, it turns HR systems into Internal Talent Marketplaces, where skills, not titles, are the currency of operation.
               </p>
               <p>
-                Across e-commerce, SaaS, BFSI, and fintech, VWO enables companies to put an end to guesswork and begin expanding. To scale their enterprise presence, they needed an outbound motion that matched their product’s sophistication, a system that could turn cold prospects into high-intent partners by proving that a tech stack without VWO is a stack incomplete.
+                On paper, the value was obvious. In reality, the market was deaf. To scale inside large enterprises, Zigtal needed more than awareness. They needed a GTM motion that bypassed HR tech fatigue and landed directly with CHROs, COOs, and Transformation Leaders seeking a structural fix to the global skills shortage.
               </p>
             </div>
 
@@ -143,19 +143,17 @@ export default function VWOCaseStudy() {
             </div>
 
             <div id="challenge" className="prose prose-lg max-w-none text-slate-600 scroll-mt-32">
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">The Challenge: Outbound Was Active, But Interest Was Flat</h3>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">The Challenge: Escaping the HR Tool’s Big Category</h3>
               <p className="mb-3">
-                In MarTech saturation, even a titan can be miscategorized. And VWO’s challenge was a Category Blur.
+                Zigtal was fighting an Institutional Blind Spot. Enterprises were spending millions on expensive external headhunting while their own internal talent, carrying vast reservoirs of ‘dormant skills’, was disengaging and walking out the door.
               </p>
-              <p className='mb-6'>The prospects were into observation tools (Google Analytics, Hotjar) and viewed Experimentation as a luxury, not a necessity. To scale, VWO needed to stop asking for a seat at the table and start proving the table was broken without them.</p>
-              <p className="text-xl font-semibold text-slate-800 mb-6">But when they reached to us, the friction was two-fold: perception and deliverability. </p>
+              <p className="text-xl font-semibold text-slate-800 mb-6">The Top Barriers:</p>
               <ul className="space-y-4 my-8">
                 {[
-                  'Prospects took VWO as "just another analytics tool".',
-                  'Discovery calls were spent educating the market, not advancing deals',
-                  'Even strong messaging failed to land due to email deliverability fatigue',
-                  'Domains were throttled, inbox placement suffered, and replies declined',
-                  'Personalization existed, but use cases weren’t mapped to account reality'
+                  'Zigtal was being mislabeled as another LMS or HRIS rather than a strategic Skill Intelligence Platform.',
+                  'Decision-makers liked the ‘culture’ aspect but needed to see the direct line to Innovation Velocity.',
+                  'Sales conversations were dying in the gap between Learning & Development (who saw the need) and Operations (who held the budget).',
+                  'Prospects were hesitant to add ‘one more thing’ to their ecosystem without seeing how Zigtal acted as the nervous system for their existing tech.'
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <CheckCircle2 className="w-6 h-6 text-blue-500 shrink-0 mt-0.5" />
@@ -167,9 +165,9 @@ export default function VWOCaseStudy() {
 
             {/* The Solution */}
             <div id="solution" className="prose prose-lg max-w-none text-slate-600 scroll-mt-32">
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">The Solution: Next-Step Positioning & Fresh GTM Setup</h3>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">The Solution: Engineering the Skill-Centric GTM</h3>
               <p className="mb-6">
-                Thyleads didn&apos;t treat this as a lead-gen project; we changed the entire entry point into VWO’s target accounts.
+                Thyleads positioned them as the Architect of Future Readiness. We moved the conversation from managing people to optimizing invisible assets.
               </p>
 
               {/* Solution Cards */}
@@ -179,17 +177,10 @@ export default function VWOCaseStudy() {
                   <div className="flex items-start gap-4">
                     <span className="shrink-0 w-8 h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold text-sm">I</span>
                     <div>
-                      <h4 className="text-lg font-bold text-slate-900 mb-2">The Sequence-of-Events Pivot</h4>
+                      <h4 className="text-lg font-bold text-slate-900 mb-2">The Dormant Skill Audit:</h4>
                       <p className="text-slate-600 mb-3">
-                        We abandoned the direct pitch. Instead, we aligned VWO’s value to the prospect’s current pain: Data Latency. Our whole focus turned from Testing to Activation.
+                        We killed the generic ‘Employee Engagement’ fluff. Instead, we focused on Asset Underutilization. We approached enterprises with a diagnostic lens: &quos;How much of your workforce’s expertise is currently invisible to your project leads?&quos; By positioning Zigtal as a mechanism to monetize internal knowledge, we turned a soft HR want into a hard operational need.
                       </p>
-                      <p className="text-slate-600 mb-3">Serving consultative GTM:</p>
-                      <ul className="space-y-2">
-                        <li className="flex items-start gap-2">
-                          <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
-                          <span className="text-slate-700">We approached and consulted leaders who already had the data but lacked the mechanism to act on it, positioning VWO as the Missing Link that builds analytics insights into ROI.</span>
-                        </li>
-                      </ul>
                     </div>
                   </div>
                 </div>
@@ -199,9 +190,9 @@ export default function VWOCaseStudy() {
                   <div className="flex items-start gap-4">
                     <span className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold text-sm">II</span>
                     <div>
-                      <h4 className="text-lg font-bold text-slate-900 mb-2">Tactical Infrastructure Hardening</h4>
+                      <h4 className="text-lg font-bold text-slate-900 mb-2">SAP Alignment & Infrastructure Hardening:</h4>
                       <p className="text-slate-600 mb-3">
-                        To solve the deliverability problem, we deployed a Regional Grid System. By partitioning outreach across 100+ dedicated nodes with localized IP clusters (NA, EMEA, APAC), we mimicked high-integrity human patterns. This almost made sure that VWO’s insights arrived in the Primary Inbox, not the landfill of the Promotions tab.
+                        Leveraging Zigtal’s status as an SAP Solution Partner, we built a High-Fidelity Outreach Grid. We didn&apos;t just blast lists; we surgically partitioned outreach to target the SAP SuccessFactors ecosystem. We ensured Zigtal arrived not as a disruptive new cost, but as a Natural Upgrade to the prospect’s existing multi-million dollar SAP investment.
                       </p>
                     </div>
                   </div>
@@ -212,10 +203,24 @@ export default function VWOCaseStudy() {
                   <div className="flex items-start gap-4">
                     <span className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold text-sm">III</span>
                     <div>
-                      <h4 className="text-lg font-bold text-slate-900 mb-2">Lookalike Neural Mapping</h4>
+                      <h4 className="text-lg font-bold text-slate-900 mb-2">Signal-Led Talent Bleed Mapping:</h4>
                       <p className="text-slate-600 mb-2">
-                        We used VWO’s social proof. Instead of generic pitches, we built Lookalike Segments, sending E-commerce case studies to E-commerce leads and Fintech wins to Fintech leads. Each segment received vertical-specific proof, increasing relevance and reply intent.
+                        We replaced broad targeting with Friction-Based Signals. Using a waterfall enrichment stack, we looked for companies experiencing:
                       </p>
+                        <ul className="space-y-2">
+                            <li className="flex items-start gap-2">
+                                <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+                                <span className="text-slate-700">Massive external hiring surges (signaling a failure in internal mobility).</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                                <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+                                <span className="text-slate-700">Rapid technological pivots (signaling a Skill Gap emergency).</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                                <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+                                <span className="text-slate-700">High turnover in Knowledge-Heavy industries like Tech and BFSI.</span>
+                            </li>
+                        </ul>
                     </div>
                   </div>
                 </div>
@@ -225,9 +230,21 @@ export default function VWOCaseStudy() {
                   <div className="flex items-start gap-4">
                     <span className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold text-sm">IV</span>
                     <div>
-                      <h4 className="text-lg font-bold text-slate-900 mb-2">Multi-Threaded Persona Mapping</h4>
+                      <h4 className="text-lg font-bold text-slate-900 mb-2">Multi-Threaded Account Surround:</h4>
                       <p className="text-slate-600 mb-2">
-                        Enterprise buying decisions are never linear. We targeted 3-5 interconnected personas: Product, Growth, and Engineering, simultaneously. By seeding the same discussion across departments, Thyleads created internal consensus before the first meeting.
+                        Workforce decisions are never solitary. We launched Synchronized Offensives, hitting the CHRO with Talent Retention logic and the COO with Project Velocity proof. By the time the first demo was booked, we had already built internal consensus across the hierarchy.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+                  <div className="flex items-start gap-4">
+                    <span className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold text-sm">V</span>
+                    <div>
+                      <h4 className="text-lg font-bold text-slate-900 mb-2">An intelligent Feedback loop:</h4>
+                      <p className="text-slate-600 mb-2">
+                        We re-manufactured outbound as a data-capture system. Every objection about Culture Shift or Integration was fed back into the Zigtal lab, turning every not now into a data point that refined our Skill Intelligence positioning for the next send.
                       </p>
                     </div>
                   </div>
@@ -239,11 +256,7 @@ export default function VWOCaseStudy() {
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Key Results</h3>
               <ul className="space-y-2 my-4">
                 {[
-                  '40+ Net-New Appointments booked with Growth and Product leaders in 90 days.',
-                  '11 Dormant Enterprise Accounts reactivated after 12+ months of silence.',
-                  '6 Pilot Programs launched with a specific focus on tooling consolidation.',
-                  '10+ High-Intent Accounts warmed up and engaged ahead of a major ABM rollout.',
-                  'The Missing Piece for the industry: We successfully shifted VWO from an optional tool to the required activation layer for the modern marketing stack.'
+                  'The Zero Noise Outcome: Zigtal successfully shifted from an Optional Tool to the Mandatory Infrastructure for skill-based growth.'
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <CheckCircle2 className="w-6 h-6 text-blue-500 shrink-0 mt-0.5" />
@@ -257,10 +270,10 @@ export default function VWOCaseStudy() {
             <div id="future-outlook" className="prose prose-lg max-w-none text-slate-600 scroll-mt-32">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Future Outlook</h3>
               <p className="mb-4">
-                VWO is no longer chasing the market; they are anticipating it. The next phase of the Thyleads-VWO partnership involves Intent-Sensing GTM. 
+                The precision engine is now the baseline. The next phase moves from finding talent to Predictive Skill Orchestration. 
               </p>
               <p>
-                We are building a system that monitors tech-stack maturity signals across the globe, triggering an automated, hyper-personalized VWO &quot;activation play&quot; the moment a company’s data volume outweighs their ability to test it.
+                By leveraging the data captured in this phase, Zigtal and Thyleads are building a GTM model that predicts which companies are one Expert departure away from a project failure, ensuring Zigtal is there with the fix before the break happens.
               </p>
             </div>
           </article>
@@ -273,10 +286,10 @@ export default function VWOCaseStudy() {
             <div className="absolute top-[-50%] left-[-10%] w-[1000px] h-[1000px] rounded-full bg-blue-600 blur-[100px]" />
         </div>
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">If your outbound looks like &quot;just another tool&quot; to your prospects, It’s time to change the architecture with Thyleads.</h2>
-          {/* <p className="text-xl text-blue-200 mb-10 max-w-2xl mx-auto">
-            It’s time to start solving workflows.
-          </p> */}
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">If your outbound sounds like the market instead of ahead of it</h2>
+          <p className="text-xl text-blue-200 mb-10 max-w-2xl mx-auto">
+            Fix the translation gap with Thyleads.
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
