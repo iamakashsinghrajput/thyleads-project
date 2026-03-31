@@ -53,7 +53,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Oct 24, 2025",
     readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1481487484168-9b930d5b7d93?auto=format&fit=crop&q=80&w=800",
+    image: "/blogs/7-best-intent-data-providers.png",
     featured: true,
     content: {
         introduction: [
@@ -726,7 +726,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Oct 22, 2025",
     readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&q=80&w=800",
+    image: "/blogs/5 Best Email Outreach Service Providers.png",
     featured: false,
     content: {
       introduction: [
@@ -1140,7 +1140,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Oct 20, 2025",
     readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=800",
+    image: "/blogs/Top 6 Lead Generation Companies.png",
     featured: false,
     content: {
       introduction: [
