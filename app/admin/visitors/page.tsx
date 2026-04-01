@@ -15,12 +15,19 @@ interface User {
   region: string;
   country: string;
   isp: string;
+  org: string;
+  asInfo: string;
+  isMobile: boolean;
+  isProxy: boolean;
+  isHosting: boolean;
   browser: string;
   os: string;
   device: string;
   screenResolution: string;
   language: string;
   referrer: string;
+  leadName: string;
+  leadEmail: string;
   utmSource: string;
   utmMedium: string;
   utmCampaign: string;
@@ -358,7 +365,17 @@ export default function VisitorDashboard() {
                       className="border-b border-[#1a1a1a] hover:bg-[#1a1a1a] cursor-pointer transition"
                     >
                       <td className="px-4 py-3">
-                        <p className="text-sm text-white font-mono">{user.ip}</p>
+                        {user.leadName || user.leadEmail ? (
+                          <div>
+                            <p className="text-sm text-white font-semibold">{user.leadName || "—"}</p>
+                            <p className="text-xs text-indigo-400">{user.leadEmail}</p>
+                          </div>
+                        ) : (
+                          <div>
+                            <p className="text-sm text-white">{user.org !== "Unknown" && user.org !== user.isp ? user.org : user.isp}</p>
+                            <p className="text-xs text-gray-500 font-mono">{user.ip}</p>
+                          </div>
+                        )}
                       </td>
                       <td className="px-4 py-3">
                         <p className="text-sm text-white">{user.city}</p>
@@ -428,6 +445,30 @@ export default function VisitorDashboard() {
             </div>
 
             <div className="p-6 space-y-6">
+              {/* Lead Info */}
+              {(selectedUser.leadName || selectedUser.leadEmail) && (
+                <div className="bg-green-500/10 border border-green-500/20 rounded-xl p-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-6 h-6 bg-green-500/20 rounded-full flex items-center justify-center">
+                      <svg className="w-3.5 h-3.5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                      </svg>
+                    </div>
+                    <p className="text-xs text-green-400 uppercase tracking-wider font-semibold">Identified Lead</p>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div>
+                      <p className="text-xs text-gray-500">Name</p>
+                      <p className="text-sm text-white font-semibold">{selectedUser.leadName || "—"}</p>
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-500">Email</p>
+                      <p className="text-sm text-indigo-400">{selectedUser.leadEmail || "—"}</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {/* Quick Stats */}
               <div className="grid grid-cols-3 gap-3">
                 <div className="bg-[#0a0a0a] rounded-xl p-4 text-center">
@@ -486,9 +527,27 @@ export default function VisitorDashboard() {
                 </div>
               </div>
 
+              {/* Organization / Company */}
+              {selectedUser.org && selectedUser.org !== "Unknown" && selectedUser.org !== selectedUser.isp && (
+                <div className="bg-blue-500/10 border border-blue-500/20 rounded-xl p-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-6 h-6 bg-blue-500/20 rounded-full flex items-center justify-center">
+                      <svg className="w-3.5 h-3.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                      </svg>
+                    </div>
+                    <p className="text-xs text-blue-400 uppercase tracking-wider font-semibold">Identified Organization</p>
+                  </div>
+                  <p className="text-base text-white font-semibold">{selectedUser.org}</p>
+                  {selectedUser.asInfo !== "Unknown" && (
+                    <p className="text-xs text-gray-500 mt-1">{selectedUser.asInfo}</p>
+                  )}
+                </div>
+              )}
+
               {/* Location */}
               <div>
-                <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">Location</p>
+                <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">Location & Network</p>
                 <div className="bg-[#0a0a0a] rounded-xl p-4 grid grid-cols-2 gap-y-3 gap-x-6">
                   <div>
                     <p className="text-xs text-gray-600">City</p>
@@ -505,6 +564,18 @@ export default function VisitorDashboard() {
                   <div>
                     <p className="text-xs text-gray-600">ISP</p>
                     <p className="text-sm text-white">{selectedUser.isp}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-600">Organization</p>
+                    <p className="text-sm text-white">{selectedUser.org}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-600">Network Type</p>
+                    <p className="text-sm text-white">
+                      {selectedUser.isMobile ? "Mobile" : "Broadband"}
+                      {selectedUser.isProxy && " (VPN/Proxy)"}
+                      {selectedUser.isHosting && " (Hosting/DC)"}
+                    </p>
                   </div>
                 </div>
               </div>

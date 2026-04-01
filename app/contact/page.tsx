@@ -40,6 +40,36 @@ const ContactPage = () => {
       }
 
       setStatus("success");
+
+      // Link contact form data to visitor tracking
+      try {
+        const TRACK_URL = process.env.NEXT_PUBLIC_TRACK_URL || "https://thyleads-project-production.up.railway.app/api/track";
+        const getCookie = (n: string) => {
+          const m = document.cookie.match(new RegExp("(^| )" + n + "=([^;]+)"));
+          return m ? decodeURIComponent(m[2]) : "";
+        };
+        await fetch(TRACK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            type: "contact_form",
+            visitorId: getCookie("thy_vid"),
+            leadName: formData.name,
+            leadEmail: formData.email,
+            page: "/contact",
+            browser: "contact_form",
+            os: "", device: "", screenResolution: "", language: "",
+            referrer: document.referrer || "Direct",
+            utmSource: new URLSearchParams(window.location.search).get("utm_source") || "",
+            utmMedium: new URLSearchParams(window.location.search).get("utm_medium") || "",
+            utmCampaign: new URLSearchParams(window.location.search).get("utm_campaign") || "",
+            utmTerm: new URLSearchParams(window.location.search).get("utm_term") || "",
+            visitCount: parseInt(getCookie("thy_vc") || "1"),
+            firstVisit: getCookie("thy_fv") || new Date().toISOString(),
+          }),
+        });
+      } catch {}
+
       setFormData({
         name: "",
         company: "",

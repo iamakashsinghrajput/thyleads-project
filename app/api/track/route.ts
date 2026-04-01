@@ -34,6 +34,11 @@ interface VisitorLog {
   lat: number | null;
   lon: number | null;
   isp: string;
+  org: string;
+  asInfo: string;
+  isMobile: boolean;
+  isProxy: boolean;
+  isHosting: boolean;
   browser: string;
   os: string;
   device: string;
@@ -41,6 +46,8 @@ interface VisitorLog {
   language: string;
   page: string;
   referrer: string;
+  leadName?: string;
+  leadEmail?: string;
   utmSource: string;
   utmMedium: string;
   utmCampaign: string;
@@ -70,8 +77,8 @@ function isLocalIP(ip: string): boolean {
 async function getGeoFromIP(ip: string) {
   try {
     const url = isLocalIP(ip)
-      ? "http://ip-api.com/json/?fields=query,city,regionName,country,lat,lon,isp"
-      : `http://ip-api.com/json/${ip}?fields=query,city,regionName,country,lat,lon,isp`;
+      ? "http://ip-api.com/json/?fields=query,city,regionName,country,lat,lon,isp,org,as,mobile,proxy,hosting"
+      : `http://ip-api.com/json/${ip}?fields=query,city,regionName,country,lat,lon,isp,org,as,mobile,proxy,hosting`;
 
     const res = await fetch(url);
     if (res.ok) {
@@ -84,10 +91,15 @@ async function getGeoFromIP(ip: string) {
         lat: data.lat || null,
         lon: data.lon || null,
         isp: data.isp || "Unknown",
+        org: data.org || "Unknown",
+        asInfo: data.as || "Unknown",
+        isMobile: data.mobile || false,
+        isProxy: data.proxy || false,
+        isHosting: data.hosting || false,
       };
     }
   } catch {}
-  return { resolvedIP: ip, city: "Unknown", region: "Unknown", country: "Unknown", lat: null, lon: null, isp: "Unknown" };
+  return { resolvedIP: ip, city: "Unknown", region: "Unknown", country: "Unknown", lat: null, lon: null, isp: "Unknown", org: "Unknown", asInfo: "Unknown", isMobile: false, isProxy: false, isHosting: false };
 }
 
 export async function POST(request: NextRequest) {
@@ -110,6 +122,11 @@ export async function POST(request: NextRequest) {
       lat: geo.lat,
       lon: geo.lon,
       isp: geo.isp,
+      org: geo.org,
+      asInfo: geo.asInfo,
+      isMobile: geo.isMobile,
+      isProxy: geo.isProxy,
+      isHosting: geo.isHosting,
       browser: body.browser || "Unknown",
       os: body.os || "Unknown",
       device: body.device || "Unknown",
@@ -117,6 +134,8 @@ export async function POST(request: NextRequest) {
       language: body.language || "Unknown",
       page: body.page || "Unknown",
       referrer: body.referrer || "Direct",
+      leadName: body.leadName || undefined,
+      leadEmail: body.leadEmail || undefined,
       utmSource: body.utmSource || "",
       utmMedium: body.utmMedium || "",
       utmCampaign: body.utmCampaign || "",
@@ -127,6 +146,17 @@ export async function POST(request: NextRequest) {
     };
 
     const logs = await getVisitorLogs();
+
+    // If this is a lead capture, also update all previous logs from same visitor with their name/email
+    if (body.leadName || body.leadEmail) {
+      for (const existingLog of logs) {
+        if (existingLog.visitorId === body.visitorId || existingLog.ip === geo.resolvedIP) {
+          if (body.leadName) existingLog.leadName = body.leadName;
+          if (body.leadEmail) existingLog.leadEmail = body.leadEmail;
+        }
+      }
+    }
+
     logs.push(log);
 
     // Keep only last 10,000 entries
@@ -152,6 +182,11 @@ function groupByVisitor(logs: VisitorLog[]) {
     region: string;
     country: string;
     isp: string;
+    org: string;
+    asInfo: string;
+    isMobile: boolean;
+    isProxy: boolean;
+    isHosting: boolean;
     browser: string;
     os: string;
     device: string;
@@ -162,6 +197,8 @@ function groupByVisitor(logs: VisitorLog[]) {
     utmMedium: string;
     utmCampaign: string;
     utmTerm: string;
+    leadName: string;
+    leadEmail: string;
     firstSeen: string;
     lastSeen: string;
     totalTimeSpent: number;
@@ -181,6 +218,11 @@ function groupByVisitor(logs: VisitorLog[]) {
         region: log.region,
         country: log.country,
         isp: log.isp,
+        org: log.org || "Unknown",
+        asInfo: log.asInfo || "Unknown",
+        isMobile: log.isMobile || false,
+        isProxy: log.isProxy || false,
+        isHosting: log.isHosting || false,
         browser: log.browser,
         os: log.os,
         device: log.device,
@@ -191,6 +233,8 @@ function groupByVisitor(logs: VisitorLog[]) {
         utmMedium: log.utmMedium,
         utmCampaign: log.utmCampaign,
         utmTerm: log.utmTerm,
+        leadName: log.leadName || "",
+        leadEmail: log.leadEmail || "",
         firstSeen: log.timestamp,
         lastSeen: log.timestamp,
         totalTimeSpent: 0,
@@ -200,6 +244,9 @@ function groupByVisitor(logs: VisitorLog[]) {
 
     const user = grouped[key];
     user.lastSeen = log.timestamp;
+    // Update lead info if this log has it
+    if (log.leadName) user.leadName = log.leadName;
+    if (log.leadEmail) user.leadEmail = log.leadEmail;
 
     if (user.pagesVisited.length > 0) {
       const prevPage = user.pagesVisited[user.pagesVisited.length - 1];
