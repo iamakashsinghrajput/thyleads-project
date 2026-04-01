@@ -84,8 +84,9 @@ export default function VisitorTracker() {
       firstVisit,
     };
 
-    // Send tracking data
-    fetch("/api/track", {
+    // Send tracking data to Railway backend
+    const TRACK_URL = process.env.NEXT_PUBLIC_TRACK_URL || "https://thyleads-project-production.up.railway.app/api/track";
+    fetch(TRACK_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),

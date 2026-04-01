@@ -4,6 +4,26 @@ import path from "path";
 
 const LOG_FILE = path.join(process.cwd(), "visitor-logs.json");
 
+const ALLOWED_ORIGINS = [
+  "https://thyleads.com",
+  "https://www.thyleads.com",
+  "http://localhost:3000",
+];
+
+function corsHeaders(origin: string | null) {
+  const allowedOrigin = origin && ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
+  return {
+    "Access-Control-Allow-Origin": allowedOrigin,
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+  };
+}
+
+export async function OPTIONS(request: NextRequest) {
+  const origin = request.headers.get("origin");
+  return new NextResponse(null, { status: 204, headers: corsHeaders(origin) });
+}
+
 interface VisitorLog {
   id: string;
   timestamp: string;
@@ -14,20 +34,17 @@ interface VisitorLog {
   lat: number | null;
   lon: number | null;
   isp: string;
-  // System info
   browser: string;
   os: string;
   device: string;
   screenResolution: string;
   language: string;
-  // Page info
   page: string;
   referrer: string;
   utmSource: string;
   utmMedium: string;
   utmCampaign: string;
   utmTerm: string;
-  // Cookie
   visitorId: string;
   visitCount: number;
   firstVisit: string;
@@ -43,7 +60,7 @@ async function getVisitorLogs(): Promise<VisitorLog[]> {
 }
 
 async function saveVisitorLogs(logs: VisitorLog[]) {
-  await fs.writeFile(LOG_FILE, JSON.stringify(logs, null, 2));
+  await fs.writeFile(LOG_FILE, JSON.stringify(logs));
 }
 
 function isLocalIP(ip: string): boolean {
@@ -52,7 +69,6 @@ function isLocalIP(ip: string): boolean {
 
 async function getGeoFromIP(ip: string) {
   try {
-    // If local IP, fetch public IP first
     const url = isLocalIP(ip)
       ? "http://ip-api.com/json/?fields=query,city,regionName,country,lat,lon,isp"
       : `http://ip-api.com/json/${ip}?fields=query,city,regionName,country,lat,lon,isp`;
@@ -75,21 +91,25 @@ async function getGeoFromIP(ip: string) {
 }
 
 export async function POST(request: NextRequest) {
+  const origin = request.headers.get("origin");
   try {
     const body = await request.json();
 
-    // Get IP from headers
     const forwarded = request.headers.get("x-forwarded-for");
     const ip = forwarded ? forwarded.split(",")[0].trim() : request.headers.get("x-real-ip") || "Unknown";
 
-    // Get geo data from IP (resolves public IP if local)
     const geo = await getGeoFromIP(ip);
 
     const log: VisitorLog = {
       id: crypto.randomUUID(),
       timestamp: new Date().toISOString(),
       ip: geo.resolvedIP,
-      ...geo,
+      city: geo.city,
+      region: geo.region,
+      country: geo.country,
+      lat: geo.lat,
+      lon: geo.lon,
+      isp: geo.isp,
       browser: body.browser || "Unknown",
       os: body.os || "Unknown",
       device: body.device || "Unknown",
@@ -116,14 +136,14 @@ export async function POST(request: NextRequest) {
 
     await saveVisitorLogs(logs);
 
-    return NextResponse.json({ ok: true, visitorId: log.visitorId });
+    return NextResponse.json({ ok: true }, { headers: corsHeaders(origin) });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Unknown error";
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json({ error: message }, { status: 500, headers: corsHeaders(origin) });
   }
 }
 
-// Group logs by visitor (IP-based, 1 IP = 1 user)
+// Group logs by IP
 function groupByVisitor(logs: VisitorLog[]) {
   const grouped: Record<string, {
     ip: string;
@@ -144,11 +164,10 @@ function groupByVisitor(logs: VisitorLog[]) {
     utmTerm: string;
     firstSeen: string;
     lastSeen: string;
-    totalTimeSpent: number; // seconds
+    totalTimeSpent: number;
     pagesVisited: { page: string; timestamp: string; timeSpent: number }[];
   }> = {};
 
-  // Sort logs by timestamp
   const sorted = [...logs].sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
 
   for (const log of sorted) {
@@ -182,40 +201,36 @@ function groupByVisitor(logs: VisitorLog[]) {
     const user = grouped[key];
     user.lastSeen = log.timestamp;
 
-    // Calculate time spent on previous page
     if (user.pagesVisited.length > 0) {
       const prevPage = user.pagesVisited[user.pagesVisited.length - 1];
       const prevTime = new Date(prevPage.timestamp).getTime();
       const currTime = new Date(log.timestamp).getTime();
       const diff = Math.floor((currTime - prevTime) / 1000);
-      // Cap at 30 min (if gap is longer, they likely left and came back)
       prevPage.timeSpent = diff <= 1800 ? diff : 0;
     }
 
     user.pagesVisited.push({
       page: log.page,
       timestamp: log.timestamp,
-      timeSpent: 0, // will be calculated when next page is visited
+      timeSpent: 0,
     });
 
-    // Recalculate total time
     user.totalTimeSpent = user.pagesVisited.reduce((sum, p) => sum + p.timeSpent, 0);
   }
 
   return Object.values(grouped);
 }
 
-// GET endpoint to view logs (protected with a simple key)
 export async function GET(request: NextRequest) {
+  const origin = request.headers.get("origin");
   const key = request.nextUrl.searchParams.get("key");
-  if (key !== process.env.ADMIN_KEY && key !== "thyleads2026") {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (key !== process.env.ADMIN_PASS && key !== "thyleads2026") {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401, headers: corsHeaders(origin) });
   }
 
   const logs = await getVisitorLogs();
   const users = groupByVisitor(logs);
 
-  // Sort by most recent activity
   users.sort((a, b) => new Date(b.lastSeen).getTime() - new Date(a.lastSeen).getTime());
 
   const summary = {
@@ -242,5 +257,5 @@ export async function GET(request: NextRequest) {
     ).length,
   };
 
-  return NextResponse.json({ summary, users });
+  return NextResponse.json({ summary, users }, { headers: corsHeaders(origin) });
 }

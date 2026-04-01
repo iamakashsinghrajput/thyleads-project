@@ -72,7 +72,8 @@ export default function VisitorDashboard() {
   const fetchData = async (authKey: string) => {
     setLoading(true);
     try {
-      const res = await fetch(`/api/track?key=${authKey}`);
+      const TRACK_URL = process.env.NEXT_PUBLIC_TRACK_URL || "https://thyleads-project-production.up.railway.app/api/track";
+      const res = await fetch(`${TRACK_URL}?key=${authKey}`);
       if (res.ok) {
         const json = await res.json();
         setData(json);
