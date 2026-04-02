@@ -20,12 +20,26 @@ const requireEnv = (key: string) => {
 
 export async function POST(request: Request) {
   try {
-    const body = (await request.json()) as ContactPayload;
+    const body = (await request.json()) as ContactPayload & { website_url?: string };
     const { name, company, email, phone, message, mode } = body;
+
+    // Bot protection: honeypot field
+    if (body.website_url) {
+      return NextResponse.json({ ok: true }); // Silently reject
+    }
 
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: "Missing required fields." },
+        { status: 400 }
+      );
+    }
+
+    // Bot protection: basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { error: "Invalid email address." },
         { status: 400 }
       );
     }

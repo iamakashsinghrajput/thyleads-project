@@ -4,6 +4,7 @@ import Script from "next/script";
 import { Suspense } from "react";
 import VisitorTracker from "@/components/VisitorTracker";
 import CookieConsent from "@/components/CookieConsent";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -75,6 +76,18 @@ export default function RootLayout({
             })(window, document, "clarity", "script", "w4d9qazj69");
           `}
         </Script>
+        <Script id="trafficguard" strategy="afterInteractive">
+          {`
+            var dataTrafficGuard = dataTrafficGuard || [];
+            dataTrafficGuard.push(['property_group_id', 'tg-g-023752-001']);
+            dataTrafficGuard.push(['event','pageview']);
+            (function() {var tg = document.createElement('script'); tg.type = 'text/javascript'; tg.async = true; tg.src = '//p.tgtag.io/tg.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tg, s);})();
+          `}
+        </Script>
+        <noscript>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="//p.tgtag.io/event?property_group_id=tg-g-023752-001&event_name=pageview&no_script=1" width="1" height="1" style={{ display: 'none' }} alt="" />
+        </noscript>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}

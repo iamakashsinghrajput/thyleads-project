@@ -15,8 +15,10 @@ const ContactPage = () => {
     phone: "",
     message: "",
   });
+  const [honeypot, setHoneypot] = useState(""); // Bot trap - invisible field
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [formLoadTime] = useState(Date.now());
 
   const updateField = (key: keyof typeof formData) => (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({ ...prev, [key]: event.target.value }));
@@ -24,6 +26,20 @@ const ContactPage = () => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    // Bot checks
+    // 1. Honeypot filled = bot
+    if (honeypot) return;
+    // 2. Form submitted too fast (under 3 seconds) = bot
+    if (Date.now() - formLoadTime < 3000) return;
+    // 3. No human verification cookie = bot
+    const hasHumanCookie = document.cookie.includes("thy_human");
+    if (!hasHumanCookie) {
+      setStatus("error");
+      setErrorMessage("Please interact with the page before submitting.");
+      return;
+    }
+
     setStatus("submitting");
     setErrorMessage("");
 
@@ -140,6 +156,17 @@ const ContactPage = () => {
             </div>
 
             <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Honeypot - invisible to humans, bots fill it */}
+              <input
+                type="text"
+                name="website_url"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                style={{ position: "absolute", left: "-9999px", opacity: 0, height: 0, width: 0 }}
+              />
               <label className="flex flex-col gap-2">
                 <span className="text-xs uppercase tracking-[0.2em] text-white/60">Full name</span>
                 <input
