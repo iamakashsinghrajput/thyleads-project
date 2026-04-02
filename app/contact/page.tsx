@@ -57,6 +57,13 @@ const ContactPage = () => {
 
       setStatus("success");
 
+      // Fire Google Ads conversion event
+      if (typeof window !== "undefined" && typeof (window as unknown as Record<string, unknown>).gtag === "function") {
+        (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", "conversion", {
+          send_to: "AW-18052879052/nzV1CMDjk5QcEMylpKBD",
+        });
+      }
+
       // Link contact form data to visitor tracking
       try {
         const TRACK_URL = process.env.NEXT_PUBLIC_TRACK_URL || "https://thyleads-project-production.up.railway.app/api/track";
