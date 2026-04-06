@@ -9,17 +9,14 @@ const MessyMiddle = () => {
   return (
     <section className="min-h-screen relative overflow-hidden bg-black text-white flex flex-col items-center px-4 lg:px-8 font-sans py-24 gap-20">
       
-      {/* Background Ambience - Updated for deeper depth */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[600px] bg-purple-900/20 blur-[120px] rounded-full opacity-40" />
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.05] brightness-100 contrast-150 mix-blend-overlay"></div>
-        {/* Grid Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto w-full relative z-10 flex flex-col gap-16">
         
-        {/* HEADER */}
         <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-12 text-transparent bg-clip-text bg-gradient-to-r from-neutral-500 via-white to-neutral-700 leading-[1.1]">
             3 Pillars to Solve RevOps for <br/>
@@ -30,7 +27,6 @@ const MessyMiddle = () => {
             Thyleads focuses on the &ldquo;messy middle&rdquo; between a prospect&rsquo;s first interest and the final close. So AEs only enter when revenue conversations are real.
           </p>
 
-          {/* Refined Outcomes Banner */}
           <div className="flex flex-wrap justify-center mb-8 gap-2 md:gap-4">
               {[
                 "Shorter sales cycles",
@@ -45,12 +41,9 @@ const MessyMiddle = () => {
           </div>
         </div>
 
-        {/* STRATEGY CARDS GRID */}
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
           
-          {/* Pillar 1: Purple - Intent-Led */}
           <div className="group relative rounded-[2rem] bg-gradient-to-b from-neutral-900/80 to-black border border-white/10 p-8 flex flex-col h-full hover:border-purple-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-900/20">
-            {/* Ambient Glow */}
             <div className="absolute -right-10 -top-10 w-40 h-40 bg-purple-500/10 blur-[60px] rounded-full group-hover:bg-purple-500/20 transition-all duration-500" />
             
             <div className="relative z-10">
@@ -90,9 +83,7 @@ const MessyMiddle = () => {
             </div>
           </div>
 
-          {/* Pillar 2: Blue - Revenue-Grade */}
           <div className="group relative rounded-[2rem] bg-gradient-to-b from-neutral-900/80 to-black border border-white/10 p-8 flex flex-col h-full hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-900/20">
-             {/* Ambient Glow */}
              <div className="absolute -right-10 -top-10 w-40 h-40 bg-blue-500/10 blur-[60px] rounded-full group-hover:bg-blue-500/20 transition-all duration-500" />
             
             <div className="relative z-10">
@@ -132,9 +123,7 @@ const MessyMiddle = () => {
             </div>
           </div>
 
-          {/* Pillar 3: Orange - Deal Momentum */}
           <div className="group relative rounded-[2rem] bg-gradient-to-b from-neutral-900/80 to-black border border-white/10 p-8 flex flex-col h-full hover:border-orange-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-orange-900/20">
-             {/* Ambient Glow */}
              <div className="absolute -right-10 -top-10 w-40 h-40 bg-orange-500/10 blur-[60px] rounded-full group-hover:bg-orange-500/20 transition-all duration-500" />
             
             <div className="relative z-10">

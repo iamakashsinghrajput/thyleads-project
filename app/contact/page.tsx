@@ -15,7 +15,7 @@ const ContactPage = () => {
     phone: "",
     message: "",
   });
-  const [honeypot, setHoneypot] = useState(""); // Bot trap - invisible field
+  const [honeypot, setHoneypot] = useState("");
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [formLoadTime] = useState(Date.now());
@@ -27,12 +27,8 @@ const ContactPage = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // Bot checks
-    // 1. Honeypot filled = bot
     if (honeypot) return;
-    // 2. Form submitted too fast (under 3 seconds) = bot
     if (Date.now() - formLoadTime < 3000) return;
-    // 3. No human verification cookie = bot
     const hasHumanCookie = document.cookie.includes("thy_human");
     if (!hasHumanCookie) {
       setStatus("error");
@@ -57,14 +53,12 @@ const ContactPage = () => {
 
       setStatus("success");
 
-      // Fire Google Ads conversion event
       if (typeof window !== "undefined" && typeof (window as unknown as Record<string, unknown>).gtag === "function") {
         (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", "conversion", {
           send_to: "AW-18052879052/nzV1CMDjk5QcEMylpKBD",
         });
       }
 
-      // Link contact form data to visitor tracking
       try {
         const TRACK_URL = process.env.NEXT_PUBLIC_TRACK_URL || "https://thyleads-project-production.up.railway.app/api/track";
         const getCookie = (n: string) => {
@@ -163,7 +157,6 @@ const ContactPage = () => {
             </div>
 
             <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Honeypot - invisible to humans, bots fill it */}
               <input
                 type="text"
                 name="website_url"

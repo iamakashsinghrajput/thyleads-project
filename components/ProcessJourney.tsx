@@ -100,22 +100,19 @@ const ProcessJourney = () => {
   const [isHovering, setIsHovering] = useState(false);
   const stepsContainerRef = useRef<HTMLDivElement | null>(null);
 
-  // Pre-calculate random positions for gradient animation
   const gradientPositions = useRef({
     x: Math.random() * 100,
     y: Math.random() * 100
   });
 
-  // Pause auto-play on hover
   useEffect(() => {
     if (isHovering) return;
     const timer = setInterval(() => {
       setActiveStep((prev) => (prev + 1) % steps.length);
-    }, 6000); // Slightly faster for responsiveness
+    }, 6000);
     return () => clearInterval(timer);
   }, [isHovering]);
 
-  // Auto-scroll the sidebar to keep active step in view (without scrolling the page)
   useEffect(() => {
     if (stepsContainerRef.current) {
       const container = stepsContainerRef.current;
@@ -125,12 +122,10 @@ const ProcessJourney = () => {
         const containerRect = container.getBoundingClientRect();
         const elementRect = activeElement.getBoundingClientRect();
 
-        // Calculate if element is out of view within the container
         const isAbove = elementRect.top < containerRect.top;
         const isBelow = elementRect.bottom > containerRect.bottom;
 
         if (isAbove || isBelow) {
-          // Scroll only the container, not the page
           const scrollTop = activeElement.offsetTop - container.offsetTop - (container.clientHeight / 2) + (activeElement.clientHeight / 2);
           container.scrollTo({
             top: scrollTop,
@@ -144,14 +139,12 @@ const ProcessJourney = () => {
   return (
     <section className="w-full bg-[#030303] text-white py-24 relative selection:bg-purple-500/30 overflow-hidden font-sans">
 
-      {/* Cinematic Background */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute top-[-20%] left-[-10%] w-[50vw] h-[50vw] bg-purple-900/10 rounded-full blur-[100px] mix-blend-screen animate-pulse duration-[10s]" />
         <div className="absolute bottom-[-20%] right-[-10%] w-[50vw] h-[50vw] bg-blue-900/10 rounded-full blur-[100px] mix-blend-screen animate-pulse duration-[12s] delay-1000" />
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 brightness-100 contrast-150"></div>
       </div>
 
-      {/* Header Section */}
       <div className="relative z-20 pb-12 px-6 text-center">
          <motion.div
            initial={{ opacity: 0, y: 15 }}
@@ -173,14 +166,11 @@ const ProcessJourney = () => {
          </motion.div>
       </div>
 
-      {/* Compact Dashboard Layout */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 md:px-6 pb-12">
         <div className="grid lg:grid-cols-12 gap-4 h-auto lg:h-[500px]">
           
-          {/* Left: Compact Step List (Control Panel) */}
           <div className="lg:col-span-5 h-full relative flex flex-col bg-[#050505] border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
              
-             {/* Panel Header */}
              <div className="p-4 border-b border-white/5 bg-white/[0.02] flex items-center justify-between">
                 <div className="flex items-center gap-2 text-neutral-400">
                   <Layers className="w-4 h-4" />
@@ -211,7 +201,6 @@ const ProcessJourney = () => {
                          : 'hover:bg-white/[0.03] border border-transparent'}
                      `}
                    >
-                     {/* Icon */}
                      <div className={`
                        relative flex-shrink-0 w-8 h-8 rounded-md flex items-center justify-center border transition-all duration-300
                        ${isActive 
@@ -238,11 +227,9 @@ const ProcessJourney = () => {
              </div>
           </div>
 
-          {/* Right: Tighter Visualizer (The Monitor) */}
           <div className="lg:col-span-7 h-[400px] lg:h-full relative group perspective-1000">
             <div className="w-full h-full bg-[#080808] border border-white/10 rounded-2xl overflow-hidden shadow-2xl flex flex-col relative ring-1 ring-white/5 relative">
               
-              {/* Visualizer HUD */}
               <div className="absolute top-0 left-0 right-0 px-6 py-5 flex justify-between items-start z-20 pointer-events-none select-none border-b border-white/5 bg-gradient-to-b from-black/50 to-transparent">
                  <div>
                     <motion.div 
@@ -266,7 +253,6 @@ const ProcessJourney = () => {
                  </div>
               </div>
 
-              {/* Grid Background */}
               <div className="absolute inset-0 opacity-15 pointer-events-none">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
                 <motion.div
@@ -278,7 +264,6 @@ const ProcessJourney = () => {
                 />
               </div>
 
-              {/* ------- ANIMATION STAGE ------- */}
               <div className="flex-1 relative flex items-center justify-center overflow-hidden">
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -290,7 +275,6 @@ const ProcessJourney = () => {
                     className="w-full h-full flex items-center justify-center p-4"
                   >
                     
-                    {/* STEP 1: LEAD GEN */}
                     {activeStep === 0 && (
                       <div className="relative w-full h-full flex items-center justify-center">
                          <div className="relative z-30">
@@ -301,7 +285,6 @@ const ProcessJourney = () => {
                             >
                                <Database className="w-10 h-10 text-white" />
                             </motion.div>
-                            {/* Pulsing Rings */}
                             {[1, 1.5].map((scale, i) => (
                                 <motion.div
                                     key={i}
@@ -312,7 +295,6 @@ const ProcessJourney = () => {
                             ))}
                          </div>
 
-                         {/* Sources Orbiting Closer */}
                          {[
                            { icon: <Linkedin className="w-4 h-4" />, x: -120, y: -80, color: "bg-blue-600" },
                            { icon: <Mail className="w-4 h-4" />, x: 120, y: -80, color: "bg-amber-500" },
@@ -328,8 +310,7 @@ const ProcessJourney = () => {
                              >
                                <div className="text-white">{source.icon}</div>
                              </motion.div>
-                             {/* Connector */}
-                             <motion.div 
+                             <motion.div
                                 className="absolute w-1/2 h-[1px] bg-white/10 origin-right left-0 top-1/2 z-0"
                                 style={{ 
                                     width: Math.sqrt(source.x ** 2 + source.y ** 2), 
@@ -342,7 +323,6 @@ const ProcessJourney = () => {
                                 animate={{ scaleX: 1 }}
                                 transition={{ delay: 0.3 + i * 0.1 }}
                              />
-                              {/* Particles */}
                               <motion.div
                                 className={`absolute w-2 h-2 rounded-full ${source.color}`}
                                 animate={{ 
@@ -358,7 +338,6 @@ const ProcessJourney = () => {
                       </div>
                     )}
 
-                    {/* STEP 2: QUALIFICATION */}
                     {activeStep === 1 && (
                       <div className="relative flex flex-col items-center justify-center">
                         <motion.div 
@@ -383,8 +362,7 @@ const ProcessJourney = () => {
                                    <motion.div className="h-full bg-blue-500" animate={{ width: "90%" }} transition={{ duration: 1, delay: 0.4 }} />
                                </div>
                            </div>
-                           {/* Scan Line */}
-                           <motion.div 
+                           <motion.div
                              className="absolute top-0 left-0 right-0 h-1 bg-blue-400 shadow-[0_0_15px_rgba(96,165,250,0.8)]"
                              animate={{ top: ["0%", "100%", "0%"] }}
                              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
@@ -401,7 +379,6 @@ const ProcessJourney = () => {
                       </div>
                     )}
 
-                    {/* STEP 3: SCHEDULING */}
                     {activeStep === 2 && (
                       <div className="w-64 bg-[#111] border border-white/10 rounded-xl p-3 shadow-xl">
                          <div className="grid grid-cols-4 gap-2">
@@ -429,7 +406,6 @@ const ProcessJourney = () => {
                       </div>
                     )}
 
-                    {/* STEP 4: DEMO */}
                     {activeStep === 3 && (
                       <div className="relative">
                          <motion.div 
@@ -461,7 +437,6 @@ const ProcessJourney = () => {
                       </div>
                     )}
 
-                    {/* STEP 5: ALIGNMENT */}
                     {activeStep === 4 && (
                       <div className="bg-[#111] border border-white/10 rounded-xl p-4 w-56">
                          <div className="space-y-3">
@@ -486,15 +461,12 @@ const ProcessJourney = () => {
                       </div>
                     )}
 
-                    {/* STEP 6: STAKEHOLDER MAPPING (RESTORED) */}
                     {activeStep === 5 && (
                       <div className="relative w-full h-full flex items-center justify-center">
-                         {/* Center */}
                          <motion.div className="relative z-20 w-16 h-16 bg-violet-600 rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(124,58,237,0.5)] border-4 border-[#080808]">
                            <Users className="w-8 h-8 text-white" />
                          </motion.div>
 
-                         {/* Nodes */}
                          {[
                            { x: 0, y: -120, label: "Decision Maker", icon: <Fingerprint size={16} />, delay: 0 },
                            { x: 100, y: -60, label: "Tech Lead", icon: <Monitor size={16} />, delay: 0.2 },
@@ -504,11 +476,10 @@ const ProcessJourney = () => {
                            { x: -100, y: -60, label: "Legal", icon: <ShieldCheck size={16} />, delay: 1.0 },
                          ].map((node, i) => (
                            <React.Fragment key={i}>
-                             {/* Line */}
-                             <motion.div 
+                             <motion.div
                                className="absolute top-1/2 left-1/2 h-0.5 bg-violet-500/30 origin-left z-0"
                                style={{ 
-                                 width: Math.sqrt(node.x ** 2 + node.y ** 2) * 0.8, // Adjusted scale for new container
+                                 width: Math.sqrt(node.x ** 2 + node.y ** 2) * 0.8,
                                  rotate: `${Math.atan2(node.y, node.x) * (180 / Math.PI)}deg`
                                }}
                                initial={{ scaleX: 0 }}
@@ -516,11 +487,10 @@ const ProcessJourney = () => {
                                transition={{ delay: node.delay, duration: 0.5 }}
                              />
                              
-                             {/* Node Dot */}
-                             <motion.div 
+                             <motion.div
                                className="absolute top-1/2 left-1/2 w-10 h-10 -ml-5 -mt-5 bg-[#111] border border-violet-500/50 rounded-full flex items-center justify-center z-10 shadow-lg"
                                initial={{ x: 0, y: 0, opacity: 0 }}
-                               animate={{ x: node.x * 0.8, y: node.y * 0.8, opacity: 1 }} // Adjusted scale for new container
+                               animate={{ x: node.x * 0.8, y: node.y * 0.8, opacity: 1 }}
                                transition={{ delay: node.delay, duration: 0.5, type: 'spring' }}
                              >
                                 <div className="text-violet-400">{node.icon}</div>
@@ -538,7 +508,6 @@ const ProcessJourney = () => {
                       </div>
                     )}
 
-                    {/* STEP 7: NURTURING (RESTORED) */}
                     {activeStep === 6 && (
                       <div className="relative w-full h-full flex items-center justify-center perspective-1000">
                         {[
@@ -590,7 +559,6 @@ const ProcessJourney = () => {
                       </div>
                     )}
 
-                    {/* STEP 8: REVENUE (RESTORED) */}
                     {activeStep === 7 && (
                       <div className="w-full max-w-lg h-64 flex items-end justify-between gap-4 px-8 relative">
                         {[30, 45, 25, 60, 50, 80, 70, 95].map((h, i) => (
@@ -608,8 +576,7 @@ const ProcessJourney = () => {
                           >
                             <div className={`absolute bottom-0 inset-x-0 top-0 rounded-t-lg bg-gradient-to-t from-indigo-900 to-indigo-500 opacity-80 group-hover:to-indigo-400 transition-all`} />
                             
-                            {/* Top Tag */}
-                            <motion.div 
+                            <motion.div
                               initial={{ opacity: 0, y: 10 }}
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ delay: 1 + i * 0.1 }}
@@ -620,7 +587,6 @@ const ProcessJourney = () => {
                           </motion.div>
                         ))}
                         
-                        {/* Trend Line Overlay */}
                         <svg className="absolute inset-0 w-full h-full pointer-events-none overflow-visible z-20">
                            <motion.path 
                              d="M 10 180 L 60 140 L 110 190 L 160 100 L 210 120 L 260 50 L 310 70 L 360 20" 
@@ -654,7 +620,6 @@ const ProcessJourney = () => {
                 </AnimatePresence>
               </div>
               
-              {/* Progress Line */}
               <div className="h-0.5 bg-white/5 w-full">
                 <motion.div 
                   animate={{ width: `${((activeStep + 1) / steps.length) * 100}%` }}
@@ -667,7 +632,6 @@ const ProcessJourney = () => {
         </div>
       </div>
 
-      {/* Footer CTA - Compact */}
       <div className="relative z-10 w-full max-w-4xl mx-auto px-6 pb-12 pt-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -32,16 +32,13 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-black text-white relative overflow-hidden">
-      {/* Background Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-600/10 blur-[150px] rounded-full" />
         <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-indigo-600/10 blur-[120px] rounded-full" />
       </div>
 
-      {/* Main Footer Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-20">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-10 mb-16">
-          {/* Brand Column */}
           <div className="col-span-2 md:col-span-3 lg:col-span-2">
             <div className="flex items-center space-x-3 mb-5">
               <div className="relative group">
@@ -61,7 +58,6 @@ const Footer: React.FC = () => {
             <p className="text-neutral-400 mb-5 max-w-xs text-sm">
               AI-powered outbound systems for SaaS companies. Get responses, book meetings, and win logos.
             </p>
-            {/* Social Links */}
             <div className="flex gap-3">
               <a href="https://twitter.com/thyleads" className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-purple-600 hover:border-purple-600 transition-colors group">
                 <Twitter className="w-4 h-4 text-neutral-400 group-hover:text-white" />
@@ -75,7 +71,6 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Links Columns */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
               <h3 className="text-white font-bold text-sm uppercase tracking-wider mb-4">
@@ -96,7 +91,6 @@ const Footer: React.FC = () => {
             </div>
           ))}
 
-          {/* Contact & Legal Column */}
           <div>
             <h3 className="text-white font-bold text-sm uppercase tracking-wider mb-4">
               Get in Touch
@@ -131,7 +125,6 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Highlights Row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 py-8 border-y border-white/5">
           {[
             { label: "Intent-Driven Prospecting", desc: "Signal-Based Targeting" },
@@ -149,7 +142,6 @@ const Footer: React.FC = () => {
           ))}
         </div>
 
-        {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-neutral-500 text-sm">
             © {new Date().getFullYear()} Thyleads. All rights reserved.

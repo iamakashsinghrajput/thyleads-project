@@ -9,14 +9,11 @@ interface CustomerStoryPageProps {
   onBack: () => void;
 }
 
-// Changed to default export to fix import issues in App.tsx
 export default function CustomerStoryPage({ testimonial, onBack }: CustomerStoryPageProps) {
-  // Reliable generic tech background video
   const videoUrl = "https://videos.pexels.com/video-files/3129671/3129671-hd_1280_720_30fps.mp4";
 
   return (
     <div className="min-h-screen bg-white font-sans animate-in fade-in duration-500">
-      {/* Navigation Overlay */}
       <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 lg:px-12 bg-gradient-to-b from-black/60 to-transparent">
         <button 
           onClick={onBack}
@@ -30,7 +27,6 @@ export default function CustomerStoryPage({ testimonial, onBack }: CustomerStory
         </div>
       </nav>
 
-      {/* Hero Section with Video Background */}
       <header className="relative h-[85vh] w-full overflow-hidden flex items-end pb-20">
         <div className="absolute inset-0 w-full h-full bg-slate-900">
           <video 
@@ -42,7 +38,6 @@ export default function CustomerStoryPage({ testimonial, onBack }: CustomerStory
           >
             <source src={videoUrl} type="video/mp4" />
           </video>
-          {/* Gradient Overlays */}
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-transparent to-transparent" />
         </div>
@@ -89,11 +84,9 @@ export default function CustomerStoryPage({ testimonial, onBack }: CustomerStory
         </div>
       </header>
 
-      {/* Main Content Layout */}
       <main className="relative z-10 bg-white">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 px-6 md:px-12 py-20">
           
-          {/* Sidebar / Sticky Nav */}
           <aside className="lg:col-span-3 hidden lg:block">
             <div className="sticky top-32 space-y-8">
               <div className="text-sm font-semibold text-gray-400 tracking-wider uppercase mb-4">Contents</div>
@@ -112,7 +105,6 @@ export default function CustomerStoryPage({ testimonial, onBack }: CustomerStory
               <div className="pt-8 border-t border-gray-100">
                 <div className="text-sm text-gray-500 mb-2">Share this story</div>
                 <div className="flex gap-4">
-                  {/* Social placeholders */}
                   <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 cursor-pointer text-gray-600 transition-colors">
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
                   </div>
@@ -124,10 +116,8 @@ export default function CustomerStoryPage({ testimonial, onBack }: CustomerStory
             </div>
           </aside>
 
-          {/* Article Content */}
           <article className="lg:col-span-8 lg:col-start-5 space-y-12">
             
-            {/* Intro */}
             <div className="prose prose-lg md:prose-xl max-w-none text-slate-600">
               <p className="lead text-2xl font-normal leading-relaxed text-slate-900 mb-8">
                 As a global leader in travel, {testimonial.companyName} manages massive amounts of data across distributed teams. They needed a way to break down silos and make internal knowledge instantly accessible.
@@ -137,7 +127,6 @@ export default function CustomerStoryPage({ testimonial, onBack }: CustomerStory
               </p>
             </div>
 
-            {/* Blockquote */}
             <div className="my-16 relative">
               <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-blue-500 to-[#C3F53C]" />
               <div className="pl-8 md:pl-12">
@@ -155,7 +144,6 @@ export default function CustomerStoryPage({ testimonial, onBack }: CustomerStory
               </div>
             </div>
 
-            {/* Grid Stats */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
               <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100">
                 <Clock className="w-8 h-8 text-blue-600 mb-4" />
@@ -194,7 +182,6 @@ export default function CustomerStoryPage({ testimonial, onBack }: CustomerStory
         </div>
       </main>
 
-      {/* Footer CTA */}
       <footer className="bg-slate-900 py-24 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-20">
             <div className="absolute top-[-50%] left-[-10%] w-[1000px] h-[1000px] rounded-full bg-blue-600 blur-[100px]" />

@@ -30,7 +30,6 @@ const BlogNavbar: React.FC = () => {
       <div className="w-full px-6 lg:px-12 py-4">
         <div className="flex items-center justify-between">
 
-          {/* Logo - Left */}
           <Link href="/" className="flex items-center space-x-1 cursor-pointer hover:opacity-80 transition-opacity">
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
@@ -47,7 +46,6 @@ const BlogNavbar: React.FC = () => {
             <span className="text-xl font-bold tracking-tight text-gray-900">Thyleads</span>
           </Link>
 
-          {/* Nav Links - Center */}
           <div className="hidden md:flex items-center space-x-10 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => (
               <div key={link.name} className="relative">
@@ -76,7 +74,6 @@ const BlogNavbar: React.FC = () => {
             ))}
           </div>
 
-          {/* Action Button - Right */}
           <div className="hidden md:block">
             <Link
               href="/contact"
@@ -87,7 +84,6 @@ const BlogNavbar: React.FC = () => {
             </Link>
           </div>
 
-          {/* Mobile Toggle */}
           <div className="md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -99,7 +95,6 @@ const BlogNavbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <div className={`md:hidden bg-white border-b border-gray-200 transition-all duration-300 ease-in-out overflow-hidden ${mobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}>
             <div className="px-6 pt-4 pb-10 space-y-6">
               {navLinks.map((link) => (

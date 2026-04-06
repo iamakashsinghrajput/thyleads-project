@@ -1,6 +1,3 @@
-// Blog Markdown to TypeScript Converter
-// Usage: npx tsx scripts/convert-blog-md.ts <markdown-file-path>
-
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -51,47 +48,37 @@ function parseMarkdownToBlogFormat(markdownContent: string): {
     const line = lines[i];
     const trimmedLine = line.trim();
 
-    // Skip empty lines
     if (!trimmedLine) {
       skipTableOfContents = false;
       continue;
     }
 
-    // Skip lines that are just "##" with no heading text
     if (trimmedLine === '##' || trimmedLine === '###') {
       continue;
     }
 
-    // Main heading (##) - starts a new section
     if (trimmedLine.startsWith('## ')) {
       const headingText = trimmedLine.substring(3).trim();
 
-      // Skip empty headings
       if (!headingText) {
         continue;
       }
 
-      // Check if this is a numbered section (e.g., "1. Thyleads")
       const numberedMatch = headingText.match(/^\d+\.\s+(.+)$/);
 
-      // If we were in introduction, we're not anymore
       isInIntroduction = false;
       skipTableOfContents = false;
 
-      // Flush any pending list items to previous section
       if (currentSection) {
         flushList(currentSection.content);
         sections.push(currentSection);
       }
 
-      // Start new section
       currentSection = {
         heading: numberedMatch ? numberedMatch[1] : headingText,
         content: []
       };
 
-      // Check if next items might be a table of contents
-      // (typically numbered lists that appear right after first section heading)
       if (sections.length === 0) {
         skipTableOfContents = true;
       }
@@ -99,7 +86,6 @@ function parseMarkdownToBlogFormat(markdownContent: string): {
       continue;
     }
 
-    // Subheading (###)
     if (trimmedLine.startsWith('### ')) {
       const subheadingText = trimmedLine.substring(4).trim();
       const targetContent = isInIntroduction ? introduction : (currentSection?.content || []);
@@ -113,18 +99,15 @@ function parseMarkdownToBlogFormat(markdownContent: string): {
       continue;
     }
 
-    // Unordered list item
     if (trimmedLine.match(/^[-*✅]\s+/)) {
       const itemText = trimmedLine.replace(/^[-*✅]\s+/, '').trim();
 
-      // Skip table of contents items (they usually have format "1. 1. Something" appearing in introduction)
       if (isInIntroduction && itemText.match(/^\d+\.\s+\d+\.\s+/)) {
         continue;
       }
 
       const targetContent = isInIntroduction ? introduction : (currentSection?.content || []);
 
-      // If switching from ordered to unordered, flush
       if (orderedList) {
         flushList(targetContent);
       }
@@ -135,18 +118,15 @@ function parseMarkdownToBlogFormat(markdownContent: string): {
       continue;
     }
 
-    // Ordered list item
     if (trimmedLine.match(/^\d+\.\s+/)) {
       const itemText = trimmedLine.replace(/^\d+\.\s+/, '').trim();
 
-      // Skip table of contents items
       if (skipTableOfContents && itemText.match(/^\d+\.\s+/)) {
         continue;
       }
 
       const targetContent = isInIntroduction ? introduction : (currentSection?.content || []);
 
-      // If switching from unordered to ordered, flush
       if (!orderedList && currentListItems.length > 0) {
         flushList(targetContent);
       }
@@ -157,12 +137,10 @@ function parseMarkdownToBlogFormat(markdownContent: string): {
       continue;
     }
 
-    // Regular paragraph
     const targetContent = isInIntroduction ? introduction : (currentSection?.content || []);
     flushList(targetContent);
     skipTableOfContents = false;
 
-    // Skip image source lines
     if (trimmedLine.startsWith('Image Source:')) {
       continue;
     }
@@ -170,7 +148,6 @@ function parseMarkdownToBlogFormat(markdownContent: string): {
     targetContent.push(trimmedLine);
   }
 
-  // Flush any remaining lists and sections
   if (currentSection) {
     flushList(currentSection.content);
     sections.push(currentSection);
@@ -183,7 +160,6 @@ function parseMarkdownToBlogFormat(markdownContent: string): {
 
 function formatContentBlock(block: ContentBlock, indent: string = '          '): string {
   if (typeof block === 'string') {
-    // Escape quotes and format as string
     const escaped = block.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
     return `"${escaped}"`;
   }
@@ -205,7 +181,6 @@ function formatContentBlock(block: ContentBlock, indent: string = '          '):
   return '';
 }
 
-// Main execution
 const args = process.argv.slice(2);
 if (args.length === 0) {
   console.error('Usage: npx tsx scripts/convert-blog-md.ts <markdown-file-path>');

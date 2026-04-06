@@ -14,7 +14,6 @@ const CTASection: React.FC<CTASectionProps> = ({ theme = 'dark' }) => {
   return (
     <section className={`relative w-full py-20 overflow-hidden ${isLight ? 'bg-gray-50' : 'bg-black'}`}>
 
-      {/* Custom Animations */}
       <style>{`
         @keyframes spin-slow {
           from { transform: rotate(0deg); }
@@ -28,7 +27,6 @@ const CTASection: React.FC<CTASectionProps> = ({ theme = 'dark' }) => {
         }
       `}</style>
 
-      {/* Background Decorative Elements */}
       {!isLight && (
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-600/10 blur-[150px] rounded-full" />
@@ -38,10 +36,8 @@ const CTASection: React.FC<CTASectionProps> = ({ theme = 'dark' }) => {
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12">
 
-        {/* Main Content Wrapper with Glitter Border */}
         <div className="relative rounded-3xl p-[1px] overflow-hidden">
 
-          {/* Running Glitter Border Animation */}
           <div className="absolute inset-[-100%] animate-spin-slow"
                style={{
                  background: isLight

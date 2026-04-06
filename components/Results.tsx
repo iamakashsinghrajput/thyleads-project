@@ -4,12 +4,10 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import { Activity, TrendingUp, Users, Target, ShieldCheck, Zap } from 'lucide-react';
 
-// Counter animation component
 const AnimatedCounter = ({ value, delay }: { value: string; delay: number }) => {
   const [displayValue, setDisplayValue] = useState("0");
 
   useEffect(() => {
-    // Extract numeric value
     const numericMatch = value.match(/[\d.]+/);
     if (!numericMatch) return;
 
@@ -26,7 +24,6 @@ const AnimatedCounter = ({ value, delay }: { value: string; delay: number }) => 
         const elapsed = Date.now() - startTime;
         const progress = Math.min(elapsed / duration, 1);
 
-        // Easing function
         const easeOutExpo = 1 - Math.pow(2, -10 * progress);
         const current = start + (targetNumber - start) * easeOutExpo;
 
@@ -112,22 +109,19 @@ const Results: React.FC = () => {
       onMouseMove={handleMouseMove}
       className="relative min-h-screen pt-8 pb-32 w-full bg-[#020202] flex flex-col items-center justify-center overflow-hidden"
     >
-      {/* Background Layer: Interactive Spotlight */}
-      <div 
+      <div
         className="absolute inset-0 pointer-events-none z-0 transition-opacity duration-1000"
         style={{
           background: `radial-gradient(600px circle at ${mousePos.x}px ${mousePos.y}px, rgba(139, 92, 246, 0.04), transparent 80%)`
         }}
       />
       
-      {/* Structural Grid Lines */}
       <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
         <div className="h-full w-full bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:100px_100px]" />
       </div>
 
       <div className="relative z-10 w-full max-w-7xl px-6 lg:px-10">
         
-        {/* Asymmetric Header */}
         <div className="flex flex-col mb-20">
           <div className="flex flex-col gap-6">
             <motion.h2
@@ -152,7 +146,6 @@ const Results: React.FC = () => {
           </div>
         </div>
 
-        {/* Modular "Neural" Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 auto-rows-[200px]">
           {stats.map((stat, idx) => (
             <motion.div
@@ -175,18 +168,14 @@ const Results: React.FC = () => {
                 ${idx === 0 ? 'bg-gradient-to-br from-purple-500/5 to-transparent' : ''}
               `}
             >
-              {/* Animated Line Graph */}
               <div className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none z-0">
                 <svg className="w-full h-full" viewBox="0 0 100 40" preserveAspectRatio="none">
-                  {/* Stock-like path with volatility */}
                   {(() => {
-                    // Generate stock-like path with dramatic ups and downs (zigzag)
                     const path = `M 0 35 L 15 25 L 30 32 L 45 20 L 60 28 L 75 15 L 90 22 L 100 10`;
                     const fillPath = `M 0 35 L 15 25 L 30 32 L 45 20 L 60 28 L 75 15 L 90 22 L 100 10 L 100 40 L 0 40 Z`;
 
                     return (
                       <>
-                        {/* Gradient fill under the line */}
                         <motion.path
                           d={fillPath}
                           fill="rgba(255, 255, 255, 0.08)"
@@ -196,7 +185,6 @@ const Results: React.FC = () => {
                           transition={{ duration: 1.5, delay: idx * 0.08 + 0.4 }}
                         />
 
-                        {/* Main stock line */}
                         <motion.path
                           d={path}
                           fill="none"

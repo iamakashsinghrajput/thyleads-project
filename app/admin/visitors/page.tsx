@@ -167,7 +167,6 @@ export default function VisitorDashboard() {
       return true;
     }) || [];
 
-  // --- Login Screen ---
   if (!authenticated) {
     return (
       <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center p-4">
@@ -213,10 +212,8 @@ export default function VisitorDashboard() {
 
   if (!data) return null;
 
-  // --- Main Dashboard ---
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white">
-      {/* Header */}
       <div className="border-b border-[#222] bg-[#0a0a0a] sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -244,7 +241,6 @@ export default function VisitorDashboard() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-6">
-        {/* Summary Cards */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
           <div className="bg-[#141414] border border-[#222] rounded-xl p-5">
             <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Total Users</p>
@@ -274,7 +270,6 @@ export default function VisitorDashboard() {
           </div>
         </div>
 
-        {/* Top Cities & Pages */}
         <div className="grid md:grid-cols-2 gap-4">
           <div className="bg-[#141414] border border-[#222] rounded-xl p-5">
             <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Top Cities</h3>
@@ -318,7 +313,6 @@ export default function VisitorDashboard() {
           </div>
         </div>
 
-        {/* Filters */}
         <div className="flex gap-2 flex-wrap">
           {[
             { key: "all", label: "All Users" },
@@ -340,7 +334,6 @@ export default function VisitorDashboard() {
           ))}
         </div>
 
-        {/* User List */}
         <div className="bg-[#141414] border border-[#222] rounded-xl overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full">
@@ -418,7 +411,6 @@ export default function VisitorDashboard() {
         </div>
       </div>
 
-      {/* User Detail Modal */}
       {selectedUser && (
         <div
           className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
@@ -428,7 +420,6 @@ export default function VisitorDashboard() {
             className="bg-[#141414] border border-[#222] rounded-2xl w-full max-w-2xl max-h-[85vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Modal Header */}
             <div className="p-6 border-b border-[#222] flex items-center justify-between sticky top-0 bg-[#141414] rounded-t-2xl z-10">
               <div>
                 <h3 className="text-lg font-bold text-white">User Details</h3>
@@ -445,7 +436,6 @@ export default function VisitorDashboard() {
             </div>
 
             <div className="p-6 space-y-6">
-              {/* Lead Info */}
               {(selectedUser.leadName || selectedUser.leadEmail) && (
                 <div className="bg-green-500/10 border border-green-500/20 rounded-xl p-4">
                   <div className="flex items-center gap-2 mb-2">
@@ -469,7 +459,6 @@ export default function VisitorDashboard() {
                 </div>
               )}
 
-              {/* Quick Stats */}
               <div className="grid grid-cols-3 gap-3">
                 <div className="bg-[#0a0a0a] rounded-xl p-4 text-center">
                   <p className="text-2xl font-bold text-indigo-400">{selectedUser.pagesVisited.length}</p>
@@ -487,14 +476,12 @@ export default function VisitorDashboard() {
                 </div>
               </div>
 
-              {/* Page Journey */}
               <div>
                 <p className="text-xs text-gray-500 uppercase tracking-wider mb-3">Page Journey</p>
                 <div className="bg-[#0a0a0a] rounded-xl p-4">
                   <div className="space-y-0">
                     {selectedUser.pagesVisited.map((pv, i) => (
                       <div key={i} className="flex items-start gap-3">
-                        {/* Timeline line */}
                         <div className="flex flex-col items-center">
                           <div className={`w-3 h-3 rounded-full mt-1.5 ${
                             i === 0 ? "bg-green-500" :
@@ -505,7 +492,6 @@ export default function VisitorDashboard() {
                             <div className="w-0.5 h-12 bg-[#222]" />
                           )}
                         </div>
-                        {/* Content */}
                         <div className="flex-1 pb-4">
                           <div className="flex items-center justify-between">
                             <span className="text-sm text-white font-mono bg-[#141414] px-2 py-0.5 rounded">
@@ -527,7 +513,6 @@ export default function VisitorDashboard() {
                 </div>
               </div>
 
-              {/* Organization / Company */}
               {selectedUser.org && selectedUser.org !== "Unknown" && selectedUser.org !== selectedUser.isp && (
                 <div className="bg-blue-500/10 border border-blue-500/20 rounded-xl p-4">
                   <div className="flex items-center gap-2 mb-2">
@@ -545,7 +530,6 @@ export default function VisitorDashboard() {
                 </div>
               )}
 
-              {/* Location */}
               <div>
                 <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">Location & Network</p>
                 <div className="bg-[#0a0a0a] rounded-xl p-4 grid grid-cols-2 gap-y-3 gap-x-6">
@@ -580,7 +564,6 @@ export default function VisitorDashboard() {
                 </div>
               </div>
 
-              {/* System */}
               <div>
                 <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">System Info</p>
                 <div className="bg-[#0a0a0a] rounded-xl p-4 grid grid-cols-2 gap-y-3 gap-x-6">
@@ -607,7 +590,6 @@ export default function VisitorDashboard() {
                 </div>
               </div>
 
-              {/* Traffic Source */}
               {(selectedUser.utmSource || selectedUser.utmMedium || selectedUser.utmCampaign || selectedUser.referrer) && (
                 <div>
                   <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">Traffic Source</p>
@@ -644,7 +626,6 @@ export default function VisitorDashboard() {
                 </div>
               )}
 
-              {/* Timing */}
               <div>
                 <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">Timing</p>
                 <div className="bg-[#0a0a0a] rounded-xl p-4 grid grid-cols-2 gap-y-3 gap-x-6">

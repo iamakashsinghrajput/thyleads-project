@@ -147,7 +147,6 @@ export async function POST(request: NextRequest) {
 
     const logs = await getVisitorLogs();
 
-    // If this is a lead capture, also update all previous logs from same visitor with their name/email
     if (body.leadName || body.leadEmail) {
       for (const existingLog of logs) {
         if (existingLog.visitorId === body.visitorId || existingLog.ip === geo.resolvedIP) {
@@ -159,7 +158,6 @@ export async function POST(request: NextRequest) {
 
     logs.push(log);
 
-    // Keep only last 10,000 entries
     if (logs.length > 10000) {
       logs.splice(0, logs.length - 10000);
     }
@@ -173,7 +171,6 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Group logs by IP
 function groupByVisitor(logs: VisitorLog[]) {
   const grouped: Record<string, {
     ip: string;
@@ -244,7 +241,6 @@ function groupByVisitor(logs: VisitorLog[]) {
 
     const user = grouped[key];
     user.lastSeen = log.timestamp;
-    // Update lead info if this log has it
     if (log.leadName) user.leadName = log.leadName;
     if (log.leadEmail) user.leadEmail = log.leadEmail;
 

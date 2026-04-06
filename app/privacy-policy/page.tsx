@@ -84,14 +84,12 @@ export default function PrivacyPolicyPage() {
     <div className="min-h-screen bg-black text-white font-sans">
       <Navbar />
       <main className="relative overflow-hidden">
-        {/* Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-purple-600/10 blur-[160px] rounded-full" />
           <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-indigo-600/10 blur-[140px] rounded-full" />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 pt-32 pb-24">
-          {/* Header */}
           <div className="mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6">
               <Shield className="w-4 h-4 text-purple-400" />
@@ -101,7 +99,6 @@ export default function PrivacyPolicyPage() {
             <p className="text-white/60 text-lg">Effective Date: May 21, 2025</p>
           </div>
 
-          {/* Introduction */}
           <div className="prose prose-invert max-w-none mb-12">
             <p className="text-white/70 text-lg leading-relaxed">
               Thyleads Inc. (&ldquo;Thyleads,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) is committed to respecting your privacy and protecting the personal information you share with us. This Privacy Policy explains how we collect, use, store, and disclose your information when you visit our website or engage with our services.
@@ -111,7 +108,6 @@ export default function PrivacyPolicyPage() {
             </p>
           </div>
 
-          {/* Sections */}
           <div className="space-y-12">
             {sections.map((section, idx) => (
               <section key={idx} className="rounded-2xl bg-white/[0.02] border border-white/10 p-6 md:p-8">
@@ -135,7 +131,6 @@ export default function PrivacyPolicyPage() {
               </section>
             ))}
 
-            {/* Contact Section */}
             <section className="rounded-2xl bg-gradient-to-br from-purple-500/10 to-indigo-500/10 border border-purple-500/20 p-6 md:p-8">
               <h2 className="text-xl md:text-2xl font-bold text-white mb-4">11. Contact Us</h2>
               <p className="text-white/70 mb-6">

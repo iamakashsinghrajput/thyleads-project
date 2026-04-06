@@ -32,19 +32,13 @@ import {
   Linkedin
 } from 'lucide-react';
 
-// -----------------------------------------------------------------------------
-// Graphic 1: Foundation & Target Intelligence
-// Includes: Data building · ICP refinement · Content creation · Email & LinkedIn setup
-// Animation: Sequential build-up (Data -> ICP -> Content -> Setup) -> System Lock-in
-// -----------------------------------------------------------------------------
 const GraphicFoundation = () => {
-  const [stage, setStage] = useState(0); 
-  // 0: Data, 1: ICP, 2: Content, 3: Setup, 4: Lock-in
+  const [stage, setStage] = useState(0);
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
-    const stepDuration = 600; // 0.6s per step
-    const lockDuration = 2500; // Hold lock state
+    const stepDuration = 600;
+    const lockDuration = 2500;
 
     if (stage === 0) timeout = setTimeout(() => setStage(1), stepDuration);
     else if (stage === 1) timeout = setTimeout(() => setStage(2), stepDuration);
@@ -59,15 +53,12 @@ const GraphicFoundation = () => {
 
   return (
     <div className="relative w-full h-full flex flex-col items-center justify-center p-4">
-      {/* Container for the 4 Micro-cards */}
       <div className={`flex items-center gap-3 transition-all duration-500 ${isLocked ? 'scale-105 gap-4' : 'scale-100'}`}>
         
-        {/* 1. Data Building: Stacking Cards */}
         <div className={`relative w-16 h-20 rounded-lg border flex flex-col items-center justify-center bg-slate-900/50 backdrop-blur-sm transition-colors duration-300 ${stage >= 0 ? 'border-blue-500/50 shadow-[0_0_15px_rgba(59,130,246,0.2)]' : 'border-white/5 opacity-30'}`}>
            <Database size={16} className={`mb-2 ${stage >= 0 ? 'text-blue-400' : 'text-slate-600'}`} />
            <div className="relative w-8 h-6">
-              {/* Back cards */}
-              <motion.div 
+              <motion.div
                  className="absolute inset-0 bg-blue-500/20 rounded-sm border border-blue-500/30"
                  animate={stage >= 0 ? { y: [5, 0], scale: [0.8, 1], opacity: 1 } : { opacity: 0 }}
               />
@@ -76,8 +67,7 @@ const GraphicFoundation = () => {
                  animate={stage >= 0 ? { y: [10, -2], scale: [0.8, 1], opacity: 1 } : { opacity: 0 }}
                  transition={{ delay: 0.1 }}
               />
-              {/* Front card with 'fields' */}
-              <motion.div 
+              <motion.div
                  className="absolute inset-0 bg-slate-900 rounded-sm border border-blue-400 flex flex-col justify-center gap-1 p-1"
                  animate={stage >= 0 ? { y: [15, -4], opacity: 1 } : { opacity: 0 }}
                  transition={{ delay: 0.2 }}
@@ -89,13 +79,11 @@ const GraphicFoundation = () => {
            {isLocked && <div className="absolute -bottom-6 text-[8px] text-blue-300 font-bold whitespace-nowrap">DATA</div>}
         </div>
 
-        {/* 2. ICP Refinement: Filter Sweep */}
         <div className={`relative w-16 h-20 rounded-lg border flex flex-col items-center justify-center bg-slate-900/50 backdrop-blur-sm transition-colors duration-300 ${stage >= 1 ? 'border-red-500/50 shadow-[0_0_15px_rgba(239,68,68,0.2)]' : 'border-white/5 opacity-30'}`}>
            <Filter size={16} className={`mb-2 ${stage >= 1 ? 'text-red-400' : 'text-slate-600'}`} />
            <div className="grid grid-cols-3 gap-1 w-8">
               {[...Array(6)].map((_, i) => {
-                 // Randomly highlight some, dim others
-                 const isTarget = [1, 4].includes(i); 
+                 const isTarget = [1, 4].includes(i);
                  return (
                     <motion.div 
                       key={i}
@@ -112,20 +100,17 @@ const GraphicFoundation = () => {
            {isLocked && <div className="absolute -bottom-6 text-[8px] text-red-300 font-bold whitespace-nowrap">ICP</div>}
         </div>
 
-        {/* 3. Content Creation: Typing/Reveal */}
         <div className={`relative w-16 h-20 rounded-lg border flex flex-col items-center justify-center bg-slate-900/50 backdrop-blur-sm transition-colors duration-300 ${stage >= 2 ? 'border-amber-500/50 shadow-[0_0_15px_rgba(245,158,11,0.2)]' : 'border-white/5 opacity-30'}`}>
            <FileText size={16} className={`mb-2 ${stage >= 2 ? 'text-amber-400' : 'text-slate-600'}`} />
            <div className="relative w-8 h-8">
-               {/* Email Card */}
-               <motion.div 
+               <motion.div
                  className="absolute top-0 left-0 w-6 h-5 bg-slate-800 border border-amber-500/40 rounded flex flex-col gap-1 p-1"
                  animate={stage >= 2 ? { x: 0, opacity: 1 } : { x: -10, opacity: 0 }}
                >
                   <div className="w-2 h-2 rounded-full bg-amber-500/50" />
                   <motion.div className="h-0.5 bg-amber-500/50 w-full" animate={{ width: ["0%", "100%"] }} transition={{ delay: 0.2 }} />
                </motion.div>
-               {/* LI Card */}
-               <motion.div 
+               <motion.div
                  className="absolute bottom-0 right-0 w-6 h-5 bg-slate-800 border border-amber-500/60 rounded flex flex-col gap-1 p-1 z-10"
                  animate={stage >= 2 ? { x: 0, opacity: 1 } : { x: 10, opacity: 0 }}
                  transition={{ delay: 0.1 }}
@@ -139,7 +124,6 @@ const GraphicFoundation = () => {
            {isLocked && <div className="absolute -bottom-6 text-[8px] text-amber-300 font-bold whitespace-nowrap">CONTENT</div>}
         </div>
 
-        {/* 4. Setup: Connection */}
         <div className={`relative w-16 h-20 rounded-lg border flex flex-col items-center justify-center bg-slate-900/50 backdrop-blur-sm transition-colors duration-300 ${stage >= 3 ? 'border-emerald-500/50 shadow-[0_0_15px_rgba(16,185,129,0.2)]' : 'border-white/5 opacity-30'}`}>
            <Settings size={16} className={`mb-2 ${stage >= 3 ? 'text-emerald-400' : 'text-slate-600'}`} />
            <div className="flex items-center gap-1">
@@ -164,8 +148,7 @@ const GraphicFoundation = () => {
                  <Mail size={8} className="text-emerald-400" />
               </motion.div>
            </div>
-           {/* Active Dot */}
-           <motion.div 
+           <motion.div
               className="mt-2 w-1.5 h-1.5 rounded-full bg-emerald-500"
               animate={stage >= 3 ? { opacity: 1, boxShadow: "0 0 8px #10b981" } : { opacity: 0.2 }}
               transition={{ delay: 0.4 }}
@@ -175,7 +158,6 @@ const GraphicFoundation = () => {
 
       </div>
 
-      {/* System Lock-in Visuals */}
       <AnimatePresence>
         {isLocked && (
           <motion.div 
@@ -193,7 +175,6 @@ const GraphicFoundation = () => {
         )}
       </AnimatePresence>
       
-      {/* Outer Glow during Lock */}
       {isLocked && (
          <motion.div 
             className="absolute inset-4 rounded-xl border border-white/5"
@@ -207,10 +188,6 @@ const GraphicFoundation = () => {
   );
 };
 
-// -----------------------------------------------------------------------------
-// Graphic 2: Intent-Led Campaign Activation
-// Includes: Campaign launch · Signal-based outreach · Response management · 1st appointment setup
-// -----------------------------------------------------------------------------
 const GraphicActivation = () => {
   const steps = [
     { icon: Rocket, label: "Launch", color: "text-purple-400" },
@@ -230,11 +207,9 @@ const GraphicActivation = () => {
 
   return (
     <div className="relative w-full h-full flex items-center justify-center">
-      {/* Connecting Path */}
       <div className="absolute top-1/2 left-4 right-4 h-0.5 bg-white/10 -translate-y-1/2 rounded-full" />
       
-      {/* Moving Pulse */}
-      <motion.div 
+      <motion.div
         className="absolute top-1/2 left-4 h-0.5 bg-purple-500 -translate-y-1/2 rounded-full z-0"
         animate={{ width: `${(activeIdx / (steps.length - 1)) * 80 + 10}%` }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -276,10 +251,6 @@ const GraphicActivation = () => {
   );
 };
 
-// -----------------------------------------------------------------------------
-// Graphic 3: Pre-Sales Qualification & Intelligence
-// Includes: Qualification · Pre-assessment notes · Pre-meeting intelligence · Calendar management
-// -----------------------------------------------------------------------------
 const GraphicQualification = () => {
   const phases = [
     { icon: Filter, label: "Qualification", desc: "Fit Check" },
@@ -298,8 +269,7 @@ const GraphicQualification = () => {
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: i * 0.3 }}
         >
-          {/* Progress Bar Background */}
-          <motion.div 
+          <motion.div
             className="absolute inset-0 bg-indigo-500/10"
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
@@ -331,10 +301,6 @@ const GraphicQualification = () => {
   );
 };
 
-// -----------------------------------------------------------------------------
-// Graphic 4: Deal Momentum & Stakeholder Sustaining
-// Includes: Demo facilitation · Next-step alignment · Deal nurturing · Buying committee mapping · Multi-touch follow-ups
-// -----------------------------------------------------------------------------
 const GraphicMomentum = () => {
   const satellites = [
     { icon: Video, label: "Demo Facilitation", angle: 0 },
@@ -346,7 +312,6 @@ const GraphicMomentum = () => {
 
   return (
     <div className="relative w-full h-full flex items-center justify-center">
-      {/* Orbits */}
       <div className="absolute w-[240px] h-[240px] border border-white/5 rounded-full" />
       <motion.div 
          className="absolute w-[200px] h-[200px] border border-emerald-500/20 rounded-full border-dashed"
@@ -354,8 +319,7 @@ const GraphicMomentum = () => {
          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
       />
 
-      {/* Central Deal Node */}
-      <motion.div 
+      <motion.div
         className="w-20 h-20 bg-emerald-950 border border-emerald-500 rounded-full flex flex-col items-center justify-center z-20 shadow-[0_0_30px_rgba(16,185,129,0.2)]"
         animate={{ scale: [1, 1.05, 1] }}
         transition={{ duration: 3, repeat: Infinity }}
@@ -364,7 +328,6 @@ const GraphicMomentum = () => {
          <span className="text-[8px] font-bold text-emerald-200 mt-1">ACTIVE DEAL</span>
       </motion.div>
 
-      {/* Satellites */}
       {satellites.map((item, i) => {
         const radius = 100;
         const rad = (item.angle - 90) * (Math.PI / 180);
@@ -393,24 +356,16 @@ const GraphicMomentum = () => {
   );
 };
 
-// -----------------------------------------------------------------------------
-// Graphic 5: Close & Scale
-// Includes: Close support · CRM updates · Performance reporting · Insight-driven iteration
-// Animation: Flywheel feeding into a growth chart
-// -----------------------------------------------------------------------------
 const GraphicScale = () => {
   return (
     <div className="relative w-full h-full flex items-center justify-center">
       
-      {/* 1. The Flywheel (Iteration) */}
       <div className="relative flex items-center justify-center mr-12">
-         {/* Rotating Ring */}
-         <motion.div 
+         <motion.div
            className="w-32 h-32 rounded-full border border-pink-500/30 border-dashed"
            animate={{ rotate: 360 }}
            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
          />
-         {/* Inner Hub */}
          <div className="absolute inset-0 flex items-center justify-center">
             <motion.div 
                className="w-12 h-12 bg-pink-950 border border-pink-500 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(236,72,153,0.4)]"
@@ -421,7 +376,6 @@ const GraphicScale = () => {
             </motion.div>
          </div>
 
-         {/* Orbiting Elements */}
          {[
            { icon: Handshake, bg: "bg-blue-500" }, 
            { icon: Database, bg: "bg-purple-500" }, 
@@ -435,7 +389,7 @@ const GraphicScale = () => {
             >
                <div 
                  className={`absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full ${item.bg} border-2 border-white/20 flex items-center justify-center text-white`}
-                 style={{ transform: 'rotate(0deg)' }} // Reset rotation for icon if needed, but here we want them spinning
+                 style={{ transform: 'rotate(0deg)' }}
                >
                   <item.icon size={14} />
                </div>
@@ -443,7 +397,6 @@ const GraphicScale = () => {
          ))}
       </div>
 
-      {/* 2. The Growth Chart (Scale) */}
       <div className="absolute right-8 bottom-12 flex items-end gap-1.5 h-32">
          <div className="absolute -left-12 top-1/2 -translate-y-1/2 w-10 h-[1px] bg-gradient-to-r from-pink-500 to-transparent" />
          
@@ -470,7 +423,6 @@ const GraphicScale = () => {
          ))}
       </div>
       
-      {/* Label */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[10px] font-bold text-white/40 uppercase tracking-widest whitespace-nowrap">
          Insight Loop → Growth
       </div>
@@ -479,9 +431,6 @@ const GraphicScale = () => {
 };
 
 
-// -----------------------------------------------------------------------------
-// Data Structure
-// -----------------------------------------------------------------------------
 const steps = [
   {
     phase: "01",
@@ -540,16 +489,12 @@ const steps = [
   }
 ];
 
-// -----------------------------------------------------------------------------
-// Main Component
-// -----------------------------------------------------------------------------
 const SaaSOutboundFramework: React.FC = () => {
   const [activeStep, setActiveStep] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      // Only apply scroll behavior on desktop (lg breakpoint = 1024px)
       if (window.innerWidth < 1024) return;
       if (!containerRef.current) return;
 
@@ -558,14 +503,10 @@ const SaaSOutboundFramework: React.FC = () => {
       const containerHeight = container.offsetHeight;
       const viewportHeight = window.innerHeight;
 
-      // Calculate how much we've scrolled into the container
-      // When top of container hits top of viewport, scrollProgress = 0
-      // When bottom of container hits bottom of viewport, scrollProgress = 1
       const scrollableDistance = containerHeight - viewportHeight;
       const scrolledIntoContainer = -rect.top;
       const scrollProgress = Math.max(0, Math.min(1, scrolledIntoContainer / scrollableDistance));
 
-      // Map scroll progress to step index
       const newStep = Math.min(
         Math.floor(scrollProgress * steps.length),
         steps.length - 1
@@ -575,18 +516,15 @@ const SaaSOutboundFramework: React.FC = () => {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial check
+    handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    // Outer container with extra height for scroll space (desktop only)
     <div ref={containerRef} className="relative h-auto lg:h-[350vh]">
-      {/* Sticky inner section that stays in place */}
       <section className="lg:sticky lg:top-5 w-full pt-12 pb-12 lg:pb-0 lg:h-[calc(100vh-5rem)] bg-[#030305] text-white flex flex-col items-center px-4 lg:px-8 overflow-hidden font-sans">
 
-      {/* Background Ambience */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:60px_60px] opacity-[0.03]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_50%,rgba(120,119,198,0.08),transparent)]" />
@@ -594,7 +532,6 @@ const SaaSOutboundFramework: React.FC = () => {
 
       <div className="relative z-10 w-full max-w-7xl flex flex-col h-full py-8 lg:py-16">
 
-        {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 lg:mb-10 border-b border-white/10 pb-4 lg:pb-6 shrink-0">
            <div>
              <h2 className="text-2xl md:text-5xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-400">
@@ -606,13 +543,11 @@ const SaaSOutboundFramework: React.FC = () => {
            </div>
         </div>
 
-        {/* MOBILE: Accordion-style vertical layout */}
         <div className="lg:hidden flex flex-col gap-3">
           {steps.map((step, idx) => {
             const isActive = activeStep === idx;
             return (
               <div key={idx} className="w-full">
-                {/* Step Header - Always visible */}
                 <button
                   onClick={() => setActiveStep(idx)}
                   className={`w-full text-left p-4 rounded-xl transition-all duration-300 border ${
@@ -622,14 +557,12 @@ const SaaSOutboundFramework: React.FC = () => {
                   }`}
                 >
                   <div className="flex items-center gap-4">
-                    {/* Phase Number */}
                     <div className={`w-10 h-10 rounded-lg flex items-center justify-center font-black text-lg ${
                       isActive ? `${step.bg} text-white` : 'bg-white/5 text-white/30'
                     }`}>
                       {step.phase}
                     </div>
 
-                    {/* Title */}
                     <div className="flex-1">
                       <h4 className={`text-sm font-bold ${isActive ? 'text-white' : 'text-white/60'}`}>
                         {step.title}
@@ -639,7 +572,6 @@ const SaaSOutboundFramework: React.FC = () => {
                       </p>
                     </div>
 
-                    {/* Expand Icon */}
                     <ChevronRight
                       className={`w-5 h-5 transition-transform duration-300 ${
                         isActive ? `rotate-90 ${step.color}` : 'text-white/20'
@@ -648,7 +580,6 @@ const SaaSOutboundFramework: React.FC = () => {
                   </div>
                 </button>
 
-                {/* Expanded Content */}
                 <AnimatePresence>
                   {isActive && (
                     <motion.div
@@ -659,12 +590,10 @@ const SaaSOutboundFramework: React.FC = () => {
                       className="overflow-hidden"
                     >
                       <div className="pt-3 pb-2">
-                        {/* Description */}
                         <p className="text-white/60 text-sm leading-relaxed mb-4 px-1">
                           {step.description}
                         </p>
 
-                        {/* Details Grid */}
                         <div className="grid grid-cols-2 gap-2 mb-4">
                           {step.details.map((detail, i) => (
                             <div key={i} className="flex items-center gap-2 bg-white/[0.03] rounded-lg px-3 py-2">
@@ -674,7 +603,6 @@ const SaaSOutboundFramework: React.FC = () => {
                           ))}
                         </div>
 
-                        {/* Graphic Preview */}
                         <div className={`relative h-48 rounded-xl overflow-hidden border ${step.border} bg-[#08080a]`}>
                           <div className={`absolute inset-0 bg-gradient-to-br ${step.color.replace('text-', 'from-').replace('400', '500')}/10 to-transparent opacity-50`} />
                           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px]" />
@@ -691,10 +619,8 @@ const SaaSOutboundFramework: React.FC = () => {
           })}
         </div>
 
-        {/* DESKTOP: Original split layout with scroll */}
         <div className="hidden lg:grid lg:grid-cols-[320px_1fr] gap-16 flex-1 min-h-0">
 
-           {/* LEFT: Navigation */}
            <div className="flex flex-col gap-3 pr-2 relative justify-center">
               {steps.map((step, idx) => {
                 const isActive = activeStep === idx;
@@ -708,7 +634,6 @@ const SaaSOutboundFramework: React.FC = () => {
                         : 'bg-transparent border-transparent hover:bg-white/[0.02] hover:border-white/5'
                     }`}
                   >
-                    {/* Active Accent Bar */}
                     {isActive && (
                       <motion.div
                         layoutId="activeHighlightDesktop"
@@ -718,14 +643,12 @@ const SaaSOutboundFramework: React.FC = () => {
                     )}
 
                     <div className="flex items-start gap-4">
-                      {/* Number */}
                       <span className={`text-2xl font-black transition-colors duration-300 leading-none mt-1 ${
                         isActive ? 'text-white' : 'text-white/10 group-hover:text-white/20'
                       }`}>
                         {step.phase}
                       </span>
 
-                      {/* Content */}
                       <div className="flex-1 z-10">
                          <h4 className={`text-sm font-bold transition-colors ${isActive ? 'text-white' : 'text-white/60 group-hover:text-white'}`}>
                            {step.title}
@@ -742,7 +665,6 @@ const SaaSOutboundFramework: React.FC = () => {
               })}
            </div>
 
-           {/* RIGHT: Viewport */}
            <div className="relative h-full bg-[#08080a] border border-white/10 rounded-[2rem] overflow-hidden flex flex-row shadow-2xl">
 
               <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px]" />
@@ -757,7 +679,6 @@ const SaaSOutboundFramework: React.FC = () => {
                   className="relative z-10 w-full h-full flex flex-row"
                 >
 
-                   {/* Graphic Section */}
                    <div className="w-1/2 h-full flex items-center justify-center p-8 relative overflow-hidden">
                       <div className={`absolute inset-0 bg-gradient-to-br ${steps[activeStep].color.replace('text-', 'from-').replace('400', '500')}/10 to-transparent opacity-50`} />
                       <div className="scale-125 relative z-20 w-full h-full max-w-[320px] max-h-[320px]">
@@ -765,7 +686,6 @@ const SaaSOutboundFramework: React.FC = () => {
                       </div>
                    </div>
 
-                   {/* Content Section */}
                    <div className="w-1/2 p-12 flex flex-col justify-center bg-white/[0.02] border-l border-white/5 backdrop-blur-sm">
                       <motion.div
                         initial={{ y: 20, opacity: 0 }}

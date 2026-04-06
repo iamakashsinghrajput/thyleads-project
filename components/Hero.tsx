@@ -21,7 +21,6 @@ const Hero: React.FC = () => {
   const [activeCard, setActiveCard] = useState(0);
   const totalCards = 6;
 
-  // Live Data State
   const [liveData, setLiveData] = useState({
     pipeline: 1.2,
     conversion: 24,
@@ -36,7 +35,6 @@ const Hero: React.FC = () => {
   const [targetSpeed, setTargetSpeed] = useState(72);
   const [currentSpeed, setCurrentSpeed] = useState(0);
 
-  // Funnel Data State
   const [funnelData, setFunnelData] = useState([
     { label: 'Leads', value: 1000, width: 100 },
     { label: 'Qualified', value: 450, width: 75 },
@@ -44,10 +42,8 @@ const Hero: React.FC = () => {
     { label: 'Closed', value: 45, width: 25 }
   ]);
 
-  // Chart Points for organic line movement
   const [chartPoints, setChartPoints] = useState([120, 100, 80, 60, 40, 20, 10]);
 
-  // Auto-rotate cards
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveCard((prev) => (prev + 1) % totalCards);
@@ -55,7 +51,6 @@ const Hero: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Live data simulation
   useEffect(() => {
     const interval = setInterval(() => {
       const newSpeed = Math.min(95, Math.max(55, Math.floor(Math.random() * 30) + 60));
@@ -88,7 +83,6 @@ const Hero: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Speedometer needle smoothing
   useEffect(() => {
     const step = (targetSpeed - currentSpeed) / 20;
     const interval = setInterval(() => {
@@ -126,7 +120,6 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative min-h-screen flex items-center pt-30 pb-16 px-6 sm:px-12 overflow-hidden">
-      {/* Dynamic Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-600/10 blur-[150px] rounded-full" />
         <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-indigo-600/5 blur-[120px] rounded-full" />
@@ -134,7 +127,6 @@ const Hero: React.FC = () => {
 
       <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-[1.2fr_0.8fr] gap-16 items-center z-10">
         
-        {/* Left: Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -176,12 +168,9 @@ const Hero: React.FC = () => {
           </Link>
         </motion.div>
 
-        {/* Right: Stacked Live Cards */}
         <div className="relative h-[550px] w-full flex items-center justify-center lg:justify-end">
 
-          {/* Floating SaaS Words */}
           <div className="absolute inset-0 overflow-visible pointer-events-none z-50">
-            {/* PIPELINE */}
             <motion.div
               className="absolute top-12 left-0"
               animate={{
@@ -197,7 +186,6 @@ const Hero: React.FC = () => {
               <span className="text-xs font-black text-purple-400/40 tracking-[0.3em]">PIPELINE</span>
             </motion.div>
 
-            {/* MRR */}
             <motion.div
               className="absolute top-20 right-8"
               animate={{
@@ -215,7 +203,6 @@ const Hero: React.FC = () => {
               <span className="text-sm font-black text-indigo-400/50 tracking-[0.3em]">MRR</span>
             </motion.div>
 
-            {/* GROWTH */}
             <motion.div
               className="absolute bottom-28 left-4"
               animate={{
@@ -232,7 +219,6 @@ const Hero: React.FC = () => {
               <span className="text-xs font-black text-emerald-400/40 tracking-[0.3em]">GROWTH</span>
             </motion.div>
 
-            {/* CONVERSION */}
             <motion.div
               className="absolute top-36 left-12"
               animate={{
@@ -249,7 +235,6 @@ const Hero: React.FC = () => {
               <span className="text-[10px] font-black text-purple-400/35 tracking-[0.3em]">CONVERSION</span>
             </motion.div>
 
-            {/* ARR */}
             <motion.div
               className="absolute bottom-20 right-12"
               animate={{
@@ -266,7 +251,6 @@ const Hero: React.FC = () => {
               <span className="text-sm font-black text-indigo-400/45 tracking-[0.3em]">ARR</span>
             </motion.div>
 
-            {/* LEADS */}
             <motion.div
               className="absolute top-28 right-4"
               animate={{
@@ -283,7 +267,6 @@ const Hero: React.FC = () => {
               <span className="text-xs font-black text-purple-400/40 tracking-[0.3em]">LEADS</span>
             </motion.div>
 
-            {/* VELOCITY */}
             <motion.div
               className="absolute bottom-40 left-8"
               animate={{
@@ -301,7 +284,6 @@ const Hero: React.FC = () => {
               <span className="text-[10px] font-black text-amber-400/40 tracking-[0.3em]">VELOCITY</span>
             </motion.div>
 
-            {/* SCALE */}
             <motion.div
               className="absolute top-44 left-2"
               animate={{
@@ -318,7 +300,6 @@ const Hero: React.FC = () => {
               <span className="text-xs font-black text-indigo-400/35 tracking-[0.3em]">SCALE</span>
             </motion.div>
 
-            {/* ROI */}
             <motion.div
               className="absolute bottom-32 right-6"
               animate={{
@@ -335,7 +316,6 @@ const Hero: React.FC = () => {
               <span className="text-sm font-black text-emerald-400/45 tracking-[0.3em]">ROI</span>
             </motion.div>
 
-            {/* FUNNEL */}
             <motion.div
               className="absolute top-52 right-16"
               animate={{
@@ -352,8 +332,6 @@ const Hero: React.FC = () => {
               <span className="text-[10px] font-black text-purple-400/38 tracking-[0.3em]">FUNNEL</span>
             </motion.div>
 
-            {/* Revenue Metrics Floating */}
-            {/* $250K */}
             <motion.div
               className="absolute"
               style={{ left: '10%', top: '75%' }}
@@ -374,7 +352,6 @@ const Hero: React.FC = () => {
               <span className="text-lg font-black text-purple-400 drop-shadow-[0_0_8px_rgba(168,85,247,0.6)]">$250K</span>
             </motion.div>
 
-            {/* +120% */}
             <motion.div
               className="absolute"
               style={{ left: '20%', top: '55%' }}
@@ -395,7 +372,6 @@ const Hero: React.FC = () => {
               <span className="text-lg font-black text-purple-400 drop-shadow-[0_0_8px_rgba(168,85,247,0.6)]">+120%</span>
             </motion.div>
 
-            {/* $1.2M */}
             <motion.div
               className="absolute"
               style={{ left: '15%', top: '35%' }}
@@ -416,7 +392,6 @@ const Hero: React.FC = () => {
               <span className="text-lg font-black text-purple-400 drop-shadow-[0_0_8px_rgba(168,85,247,0.6)]">$1.2M</span>
             </motion.div>
 
-            {/* ARR ↑ */}
             <motion.div
               className="absolute"
               style={{ left: '25%', top: '20%' }}
@@ -439,7 +414,6 @@ const Hero: React.FC = () => {
           </div>
 
           <div className="relative w-full max-w-[380px] h-[500px]">
-            {/* Card 1: Pipeline */}
             <motion.div
               layout
               animate={getCardStyle(0)}
@@ -482,7 +456,6 @@ const Hero: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Card 2: Funnel */}
             <motion.div
               layout
               animate={getCardStyle(1)}
@@ -529,7 +502,6 @@ const Hero: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Card 3: Revenue Index */}
             <motion.div
               layout
               animate={getCardStyle(2)}
@@ -566,7 +538,6 @@ const Hero: React.FC = () => {
                     animate={{ d: chartPathDefinition }}
                     transition={{ duration: 1.5 }}
                   />
-                  {/* Moving pulse dot */}
                   <motion.circle
                     r="6"
                     fill="#a855f7"
@@ -598,7 +569,6 @@ const Hero: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Card 4: Performance */}
             <motion.div
               layout
               animate={getCardStyle(3)}
@@ -650,7 +620,6 @@ const Hero: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Card 5: Growth Velocity */}
             <motion.div
               layout
               animate={getCardStyle(4)}
@@ -692,7 +661,6 @@ const Hero: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Card 6: Lead Scoring */}
             <motion.div
               layout
               animate={getCardStyle(5)}
@@ -750,7 +718,6 @@ const Hero: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Carousel Navigation Dots */}
           <div className="absolute -bottom-12 right-0 left-0 flex justify-center gap-3">
             {[0, 1, 2, 3, 4, 5].map((idx) => (
               <button

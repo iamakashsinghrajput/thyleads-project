@@ -24,12 +24,9 @@ const BlogPage = () => {
   return (
     <div className="font-polysans min-h-screen bg-white selection:bg-purple-600/20">
 
-      {/* Navigation */}
       <Navbar/>
 
-      {/* Hero Section */}
       <div className="relative bg-black border-b border-white/10 overflow-hidden min-h-screen flex items-center">
-        {/* Background Grid & Effects */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
         <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-purple-600/20 blur-[100px] rounded-full pointer-events-none" />
         <div className="absolute bottom-0 right-0 w-[800px] h-[400px] bg-gradient-to-l from-indigo-900/20 to-transparent blur-3xl pointer-events-none" />
@@ -49,7 +46,6 @@ const BlogPage = () => {
               Data-backed insights for engineering, product, and sales leaders.
             </p>
 
-            {/* Newsletter Input */}
             <div className="max-w-md mx-auto relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
               <div className="relative flex p-1 rounded-xl bg-black border border-white/10">
@@ -72,10 +68,8 @@ const BlogPage = () => {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
-        {/* Filter Tabs */}
         <div className="flex flex-wrap items-center gap-2 mb-12 border-b border-gray-200 pb-4 overflow-x-auto">
           {categories.map((cat) => (
             <button
@@ -92,7 +86,6 @@ const BlogPage = () => {
           ))}
         </div>
 
-        {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredPosts.filter(p => !p.featured || activeCategory !== 'All').map((post) => (
             <Link
@@ -141,10 +134,8 @@ const BlogPage = () => {
         </div>
       </div>
 
-      {/* CTA Section */}
       <CTASection theme="light" />
 
-      {/* Footer */}
       <Footer/>
     </div>
   );

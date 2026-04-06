@@ -32,19 +32,15 @@ const TrustedBy: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center"
         >
-          {/* Header */}
           <p className="text-[10px] font-black text-neutral-500 uppercase tracking-[0.3em] mb-12 text-center">
             Trusted by Global SaaS Disruptors
           </p>
 
-          {/* Company Logos - Infinite Scroll */}
           <div className="relative w-full overflow-hidden">
-            {/* Gradient Overlays */}
             <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#050505] to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#050505] to-transparent z-10 pointer-events-none" />
 
             <div className="flex w-max scroll-container">
-              {/* First track */}
               <div className="flex items-center">
                 {companies.map((company, index) => (
                   <div
@@ -61,7 +57,6 @@ const TrustedBy: React.FC = () => {
                   </div>
                 ))}
               </div>
-              {/* Second track (duplicate for seamless loop) */}
               <div className="flex items-center">
                 {companies.map((company, index) => (
                   <div

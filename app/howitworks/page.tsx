@@ -36,8 +36,6 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-// --- Data Constants ---
-
 const systemStages = [
   "Signals (Inbound + Outbound)",
   "Intake & Qualification Engine",
@@ -264,8 +262,6 @@ const performancePhilosophy = [
         description: "An intent-led GTM engine that is systematic and can scale to meet your revenue targets."
     }
 ];
-
-// --- Section Components ---
 
 const HeroSection = () => {
   return (
@@ -560,10 +556,7 @@ const TimelineSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold">4 Weeks to <span className="text-gray-300">Velocity</span></h2>
         </div>
 
-        {/* Updated Grid for Equal Height Layout */}
         <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-stretch min-h-[600px]">
-            
-            {/* LEFT SIDE: Accordion List - Stretches to fill height */}
             <div className="lg:col-span-5 flex flex-col gap-4 h-full">
                 {weeklyTimeline.map((week, index) => (
                     <div 
@@ -608,7 +601,6 @@ const TimelineSection = () => {
                 ))}
             </div>
 
-            {/* RIGHT SIDE: Strategic Dashboard Panel */}
             <div className="lg:col-span-7 h-full">
                 <AnimatePresence mode="wait">
                     <motion.div
@@ -619,10 +611,8 @@ const TimelineSection = () => {
                         transition={{ duration: 0.3 }}
                         className="h-full flex flex-col rounded-3xl border border-white/10 bg-[#08080a] shadow-2xl overflow-hidden relative"
                     >
-                        {/* Background */}
                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_100%_0%,rgba(59,130,246,0.1),transparent_50%)] pointer-events-none" />
 
-                        {/* Top: Inputs - Compact Chips */}
                         <div className="p-6 border-b border-white/5 bg-white/[0.02]">
                             <div className="flex items-center gap-2 mb-3">
                                 <Briefcase size={16} className="text-indigo-400" />
@@ -641,7 +631,6 @@ const TimelineSection = () => {
                             </div>
                         </div>
 
-                        {/* Middle: Execution Grid - 2 Columns */}
                         <div className="flex-1 p-6 relative flex flex-col min-h-0">
                             <div className="relative z-10 flex-1">
                                 <div className="flex items-center gap-2 mb-4">
@@ -649,7 +638,6 @@ const TimelineSection = () => {
                                     <h4 className="text-xs font-bold text-blue-100 uppercase tracking-widest">What Thyleads Do</h4>
                                 </div>
                                 
-                                {/* 2-Column Grid for Tasks */}
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                                     {execBrief.map((item, i) => (
                                         <div 
@@ -666,7 +654,6 @@ const TimelineSection = () => {
                             </div>
                         </div>
 
-                        {/* Footer: Outcome */}
                         <div className="p-6 bg-gradient-to-t from-black/80 to-transparent border-t border-white/5 mt-auto">
                             <div className="bg-gradient-to-r from-emerald-900/20 to-blue-900/20 border border-emerald-500/20 rounded-xl p-4 flex items-center gap-4">
                                 <div className="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center shrink-0 shadow-lg shadow-emerald-500/5">
@@ -737,8 +724,7 @@ const DealAssistSection = () => {
                     </motion.ul>
                 </motion.div>
 
-                {/* Simulated Feed UI - Realistic LinkedIn Style */}
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
@@ -746,13 +732,9 @@ const DealAssistSection = () => {
                 >
                     <div className="absolute -inset-8 bg-blue-500/20 blur-[60px] rounded-full opacity-30" />
                     
-                    {/* Main Feed Card */}
                     <div className="relative bg-[#1B1F23] border border-white/10 rounded-xl shadow-2xl max-w-md mx-auto overflow-hidden">
-                        
-                         {/* LinkedIn Post Header */}
                          <div className="p-4 pb-3">
                              <div className="flex gap-3">
-                                 {/* Profile Picture */}
                                  <div className="relative">
                                      <img 
                                          src="/images/ss.png" 
@@ -764,7 +746,6 @@ const DealAssistSection = () => {
                                      </div>
                                  </div>
 
-                                 {/* Profile Info */}
                                  <div className="flex-1">
                                      <div className="flex items-center gap-2">
                                          <span className="text-white font-semibold text-sm">Rahul Dev</span>
@@ -780,7 +761,6 @@ const DealAssistSection = () => {
                                      </div>
                                  </div>
 
-                                 {/* More Options */}
                                  <button className="text-white/40 hover:text-white/60 self-start">
                                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                          <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
@@ -789,7 +769,6 @@ const DealAssistSection = () => {
                              </div>
                          </div>
 
-                         {/* Post Content */}
                          <div className="px-4 pb-3">
                              <p className="text-white/90 text-sm leading-relaxed">
                                  <span className="text-white">3 things I learned scaling from $1M to $10M ARR:</span>
@@ -802,7 +781,6 @@ const DealAssistSection = () => {
                              </p>
                          </div>
 
-                         {/* Post Image/Article Preview */}
                          <div className="mx-4 mb-3 rounded-lg overflow-hidden border border-white/10">
                              <div className="aspect-[1.91/1] bg-gradient-to-br from-blue-900/60 via-indigo-900/60 to-purple-900/60 flex items-center justify-center relative">
                                  <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.02)_25%,rgba(255,255,255,0.02)_50%,transparent_50%,transparent_75%,rgba(255,255,255,0.02)_75%)] bg-[length:20px_20px]" />
@@ -819,7 +797,6 @@ const DealAssistSection = () => {
                              </div>
                          </div>
 
-                         {/* Engagement Stats */}
                          <div className="px-4 py-3 flex items-center justify-between text-xs text-white/50">
                              <div className="flex items-center gap-2">
                                  <div className="flex -space-x-1">
@@ -848,7 +825,6 @@ const DealAssistSection = () => {
                              </div>
                          </div>
 
-                         {/* Action Buttons */}
                          <div className="border-t border-white/10 px-2 py-1 flex justify-between">
                              {[
                                  { icon: "M19.46 11l-3.91-3.91a7 7 0 1 0-1.69 1.69L17.87 13H19z", label: "Like", offset: "translate(0, 8)" },
@@ -888,12 +864,11 @@ const SignalIntelligenceSection = () => {
       }
     });
 
-    // Auto-cycle through signals when not paused
     useEffect(() => {
       if (paused) return;
       const interval = setInterval(() => {
         setActiveSignal(prev => (prev + 1) % signalIntelligence.length);
-      }, 8000); // Slower cycling - 8 seconds per signal for better readability
+      }, 8000);
       return () => clearInterval(interval);
     }, [paused]);
 
@@ -901,12 +876,9 @@ const SignalIntelligenceSection = () => {
 
     return (
       <section className="relative py-16 md:py-20 px-6 bg-black overflow-hidden">
-        {/* Background Grid */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20" />
 
-        {/* MOBILE LAYOUT */}
         <div className="lg:hidden max-w-2xl mx-auto">
-          {/* Header */}
           <div className="text-center mb-8">
             <p className="text-xs uppercase tracking-[0.3em] text-indigo-400 mb-4">Signal Intelligence</p>
             <h2 className="text-3xl font-bold mb-4">Campaign Intelligence, We Operate With.</h2>
@@ -915,7 +887,6 @@ const SignalIntelligenceSection = () => {
             </p>
           </div>
 
-          {/* ICP Core Badge */}
           <div className="flex justify-center mb-6">
             <div className="w-20 h-20 rounded-full bg-gradient-to-br from-indigo-900/40 via-black to-purple-900/20 border-2 border-indigo-500/50 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(129,140,248,0.3)]">
               <span className="text-xl font-bold text-white">ICP</span>
@@ -923,7 +894,6 @@ const SignalIntelligenceSection = () => {
             </div>
           </div>
 
-          {/* Signals Grid */}
           <div className="grid grid-cols-3 gap-3 mb-6">
             {signalIntelligence.map((signal, index) => {
               const isActive = index === activeSignal;
@@ -957,7 +927,6 @@ const SignalIntelligenceSection = () => {
             })}
           </div>
 
-          {/* Active Signal Detail Card */}
           <AnimatePresence mode="wait">
             <motion.div
               key={active.name}
@@ -997,15 +966,11 @@ const SignalIntelligenceSection = () => {
           </AnimatePresence>
         </div>
 
-        {/* DESKTOP LAYOUT - Original Orbit */}
         <div className="hidden lg:grid max-w-7xl mx-auto lg:grid-cols-[1.2fr_0.8fr] gap-8 lg:gap-12 items-center">
-            {/* Orbit Visual */}
             <div className="relative h-[520px] flex items-center justify-center will-change-transform">
-                {/* Multi-layer outer glow */}
                 <div className="absolute w-[550px] h-[550px] rounded-full bg-indigo-500/5 blur-[80px]" />
 
-                {/* Animated particle ring - outer */}
-                <div 
+                <div
                     className="absolute w-[520px] h-[520px] rounded-full will-change-transform"
                     style={{ transform: `rotate(${outerRingRotation}deg) translateZ(0)` }}
                 >
@@ -1022,8 +987,7 @@ const SignalIntelligenceSection = () => {
                     ))}
                 </div>
 
-                {/* Inner animated ring with gradient */}
-                <div 
+                <div
                     className="absolute w-[360px] h-[360px] rounded-full border-2 border-transparent will-change-transform"
                     style={{ 
                         transform: `rotate(${innerRingRotation}deg) translateZ(0)`,
@@ -1031,16 +995,13 @@ const SignalIntelligenceSection = () => {
                     }}
                 />
 
-                {/* Main orbit ring with glow effect */}
                 <div className="absolute w-[440px] h-[440px] rounded-full border border-indigo-500/20 shadow-[0_0_30px_rgba(129,140,248,0.1)]" />
 
-                {/* Outer dashed ring - animated */}
-                <div 
+                <div
                     className="absolute w-[500px] h-[500px] rounded-full border border-white/10 border-dashed will-change-transform"
                     style={{ transform: `rotate(${outerRingRotation * 0.5}deg) translateZ(0)` }}
                 />
 
-                {/* Energy arc segments */}
                 <svg className="absolute w-[480px] h-[480px] will-change-transform" style={{ transform: `rotate(${rotation * 0.3}deg) translateZ(0)` }}>
                     <defs>
                         <linearGradient id="arcGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -1052,20 +1013,17 @@ const SignalIntelligenceSection = () => {
                     <circle cx="50%" cy="50%" r="48%" fill="none" stroke="url(#arcGradient)" strokeWidth="2" strokeDasharray="100 200" />
                 </svg>
 
-                {/* Center Sun - Enhanced */}
                 <div className="absolute w-36 h-36 rounded-full bg-gradient-to-br from-indigo-900/40 via-black to-purple-900/20 border-2 border-indigo-500/50 backdrop-blur-md z-20 flex flex-col items-center justify-center shadow-[0_0_60px_rgba(129,140,248,0.3)]">
                     <div className="absolute inset-2 rounded-full border border-indigo-400/30" />
                     <span className="text-4xl font-bold text-white">ICP</span>
                     <span className="text-[11px] uppercase tracking-widest text-indigo-400 mt-1">Core</span>
                 </div>
 
-                {/* Click hint */}
                 <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2 text-white/40 text-xs">
                     <span className="inline-block w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
                     Click any signal to explore
                 </div>
 
-                {/* Orbiting Signals */}
                 <div className="absolute inset-0 z-30 will-change-transform" ref={containerRef}>
                     {signalIntelligence.map((signal, index) => {
                         const offsetAngle = (360 / signalIntelligence.length) * index;
@@ -1079,8 +1037,7 @@ const SignalIntelligenceSection = () => {
 
                         return (
                             <React.Fragment key={index}>
-                                {/* Connecting Line */}
-                                <div 
+                                <div
                                     className={`absolute left-1/2 top-1/2 h-[1px] origin-left will-change-transform ${isActive ? "opacity-60" : "opacity-20"}`}
                                     style={{ 
                                         width: radius - 30,
@@ -1091,7 +1048,6 @@ const SignalIntelligenceSection = () => {
                                    }}
                                 />
 
-                                {/* Signal Button */}
                                 <button
                                     onClick={() => { setActiveSignal(index); setPaused(true); setTimeout(() => setPaused(false), 4000); }}
                                     className={`absolute left-1/2 top-1/2 -ml-6 -mt-6 w-12 h-12 rounded-full border-2 flex items-center justify-center group cursor-pointer z-20 will-change-transform
@@ -1105,7 +1061,6 @@ const SignalIntelligenceSection = () => {
                                 >
                                     <signal.icon className={`w-4 h-4 ${isActive ? "text-black" : "text-white/70 group-hover:text-indigo-400"}`} />
                                     
-                                    {/* Label */}
                                     <div className={`absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-black/95 border rounded-md text-[10px] whitespace-nowrap pointer-events-none font-medium
                                         ${isActive 
                                             ? "opacity-100 border-indigo-500/60 text-indigo-300" 
@@ -1115,7 +1070,6 @@ const SignalIntelligenceSection = () => {
                                         {signal.name}
                                     </div>
 
-                                    {/* Pulse ring for active */}
                                     {isActive && (
                                         <span className="absolute inset-0 rounded-full border-2 border-indigo-400 animate-ping opacity-30" style={{ animationDuration: '1.5s' }} />
                                     )}
@@ -1126,7 +1080,6 @@ const SignalIntelligenceSection = () => {
                 </div>
             </div>
 
-            {/* Info Card */}
             <div className="flex flex-col">
                 <p className="text-xs uppercase tracking-[0.3em] text-indigo-400 mb-4">Signal Intelligence</p>
                 <h2 className="text-4xl font-bold mb-6">Campaign Intelligence, <br/> We Operate With</h2>
@@ -1134,7 +1087,6 @@ const SignalIntelligenceSection = () => {
                     We work across 11 signal categories, each chosen for a specific strategic reason
                 </p>
 
-                {/* Active Signal Detail Card */}
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={active.name}
@@ -1181,13 +1133,11 @@ const SignalIntelligenceSection = () => {
 const TeamSection = () => {
     return (
         <section className="py-24 px-6 bg-[#050508] relative overflow-hidden">
-            {/* Background Elements */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px] opacity-30" />
             <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[120px]" />
             <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[100px]" />
 
             <div className="max-w-[1500px] mx-auto relative z-10 px-4">
-                {/* Section Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -1203,9 +1153,7 @@ const TeamSection = () => {
                     </p>
                 </motion.div>
 
-                {/* Three Column Layout */}
                 <div className="grid lg:grid-cols-3 gap-6">
-                    {/* GTM Engineers Card */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -1214,7 +1162,6 @@ const TeamSection = () => {
                     >
                         <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                         <div className="relative bg-white/[0.03] border border-white/10 rounded-3xl p-8 h-full hover:border-emerald-500/30 transition-colors duration-300">
-                            {/* Header */}
                             <div className="flex items-center gap-4 mb-5">
                                 <div className="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center">
                                     <Cpu className="w-6 h-6 text-emerald-400" />
@@ -1225,12 +1172,10 @@ const TeamSection = () => {
                                 </div>
                             </div>
 
-                            {/* Description */}
                             <p className="text-white/60 text-sm leading-relaxed mb-5">
                                 They understand SaaS deeply enough to know why a deal should exist, not just how to book one.
                             </p>
 
-                            {/* Key Points */}
                             <div className="space-y-3 mb-5">
                                 <p className="text-xs text-white/40 uppercase tracking-wider">What They Do Inside Your GTM</p>
                                 {gtmEngineerPoints.map((point, i) => (
@@ -1243,7 +1188,6 @@ const TeamSection = () => {
                                 ))}
                             </div>
 
-                            {/* AI-Led Radar Section */}
                             <div className="bg-gradient-to-r from-emerald-500/10 to-teal-500/10 border border-emerald-500/20 rounded-xl p-4 mb-5">
                                 <div className="flex items-center gap-2 mb-3">
                                     <Radar className="w-5 h-5 text-emerald-400" />
@@ -1259,14 +1203,12 @@ const TeamSection = () => {
                                 </div>
                             </div>
 
-                            {/* Bottom Badge */}
                             <div className="pt-5 border-t border-white/5">
                                 <p className="text-sm text-white/50 italic">Nothing moves forward without context.</p>
                             </div>
                         </div>
                     </motion.div>
 
-                    {/* Account Managers Card */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -1276,7 +1218,6 @@ const TeamSection = () => {
                     >
                         <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-transparent rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                         <div className="relative bg-white/[0.03] border border-white/10 rounded-3xl p-8 h-full hover:border-indigo-500/30 transition-colors duration-300">
-                            {/* Header */}
                             <div className="flex items-center gap-4 mb-5">
                                 <div className="w-12 h-12 rounded-xl bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center">
                                     <Users className="w-6 h-6 text-indigo-400" />
@@ -1287,12 +1228,10 @@ const TeamSection = () => {
                                 </div>
                             </div>
 
-                            {/* Description */}
                             <p className="text-white/60 text-sm leading-relaxed mb-5">
                                 Dedicated Account Manager trained on your product, ICP, and sales motion. They manage the back-and-forth and keep momentum alive so your Sales Rep can focus on closing.
                             </p>
 
-                            {/* Qualification Checks */}
                             <div className="bg-white/[0.02] border border-white/5 rounded-xl p-4 mb-5">
                                 <p className="text-xs text-white/40 uppercase tracking-wider mb-3">Pre-Meeting Qualification</p>
                                 <div className="space-y-2">
@@ -1307,7 +1246,6 @@ const TeamSection = () => {
                                 </div>
                             </div>
 
-                            {/* Tasks List */}
                             <div className="space-y-2.5">
                                 <p className="text-xs text-white/40 uppercase tracking-wider mb-2">Their Mandate Spans</p>
                                 {accountManagerTasks.slice(0, 5).map((task, i) => (
@@ -1318,7 +1256,6 @@ const TeamSection = () => {
                                 ))}
                             </div>
 
-                            {/* Weekly Pipeline Badge */}
                             <div className="mt-5 pt-5 border-t border-white/5">
                                 <div className="flex flex-col gap-1.5">
                                     <div className="px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 w-fit">
@@ -1330,7 +1267,6 @@ const TeamSection = () => {
                         </div>
                     </motion.div>
 
-                    {/* Content Researchers Card */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -1340,7 +1276,6 @@ const TeamSection = () => {
                     >
                         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                         <div className="relative bg-white/[0.03] border border-white/10 rounded-3xl p-8 h-full hover:border-purple-500/30 transition-colors duration-300">
-                            {/* Header */}
                             <div className="flex items-center gap-4 mb-5">
                                 <div className="w-12 h-12 rounded-xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center">
                                     <MessageCircle className="w-6 h-6 text-purple-400" />
@@ -1351,7 +1286,6 @@ const TeamSection = () => {
                                 </div>
                             </div>
 
-                            {/* Tagline */}
                             <div className="bg-gradient-to-r from-purple-500/10 to-indigo-500/10 border border-purple-500/20 rounded-xl p-4 mb-5">
                                 <p className="text-white/90 font-medium text-sm">
                                     Bypassing the Sales Filters of the C-Suite
@@ -1361,7 +1295,6 @@ const TeamSection = () => {
                                 </p>
                             </div>
 
-                            {/* Key Points */}
                             <div className="space-y-4">
                                 {contentResearcherPoints.map((point, i) => (
                                     <div key={i} className="flex items-start gap-3">
@@ -1376,7 +1309,6 @@ const TeamSection = () => {
                                 ))}
                             </div>
 
-                            {/* Bottom Highlight */}
                             <div className="mt-5 pt-5 border-t border-white/5">
                                 <div className="flex flex-wrap gap-2">
                                     <span className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-white/50">ICP Research</span>
@@ -1463,7 +1395,6 @@ const FinalCTASection = () => (
     </section>
 )
 
-// --- Utilities & Styles ---
 
 const sectionVariants = {
   hidden: { opacity: 0 },
@@ -1518,9 +1449,6 @@ const GlobalStyles = () => (
       }
     `}</style>
 );
-
-// --- Main Page Component ---
-// Defined at the end to ensure all dependencies are available
 
 const HowItWorksPage = () => {
   return (

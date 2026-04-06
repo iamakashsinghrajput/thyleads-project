@@ -8,7 +8,6 @@ import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 import { getBlogBySlug, getRelatedPosts, ContentBlock } from '@/data/blogs';
 
-// Helper function to parse bold syntax
 const parseBoldText = (text: string) => {
   const parts = text.split(/(\*\*.*?\*\*)/g);
   return parts.map((part, index) => {
@@ -19,7 +18,6 @@ const parseBoldText = (text: string) => {
   });
 };
 
-// Helper function to generate slug from heading
 const generateSlug = (text: string) => {
   return text
     .toLowerCase()
@@ -27,10 +25,8 @@ const generateSlug = (text: string) => {
     .replace(/(^-|-$)/g, '');
 };
 
-// Helper function to render content blocks
 const renderContentBlock = (block: ContentBlock, index: number, isIntro: boolean = false) => {
   if (typeof block === 'string') {
-    // Regular paragraph
     return (
       <p
         key={index}
@@ -74,7 +70,6 @@ const renderContentBlock = (block: ContentBlock, index: number, isIntro: boolean
   return null;
 };
 
-// Table of Contents Component with scroll spy
 interface TOCItem {
   id: string;
   text: string;
@@ -93,7 +88,6 @@ function TableOfContents({ items, activeId }: { items: TOCItem[]; activeId: stri
 
           return (
             <div key={item.id} className="flex">
-              {/* Line segment for each item */}
               <div
                 className={`w-0.5 shrink-0 transition-colors duration-300 ${
                   isActive ? 'bg-[#9CA36C]' : 'bg-gray-200'
@@ -135,7 +129,6 @@ export default function BlogDetailPage() {
   const post = getBlogBySlug(slug);
   const relatedPosts = getRelatedPosts(slug, 3);
 
-  // Generate TOC items from sections
   const tocItems: TOCItem[] = useMemo(() => {
     return post?.content.sections.map((section, index) => ({
       id: generateSlug(section.heading),
@@ -144,14 +137,11 @@ export default function BlogDetailPage() {
     })) || [];
   }, [post]);
 
-  // Set initial active section
   const initialSectionId = tocItems.length > 0 ? tocItems[0].id : '';
 
-  // Scroll spy effect
   useEffect(() => {
     if (!post) return;
 
-    // Set initial section on mount
     if (initialSectionId && !activeSection) {
       setActiveSection(initialSectionId);
     }
@@ -172,7 +162,6 @@ export default function BlogDetailPage() {
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-    // Observe all section headings
     tocItems.forEach((item) => {
       const element = document.getElementById(item.id);
       if (element) {
@@ -212,7 +201,6 @@ export default function BlogDetailPage() {
         console.log('Error sharing:', err);
       }
     } else {
-      // Fallback: copy to clipboard
       navigator.clipboard.writeText(window.location.href);
       alert('Link copied to clipboard!');
     }
@@ -222,7 +210,6 @@ export default function BlogDetailPage() {
     <div className="font-polysans min-h-screen bg-gray-50">
       <BlogNavbar />
 
-      {/* Breadcrumb Section */}
       <div className="bg-gray-50 border-b border-gray-200 pt-24 pb-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 text-sm text-gray-500">
@@ -235,35 +222,28 @@ export default function BlogDetailPage() {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
-            {/* Table of Contents - Left Sidebar */}
             <aside className="lg:col-span-3 order-2 lg:order-1">
               <div className="sticky top-24">
                 <TableOfContents items={tocItems} activeId={activeSection} />
               </div>
             </aside>
 
-            {/* Article Content - Right Side */}
             <article className="lg:col-span-9 order-1 lg:order-2">
-              {/* Article Header */}
               <header className="mb-10">
-                {/* Category Badge */}
                 <div className="mb-6">
                   <span className="inline-block px-4 py-1.5 bg-purple-600 text-white text-xs font-bold rounded-full uppercase tracking-wider">
                     {post.category}
                   </span>
                 </div>
 
-                {/* Title */}
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 leading-tight">
                   {post.title}
                 </h1>
 
-                {/* Author & Meta Info */}
                 <div className="flex items-center justify-between flex-wrap gap-6 pb-8 border-b border-gray-200">
                   <div className="flex items-center gap-4">
                     <img
@@ -285,7 +265,6 @@ export default function BlogDetailPage() {
                     </div>
                   </div>
 
-                  {/* Social Share Button */}
                   <button
                     onClick={handleShare}
                     className="flex items-center gap-2 px-5 py-2.5 border border-gray-300 rounded-lg hover:bg-gray-50 hover:border-purple-400 transition-all text-sm font-medium text-gray-700"
@@ -296,7 +275,6 @@ export default function BlogDetailPage() {
                 </div>
               </header>
 
-              {/* Featured Image */}
               <div className="mb-12 rounded-2xl overflow-hidden shadow-lg">
                 <img
                   src={post.image}
@@ -305,9 +283,7 @@ export default function BlogDetailPage() {
                 />
               </div>
 
-              {/* Article Body */}
               <div className="prose prose-lg max-w-none">
-                {/* Introduction */}
                 <div className="mb-10">
                   {Array.isArray(post.content.introduction) ? (
                     post.content.introduction.map((block, index) => renderContentBlock(block, index, true))
@@ -318,7 +294,6 @@ export default function BlogDetailPage() {
                   )}
                 </div>
 
-                {/* Sections */}
                 {post.content.sections.map((section, index) => (
                   <div key={index} className="mb-10">
                     <h2
@@ -338,7 +313,6 @@ export default function BlogDetailPage() {
                 ))}
               </div>
 
-              {/* Article Footer - Tags & Share */}
               <div className="mt-12 pt-8 border-t border-gray-200">
                 <div className="flex flex-wrap items-center justify-between gap-4">
                   <div className="flex items-center gap-2">
@@ -358,7 +332,6 @@ export default function BlogDetailPage() {
                 </div>
               </div>
 
-              {/* Related Posts */}
               {relatedPosts.length > 0 && (
                 <div className="mt-12">
                   <h3 className="text-2xl font-bold text-gray-900 mb-6">Related Articles</h3>
@@ -393,10 +366,8 @@ export default function BlogDetailPage() {
         </div>
       </div>
 
-      {/* CTA Section */}
       <CTASection theme="light" />
 
-      {/* Footer */}
       <Footer />
     </div>
   );

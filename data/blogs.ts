@@ -1,10 +1,5 @@
-// Blog Data File
-// This file contains all blog posts and can be edited by non-technical users
-// To add a new blog post, copy the template below and fill in the details
-
-// Content block types for rich formatting
 export type ContentBlock =
-  | string // Plain paragraph (can include **bold** syntax)
+  | string
   | {
       type: 'subheading';
       text: string;
@@ -12,11 +7,11 @@ export type ContentBlock =
   | {
       type: 'list';
       items: string[];
-      ordered?: boolean; // true for numbered list, false/undefined for bullet list
+      ordered?: boolean;
     };
 
 export interface BlogPost {
-  slug: string; // URL-friendly version of title (e.g., "future-of-fintech-2025")
+  slug: string;
   title: string;
   excerpt: string;
   category: string;
@@ -31,10 +26,10 @@ export interface BlogPost {
   image: string;
   featured: boolean;
   content: {
-    introduction: string | ContentBlock[]; // Supports both single paragraph and rich content blocks
+    introduction: string | ContentBlock[];
     sections: {
       heading: string;
-      content: string | ContentBlock[]; // Supports both single paragraph and rich content blocks
+      content: string | ContentBlock[];
     }[];
   };
 }
@@ -4352,17 +4347,14 @@ export const blogPosts: BlogPost[] = [
   }
 ];
 
-// Helper function to get a blog post by slug
 export function getBlogBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find(post => post.slug === slug);
 }
 
-// Helper function to get all blog slugs (useful for static generation)
 export function getAllBlogSlugs(): string[] {
   return blogPosts.map(post => post.slug);
 }
 
-// Helper function to get related posts (same category, excluding current post)
 export function getRelatedPosts(slug: string, limit: number = 3): BlogPost[] {
   const currentPost = getBlogBySlug(slug);
   if (!currentPost) return [];

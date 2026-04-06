@@ -23,9 +23,8 @@ export async function POST(request: Request) {
     const body = (await request.json()) as ContactPayload & { website_url?: string };
     const { name, company, email, phone, message, mode } = body;
 
-    // Bot protection: honeypot field
     if (body.website_url) {
-      return NextResponse.json({ ok: true }); // Silently reject
+      return NextResponse.json({ ok: true });
     }
 
     if (!name || !email || !message) {
@@ -35,7 +34,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // Bot protection: basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return NextResponse.json(

@@ -19,16 +19,13 @@ export default function CleverTapCaseStudy() {
     <div className="min-h-screen bg-white font-sans animate-in fade-in duration-500 scroll-smooth">
       <Navbar />
 
-      {/* Hero Section */}
       <header className="relative w-full overflow-hidden bg-slate-950 min-h-screen flex items-center">
-        {/* Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-blue-600/20 via-transparent to-transparent rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#C3F53C]/10 via-transparent to-transparent rounded-full blur-3xl" />
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-50" />
         </div>
 
-        {/* Back to stories button */}
         <Link
           href="/casestudies"
           className="absolute top-24 left-6 md:left-12 z-20 flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm font-medium"
@@ -38,7 +35,6 @@ export default function CleverTapCaseStudy() {
         </Link>
 
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12 pt-16">
-          {/* Top Section: Logo + Tags */}
           <div className="flex flex-col md:flex-row md:items-center gap-6 mb-10">
             <div className="flex items-center gap-4">
               <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-lg shadow-white/10">
@@ -56,7 +52,6 @@ export default function CleverTapCaseStudy() {
             </div>
           </div>
 
-          {/* Main Headline */}
           <h1 className="text-2xl md:text-4xl lg:text-5xl font-medium text-white tracking-tight leading-[1.1] mb-10 max-w-5xl">
             Turning a broken outbound engine into a{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-[#C3F53C]">
@@ -66,11 +61,9 @@ export default function CleverTapCaseStudy() {
         </div>
       </header>
 
-      {/* Main Content Layout */}
       <main className="relative z-10 bg-white">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 px-6 md:px-12 py-20">
 
-          {/* Sidebar / Sticky Nav */}
           <aside className="lg:col-span-3 hidden lg:block">
             <div className="sticky top-32 space-y-8">
               <div className="text-sm font-semibold text-gray-400 tracking-wider uppercase mb-4">Contents</div>
@@ -99,7 +92,6 @@ export default function CleverTapCaseStudy() {
               <div className="pt-8 border-t border-gray-100">
                 <div className="text-sm text-gray-500 mb-2">Share this story</div>
                 <div className="flex gap-4">
-                  {/* Social placeholders */}
                   <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 cursor-pointer text-gray-600 transition-colors">
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
                   </div>
@@ -111,10 +103,8 @@ export default function CleverTapCaseStudy() {
             </div>
           </aside>
 
-          {/* Article Content */}
           <article className="lg:col-span-8 lg:col-start-5 space-y-12">
 
-            {/* Intro */}
             <div className="prose prose-lg md:prose-xl max-w-none text-slate-600">
               <p className="lead text-2xl font-normal leading-relaxed text-slate-900 mb-8">
                 As a global titan in customer engagement and retention, CleverTap powers the world’s most sophisticated brands, managing billions of data points in real-time.
@@ -124,7 +114,6 @@ export default function CleverTapCaseStudy() {
               </p>
             </div>
 
-            {/* Blockquote */}
             <div className="my-16 relative">
               <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-blue-500 to-[#C3F53C]" />
               <div className="pl-8 md:pl-12">
@@ -164,7 +153,6 @@ export default function CleverTapCaseStudy() {
               </ul>
             </div>
 
-            {/* The Solution */}
             <div id="solution" className="prose prose-lg max-w-none text-slate-600 scroll-mt-32">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">The Solution: Treating GTM Like a Product Problem, Not a Volume Problem</h3>
               <p className="mb-6">
@@ -172,9 +160,7 @@ export default function CleverTapCaseStudy() {
               </p>
               <p className="text-xl font-semibold text-slate-800 mb-6">What changed:</p>
 
-              {/* Solution Cards */}
               <div className="space-y-6 not-prose">
-                {/* I. Outreach Infrastructure */}
                 <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
                   <div className="flex items-start gap-4">
                     <span className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold text-sm">I</span>
@@ -187,7 +173,6 @@ export default function CleverTapCaseStudy() {
                   </div>
                 </div>
 
-                {/* II. Multi-Channel Visibility */}
                 <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
                   <div className="flex items-start gap-4">
                     <span className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold text-sm">II</span>
@@ -205,7 +190,6 @@ export default function CleverTapCaseStudy() {
                   </div>
                 </div>
 
-                {/* III. Waterfall Enrichment */}
                 <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
                   <div className="flex items-start gap-4">
                     <span className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold text-sm">III</span>
@@ -218,7 +202,6 @@ export default function CleverTapCaseStudy() {
                   </div>
                 </div>
 
-                {/* IV. AI Personalisation */}
                 <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
                   <div className="flex items-start gap-4">
                     <span className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold text-sm">IV</span>
@@ -231,7 +214,6 @@ export default function CleverTapCaseStudy() {
                   </div>
                 </div>
 
-                {/* V. Feedback Flywheel */}
                 <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
                   <div className="flex items-start gap-4">
                     <span className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold text-sm">V</span>
@@ -264,7 +246,6 @@ export default function CleverTapCaseStudy() {
               </ul>
             </div>
 
-            {/* Future Outlook */}
             <div id="future-outlook" className="prose prose-lg max-w-none text-slate-600 scroll-mt-32">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Future Outlook</h3>
               <p className="mb-4">
@@ -278,7 +259,6 @@ export default function CleverTapCaseStudy() {
         </div>
       </main>
 
-      {/* Footer CTA */}
       <footer className="bg-slate-900 py-24 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-20">
             <div className="absolute top-[-50%] left-[-10%] w-[1000px] h-[1000px] rounded-full bg-blue-600 blur-[100px]" />

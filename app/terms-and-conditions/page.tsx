@@ -60,14 +60,12 @@ export default function TermsAndConditionsPage() {
     <div className="min-h-screen bg-black text-white font-sans">
       <Navbar />
       <main className="relative overflow-hidden">
-        {/* Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-indigo-600/10 blur-[160px] rounded-full" />
           <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-purple-600/10 blur-[140px] rounded-full" />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 pt-32 pb-24">
-          {/* Header */}
           <div className="mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-6">
               <FileText className="w-4 h-4 text-indigo-400" />
@@ -77,7 +75,6 @@ export default function TermsAndConditionsPage() {
             <p className="text-white/60 text-lg">Effective Date: May 21, 2025</p>
           </div>
 
-          {/* Introduction */}
           <div className="prose prose-invert max-w-none mb-12">
             <p className="text-white/70 text-lg leading-relaxed">
               By accessing this website or engaging with Thyleads Inc. (&ldquo;Thyleads&rdquo;, &ldquo;we&rdquo;, &ldquo;our&rdquo;, &ldquo;us&rdquo;), you agree to be bound by these Terms and Conditions (&ldquo;Terms&rdquo;). These Terms govern your use of our website, services, and any communications between you and Thyleads.
@@ -87,7 +84,6 @@ export default function TermsAndConditionsPage() {
             </p>
           </div>
 
-          {/* Sections */}
           <div className="space-y-12">
             {sections.map((section, idx) => (
               <section key={idx} className="rounded-2xl bg-white/[0.02] border border-white/10 p-6 md:p-8">
@@ -98,7 +94,6 @@ export default function TermsAndConditionsPage() {
               </section>
             ))}
 
-            {/* Contact Section */}
             <section className="rounded-2xl bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border border-indigo-500/20 p-6 md:p-8">
               <h2 className="text-xl md:text-2xl font-bold text-white mb-4">12. Contact Information</h2>
               <p className="text-white/70 mb-6">

@@ -5,7 +5,6 @@ import { motion, Variants } from "framer-motion";
 import { Quote } from "lucide-react";
 
 const Testimonial = () => {
-  // Staggered animation for the container
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -17,7 +16,6 @@ const Testimonial = () => {
     },
   };
 
-  // Slide up animation for items
   const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -30,13 +28,10 @@ const Testimonial = () => {
   return (
     <section className="relative w-full min-h-[600px] flex items-center justify-center bg-slate-950 py-24 px-6 overflow-hidden">
       
-      {/* --- Background Effects --- */}
       <div className="absolute inset-0 w-full h-full pointer-events-none">
-        {/* Animated Grid */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20" />
-        
-        {/* Glowing Orbs - Made slightly more subtle for open layout */}
-        <motion.div 
+
+        <motion.div
           animate={{ x: [0, 50, 0], y: [0, 30, 0], opacity: [0.2, 0.4, 0.2] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
           className="absolute top-0 left-0 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[120px]" 
@@ -57,17 +52,13 @@ const Testimonial = () => {
           className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center"
         >
           
-          {/* --- LEFT SIDE: Header & Author Profile --- */}
           <div className="lg:col-span-5 flex flex-col space-y-12 relative">
-             {/* Subtle vertical divider for desktop */}
             <div className="hidden lg:block absolute -right-12 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-slate-800 to-transparent" />
 
-            {/* Header Text */}
-            <motion.div variants={itemVariants} className="space-y-8">              
+            <motion.div variants={itemVariants} className="space-y-8">
               <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight tracking-tight">
                 <span className="inline-block relative h-12 w-48 my-1 align-middle">
-                   {/* Logo Container */}
-                  <img 
+                  <img
                     src="/images/mynd.svg" 
                     alt="MYND Logo" 
                     className="w-full h-full object-contain object-left filter brightness-100 opacity-90"
@@ -86,7 +77,6 @@ const Testimonial = () => {
               </h2>
             </motion.div>
 
-            {/* Author Details - Clean & Minimal */}
             <motion.div variants={itemVariants} className="flex items-center gap-5">
               <div className="relative shrink-0">
                 <div className="w-16 h-16 rounded-full overflow-hidden ring-2 ring-indigo-500/20 shadow-2xl">
@@ -110,11 +100,9 @@ const Testimonial = () => {
           </div>
 
 
-          {/* --- RIGHT SIDE: The Main Content --- */}
           <div className="lg:col-span-7 relative">
             <motion.div variants={itemVariants} className="relative pl-0 lg:pl-8">
               
-              {/* Giant Quote Background */}
               <Quote className="absolute -top-10 -left-6 lg:left-0 w-20 h-20 text-indigo-500/10 rotate-180 pointer-events-none" />
 
               <blockquote className="relative z-10">
@@ -125,7 +113,6 @@ const Testimonial = () => {
                 </p>
               </blockquote>
 
-              {/* Decorative Line */}
               <div className="mt-8 h-px w-24 bg-indigo-500/50" />
             </motion.div>
           </div>

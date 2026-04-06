@@ -21,7 +21,6 @@ const LogoCloud: React.FC = () => {
 
   return (
     <div className="w-full py-6 relative overflow-hidden group">
-      {/* Side Masks for clean fade in/out */}
       <div className="absolute left-0 bottom-0 w-48 bg-gradient-to-r from-[#050505] to-transparent z-10 pointer-events-none"></div>
       <div className="absolute right-0 top-0 bottom-0 w-48 bg-gradient-to-l from-[#050505] to-transparent z-10 pointer-events-none"></div>
 

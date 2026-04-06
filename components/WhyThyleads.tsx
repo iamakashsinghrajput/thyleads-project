@@ -88,9 +88,6 @@ const WhyThyleadsRedesign: React.FC = () => {
   return (
     <section className="relative w-full min-h-screen bg-[#050505] overflow-hidden flex flex-col items-center justify-center font-sans text-white py-20">
       
-      {/* -----------------------------------------------------------------
-          Background: Deep Space Mesh
-      ------------------------------------------------------------------ */}
       <div className="absolute inset-0 z-0">
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:40px_40px] opacity-[0.03]" />
          <motion.div
@@ -104,7 +101,6 @@ const WhyThyleadsRedesign: React.FC = () => {
 
       <div className="relative z-10 w-full max-w-7xl px-4 lg:px-8 flex flex-col h-full justify-center">
         
-        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-4">
             Why <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/40">Thyleads?</span>
@@ -114,9 +110,6 @@ const WhyThyleadsRedesign: React.FC = () => {
           </p>
         </div>
 
-        {/* -----------------------------------------------------------------
-            Main Content: Horizontal Accordion Deck
-        ------------------------------------------------------------------ */}
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-2 h-auto lg:h-[600px] w-full">
            {features.map((feature, idx) => {
              const isActive = activeTab === idx;
@@ -132,7 +125,6 @@ const WhyThyleadsRedesign: React.FC = () => {
                      : 'lg:flex-[0.3] border-white/5 hover:border-white/20 lg:hover:flex-[0.5]'
                  }`}
                >
-                 {/* Background Image & Gradient */}
                  <div className="absolute inset-0">
                     <img 
                       src={feature.image} 
@@ -142,22 +134,18 @@ const WhyThyleadsRedesign: React.FC = () => {
                     <div className={`absolute inset-0 bg-gradient-to-b ${isActive ? feature.gradient : 'from-black/80 to-black/90'}`} />
                  </div>
 
-                 {/* Content Wrapper */}
                  <div className="relative h-full flex flex-col p-6 lg:p-10">
                     
-                    {/* Header (Visible on all) */}
                     <div className="flex items-start justify-between">
                        <div className={`w-10 h-10 rounded-xl flex items-center justify-center backdrop-blur-md border border-white/10 ${isActive ? 'bg-white/10 text-white' : 'bg-black/40 text-white/50'}`}>
                           {feature.icon}
                        </div>
                        
-                       {/* Mobile-only Chevron */}
                        <div className="lg:hidden text-white/50">
                          {isActive ? <ChevronRight className="rotate-90 transition-transform" /> : <ChevronRight />}
                        </div>
                     </div>
 
-                    {/* Collapsed Vertical Title (Desktop Only) */}
                     {!isActive && (
                       <div className="hidden lg:flex flex-1 items-center justify-center mt-12">
                          <h3 className="text-xl font-bold text-white/50 tracking-widest uppercase [writing-mode:vertical-rl] rotate-180 whitespace-nowrap">
@@ -166,7 +154,6 @@ const WhyThyleadsRedesign: React.FC = () => {
                       </div>
                     )}
 
-                    {/* Expanded Content */}
                     <div className={`mt-auto transition-opacity duration-500 ${isActive ? 'opacity-100 delay-200' : 'opacity-0 lg:opacity-0 hidden lg:block'}`}>
                         {isActive && (
                           <motion.div
@@ -200,14 +187,12 @@ const WhyThyleadsRedesign: React.FC = () => {
                         )}
                     </div>
                     
-                    {/* Active Number Indicator Background */}
                     <div className="absolute right-4 bottom-4 text-[100px] font-black text-white/5 leading-none pointer-events-none select-none">
                       {feature.label}
                     </div>
 
                  </div>
                  
-                 {/* Active Border Glow */}
                  {isActive && (
                     <motion.div 
                       layoutId="activeBorder"

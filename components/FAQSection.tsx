@@ -56,7 +56,6 @@ const FAQSection = () => {
         
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-24">
           
-          {/* Header Section */}
           <div className="lg:col-span-5">
             <div className="sticky top-32">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-6">
@@ -79,7 +78,6 @@ const FAQSection = () => {
             </div>
           </div>
 
-          {/* Accordion Section */}
           <div className="lg:col-span-7">
             <div className="space-y-4">
               {faqs.map((faq, index) => (

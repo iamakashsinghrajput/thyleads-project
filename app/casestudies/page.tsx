@@ -10,9 +10,6 @@ import TrustedBy from '@/components/TrustedBy';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 
-/**
- * TESTIMONIALS DATA - Only real case studies
- */
 const testimonials = [
   {
     id: 'clevertap',
@@ -108,13 +105,11 @@ export default function CaseStudiesPage() {
     <div className="min-h-screen bg-black font-sans selection:bg-purple-600/20 overflow-x-hidden">
       <Navbar />
 
-      {/* Background Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-purple-600/10 blur-[150px] rounded-full" />
         <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-indigo-600/5 blur-[120px] rounded-full" />
       </div>
 
-      {/* 1. Page Heading */}
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 pt-32 pb-16 text-center">
         <div className="flex flex-col items-center gap-6">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-600/20 border border-purple-500/30 text-purple-300 text-xs font-bold tracking-wider uppercase backdrop-blur-sm">
@@ -129,30 +124,25 @@ export default function CaseStudiesPage() {
         </div>
       </div>
 
-      {/* 2. Hero Card (Featured Client) */}
       <div className="relative z-10 max-w-[1100px] mx-auto px-6 mb-20">
         <Link
           href={`/casestudies/${featuredCaseStudy.id}`}
           className="block relative w-full rounded-3xl overflow-hidden shadow-2xl bg-[#0c0c12] grid grid-cols-1 lg:grid-cols-2 min-h-[420px] group transition-all duration-500 hover:shadow-purple-900/30 border border-white/10"
         >
-          {/* Image Side */}
           <div className="relative aspect-[4/3] lg:aspect-auto lg:h-auto order-1 lg:order-1 overflow-hidden">
             <img
               src={featuredCaseStudy.personImage}
               alt="Featured Customer"
               className="absolute inset-0 w-full h-full object-contain lg:object-cover object-center lg:object-top transition-transform duration-1000 group-hover:scale-105"
             />
-            {/* Bottom gradient for text readability */}
             <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
-            {/* Person info on image */}
             <div className="absolute bottom-0 left-0 right-0 p-6 text-white z-10">
               <div className="text-lg font-bold">{featuredCaseStudy.personName}</div>
               <div className="text-sm text-gray-300">{featuredCaseStudy.personTitle}</div>
             </div>
           </div>
 
-          {/* Content Side */}
           <div className="p-8 md:p-10 flex flex-col justify-between relative z-10 order-2 lg:order-2 bg-[#0c0c12]">
             <div>
               <div className="mb-6">
@@ -180,7 +170,6 @@ export default function CaseStudiesPage() {
         </Link>
       </div>
 
-      {/* 3. Infinite Carousel of Success Stories */}
       <section className="relative z-10 py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 mb-10">
           <h3 className="text-3xl font-bold text-slate-800 flex items-center gap-2">
@@ -192,13 +181,10 @@ export default function CaseStudiesPage() {
         </div>
 
         <div className="relative w-full">
-          {/* Gradient Masks for fade effect */}
           <div className="absolute top-0 left-0 w-40 h-full bg-gradient-to-r from-white to-transparent z-20 pointer-events-none" />
           <div className="absolute top-0 right-0 w-40 h-full bg-gradient-to-l from-white to-transparent z-20 pointer-events-none" />
 
-          {/* Scrolling Track */}
           <div className="flex animate-scroll-cards w-max gap-8 px-8 hover:[animation-play-state:paused]">
-            {/* Triple the array for seamless loop */}
             {[...carouselStories, ...carouselStories, ...carouselStories].map(
               (story, idx) => {
                 const isTazapay = story.id === "tazapay";
@@ -257,7 +243,6 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* Case Study Cards Grid */}
       <section className="relative z-10 py-20 bg-white">
         <div className="max-w-[1300px] mx-auto px-6">
           <div className="mb-10 text-center">
@@ -265,7 +250,6 @@ export default function CaseStudiesPage() {
             <h3 className="text-3xl md:text-4xl font-bold text-slate-900">Explore the full library</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* CleverTap Card */}
             <Link
               href="/casestudies/clevertap"
               className="group w-full max-w-[405px] mx-auto rounded-2xl overflow-hidden border border-gray-200 bg-white hover:shadow-lg transition-all duration-300 flex flex-col"
@@ -291,7 +275,6 @@ export default function CaseStudiesPage() {
               </div>
             </Link>
 
-            {/* Dice Card */}
             <Link
               href="/casestudies/dice"
               className="group w-full max-w-[405px] mx-auto rounded-2xl overflow-hidden border border-gray-200 bg-white hover:shadow-lg transition-all duration-300 flex flex-col"
@@ -317,7 +300,6 @@ export default function CaseStudiesPage() {
               </div>
             </Link>
 
-            {/* Pazo Card */}
             <Link
               href="/casestudies/pazo"
               className="group w-full max-w-[405px] mx-auto rounded-2xl overflow-hidden border border-gray-200 bg-white hover:shadow-lg transition-all duration-300 flex flex-col"
@@ -343,7 +325,6 @@ export default function CaseStudiesPage() {
               </div>
             </Link>
 
-            {/* VWO Card */}
             <Link
               href="/casestudies/vwo"
               className="group w-full max-w-[405px] mx-auto rounded-2xl overflow-hidden border border-gray-200 bg-white hover:shadow-lg transition-all duration-300 flex flex-col"
@@ -369,7 +350,6 @@ export default function CaseStudiesPage() {
               </div>
             </Link>
 
-            {/* Placeholder Card 1 */}
             <div className="w-full max-w-[405px] mx-auto rounded-2xl overflow-hidden border border-gray-200 bg-white flex flex-col">
               <div className="aspect-[16/9] md:h-[221px] md:aspect-auto bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 relative overflow-hidden flex items-center justify-center">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(255,255,255,0.9),transparent_50%)]" />
@@ -386,7 +366,6 @@ export default function CaseStudiesPage() {
               </div>
             </div>
 
-            {/* Placeholder Card 2 */}
             <div className="w-full max-w-[405px] mx-auto rounded-2xl overflow-hidden border border-gray-200 bg-white flex flex-col">
               <div className="aspect-[16/9] md:h-[221px] md:aspect-auto bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden flex items-center justify-center">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_30%,rgba(255,255,255,0.9),transparent_50%)]" />
@@ -409,10 +388,8 @@ export default function CaseStudiesPage() {
       <TrustedBy />
       <CTASection theme="dark" />
 
-      {/* Footer */}
       <Footer />
 
-      {/* Custom CSS for the smooth card scrolling */}
       <style
         dangerouslySetInnerHTML={{
           __html: `
