@@ -189,7 +189,7 @@ export default function DiceCaseStudy() {
                     <span className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold text-sm">III</span>
                     <div>
                       <h4 className="text-lg font-bold text-slate-900 mb-2">Signal-Led Efficiency Mapping:</h4>
-                      <p className=’text-slate-600 mb-3’>We used a live enrichment stack to hunt for Friction Signals rather than just job titles. We targeted companies with:</p>
+                      <p className="text-slate-600 mb-3">We used a live enrichment stack to hunt for Friction Signals rather than just job titles. We targeted companies with:</p>
                       <ul className="space-y-2">
                         <li className="flex items-start gap-2">
                           <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
