@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="fixed left-1/2 -translate-x-1/2 z-50 w-full max-w-4xl px-6 top-6">
-      <div className={`flex items-center justify-between border border-white/10 rounded-2xl backdrop-blur-md bg-black/20 py-3 px-6 lg:px-8 transition-all duration-300 ${scrolled ? 'bg-black/60' : 'bg-black/20'}`}>
+      <div className={`flex items-center justify-between border border-neutral-200 rounded-2xl backdrop-blur-md py-3 px-6 lg:px-8 transition-all duration-300 ${scrolled ? 'bg-white/80 shadow-lg' : 'bg-white/60'}`}>
         <Link href="/" className="flex items-center space-x-1 cursor-pointer hover:opacity-80 transition-opacity">
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
               />
             </div>
           </div>
-          <span className="text-[20px] font-polysans font-bold tracking-wide text-white">Thyleads</span>
+          <span className="text-[20px] font-polysans font-bold tracking-wide text-neutral-900">Thyleads</span>
         </Link>
 
         <div className="hidden md:flex items-center space-x-10">
@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
             <Link
               key={link.name}
               href={link.href}
-              className="text-[11px] font-bold text-gray-400 hover:text-white transition-colors tracking-[0.2em]"
+              className="text-[11px] font-bold text-neutral-500 hover:text-neutral-900 transition-colors tracking-[0.2em]"
             >
               {link.name}
             </Link>
@@ -60,8 +60,8 @@ const Navbar: React.FC = () => {
             href="/contact"
             className="relative inline-flex items-center justify-center rounded-full p-[1.5px] overflow-hidden group cursor-pointer"
           >
-            <span className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0%,transparent_30%,#a855f7_50%,#ffffff_60%,transparent_70%,transparent_100%)]" />
-            <span className="relative flex items-center space-x-2 px-6 py-2.5 bg-black rounded-full group-hover:bg-white group-hover:text-black transition-all duration-300">
+            <span className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0%,transparent_30%,#845cf5_50%,#ffffff_60%,transparent_70%,transparent_100%)]" />
+            <span className="relative flex items-center space-x-2 px-6 py-2.5 bg-neutral-900 text-white rounded-full group-hover:bg-primary-500 transition-all duration-300">
               <span className="text-[11px] font-bold uppercase tracking-[0.1em]">Let&apos;s Talk</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </span>
@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
         <div className="md:hidden">
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-white p-2"
+            className="text-neutral-900 p-2"
           >
             {mobileMenuOpen ? <X /> : <Menu />}
           </button>
@@ -84,14 +84,14 @@ const Navbar: React.FC = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden bg-black/95 backdrop-blur-2xl border-b border-white/5"
+            className="md:hidden bg-white/95 backdrop-blur-2xl border-b border-neutral-200 rounded-2xl mt-2"
           >
             <div className="px-6 pt-4 pb-10 space-y-6 text-center">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="block text-sm font-bold text-gray-400 uppercase tracking-widest hover:text-white transition-colors text-center"
+                  className="block text-sm font-bold text-neutral-500 uppercase tracking-widest hover:text-neutral-900 transition-colors text-center"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.name}
@@ -99,7 +99,7 @@ const Navbar: React.FC = () => {
               ))}
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center space-x-2 px-6 py-2.5 bg-black border border-white/10 rounded-full hover:bg-white hover:text-black transition-all duration-300 group"
+                className="inline-flex items-center justify-center space-x-2 px-6 py-2.5 bg-neutral-900 text-white border border-neutral-200 rounded-full hover:bg-primary-500 transition-all duration-300 group"
               >
                 <span className="text-[11px] font-bold uppercase tracking-[0.1em]">Let&apos;s Talk</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

@@ -8,8 +8,25 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: {
+          DEFAULT: '#845cf5',
+          50: '#f3efff',
+          100: '#e9e1fe',
+          200: '#d4c5fd',
+          300: '#b89afb',
+          400: '#9d75f8',
+          500: '#845cf5',
+          600: '#7040e8',
+          700: '#5e30d0',
+          800: '#4e28ab',
+          900: '#41238b',
+        },
+      },
       fontFamily: {
         sans: ['"Polysans Neutral"', 'sans-serif'],
+        display: ['var(--font-space-grotesk)', 'sans-serif'],
+        geist: ['var(--font-geist-sans)', 'sans-serif'],
       },
       fontSize: {
         base: ['16px', '1.5'], // 16px with a line-height of 1.5

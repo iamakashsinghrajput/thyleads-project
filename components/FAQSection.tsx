@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { Plus, Minus, MessageCircle, HelpCircle } from 'lucide-react';
 
@@ -51,26 +51,30 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="py-32 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        
+    <section className="relative py-32 bg-white overflow-hidden font-geist">
+
+      {/* Ambient primary glow */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary-300/15 blur-[120px] rounded-full pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-24">
-          
+
           <div className="lg:col-span-5">
             <div className="sticky top-32">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-6">
-                <HelpCircle size={14} />
+              <div className="inline-flex items-center gap-2 rounded-full bg-primary-50 border border-primary-100 px-4 py-1.5 text-sm font-semibold text-primary-600 shadow-sm mb-6">
+                <HelpCircle size={14} className="text-primary-500" />
                 Support
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 tracking-tight">
-                Frequently asked questions
+              <h2 className="font-geist text-4xl md:text-5xl font-bold text-neutral-900 mb-6 tracking-tight leading-[1.1]">
+                Your Questions, <span className="bg-primary-100 text-primary-700 px-4 py-1 inline-block mt-2 rounded-md">Our Expertise</span>
               </h2>
-              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                Everything you need to know about the product and billing. Can&apos;t find the answer you&apos;re looking for?
+              <p className="text-lg text-neutral-500 mb-8 leading-relaxed">
+                We&apos;ve compiled answers to most common questions that SaaS Founders ask us.
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-6 py-3 text-sm font-bold text-white transition-all duration-200 bg-slate-900 rounded-xl hover:bg-slate-800 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900 focus:ring-offset-slate-50"
+                className="inline-flex items-center justify-center px-6 py-3 text-sm font-bold text-white transition-all duration-200 bg-primary-500 rounded-xl shadow-lg shadow-primary-500/25 hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 focus:ring-offset-white"
               >
                 <MessageCircle className="w-4 h-4 mr-2" />
                 Talk to our team
@@ -81,10 +85,12 @@ const FAQSection = () => {
           <div className="lg:col-span-7">
             <div className="space-y-4">
               {faqs.map((faq, index) => (
-                <div 
+                <div
                   key={index}
-                  className={`group transition-all duration-200 bg-white border border-slate-200 rounded-2xl ${
-                    openIndex === index ? 'shadow-md ring-1 ring-slate-200' : 'hover:border-slate-300'
+                  className={`group transition-all duration-200 bg-white border rounded-2xl ${
+                    openIndex === index
+                      ? 'border-primary-200 shadow-lg shadow-primary-500/10'
+                      : 'border-neutral-200 hover:border-neutral-300'
                   }`}
                 >
                   <button
@@ -92,30 +98,30 @@ const FAQSection = () => {
                     className="flex items-center justify-between w-full px-6 py-5 text-left focus:outline-none"
                   >
                     <span className={`text-lg font-semibold transition-colors duration-200 ${
-                      openIndex === index ? 'text-blue-600' : 'text-slate-900 group-hover:text-slate-700'
+                      openIndex === index ? 'text-primary-600' : 'text-neutral-900 group-hover:text-neutral-700'
                     }`}>
                       {faq.question}
                     </span>
-                    <span className={`flex-shrink-0 ml-4 p-2 rounded-full transition-all duration-200 ${
-                       openIndex === index ? 'bg-blue-100 text-blue-600 rotate-180' : 'bg-slate-100 text-slate-500 group-hover:bg-slate-200'
+                    <span className={`shrink-0 ml-4 p-2 rounded-full transition-all duration-200 ${
+                       openIndex === index ? 'bg-primary-50 text-primary-600 rotate-180' : 'bg-neutral-100 text-neutral-500 group-hover:bg-neutral-200'
                     }`}>
                       {openIndex === index ? <Minus size={16} /> : <Plus size={16} />}
                     </span>
                   </button>
-                  
+
                   <div
                     className={`overflow-hidden transition-all duration-300 ease-in-out ${
                       openIndex === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
                     }`}
                   >
-                    <div className="px-6 pb-6 text-slate-600 leading-relaxed">
+                    <div className="px-6 pb-6 text-neutral-600 leading-relaxed">
                       {faq.bullets ? (
                         <>
                           <p className="mb-3">{faq.answer}</p>
                           <ul className="space-y-2">
                             {faq.bullets.map((bullet, i) => (
                               <li key={i} className="flex items-start gap-2">
-                                <span className="text-blue-500 mt-0.5">→</span>
+                                <span className="text-primary-500 mt-0.5">→</span>
                                 <span>{bullet}</span>
                               </li>
                             ))}

@@ -23,26 +23,36 @@ import {
   Database,
   Filter,
   Layers,
-  Check,
-  Terminal,
-  Loader2,
-  Target,
   ArrowDown,
-  Play,
-  CheckCircle,
-  ListTodo,
-  Briefcase
+  Target,
+  Sparkles,
+  UserRound,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const systemStages = [
-  "Signals (Inbound + Outbound)",
-  "Intake & Qualification Engine",
-  "Outreach & Conversation Activation",
-  "Sales-Ready Meetings",
-  "Post-Demo Momentum",
-  "Nurture + Reporting",
+  {
+    title: "Signal Capture",
+    description: "Identify high-intent buyers before they raise a hand",
+  },
+  {
+    title: "Intake & Qualification Engine",
+    description: "Filter noise. Focus only on real opportunities",
+  },
+  {
+    title: "Conversation Activation",
+    description: "Start relevant, personalized outreach across channels",
+  },
+  {
+    title: "Sales-Ready Meetings",
+    description: "Only qualified conversations reach your calendar",
+  },
+  {
+    title: "Deal Momentum",
+    description:
+      "Follow-ups, nudges, and stakeholder alignment to move deals forward",
+  },
 ];
 
 const weeklyTimeline = [
@@ -187,80 +197,58 @@ const signalIntelligence = [
   },
 ];
 
-const accountManagerTasks = [
-    "Owning and qualifying every positive response received",
-    "Conducting thorough pre-meeting qualification to confirm fit, relevance, and urgency",
-    "Sending structured assessment notes before every meeting",
-    "Handling all scheduling and rescheduling friction",
-    "Supporting objection handling with context-aware rebuttals",
-    "Tracking each deal across stages with full visibility",
-    "Attending weekly pipeline calls to report progress and surface risks"
-];
+type HumanLayerCard = {
+    title: string;
+    tagline: string;
+    quote: string;
+    subheader: string;
+    items: string[];
+    numbered: boolean;
+};
 
-const qualificationChecks = [
-    { label: "Fit of the use case", icon: "check" },
-    { label: "Relevance to stakeholders", icon: "check" },
-    { label: "Purchase purpose and urgency", icon: "check" }
-];
-
-const contentResearcherPoints = [
+const humanLayerCards: HumanLayerCard[] = [
     {
-        title: "Intelligence-led foundation",
-        description: "Every campaign begins with deep ICP research and strategic framing, built around how different roles justify decisions internally."
+        title: "Account Managers",
+        tagline: "Dedicated to your success",
+        quote:
+            "Dedicated Account Manager trained on your product, ICP and sales motion. They keep momentum alive so your AEs focus on closing.",
+        subheader: "Their Mandate Spans",
+        items: [
+            "Owning and qualifying every positive response",
+            "Pre-qualifying leads for fit and urgency",
+            "Sharing structured notes before meetings",
+            "Managing all scheduling and rescheduling",
+            "Handling objections with context-aware responses",
+        ],
+        numbered: true,
     },
     {
-        title: "LinkedIn-native personalization",
-        description: "Persona-specific pain points are fused with LinkedIn-sourced signals (profiles, activity, language patterns, and AI-assisted openers) so outreach and content reflect how prospects already think and communicate. All messaging stays tightly aligned with live campaigns."
+        title: "GTM Engineers",
+        tagline: "Instead of SDRs",
+        quote:
+            "They understand SaaS deeply enough to know why a deal should exist, not just how to book one.",
+        subheader: "What They Do Inside Your GTM",
+        items: [
+            "Decoding ICP pain, not just personas",
+            "Signal precision over noise",
+            "AI as precision instrument",
+            "Account-level workflows",
+        ],
+        numbered: true,
     },
     {
-        title: "Proof-backed value",
-        description: "Content translates your product features into ROI conversations. Using use cases and social proof, showing exactly how your modules solve their specific departmental friction."
-    }
-];
-
-const gtmEngineerPoints = [
-    {
-        title: "Decoding ICP pain, not just personas"
+        title: "Content Researchers",
+        tagline: "Strategic messaging",
+        quote:
+            "They write the messaging that bypasses the C-suite’s sales filters and triggers internal consensus.",
+        subheader: "How they Write",
+        items: [
+            "Intelligence-led ICP research",
+            "LinkedIn-native personalization",
+            "Proof-backed ROI narratives",
+        ],
+        numbered: false,
     },
-    {
-        title: "Signal precision over noise"
-    },
-    {
-        title: "AI as precision instrument"
-    },
-    {
-        title: "Account-level workflows"
-    }
-];
-
-const gtmRadarFeatures = [
-    "Auto-enrich firmographics (funding, tech stack, growth stage)",
-    "Map sectional power and stakeholder influence",
-    "Cross-check LinkedIn behaviour, CRM history, and signal freshness",
-    "Route each opportunity to a dedicated GTM Engineer"
-];
-
-const performancePhilosophy = [
-    {
-        title: "Momentum > Noise",
-        description: "We ignore Open Rates to focus on Deal Velocity and Opportunity Tracking."
-    },
-    {
-        title: "Human-in-the-loop",
-        description: "Every lead handoff is human-verified and context-heavy."
-    },
-    {
-        title: "1 AE = 10 AEs",
-        description: "Your team handles 3x more volume because we've removed the chasing phase."
-    },
-    {
-        title: "No siloed reporting",
-        description: "Our weekly reviews focus on Opportunity Tracking, not just activity logs."
-    },
-    {
-        title: "Growth that is expected",
-        description: "An intent-led GTM engine that is systematic and can scale to meet your revenue targets."
-    }
 ];
 
 const HeroSection = () => {
@@ -268,9 +256,9 @@ const HeroSection = () => {
     <section
       className="relative min-h-screen flex items-center justify-center px-6 pt-32 pb-16 overflow-hidden"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,_rgba(168,85,247,0.2),transparent_45%),radial-gradient(circle_at_80%_30%,_rgba(99,102,241,0.16),transparent_50%),linear-gradient(180deg,_#050608_0%,_#080610_45%,_#020306_100%)]" />
-      <div className="absolute inset-0 bg-[conic-gradient(from_120deg_at_60%_40%,_rgba(168,85,247,0.14),_rgba(99,102,241,0.1),_transparent_60%)] mix-blend-screen opacity-70" />
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:120px_120px] [mask-image:radial-gradient(ellipse_at_center,black_35%,transparent_75%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,_rgba(168,85,247,0.18),transparent_45%),radial-gradient(circle_at_80%_30%,_rgba(99,102,241,0.14),transparent_50%),linear-gradient(180deg,_#ffffff_0%,_#faf8ff_45%,_#ffffff_100%)]" />
+      <div className="absolute inset-0 bg-[conic-gradient(from_120deg_at_60%_40%,_rgba(168,85,247,0.10),_rgba(99,102,241,0.08),_transparent_60%)] opacity-70" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(132,92,245,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(132,92,245,0.06)_1px,transparent_1px)] bg-[size:120px_120px] [mask-image:radial-gradient(ellipse_at_center,black_35%,transparent_75%)]" />
         
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {Array.from({ length: 20 }).map((_, i) => (
@@ -280,26 +268,36 @@ const HeroSection = () => {
 
       <motion.div variants={staggerContainer} initial="hidden" animate="show" className="relative z-10 max-w-5xl text-center">
         
-        <motion.h1 variants={fadeUp} className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.9]">
-          <span className="block text-white">Thyleads Pipeline</span>
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-300 to-gray-500 animate-gradient-x pb-4">Operating System</span>
+        <motion.h1 variants={fadeUp} className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05]">
+          <span className="block text-neutral-900">How we build</span>
+          <span className="relative inline-block px-4 py-1 mt-2">
+            <motion.span
+              aria-hidden="true"
+              variants={highlightVariants}
+              className="absolute inset-0 bg-primary-200/80 rounded-md origin-left"
+            />
+            <span className="relative text-primary-700">
+              Predictable Pipeline
+            </span>
+          </span>
+          <span className="block text-neutral-900 mt-2">for SaaS Companies</span>
         </motion.h1>
         
-        <motion.p variants={fadeUp} className="mt-6 text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
-          Most systems look busy, but book nothing. For SaaS teams who rely on revenue mobility, we developed it as a key <span className="text-white font-medium">GTM function.</span>
+        <motion.p variants={fadeUp} className="mt-6 text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          For SaaS teams who rely on revenue mobility, we developed a reliable system that turns cold outbound into qualified pipeline in weeks, not quarters.
         </motion.p>
         
         <motion.div variants={fadeUp} className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-5">
           <a
             href="/contact"
-            className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-white px-8 font-medium text-black transition-all hover:bg-white/90 hover:scale-105"
+            className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-primary-700 px-8 font-medium text-white transition-all hover:bg-primary-800 hover:scale-105 shadow-[0_18px_40px_-14px_rgba(132,92,245,0.55)]"
           >
-            <span className="mr-2 uppercase tracking-widest text-xs font-bold">Start Building</span>
+            <span className="mr-2 uppercase tracking-widest text-xs font-bold">Book a Meeting</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             <div className="absolute inset-0 -z-10 bg-gradient-to-r from-purple-400 to-indigo-400 opacity-0 transition-opacity group-hover:opacity-10" />
           </a>
-          <a href="#system" className="group inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-white/60 hover:text-white transition-colors">
-            See the logic <ChevronDown className="w-4 h-4 transition-transform group-hover:translate-y-1" />
+          <a href="#system" className="group inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-slate-600 hover:text-neutral-900 transition-colors">
+            See the Process <ChevronDown className="w-4 h-4 transition-transform group-hover:translate-y-1" />
           </a>
         </motion.div>
       </motion.div>
@@ -325,7 +323,7 @@ const FloatingParticle = ({ delay, seed }: { delay: number; seed: number }) => {
 
     return (
         <motion.div 
-            className="absolute w-1 h-1 bg-white/20 rounded-full"
+            className="absolute w-1 h-1 bg-slate-100 rounded-full"
             initial={{ x: `${randomX}vw`, y: `${randomY}vh`, opacity: 0 }}
             animate={{ 
                 y: [`${randomY}vh`, `${randomY - 20}vh`],
@@ -362,68 +360,116 @@ const SystemLayerSection = () => {
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
       variants={sectionVariants}
-      className="relative py-32 px-6"
+      className="relative py-16 lg:py-20 px-6"
     >
       <div className="relative max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-[1fr_1.6fr] gap-16 items-center">
+        <div className="grid lg:grid-cols-[1fr_1.45fr] gap-10 lg:gap-12 items-center">
             <motion.div variants={staggerContainer} className="relative z-10">
-                <motion.div variants={fadeUp} className="flex items-center gap-3 mb-6">
-                    <div className="h-px w-8 bg-indigo-500" />
-                    <p className="text-xs uppercase tracking-[0.3em] text-indigo-400">Layer 1: The Thyleads Revenue Engine</p>
+                <motion.div variants={fadeUp} className="flex items-center gap-3 mb-4">
+                    <div className="h-px w-8 bg-primary-500" />
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-primary-700">Layer 1</p>
                 </motion.div>
-                <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-                    Our Process From <br/>
-                    <span className="text-white/40">Meeting To Growth </span>
+                <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold leading-tight mb-3 text-neutral-900">
+                    From{' '}
+                    <span className="relative inline-block px-2 py-0.5">
+                        <motion.span
+                            aria-hidden="true"
+                            variants={highlightVariants}
+                            className="absolute inset-0 bg-primary-200/80 rounded-md origin-left"
+                        />
+                        <span className="relative text-primary-700">
+                            Signal to Revenue
+                        </span>
+                    </span>
                 </motion.h2>
-                <motion.p variants={fadeUp} className="text-white/60 text-lg leading-relaxed mb-10">
-                    Once live, signals trigger a cascade of actions. From intake to reporting, every step is automated yet strictly qualified.
+                <motion.p variants={fadeUp} className="text-slate-600 text-base leading-relaxed mb-6">
+                    Every deal starts as a signal. We catch the signal, qualify the buyer, and keep the deal moving until it closes.
                 </motion.p>
-                
-                <motion.div variants={fadeUp} className="space-y-3 relative">
-                      <div className="absolute left-[11px] top-4 bottom-4 w-[2px] bg-white/5 rounded-full" />
-                      
+
+                <motion.div variants={fadeUp} className="space-y-1">
                     {systemStages.map((stage, index) => (
-                        <div 
-                            key={index} 
-                            className={`relative flex items-center gap-5 p-4 rounded-xl transition-all duration-500 border ${activeStage === index ? "bg-white/5 border-white/10 translate-x-4 shadow-xl" : "border-transparent opacity-40"}`}
-                        >
-                            <div className={`relative z-10 h-3 w-3 rounded-full border-2 transition-all duration-300 ${activeStage === index ? "bg-indigo-500 border-indigo-200 shadow-[0_0_15px_rgba(168,85,247,0.8)] scale-125" : "bg-black border-white/20"}`} />
-                            <span className={`text-sm tracking-wide font-medium ${activeStage === index ? "text-white" : "text-white"}`}>{stage}</span>
-                        </div>
+                        <React.Fragment key={index}>
+                            <div
+                                className={`flex items-start gap-3 px-3.5 py-2.5 rounded-xl bg-white border transition-all duration-500 ${
+                                    activeStage === index
+                                        ? "border-primary-200 shadow-[0_14px_36px_-20px_rgba(132,92,245,0.40)] -translate-y-0.5"
+                                        : "border-slate-200"
+                                }`}
+                            >
+                                <div
+                                    className={`shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[11px] font-bold text-white transition-all ${
+                                        activeStage === index
+                                            ? "bg-primary-700 shadow-[0_5px_14px_-3px_rgba(132,92,245,0.55)] scale-105"
+                                            : "bg-primary-600"
+                                    }`}
+                                >
+                                    {index + 1}
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                    <h3
+                                        className={`text-[13px] font-bold leading-tight transition-colors ${
+                                            activeStage === index
+                                                ? "text-primary-700"
+                                                : "text-neutral-900"
+                                        }`}
+                                    >
+                                        {stage.title}
+                                    </h3>
+                                    <p className="mt-0.5 text-[12px] text-slate-600 leading-snug">
+                                        {stage.description}
+                                    </p>
+                                </div>
+                            </div>
+                            {index < systemStages.length - 1 && (
+                                <div
+                                    className="flex justify-center py-0.5"
+                                    aria-hidden="true"
+                                >
+                                    <ArrowDown
+                                        className={`w-3.5 h-3.5 transition-colors ${
+                                            activeStage === index
+                                                ? "text-primary-600"
+                                                : "text-primary-300"
+                                        }`}
+                                        strokeWidth={2.5}
+                                    />
+                                </div>
+                            )}
+                        </React.Fragment>
                     ))}
                 </motion.div>
             </motion.div>
 
             <motion.div 
                 variants={fadeUp} 
-                className="relative aspect-[4/3] rounded-3xl border border-white/10 bg-[#0A0A0A] overflow-hidden flex flex-col shadow-2xl"
+                className="relative aspect-[4/3] rounded-3xl border border-slate-200 bg-white overflow-hidden flex flex-col shadow-2xl"
             >
-                <div className="h-12 border-b border-white/10 flex items-center justify-between px-6 bg-white/5">
+                <div className="h-12 border-b border-slate-200 flex items-center justify-between px-6 bg-slate-50">
                     <div className="flex gap-2">
                         <div className="w-2.5 h-2.5 rounded-full bg-red-500/20 border border-red-500/50" />
                         <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/20 border border-yellow-500/50" />
                         <div className="w-2.5 h-2.5 rounded-full bg-green-500/20 border border-green-500/50" />
                     </div>
-                    <div className="font-mono text-[10px] text-white/30 uppercase tracking-widest">
-                        SYS.MONITOR.V2 // {activeStage < 3 ? "INGESTION" : activeStage < 5 ? "PROCESSING" : "OUTPUT"}
+                    <div className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">
+                        SYS.MONITOR.V2 // {activeStage < 2 ? "INGESTION" : activeStage < 4 ? "PROCESSING" : "OUTPUT"}
                     </div>
                 </div>
 
-                <div className="relative flex-1 bg-black/50">
-                    <div className="absolute inset-0 opacity-20 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:32px_32px]" />
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.1),transparent_70%)]" />
+                <div className="relative flex-1 bg-gradient-to-br from-white via-primary-50/40 to-white">
+                    <div className="absolute inset-0 bg-[linear-gradient(rgba(132,92,245,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(132,92,245,0.06)_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_85%)]" />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(132,92,245,0.18),transparent_70%)]" />
 
                     <div className="absolute inset-0 w-full h-full">
                         
                         <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid meet">
                             <ConnectionPath d="M 90 100 C 180 100, 180 200, 300 200" active={activeStage <= 1} />
                             <ConnectionPath d="M 90 300 C 180 300, 180 200, 300 200" active={activeStage <= 1} delay={0.1} />
-                            
+
                             <ConnectionPath d="M 300 200 C 300 160, 300 100, 300 90" active={activeStage >= 1 && activeStage <= 3} />
                             <ConnectionPath d="M 300 200 C 300 240, 300 300, 300 310" active={activeStage >= 1 && activeStage <= 3} />
-                            
-                            <ConnectionPath d="M 300 200 C 420 200, 420 100, 510 100" active={activeStage >= 3} color="#10b981" />
-                            <ConnectionPath d="M 300 200 C 420 200, 420 300, 510 300" active={activeStage >= 4} color="#10b981" />
+
+                            <ConnectionPath d="M 300 200 C 420 200, 420 100, 510 100" active={activeStage >= 3} color="#5b34d9" />
+                            <ConnectionPath d="M 300 200 C 420 200, 420 300, 510 300" active={activeStage >= 4} color="#5b34d9" />
                         </svg>
 
                         <div className="absolute top-[25%] left-[15%] -translate-x-1/2 -translate-y-1/2">
@@ -435,26 +481,26 @@ const SystemLayerSection = () => {
 
                         <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-20">
                             <div className="relative">
-                                <motion.div 
+                                <motion.div
                                     animate={{ rotate: 360 }}
                                     transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                                    className={`absolute inset-[-40px] rounded-full border border-dashed transition-colors duration-500 ${activeStage >= 1 && activeStage <= 4 ? "border-indigo-500/30" : "border-white/5"}`}
+                                    className={`absolute inset-[-40px] rounded-full border border-dashed transition-colors duration-500 ${activeStage >= 1 && activeStage <= 4 ? "border-primary-500/40" : "border-slate-200"}`}
                                 />
-                                <motion.div 
+                                <motion.div
                                     animate={{ rotate: -360 }}
                                     transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-                                    className={`absolute inset-[-25px] rounded-full border border-dotted transition-colors duration-500 ${activeStage >= 1 && activeStage <= 4 ? "border-purple-500/30" : "border-white/5"}`}
+                                    className={`absolute inset-[-25px] rounded-full border border-dotted transition-colors duration-500 ${activeStage >= 1 && activeStage <= 4 ? "border-primary-300/60" : "border-slate-200"}`}
                                 />
-                                <div className="h-24 w-24 rounded-full bg-black border border-white/10 flex items-center justify-center shadow-2xl relative z-20">
-                                    <div className={`absolute inset-0 rounded-full bg-indigo-500/10 blur-xl transition-opacity duration-300 ${activeStage >= 1 && activeStage <= 4 ? "opacity-100" : "opacity-0"}`} />
-                                    <Cpu className={`w-8 h-8 transition-all duration-300 ${activeStage >= 1 && activeStage <= 4 ? "text-indigo-400 drop-shadow-[0_0_8px_rgba(168,85,247,0.8)]" : "text-white/20"}`} />
+                                <div className="h-24 w-24 rounded-full bg-white border border-primary-200 flex items-center justify-center shadow-[0_18px_44px_-18px_rgba(132,92,245,0.45)] relative z-20">
+                                    <div className={`absolute inset-0 rounded-full bg-primary-300/30 blur-xl transition-opacity duration-300 ${activeStage >= 1 && activeStage <= 4 ? "opacity-100" : "opacity-0"}`} />
+                                    <Cpu className={`w-8 h-8 transition-all duration-300 ${activeStage >= 1 && activeStage <= 4 ? "text-primary-700 drop-shadow-[0_0_10px_rgba(132,92,245,0.55)]" : "text-slate-300"}`} />
                                     {activeStage >= 1 && activeStage <= 4 && (
-                                        <motion.div 
+                                        <motion.div
                                             animate={{ rotate: 360 }}
                                             transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
                                             className="absolute inset-0 rounded-full"
                                         >
-                                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1 w-2 h-2 bg-indigo-400 rounded-full shadow-[0_0_10px_currentColor]" />
+                                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1 w-2 h-2 bg-primary-600 rounded-full shadow-[0_0_10px_rgba(132,92,245,0.9)]" />
                                         </motion.div>
                                     )}
                                 </div>
@@ -472,7 +518,7 @@ const SystemLayerSection = () => {
                              <SystemNode label="Meeting" icon={CheckCircle2} active={activeStage >= 3} success compact={undefined} />
                         </div>
                         <div className="absolute top-[75%] left-[85%] -translate-x-1/2 -translate-y-1/2">
-                             <SystemNode label="Revenue" icon={BarChart3} active={activeStage >= 5} success compact={undefined} />
+                             <SystemNode label="Revenue" icon={BarChart3} active={activeStage >= 4} success compact={undefined} />
                         </div>
 
                     </div>
@@ -488,7 +534,7 @@ const ConnectionPath = ({
   d,
   active,
   delay = 0,
-  color = "#a855f7",
+  color = "#7c3aed",
 }: {
   d: string;
   active: boolean;
@@ -496,14 +542,15 @@ const ConnectionPath = ({
   color?: string;
 }) => (
     <>
-        <path d={d} stroke="rgba(255,255,255,0.05)" strokeWidth="2" fill="none" />
+        <path d={d} stroke="rgba(132,92,245,0.14)" strokeWidth="2" fill="none" />
         <motion.path
             d={d}
             stroke={color}
-            strokeWidth="2"
+            strokeWidth="2.4"
+            strokeLinecap="round"
             fill="none"
             initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ 
+            animate={{
                 pathLength: active ? 1 : 0,
                 opacity: active ? 1 : 0
             }}
@@ -525,20 +572,28 @@ const SystemNode = ({
   success?: boolean;
   compact?: boolean;
 }) => (
-    <motion.div 
-        animate={{ 
-            borderColor: active ? (success ? "rgba(168, 85, 247, 0.4)" : "rgba(34, 211, 238, 0.4)") : "rgba(255,255,255,0.1)",
-            backgroundColor: active ? (success ? "rgba(16, 185, 129, 0.05)" : "rgba(34, 211, 238, 0.05)") : "rgba(10,10,10,0.8)",
+    <motion.div
+        animate={{
+            borderColor: active
+                ? (success ? "rgba(91, 52, 217, 0.55)" : "rgba(132, 92, 245, 0.45)")
+                : "rgba(132, 92, 245, 0.18)",
+            backgroundColor: active
+                ? (success ? "rgba(243, 240, 255, 0.95)" : "rgba(255, 255, 255, 0.98)")
+                : "rgba(255, 255, 255, 0.92)",
             scale: active ? 1.05 : 1,
-            boxShadow: active ? (success ? "0 0 20px rgba(168,85,247,0.1)" : "0 0 20px rgba(129,140,248,0.1)") : "none"
+            boxShadow: active
+                ? (success
+                    ? "0 14px 30px -14px rgba(91, 52, 217, 0.45)"
+                    : "0 14px 30px -14px rgba(132, 92, 245, 0.40)")
+                : "0 2px 8px -4px rgba(15, 23, 42, 0.08)"
         }}
-        className={`relative ${compact ? "px-4 py-2" : "px-5 py-4"} rounded-lg border backdrop-blur-md flex items-center gap-3 transition-all duration-500 z-20 min-w-[120px] justify-center whitespace-nowrap`}
+        className={`relative ${compact ? "px-4 py-2" : "px-5 py-4"} rounded-lg border backdrop-blur-sm flex items-center gap-3 transition-all duration-500 z-20 min-w-[120px] justify-center whitespace-nowrap`}
     >
-        {Icon && <Icon className={`w-4 h-4 ${active ? (success ? "text-purple-400" : "text-indigo-400") : "text-white/20"}`} />}
-        <span className={`text-[11px] uppercase tracking-wider font-bold ${active ? "text-white" : "text-white/30"}`}>{label}</span>
-        
-        <div className={`absolute top-0 left-0 w-2 h-2 border-t border-l ${active ? (success ? "border-purple-500" : "border-indigo-500") : "border-transparent"} rounded-tl-sm transition-colors duration-500`} />
-        <div className={`absolute bottom-0 right-0 w-2 h-2 border-b border-r ${active ? (success ? "border-purple-500" : "border-indigo-500") : "border-transparent"} rounded-br-sm transition-colors duration-500`} />
+        {Icon && <Icon className={`w-4 h-4 ${active ? (success ? "text-primary-700" : "text-primary-600") : "text-slate-400"}`} />}
+        <span className={`text-[11px] uppercase tracking-wider font-bold ${active ? (success ? "text-primary-800" : "text-primary-700") : "text-slate-500"}`}>{label}</span>
+
+        <div className={`absolute top-0 left-0 w-2 h-2 border-t border-l ${active ? (success ? "border-primary-700" : "border-primary-500") : "border-transparent"} rounded-tl-sm transition-colors duration-500`} />
+        <div className={`absolute bottom-0 right-0 w-2 h-2 border-b border-r ${active ? (success ? "border-primary-700" : "border-primary-500") : "border-transparent"} rounded-br-sm transition-colors duration-500`} />
     </motion.div>
 )
 
@@ -549,56 +604,98 @@ const TimelineSection = () => {
   const youBrief = currentWeek.whatYouDo;
 
   return (
-    <section className="relative py-24 px-6 bg-white/[0.02]">
+    <section className="relative py-24 px-6 bg-slate-50/50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <p className="text-xs uppercase tracking-[0.4em] text-blue-400 mb-4">Layer 2 - Weekly Execution & Go-Live Timeline</p>
-          <h2 className="text-4xl md:text-5xl font-bold">4 Weeks to <span className="text-gray-300">Velocity</span></h2>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary-700 mb-4">Layer 2</p>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-neutral-900">
+            4 Weeks to{' '}
+            <span className="relative inline-block px-3 py-1">
+              <motion.span
+                aria-hidden="true"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.85, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                className="absolute inset-0 bg-primary-200/80 rounded-md origin-left"
+              />
+              <span className="relative text-primary-700">Velocity</span>
+            </span>
+          </h2>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-stretch min-h-[600px]">
-            <div className="lg:col-span-5 flex flex-col gap-4 h-full">
-                {weeklyTimeline.map((week, index) => (
-                    <div 
-                        key={index}
-                        onClick={() => setActiveIndex(index)}
-                        className={`group cursor-pointer relative p-6 rounded-2xl border transition-all duration-300 flex-1 flex flex-col justify-center ${
-                            activeIndex === index 
-                            ? "bg-white/10 border-blue-500/40 shadow-[0_0_30px_rgba(59,130,246,0.12)]" 
-                            : "bg-white/5 border-white/5 hover:bg-white/[0.07] hover:border-white/10"
-                        }`}
-                    >
-                        <div className="flex items-start gap-4">
-                            <div className={`mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-sm font-medium transition-colors ${
-                                activeIndex === index 
-                                ? "border-blue-500 bg-blue-500 text-black" 
-                                : "border-white/20 bg-transparent text-white/50 group-hover:border-white/40 group-hover:text-white"
-                            }`}>
-                                {index + 1}
-                            </div>
-                            <div className="flex-1 min-w-0">
-                                <h3 className={`font-semibold text-base transition-colors ${activeIndex === index ? "text-white" : "text-white/60 group-hover:text-white/90"}`}>
+        <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+            <div className="lg:col-span-5 h-full">
+                <ol className="flex flex-col h-full gap-3">
+                    {weeklyTimeline.map((week, index) => {
+                        const isActive = activeIndex === index;
+                        const isPast = activeIndex > index;
+                        return (
+                            <li
+                                key={index}
+                                onClick={() => setActiveIndex(index)}
+                                className={`group cursor-pointer relative flex-1 flex items-center gap-5 rounded-2xl border bg-white px-6 transition-all duration-300 overflow-hidden ${
+                                    isActive
+                                        ? "border-primary-300 shadow-[0_18px_44px_-22px_rgba(132,92,245,0.45)]"
+                                        : "border-slate-200 hover:border-primary-200 hover:shadow-[0_14px_36px_-22px_rgba(132,92,245,0.28)]"
+                                }`}
+                            >
+                                {/* Active accent bar */}
+                                <span
+                                    aria-hidden="true"
+                                    className={`absolute left-0 top-4 bottom-4 w-1 rounded-r-full transition-all ${
+                                        isActive
+                                            ? "bg-gradient-to-b from-primary-500 to-primary-700 opacity-100"
+                                            : "bg-primary-200 opacity-0 group-hover:opacity-100"
+                                    }`}
+                                />
+
+                                {/* Number badge */}
+                                <div className="relative shrink-0">
+                                    <span
+                                        aria-hidden="true"
+                                        className={`absolute -inset-1.5 rounded-full bg-primary-300/35 blur-md transition-opacity ${
+                                            isActive ? "opacity-100" : "opacity-0"
+                                        }`}
+                                    />
+                                    <div
+                                        className={`relative flex h-12 w-12 items-center justify-center rounded-full text-[15px] font-extrabold transition-all ${
+                                            isActive
+                                                ? "bg-gradient-to-br from-primary-600 to-primary-800 text-white ring-4 ring-primary-100 scale-105"
+                                                : isPast
+                                                    ? "bg-primary-100 text-primary-700 ring-2 ring-primary-100"
+                                                    : "bg-primary-50 text-primary-700 border border-primary-100 group-hover:bg-primary-100"
+                                        }`}
+                                    >
+                                        {index + 1}
+                                    </div>
+                                </div>
+
+                                {/* Title */}
+                                <h3
+                                    className={`flex-1 min-w-0 font-bold text-[15px] lg:text-base leading-snug tracking-tight transition-colors ${
+                                        isActive
+                                            ? "text-primary-700"
+                                            : "text-neutral-900 group-hover:text-primary-700"
+                                    }`}
+                                >
                                     {week.title}
                                 </h3>
-                                <p className={`text-xs mt-1 transition-colors ${activeIndex === index ? "text-blue-400" : "text-white/40"}`}>
-                                    {week.subtitle}
-                                </p>
-                                <AnimatePresence>
-                                    {activeIndex === index && (
-                                        <motion.div
-                                            initial={{ height: 0, opacity: 0 }}
-                                            animate={{ height: "auto", opacity: 1 }}
-                                            exit={{ height: 0, opacity: 0 }}
-                                            className="overflow-hidden"
-                                        >
-                                            <p className="pt-3 text-sm text-white/60 leading-relaxed">{week.goal}</p>
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
-                            </div>
-                        </div>
-                    </div>
-                ))}
+
+                                {/* Arrow chevron — appears on hover/active */}
+                                <ArrowRight
+                                    aria-hidden="true"
+                                    className={`shrink-0 w-4 h-4 transition-all ${
+                                        isActive
+                                            ? "text-primary-700 translate-x-0 opacity-100"
+                                            : "text-primary-400 -translate-x-1 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
+                                    }`}
+                                    strokeWidth={2.5}
+                                />
+                            </li>
+                        );
+                    })}
+                </ol>
             </div>
 
             <div className="lg:col-span-7 h-full">
@@ -608,60 +705,131 @@ const TimelineSection = () => {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0.3 }}
-                        className="h-full flex flex-col rounded-3xl border border-white/10 bg-[#08080a] shadow-2xl overflow-hidden relative"
+                        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                        className="relative h-full flex flex-col rounded-3xl border border-slate-200 bg-white shadow-[0_28px_70px_-32px_rgba(132,92,245,0.22)] overflow-hidden"
                     >
-                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_100%_0%,rgba(59,130,246,0.1),transparent_50%)] pointer-events-none" />
+                        {/* Top gradient hairline */}
+                        <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-primary-400 to-transparent" aria-hidden="true" />
 
-                        <div className="p-6 border-b border-white/5 bg-white/[0.02]">
-                            <div className="flex items-center gap-2 mb-3">
-                                <Briefcase size={16} className="text-indigo-400" />
-                                <h4 className="text-xs font-bold text-indigo-200 uppercase tracking-widest">What you do</h4>
-                            </div>
-                            <div className="flex flex-wrap gap-2">
-                                {youBrief.map((item, i) => (
-                                    <div 
-                                        key={i}
-                                        className="px-3 py-1.5 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-xs text-indigo-100/90 font-medium flex items-center gap-2"
-                                    >
-                                        <CheckCircle2 size={12} className="text-indigo-400" />
-                                        <span>{item}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
+                        {/* Top-right dot grid texture */}
+                        <div
+                            aria-hidden="true"
+                            className="absolute -top-2 -right-2 w-40 h-40 opacity-60 pointer-events-none"
+                            style={{
+                                backgroundImage:
+                                    'radial-gradient(rgba(132,92,245,0.18) 1px, transparent 1px)',
+                                backgroundSize: '14px 14px',
+                                mask: 'radial-gradient(ellipse 80% 80% at top right, black 20%, transparent 70%)',
+                                WebkitMask:
+                                    'radial-gradient(ellipse 80% 80% at top right, black 20%, transparent 70%)',
+                            }}
+                        />
 
-                        <div className="flex-1 p-6 relative flex flex-col min-h-0">
-                            <div className="relative z-10 flex-1">
-                                <div className="flex items-center gap-2 mb-4">
-                                    <ListTodo size={16} className="text-blue-400" />
-                                    <h4 className="text-xs font-bold text-blue-100 uppercase tracking-widest">What Thyleads Do</h4>
+                        <div className="relative p-6 lg:p-7 flex-1 flex flex-col min-h-0">
+                            {/* === Header band === */}
+                            <div className="flex items-start justify-between gap-3 mb-4">
+                                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-50 border border-primary-100 text-[10px] font-bold uppercase tracking-[0.22em] text-primary-700">
+                                    <span className="relative flex h-1.5 w-1.5" aria-hidden="true">
+                                        <span className="absolute inline-flex h-full w-full rounded-full bg-primary-500 opacity-75 animate-ping" />
+                                        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary-600" />
+                                    </span>
+                                    Week {String(activeIndex + 1).padStart(2, '0')}
                                 </div>
-                                
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                    {execBrief.map((item, i) => (
-                                        <div 
-                                            key={i}
-                                            className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors"
+                                <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-400">
+                                    {currentWeek.subtitle}
+                                </div>
+                            </div>
+
+                            {/* === Title === */}
+                            <h3 className="text-xl lg:text-[24px] font-extrabold tracking-tight leading-[1.2] text-neutral-900">
+                                {currentWeek.title.replace(/^Week\s*\d+\s*[—–-]\s*/i, '')}
+                            </h3>
+
+                            {/* === Soft divider === */}
+                            <div className="my-5 h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+
+                            {/* === What you do — horizontal pills === */}
+                            <div className="mb-5">
+                                <div className="flex items-center gap-2 mb-3">
+                                    <span className="w-6 h-6 rounded-md bg-primary-50 border border-primary-100 flex items-center justify-center text-primary-700">
+                                        <UserRound className="w-3 h-3" strokeWidth={2.5} />
+                                    </span>
+                                    <h4 className="text-[10px] font-bold uppercase tracking-[0.22em] text-primary-700">
+                                        What you do
+                                    </h4>
+                                </div>
+                                <div className="flex flex-wrap gap-2">
+                                    {youBrief.map((item, i) => (
+                                        <motion.div
+                                            key={`you-${activeIndex}-${i}`}
+                                            initial={{ opacity: 0, y: 4 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{
+                                                duration: 0.35,
+                                                delay: 0.12 + i * 0.05,
+                                                ease: [0.16, 1, 0.3, 1],
+                                            }}
+                                            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-white border border-slate-200 text-[11.5px] text-slate-700 font-medium"
                                         >
-                                            <div className="mt-1 w-4 h-4 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center shrink-0">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
-                                            </div>
-                                            <span className="text-sm font-medium text-white/80 leading-snug">{item}</span>
-                                        </div>
+                                            <span
+                                                aria-hidden="true"
+                                                className="w-1 h-1 rounded-full bg-primary-500 shrink-0"
+                                            />
+                                            <span>{item}</span>
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* === What Thyleads does — 2-column chip grid === */}
+                            <div>
+                                <div className="flex items-center gap-2 mb-3">
+                                    <span className="w-6 h-6 rounded-md bg-primary-50 border border-primary-100 flex items-center justify-center text-primary-700">
+                                        <Sparkles className="w-3 h-3" strokeWidth={2.5} fill="currentColor" />
+                                    </span>
+                                    <h4 className="text-[10px] font-bold uppercase tracking-[0.22em] text-primary-700">
+                                        What Thyleads does
+                                    </h4>
+                                </div>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                    {execBrief.map((item, i) => (
+                                        <motion.div
+                                            key={`we-${activeIndex}-${i}`}
+                                            initial={{ opacity: 0, y: 4 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{
+                                                duration: 0.35,
+                                                delay: 0.2 + i * 0.04,
+                                                ease: [0.16, 1, 0.3, 1],
+                                            }}
+                                            className="inline-flex items-start gap-2 px-3 py-2 rounded-lg bg-white border border-primary-100 text-[12px] text-slate-700 leading-snug"
+                                        >
+                                            <span
+                                                aria-hidden="true"
+                                                className="mt-0.5 shrink-0 w-3.5 h-3.5 rounded-full bg-primary-50 border border-primary-200 flex items-center justify-center"
+                                            >
+                                                <span className="w-1 h-1 rounded-full bg-primary-600" />
+                                            </span>
+                                            <span>{item}</span>
+                                        </motion.div>
                                     ))}
                                 </div>
                             </div>
                         </div>
 
-                        <div className="p-6 bg-gradient-to-t from-black/80 to-transparent border-t border-white/5 mt-auto">
-                            <div className="bg-gradient-to-r from-emerald-900/20 to-blue-900/20 border border-emerald-500/20 rounded-xl p-4 flex items-center gap-4">
-                                <div className="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center shrink-0 shadow-lg shadow-emerald-500/5">
-                                    <Target className="text-emerald-400" size={20} />
+                        {/* === Target Outcome footer — light, compact === */}
+                        <div className="relative mx-6 lg:mx-7 mb-6 lg:mb-7 rounded-xl bg-primary-50/70 border border-primary-200 px-4 py-3">
+                            <div className="flex items-center gap-3">
+                                <div className="shrink-0 w-9 h-9 rounded-lg bg-white border border-primary-200 flex items-center justify-center text-primary-700 shadow-[0_4px_10px_-4px_rgba(132,92,245,0.30)]">
+                                    <Target className="w-4 h-4" strokeWidth={2.5} />
                                 </div>
-                                <div>
-                                    <h4 className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-1">Target Outcome</h4>
-                                    <p className="text-sm text-white/90 font-medium leading-relaxed">{currentWeek.outcome}</p>
+                                <div className="flex-1 min-w-0">
+                                    <h4 className="text-[9.5px] font-bold uppercase tracking-[0.22em] text-primary-700 mb-0.5">
+                                        Target Outcome
+                                    </h4>
+                                    <p className="text-[12.5px] text-slate-700 font-medium leading-snug">
+                                        {currentWeek.outcome}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -674,27 +842,94 @@ const TimelineSection = () => {
   );
 };
 
+const Layer2CTASection = () => (
+    <section className="relative py-20 lg:py-28 px-6 sm:px-12 overflow-hidden bg-primary-700 font-sans">
+        {/* Ambient glows */}
+        <div
+            aria-hidden="true"
+            className="absolute -top-40 left-1/4 w-160 h-160 rounded-full bg-primary-500/40 blur-3xl pointer-events-none"
+        />
+        <div
+            aria-hidden="true"
+            className="absolute -bottom-40 right-1/4 w-160 h-160 rounded-full bg-primary-800/50 blur-3xl pointer-events-none"
+        />
+
+        {/* Subtle dot grid */}
+        <div
+            aria-hidden="true"
+            className="absolute inset-0 opacity-30 pointer-events-none"
+            style={{
+                backgroundImage:
+                    'radial-gradient(rgba(255,255,255,0.18) 1px, transparent 1px)',
+                backgroundSize: '26px 26px',
+                mask:
+                    'radial-gradient(ellipse 70% 60% at center, black 30%, transparent 80%)',
+                WebkitMask:
+                    'radial-gradient(ellipse 70% 60% at center, black 30%, transparent 80%)',
+            }}
+        />
+
+        {/* Soft top inner highlight */}
+        <div
+            aria-hidden="true"
+            className="absolute -top-32 left-1/2 -translate-x-1/2 w-[140%] h-56 bg-white/10 blur-3xl pointer-events-none"
+        />
+
+        <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={staggerContainer}
+            className="relative z-10 max-w-4xl mx-auto text-center"
+        >
+            <motion.h2
+                variants={fadeUp}
+                className="text-4xl sm:text-5xl lg:text-6xl xl:text-[64px] font-extrabold tracking-[-0.02em] leading-[1.08] text-white"
+            >
+                Start building your pipeline in just{' '}
+                <span className="text-primary-100">4 weeks.</span>
+            </motion.h2>
+
+            <motion.div
+                variants={fadeUp}
+                className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+            >
+                <a
+                    href="/contact"
+                    className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white hover:bg-primary-50 text-primary-700 text-base font-bold shadow-[0_18px_40px_-14px_rgba(0,0,0,0.35)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary-700"
+                >
+                    Book a Meeting
+                    <ArrowRight
+                        className="w-4 h-4 group-hover:translate-x-0.5 transition-transform"
+                        strokeWidth={2.5}
+                    />
+                </a>
+            </motion.div>
+        </motion.div>
+    </section>
+);
+
 const DealAssistSection = () => {
     const features = [
         {
             title: "Rapport-first connections",
-            description: "We send connection requests right after the demo when the conversation is warm, and familiarity already exists, not cold and forced."
+            description: "We connect right after the demo, while context is fresh."
         },
         {
             title: "Echo-chamber content",
-            description: "We publish posts that reflect the exact problems discussed on the call, so your perspective keeps showing up while the prospect is thinking through options."
+            description: "We publish content around your prospect's problems, so you stay top-of-mind."
         },
         {
             title: "High value engagement",
-            description: "No drive-by likes. We engage with prospect content through thoughtful comments that add context and signal real intent to collaborate."
+            description: "We engage with thoughtful comments that signal real intent, not empty likes."
         },
         {
             title: "Intentional presence",
-            description: "Subtle profile interactions and well-timed skill endorsements keep your team visible without ever feeling pushy or salesy."
+            description: "We use subtle interactions to stay visible without feeling pushy."
         },
         {
             title: "Multi-node visibility",
-            description: "Prospects don’t just see you in their inbox. Your expertise shows up across the channels where decisions are actually taking shape."
+            description: "You show up across channels, not only in the inbox."
         }
     ];
 
@@ -703,11 +938,10 @@ const DealAssistSection = () => {
             <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
                 <motion.div variants={staggerContainer} initial="hidden" whileInView="show" viewport={{ once: true }}>
                     <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold mb-4">
-                        Deal Assist - For Where Deals {" "}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">Get Won (or Lost)</span>
+                        Deal Assist {" "}
                     </motion.h2>
-                    <motion.p variants={fadeUp} className="text-white/60 text-base mb-6 leading-relaxed">
-                        The inbox is not the place to close deals. They close in the mind. Deal Assist is our proprietary Invisible Salesperson to surround your prospects with strategic visibility across LinkedIn and news feeds, keeping you top-of-mind without being annoying.
+                    <motion.p variants={fadeUp} className="text-slate-600 text-base mb-6 leading-relaxed">
+                        Open enterprise deals stall when prospects stop seeing you. Deal Assist keeps you visible across LinkedIn and their news feed until they close.
                     </motion.p>
                     <motion.ul variants={fadeUp} className="space-y-4">
                         {features.map((feature, i) => (
@@ -716,8 +950,8 @@ const DealAssistSection = () => {
                                     <CheckCircle2 className="w-5 h-5 text-blue-400" />
                                 </div>
                                 <div>
-                                    <span className="text-white font-medium block">{feature.title}</span>
-                                    <span className="text-white/50 text-sm">{feature.description}</span>
+                                    <span className="text-neutral-900 font-medium block">{feature.title}</span>
+                                    <span className="text-slate-500 text-sm">{feature.description}</span>
                                 </div>
                             </li>
                         ))}
@@ -732,7 +966,7 @@ const DealAssistSection = () => {
                 >
                     <div className="absolute -inset-8 bg-blue-500/20 blur-[60px] rounded-full opacity-30" />
                     
-                    <div className="relative bg-[#1B1F23] border border-white/10 rounded-xl shadow-2xl max-w-md mx-auto overflow-hidden">
+                    <div className="relative bg-white border border-slate-200 rounded-xl shadow-2xl max-w-md mx-auto overflow-hidden">
                          <div className="p-4 pb-3">
                              <div className="flex gap-3">
                                  <div className="relative">
@@ -741,27 +975,27 @@ const DealAssistSection = () => {
                                          alt="Rahul Dev" 
                                          className="w-12 h-12 rounded-full object-cover"
                                      />
-                                     <div className="absolute -bottom-0.5 -right-0.5 w-5 h-5 bg-[#C4A052] rounded-[4px] border-2 border-[#1B1F23] flex items-center justify-center">
+                                     <div className="absolute -bottom-0.5 -right-0.5 w-5 h-5 bg-[#C4A052] rounded-[4px] border-2 border-white flex items-center justify-center">
                                          <span className="text-white font-bold text-[15px] leading-none">in</span>
                                      </div>
                                  </div>
 
                                  <div className="flex-1">
                                      <div className="flex items-center gap-2">
-                                         <span className="text-white font-semibold text-sm">Rahul Dev</span>
-                                         <span className="text-white/40 text-xs">• 1st</span>
+                                         <span className="text-neutral-900 font-semibold text-sm">Rahul Dev</span>
+                                         <span className="text-slate-500 text-xs">• 1st</span>
                                      </div>
-                                     <p className="text-white/50 text-xs leading-tight">CEO at Thyleads • GTM for SaaS</p>
+                                     <p className="text-slate-500 text-xs leading-tight">CEO at Thyleads • GTM for SaaS</p>
                                      <div className="flex items-center gap-1 mt-0.5">
-                                         <span className="text-white/40 text-xs">2h</span>
-                                         <span className="text-white/40 text-xs">•</span>
-                                         <svg className="w-3 h-3 text-white/40" fill="currentColor" viewBox="0 0 16 16">
+                                         <span className="text-slate-500 text-xs">2h</span>
+                                         <span className="text-slate-500 text-xs">•</span>
+                                         <svg className="w-3 h-3 text-slate-500" fill="currentColor" viewBox="0 0 16 16">
                                              <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zM7 11V5l5 3-5 3z"/>
                                          </svg>
                                      </div>
                                  </div>
 
-                                 <button className="text-white/40 hover:text-white/60 self-start">
+                                 <button className="text-slate-500 hover:text-slate-600 self-start">
                                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                          <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
                                      </svg>
@@ -770,47 +1004,47 @@ const DealAssistSection = () => {
                          </div>
 
                          <div className="px-4 pb-3">
-                             <p className="text-white/90 text-sm leading-relaxed">
-                                 <span className="text-white">3 things I learned scaling from $1M to $10M ARR:</span>
+                             <p className="text-slate-900 text-sm leading-relaxed">
+                                 <span className="text-neutral-900">3 things I learned scaling from $1M to $10M ARR:</span>
                                  <br/><br/>
                                  1️⃣ Outbound isn&apos;t dead—your targeting is<br/>
                                  2️⃣ AE time is your scarcest resource<br/>
                                  3️⃣ Intent signals beat spray-and-pray
                                  <br/><br/>
-                                 <span className="text-[#71B7FB]">#SaaS #B2BSales #GrowthStrategy</span>
+                                 <span className="text-primary-600">#SaaS #B2BSales #GrowthStrategy</span>
                              </p>
                          </div>
 
-                         <div className="mx-4 mb-3 rounded-lg overflow-hidden border border-white/10">
-                             <div className="aspect-[1.91/1] bg-gradient-to-br from-blue-900/60 via-indigo-900/60 to-purple-900/60 flex items-center justify-center relative">
+                         <div className="mx-4 mb-3 rounded-lg overflow-hidden border border-slate-200">
+                             <div className="aspect-[1.91/1] bg-gradient-to-br from-primary-100 via-primary-50 to-primary-100 flex items-center justify-center relative">
                                  <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.02)_25%,rgba(255,255,255,0.02)_50%,transparent_50%,transparent_75%,rgba(255,255,255,0.02)_75%)] bg-[length:20px_20px]" />
                                  <div className="text-center z-10">
-                                     <div className="w-16 h-16 mx-auto mb-3 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                                     <div className="w-16 h-16 mx-auto mb-3 rounded-xl bg-slate-100 backdrop-blur-sm flex items-center justify-center">
                                          <BarChart3 className="w-8 h-8 text-blue-400" />
                                      </div>
-                                     <span className="text-white/80 text-sm font-medium">The Revenue Playbook 2024</span>
+                                     <span className="text-slate-700 text-sm font-medium">The Revenue Playbook 2024</span>
                                  </div>
                              </div>
-                             <div className="bg-[#282D33] p-3">
-                                 <p className="text-white/60 text-xs mb-1">thyleads.com</p>
-                                 <p className="text-white/90 text-sm font-medium leading-tight">How Top SaaS Companies Scale Pipeline Without Adding Headcount</p>
+                             <div className="bg-slate-50 p-3">
+                                 <p className="text-slate-600 text-xs mb-1">thyleads.com</p>
+                                 <p className="text-slate-900 text-sm font-medium leading-tight">How Top SaaS Companies Scale Pipeline Without Adding Headcount</p>
                              </div>
                          </div>
 
-                         <div className="px-4 py-3 flex items-center justify-between text-xs text-white/50">
+                         <div className="px-4 py-3 flex items-center justify-between text-xs text-slate-500">
                              <div className="flex items-center gap-2">
                                  <div className="flex -space-x-1">
-                                     <div className="w-5 h-5 rounded-full bg-[#0A66C2] flex items-center justify-center border border-[#1B1F23]">
+                                     <div className="w-5 h-5 rounded-full bg-[#0A66C2] flex items-center justify-center border border-white">
                                          <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
                                              <path d="M2 8.5c0-3.5 2.9-6.5 6.5-6.5 2.5 0 4.6 1.3 5.5 3.2.9-1.9 3-3.2 5.5-3.2 3.6 0 6.5 3 6.5 6.5 0 4.6-5.1 8.5-12 14.5-6.9-6-12-9.9-12-14.5z"/>
                                          </svg>
                                      </div>
-                                     <div className="w-5 h-5 rounded-full bg-red-500 flex items-center justify-center border border-[#1B1F23]">
+                                     <div className="w-5 h-5 rounded-full bg-red-500 flex items-center justify-center border border-white">
                                          <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
                                              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                                          </svg>
                                      </div>
-                                     <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center border border-[#1B1F23]">
+                                     <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center border border-white">
                                          <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
                                              <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM10 17l-5-5 1.4-1.4 3.6 3.6 7.6-7.6L19 8l-9 9z"/>
                                          </svg>
@@ -825,14 +1059,14 @@ const DealAssistSection = () => {
                              </div>
                          </div>
 
-                         <div className="border-t border-white/10 px-2 py-1 flex justify-between">
+                         <div className="border-t border-slate-200 px-2 py-1 flex justify-between">
                              {[
                                  { icon: "M19.46 11l-3.91-3.91a7 7 0 1 0-1.69 1.69L17.87 13H19z", label: "Like", offset: "translate(0, 8)" },
                                  { icon: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z", label: "Comment", offset: "" },
                                  { icon: "M17 1l4 4-4 4M3 11V9a4 4 0 0 1 4-4h14M7 23l-4-4 4-4M21 13v2a4 4 0 0 1-4 4H3", label: "Repost", offset: "" },
                                  { icon: "M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z", label: "Send", offset: "" }
                              ].map((action, i) => (
-                                 <button key={i} className="flex-1 flex items-center justify-center gap-2 py-3 text-white/50 hover:text-white/80 hover:bg-white/5 rounded-lg transition-colors">
+                                 <button key={i} className="flex-1 flex items-center justify-center gap-2 py-3 text-slate-500 hover:text-slate-700 hover:bg-slate-50 rounded-lg transition-colors">
                                      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                                          <path strokeLinecap="round" strokeLinejoin="round" d={action.icon} transform={action.offset}/>
                                      </svg>
@@ -875,21 +1109,21 @@ const SignalIntelligenceSection = () => {
     const active = signalIntelligence[activeSignal];
 
     return (
-      <section className="relative py-16 md:py-20 px-6 bg-black overflow-hidden">
+      <section className="relative py-16 md:py-20 px-6 bg-white overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20" />
 
         <div className="lg:hidden max-w-2xl mx-auto">
           <div className="text-center mb-8">
             <p className="text-xs uppercase tracking-[0.3em] text-indigo-400 mb-4">Signal Intelligence</p>
-            <h2 className="text-3xl font-bold mb-4">Campaign Intelligence, We Operate With.</h2>
-            <p className="text-white/60 text-sm">
-              We work across 11 signal categories, each chosen for a specific strategic reason
+            <h2 className="text-3xl font-bold mb-4">We track 11 buying signals before we send a single email.</h2>
+            <p className="text-slate-600 text-sm">
+              You only hear from us about accounts that are in-market today, not accounts that match your ICP on paper.
             </p>
           </div>
 
           <div className="flex justify-center mb-6">
-            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-indigo-900/40 via-black to-purple-900/20 border-2 border-indigo-500/50 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(129,140,248,0.3)]">
-              <span className="text-xl font-bold text-white">ICP</span>
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary-100 via-white to-primary-50 border-2 border-indigo-500/50 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(129,140,248,0.3)]">
+              <span className="text-xl font-bold text-neutral-900">ICP</span>
               <span className="text-[8px] uppercase tracking-widest text-indigo-400">Core</span>
             </div>
           </div>
@@ -904,18 +1138,18 @@ const SignalIntelligenceSection = () => {
                   className={`relative p-3 rounded-xl border transition-all duration-300 flex flex-col items-center gap-2 ${
                     isActive
                       ? 'bg-indigo-500/20 border-indigo-500/50 shadow-[0_0_20px_rgba(129,140,248,0.3)]'
-                      : 'bg-white/[0.02] border-white/10 hover:border-white/20'
+                      : 'bg-slate-50/50 border-slate-200 hover:border-slate-200'
                   }`}
                 >
                   <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
                     isActive
-                      ? 'bg-indigo-500 text-black'
-                      : 'bg-white/5 text-white/50'
+                      ? 'bg-primary-600 text-white'
+                      : 'bg-slate-50 text-slate-500'
                   }`}>
                     <signal.icon className="w-5 h-5" />
                   </div>
                   <span className={`text-[10px] font-medium text-center leading-tight transition-colors ${
-                    isActive ? 'text-white' : 'text-white/50'
+                    isActive ? 'text-neutral-900' : 'text-slate-500'
                   }`}>
                     {signal.name}
                   </span>
@@ -934,10 +1168,10 @@ const SignalIntelligenceSection = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.25 }}
-              className="bg-white/5 border border-indigo-500/30 p-5 rounded-2xl relative overflow-hidden"
+              className="bg-slate-50 border border-indigo-500/30 p-5 rounded-2xl relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 p-3 opacity-5">
-                <active.icon className="w-20 h-20 text-white" />
+                <active.icon className="w-20 h-20 text-neutral-900" />
               </div>
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-3">
@@ -946,12 +1180,12 @@ const SignalIntelligenceSection = () => {
                   </div>
                   <h3 className="text-base font-semibold">{active.name}</h3>
                 </div>
-                <p className="text-sm text-white/80 leading-relaxed mb-4">
+                <p className="text-sm text-slate-700 leading-relaxed mb-4">
                   {active.reason}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-2 py-1 rounded-full text-[9px] uppercase tracking-wider bg-white/5 border border-white/10 text-white/50">High Intent</span>
-                  <span className="px-2 py-1 rounded-full text-[9px] uppercase tracking-wider bg-white/5 border border-white/10 text-white/50">Real-time</span>
+                  <span className="px-2 py-1 rounded-full text-[9px] uppercase tracking-wider bg-slate-50 border border-slate-200 text-slate-500">High Intent</span>
+                  <span className="px-2 py-1 rounded-full text-[9px] uppercase tracking-wider bg-slate-50 border border-slate-200 text-slate-500">Real-time</span>
                 </div>
               </div>
               {paused && (
@@ -991,14 +1225,14 @@ const SignalIntelligenceSection = () => {
                     className="absolute w-[360px] h-[360px] rounded-full border-2 border-transparent will-change-transform"
                     style={{ 
                         transform: `rotate(${innerRingRotation}deg) translateZ(0)`,
-                        background: 'linear-gradient(black, black) padding-box, linear-gradient(135deg, rgba(129,140,248,0.5), rgba(168,85,247,0.5), rgba(34,211,238,0.2)) border-box'
+                        background: 'linear-gradient(white, white) padding-box, linear-gradient(135deg, rgba(129,140,248,0.5), rgba(168,85,247,0.5), rgba(34,211,238,0.2)) border-box'
                     }}
                 />
 
                 <div className="absolute w-[440px] h-[440px] rounded-full border border-indigo-500/20 shadow-[0_0_30px_rgba(129,140,248,0.1)]" />
 
                 <div
-                    className="absolute w-[500px] h-[500px] rounded-full border border-white/10 border-dashed will-change-transform"
+                    className="absolute w-[500px] h-[500px] rounded-full border border-slate-200 border-dashed will-change-transform"
                     style={{ transform: `rotate(${outerRingRotation * 0.5}deg) translateZ(0)` }}
                 />
 
@@ -1013,13 +1247,13 @@ const SignalIntelligenceSection = () => {
                     <circle cx="50%" cy="50%" r="48%" fill="none" stroke="url(#arcGradient)" strokeWidth="2" strokeDasharray="100 200" />
                 </svg>
 
-                <div className="absolute w-36 h-36 rounded-full bg-gradient-to-br from-indigo-900/40 via-black to-purple-900/20 border-2 border-indigo-500/50 backdrop-blur-md z-20 flex flex-col items-center justify-center shadow-[0_0_60px_rgba(129,140,248,0.3)]">
+                <div className="absolute w-36 h-36 rounded-full bg-gradient-to-br from-primary-100 via-white to-primary-50 border-2 border-indigo-500/50 backdrop-blur-md z-20 flex flex-col items-center justify-center shadow-[0_0_60px_rgba(129,140,248,0.3)]">
                     <div className="absolute inset-2 rounded-full border border-indigo-400/30" />
-                    <span className="text-4xl font-bold text-white">ICP</span>
+                    <span className="text-4xl font-bold text-neutral-900">ICP</span>
                     <span className="text-[11px] uppercase tracking-widest text-indigo-400 mt-1">Core</span>
                 </div>
 
-                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2 text-white/40 text-xs">
+                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2 text-slate-500 text-xs">
                     <span className="inline-block w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
                     Click any signal to explore
                 </div>
@@ -1050,28 +1284,28 @@ const SignalIntelligenceSection = () => {
 
                                 <button
                                     onClick={() => { setActiveSignal(index); setPaused(true); setTimeout(() => setPaused(false), 4000); }}
-                                    className={`absolute left-1/2 top-1/2 -ml-6 -mt-6 w-12 h-12 rounded-full border-2 flex items-center justify-center group cursor-pointer z-20 will-change-transform
-                                        ${isActive 
-                                            ? "bg-gradient-to-br from-indigo-400 to-indigo-600 border-indigo-300 shadow-[0_0_30px_rgba(129,140,248,0.6)] scale-110 z-30" 
-                                            : "bg-black/90 border-white/20 hover:border-indigo-400/60 hover:bg-black"
+                                    className={`absolute left-1/2 top-1/2 -ml-6 -mt-6 w-12 h-12 rounded-full border-2 flex items-center justify-center group cursor-pointer z-20 will-change-transform transition-all
+                                        ${isActive
+                                            ? "bg-gradient-to-br from-primary-500 to-primary-700 border-primary-300 shadow-[0_0_30px_rgba(132,92,245,0.55)] scale-110 z-30"
+                                            : "bg-white border-slate-200 hover:border-primary-400 hover:bg-primary-50"
                                         }`}
                                     style={{ 
                                         transform: `translate(${x}px, ${y}px) translateZ(0)`
                                     }}
                                 >
-                                    <signal.icon className={`w-4 h-4 ${isActive ? "text-black" : "text-white/70 group-hover:text-indigo-400"}`} />
+                                    <signal.icon className={`w-4 h-4 ${isActive ? "text-white" : "text-slate-700 group-hover:text-primary-700"}`} />
                                     
-                                    <div className={`absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-black/95 border rounded-md text-[10px] whitespace-nowrap pointer-events-none font-medium
-                                        ${isActive 
-                                            ? "opacity-100 border-indigo-500/60 text-indigo-300" 
-                                            : "opacity-0 group-hover:opacity-100 border-white/20 text-white/90"
+                                    <div className={`absolute -bottom-9 left-1/2 -translate-x-1/2 px-2.5 py-1 bg-white border rounded-md text-[10px] whitespace-nowrap pointer-events-none font-bold tracking-wide transition-all
+                                        ${isActive
+                                            ? "opacity-100 border-primary-500 text-primary-700 shadow-[0_8px_22px_-8px_rgba(132,92,245,0.55)]"
+                                            : "opacity-0 group-hover:opacity-100 border-primary-200 text-primary-700"
                                         }
                                     `}>
                                         {signal.name}
                                     </div>
 
                                     {isActive && (
-                                        <span className="absolute inset-0 rounded-full border-2 border-indigo-400 animate-ping opacity-30" style={{ animationDuration: '1.5s' }} />
+                                        <span className="absolute inset-0 rounded-full border-2 border-primary-500 animate-ping opacity-40" style={{ animationDuration: '1.5s' }} />
                                     )}
                                 </button>
                             </React.Fragment>
@@ -1081,10 +1315,12 @@ const SignalIntelligenceSection = () => {
             </div>
 
             <div className="flex flex-col">
-                <p className="text-xs uppercase tracking-[0.3em] text-indigo-400 mb-4">Signal Intelligence</p>
-                <h2 className="text-4xl font-bold mb-6">Campaign Intelligence, <br/> We Operate With</h2>
-                <p className="text-white/60 mb-6">
-                    We work across 11 signal categories, each chosen for a specific strategic reason
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary-700 mb-4">Signal Intelligence</p>
+                <h2 className="text-4xl font-bold tracking-tight text-neutral-900 mb-6 leading-tight">
+                    We track 11 buying signals before we send a single email.
+                </h2>
+                <p className="text-slate-600 mb-6">
+                    You only hear from us about accounts that are in-market today, not accounts that match your ICP on paper.
                 </p>
 
                 <AnimatePresence mode="wait">
@@ -1094,10 +1330,10 @@ const SignalIntelligenceSection = () => {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: -10, scale: 0.98 }}
                         transition={{ duration: 0.25 }}
-                        className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-md relative overflow-hidden mb-6"
+                        className="bg-slate-50 border border-slate-200 p-6 rounded-2xl backdrop-blur-md relative overflow-hidden mb-6"
                     >
                         <div className="absolute top-0 right-0 p-4 opacity-5">
-                            <active.icon className="w-24 h-24 text-white" />
+                            <active.icon className="w-24 h-24 text-neutral-900" />
                         </div>
                         <div className="relative z-10">
                              <div className="flex items-center gap-3 mb-3">
@@ -1106,12 +1342,12 @@ const SignalIntelligenceSection = () => {
                                 </div>
                                 <h3 className="text-lg font-semibold">{active.name}</h3>
                              </div>
-                             <p className="text-base text-white/80 leading-relaxed mb-4">
+                             <p className="text-base text-slate-700 leading-relaxed mb-4">
                                 {active.reason}
                              </p>
                              <div className="flex flex-wrap gap-2">
-                                <span className="px-2.5 py-1 rounded-full text-[10px] uppercase tracking-wider bg-white/5 border border-white/10 text-white/50">High Intent</span>
-                                <span className="px-2.5 py-1 rounded-full text-[10px] uppercase tracking-wider bg-white/5 border border-white/10 text-white/50">Real-time</span>
+                                <span className="px-2.5 py-1 rounded-full text-[10px] uppercase tracking-wider bg-slate-50 border border-slate-200 text-slate-500">High Intent</span>
+                                <span className="px-2.5 py-1 rounded-full text-[10px] uppercase tracking-wider bg-slate-50 border border-slate-200 text-slate-500">Real-time</span>
                              </div>
                         </div>
                         {paused && (
@@ -1132,7 +1368,7 @@ const SignalIntelligenceSection = () => {
 
 const TeamSection = () => {
     return (
-        <section className="py-24 px-6 bg-[#050508] relative overflow-hidden">
+        <section className="py-24 px-6 bg-white relative overflow-hidden">
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px] opacity-30" />
             <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[120px]" />
             <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[100px]" />
@@ -1144,253 +1380,162 @@ const TeamSection = () => {
                     viewport={{ once: true }}
                     className="text-center mb-14"
                 >
-                    <p className="text-xs uppercase tracking-[0.3em] text-indigo-400 mb-4">The Human Layer</p>
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                        Your Extended <span className="text-white/40">Revenue Team</span>
+                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary-700 mb-4">The Human Layer</p>
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-neutral-900 mb-4 leading-tight">
+                        Your Extended{' '}
+                        <span className="relative inline-block px-3 py-1">
+                            <motion.span
+                                aria-hidden="true"
+                                initial={{ scaleX: 0 }}
+                                whileInView={{ scaleX: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.85, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                                className="absolute inset-0 bg-primary-200/80 rounded-md origin-left"
+                            />
+                            <span className="relative text-primary-700">Revenue Team</span>
+                        </span>
                     </h2>
-                    <p className="text-white/50 max-w-2xl mx-auto">
-                        Dedicated specialists who operate as an extension of your sales organization
+                    <p className="text-slate-500 max-w-2xl mx-auto">
+                        AI handles the volume. Our pod handles the strategy and the judgement calls.
                     </p>
                 </motion.div>
 
-                <div className="grid lg:grid-cols-3 gap-6">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="relative group"
-                    >
-                        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        <div className="relative bg-white/[0.03] border border-white/10 rounded-3xl p-8 h-full hover:border-emerald-500/30 transition-colors duration-300">
-                            <div className="flex items-center gap-4 mb-5">
-                                <div className="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center">
-                                    <Cpu className="w-6 h-6 text-emerald-400" />
-                                </div>
-                                <div>
-                                    <h3 className="text-xl font-bold text-white">GTM Engineers</h3>
-                                    <p className="text-xs text-emerald-400 uppercase tracking-wider">Instead of SDRs</p>
-                                </div>
-                            </div>
+                <div className="grid lg:grid-cols-3 gap-5">
+                    {humanLayerCards.map((card, idx) => (
+                        <motion.div
+                            key={card.title}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: idx * 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                            whileHover={{ y: -4 }}
+                            className="group relative rounded-3xl bg-gradient-to-br from-primary-50/70 via-primary-50/40 to-white border border-primary-100 p-7 lg:p-8 transition-all hover:border-primary-300 hover:shadow-[0_22px_56px_-26px_rgba(132,92,245,0.40)] overflow-hidden"
+                        >
+                            {/* Top hairline */}
+                            <span
+                                aria-hidden="true"
+                                className="absolute top-0 left-7 right-7 h-px bg-gradient-to-r from-transparent via-primary-300 to-transparent"
+                            />
 
-                            <p className="text-white/60 text-sm leading-relaxed mb-5">
-                                They understand SaaS deeply enough to know why a deal should exist, not just how to book one.
+                            {/* Title + tagline */}
+                            <h3 className="text-xl font-extrabold tracking-tight text-neutral-900">
+                                {card.title}
+                            </h3>
+                            <p className="mt-1 text-[13px] font-bold text-primary-700">
+                                {card.tagline}
                             </p>
 
-                            <div className="space-y-3 mb-5">
-                                <p className="text-xs text-white/40 uppercase tracking-wider">What They Do Inside Your GTM</p>
-                                {gtmEngineerPoints.map((point, i) => (
-                                    <div key={i} className="flex items-center gap-3">
-                                        <div className="w-6 h-6 rounded-lg bg-emerald-500/20 flex items-center justify-center shrink-0">
-                                            <span className="text-emerald-400 text-xs font-bold">{i + 1}</span>
-                                        </div>
-                                        <h4 className="text-sm font-medium text-white">{point.title}</h4>
-                                    </div>
-                                ))}
-                            </div>
-
-                            <div className="bg-gradient-to-r from-emerald-500/10 to-teal-500/10 border border-emerald-500/20 rounded-xl p-4 mb-5">
-                                <div className="flex items-center gap-2 mb-3">
-                                    <Radar className="w-5 h-5 text-emerald-400" />
-                                    <p className="text-white/90 font-medium text-sm">AI-Led Radar</p>
-                                </div>
-                                <div className="space-y-2">
-                                    {gtmRadarFeatures.map((feature, i) => (
-                                        <div key={i} className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />
-                                            <span className="text-sm text-white/60 leading-relaxed">{feature}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <div className="pt-5 border-t border-white/5">
-                                <p className="text-sm text-white/50 italic">Nothing moves forward without context.</p>
-                            </div>
-                        </div>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="relative group"
-                    >
-                        <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-transparent rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        <div className="relative bg-white/[0.03] border border-white/10 rounded-3xl p-8 h-full hover:border-indigo-500/30 transition-colors duration-300">
-                            <div className="flex items-center gap-4 mb-5">
-                                <div className="w-12 h-12 rounded-xl bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center">
-                                    <Users className="w-6 h-6 text-indigo-400" />
-                                </div>
-                                <div>
-                                    <h3 className="text-xl font-bold text-white">Account Managers</h3>
-                                    <p className="text-xs text-indigo-400 uppercase tracking-wider">Dedicated to Your Success</p>
-                                </div>
-                            </div>
-
-                            <p className="text-white/60 text-sm leading-relaxed mb-5">
-                                Dedicated Account Manager trained on your product, ICP, and sales motion. They manage the back-and-forth and keep momentum alive so your Sales Rep can focus on closing.
+                            {/* Quote */}
+                            <p className="mt-5 text-[14px] italic text-slate-600 leading-relaxed">
+                                &ldquo;{card.quote}&rdquo;
                             </p>
 
-                            <div className="bg-white/[0.02] border border-white/5 rounded-xl p-4 mb-5">
-                                <p className="text-xs text-white/40 uppercase tracking-wider mb-3">Pre-Meeting Qualification</p>
-                                <div className="space-y-2">
-                                    {qualificationChecks.map((check, i) => (
-                                        <div key={i} className="flex items-center gap-3">
-                                            <div className="w-5 h-5 rounded-full bg-indigo-500/20 flex items-center justify-center">
-                                                <CheckCircle2 className="w-3 h-3 text-indigo-400" />
-                                            </div>
-                                            <span className="text-sm text-white/70">{check.label}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
+                            {/* Divider */}
+                            <div className="my-6 h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
-                            <div className="space-y-2.5">
-                                <p className="text-xs text-white/40 uppercase tracking-wider mb-2">Their Mandate Spans</p>
-                                {accountManagerTasks.slice(0, 5).map((task, i) => (
-                                    <div key={i} className="flex items-start gap-3">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2 shrink-0" />
-                                        <span className="text-sm text-white/60 leading-relaxed">{task}</span>
-                                    </div>
+                            {/* Subheader */}
+                            <h4 className="text-[13.5px] font-bold text-neutral-900 mb-3">
+                                {card.subheader}
+                            </h4>
+
+                            {/* List */}
+                            <ul className="space-y-2">
+                                {card.items.map((item, i) => (
+                                    <li
+                                        key={item}
+                                        className="flex items-start gap-3 text-[13.5px] text-slate-700 leading-relaxed"
+                                    >
+                                        {card.numbered ? (
+                                            <span className="shrink-0 font-bold text-primary-700 tabular-nums">
+                                                {i + 1}.
+                                            </span>
+                                        ) : (
+                                            <span
+                                                aria-hidden="true"
+                                                className="mt-[9px] w-1 h-1 rounded-full bg-primary-500 shrink-0"
+                                            />
+                                        )}
+                                        <span>{item}</span>
+                                    </li>
                                 ))}
-                            </div>
-
-                            <div className="mt-5 pt-5 border-t border-white/5">
-                                <div className="flex flex-col gap-1.5">
-                                    <div className="px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 w-fit">
-                                        <span className="text-indigo-400 text-xs font-medium">Weekly Pipeline Calls</span>
-                                    </div>
-                                    <span className="text-white/40 text-xs">Report progress • Surface risks • Align actions</span>
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                        className="relative group"
-                    >
-                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        <div className="relative bg-white/[0.03] border border-white/10 rounded-3xl p-8 h-full hover:border-purple-500/30 transition-colors duration-300">
-                            <div className="flex items-center gap-4 mb-5">
-                                <div className="w-12 h-12 rounded-xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center">
-                                    <MessageCircle className="w-6 h-6 text-purple-400" />
-                                </div>
-                                <div>
-                                    <h3 className="text-xl font-bold text-white">Content Researchers</h3>
-                                    <p className="text-xs text-purple-400 uppercase tracking-wider">Strategic Messaging</p>
-                                </div>
-                            </div>
-
-                            <div className="bg-gradient-to-r from-purple-500/10 to-indigo-500/10 border border-purple-500/20 rounded-xl p-4 mb-5">
-                                <p className="text-white/90 font-medium text-sm">
-                                    Bypassing the Sales Filters of the C-Suite
-                                </p>
-                                <p className="text-white/50 text-xs mt-1">
-                                    Writing messaging that triggers consensus and dissolves resistance
-                                </p>
-                            </div>
-
-                            <div className="space-y-4">
-                                {contentResearcherPoints.map((point, i) => (
-                                    <div key={i} className="flex items-start gap-3">
-                                        <div className="w-6 h-6 rounded-lg bg-purple-500/20 flex items-center justify-center mt-0.5 shrink-0">
-                                            <span className="text-purple-400 text-xs font-bold">{i + 1}</span>
-                                        </div>
-                                        <div>
-                                            <h4 className="text-sm font-semibold text-white mb-0.5">{point.title}</h4>
-                                            <p className="text-sm text-white/50 leading-relaxed">{point.description}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-
-                            <div className="mt-5 pt-5 border-t border-white/5">
-                                <div className="flex flex-wrap gap-2">
-                                    <span className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-white/50">ICP Research</span>
-                                    <span className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-white/50">LinkedIn Signals</span>
-                                    <span className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-white/50">ROI Messaging</span>
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
+                            </ul>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
         </section>
     );
 };
 
-const TalentSection = () => {
-    return (
-        <section className="py-24 px-6">
-            <div className="max-w-4xl mx-auto bg-gradient-to-br from-purple-900/20 to-black border border-purple-500/20 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20" />
+const FinalCTASection = () => (
+    <section className="py-20 lg:py-28 px-6 sm:px-12 relative overflow-hidden">
+        <div className="relative max-w-5xl mx-auto">
+            {/* Outer glow */}
+            <div
+                aria-hidden="true"
+                className="absolute -inset-6 bg-primary-300/30 blur-3xl rounded-[40px] pointer-events-none"
+            />
 
-                <div className="relative z-10">
-                    <p className="text-xs uppercase tracking-[0.3em] text-purple-400 mb-6">Philosophy</p>
-                    <h2 className="text-3xl md:text-4xl font-bold mb-10">Our Performance Philosophy</h2>
+            {/* Boxed CTA — light surface */}
+            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-white via-primary-50/60 to-primary-50 border border-primary-100 shadow-[0_30px_80px_-30px_rgba(132,92,245,0.30)]">
+                {/* Subtle dot grid */}
+                <div
+                    aria-hidden="true"
+                    className="absolute inset-0 opacity-50 pointer-events-none"
+                    style={{
+                        backgroundImage:
+                            'radial-gradient(rgba(132,92,245,0.14) 1px, transparent 1px)',
+                        backgroundSize: '26px 26px',
+                        mask: 'radial-gradient(ellipse 70% 60% at center, black 30%, transparent 80%)',
+                        WebkitMask:
+                            'radial-gradient(ellipse 70% 60% at center, black 30%, transparent 80%)',
+                    }}
+                />
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {performancePhilosophy.map((item, i) => (
-                            <div key={i} className="flex items-start gap-3 p-4 bg-black/40 border border-white/10 rounded-lg text-left">
-                                <CheckCircle2 className="w-5 h-5 text-purple-400 shrink-0 mt-0.5" />
-                                <div>
-                                    <span className="font-medium text-white/90">{item.title}</span>
-                                    <p className="text-white/50 text-sm mt-1">{item.description}</p>
-                                </div>
-                            </div>
-                        ))}
+                {/* Ambient corner glows */}
+                <div
+                    aria-hidden="true"
+                    className="absolute -top-32 -left-16 w-72 h-72 rounded-full bg-primary-200/50 blur-3xl pointer-events-none"
+                />
+                <div
+                    aria-hidden="true"
+                    className="absolute -bottom-32 -right-16 w-72 h-72 rounded-full bg-primary-100/70 blur-3xl pointer-events-none"
+                />
+
+                <div className="relative px-6 sm:px-12 lg:px-16 py-16 lg:py-20 text-center">
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-neutral-900">
+                        Ready to change{' '}
+                        <span className="relative inline-block px-3 py-1">
+                            <motion.span
+                                aria-hidden="true"
+                                initial={{ scaleX: 0 }}
+                                whileInView={{ scaleX: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.85, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                                className="absolute inset-0 bg-primary-200/80 rounded-md origin-left"
+                            />
+                            <span className="relative text-primary-700">
+                                meetings into closed wons?
+                            </span>
+                        </span>
+                    </h2>
+                    <p className="mt-6 text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+                        Stop relying on luck. Start engineering your revenue with a system built for the modern SaaS landscape.
+                    </p>
+                    <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a
+                            href="/contact"
+                            className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-primary-700 hover:bg-primary-800 text-white text-base font-bold shadow-[0_18px_40px_-14px_rgba(132,92,245,0.55)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                        >
+                            Book a Demo
+                            <ArrowRight
+                                className="w-4 h-4 group-hover:translate-x-0.5 transition-transform"
+                                strokeWidth={2.5}
+                            />
+                        </a>
                     </div>
                 </div>
             </div>
-        </section>
-    )
-}
-
-const TestimonialSection = () => (
-    <section className="py-32 px-6 flex items-center justify-center">
-        <div className="max-w-4xl text-center">
-            <div className="mb-8 flex justify-center">
-                {[1,2,3,4,5].map(i => <span key={i} className="text-purple-400 text-2xl">★</span>)}
-            </div>
-            <h2 className="text-2xl md:text-2xl font-medium leading-relaxed mb-8">
-                &quot;At Epiplex.ai, partnering with Thyleads for market outreach has yielded outstanding results. Their strategic lead generation has expanded our client base and effectively communicated Epiplex&apos;s value in the GCC.&quot;
-            </h2>
-            <div className="flex items-center justify-center gap-4">
-                <img
-                    src="/pipelex.png"
-                    alt="Vivek Patial"
-                    className="h-12 w-12 rounded-full object-cover border border-white/20"
-                />
-                <div className="text-left">
-                    <div className="font-bold">Vivek Patial</div>
-                    <div className="text-xs text-white/50 uppercase tracking-wider">Head of Marketing, Epipplex.ai</div>
-                </div>
-            </div>
-        </div>
-    </section>
-)
-
-const FinalCTASection = () => (
-    <section className="py-24 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-indigo-900/10" />
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8">
-                Ready to change meetings into <span className="text-gray-300">closed wons?</span>
-            </h2>
-            <p className="text-xl text-white/60 mb-12 max-w-2xl mx-auto">
-                Stop relying on luck. Start engineering your revenue with a system built for the modern SaaS landscape.
-            </p>
-            <a
-              href="/contact"
-              className="bg-white text-black px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform flex justify-center w-fit items-center gap-2 mx-auto"
-            >
-              Book a Demo <ArrowRight className="w-5 h-5" />
-            </a>
         </div>
     </section>
 )
@@ -1409,6 +1554,14 @@ const staggerContainer = {
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] } },
+} as const;
+
+const highlightVariants = {
+  hidden: { scaleX: 0 },
+  show: {
+    scaleX: 1,
+    transition: { duration: 0.85, delay: 0.4, ease: [0.16, 1, 0.3, 1] },
+  },
 } as const;
 
 const GlobalStyles = () => (
@@ -1438,21 +1591,21 @@ const GlobalStyles = () => (
           width: 4px;
       }
       .custom-scrollbar::-webkit-scrollbar-track {
-          background: rgba(255, 255, 255, 0.02);
+          background: rgba(15, 23, 42, 0.04);
       }
       .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(132, 92, 245, 0.25);
           border-radius: 10px;
       }
       .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: rgba(255, 255, 255, 0.2);
+          background: rgba(132, 92, 245, 0.4);
       }
     `}</style>
 );
 
 const HowItWorksPage = () => {
   return (
-    <div className="bg-[#050505] text-white font-sans selection:bg-purple-500/30 selection:text-purple-100">
+    <div className="bg-white text-neutral-900 font-sans selection:bg-primary-200 selection:text-primary-900">
       <GlobalStyles />
       <Navbar />
       <div className="noise-overlay" />
@@ -1460,11 +1613,10 @@ const HowItWorksPage = () => {
         <HeroSection />
         <SystemLayerSection />
         <TimelineSection />
+        <Layer2CTASection />
         <DealAssistSection />
         <SignalIntelligenceSection />
         <TeamSection />
-        <TalentSection />
-        <TestimonialSection />
         <FinalCTASection />
       </main>
       <Footer />

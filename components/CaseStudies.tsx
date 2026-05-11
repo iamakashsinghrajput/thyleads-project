@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { ArrowRight, Star, Quote } from 'lucide-react';
+import { ArrowRight, Quote } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -170,24 +170,13 @@ export default function TestimonialSection() {
   }, []);
 
   return (
-    <section className="bg-black min-h-screen w-full flex flex-col justify-center py-32 overflow-hidden font-sans relative">
-
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-600/10 blur-[150px] rounded-full" />
-        <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-indigo-600/5 blur-[120px] rounded-full" />
-      </div>
-
+    <section className="relative min-h-screen w-full flex flex-col justify-center py-24 lg:py-28 overflow-hidden font-sans bg-slate-50">
       <div className="max-w-[1400px] mx-auto w-full px-6 md:px-12 mb-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-end">
 
           <div className="lg:col-span-4">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-neutral-200 via-white to-neutral-700 leading-[1.1]">
-              See what our <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-200 to-neutral-300 relative inline-block">
-                customers say
-                <svg className="absolute w-full h-3 -bottom-1 left-0 text-purple-500 opacity-40" viewBox="0 0 100 10" preserveAspectRatio="none">
-                  <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="2" fill="none" />
-                </svg>
-              </span>
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-neutral-900 leading-[1.1]">
+              See what our <span className="bg-primary-100 text-primary-700 px-4 py-1 inline-block mt-2 rounded-md">customers say</span>
             </h2>
           </div>
 
@@ -199,21 +188,21 @@ export default function TestimonialSection() {
                   onClick={() => handleTabClick(index)}
                   className="group relative pt-8 pb-2 min-w-0 md:min-w-[130px] flex flex-col items-center outline-none transition-opacity duration-300"
                 >
-                  <div className="absolute top-6 left-0 w-full h-[2px] bg-neutral-400 rounded-full transition-all duration-300 group-hover:bg-neutral-200" />
+                  <div className="absolute top-6 left-0 w-full h-[2px] bg-neutral-200 rounded-full transition-all duration-300 group-hover:bg-neutral-300" />
 
                   {actualTabIndex === index && !isWrapping && (
                     <>
                       <div
                         ref={progressBarRef}
-                        className="absolute top-6 left-0 h-[3px] bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full shadow-[0_0_10px_rgba(168,85,247,0.5)]"
+                        className="absolute top-6 left-0 h-[3px] bg-gradient-to-r from-primary-400 to-primary-600 rounded-full shadow-[0_0_10px_rgba(132,92,245,0.5)]"
                         style={{ width: '0%' }}
                       />
                       <div
                         ref={progressDotRef}
-                        className="absolute top-[25px] w-3 h-3 bg-purple-500 rounded-full shadow-[0_0_16px_rgba(168,85,247,1)] z-20 transform -translate-x-1/2 -translate-y-1/2"
+                        className="absolute top-[25px] w-3 h-3 bg-primary-500 rounded-full shadow-[0_0_16px_rgba(132,92,245,0.9)] z-20 transform -translate-x-1/2 -translate-y-1/2"
                         style={{ left: '0%' }}
                       >
-                        <div className="absolute inset-0 bg-purple-400 rounded-full animate-ping opacity-75"></div>
+                        <div className="absolute inset-0 bg-primary-400 rounded-full animate-ping opacity-75"></div>
                       </div>
                     </>
                   )}
@@ -221,8 +210,8 @@ export default function TestimonialSection() {
                   <div className={`
                     flex items-center justify-center mt-3 transition-all duration-500
                     ${actualTabIndex === index
-                      ? 'text-white opacity-100 transform translate-y-0 scale-105'
-                      : 'text-neutral-400 opacity-60 group-hover:opacity-90 transform translate-y-1'
+                      ? 'opacity-100 transform translate-y-0 scale-105'
+                      : 'opacity-50 group-hover:opacity-80 transform translate-y-1 grayscale'
                     }
                   `}>
                      <Image
@@ -230,7 +219,7 @@ export default function TestimonialSection() {
                        alt={`${t.companyName} logo`}
                        width={72}
                        height={72}
-                       className="w-14 h-14 md:w-20 md:h-20 object-contain transition-all duration-300 brightness-0 invert drop-shadow-[0_0_18px_rgba(255,255,255,0.6)]"
+                       className="w-14 h-14 md:w-20 md:h-20 object-contain transition-all duration-300"
                      />
                   </div>
                 </button>
@@ -266,7 +255,7 @@ export default function TestimonialSection() {
                 }
               }}
             >
-              <div className="rounded-4xl overflow-hidden shadow-2xl h-full md:h-[420px] relative bg-[#E9ECFF]">
+              <div className="rounded-4xl overflow-hidden shadow-[0_25px_50px_-15px_rgba(132,92,245,0.25)] h-full md:h-[420px] relative bg-white border border-neutral-200">
 
                 <div className="absolute left-0 top-0 bottom-0 w-[40%] hidden md:block">
                   <img
@@ -319,7 +308,7 @@ export default function TestimonialSection() {
                     <div className="mt-8 pt-2 flex items-center justify-between">
                       <Link
                         href={`/casestudies/${testimonial.id}`}
-                        className="group/btn inline-flex items-center justify-center rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white hover:bg-blue-700 transition-colors"
+                        className="group/btn inline-flex items-center justify-center rounded-full bg-primary-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary-500/25 hover:bg-primary-600 transition-colors"
                       >
                         Customer story
                         <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />

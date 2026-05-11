@@ -84,13 +84,28 @@ export default function VisitorTracker() {
       firstVisit,
     };
 
-    // Send tracking data to Railway backend
+    // Send tracking data to Railway backend — fire-and-forget, never break the app
     const TRACK_URL = process.env.NEXT_PUBLIC_TRACK_URL || "https://thyleads-project-production.up.railway.app/api/track";
-    fetch(TRACK_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    }).catch(() => {});
+    const body = JSON.stringify(payload);
+
+    try {
+      // Prefer sendBeacon: no CORS preflight, no console errors, survives page unload
+      if (typeof navigator.sendBeacon === "function") {
+        const blob = new Blob([body], { type: "text/plain" });
+        navigator.sendBeacon(TRACK_URL, blob);
+      } else {
+        // Fallback: opaque fetch so CORS / network failures don't surface
+        fetch(TRACK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain" },
+          body,
+          keepalive: true,
+          mode: "no-cors",
+        }).catch(() => {});
+      }
+    } catch {
+      // Tracking must never throw
+    }
   }, [pathname, searchParams]);
 
   return null;
