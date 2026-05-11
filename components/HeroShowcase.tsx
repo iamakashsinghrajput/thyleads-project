@@ -32,25 +32,41 @@ function ClaudeIcon({ className = "" }: { className?: string }) {
   );
 }
 
+const NATURAL_WIDTH = 1100;
+const NATURAL_HEIGHT = 480;
+
 export default function HeroShowcase() {
   return (
-    <div className="relative w-full max-w-6xl mx-auto">
-
+    <div
+      className="relative w-full max-w-6xl mx-auto overflow-hidden"
+      style={{
+        containerType: 'inline-size',
+        aspectRatio: `${NATURAL_WIDTH} / ${NATURAL_HEIGHT}`,
+      }}
+    >
       <div
-        aria-hidden="true"
-        className="absolute inset-x-0 top-0 bottom-0 flex justify-between pointer-events-none px-12"
+        className="absolute top-0 left-0 origin-top-left"
+        style={{
+          width: `${NATURAL_WIDTH}px`,
+          height: `${NATURAL_HEIGHT}px`,
+          transform: `scale(min(1, calc(100cqw / ${NATURAL_WIDTH}px)))`,
+        }}
       >
-        <span className="block w-px h-full bg-gradient-to-b from-transparent via-slate-200/70 to-transparent" />
-        <span className="block w-px h-full bg-gradient-to-b from-transparent via-slate-200/70 to-transparent" />
-      </div>
+        <div className="relative">
+          <div
+            aria-hidden="true"
+            className="absolute inset-x-0 top-0 bottom-0 flex justify-between pointer-events-none px-12"
+          >
+            <span className="block w-px h-full bg-gradient-to-b from-transparent via-slate-200/70 to-transparent" />
+            <span className="block w-px h-full bg-gradient-to-b from-transparent via-slate-200/70 to-transparent" />
+          </div>
 
-      <div className="relative grid lg:grid-cols-[1.25fr_1fr_1.15fr] gap-6 items-center">
-
-        <AgentConsole />
-
-        <CenterFlow />
-
-        <ActivityCard />
+          <div className="relative grid grid-cols-[1.25fr_1fr_1.15fr] gap-6 items-center">
+            <AgentConsole />
+            <CenterFlow />
+            <ActivityCard />
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -73,7 +89,7 @@ function AgentConsole() {
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.85, delay: 0.5, ease: easeOut }}
-      className="relative rounded-2xl bg-white border border-slate-200 shadow-[0_24px_60px_-22px_rgba(15,23,42,0.20)] overflow-hidden hidden lg:flex flex-col h-[460px]"
+      className="relative rounded-2xl bg-white border border-slate-200 shadow-[0_24px_60px_-22px_rgba(15,23,42,0.20)] overflow-hidden flex flex-col h-[460px]"
     >
 
       <div aria-hidden="true" className="absolute -top-20 -right-12 w-72 h-72 rounded-full bg-primary-100/55 blur-3xl pointer-events-none" />
@@ -289,7 +305,7 @@ function CenterFlow() {
       initial={{ opacity: 0, y: 14 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.5, ease: easeOut }}
-      className="relative h-[300px] hidden lg:flex items-center justify-center"
+      className="relative h-[300px] flex items-center justify-center"
     >
       <svg
         viewBox="0 0 360 240"
@@ -452,7 +468,7 @@ function ActivityCard() {
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.85, delay: 0.7, ease: easeOut }}
-      className="relative rounded-2xl bg-white border border-slate-200 shadow-[0_24px_60px_-22px_rgba(15,23,42,0.20)] overflow-hidden hidden lg:flex flex-col h-[460px]"
+      className="relative rounded-2xl bg-white border border-slate-200 shadow-[0_24px_60px_-22px_rgba(15,23,42,0.20)] overflow-hidden flex flex-col h-[460px]"
     >
 
       <div aria-hidden="true" className="absolute -top-20 -left-10 w-60 h-60 rounded-full bg-primary-100/50 blur-3xl pointer-events-none" />

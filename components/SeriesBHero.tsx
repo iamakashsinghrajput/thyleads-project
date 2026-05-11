@@ -56,26 +56,20 @@ export default function SeriesBHero() {
             </span>
           </motion.div>
 
-          <motion.h1
-            variants={itemVariants}
-            className="text-4xl sm:text-5xl lg:text-[54px] xl:text-[60px] font-extrabold tracking-[-0.025em] leading-[1.4] text-neutral-900"
-          >
+          <h1 className="text-4xl sm:text-5xl lg:text-[54px] xl:text-[60px] font-extrabold tracking-[-0.025em] leading-[1.4] text-neutral-900">
             Scaling SaaS Outbound{' '}
             <span className="text-primary-700 bg-primary-200/80 box-decoration-clone px-2 py-0.5 rounded-md">
               without Scaling Headcount
             </span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            variants={itemVariants}
-            className="mt-6 max-w-xl text-base sm:text-lg text-slate-600 leading-relaxed"
-          >
+          <p className="mt-6 max-w-xl text-base sm:text-lg text-slate-600 leading-relaxed">
             You&apos;ve raised the round. You&apos;ve hit product-market fit.
             Now you need a pipeline that scales faster than headcount, without
             burning your AEs or your burn multiple. Thyleads plugs in as an
             outbound engine built for SaaS teams scaling beyond Series B in
             India.
-          </motion.p>
+          </p>
 
           <motion.div
             variants={itemVariants}

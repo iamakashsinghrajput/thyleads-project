@@ -71,10 +71,7 @@ export default function GtmFrameworkHero() {
             </span>
           </motion.div>
 
-          <motion.h1
-            variants={itemVariants}
-            className="text-4xl sm:text-5xl lg:text-6xl xl:text-[68px] font-extrabold tracking-[-0.02em] leading-[1.08] text-neutral-900"
-          >
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-[68px] font-extrabold tracking-[-0.02em] leading-[1.08] text-neutral-900">
             How Thyleads Runs{' '}
             <span className="relative inline-block px-4 py-1 mt-1">
               <motion.span
@@ -86,23 +83,17 @@ export default function GtmFrameworkHero() {
                 Your GTM
               </span>
             </span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            variants={itemVariants}
-            className="mt-6 max-w-2xl mx-auto text-base sm:text-lg text-slate-600 leading-relaxed"
-          >
+          <p className="mt-6 max-w-2xl mx-auto text-base sm:text-lg text-slate-600 leading-relaxed">
             A 5-step operating system for building a predictable pipeline.
-          </motion.p>
-          <motion.p
-            variants={itemVariants}
-            className="mt-2 text-sm sm:text-base text-slate-500"
-          >
+          </p>
+          <p className="mt-2 text-sm sm:text-base text-slate-500">
             Built for SaaS teams targeting{' '}
             <span className="font-semibold text-primary-700">
               India-first growth.
             </span>
-          </motion.p>
+          </p>
 
           <motion.div
             variants={itemVariants}

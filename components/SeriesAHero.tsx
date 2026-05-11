@@ -59,23 +59,17 @@ export default function SeriesAHero() {
             </span>
           </motion.div>
 
-          <motion.h1
-            variants={itemVariants}
-            className="text-4xl sm:text-5xl lg:text-[54px] xl:text-[60px] font-extrabold tracking-[-0.025em] leading-[1.1] text-neutral-900"
-          >
+          <h1 className="text-4xl sm:text-5xl lg:text-[54px] xl:text-[60px] font-extrabold tracking-[-0.025em] leading-[1.1] text-neutral-900">
             You Don&apos;t Need an SDR Team{' '}
             <span className="text-primary-700 bg-primary-200/80 box-decoration-clone px-2 py-0.5 rounded-md">
               to Grow
             </span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            variants={itemVariants}
-            className="mt-6 max-w-xl text-base sm:text-lg text-slate-600 leading-relaxed"
-          >
+          <p className="mt-6 max-w-xl text-base sm:text-lg text-slate-600 leading-relaxed">
             We plug in as your extended revenue team, find the right buyers, and
             turn cold outreach into real conversations.
-          </motion.p>
+          </p>
 
           <motion.div
             variants={itemVariants}
@@ -99,12 +93,9 @@ export default function SeriesAHero() {
             </a>
           </motion.div>
 
-          <motion.p
-            variants={itemVariants}
-            className="mt-6 text-[12px] font-semibold uppercase tracking-[0.22em] text-slate-400"
-          >
+          <p className="mt-6 text-[12px] font-semibold uppercase tracking-[0.22em] text-slate-400">
             Built for seed stage SaaS pipeline and early traction
-          </motion.p>
+          </p>
         </div>
 
         <motion.div variants={itemVariants} className="relative">

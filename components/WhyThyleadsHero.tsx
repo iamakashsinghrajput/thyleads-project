@@ -90,10 +90,7 @@ export default function WhyThyleadsHero() {
             </span>
           </motion.div>
 
-          <motion.h1
-            variants={itemVariants}
-            className="text-4xl sm:text-5xl lg:text-6xl xl:text-[64px] font-extrabold tracking-[-0.02em] leading-[1.15] text-neutral-900"
-          >
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-[64px] font-extrabold tracking-[-0.02em] leading-[1.15] text-neutral-900">
             What Makes{' '}
             <span className="relative inline-block px-4 py-1 mt-2">
               <motion.span
@@ -114,15 +111,12 @@ export default function WhyThyleadsHero() {
               />
               <span className="relative text-primary-700">Choice</span>
             </span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            variants={itemVariants}
-            className="mt-6 max-w-2xl mx-auto text-base sm:text-lg text-slate-600 leading-relaxed"
-          >
+          <p className="mt-6 max-w-2xl mx-auto text-base sm:text-lg text-slate-600 leading-relaxed">
             We turn your pipeline into a predictable revenue outbound system —
             qualified leads, consistent follow-ups, and real deal momentum.
-          </motion.p>
+          </p>
 
           <motion.div
             variants={itemVariants}
@@ -218,13 +212,7 @@ export default function WhyThyleadsHero() {
           </ul>
         </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.6, ease: easeOut }}
-          className="mt-10 lg:mt-12 text-center text-sm sm:text-base text-slate-600 max-w-2xl mx-auto"
-        >
+        <p className="mt-10 lg:mt-12 text-center text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
           We get you{' '}
           <span className="font-semibold text-neutral-900">
             meetings on the calendar
@@ -234,7 +222,7 @@ export default function WhyThyleadsHero() {
             deals in the pipeline
           </span>
           .
-        </motion.p>
+        </p>
       </motion.div>
     </section>
   );

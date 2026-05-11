@@ -88,10 +88,7 @@ export default function FintechHero() {
             </span>
           </motion.div>
 
-          <motion.h1
-            variants={itemVariants}
-            className="text-4xl sm:text-5xl lg:text-6xl xl:text-[64px] font-extrabold tracking-[-0.02em] leading-[1.1] text-neutral-900"
-          >
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-[64px] font-extrabold tracking-[-0.02em] leading-[1.1] text-neutral-900">
             You built FinTech.
             <br />
             <span className="relative inline-block px-4 py-1 mt-2">
@@ -115,16 +112,13 @@ export default function FintechHero() {
                 compliance checks.
               </span>
             </span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            variants={itemVariants}
-            className="mt-6 max-w-2xl mx-auto text-base sm:text-lg text-slate-600 leading-relaxed"
-          >
+          <p className="mt-6 max-w-2xl mx-auto text-base sm:text-lg text-slate-600 leading-relaxed">
             Specialized outbound for FinTech that earns replies from CFOs,
             Heads of Risk, and CIOs — then keeps the deal alive through legal,
             procurement, and security review.
-          </motion.p>
+          </p>
 
           <motion.div
             variants={itemVariants}

@@ -57,23 +57,17 @@ export default function HrtechHero() {
             </span>
           </motion.div>
 
-          <motion.h1
-            variants={itemVariants}
-            className="text-4xl sm:text-5xl lg:text-[54px] xl:text-[60px] font-extrabold tracking-[-0.025em] leading-[1.4] text-neutral-900"
-          >
+          <h1 className="text-4xl sm:text-5xl lg:text-[54px] xl:text-[60px] font-extrabold tracking-[-0.025em] leading-[1.4] text-neutral-900">
             You built HRTech.{' '}
             <span className="text-primary-700 bg-primary-200/80 box-decoration-clone px-2 py-0.5 rounded-md">
               We&apos;ll get it in front of the right buyers.
             </span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            variants={itemVariants}
-            className="mt-6 max-w-xl text-base sm:text-lg text-slate-600 leading-relaxed"
-          >
+          <p className="mt-6 max-w-xl text-base sm:text-lg text-slate-600 leading-relaxed">
             We run specialized outbound for HRTech that lands right in the CHRO
             inboxes and keeps multi-stakeholder deals moving.
-          </motion.p>
+          </p>
 
           <motion.div
             variants={itemVariants}

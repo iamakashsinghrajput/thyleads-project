@@ -62,24 +62,18 @@ export default function MartechHero() {
             </span>
           </motion.div>
 
-          <motion.h1
-            variants={itemVariants}
-            className="text-4xl sm:text-5xl lg:text-[54px] xl:text-[60px] font-extrabold tracking-[-0.025em] leading-[1.4] text-neutral-900"
-          >
+          <h1 className="text-4xl sm:text-5xl lg:text-[54px] xl:text-[60px] font-extrabold tracking-[-0.025em] leading-[1.4] text-neutral-900">
             You built MarTech.{' '}
             <span className="text-primary-700 bg-primary-200/80 box-decoration-clone px-2 py-0.5 rounded-md">
               We&apos;ll get past the noise to the right CMOs.
             </span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            variants={itemVariants}
-            className="mt-6 max-w-xl text-base sm:text-lg text-slate-600 leading-relaxed"
-          >
+          <p className="mt-6 max-w-xl text-base sm:text-lg text-slate-600 leading-relaxed">
             We run specialized outbound for MarTech using vertical-trained pods,
             signal-driven targeting, and messaging that earns replies from CMOs
             and growth founders.
-          </motion.p>
+          </p>
 
           <motion.div
             variants={itemVariants}

@@ -159,13 +159,11 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          <motion.h1
-            variants={itemVariants}
-            className="text-[2.5rem] md:text-5xl lg:text-[3.5rem] xl:text-[64px] font-extrabold tracking-tight leading-[1.1] text-neutral-900 max-w-4xl"
-          >
+          <h1 className="text-[2.5rem] md:text-5xl lg:text-[3.5rem] xl:text-[64px] font-extrabold tracking-tight leading-[1.1] text-neutral-900 max-w-4xl">
             Focused in India,{' '}
             <span className="relative inline-block px-3 py-0.5">
               <motion.span
+                aria-hidden="true"
                 variants={highlightVariants}
                 className="absolute inset-0 bg-primary-100 rounded-md origin-left"
               />
@@ -176,6 +174,7 @@ export default function Hero() {
             <br />
             <span className="relative inline-block px-3 py-0.5 mt-2">
               <motion.span
+                aria-hidden="true"
                 variants={highlightVariants}
                 className="absolute inset-0 bg-primary-100 rounded-md origin-left"
               />
@@ -183,15 +182,12 @@ export default function Hero() {
                 Driven by Revenue.
               </span>
             </span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            variants={itemVariants}
-            className="mt-6 text-base md:text-lg text-slate-600 max-w-2xl leading-relaxed font-medium"
-          >
+          <p className="mt-6 text-base md:text-lg text-slate-600 max-w-2xl leading-relaxed font-medium">
             We help Global SaaS companies build and convert demand in India.
             Automate outbound, qualify inbound, and accelerate deal momentum.
-          </motion.p>
+          </p>
 
           <motion.div
             variants={itemVariants}
@@ -235,29 +231,31 @@ export default function Hero() {
           }}
           className="w-full mt-10 lg:mt-12 z-10 shrink-0"
         >
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          <div className="flex flex-col items-center gap-3 lg:flex-row lg:flex-wrap lg:justify-center lg:gap-4">
             <motion.span
               variants={badgeVariants}
               className="text-[10px] lg:text-xs font-bold uppercase tracking-[0.25em] text-neutral-500"
             >
               Verticals We Serve:
             </motion.span>
-            {verticals.map(({ name, Icon }) => (
-              <motion.div
-                key={name}
-                variants={badgeVariants}
-                whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm hover:border-primary-300 hover:shadow-md transition-all cursor-default"
-              >
-                <Icon
-                  className="w-4 h-4 text-neutral-700"
-                  strokeWidth={1.75}
-                />
-                <span className="text-sm font-semibold text-neutral-900">
-                  {name}
-                </span>
-              </motion.div>
-            ))}
+            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 lg:gap-4">
+              {verticals.map(({ name, Icon }) => (
+                <motion.div
+                  key={name}
+                  variants={badgeVariants}
+                  whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                  className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white border border-slate-200 shadow-sm hover:border-primary-300 hover:shadow-md transition-all cursor-default"
+                >
+                  <Icon
+                    className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neutral-700"
+                    strokeWidth={1.75}
+                  />
+                  <span className="text-xs sm:text-sm font-semibold text-neutral-900">
+                    {name}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>
