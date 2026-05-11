@@ -42,7 +42,7 @@ export default function MartechWhyUs() {
         viewport={{ once: true, amount: 0.15 }}
         className="relative z-10 max-w-6xl mx-auto grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-center"
       >
-        {/* === LEFT — Copy === */}
+
         <div>
           <motion.div variants={itemVariants} className="mb-5">
             <span className="inline-block text-[11px] font-semibold uppercase tracking-[0.28em] text-primary-700">
@@ -85,17 +85,15 @@ export default function MartechWhyUs() {
           </motion.div>
         </div>
 
-        {/* === RIGHT — Feature pills === */}
         <motion.div variants={itemVariants} className="relative">
-          {/* Soft halo */}
+
           <div
             aria-hidden="true"
             className="absolute -inset-6 bg-primary-200/30 blur-3xl rounded-[40px] pointer-events-none"
           />
 
-          {/* Pills container */}
           <div className="relative rounded-3xl bg-gradient-to-br from-primary-50/60 via-white to-primary-50/30 border border-primary-100 p-5 sm:p-6 shadow-[0_22px_56px_-26px_rgba(132,92,245,0.32)]">
-            {/* Top hairline */}
+
             <span
               aria-hidden="true"
               className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-primary-300 to-transparent"
@@ -118,13 +116,12 @@ export default function MartechWhyUs() {
                     whileHover={{ x: 4 }}
                     className="group relative flex items-center gap-4 px-4 py-3.5 rounded-2xl bg-white border border-slate-200 hover:border-primary-200 hover:shadow-[0_10px_28px_-14px_rgba(132,92,245,0.32)] transition-all overflow-hidden"
                   >
-                    {/* Active accent bar */}
+
                     <span
                       aria-hidden="true"
                       className="absolute left-0 top-3 bottom-3 w-1 rounded-r-full bg-gradient-to-b from-primary-500 to-primary-700 opacity-0 group-hover:opacity-100 transition-opacity"
                     />
 
-                    {/* Icon tile */}
                     <div className="relative shrink-0">
                       <span
                         aria-hidden="true"
@@ -135,12 +132,10 @@ export default function MartechWhyUs() {
                       </div>
                     </div>
 
-                    {/* Label */}
                     <span className="flex-1 text-[14px] font-bold text-neutral-900 leading-snug">
                       {pill.label}
                     </span>
 
-                    {/* Chevron */}
                     <ArrowRight
                       className="shrink-0 w-4 h-4 text-primary-400 -translate-x-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all"
                       strokeWidth={2.5}
@@ -150,7 +145,6 @@ export default function MartechWhyUs() {
               })}
             </ul>
 
-            {/* Bottom meta */}
             <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
               <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-400">
                 Built differently

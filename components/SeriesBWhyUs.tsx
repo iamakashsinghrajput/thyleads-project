@@ -95,13 +95,12 @@ export default function SeriesBWhyUs() {
               whileHover={{ y: -4 }}
               className="group relative rounded-2xl bg-white border border-slate-200 hover:border-primary-200 p-6 sm:p-7 pl-7 shadow-[0_4px_18px_-10px_rgba(15,23,42,0.08)] hover:shadow-[0_22px_48px_-22px_rgba(132,92,245,0.32)] transition-all overflow-hidden"
             >
-              {/* Left accent bar */}
+
               <span
                 aria-hidden="true"
                 className="absolute left-0 top-6 bottom-6 w-1 rounded-r-full bg-gradient-to-b from-primary-500 to-primary-700"
               />
 
-              {/* Top hairline */}
               <span
                 aria-hidden="true"
                 className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-primary-300 to-transparent"

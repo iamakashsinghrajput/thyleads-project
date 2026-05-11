@@ -70,7 +70,7 @@ export default function TheShift() {
 
   return (
     <section className="relative py-12 lg:py-16 px-6 sm:px-12 overflow-hidden bg-white font-sans">
-      {/* Soft accent */}
+
       <div
         aria-hidden="true"
         className="absolute top-1/3 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-primary-100/40 blur-3xl pointer-events-none"
@@ -83,7 +83,7 @@ export default function TheShift() {
         viewport={{ once: true, amount: 0.15 }}
         className="relative z-10 max-w-6xl mx-auto"
       >
-        {/* Header */}
+
         <div className="text-center mb-12 lg:mb-14">
           <motion.div
             variants={itemVariants}
@@ -117,7 +117,6 @@ export default function TheShift() {
           </motion.p>
         </div>
 
-        {/* Cards: 3 on top, 2 centered on bottom (6-col grid) */}
         <div className="grid grid-cols-1 md:grid-cols-6 gap-5 lg:gap-6">
           {topRow.map(shift => (
             <div key={shift.title} className="md:col-span-2">

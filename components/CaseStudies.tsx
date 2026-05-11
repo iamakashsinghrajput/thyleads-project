@@ -232,7 +232,7 @@ export default function TestimonialSection() {
       <div className="w-full relative z-10"
            onMouseEnter={() => setIsPaused(true)}
            onMouseLeave={() => setIsPaused(false)}>
-        
+
         <div
           className="flex gap-8 transition-transform will-change-transform"
           style={{

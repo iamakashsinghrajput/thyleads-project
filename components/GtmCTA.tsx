@@ -25,7 +25,7 @@ const itemVariants: Variants = {
 export default function GtmCTA() {
   return (
     <section className="relative py-20 lg:py-28 px-6 sm:px-12 overflow-hidden bg-primary-700 font-sans">
-      {/* Ambient glows */}
+
       <div
         aria-hidden="true"
         className="absolute -top-40 left-1/4 w-160 h-160 rounded-full bg-primary-500/40 blur-3xl pointer-events-none"
@@ -35,7 +35,6 @@ export default function GtmCTA() {
         className="absolute -bottom-40 right-1/4 w-160 h-160 rounded-full bg-primary-800/50 blur-3xl pointer-events-none"
       />
 
-      {/* Subtle dot grid */}
       <div
         aria-hidden="true"
         className="absolute inset-0 opacity-30 pointer-events-none"
@@ -49,7 +48,6 @@ export default function GtmCTA() {
         }}
       />
 
-      {/* Soft top inner highlight */}
       <div
         aria-hidden="true"
         className="absolute -top-32 left-1/2 -translate-x-1/2 w-[140%] h-56 bg-white/10 blur-3xl pointer-events-none"

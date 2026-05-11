@@ -85,9 +85,8 @@ export default function AgentsLearning() {
           </motion.p>
         </div>
 
-        {/* === Horizontal flow with connectors === */}
         <div className="relative">
-          {/* Desktop horizontal connector line */}
+
           <span
             aria-hidden="true"
             className="hidden lg:block absolute left-[12%] right-[12%] top-7 h-px bg-gradient-to-r from-primary-200 via-primary-400 to-primary-200"
@@ -107,13 +106,13 @@ export default function AgentsLearning() {
                 }}
                 className="relative text-center px-2"
               >
-                {/* Numbered circle */}
+
                 <div className="relative mx-auto w-14 h-14">
                   <span
                     aria-hidden="true"
                     className="absolute -inset-1.5 bg-primary-300/30 blur-md rounded-full pointer-events-none"
                   />
-                  {/* Two smoothly-staggered pulse rings */}
+
                   {[0, 1.6].map(offset => (
                     <motion.span
                       key={offset}

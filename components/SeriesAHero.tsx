@@ -51,7 +51,7 @@ export default function SeriesAHero() {
         animate="visible"
         className="relative z-10 max-w-6xl mx-auto grid lg:grid-cols-[1fr_1fr] gap-10 lg:gap-14 items-center"
       >
-        {/* === LEFT: Copy === */}
+
         <div>
           <motion.div variants={itemVariants} className="mb-5">
             <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-primary-700">
@@ -107,7 +107,6 @@ export default function SeriesAHero() {
           </motion.p>
         </div>
 
-        {/* === RIGHT: Live Pipeline timeline === */}
         <motion.div variants={itemVariants} className="relative">
           <PipelineTimeline />
         </motion.div>
@@ -115,11 +114,6 @@ export default function SeriesAHero() {
     </section>
   );
 }
-
-/* ============================================================
-   Right-side: a live pipeline timeline.
-   No "boxes" — a vertical timeline rail with rich activity rows.
-   ============================================================ */
 
 type Status = 'booked' | 'replied' | 'demo';
 
@@ -173,13 +167,12 @@ function PipelineTimeline() {
 
   return (
     <div className="relative w-full max-w-[480px] mx-auto">
-      {/* Atmospheric halo */}
+
       <div
         aria-hidden="true"
         className="absolute -inset-6 bg-primary-300/30 blur-3xl rounded-[40px] pointer-events-none"
       />
 
-      {/* Header row (above timeline, not boxed) */}
       <div className="relative flex items-center justify-between mb-5">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-primary-100 shadow-[0_6px_18px_-8px_rgba(132,92,245,0.30)]">
           <span className="relative flex h-1.5 w-1.5" aria-hidden="true">
@@ -210,9 +203,8 @@ function PipelineTimeline() {
         </div>
       </div>
 
-      {/* Timeline rail */}
       <div className="relative pl-7 sm:pl-8">
-        {/* Vertical rail */}
+
         <span
           aria-hidden="true"
           className="absolute left-2 top-3 bottom-3 w-px bg-gradient-to-b from-primary-300 via-primary-200 to-transparent"
@@ -231,7 +223,6 @@ function PipelineTimeline() {
         </ul>
       </div>
 
-      {/* Footer momentum strip */}
       <div className="relative mt-6 flex items-center justify-between gap-3">
         <div className="flex items-center gap-2">
           <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-slate-400">
@@ -277,7 +268,7 @@ function TimelineRow({
       }}
       className="relative"
     >
-      {/* Timeline dot — same color for all rows, only pulse ring on top */}
+
       <span
         aria-hidden="true"
         className="absolute -left-[28px] sm:-left-[32px] top-1 w-3 h-3 rounded-full ring-4 ring-white bg-gradient-to-br from-primary-500 to-primary-700"
@@ -298,9 +289,8 @@ function TimelineRow({
         )}
       </span>
 
-      {/* Row content — uniform styling so layout shifts read as smooth motion */}
       <div className="flex items-center gap-3.5">
-        {/* Logo avatar — identical container across rows */}
+
         <div className="relative shrink-0">
           <div className="relative w-10 h-10 rounded-xl bg-white border border-slate-200 ring-2 ring-white shadow-[0_5px_14px_-4px_rgba(132,92,245,0.20)] flex items-center justify-center overflow-hidden p-1.5">
             <Image
@@ -313,7 +303,6 @@ function TimelineRow({
           </div>
         </div>
 
-        {/* Identity + status */}
         <div className="flex-1 min-w-0">
           <div className="flex items-center justify-between gap-2">
             <span

@@ -2,13 +2,13 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useTransform, useSpring, useInView } from 'framer-motion';
-import { 
-  XCircle, 
-  CheckCircle2, 
-  ArrowRight, 
-  TrendingUp, 
-  Users, 
-  Zap 
+import {
+  XCircle,
+  CheckCircle2,
+  ArrowRight,
+  TrendingUp,
+  Users,
+  Zap
 } from 'lucide-react';
 
 const ThyleadsLanding = () => {
@@ -159,9 +159,6 @@ const ThyleadsItem = ({ text, delay }: { text: string; delay: number }) => {
     </motion.div>
   );
 };
-
-
-
 
 const CTAButton = () => {
   return (

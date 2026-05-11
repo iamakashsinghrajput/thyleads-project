@@ -6,19 +6,7 @@ import {
   CreditCard,
   MessageCircle,
   Bot,
-  Mail,
-  Sparkles,
-  MessageSquare,
-  Target,
-  TrendingUp,
-  Calendar,
-  Zap,
-  Search,
-  Send,
-  BarChart3,
-  Filter,
 } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
 import HeroShowcase from './HeroShowcase';
 
 const verticals = [
@@ -28,58 +16,55 @@ const verticals = [
   { name: 'AI Agents', Icon: Bot },
 ];
 
-/* === Floating ambient icons scattered across the hero background === */
-type FloatingIcon = {
-  Icon: LucideIcon;
+type FloatingWord = {
+  label: string;
   top: string;
   left?: string;
   right?: string;
-  size: string;
-  tint: string;
-  rot: number;
   delay: number;
   drift: number;
 };
 
-const FLOATING_ICONS: FloatingIcon[] = [
-  { Icon: Mail,          top: '12%', left:  '4%',  size: 'w-7 h-7', tint: 'text-rose-300',     rot: -10, delay: 0.2, drift: 10 },
-  { Icon: Sparkles,      top: '9%',  right: '6%',  size: 'w-9 h-9', tint: 'text-primary-300',  rot:  12, delay: 0.6, drift: 12 },
-  { Icon: MessageSquare, top: '26%', left:  '2%',  size: 'w-8 h-8', tint: 'text-emerald-300',  rot:   8, delay: 1.0, drift: 14 },
-  { Icon: Target,        top: '24%', right: '3%',  size: 'w-9 h-9', tint: 'text-amber-300',    rot: -14, delay: 0.4, drift: 9  },
-  { Icon: Send,          top: '46%', left:  '5%',  size: 'w-6 h-6', tint: 'text-sky-300',      rot:  18, delay: 1.4, drift: 11 },
-  { Icon: BarChart3,     top: '44%', right: '4%',  size: 'w-7 h-7', tint: 'text-violet-300',   rot:  -6, delay: 0.8, drift: 13 },
-  { Icon: Zap,           top: '66%', left:  '3%',  size: 'w-8 h-8', tint: 'text-orange-300',   rot: -16, delay: 1.6, drift: 10 },
-  { Icon: TrendingUp,    top: '63%', right: '6%',  size: 'w-7 h-7', tint: 'text-primary-400',  rot:   6, delay: 1.1, drift: 12 },
-  { Icon: Calendar,      top: '84%', left:  '8%',  size: 'w-6 h-6', tint: 'text-fuchsia-300',  rot:  10, delay: 1.9, drift: 9  },
-  { Icon: Search,        top: '88%', right: '10%', size: 'w-7 h-7', tint: 'text-sky-300',      rot: -10, delay: 1.3, drift: 11 },
-  { Icon: Filter,        top: '78%', left:  '46%', size: 'w-6 h-6', tint: 'text-slate-300',    rot:  20, delay: 2.1, drift: 8  },
-  { Icon: Bot,           top: '14%', left:  '46%', size: 'w-6 h-6', tint: 'text-emerald-300',  rot:  -8, delay: 0.9, drift: 7  },
+const FLOATING_WORDS: FloatingWord[] = [
+  { label: 'Account-Based',   top: '11%', left:  '4%',  delay: 0.3, drift: 8 },
+  { label: 'ICP',             top: '22%', left: '3%',  delay: 0.4, drift: 9  },
+  { label: 'Cold Email',      top: '34%', left:  '2%',  delay: 1.0, drift: 11 },
+  { label: 'Discovery Call',  top: '48%', left:  '3%',  delay: 1.4, drift: 10 },
+  { label: 'Demo Booked',     top: '63%', left:  '2%',  delay: 1.6, drift: 9  },
+  { label: 'Closed Won',      top: '42%', right: '4%',  delay: 0.8, drift: 11 },
+
+  { label: 'Pipeline',        top: '18%', right:  '4%',  delay: 0.2, drift: 8 },
+  { label: 'Outbound',        top: '8%',  right: '5%',  delay: 0.5, drift: 10 },
+  { label: 'Reply Rate',      top: '28%', right: '5%',  delay: 1.1, drift: 10 },
+  { label: 'Cadence',         top: '82%', right:  '4%',  delay: 1.9, drift: 9  },
+  { label: 'Sales Velocity',  top: '76%', right:  '46%', delay: 2.1, drift: 8  },
+  { label: 'Decision Maker',  top: '13%', right:  '44%', delay: 0.9, drift: 7  },
 ];
 
-function FloatingIcons() {
+function FloatingWords() {
   return (
-    <div aria-hidden="true" className="absolute inset-0 pointer-events-none overflow-hidden">
-      {FLOATING_ICONS.map((f, i) => (
+    <div aria-hidden="true" className="absolute inset-0 pointer-events-none overflow-hidden select-none">
+      {FLOATING_WORDS.map((f, i) => (
         <motion.div
           key={i}
           className="absolute"
-          style={{ top: f.top, left: f.left, right: f.right }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.5 }}
-          transition={{ duration: 1.4, delay: f.delay, ease: 'easeOut' }}
+          style={{ top: f.top, left: f.left, right: f.right, opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2, delay: f.delay, ease: 'easeOut' }}
         >
-          <motion.div
-            animate={{
-              y: [0, -f.drift, 0, f.drift * 0.6, 0],
-              rotate: [f.rot - 4, f.rot + 4, f.rot - 2, f.rot + 2, f.rot - 4],
-            }}
+          <motion.span
+            className="inline-flex items-center gap-1.5 text-[10.5px] font-semibold uppercase tracking-[0.28em] text-slate-400/55 whitespace-nowrap"
+            animate={{ y: [0, -f.drift, 0, f.drift * 0.55, 0] }}
             transition={{
-              y: { duration: 7 + (i % 4) * 0.6, delay: f.delay, repeat: Infinity, ease: 'easeInOut' },
-              rotate: { duration: 9 + (i % 3) * 0.7, delay: f.delay, repeat: Infinity, ease: 'easeInOut' },
+              duration: 8 + (i % 4) * 0.7,
+              delay: f.delay,
+              repeat: Infinity,
+              ease: 'easeInOut',
             }}
           >
-            <f.Icon className={`${f.size} ${f.tint}`} strokeWidth={1.6} />
-          </motion.div>
+            <span className="block w-1 h-1 rounded-full bg-primary-300/50" aria-hidden="true" />
+            {f.label}
+          </motion.span>
         </motion.div>
       ))}
     </div>
@@ -128,7 +113,7 @@ const highlightVariants: Variants = {
 export default function Hero() {
   return (
     <section className="relative pt-32 sm:pt-36 lg:pt-44 pb-10 lg:pb-16 px-6 sm:px-12 overflow-hidden bg-gradient-to-br from-primary-50 via-white to-primary-50 font-sans">
-      {/* Soft gradient backdrops */}
+
       <div
         aria-hidden="true"
         className="absolute -top-32 -left-32 w-[36rem] h-[36rem] rounded-full bg-primary-200/35 blur-3xl pointer-events-none"
@@ -138,7 +123,6 @@ export default function Hero() {
         className="absolute -bottom-32 -right-32 w-[36rem] h-[36rem] rounded-full bg-primary-100/55 blur-3xl pointer-events-none"
       />
 
-      {/* Subtle dot-grid background pattern */}
       <div
         aria-hidden="true"
         className="absolute inset-0 opacity-50 pointer-events-none"
@@ -152,18 +136,17 @@ export default function Hero() {
         }}
       />
 
-      {/* Floating ambient icons */}
-      <FloatingIcons />
+      <FloatingWords />
 
       <div className="relative z-10 max-w-6xl mx-auto">
-        {/* === Centered hero content === */}
+
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
           className="flex flex-col items-center text-center"
         >
-          {/* Announcement Pill */}
+
           <motion.div
             variants={badgeVariants}
             className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm mb-6 hover:border-primary-200 hover:shadow-md transition-all cursor-pointer group"
@@ -176,7 +159,6 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          {/* Title */}
           <motion.h1
             variants={itemVariants}
             className="text-[2.5rem] md:text-5xl lg:text-[3.5rem] xl:text-[64px] font-extrabold tracking-tight leading-[1.1] text-neutral-900 max-w-4xl"
@@ -203,7 +185,6 @@ export default function Hero() {
             </span>
           </motion.h1>
 
-          {/* Description */}
           <motion.p
             variants={itemVariants}
             className="mt-6 text-base md:text-lg text-slate-600 max-w-2xl leading-relaxed font-medium"
@@ -212,7 +193,6 @@ export default function Hero() {
             Automate outbound, qualify inbound, and accelerate deal momentum.
           </motion.p>
 
-          {/* Email Capture & CTA */}
           <motion.div
             variants={itemVariants}
             className="mt-8 flex flex-col w-full max-w-md gap-4"
@@ -233,7 +213,6 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* === Visual showcase below centered text === */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -243,7 +222,6 @@ export default function Hero() {
           <HeroShowcase />
         </motion.div>
 
-        {/* === Verticals We Serve === */}
         <motion.div
           initial="hidden"
           animate="visible"

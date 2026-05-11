@@ -1,16 +1,6 @@
 "use client"
 import React, { useEffect, useRef } from 'react';
 
-/**
- * Lead-generation network animation.
- * - Anchors = AI agents / your platform (4 corner-positioned nodes that pulse).
- * - Prospects = drifting particles (raw leads in the wild).
- * - Packets = outbound contacts firing from anchors → prospects.
- * - On arrival the prospect is "captured" (turns emerald briefly = qualified lead).
- * - Some captures trigger a conversion ring (deal won).
- * - Mouse acts as a 5th anchor — wherever you move, the platform follows.
- */
-
 type Particle = {
   x: number;
   y: number;
@@ -46,7 +36,6 @@ const CAPTURE_DURATION = 900;
 const CONVERSION_DURATION = 1600;
 const CONVERSION_PROB = 0.18;
 
-// Anchors live in safe corners away from the centered headline.
 const ANCHOR_POSITIONS: ReadonlyArray<readonly [number, number]> = [
   [0.10, 0.22],
   [0.90, 0.22],
@@ -159,7 +148,6 @@ export default function HeroBackground() {
 
       ctx.clearRect(0, 0, width, height);
 
-      // 1) Update particles
       for (const p of particles) {
         p.vx *= 0.992;
         p.vy *= 0.992;
@@ -182,7 +170,6 @@ export default function HeroBackground() {
         p.pulseMs = Math.max(0, p.pulseMs - dt);
       }
 
-      // 2) Anchors emit periodic outbound packets
       const reachSq = ANCHOR_REACH * ANCHOR_REACH;
       for (const anchor of anchors) {
         anchor.emitTimer -= dt;
@@ -192,7 +179,6 @@ export default function HeroBackground() {
         }
       }
 
-      // 3) Mouse fires faster + stronger
       if (mouse.active) {
         mouse.emitTimer -= dt;
         if (mouse.emitTimer <= 0) {
@@ -203,7 +189,6 @@ export default function HeroBackground() {
         mouse.emitTimer = 0;
       }
 
-      // 4) Advance packets — capture target on arrival
       packets = packets.filter(packet => {
         packet.t += packet.speed * dt;
         if (packet.t >= 1) {
@@ -219,7 +204,6 @@ export default function HeroBackground() {
         return true;
       });
 
-      // 5) Faint anchor reach lines
       ctx.lineWidth = 1;
       for (const anchor of anchors) {
         for (const p of particles) {
@@ -238,7 +222,6 @@ export default function HeroBackground() {
         }
       }
 
-      // 6) Particle-to-particle web — captured nodes turn the line emerald
       for (let i = 0; i < particles.length; i++) {
         const a = particles[i];
         for (let j = i + 1; j < particles.length; j++) {
@@ -261,7 +244,6 @@ export default function HeroBackground() {
         }
       }
 
-      // 7) Mouse: connection web + gentle pull
       if (mouse.active) {
         ctx.lineWidth = 1.2;
         for (const p of particles) {
@@ -284,7 +266,6 @@ export default function HeroBackground() {
           }
         }
 
-        // Cursor halo + ring
         const halo = ctx.createRadialGradient(
           mouse.x, mouse.y, 0,
           mouse.x, mouse.y, MOUSE_RADIUS * 0.55
@@ -302,7 +283,6 @@ export default function HeroBackground() {
         ctx.stroke();
       }
 
-      // 8) Packets in flight (emerald data balls)
       for (const packet of packets) {
         const target = particles[packet.targetIdx];
         if (!target) continue;
@@ -318,7 +298,6 @@ export default function HeroBackground() {
         ctx.fill();
       }
 
-      // 9) Particles + capture/conversion visuals
       for (const p of particles) {
         if (p.pulseMs > 0) {
           const tProgress = 1 - p.pulseMs / CONVERSION_DURATION;
@@ -345,7 +324,6 @@ export default function HeroBackground() {
         ctx.fill();
       }
 
-      // 10) Anchors — pulsing platform nodes
       for (const anchor of anchors) {
         const pulse = 0.6 + Math.sin(now * 0.002 + anchor.pulsePhase) * 0.4;
         const haloR = 22 + pulse * 10;
@@ -388,8 +366,8 @@ export default function HeroBackground() {
       aria-hidden="true"
       className="absolute inset-0 overflow-hidden pointer-events-none"
     >
-      {/* Subtle Grid Overlay */}
-      <div 
+
+      <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage: `
@@ -399,7 +377,7 @@ export default function HeroBackground() {
           backgroundSize: '40px 40px',
         }}
       />
-      
+
       <div
         className="absolute -top-1/4 -left-1/4 w-[40rem] h-[40rem] rounded-full blur-3xl"
         style={{

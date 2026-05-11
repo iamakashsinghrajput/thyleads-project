@@ -44,7 +44,7 @@ export default function SeriesBHero() {
         animate="visible"
         className="relative z-10 max-w-6xl mx-auto grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-16 items-center"
       >
-        {/* === LEFT: Copy === */}
+
         <div>
           <motion.div variants={itemVariants} className="mb-6">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-50 border border-primary-200 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-700">
@@ -100,7 +100,6 @@ export default function SeriesBHero() {
           </motion.div>
         </div>
 
-        {/* === RIGHT: Scaling-divergence chart === */}
         <motion.div variants={itemVariants} className="relative">
           <ScalingChart />
         </motion.div>
@@ -109,13 +108,8 @@ export default function SeriesBHero() {
   );
 }
 
-/* ============================================================
-   Scaling divergence chart — Pipeline ↑ vs Headcount → flat
-   ============================================================ */
-
 function ScalingChart() {
-  // Pipeline curve waypoints (ARR / pipeline value scaling up)
-  // x: 0–520, y: chart bottom 270 to top 70
+
   const pipelinePoints = [
     { x: 60, y: 245 },
     { x: 130, y: 220 },
@@ -125,7 +119,7 @@ function ScalingChart() {
     { x: 410, y: 90 },
     { x: 480, y: 70 },
   ];
-  // Headcount line stays roughly flat (slight rise)
+
   const headcountPoints = [
     { x: 60, y: 250 },
     { x: 130, y: 248 },
@@ -154,21 +148,19 @@ function ScalingChart() {
 
   return (
     <div className="relative w-full max-w-[520px] mx-auto">
-      {/* Atmospheric halo */}
+
       <div
         aria-hidden="true"
         className="absolute -inset-6 bg-primary-200/30 blur-3xl rounded-[40px] pointer-events-none"
       />
 
-      {/* Chart card */}
       <div className="relative rounded-3xl bg-white border border-slate-200 shadow-[0_28px_70px_-30px_rgba(132,92,245,0.32)] overflow-hidden">
-        {/* Top gradient hairline */}
+
         <span
           aria-hidden="true"
           className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-primary-400 to-transparent"
         />
 
-        {/* === Header === */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100">
           <div className="flex items-center gap-2">
             <span className="relative flex h-2 w-2" aria-hidden="true">
@@ -184,7 +176,6 @@ function ScalingChart() {
           </span>
         </div>
 
-        {/* === Chart === */}
         <div className="relative px-6 py-5">
           <svg
             viewBox="0 0 540 320"
@@ -202,7 +193,6 @@ function ScalingChart() {
               </linearGradient>
             </defs>
 
-            {/* Y-axis grid lines */}
             {[80, 140, 200, 260].map(y => (
               <line
                 key={y}
@@ -215,7 +205,6 @@ function ScalingChart() {
               />
             ))}
 
-            {/* Y-axis tick labels */}
             {[
               { y: 80, label: '5x' },
               { y: 140, label: '3x' },
@@ -236,7 +225,6 @@ function ScalingChart() {
               </text>
             ))}
 
-            {/* Pipeline area fill */}
             <motion.path
               d={pipelineAreaD}
               fill="url(#sb-area-grad)"
@@ -245,7 +233,6 @@ function ScalingChart() {
               transition={{ duration: 1, delay: 1.6, ease: easeOut }}
             />
 
-            {/* Pipeline curve */}
             <motion.path
               d={pipelineD}
               fill="none"
@@ -258,7 +245,6 @@ function ScalingChart() {
               transition={{ duration: 1.8, delay: 0.4, ease: easeInOut }}
             />
 
-            {/* Pipeline data dots */}
             {pipelinePoints.map((p, i) => (
               <motion.g key={`p-${i}`}>
                 <motion.circle
@@ -292,7 +278,6 @@ function ScalingChart() {
               </motion.g>
             ))}
 
-            {/* Headcount line (flat) */}
             <motion.path
               d={headcountD}
               fill="none"
@@ -305,7 +290,6 @@ function ScalingChart() {
               transition={{ duration: 1.2, delay: 0.8, ease: easeOut }}
             />
 
-            {/* Headcount data dots */}
             {headcountPoints.map((p, i) => (
               <motion.circle
                 key={`h-${i}`}
@@ -324,7 +308,6 @@ function ScalingChart() {
               />
             ))}
 
-            {/* Pipeline end-point pulse halo */}
             <motion.circle
               cx={pipelinePoints[pipelinePoints.length - 1].x}
               cy={pipelinePoints[pipelinePoints.length - 1].y}
@@ -345,7 +328,6 @@ function ScalingChart() {
               }}
             />
 
-            {/* X-axis */}
             <line
               x1="55"
               y1="290"
@@ -354,7 +336,7 @@ function ScalingChart() {
               stroke="#e2e8f0"
               strokeWidth="1"
             />
-            {/* X-axis labels */}
+
             {xLabels.map((label, i) => (
               <text
                 key={label}
@@ -371,13 +353,12 @@ function ScalingChart() {
               </text>
             ))}
 
-            {/* Annotation: divergence callout */}
             <motion.g
               initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 2.4, ease: easeOut }}
             >
-              {/* Connector dotted line */}
+
               <line
                 x1={pipelinePoints[5].x}
                 y1={pipelinePoints[5].y}
@@ -411,7 +392,6 @@ function ScalingChart() {
           </svg>
         </div>
 
-        {/* === Legend / footer === */}
         <div className="px-6 py-4 border-t border-slate-100 flex items-center justify-between gap-3 bg-gradient-to-br from-primary-50/40 to-white">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1.5">

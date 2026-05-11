@@ -19,10 +19,6 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-/* ====================================================================
-   Avatar with photo + initials fallback. Drop LinkedIn profile photos
-   into /public/team/<slug>.jpg — until then the gradient initials show.
-   ==================================================================== */
 function PhotoAvatar({
   name,
   initials,
@@ -43,7 +39,7 @@ function PhotoAvatar({
       <div
         className={`relative ${sizeClass} rounded-full overflow-hidden border-2 border-white shadow-[0_10px_30px_-12px_rgba(132,92,245,0.45)] shrink-0 bg-slate-100`}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
+
         <img
           src={photo}
           alt={name}
@@ -86,11 +82,8 @@ function WhoWeAre() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col items-center text-center"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm mb-6">
-            <span className="flex items-center justify-center w-5 h-5 rounded-full bg-primary-100 text-primary-600">
-              <Sparkles className="w-3 h-3" />
-            </span>
-            <span className="text-sm font-medium text-slate-700">About Thyleads</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-primary-700 shadow-sm mb-6">
+            <span className="text-sm font-medium text-primary-700">About Thyleads</span>
           </div>
 
           <h1 className="text-[2.25rem] md:text-5xl lg:text-[3.25rem] xl:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6 text-neutral-900 max-w-4xl">
@@ -110,14 +103,13 @@ function WhoWeAre() {
   );
 }
 
-
 function Founders() {
   const founders = [
     {
       name: "Rahul Dev",
       role: "Co-Founder & CEO",
       initials: "RD",
-      photo: "/team/rahul-dev.jpg",
+      photo: "/team/rahuldev.png",
       bio: "A decade in SaaS sales made one thing clear: no matter the stage or scale, one problem stayed constant. Outbound didn't work the way it should. Teams relied on outdated, volume-driven approaches with little innovation, burning time and money without building predictable pipeline. That made me realise the problem wasn't effort, it was the system itself. I wanted to change that, to bring real innovation into how outbound and pipeline generation actually worked. That led me to build Thyleads, and four years later, we've helped 70+ SaaS teams build pipeline they can actually count on and turn it into consistent revenue growth.",
       linkedin: "#",
     },
@@ -205,9 +197,6 @@ function Founders() {
   );
 }
 
-/* ====================================================================
-   3. OUR STORY  (Vertical alternating timeline)
-   ==================================================================== */
 const STORY_MILESTONES = [
   {
     year: "2021",
@@ -248,7 +237,6 @@ function OurStory() {
     <section className="relative w-full bg-white overflow-hidden flex flex-col items-center px-6 sm:px-12 font-sans py-20 lg:py-28">
       <TopDivider />
 
-      {/* Ambient backdrops */}
       <div
         aria-hidden="true"
         className="absolute top-32 -left-32 w-[28rem] h-[28rem] rounded-full bg-primary-100/40 blur-3xl pointer-events-none"
@@ -259,7 +247,7 @@ function OurStory() {
       />
 
       <div className="max-w-3xl mx-auto w-full relative z-10">
-        {/* Heading */}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -281,9 +269,8 @@ function OurStory() {
           </p>
         </motion.div>
 
-        {/* === Clean vertical timeline === */}
         <div ref={railRef} className="relative pl-10 sm:pl-14">
-          {/* Background dashed rail */}
+
           <span
             aria-hidden="true"
             className="absolute left-3 sm:left-5 top-2 bottom-2 w-px pointer-events-none"
@@ -292,7 +279,7 @@ function OurStory() {
                 "repeating-linear-gradient(to bottom, rgba(132,92,245,0.30) 0 5px, transparent 5px 11px)",
             }}
           />
-          {/* Scroll-progressed solid rail */}
+
           <motion.span
             aria-hidden="true"
             className="absolute left-3 sm:left-5 top-2 w-[2px] rounded-full bg-gradient-to-b from-primary-500 via-primary-600 to-primary-700 shadow-[0_0_10px_rgba(132,92,245,0.45)] pointer-events-none"
@@ -333,7 +320,7 @@ function StoryRow({
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className="relative"
     >
-      {/* Rail dot */}
+
       <div className="absolute -left-[34px] sm:-left-[44px] top-1.5 flex items-center justify-center">
         <motion.span
           aria-hidden="true"
@@ -346,19 +333,16 @@ function StoryRow({
         />
       </div>
 
-      {/* Year tag */}
       <div className="mb-2">
         <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-primary-50 border border-primary-100 text-[11px] font-bold tracking-[0.05em] text-primary-700 tabular-nums">
           {milestone.year}
         </span>
       </div>
 
-      {/* Title */}
       <h3 className="text-lg sm:text-xl font-extrabold tracking-tight text-neutral-900 leading-snug">
         {milestone.title}
       </h3>
 
-      {/* Description */}
       <p className="mt-2 text-[14.5px] text-slate-600 leading-relaxed">
         {milestone.desc}
       </p>
@@ -366,15 +350,11 @@ function StoryRow({
   );
 }
 
-/* ====================================================================
-   4. NORTH STAR  (Mission + Vision — light theme)
-   ==================================================================== */
 function NorthStar() {
   return (
     <section className="relative w-full bg-slate-50 overflow-hidden flex flex-col items-center px-6 sm:px-12 font-sans py-20 lg:py-28">
       <TopDivider />
 
-      {/* Constellation backdrop */}
       <div
         aria-hidden="true"
         className="absolute inset-0 opacity-50 pointer-events-none"
@@ -388,7 +368,6 @@ function NorthStar() {
         }}
       />
 
-      {/* Soft ambient backdrops */}
       <div
         aria-hidden="true"
         className="absolute -top-32 -left-32 w-[36rem] h-[36rem] rounded-full bg-primary-100/40 blur-3xl pointer-events-none"
@@ -399,7 +378,7 @@ function NorthStar() {
       />
 
       <div className="max-w-5xl mx-auto w-full relative z-10">
-        {/* Heading */}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -421,7 +400,6 @@ function NorthStar() {
           </p>
         </motion.div>
 
-        {/* Compass-anchored unified card */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -429,24 +407,24 @@ function NorthStar() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="relative"
         >
-          {/* Center star icon — floats above the card */}
+
           <div className="absolute left-1/2 -translate-x-1/2 -top-9 z-20">
             <div className="relative">
-              {/* Pulsing halo */}
+
               <motion.span
                 aria-hidden="true"
                 className="absolute -inset-4 rounded-full bg-primary-300/40 blur-xl pointer-events-none"
                 animate={{ opacity: [0.35, 0.7, 0.35], scale: [1, 1.15, 1] }}
                 transition={{ duration: 4, repeat: Infinity, ease: [0.45, 0, 0.55, 1] }}
               />
-              {/* Rotating outer ring */}
+
               <motion.span
                 aria-hidden="true"
                 className="absolute inset-0 rounded-full border border-dashed border-primary-300/70 pointer-events-none"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
               />
-              {/* Star plate */}
+
               <div className="relative w-[72px] h-[72px] rounded-full bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center shadow-[0_18px_40px_-12px_rgba(132,92,245,0.55)] border-4 border-white">
                 <Star className="w-7 h-7 text-white" strokeWidth={2.25} fill="currentColor" />
               </div>
@@ -454,22 +432,21 @@ function NorthStar() {
           </div>
 
           <div className="relative rounded-[2rem] bg-white border border-primary-100 shadow-[0_24px_70px_-30px_rgba(132,92,245,0.30)] overflow-hidden">
-            {/* Hairline top */}
+
             <div className="absolute top-0 left-10 right-10 h-px bg-gradient-to-r from-transparent via-primary-300/70 to-transparent" />
 
             <div className="grid md:grid-cols-2 relative">
-              {/* Vertical divider with glow (desktop) */}
+
               <div
                 aria-hidden="true"
                 className="hidden md:block absolute left-1/2 top-12 bottom-12 -translate-x-1/2 w-px bg-gradient-to-b from-transparent via-primary-200/80 to-transparent"
               />
-              {/* Horizontal divider for mobile */}
+
               <div
                 aria-hidden="true"
                 className="md:hidden absolute left-10 right-10 top-1/2 -translate-y-1/2 h-px bg-gradient-to-r from-transparent via-primary-200/80 to-transparent"
               />
 
-              {/* Mission */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -491,7 +468,6 @@ function NorthStar() {
                 </p>
               </motion.div>
 
-              {/* Vision */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -514,11 +490,9 @@ function NorthStar() {
               </motion.div>
             </div>
 
-            {/* Bottom hairline */}
             <div className="absolute bottom-0 left-10 right-10 h-px bg-gradient-to-r from-transparent via-primary-200/60 to-transparent" />
           </div>
 
-          {/* Anchor strip below card */}
           <div className="mt-10 flex items-center justify-center gap-6 text-[11px] font-bold uppercase tracking-[0.25em] text-slate-500">
             <span className="inline-flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-primary-500" />
@@ -541,9 +515,6 @@ function NorthStar() {
   );
 }
 
-/* ====================================================================
-   5. PHILOSOPHY  (Our Performance Philosophy — 5 principles)
-   ==================================================================== */
 function Philosophy() {
   const principles = [
     {
@@ -583,7 +554,7 @@ function Philosophy() {
       <TopDivider />
 
       <div className="max-w-6xl mx-auto w-full relative z-10">
-        {/* Heading */}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -605,7 +576,6 @@ function Philosophy() {
           </p>
         </motion.div>
 
-        {/* 3 + 2 grid (6-col) */}
         <div className="grid md:grid-cols-6 gap-5 lg:gap-6">
           {principles.map((p, i) => (
             <motion.div
@@ -616,20 +586,17 @@ function Philosophy() {
               transition={{ duration: 0.55, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
               className={`${p.span} group relative rounded-2xl bg-white border border-slate-200 p-7 sm:p-8 hover:border-primary-200 hover:-translate-y-1 hover:shadow-[0_18px_50px_-22px_rgba(132,92,245,0.30)] transition-all duration-500 overflow-hidden`}
             >
-              {/* Hairline */}
+
               <div className="absolute top-0 left-5 right-5 h-px bg-gradient-to-r from-transparent via-primary-200/80 to-transparent" />
 
-              {/* Icon plate */}
               <div className="relative inline-flex items-center justify-center w-11 h-11 rounded-xl bg-primary-100 text-primary-600 mb-5 group-hover:bg-primary-200 transition-colors duration-300">
                 <p.icon className="w-5 h-5" strokeWidth={2.25} />
               </div>
 
-              {/* Title */}
               <h3 className="text-lg font-extrabold tracking-tight text-neutral-900 mb-2">
                 {p.title}
               </h3>
 
-              {/* Body */}
               <p className="text-[14px] text-slate-600 leading-relaxed">
                 {p.desc}
               </p>
@@ -641,9 +608,6 @@ function Philosophy() {
   );
 }
 
-/* ====================================================================
-   6. TEAM  (The people behind your pipeline — premium grid)
-   ==================================================================== */
 const TEAM = [
   {
     name: "Rahul Dev",
@@ -651,8 +615,8 @@ const TEAM = [
     desc: "Weaves strategy, relationships, and decisions into revenue outcomes.",
     initials: "RD",
     gradient: "from-violet-500 to-primary-700",
-    photo: "/team/rahul-dev.jpg",
-    linkedin: "#",
+    photo: "/team/rahuldev.png",
+    linkedin: "https://www.linkedin.com/in/rahuldevchauhan/",
   },
   {
     name: "Prachi Dev",
@@ -669,7 +633,7 @@ const TEAM = [
     desc: "Keeps the business moving in the right direction.",
     initials: "BP",
     gradient: "from-sky-500 to-primary-600",
-    photo: "/team/bala-bharath.jpg",
+    photo: "/team/bala-bharath.png",
     linkedin: "https://www.linkedin.com/in/balabharathkumarpavuluri/",
   },
   {
@@ -691,15 +655,6 @@ const TEAM = [
     linkedin: "https://www.linkedin.com/in/akashsingh21/",
   },
   {
-    name: "Naman Pawar",
-    role: "The Ops Anchor",
-    desc: "Keeps operations steady, aligned, and running.",
-    initials: "NP",
-    gradient: "from-amber-500 to-primary-600",
-    photo: "/team/naman-pawar.jpg",
-    linkedin: "https://www.linkedin.com/in/namanpanwar/",
-  },
-  {
     name: "Sandeep Kalura",
     role: "The Deal Closer",
     desc: "Turns opportunities into revenue with precision and consistency.",
@@ -708,6 +663,16 @@ const TEAM = [
     photo: "/team/sandeep-kalura.jpg",
     linkedin: "https://www.linkedin.com/in/sandeep-singh-6119a137b/",
   },
+  {
+    name: "Naman Pawar",
+    role: "The Ops Anchor",
+    desc: "Keeps operations steady, aligned, and running.",
+    initials: "NP",
+    gradient: "from-amber-500 to-primary-600",
+    photo: "/team/naman-pawar.jpg",
+    linkedin: "https://www.linkedin.com/in/namanpanwar/",
+  },
+
   {
     name: "Manshi Kaverappa",
     role: "The Account Driver",
@@ -733,7 +698,6 @@ function Team() {
     <section className="relative w-full bg-slate-50 overflow-hidden flex flex-col items-center px-6 sm:px-12 font-sans py-20 lg:py-28">
       <TopDivider />
 
-      {/* Ambient backdrops */}
       <div
         aria-hidden="true"
         className="absolute top-1/3 -left-32 w-[28rem] h-[28rem] rounded-full bg-primary-100/40 blur-3xl pointer-events-none"
@@ -744,7 +708,7 @@ function Team() {
       />
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
-        {/* Heading */}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -766,7 +730,6 @@ function Team() {
           </p>
         </motion.div>
 
-        {/* 3x3 grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
           {TEAM.map((member, i) => (
             <motion.div
@@ -781,20 +744,19 @@ function Team() {
               }}
               className="group relative rounded-[1.75rem] bg-white border border-slate-200 p-6 sm:p-7 hover:border-primary-200 hover:-translate-y-2 hover:shadow-[0_24px_60px_-22px_rgba(132,92,245,0.32)] transition-all duration-500 overflow-hidden"
             >
-              {/* Hover glow */}
+
               <div
                 aria-hidden="true"
                 className="absolute -top-20 -right-12 w-44 h-44 rounded-full bg-primary-100/60 blur-3xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
               />
 
-              {/* Top hairline */}
               <div className="absolute top-0 left-5 right-5 h-px bg-gradient-to-r from-transparent via-primary-200/80 to-transparent" />
 
               <div className="relative z-10 flex flex-col h-full">
-                {/* Avatar + position number */}
+
                 <div className="flex items-start justify-between mb-5">
                   <div className="relative">
-                    {/* Halo on hover */}
+
                     <span
                       aria-hidden="true"
                       className="absolute -inset-1.5 rounded-full bg-gradient-to-br from-primary-300/0 to-primary-300/0 group-hover:from-primary-300/40 group-hover:to-primary-500/40 blur transition-all duration-500"
@@ -815,22 +777,18 @@ function Team() {
                   </span>
                 </div>
 
-                {/* Name */}
                 <h3 className="text-lg font-extrabold tracking-tight text-neutral-900 leading-tight">
                   {member.name}
                 </h3>
 
-                {/* Role */}
                 <p className="text-sm font-semibold text-primary-600 mb-3">
                   {member.role}
                 </p>
 
-                {/* Desc */}
                 <p className="text-[14px] text-slate-600 leading-relaxed flex-1">
                   {member.desc}
                 </p>
 
-                {/* LinkedIn footer */}
                 <div className="mt-5 flex items-center justify-between pt-4 border-t border-slate-100">
                   <a
                     href={member.linkedin}
@@ -850,7 +808,6 @@ function Team() {
           ))}
         </div>
 
-        {/* Tail line */}
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -865,15 +822,11 @@ function Team() {
   );
 }
 
-/* ====================================================================
-   7. CLOSING CTA  (Light theme — no dark purple)
-   ==================================================================== */
 function ClosingCTA() {
   return (
     <section className="relative py-20 lg:py-28 px-6 sm:px-12 overflow-hidden bg-gradient-to-br from-primary-50 via-white to-primary-50 font-sans">
       <TopDivider />
 
-      {/* Soft glows */}
       <div
         aria-hidden="true"
         className="absolute -top-32 left-1/4 w-[36rem] h-[36rem] rounded-full bg-primary-200/40 blur-3xl pointer-events-none"
@@ -883,7 +836,6 @@ function ClosingCTA() {
         className="absolute -bottom-32 right-1/4 w-[36rem] h-[36rem] rounded-full bg-primary-100/60 blur-3xl pointer-events-none"
       />
 
-      {/* Dot grid */}
       <div
         aria-hidden="true"
         className="absolute inset-0 opacity-40 pointer-events-none"
@@ -929,9 +881,6 @@ function ClosingCTA() {
   );
 }
 
-/* ====================================================================
-   PAGE
-   ==================================================================== */
 export default function AboutPage() {
   return (
     <>

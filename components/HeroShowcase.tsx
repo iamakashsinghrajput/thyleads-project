@@ -19,7 +19,6 @@ import {
 const easeOut: [number, number, number, number] = [0.16, 1, 0.3, 1];
 const easeInOut: [number, number, number, number] = [0.45, 0, 0.55, 1];
 
-/* === Inline Claude-style asterisk icon === */
 function ClaudeIcon({ className = "" }: { className?: string }) {
   return (
     <svg
@@ -36,7 +35,7 @@ function ClaudeIcon({ className = "" }: { className?: string }) {
 export default function HeroShowcase() {
   return (
     <div className="relative w-full max-w-6xl mx-auto">
-      {/* Faint vertical guide lines */}
+
       <div
         aria-hidden="true"
         className="absolute inset-x-0 top-0 bottom-0 flex justify-between pointer-events-none px-12"
@@ -46,23 +45,16 @@ export default function HeroShowcase() {
       </div>
 
       <div className="relative grid lg:grid-cols-[1.25fr_1fr_1.15fr] gap-6 items-center">
-        {/* === LEFT — Claude agent console (vertical) === */}
+
         <AgentConsole />
 
-        {/* === CENTER — Inbound channels → Thyleads → Outbound === */}
         <CenterFlow />
 
-        {/* === RIGHT — Live pipeline activity feed === */}
         <ActivityCard />
       </div>
     </div>
   );
 }
-
-/* ============================================================
-   LEFT: Claude agent console — 5 agents stacked vertically,
-   one "running" at a time with sweep accent + color shifts.
-   ============================================================ */
 
 const AGENTS = [
   { Icon: Search,        name: 'Research',  role: 'Account intel · ICP fit' },
@@ -83,11 +75,10 @@ function AgentConsole() {
       transition={{ duration: 0.85, delay: 0.5, ease: easeOut }}
       className="relative rounded-2xl bg-white border border-slate-200 shadow-[0_24px_60px_-22px_rgba(15,23,42,0.20)] overflow-hidden hidden lg:flex flex-col h-[460px]"
     >
-      {/* Ambient backdrops */}
+
       <div aria-hidden="true" className="absolute -top-20 -right-12 w-72 h-72 rounded-full bg-primary-100/55 blur-3xl pointer-events-none" />
       <div aria-hidden="true" className="absolute -bottom-20 -left-12 w-72 h-72 rounded-full bg-primary-100/45 blur-3xl pointer-events-none" />
 
-      {/* === Header === */}
       <div className="relative z-10 px-5 pt-5 pb-3 border-b border-slate-100 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-50 border border-primary-100 text-[10px] font-bold uppercase tracking-[0.22em] text-primary-700">
@@ -104,7 +95,6 @@ function AgentConsole() {
         </span>
       </div>
 
-      {/* === Agent rows === */}
       <div className="relative z-10 flex-1 p-3 flex flex-col gap-1.5">
         {AGENTS.map((a, i) => {
           const activeAt = STEP_TIMES[i];
@@ -146,12 +136,11 @@ function AgentConsole() {
                   ease: easeInOut,
                 }}
               >
-                {/* Step number */}
+
                 <span className="shrink-0 text-[9px] font-bold tabular-nums text-slate-300">
                   0{i + 1}
                 </span>
 
-                {/* Icon plate */}
                 <motion.div
                   className="shrink-0 w-9 h-9 rounded-lg border flex items-center justify-center"
                   animate={{
@@ -187,7 +176,6 @@ function AgentConsole() {
                   <a.Icon className="w-4 h-4" strokeWidth={2.2} />
                 </motion.div>
 
-                {/* Name + role */}
                 <div className="flex-1 min-w-0">
                   <div className="text-[12px] font-extrabold text-neutral-900 leading-tight truncate">
                     {a.name}
@@ -197,9 +185,8 @@ function AgentConsole() {
                   </div>
                 </div>
 
-                {/* Status stack — Idle / Running / Done */}
                 <div className="shrink-0 relative w-[58px] h-[18px]">
-                  {/* Idle */}
+
                   <motion.span
                     className="absolute inset-0 inline-flex items-center justify-center gap-1 px-1.5 rounded-full bg-slate-50 text-slate-500 text-[9px] font-bold uppercase tracking-[0.12em]"
                     animate={{ opacity: [1, 1, 0, 0, 1] }}
@@ -213,7 +200,7 @@ function AgentConsole() {
                     <span className="w-1 h-1 rounded-full bg-slate-400" />
                     Idle
                   </motion.span>
-                  {/* Running */}
+
                   <motion.span
                     className="absolute inset-0 inline-flex items-center justify-center gap-1 px-1.5 rounded-full bg-primary-100 text-primary-700 text-[9px] font-bold uppercase tracking-[0.12em]"
                     animate={{ opacity: [0, 0, 1, 0, 0] }}
@@ -230,7 +217,7 @@ function AgentConsole() {
                     </span>
                     Running
                   </motion.span>
-                  {/* Done */}
+
                   <motion.span
                     className="absolute inset-0 inline-flex items-center justify-center gap-1 px-1.5 rounded-full bg-emerald-50 text-emerald-700 text-[9px] font-bold uppercase tracking-[0.12em]"
                     animate={{ opacity: [0, 0, 0, 1, 0] }}
@@ -246,7 +233,6 @@ function AgentConsole() {
                   </motion.span>
                 </div>
 
-                {/* Bottom sweep — left to right during active window */}
                 <motion.span
                   aria-hidden="true"
                   className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary-300 via-primary-600 to-primary-300 origin-left"
@@ -264,7 +250,6 @@ function AgentConsole() {
         })}
       </div>
 
-      {/* === Footer === */}
       <div className="relative z-10 px-5 py-3 border-t border-slate-100 flex items-center justify-between text-[9.5px] font-bold uppercase tracking-[0.18em]">
         <span className="inline-flex items-center gap-1.5 text-slate-500">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
@@ -278,11 +263,6 @@ function AgentConsole() {
     </motion.div>
   );
 }
-
-/* ============================================================
-   CENTER: Inbound channels → Thyleads → Outbound channels
-   (Unchanged — floating layout without card chrome)
-   ============================================================ */
 
 const inboundChannels = [
   { Icon: Mail, tint: 'rose' as const },
@@ -400,7 +380,6 @@ function CenterFlow() {
         ))}
       </svg>
 
-      {/* Left icon column */}
       <div className="absolute left-0 top-0 bottom-0 w-12 flex flex-col items-center justify-around">
         {inboundChannels.map(({ Icon, tint }, i) => (
           <motion.div
@@ -415,7 +394,6 @@ function CenterFlow() {
         ))}
       </div>
 
-      {/* Center node */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -433,7 +411,6 @@ function CenterFlow() {
         </div>
       </motion.div>
 
-      {/* Right icon column */}
       <div className="absolute right-0 top-0 bottom-0 w-12 flex flex-col items-center justify-around">
         {outboundChannels.map(({ Icon, tint }, i) => (
           <motion.div
@@ -451,17 +428,12 @@ function CenterFlow() {
   );
 }
 
-/* ============================================================
-   RIGHT: Live pipeline activity feed — stat header + activity
-   list with real company logos.
-   ============================================================ */
-
 type ActivityTone = 'emerald' | 'primary' | 'sky' | 'amber';
 
 const ACTIVITY: { company: string; logo: string; action: string; time: string; tone: ActivityTone }[] = [
   { company: 'Tazapay',   logo: '/images/Tazapay.svg',    action: 'Meeting booked',          time: '2m',  tone: 'emerald' },
   { company: 'CleverTap', logo: '/images/CleverTap.svg',  action: 'Reply received',          time: '12m', tone: 'primary' },
-  { company: 'VWO',       logo: '/images/VWO.svg',        action: 'Moved to Negotiation',    time: '34m', tone: 'sky' },
+  { company: 'VWO',       logo: '/images/VWO.svg',        action: 'Discovery call done',     time: '34m', tone: 'sky' },
   { company: 'Airmeet',   logo: '/images/Airmeet.svg',    action: 'Demo scheduled',          time: '1h',  tone: 'amber' },
 ];
 
@@ -482,11 +454,10 @@ function ActivityCard() {
       transition={{ duration: 0.85, delay: 0.7, ease: easeOut }}
       className="relative rounded-2xl bg-white border border-slate-200 shadow-[0_24px_60px_-22px_rgba(15,23,42,0.20)] overflow-hidden hidden lg:flex flex-col h-[460px]"
     >
-      {/* Ambient glow */}
+
       <div aria-hidden="true" className="absolute -top-20 -left-10 w-60 h-60 rounded-full bg-primary-100/50 blur-3xl pointer-events-none" />
       <div aria-hidden="true" className="absolute -bottom-20 -right-12 w-60 h-60 rounded-full bg-primary-100/40 blur-3xl pointer-events-none" />
 
-      {/* === Header === */}
       <div className="relative z-10 px-5 pt-5 pb-3 border-b border-slate-100 flex items-start justify-between">
         <div>
           <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-slate-500 mb-1">
@@ -505,7 +476,6 @@ function ActivityCard() {
         </span>
       </div>
 
-      {/* === Big stat + sparkline === */}
       <div className="relative z-10 px-5 py-4 border-b border-slate-100">
         <div className="flex items-baseline justify-between">
           <div>
@@ -526,7 +496,6 @@ function ActivityCard() {
           </span>
         </div>
 
-        {/* Sparkline bars */}
         <div className="mt-3 flex items-end gap-1 h-7">
           {SPARK_BARS.map((h, i) => (
             <motion.div
@@ -541,7 +510,6 @@ function ActivityCard() {
         </div>
       </div>
 
-      {/* === Activity list === */}
       <div className="relative z-10 flex-1 px-3 pt-3 overflow-hidden">
         <div className="text-[9.5px] font-bold uppercase tracking-[0.22em] text-slate-400 px-2 mb-2">
           Recent
@@ -555,7 +523,7 @@ function ActivityCard() {
               transition={{ duration: 0.45, delay: 1.2 + i * 0.08, ease: easeOut }}
               className="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 transition-colors"
             >
-              {/* Company logo plate */}
+
               <span className="shrink-0 w-8 h-8 rounded-lg bg-white border border-slate-200 overflow-hidden flex items-center justify-center">
                 <Image
                   src={a.logo}
@@ -566,7 +534,6 @@ function ActivityCard() {
                 />
               </span>
 
-              {/* Company + action */}
               <div className="min-w-0 flex-1">
                 <div className="text-[11.5px] font-bold text-neutral-900 leading-tight truncate">
                   {a.company}
@@ -576,7 +543,6 @@ function ActivityCard() {
                 </div>
               </div>
 
-              {/* Time */}
               <div className="shrink-0 text-[10px] font-bold text-slate-400 tabular-nums">
                 {a.time}
               </div>
@@ -585,14 +551,10 @@ function ActivityCard() {
         </div>
       </div>
 
-      {/* === Footer === */}
-      <div className="relative z-10 px-5 py-3 border-t border-slate-100 flex items-center justify-between text-[9.5px] font-bold uppercase tracking-[0.18em]">
+      <div className="relative z-10 px-5 py-3 border-t border-slate-100 flex items-center justify-center text-[9.5px] font-bold uppercase tracking-[0.18em]">
         <span className="text-slate-500">
           <span className="text-neutral-900 font-extrabold">34</span> meetings today
         </span>
-        <a href="#" className="text-primary-700 hover:text-primary-800 transition-colors">
-          View all →
-        </a>
       </div>
     </motion.div>
   );

@@ -115,13 +115,13 @@ const Results: React.FC = () => {
           background: `radial-gradient(600px circle at ${mousePos.x}px ${mousePos.y}px, rgba(139, 92, 246, 0.04), transparent 80%)`
         }}
       />
-      
+
       <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
         <div className="h-full w-full bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:100px_100px]" />
       </div>
 
       <div className="relative z-10 w-full max-w-7xl px-6 lg:px-10">
-        
+
         <div className="flex flex-col mb-20">
           <div className="flex flex-col gap-6">
             <motion.h2

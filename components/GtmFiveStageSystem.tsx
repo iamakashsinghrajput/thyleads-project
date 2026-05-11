@@ -139,7 +139,7 @@ export default function GtmFiveStageSystem() {
       id="framework"
       className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-white font-sans"
     >
-      {/* Ambient backdrop */}
+
       <div
         aria-hidden="true"
         className="absolute -top-40 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
@@ -152,7 +152,7 @@ export default function GtmFiveStageSystem() {
         viewport={{ once: true, amount: 0.15 }}
         className="relative z-10 max-w-7xl mx-auto"
       >
-        {/* Header */}
+
         <div className="text-center max-w-3xl mx-auto">
           <motion.div variants={itemVariants} className="mb-5">
             <span className="inline-block text-[11px] font-semibold uppercase tracking-[0.28em] text-primary-700">
@@ -186,14 +186,13 @@ export default function GtmFiveStageSystem() {
           </motion.p>
         </div>
 
-        {/* === BODY === */}
         <motion.div
           variants={itemVariants}
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
           className="mt-12 lg:mt-14 grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-5"
         >
-          {/* === LEFT — stage selector === */}
+
           <div className="lg:col-span-3 rounded-2xl bg-white border border-slate-200 p-2.5 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.06)]">
             <ul className="flex flex-col">
               {stages.map((stage, i) => {
@@ -224,7 +223,6 @@ export default function GtmFiveStageSystem() {
                         {stage.shortDesc}
                       </div>
 
-                      {/* Auto-advance progress (active only) */}
                       {isActive && !paused && (
                         <motion.span
                           aria-hidden="true"
@@ -245,10 +243,9 @@ export default function GtmFiveStageSystem() {
             </ul>
           </div>
 
-          {/* === MIDDLE — live animation panel === */}
           <div className="lg:col-span-4">
             <div className="relative h-full min-h-[320px] rounded-2xl bg-gradient-to-br from-primary-50 via-primary-50/60 to-white border border-primary-100 overflow-hidden">
-              {/* Subtle dot grid */}
+
               <div
                 aria-hidden="true"
                 className="absolute inset-0 opacity-50 pointer-events-none"
@@ -262,13 +259,11 @@ export default function GtmFiveStageSystem() {
                 }}
               />
 
-              {/* Inner soft glow */}
               <div
                 aria-hidden="true"
                 className="absolute -top-20 left-1/2 -translate-x-1/2 w-72 h-72 rounded-full bg-primary-200/50 blur-3xl pointer-events-none"
               />
 
-              {/* Stage caption */}
               <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/80 backdrop-blur border border-primary-100 text-[10px] font-bold uppercase tracking-[0.22em] text-primary-700 shadow-sm">
                 <span className="relative flex h-1.5 w-1.5" aria-hidden="true">
                   <span className="absolute inline-flex h-full w-full rounded-full bg-primary-500 opacity-75 animate-ping" />
@@ -277,7 +272,6 @@ export default function GtmFiveStageSystem() {
                 Live
               </div>
 
-              {/* Animation slot */}
               <div className="relative h-full w-full flex items-center justify-center p-6">
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -295,7 +289,6 @@ export default function GtmFiveStageSystem() {
             </div>
           </div>
 
-          {/* === RIGHT — content panel === */}
           <div className="lg:col-span-5">
             <div className="relative h-full rounded-2xl bg-white border border-slate-200 p-6 sm:p-8 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.06)] overflow-hidden">
               <AnimatePresence mode="wait">
@@ -353,10 +346,6 @@ export default function GtmFiveStageSystem() {
   );
 }
 
-/* ============================================================
-   Stage animations — unique per stage, all SVG-based
-   ============================================================ */
-
 function StageAnimation({ id }: { id: string }) {
   switch (id) {
     case 'foundation':
@@ -374,7 +363,6 @@ function StageAnimation({ id }: { id: string }) {
   }
 }
 
-/* Shared SVG defs — soft glow + gradients */
 function SharedDefs({ id }: { id: string }) {
   return (
     <defs>
@@ -397,9 +385,8 @@ function SharedDefs({ id }: { id: string }) {
   );
 }
 
-/* ─── Stage 01 — Foundation: ICP target with attributes locking in ── */
 function FoundationAnimation() {
-  // Four attribute tags that orbit and snap to anchor positions on the rings
+
   const attrs = [
     { label: 'ICP', x: 30, y: 60, color: 'fill-primary-700' },
     { label: 'Email', x: 196, y: 70, color: 'fill-primary-600' },
@@ -411,10 +398,8 @@ function FoundationAnimation() {
     <svg viewBox="0 0 240 240" className="w-full max-w-[280px] h-auto">
       <SharedDefs id="found" />
 
-      {/* Soft radial halo */}
       <circle cx="120" cy="120" r="100" fill="url(#found-radial)" />
 
-      {/* Blueprint grid (subtle) */}
       <g className="text-primary-300" stroke="currentColor" strokeWidth="0.5" opacity={0.35}>
         {[40, 80, 120, 160, 200].map(v => (
           <g key={v}>
@@ -424,7 +409,6 @@ function FoundationAnimation() {
         ))}
       </g>
 
-      {/* Outer ring (slow rotate) */}
       <motion.circle
         cx="120"
         cy="120"
@@ -438,7 +422,6 @@ function FoundationAnimation() {
         style={{ transformOrigin: '120px 120px' }}
       />
 
-      {/* Mid ring (pulse) */}
       <motion.circle
         cx="120"
         cy="120"
@@ -451,7 +434,6 @@ function FoundationAnimation() {
         style={{ transformOrigin: '120px 120px' }}
       />
 
-      {/* Inner ring */}
       <circle
         cx="120"
         cy="120"
@@ -461,7 +443,6 @@ function FoundationAnimation() {
         strokeWidth="1.6"
       />
 
-      {/* Crosshair ticks */}
       <g className="stroke-primary-600" strokeWidth="1.4" strokeLinecap="round">
         <line x1="120" y1="14" x2="120" y2="26" />
         <line x1="120" y1="214" x2="120" y2="226" />
@@ -469,7 +450,6 @@ function FoundationAnimation() {
         <line x1="214" y1="120" x2="226" y2="120" />
       </g>
 
-      {/* Connector lines from center to each attribute (drawn) */}
       {attrs.map((a, i) => (
         <motion.line
           key={`line-${i}`}
@@ -486,7 +466,6 @@ function FoundationAnimation() {
         />
       ))}
 
-      {/* Attribute chips that drop in and lock */}
       {attrs.map((a, i) => (
         <motion.g
           key={a.label}
@@ -499,7 +478,7 @@ function FoundationAnimation() {
           }}
           style={{ transformOrigin: `${a.x}px ${a.y}px` }}
         >
-          {/* Card */}
+
           <rect
             x={a.x - 26}
             y={a.y - 9}
@@ -509,9 +488,9 @@ function FoundationAnimation() {
             className="fill-white stroke-primary-200"
             strokeWidth="1"
           />
-          {/* Dot */}
+
           <circle cx={a.x - 18} cy={a.y} r="2.5" className={a.color} />
-          {/* Label */}
+
           <text
             x={a.x - 11}
             y={a.y + 3}
@@ -525,7 +504,6 @@ function FoundationAnimation() {
         </motion.g>
       ))}
 
-      {/* Center "locked" core — concentric pulse */}
       <motion.circle
         cx="120"
         cy="120"
@@ -536,7 +514,7 @@ function FoundationAnimation() {
         style={{ transformOrigin: '120px 120px' }}
       />
       <circle cx="120" cy="120" r="14" fill="url(#found-grad)" filter="url(#found-glow)" />
-      {/* Locked check */}
+
       <motion.path
         d="M114 120 L119 125 L128 115"
         fill="none"
@@ -552,9 +530,8 @@ function FoundationAnimation() {
   );
 }
 
-/* ─── Stage 02 — Activation: intent rises → trigger → outreach → reply ── */
 function ActivationAnimation() {
-  // Sparkline points showing buyer intent rising over time
+
   const points = [
     { x: 30, y: 158 },
     { x: 56, y: 150 },
@@ -572,7 +549,7 @@ function ActivationAnimation() {
       .map(p => `L ${p.x} ${p.y}`)
       .join(' ');
   const areaD = `${lineD} L ${points[points.length - 1].x} 180 L ${points[0].x} 180 Z`;
-  // Trigger point — moment intent crosses threshold
+
   const trigger = { x: 160, y: 96 };
 
   return (
@@ -585,7 +562,6 @@ function ActivationAnimation() {
         </linearGradient>
       </defs>
 
-      {/* Chart frame */}
       <rect
         x="20"
         y="36"
@@ -596,14 +572,12 @@ function ActivationAnimation() {
         strokeWidth="1"
       />
 
-      {/* Y-grid */}
       <g className="stroke-primary-100" strokeWidth="0.8">
         <line x1="20" y1="76" x2="220" y2="76" />
         <line x1="20" y1="116" x2="220" y2="116" />
         <line x1="20" y1="156" x2="220" y2="156" />
       </g>
 
-      {/* Y-axis label */}
       <text
         x="28"
         y="48"
@@ -616,7 +590,6 @@ function ActivationAnimation() {
         INTENT
       </text>
 
-      {/* Threshold line */}
       <line
         x1="20"
         y1="110"
@@ -640,7 +613,6 @@ function ActivationAnimation() {
         THRESHOLD
       </text>
 
-      {/* Filled area under the curve — fades in/out */}
       <motion.path
         d={areaD}
         fill="url(#act-area)"
@@ -654,7 +626,6 @@ function ActivationAnimation() {
         }}
       />
 
-      {/* Sparkline drawing in across the cycle */}
       <motion.path
         d={lineD}
         fill="none"
@@ -672,7 +643,6 @@ function ActivationAnimation() {
         }}
       />
 
-      {/* Activity tracker dot — follows the line, then settles at trigger */}
       <motion.circle
         r="4"
         fill="url(#act-grad)"
@@ -691,7 +661,6 @@ function ActivationAnimation() {
         }}
       />
 
-      {/* SEND NOW pill — fires when line crosses threshold */}
       <motion.g
         initial={{ opacity: 0, scale: 0.6 }}
         animate={{
@@ -706,7 +675,7 @@ function ActivationAnimation() {
         }}
         style={{ transformOrigin: `${trigger.x}px ${trigger.y - 24}px` }}
       >
-        {/* Pulse ring at the trigger */}
+
         <motion.circle
           cx={trigger.x}
           cy={trigger.y}
@@ -720,7 +689,7 @@ function ActivationAnimation() {
         />
         <circle cx={trigger.x} cy={trigger.y} r="6" fill="url(#act-grad)" filter="url(#act-glow)" />
         <circle cx={trigger.x} cy={trigger.y} r="2.5" className="fill-white" />
-        {/* Pill */}
+
         <rect x={trigger.x - 30} y={trigger.y - 32} width="60" height="14" rx="4" className="fill-primary-700" />
         <text
           x={trigger.x}
@@ -744,7 +713,6 @@ function ActivationAnimation() {
         />
       </motion.g>
 
-      {/* Outbound email envelope — flies up-and-out from the trigger */}
       <motion.g
         initial={{ x: trigger.x, y: trigger.y, opacity: 0, scale: 0.6 }}
         animate={{
@@ -771,7 +739,6 @@ function ActivationAnimation() {
         />
       </motion.g>
 
-      {/* REPLIED chip in the top-left of the chart */}
       <motion.g
         initial={{ opacity: 0, y: 4 }}
         animate={{ opacity: [0, 0, 1, 1, 0], y: [4, 4, 0, 0, -2] }}
@@ -799,7 +766,6 @@ function ActivationAnimation() {
         </text>
       </motion.g>
 
-      {/* Time-axis baseline & day labels */}
       <line x1="20" y1="180" x2="220" y2="180" className="stroke-primary-300" strokeWidth="1" />
       <g
         className="fill-slate-400"
@@ -814,7 +780,6 @@ function ActivationAnimation() {
         <text x="186" y="194" textAnchor="middle">THU</text>
       </g>
 
-      {/* MEETING BOOKED ribbon at the bottom */}
       <motion.g
         initial={{ opacity: 0, y: 6 }}
         animate={{ opacity: [0, 0, 1, 1, 0], y: [6, 6, 0, 0, -3] }}
@@ -851,9 +816,8 @@ function ActivationAnimation() {
   );
 }
 
-/* ─── Stage 03 — Qualification: funnel filtering leads → calendar slot ── */
 function QualificationAnimation() {
-  // Lead dots cascading; some pass through funnel (qualified), others get filtered (X)
+
   const leads = [
     { x: 60, delay: 0, qualified: true },
     { x: 96, delay: 0.4, qualified: false },
@@ -866,7 +830,6 @@ function QualificationAnimation() {
     <svg viewBox="0 0 240 240" className="w-full max-w-[280px] h-auto">
       <SharedDefs id="qual" />
 
-      {/* Funnel shape */}
       <motion.path
         d="M 50 60 L 190 60 L 144 132 L 144 168 L 96 168 L 96 132 Z"
         fill="url(#qual-radial)"
@@ -879,7 +842,6 @@ function QualificationAnimation() {
         style={{ transformOrigin: '120px 110px' }}
       />
 
-      {/* Funnel inner divider line */}
       <line
         x1="50"
         y1="60"
@@ -890,7 +852,6 @@ function QualificationAnimation() {
         strokeLinecap="round"
       />
 
-      {/* Top label */}
       <motion.g
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -911,7 +872,6 @@ function QualificationAnimation() {
         </text>
       </motion.g>
 
-      {/* Cascading lead dots */}
       {leads.map((lead, i) => (
         <motion.g key={i}>
           <motion.circle
@@ -939,7 +899,7 @@ function QualificationAnimation() {
               times: lead.qualified ? [0, 0.5, 0.85, 1] : [0, 0.5, 1],
             }}
           />
-          {/* X mark for rejected — pops at the deflection point */}
+
           {!lead.qualified && (
             <motion.g
               initial={{ opacity: 0, scale: 0 }}
@@ -978,7 +938,6 @@ function QualificationAnimation() {
         </motion.g>
       ))}
 
-      {/* Calendar slot at the bottom */}
       <g>
         <rect
           x="80"
@@ -989,7 +948,7 @@ function QualificationAnimation() {
           className="fill-white stroke-primary-300"
           strokeWidth="1.4"
         />
-        {/* Calendar header bar */}
+
         <rect
           x="80"
           y="174"
@@ -998,14 +957,13 @@ function QualificationAnimation() {
           rx="6"
           className="fill-primary-700"
         />
-        {/* Calendar dots (pegs) */}
+
         <circle cx="92" cy="179" r="1.6" className="fill-white" />
         <circle cx="148" cy="179" r="1.6" className="fill-white" />
-        {/* Calendar grid lines */}
+
         <line x1="100" y1="195" x2="140" y2="195" className="stroke-primary-200" strokeWidth="0.8" />
         <line x1="100" y1="203" x2="140" y2="203" className="stroke-primary-200" strokeWidth="0.8" />
 
-        {/* Booked slot — fills when qualified lead lands */}
         <motion.rect
           x="100"
           y="190"
@@ -1021,7 +979,7 @@ function QualificationAnimation() {
             times: [0, 0.6, 0.85, 1],
           }}
         />
-        {/* Booked check */}
+
         <motion.path
           d="M104 194 L108 198 L116 190"
           fill="none"
@@ -1040,7 +998,6 @@ function QualificationAnimation() {
         />
       </g>
 
-      {/* "Qualified" label */}
       <motion.g
         animate={{ opacity: [0, 1, 1, 0] }}
         transition={{
@@ -1068,9 +1025,8 @@ function QualificationAnimation() {
   );
 }
 
-/* ─── Stage 04 — Deal momentum: stakeholder network with traveling messages ── */
 function MomentumAnimation() {
-  // Named stakeholders around a central deal — buying committee mapping
+
   const nodes = [
     { id: 'cfo', label: 'CFO', x: 50, y: 70 },
     { id: 'cio', label: 'CIO', x: 190, y: 70 },
@@ -1084,10 +1040,8 @@ function MomentumAnimation() {
     <svg viewBox="0 0 240 240" className="w-full max-w-[280px] h-auto">
       <SharedDefs id="mom" />
 
-      {/* Soft halo */}
       <circle cx={center.x} cy={center.y} r="80" fill="url(#mom-radial)" />
 
-      {/* Connection lines */}
       {nodes.map(n => (
         <line
           key={n.id}
@@ -1102,7 +1056,6 @@ function MomentumAnimation() {
         />
       ))}
 
-      {/* Traveling message dots — each follows its own path */}
       {nodes.map((n, i) => (
         <motion.circle
           key={`msg-${n.id}`}
@@ -1121,10 +1074,9 @@ function MomentumAnimation() {
         />
       ))}
 
-      {/* Stakeholder nodes */}
       {nodes.map((n, i) => (
         <g key={n.id}>
-          {/* Outer pulse */}
+
           <motion.circle
             cx={n.x}
             cy={n.y}
@@ -1141,11 +1093,11 @@ function MomentumAnimation() {
             }}
             style={{ transformOrigin: `${n.x}px ${n.y}px` }}
           />
-          {/* Node bg */}
+
           <circle cx={n.x} cy={n.y} r="14" className="fill-white stroke-primary-300" strokeWidth="1.4" />
-          {/* Inner */}
+
           <circle cx={n.x} cy={n.y} r="9" className="fill-primary-100" />
-          {/* Label */}
+
           <text
             x={n.x}
             y={n.y + 3}
@@ -1161,7 +1113,6 @@ function MomentumAnimation() {
         </g>
       ))}
 
-      {/* Center "deal" tile */}
       <g>
         <rect
           x="92"
@@ -1172,9 +1123,9 @@ function MomentumAnimation() {
           className="fill-white stroke-primary-300"
           strokeWidth="1.4"
         />
-        {/* Deal bar */}
+
         <rect x="92" y="100" width="56" height="10" rx="6" fill="url(#mom-grad)" />
-        {/* Progress fill */}
+
         <rect x="98" y="118" width="44" height="4" rx="2" className="fill-primary-100" />
         <motion.rect
           x="98"
@@ -1185,9 +1136,9 @@ function MomentumAnimation() {
           animate={{ width: [4, 44, 4] }}
           transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
         />
-        {/* Sub line */}
+
         <rect x="98" y="128" width="28" height="3" rx="1.5" className="fill-primary-200" />
-        {/* Deal label */}
+
         <text
           x="120"
           y="108"
@@ -1205,7 +1156,6 @@ function MomentumAnimation() {
   );
 }
 
-/* ─── Stage 05 — Close + Learn: refined compounding flywheel ── */
 function CloseLearnAnimation() {
   const cx = 120;
   const cy = 120;
@@ -1219,9 +1169,8 @@ function CloseLearnAnimation() {
     { id: 'launch', label: 'LAUNCH', angle: 180, t: 0.75 },
   ];
 
-  // Win-rate progression — climbs each phase, telling the compounding story
   const rates = [28, 32, 36, 41];
-  // Cycle counter values
+
   const cycleNumbers = ['C 01', 'C 02', 'C 03', 'C 04'];
 
   return (
@@ -1235,10 +1184,8 @@ function CloseLearnAnimation() {
         </linearGradient>
       </defs>
 
-      {/* Soft radial halo */}
       <circle cx={cx} cy={cy} r="104" fill="url(#cl-radial)" />
 
-      {/* Compounding rings — expand outward at end of each cycle */}
       {[0, 0.18].map((d, i) => (
         <motion.circle
           key={i}
@@ -1261,7 +1208,6 @@ function CloseLearnAnimation() {
         />
       ))}
 
-      {/* Outer slow-rotating dashed accent */}
       <motion.circle
         cx={cx}
         cy={cy}
@@ -1275,7 +1221,6 @@ function CloseLearnAnimation() {
         style={{ transformOrigin: `${cx}px ${cy}px` }}
       />
 
-      {/* Track ring (background of the gauge) */}
       <circle
         cx={cx}
         cy={cy}
@@ -1285,7 +1230,6 @@ function CloseLearnAnimation() {
         strokeWidth="6"
       />
 
-      {/* Tick marks at cardinal points */}
       {[270, 0, 90, 180].map(deg => {
         const rad = (deg * Math.PI) / 180;
         const x1 = cx + (ringR - 9) * Math.cos(rad);
@@ -1305,7 +1249,6 @@ function CloseLearnAnimation() {
         );
       })}
 
-      {/* Progress arc — fills clockwise as the comet orbits */}
       <motion.path
         d={`M ${cx} ${cy - ringR} A ${ringR} ${ringR} 0 1 1 ${cx - 0.01} ${cy - ringR}`}
         fill="none"
@@ -1322,13 +1265,12 @@ function CloseLearnAnimation() {
         }}
       />
 
-      {/* Comet — orbits the gauge synchronously */}
       <motion.g
         animate={{ rotate: 360 }}
         transition={{ duration: cycle, repeat: Infinity, ease: 'linear' }}
         style={{ transformOrigin: `${cx}px ${cy}px` }}
       >
-        {/* Outer glow */}
+
         <circle
           cx={cx}
           cy={cy - ringR}
@@ -1337,7 +1279,7 @@ function CloseLearnAnimation() {
           filter="url(#cl-glow)"
           opacity="0.35"
         />
-        {/* Disc */}
+
         <circle
           cx={cx}
           cy={cy - ringR}
@@ -1345,16 +1287,15 @@ function CloseLearnAnimation() {
           fill="url(#cl-grad)"
           filter="url(#cl-glow)"
         />
-        {/* Bright core */}
+
         <circle cx={cx} cy={cy - ringR} r="2.6" fill="white" />
       </motion.g>
 
-      {/* Phase nodes — refined */}
       {phases.map(p => {
         const rad = (p.angle * Math.PI) / 180;
         const x = cx + ringR * Math.cos(rad);
         const y = cy + ringR * Math.sin(rad);
-        // Push left/right labels enough to clear the node, but keep them inside the viewBox
+
         const lblDist = p.angle === 0 || p.angle === 180 ? 14 : 22;
         const lblX = cx + (ringR + lblDist) * Math.cos(rad);
         const lblY = cy + (ringR + lblDist) * Math.sin(rad);
@@ -1364,7 +1305,7 @@ function CloseLearnAnimation() {
 
         return (
           <g key={p.id}>
-            {/* Pulse halo */}
+
             <motion.circle
               cx={x}
               cy={y}
@@ -1384,7 +1325,6 @@ function CloseLearnAnimation() {
               style={{ transformOrigin }}
             />
 
-            {/* Base node */}
             <circle
               cx={x}
               cy={y}
@@ -1394,7 +1334,6 @@ function CloseLearnAnimation() {
             />
             <PhaseIcon id={p.id} x={x} y={y} color="#5b34d9" />
 
-            {/* Highlight overlay */}
             <motion.circle
               cx={x}
               cy={y}
@@ -1426,7 +1365,6 @@ function CloseLearnAnimation() {
               <PhaseIcon id={p.id} x={x} y={y} color="white" />
             </motion.g>
 
-            {/* Label — tracked-out caps, refined */}
             <text
               x={lblX}
               y={lblY + 3}
@@ -1443,7 +1381,6 @@ function CloseLearnAnimation() {
         );
       })}
 
-      {/* Top-right cycle counter — increments each cycle */}
       <g>
         <rect
           x={188}
@@ -1485,9 +1422,8 @@ function CloseLearnAnimation() {
         ))}
       </g>
 
-      {/* Center KPI card — refined hero */}
       <g>
-        {/* Card backdrop (filled) */}
+
         <rect
           x={cx - 40}
           y={cy - 26}
@@ -1496,7 +1432,7 @@ function CloseLearnAnimation() {
           rx="9"
           className="fill-white"
         />
-        {/* Card border */}
+
         <rect
           x={cx - 40}
           y={cy - 26}
@@ -1507,7 +1443,7 @@ function CloseLearnAnimation() {
           className="stroke-primary-200"
           strokeWidth="1.2"
         />
-        {/* Top hairline accent */}
+
         <rect
           x={cx - 28}
           y={cy - 26}
@@ -1516,7 +1452,6 @@ function CloseLearnAnimation() {
           className="fill-primary-300"
         />
 
-        {/* Eyebrow */}
         <text
           x={cx}
           y={cy - 13}
@@ -1530,7 +1465,6 @@ function CloseLearnAnimation() {
           WIN RATE
         </text>
 
-        {/* Animated counter — climbs with each phase */}
         {rates.map((rate, i) => (
           <motion.g
             key={rate}
@@ -1574,7 +1508,6 @@ function CloseLearnAnimation() {
           </motion.g>
         ))}
 
-        {/* Delta pill */}
         <rect
           x={cx - 28}
           y={cy + 14}

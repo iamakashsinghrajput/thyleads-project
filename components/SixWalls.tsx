@@ -73,12 +73,11 @@ const WallCard = ({ wall, delay, align = 'left' }: WallCardProps) => {
           align === 'right' ? 'lg:flex-row-reverse' : ''
         }`}
       >
-        {/* Icon */}
+
         <div className="w-11 h-11 lg:w-12 lg:h-12 rounded-xl bg-primary-50 border border-primary-100 flex items-center justify-center text-primary-600 group-hover:bg-primary-100 group-hover:scale-105 transition-all duration-300 shrink-0">
           <Icon className="w-5 h-5 lg:w-6 lg:h-6" strokeWidth={1.7} />
         </div>
 
-        {/* Text */}
         <div className="flex-1 min-w-0">
           <h3 className="text-base lg:text-lg font-bold text-neutral-900 mb-1.5 leading-snug tracking-tight">
             {wall.title}
@@ -99,17 +98,15 @@ const SixWalls = () => {
   return (
     <section className="relative w-full bg-slate-50 py-20 lg:py-28 px-6 sm:px-12 overflow-hidden font-sans">
 
-
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
-          {/* === Left Column: 3 Cards === */}
+
           <div className="lg:col-span-4 flex flex-col gap-5 lg:gap-6 order-2 lg:order-1">
             {leftCards.map((wall, i) => (
               <WallCard key={wall.title} wall={wall} delay={i * 0.1} align="left" />
             ))}
           </div>
 
-          {/* === Center Column: Heading & Para === */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -134,7 +131,6 @@ const SixWalls = () => {
               Identify the hidden bottlenecks that are leaking revenue and slowing down your sales cycles before they impact your bottom line.
             </p>
 
-            {/* Connector dot accent */}
             <div className="hidden lg:flex items-center gap-2 mt-8">
               <span className="w-1.5 h-1.5 rounded-full bg-primary-300" />
               <span className="w-2.5 h-2.5 rounded-full bg-primary-500" />
@@ -142,7 +138,6 @@ const SixWalls = () => {
             </div>
           </motion.div>
 
-          {/* === Right Column: 3 Cards === */}
           <div className="lg:col-span-4 flex flex-col gap-5 lg:gap-6 order-3">
             {rightCards.map((wall, i) => (
               <WallCard key={wall.title} wall={wall} delay={0.3 + i * 0.1} align="right" />

@@ -59,7 +59,7 @@ export default function MartechHowWeHelp() {
         viewport={{ once: true, amount: 0.15 }}
         className="relative z-10 max-w-6xl mx-auto"
       >
-        {/* Header */}
+
         <div className="text-center max-w-3xl mx-auto">
           <motion.div variants={itemVariants} className="mb-5">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-50 border border-primary-200 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-700">
@@ -91,7 +91,6 @@ export default function MartechHowWeHelp() {
           </motion.p>
         </div>
 
-        {/* Move cards */}
         <div className="mt-12 lg:mt-14 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
           {moves.map((move, i) => (
             <motion.article
@@ -107,34 +106,29 @@ export default function MartechHowWeHelp() {
               whileHover={{ y: -4 }}
               className="group relative rounded-2xl bg-gradient-to-br from-primary-50/80 via-primary-50/50 to-white border border-primary-100 hover:border-primary-200 p-7 sm:p-8 shadow-[0_4px_18px_-10px_rgba(132,92,245,0.18)] hover:shadow-[0_24px_52px_-22px_rgba(132,92,245,0.40)] transition-all overflow-hidden"
             >
-              {/* Top hairline */}
+
               <span
                 aria-hidden="true"
                 className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-primary-300 to-transparent"
               />
 
-              {/* Tag chip */}
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-white border border-primary-200 text-[10px] font-bold uppercase tracking-[0.22em] text-primary-700 mb-6">
                 {move.tag}
               </div>
 
-              {/* Big number */}
               <div className="text-5xl sm:text-[56px] font-black tracking-[-0.04em] leading-none bg-clip-text text-transparent bg-gradient-to-br from-primary-600 to-primary-800 tabular-nums">
                 {move.number}
               </div>
 
-              {/* Title */}
               <h3 className="mt-4 text-xl font-extrabold text-neutral-900 leading-snug tracking-tight">
                 {move.title}
               </h3>
 
-              {/* Underline accent */}
               <span
                 aria-hidden="true"
                 className="block mt-3 h-[2px] w-8 bg-primary-400 rounded-full origin-left transition-all duration-300 group-hover:scale-x-[1.6] group-hover:bg-primary-600"
               />
 
-              {/* Description */}
               <p className="mt-4 text-[14px] text-slate-700 leading-relaxed">
                 {move.description}
               </p>

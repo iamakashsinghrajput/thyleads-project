@@ -173,7 +173,7 @@ export default function BlogDetailPage() {
     return () => {
       observer.disconnect();
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
   }, [post, tocItems, initialSectionId]);
 
   if (!post) {

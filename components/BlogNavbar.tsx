@@ -108,7 +108,7 @@ const BlogNavbar: React.FC = () => {
                       >
                         {link.name}
                       </Link>
-                      
+
                     </div>
                   ) : (
                     <Link

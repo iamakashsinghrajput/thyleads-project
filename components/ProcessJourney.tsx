@@ -168,9 +168,9 @@ const ProcessJourney = () => {
 
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 md:px-6 pb-12">
         <div className="grid lg:grid-cols-12 gap-4 h-auto lg:h-[500px]">
-          
+
           <div className="lg:col-span-5 h-full relative flex flex-col bg-[#050505] border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
-             
+
              <div className="p-4 border-b border-white/5 bg-white/[0.02] flex items-center justify-between">
                 <div className="flex items-center gap-2 text-neutral-400">
                   <Layers className="w-4 h-4" />
@@ -182,7 +182,7 @@ const ProcessJourney = () => {
                 </div>
              </div>
 
-             <div 
+             <div
                ref={stepsContainerRef}
                className="flex-1 overflow-y-auto p-2 space-y-1 custom-scrollbar"
                onMouseEnter={() => setIsHovering(true)}
@@ -196,15 +196,15 @@ const ProcessJourney = () => {
                      onClick={() => setActiveStep(idx)}
                      className={`
                        relative w-full text-left rounded-lg px-3 py-2.5 transition-all duration-200 group flex items-center gap-3
-                       ${isActive 
-                         ? `bg-white/[0.06] border border-white/10 shadow-lg` 
+                       ${isActive
+                         ? `bg-white/[0.06] border border-white/10 shadow-lg`
                          : 'hover:bg-white/[0.03] border border-transparent'}
                      `}
                    >
                      <div className={`
                        relative flex-shrink-0 w-8 h-8 rounded-md flex items-center justify-center border transition-all duration-300
-                       ${isActive 
-                         ? `${step.bg} ${step.border} ${step.accent} shadow-inner` 
+                       ${isActive
+                         ? `${step.bg} ${step.border} ${step.accent} shadow-inner`
                          : 'bg-[#111] border-white/5 text-neutral-500 group-hover:text-neutral-300'}
                      `}>
                         {step.icon}
@@ -229,10 +229,10 @@ const ProcessJourney = () => {
 
           <div className="lg:col-span-7 h-[400px] lg:h-full relative group perspective-1000">
             <div className="w-full h-full bg-[#080808] border border-white/10 rounded-2xl overflow-hidden shadow-2xl flex flex-col relative ring-1 ring-white/5 relative">
-              
+
               <div className="absolute top-0 left-0 right-0 px-6 py-5 flex justify-between items-start z-20 pointer-events-none select-none border-b border-white/5 bg-gradient-to-b from-black/50 to-transparent">
                  <div>
-                    <motion.div 
+                    <motion.div
                         key={`title-${activeStep}`}
                         initial={{ opacity: 0, y: 5 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -244,7 +244,7 @@ const ProcessJourney = () => {
                         </span>
                     </motion.div>
                  </div>
-                 
+
                  <div className="flex items-center gap-2">
                    <div className="flex items-center gap-1.5 px-2 py-1 bg-red-500/10 border border-red-500/20 rounded text-red-400">
                       <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
@@ -269,12 +269,12 @@ const ProcessJourney = () => {
                   <motion.div
                     key={activeStep}
                     initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1.1 }} // Slight zoom to fill space
+                    animate={{ opacity: 1, scale: 1.1 }}
                     exit={{ opacity: 0, scale: 1.1 }}
                     transition={{ duration: 0.3, ease: "circOut" }}
                     className="w-full h-full flex items-center justify-center p-4"
                   >
-                    
+
                     {activeStep === 0 && (
                       <div className="relative w-full h-full flex items-center justify-center">
                          <div className="relative z-30">
@@ -312,8 +312,8 @@ const ProcessJourney = () => {
                              </motion.div>
                              <motion.div
                                 className="absolute w-1/2 h-[1px] bg-white/10 origin-right left-0 top-1/2 z-0"
-                                style={{ 
-                                    width: Math.sqrt(source.x ** 2 + source.y ** 2), 
+                                style={{
+                                    width: Math.sqrt(source.x ** 2 + source.y ** 2),
                                     rotate: `${Math.atan2(source.y, source.x) * (180 / Math.PI)}deg`,
                                     transformOrigin: "0 0",
                                     left: "50%",
@@ -325,8 +325,8 @@ const ProcessJourney = () => {
                              />
                               <motion.div
                                 className={`absolute w-2 h-2 rounded-full ${source.color}`}
-                                animate={{ 
-                                    x: [source.x, 0], 
+                                animate={{
+                                    x: [source.x, 0],
                                     y: [source.y, 0],
                                     opacity: [1, 0]
                                 }}
@@ -340,7 +340,7 @@ const ProcessJourney = () => {
 
                     {activeStep === 1 && (
                       <div className="relative flex flex-col items-center justify-center">
-                        <motion.div 
+                        <motion.div
                           className="w-48 bg-[#111] border border-white/10 rounded-xl p-4 relative overflow-hidden"
                           initial={{ y: 20, opacity: 0 }}
                           animate={{ y: 0, opacity: 1 }}
@@ -368,7 +368,7 @@ const ProcessJourney = () => {
                              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
                            />
                         </motion.div>
-                        <motion.div 
+                        <motion.div
                            initial={{ scale: 0 }}
                            animate={{ scale: 1 }}
                            transition={{ delay: 1, type: "spring" }}
@@ -383,7 +383,7 @@ const ProcessJourney = () => {
                       <div className="w-64 bg-[#111] border border-white/10 rounded-xl p-3 shadow-xl">
                          <div className="grid grid-cols-4 gap-2">
                            {Array.from({length: 12}).map((_, i) => (
-                             <motion.div 
+                             <motion.div
                                key={i}
                                className={`aspect-square rounded border ${i === 6 ? 'bg-emerald-500/20 border-emerald-500 text-emerald-400' : 'bg-white/5 border-transparent' } flex items-center justify-center`}
                                initial={{ scale: 0 }}
@@ -394,7 +394,7 @@ const ProcessJourney = () => {
                              </motion.div>
                            ))}
                          </div>
-                         <motion.div 
+                         <motion.div
                            className="mt-3 bg-emerald-500/10 border border-emerald-500/20 rounded p-2 flex items-center gap-2"
                            initial={{ opacity: 0, y: 10 }}
                            animate={{ opacity: 1, y: 0 }}
@@ -408,7 +408,7 @@ const ProcessJourney = () => {
 
                     {activeStep === 3 && (
                       <div className="relative">
-                         <motion.div 
+                         <motion.div
                            className="w-56 h-36 bg-[#0a0a0a] border border-white/20 rounded-lg overflow-hidden flex flex-col shadow-2xl"
                            initial={{ scale: 0.8, opacity: 0 }}
                            animate={{ scale: 1, opacity: 1 }}
@@ -428,7 +428,7 @@ const ProcessJourney = () => {
                                 </div>
                             </div>
                          </motion.div>
-                         <motion.div 
+                         <motion.div
                             className="absolute -right-6 -bottom-2 w-16 h-20 bg-neutral-800 border border-white/10 rounded-lg shadow-lg"
                             initial={{ x: 20, opacity: 0 }}
                             animate={{ x: 0, opacity: 1 }}
@@ -441,8 +441,8 @@ const ProcessJourney = () => {
                       <div className="bg-[#111] border border-white/10 rounded-xl p-4 w-56">
                          <div className="space-y-3">
                            {["Budget", "Timeline", "Tech"].map((item, i) => (
-                             <motion.div 
-                               key={i} 
+                             <motion.div
+                               key={i}
                                className="flex items-center justify-between group"
                                initial={{ opacity: 0, x: -10 }}
                                animate={{ opacity: 1, x: 0 }}
@@ -478,7 +478,7 @@ const ProcessJourney = () => {
                            <React.Fragment key={i}>
                              <motion.div
                                className="absolute top-1/2 left-1/2 h-0.5 bg-violet-500/30 origin-left z-0"
-                               style={{ 
+                               style={{
                                  width: Math.sqrt(node.x ** 2 + node.y ** 2) * 0.8,
                                  rotate: `${Math.atan2(node.y, node.x) * (180 / Math.PI)}deg`
                                }}
@@ -486,7 +486,7 @@ const ProcessJourney = () => {
                                animate={{ scaleX: 1 }}
                                transition={{ delay: node.delay, duration: 0.5 }}
                              />
-                             
+
                              <motion.div
                                className="absolute top-1/2 left-1/2 w-10 h-10 -ml-5 -mt-5 bg-[#111] border border-violet-500/50 rounded-full flex items-center justify-center z-10 shadow-lg"
                                initial={{ x: 0, y: 0, opacity: 0 }}
@@ -494,7 +494,7 @@ const ProcessJourney = () => {
                                transition={{ delay: node.delay, duration: 0.5, type: 'spring' }}
                              >
                                 <div className="text-violet-400">{node.icon}</div>
-                                <motion.span 
+                                <motion.span
                                   initial={{ opacity: 0 }}
                                   animate={{ opacity: 1 }}
                                   transition={{ delay: node.delay + 0.5 }}
@@ -518,11 +518,11 @@ const ProcessJourney = () => {
                           <motion.div
                              key={i}
                              initial={{ scale: 0, y: 100 }}
-                             animate={{ 
-                               scale: 1, 
-                               y: 0, 
+                             animate={{
+                               scale: 1,
+                               y: 0,
                                rotate: card.rot,
-                               zIndex: card.z 
+                               zIndex: card.z
                              }}
                              transition={{ type: "spring", delay: i * 0.2 }}
                              className={`absolute w-40 h-56 rounded-2xl ${card.color} border border-white/10 shadow-2xl flex flex-col items-center justify-center p-4`}
@@ -533,14 +533,14 @@ const ProcessJourney = () => {
                                     {card.icon}
                                  </div>
                                  <div className="space-y-2">
-                                   <motion.div 
+                                   <motion.div
                                       animate={{ width: ["10%", "100%"] }}
                                       transition={{ duration: 1, repeat: Infinity, repeatDelay: 1 }}
-                                      className="h-2 bg-white/20 rounded-full w-24" 
+                                      className="h-2 bg-white/20 rounded-full w-24"
                                    />
                                    <div className="h-2 bg-white/10 rounded-full w-16 mx-auto" />
                                  </div>
-                                 <motion.div 
+                                 <motion.div
                                    initial={{ scale: 0 }}
                                    animate={{ scale: 1 }}
                                    transition={{ delay: 1 }}
@@ -566,8 +566,8 @@ const ProcessJourney = () => {
                             key={i}
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: `${h}%`, opacity: 1 }}
-                            transition={{ 
-                              delay: i * 0.1, 
+                            transition={{
+                              delay: i * 0.1,
                               type: "spring",
                               damping: 10,
                               stiffness: 100
@@ -575,7 +575,7 @@ const ProcessJourney = () => {
                             className="w-full relative group"
                           >
                             <div className={`absolute bottom-0 inset-x-0 top-0 rounded-t-lg bg-gradient-to-t from-indigo-900 to-indigo-500 opacity-80 group-hover:to-indigo-400 transition-all`} />
-                            
+
                             <motion.div
                               initial={{ opacity: 0, y: 10 }}
                               animate={{ opacity: 1, y: 0 }}
@@ -586,10 +586,10 @@ const ProcessJourney = () => {
                             </motion.div>
                           </motion.div>
                         ))}
-                        
+
                         <svg className="absolute inset-0 w-full h-full pointer-events-none overflow-visible z-20">
-                           <motion.path 
-                             d="M 10 180 L 60 140 L 110 190 L 160 100 L 210 120 L 260 50 L 310 70 L 360 20" 
+                           <motion.path
+                             d="M 10 180 L 60 140 L 110 190 L 160 100 L 210 120 L 260 50 L 310 70 L 360 20"
                              fill="none"
                              stroke="#4ade80"
                              strokeWidth="3"
@@ -597,8 +597,8 @@ const ProcessJourney = () => {
                              animate={{ pathLength: 1 }}
                              transition={{ duration: 1.5, delay: 0.5, ease: "easeInOut" }}
                            />
-                           <motion.path 
-                             d="M 10 180 L 60 140 L 110 190 L 160 100 L 210 120 L 260 50 L 310 70 L 360 20 L 360 250 L 10 250 Z" 
+                           <motion.path
+                             d="M 10 180 L 60 140 L 110 190 L 160 100 L 210 120 L 260 50 L 310 70 L 360 20 L 360 250 L 10 250 Z"
                              fill="url(#gradient)"
                              stroke="none"
                              className="opacity-20"
@@ -619,9 +619,9 @@ const ProcessJourney = () => {
                   </motion.div>
                 </AnimatePresence>
               </div>
-              
+
               <div className="h-0.5 bg-white/5 w-full">
-                <motion.div 
+                <motion.div
                   animate={{ width: `${((activeStep + 1) / steps.length) * 100}%` }}
                   className="h-full bg-white/50 shadow-[0_0_10px_white]"
                 />
@@ -640,7 +640,7 @@ const ProcessJourney = () => {
           className="p-8 rounded-3xl bg-[#080808] border border-white/10 text-center relative overflow-hidden group hover:border-white/20 transition-colors"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-blue-500/5 opacity-50 group-hover:opacity-100 transition-opacity" />
-          
+
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-left">
                 <h2 className="text-2xl font-bold text-white mb-2">

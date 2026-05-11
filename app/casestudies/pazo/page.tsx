@@ -73,7 +73,7 @@ export default function BillCustomerStory() {
                 {['The Challenge', 'The Solution', 'Key Results', 'Future Outlook'].map((item, i) => (
                   <a
                     key={item}
-                    href="#"
+                    href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
                     className={`block py-2 text-lg transition-colors ${i === 0 ? 'text-blue-600 font-medium' : 'text-gray-500 hover:text-gray-900'}`}
                   >
                     {item}

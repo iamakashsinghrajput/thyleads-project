@@ -45,7 +45,7 @@ export default function HrtechHero() {
         animate="visible"
         className="relative z-10 max-w-6xl mx-auto grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-16 items-center"
       >
-        {/* === LEFT: Copy === */}
+
         <div>
           <motion.div variants={itemVariants} className="mb-6">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-50 border border-primary-200 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-700">
@@ -98,7 +98,6 @@ export default function HrtechHero() {
           </motion.div>
         </div>
 
-        {/* === RIGHT: Buying committee diagram === */}
         <motion.div variants={itemVariants} className="relative">
           <BuyingCommittee />
         </motion.div>
@@ -107,19 +106,15 @@ export default function HrtechHero() {
   );
 }
 
-/* ============================================================
-   Buying-committee orchestration — restrained, smooth motion
-   ============================================================ */
-
 type Stakeholder = {
   initials: string;
   role: string;
   sub: string;
-  // Card position in CSS percentages
+
   pos: { top: string; left?: string; right?: string };
-  // SVG anchor where the connection path starts
+
   anchor: { x: number; y: number };
-  // Bezier control offset direction (used to compute the curve's bend)
+
   bend: number;
   delay: number;
 };
@@ -167,7 +162,6 @@ const stakeholders: Stakeholder[] = [
   },
 ];
 
-/** Quadratic bezier point at parameter t (0..1) */
 function bezierAt(t: number, p0: number, p1: number, p2: number) {
   const u = 1 - t;
   return u * u * p0 + 2 * u * t * p1 + t * t * p2;
@@ -176,13 +170,12 @@ function bezierAt(t: number, p0: number, p1: number, p2: number) {
 function BuyingCommittee() {
   return (
     <div className="relative w-full max-w-[520px] mx-auto aspect-square">
-      {/* Atmospheric halo */}
+
       <div
         aria-hidden="true"
         className="absolute -inset-8 bg-primary-200/30 blur-3xl rounded-[48px] pointer-events-none"
       />
 
-      {/* Subtle dot grid */}
       <div
         aria-hidden="true"
         className="absolute inset-0 opacity-50 pointer-events-none"
@@ -196,7 +189,6 @@ function BuyingCommittee() {
         }}
       />
 
-      {/* Connection paths */}
       <svg
         viewBox={`0 0 ${SVG_W} ${SVG_H}`}
         className="absolute inset-0 w-full h-full"
@@ -224,14 +216,13 @@ function BuyingCommittee() {
           const cy = (y1 + y2) / 2 + s.bend;
           const d = `M ${x1} ${y1} Q ${cx} ${cy}, ${x2} ${y2}`;
 
-          // Pre-compute waypoints along the bezier for smooth cx/cy keyframes
           const steps = [0, 0.2, 0.4, 0.6, 0.8, 1];
           const xs = steps.map(t => bezierAt(t, x1, cx, x2));
           const ys = steps.map(t => bezierAt(t, y1, cy, y2));
 
           return (
             <g key={s.role}>
-              {/* Resting dim path */}
+
               <path
                 d={d}
                 fill="none"
@@ -240,7 +231,7 @@ function BuyingCommittee() {
                 strokeDasharray="2 5"
                 opacity="0.65"
               />
-              {/* Animated bright path — draws in once */}
+
               <motion.path
                 d={d}
                 fill="none"
@@ -255,7 +246,7 @@ function BuyingCommittee() {
                   ease: easeOut,
                 }}
               />
-              {/* Traveling pulse dot — smooth cx/cy keyframes along bezier */}
+
               <motion.circle
                 r="2.6"
                 fill="#7c3aed"
@@ -278,7 +269,6 @@ function BuyingCommittee() {
         })}
       </svg>
 
-      {/* Stakeholder cards */}
       {stakeholders.map(s => (
         <motion.div
           key={`card-${s.role}`}
@@ -341,7 +331,6 @@ function BuyingCommittee() {
         </motion.div>
       ))}
 
-      {/* === Center: Thyleads logo hub === */}
       <motion.div
         initial={{ opacity: 0, scale: 0.92 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -349,7 +338,7 @@ function BuyingCommittee() {
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
       >
         <div className="relative will-change-transform">
-          {/* Soft breathing halo (single, smooth) */}
+
           <motion.div
             aria-hidden="true"
             className="absolute -inset-5 bg-primary-300/35 blur-2xl rounded-full pointer-events-none"
@@ -361,7 +350,6 @@ function BuyingCommittee() {
             }}
           />
 
-          {/* Single slow-rotating dashed ring */}
           <motion.div
             aria-hidden="true"
             className="absolute -inset-3 rounded-full border border-dashed border-primary-300"
@@ -370,7 +358,6 @@ function BuyingCommittee() {
             style={{ willChange: 'transform' }}
           />
 
-          {/* Logo disc */}
           <div className="relative w-[112px] h-[112px] rounded-full bg-white ring-4 ring-white shadow-[0_22px_44px_-14px_rgba(132,92,245,0.55)] flex items-center justify-center overflow-hidden">
             <span
               aria-hidden="true"
@@ -386,7 +373,6 @@ function BuyingCommittee() {
             />
           </div>
 
-          {/* Live badge */}
           <motion.div
             initial={{ opacity: 0, y: -4 }}
             animate={{ opacity: 1, y: 0 }}

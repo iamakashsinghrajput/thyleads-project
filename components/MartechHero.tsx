@@ -30,7 +30,7 @@ const itemVariants: Variants = {
 export default function MartechHero() {
   return (
     <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-16 lg:pb-24 px-6 sm:px-12 overflow-hidden bg-white font-sans">
-      {/* Soft ambient backdrop */}
+
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-gradient-to-b from-primary-50/40 via-white to-white pointer-events-none"
@@ -50,7 +50,7 @@ export default function MartechHero() {
         animate="visible"
         className="relative z-10 max-w-6xl mx-auto grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-16 items-center"
       >
-        {/* === LEFT: Copy === */}
+
         <div>
           <motion.div variants={itemVariants} className="mb-6">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-50 border border-primary-200 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-700">
@@ -104,7 +104,6 @@ export default function MartechHero() {
           </motion.div>
         </div>
 
-        {/* === RIGHT: Hero card === */}
         <motion.div variants={itemVariants} className="relative">
           <CmoLeadCard />
         </motion.div>
@@ -112,10 +111,6 @@ export default function MartechHero() {
     </section>
   );
 }
-
-/* ============================================================
-   Right-side hero — a single, refined CRM-style lead card.
-   ============================================================ */
 
 const signals = [
   {
@@ -138,13 +133,12 @@ const signals = [
 function CmoLeadCard() {
   return (
     <div className="relative w-full max-w-[420px] mx-auto">
-      {/* Soft halo behind everything */}
+
       <div
         aria-hidden="true"
         className="absolute -inset-8 bg-primary-300/25 blur-3xl rounded-[48px] pointer-events-none"
       />
 
-      {/* === Ghost stack behind — suggests "noise" === */}
       <div
         aria-hidden="true"
         className="absolute inset-x-8 -bottom-3 h-3/4 rounded-3xl bg-white border border-slate-200 shadow-[0_10px_24px_-12px_rgba(15,23,42,0.10)] pointer-events-none scale-[0.92] -translate-y-3"
@@ -154,16 +148,15 @@ function CmoLeadCard() {
         className="absolute inset-x-4 -bottom-1.5 h-3/4 rounded-3xl bg-white border border-slate-200 shadow-[0_14px_28px_-12px_rgba(15,23,42,0.12)] pointer-events-none scale-[0.96] -translate-y-1.5"
       />
 
-      {/* === Main lead card === */}
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.4, ease: easeOut }}
         className="relative rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-[0_30px_70px_-30px_rgba(132,92,245,0.40)]"
       >
-        {/* === Cover band === */}
+
         <div className="relative h-24 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 overflow-hidden">
-          {/* Dot grid texture */}
+
           <div
             aria-hidden="true"
             className="absolute inset-0 opacity-30"
@@ -176,12 +169,12 @@ function CmoLeadCard() {
                 'radial-gradient(ellipse 80% 80% at top right, black 20%, transparent 70%)',
             }}
           />
-          {/* Inner highlight */}
+
           <div
             aria-hidden="true"
             className="absolute -top-16 left-1/2 -translate-x-1/2 w-[120%] h-32 bg-white/20 blur-3xl pointer-events-none"
           />
-          {/* Live status chip */}
+
           <div className="absolute top-4 left-5 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-[9.5px] font-bold uppercase tracking-[0.22em] text-white">
             <span className="relative flex h-1.5 w-1.5" aria-hidden="true">
               <span className="absolute inline-flex h-full w-full rounded-full bg-white opacity-75 animate-ping" />
@@ -189,13 +182,12 @@ function CmoLeadCard() {
             </span>
             Reply received
           </div>
-          {/* Timestamp */}
+
           <span className="absolute top-4 right-5 text-[10px] font-bold uppercase tracking-[0.18em] text-primary-100">
             2h ago
           </span>
         </div>
 
-        {/* === Avatar — overlaps cover === */}
         <div className="relative px-6 -mt-10">
           <div className="relative inline-block">
             <span
@@ -205,7 +197,7 @@ function CmoLeadCard() {
             <div className="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 ring-4 ring-white text-white flex items-center justify-center text-xl font-extrabold tracking-[0.04em] shadow-[0_14px_30px_-10px_rgba(132,92,245,0.55)]">
               RV
             </div>
-            {/* Verified check */}
+
             <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-white ring-2 ring-white flex items-center justify-center shadow-md">
               <span className="w-full h-full rounded-full bg-gradient-to-br from-primary-600 to-primary-800 flex items-center justify-center">
                 <Check className="w-3 h-3 text-white" strokeWidth={3} />
@@ -214,7 +206,6 @@ function CmoLeadCard() {
           </div>
         </div>
 
-        {/* === Identity === */}
         <div className="px-6 pt-3">
           <h3 className="text-[20px] font-extrabold tracking-tight text-neutral-900 leading-tight">
             Rahul Verma
@@ -225,10 +216,8 @@ function CmoLeadCard() {
           </p>
         </div>
 
-        {/* === Soft divider === */}
         <div className="mx-6 my-5 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
-        {/* === Signals === */}
         <div className="px-6">
           <div className="flex items-center justify-between mb-3">
             <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-slate-500">
@@ -269,7 +258,6 @@ function CmoLeadCard() {
           </ul>
         </div>
 
-        {/* === Intent score === */}
         <div className="mx-6 mt-5 mb-6 rounded-2xl bg-gradient-to-br from-primary-50 to-white border border-primary-100 px-4 py-3.5">
           <div className="flex items-center justify-between mb-2">
             <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-slate-500">
@@ -279,7 +267,7 @@ function CmoLeadCard() {
               92<span className="text-[11px] text-primary-400">/100</span>
             </span>
           </div>
-          {/* Progress bar */}
+
           <div className="relative h-1.5 rounded-full bg-primary-100 overflow-hidden">
             <motion.span
               aria-hidden="true"
@@ -289,7 +277,7 @@ function CmoLeadCard() {
               transition={{ duration: 1.2, delay: 1.2, ease: easeOut }}
             />
           </div>
-          {/* Footer line */}
+
           <div className="mt-2 flex items-center justify-between text-[10px] font-semibold">
             <span className="text-slate-500">
               328 accounts scanned ·{' '}

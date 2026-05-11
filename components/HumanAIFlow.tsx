@@ -146,7 +146,7 @@ export default function HumanAIFlow() {
 
   return (
     <div className="relative w-full max-w-md mx-auto flex flex-col gap-3">
-      {/* 1. ORCHESTRATOR STRIP */}
+
       <div className="relative rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 ring-1 ring-slate-700/60 shadow-[0_12px_30px_rgba(15,23,42,0.18)] px-4 py-3 flex items-center justify-between text-white overflow-hidden">
         <div
           aria-hidden="true"
@@ -189,7 +189,6 @@ export default function HumanAIFlow() {
         </div>
       </div>
 
-      {/* 2. PIPELINE STEPPER */}
       <div className="rounded-2xl bg-white border border-slate-200 shadow-sm px-4 py-3.5">
         <div className="flex items-center justify-between mb-3">
           <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-slate-500">
@@ -202,9 +201,9 @@ export default function HumanAIFlow() {
         </div>
 
         <div className="relative">
-          {/* base line */}
+
           <div className="absolute left-3.5 right-3.5 top-3.5 h-[2px] bg-slate-200 rounded-full" aria-hidden="true" />
-          {/* progress line */}
+
           <motion.div
             aria-hidden="true"
             className="absolute left-3.5 top-3.5 h-[2px] bg-emerald-500 rounded-full origin-left"
@@ -257,7 +256,6 @@ export default function HumanAIFlow() {
         </div>
       </div>
 
-      {/* 3. FOCAL "NOW RUNNING" CARD */}
       <div className="rounded-2xl bg-white border-2 border-primary-200 shadow-[0_18px_40px_rgba(132,92,245,0.14)] overflow-hidden">
         <div className="flex items-center justify-between px-4 py-2 bg-gradient-to-r from-primary-50 via-white to-primary-50 border-b border-primary-100">
           <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-primary-700">
@@ -348,7 +346,6 @@ export default function HumanAIFlow() {
         </div>
       </div>
 
-      {/* 4. LIVE ACTIVITY TICKER */}
       <div className="rounded-2xl bg-white border border-slate-200 px-4 py-2.5 flex items-center gap-3 shadow-sm">
         <span className="flex items-center gap-1 text-[9px] font-bold uppercase tracking-[0.18em] text-emerald-600 shrink-0">
           <CheckCircle2 className="w-3 h-3" strokeWidth={2.5} />
@@ -370,7 +367,6 @@ export default function HumanAIFlow() {
         </div>
       </div>
 
-      {/* 5. FOOTER: feedback loop + learning engine */}
       <div className="relative rounded-2xl bg-slate-900 text-white px-4 py-3 flex items-center justify-between overflow-hidden shadow-[0_12px_30px_rgba(15,23,42,0.18)]">
         <motion.div
           aria-hidden="true"

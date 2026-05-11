@@ -33,7 +33,7 @@ const highlightVariants: Variants = {
 export default function FintechCTA() {
   return (
     <section className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-gradient-to-b from-white via-primary-50/60 to-primary-50 font-sans">
-      {/* Ambient glows */}
+
       <div
         aria-hidden="true"
         className="absolute -top-32 left-1/4 w-160 h-160 rounded-full bg-primary-200/40 blur-3xl pointer-events-none"
@@ -43,7 +43,6 @@ export default function FintechCTA() {
         className="absolute -bottom-40 right-1/4 w-160 h-160 rounded-full bg-primary-100/60 blur-3xl pointer-events-none"
       />
 
-      {/* Subtle dot grid */}
       <div
         aria-hidden="true"
         className="absolute inset-0 opacity-60 pointer-events-none"

@@ -57,7 +57,7 @@ const TrustedBy: React.FC<TrustedByProps> = ({ theme = 'dark', className = '' })
             <div className={`absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r ${fadeFromClass} to-transparent z-10 pointer-events-none`} />
             <div className={`absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l ${fadeFromClass} to-transparent z-10 pointer-events-none`} />
 
-            <motion.div 
+            <motion.div
               className="flex items-center w-max"
               animate={{
                 x: [0, -1920],

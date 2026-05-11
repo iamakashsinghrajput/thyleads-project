@@ -60,7 +60,7 @@ export default function MartechSocialProof() {
         viewport={{ once: true, amount: 0.15 }}
         className="relative z-10 max-w-6xl mx-auto"
       >
-        {/* Header */}
+
         <div className="text-center max-w-3xl mx-auto">
           <motion.div variants={itemVariants} className="mb-5">
             <span className="inline-block text-[11px] font-semibold uppercase tracking-[0.28em] text-primary-700">
@@ -79,20 +79,18 @@ export default function MartechSocialProof() {
           </motion.h2>
         </div>
 
-        {/* Body — case study + testimonials */}
         <div className="mt-12 lg:mt-14 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-5">
-          {/* === Case study card === */}
+
           <motion.article
             variants={itemVariants}
             className="group relative rounded-3xl bg-gradient-to-br from-white via-white to-primary-50/40 border border-slate-200 p-7 sm:p-8 shadow-[0_4px_18px_-10px_rgba(15,23,42,0.08)] hover:shadow-[0_24px_52px_-22px_rgba(132,92,245,0.32)] transition-all overflow-hidden"
           >
-            {/* Top hairline */}
+
             <span
               aria-hidden="true"
               className="absolute top-0 left-7 right-7 h-px bg-gradient-to-r from-transparent via-primary-300 to-transparent"
             />
 
-            {/* Top-right dot grid */}
             <div
               aria-hidden="true"
               className="absolute -top-2 -right-2 w-32 h-32 opacity-60 pointer-events-none"
@@ -106,9 +104,8 @@ export default function MartechSocialProof() {
               }}
             />
 
-            {/* Brand identity row */}
             <div className="relative flex items-start gap-4">
-              {/* Monogram */}
+
               <div className="relative shrink-0">
                 <span
                   aria-hidden="true"
@@ -145,12 +142,10 @@ export default function MartechSocialProof() {
               </span>
             </div>
 
-            {/* Headline */}
             <h4 className="relative mt-6 text-2xl font-extrabold tracking-tight leading-[1.2] text-neutral-900">
               Built enterprise pipeline for one of India&apos;s leading CEPs
             </h4>
 
-            {/* Description */}
             <p className="relative mt-4 text-[14.5px] text-slate-600 leading-relaxed">
               CleverTap needed to expand into enterprise accounts across India
               and SEA without diluting brand positioning. Thyleads ran
@@ -159,10 +154,8 @@ export default function MartechSocialProof() {
               use-case-led messaging, not generic feature pitches.
             </p>
 
-            {/* Divider */}
             <div className="relative mt-6 h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
-            {/* Stats */}
             <div className="relative mt-6 grid grid-cols-3 gap-4">
               {stats.map((stat, j) => (
                 <div key={stat.label} className="relative">
@@ -186,7 +179,6 @@ export default function MartechSocialProof() {
               ))}
             </div>
 
-            {/* Footer link */}
             <div className="relative mt-7 pt-5 border-t border-slate-100">
               <a
                 href="/casestudies"
@@ -201,7 +193,6 @@ export default function MartechSocialProof() {
             </div>
           </motion.article>
 
-          {/* === Testimonials === */}
           <div className="flex flex-col gap-5">
             {testimonials.map((t, i) => (
               <motion.article
@@ -217,25 +208,22 @@ export default function MartechSocialProof() {
                 whileHover={{ y: -3 }}
                 className="group relative flex-1 rounded-3xl bg-white border border-slate-200 hover:border-primary-200 p-6 sm:p-7 shadow-[0_4px_18px_-10px_rgba(15,23,42,0.06)] hover:shadow-[0_18px_44px_-22px_rgba(132,92,245,0.28)] transition-all overflow-hidden"
               >
-                {/* Top hairline */}
+
                 <span
                   aria-hidden="true"
                   className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-primary-300 to-transparent"
                 />
 
-                {/* Quote glyph */}
                 <Quote
                   className="w-7 h-7 text-primary-300"
                   strokeWidth={2.5}
                   fill="currentColor"
                 />
 
-                {/* Quote */}
                 <p className="mt-3 text-[14px] text-slate-700 leading-relaxed">
                   {t.quote}
                 </p>
 
-                {/* Author */}
                 <div className="mt-5 pt-4 border-t border-slate-100 flex items-center gap-3">
                   <div className="shrink-0 w-9 h-9 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 text-white text-[11px] font-extrabold flex items-center justify-center tracking-wide ring-2 ring-white shadow-[0_4px_12px_-4px_rgba(132,92,245,0.55)]">
                     {t.initials}

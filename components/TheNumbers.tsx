@@ -79,7 +79,7 @@ const stats: Stat[] = [
 export default function TheNumbers() {
   return (
     <section className="relative py-12 lg:py-16 px-6 sm:px-12 overflow-hidden bg-white font-sans">
-      {/* Soft accents */}
+
       <div
         aria-hidden="true"
         className="absolute -top-32 right-1/4 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
@@ -96,7 +96,7 @@ export default function TheNumbers() {
         viewport={{ once: true, amount: 0.15 }}
         className="relative z-10 max-w-6xl mx-auto"
       >
-        {/* Header */}
+
         <div className="text-center mb-10 lg:mb-12">
           <motion.div
             variants={itemVariants}
@@ -122,12 +122,11 @@ export default function TheNumbers() {
           </motion.h2>
         </div>
 
-        {/* === STATS STRIP === */}
         <motion.div
           variants={itemVariants}
           className="relative rounded-3xl bg-gradient-to-b from-primary-50/40 via-white to-white border border-primary-100 shadow-[0_24px_60px_-30px_rgba(132,92,245,0.20),0_8px_24px_-12px_rgba(132,92,245,0.08)] overflow-hidden"
         >
-          {/* Decorative SVG sparkline across the whole strip */}
+
           <svg
             aria-hidden="true"
             className="absolute inset-x-0 top-0 w-full h-32 opacity-[0.10] pointer-events-none"
@@ -150,7 +149,6 @@ export default function TheNumbers() {
             />
           </svg>
 
-          {/* Subtle dotted backdrop */}
           <div
             aria-hidden="true"
             className="absolute inset-0 opacity-50 pointer-events-none"
@@ -171,7 +169,6 @@ export default function TheNumbers() {
           </div>
         </motion.div>
 
-        {/* Trust line */}
         <motion.p
           variants={itemVariants}
           className="mt-6 text-center text-[12px] sm:text-sm text-slate-500 font-medium"
@@ -195,12 +192,11 @@ function StatCell({ stat, index }: { stat: Stat; index: number }) {
       whileHover={{ y: -2 }}
       className="group relative px-6 py-8 lg:px-8 lg:py-10 flex flex-col items-center text-center transition-colors hover:bg-primary-50/30"
     >
-      {/* Icon */}
+
       <div className="mb-3 inline-flex items-center justify-center w-9 h-9 rounded-lg bg-white border border-primary-100 text-primary-600 shadow-sm group-hover:bg-primary-50 group-hover:border-primary-200 transition-colors">
         <Icon className="w-4 h-4" strokeWidth={2} />
       </div>
 
-      {/* Big number — gradient + count-up */}
       <div className="relative">
         <span className="block text-[44px] sm:text-[52px] lg:text-[64px] font-extrabold tracking-tight leading-none tabular-nums bg-gradient-to-br from-primary-500 to-primary-700 bg-clip-text text-transparent">
           <AnimatedNumber
@@ -210,19 +206,17 @@ function StatCell({ stat, index }: { stat: Stat; index: number }) {
             suffix={stat.suffix}
           />
         </span>
-        {/* Soft glow under the number */}
+
         <span
           aria-hidden="true"
           className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-12 h-2 bg-primary-300/40 blur-md rounded-full"
         />
       </div>
 
-      {/* Label */}
       <span className="mt-4 block text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.18em] text-slate-700">
         {stat.label}
       </span>
 
-      {/* Context micro-line */}
       <span className="mt-1.5 block text-[11px] text-slate-500 font-medium leading-snug max-w-[180px]">
         {stat.context}
       </span>

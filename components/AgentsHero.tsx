@@ -44,7 +44,7 @@ export default function AgentsHero() {
         className="relative z-10 max-w-6xl mx-auto"
       >
         <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-14 items-center">
-          {/* === LEFT: Copy === */}
+
           <div>
             <motion.div variants={itemVariants} className="mb-5">
               <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.28em] text-primary-700">
@@ -100,23 +100,16 @@ export default function AgentsHero() {
             </motion.div>
           </div>
 
-          {/* === RIGHT: Live process flow === */}
           <motion.div variants={itemVariants} className="relative">
             <LiveProcessFlow />
           </motion.div>
         </div>
 
-        {/* === Stats bar === */}
         <StatsBar />
       </motion.div>
     </section>
   );
 }
-
-/* ============================================================
-   Right-side: live process flow with animated traveling dots
-   Light shades only — primary-50/100/200, white surfaces.
-   ============================================================ */
 
 const STAGES: {
   id: string;
@@ -162,7 +155,7 @@ const STAGES: {
 function LiveProcessFlow() {
   return (
     <div className="relative w-full max-w-[480px] mx-auto">
-      {/* Atmospheric halo */}
+
       <div
         aria-hidden="true"
         className="absolute -inset-6 bg-primary-200/30 blur-3xl rounded-[40px] pointer-events-none"
@@ -180,7 +173,6 @@ function LiveProcessFlow() {
   );
 }
 
-/* === Continuous "breathing" glow around Orchestrator — gentle, not pulsing === */
 function OrchestratorBroadcast() {
   return (
     <motion.span
@@ -197,7 +189,6 @@ function OrchestratorBroadcast() {
   );
 }
 
-/* === Continuous "powered" indicator for each cluster tile === */
 function ClusterActiveDot({ index }: { index: number }) {
   return (
     <motion.span
@@ -229,10 +220,10 @@ function StageCard({
     >
       {stage.variant === 'hero' && (
         <div className="relative">
-          {/* Broadcasting pulse rings — Claude Opus 4 dispatching power */}
+
           <OrchestratorBroadcast />
           <div className="relative rounded-2xl overflow-hidden bg-white border border-primary-200 px-5 py-4 shadow-[0_18px_44px_-22px_rgba(132,92,245,0.40)]">
-            {/* Top hairline */}
+
             <span
               aria-hidden="true"
               className="absolute top-0 left-5 right-5 h-px bg-gradient-to-r from-transparent via-primary-400 to-transparent"
@@ -322,7 +313,6 @@ function StageCard({
   );
 }
 
-/* === Flow arrow with continuous traveling dot === */
 function FlowArrow({ index }: { index: number }) {
   return (
     <div className="relative my-3 h-10 flex items-center justify-center">
@@ -339,7 +329,6 @@ function FlowArrow({ index }: { index: number }) {
           </linearGradient>
         </defs>
 
-        {/* Resting dashed track */}
         <line
           x1="12"
           y1="3"
@@ -350,7 +339,6 @@ function FlowArrow({ index }: { index: number }) {
           strokeDasharray="2 4"
         />
 
-        {/* Bright stroke that path-fills */}
         <motion.line
           x1="12"
           y1="3"
@@ -365,7 +353,6 @@ function FlowArrow({ index }: { index: number }) {
           transition={{ duration: 0.6, delay: 0.4 + index * 0.18, ease: easeOut }}
         />
 
-        {/* Traveling pulse dot — loops continuously */}
         <motion.circle
           cx="12"
           r="2.8"
@@ -385,7 +372,6 @@ function FlowArrow({ index }: { index: number }) {
           }}
         />
 
-        {/* Arrowhead */}
         <path
           d="M 6 30 L 12 36 L 18 30"
           stroke="#5b34d9"
@@ -398,10 +384,6 @@ function FlowArrow({ index }: { index: number }) {
     </div>
   );
 }
-
-/* ============================================================
-   Bottom stats bar — light variant (no dark surface)
-   ============================================================ */
 
 const stats = [
   { value: '15', label: 'Specialized AI agents' },
@@ -416,12 +398,12 @@ function StatsBar() {
       variants={itemVariants}
       className="relative mt-12 lg:mt-16 rounded-3xl overflow-hidden bg-gradient-to-br from-primary-50 via-white to-primary-50/60 border border-primary-100 shadow-[0_24px_60px_-30px_rgba(132,92,245,0.30)]"
     >
-      {/* Top hairline */}
+
       <span
         aria-hidden="true"
         className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-primary-400 to-transparent"
       />
-      {/* Soft dot grid */}
+
       <div
         aria-hidden="true"
         className="absolute inset-0 opacity-50 pointer-events-none"

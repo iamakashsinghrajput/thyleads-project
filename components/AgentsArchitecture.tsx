@@ -91,7 +91,7 @@ export default function AgentsArchitecture() {
         viewport={{ once: true, amount: 0.1 }}
         className="relative z-10 max-w-6xl mx-auto"
       >
-        {/* Header */}
+
         <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-14">
           <motion.div variants={itemVariants} className="mb-5">
             <span className="inline-block px-3 py-1 rounded-full bg-white border border-primary-200 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-700">
@@ -120,12 +120,11 @@ export default function AgentsArchitecture() {
           </motion.p>
         </div>
 
-        {/* === Orchestrator with breathing glow === */}
         <motion.div
           variants={itemVariants}
           className="relative mx-auto max-w-3xl"
         >
-          {/* Continuous breathing halo — smooth, not pulsing */}
+
           <motion.span
             aria-hidden="true"
             className="absolute -inset-4 rounded-[36px] bg-primary-300/30 blur-3xl pointer-events-none"
@@ -139,12 +138,12 @@ export default function AgentsArchitecture() {
           />
 
           <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary-50 via-white to-primary-50/60 border border-primary-200 px-8 py-6 text-center shadow-[0_22px_56px_-22px_rgba(132,92,245,0.30)]">
-            {/* Top hairline */}
+
             <span
               aria-hidden="true"
               className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-primary-400 to-transparent"
             />
-            {/* Dot grid */}
+
             <div
               aria-hidden="true"
               className="absolute inset-0 opacity-40 pointer-events-none"
@@ -177,20 +176,16 @@ export default function AgentsArchitecture() {
           </div>
         </motion.div>
 
-        {/* === Power dispatch connector with traveling pulse === */}
         <DispatchConnector />
 
-        {/* === 6 cluster grid (powers up in cascade) === */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
           {clusters.map((c, i) => (
             <ClusterCard key={c.num} cluster={c} index={i} />
           ))}
         </div>
 
-        {/* Connector down */}
         <DispatchConnector />
 
-        {/* === Learning cluster === */}
         <motion.div
           variants={itemVariants}
           className="mx-auto max-w-2xl relative rounded-2xl overflow-hidden bg-gradient-to-br from-primary-100 via-primary-50 to-white border border-primary-300 px-6 py-5 shadow-[0_18px_44px_-20px_rgba(132,92,245,0.45)]"
@@ -229,7 +224,7 @@ export default function AgentsArchitecture() {
 }
 
 function ClusterCard({ cluster, index }: { cluster: Cluster; index: number }) {
-  // Each cluster receives power on its own staggered breath cycle — never in sync.
+
   const breathDuration = 4.2 + (index % 3) * 0.6;
   const breathDelay = index * 0.7;
 
@@ -251,7 +246,6 @@ function ClusterCard({ cluster, index }: { cluster: Cluster; index: number }) {
         className="absolute top-0 left-5 right-5 h-px bg-gradient-to-r from-transparent via-primary-300 to-transparent"
       />
 
-      {/* Continuous "receiving power" glow — soft inner wash, breathes smoothly */}
       <motion.span
         aria-hidden="true"
         className="absolute inset-0 rounded-2xl bg-primary-100/40 pointer-events-none"
@@ -264,7 +258,6 @@ function ClusterCard({ cluster, index }: { cluster: Cluster; index: number }) {
         }}
       />
 
-      {/* Continuous border glow — softly breathes, syncs with the inner wash */}
       <motion.span
         aria-hidden="true"
         className="absolute inset-0 rounded-2xl ring-1 ring-primary-300 pointer-events-none"
@@ -277,7 +270,6 @@ function ClusterCard({ cluster, index }: { cluster: Cluster; index: number }) {
         }}
       />
 
-      {/* Subtle corner "powered" dot — gentle opacity-only */}
       <motion.span
         aria-hidden="true"
         className="absolute top-3 right-3 w-1.5 h-1.5 rounded-full bg-primary-500"
@@ -317,7 +309,6 @@ function ClusterCard({ cluster, index }: { cluster: Cluster; index: number }) {
   );
 }
 
-/* === Vertical "power dispatch" connector with traveling pulse === */
 function DispatchConnector() {
   return (
     <div className="relative flex justify-center py-6" aria-hidden="true">
@@ -334,7 +325,6 @@ function DispatchConnector() {
           </linearGradient>
         </defs>
 
-        {/* Resting dashed track */}
         <line
           x1="12"
           y1="4"
@@ -345,7 +335,6 @@ function DispatchConnector() {
           strokeDasharray="3 5"
         />
 
-        {/* Bright path-draw on entry */}
         <motion.line
           x1="12"
           y1="4"
@@ -360,7 +349,6 @@ function DispatchConnector() {
           transition={{ duration: 0.8, delay: 0.4, ease: easeOut }}
         />
 
-        {/* Continuous power-stream — 3 staggered dots gliding top → bottom */}
         {[0, 1.4, 2.8].map(offset => (
           <motion.circle
             key={offset}
@@ -379,7 +367,6 @@ function DispatchConnector() {
           />
         ))}
 
-        {/* Arrowhead */}
         <path
           d="M 6 50 L 12 58 L 18 50"
           stroke="#5b34d9"

@@ -67,7 +67,7 @@ const testimonials: Testimonial[] = [
 export default function Testimonials() {
   return (
     <section className="relative py-12 lg:py-16 px-6 sm:px-12 overflow-hidden bg-white font-sans">
-      {/* Subtle ambient backdrop */}
+
       <div
         aria-hidden="true"
         className="absolute -top-32 left-1/2 -translate-x-1/2 w-[60rem] h-[40rem] rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
@@ -80,7 +80,7 @@ export default function Testimonials() {
         viewport={{ once: true, amount: 0.15 }}
         className="relative z-10 max-w-6xl mx-auto"
       >
-        {/* Header */}
+
         <div className="text-center mb-12 lg:mb-14 max-w-2xl mx-auto">
           <motion.div variants={itemVariants} className="mb-4">
             <span className="inline-block text-[11px] font-semibold uppercase tracking-[0.28em] text-primary-700">
@@ -112,7 +112,6 @@ export default function Testimonials() {
           </motion.p>
         </div>
 
-        {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
           {testimonials.map((t, i) => (
             <motion.article
@@ -122,14 +121,13 @@ export default function Testimonials() {
               transition={{ duration: 0.25, ease: easeOut }}
               className="group relative flex flex-col rounded-2xl bg-white ring-1 ring-slate-200 hover:ring-primary-200 hover:shadow-[0_24px_60px_-30px_rgba(132,92,245,0.22),0_8px_20px_-12px_rgba(132,92,245,0.10)] transition-all p-6 lg:p-7"
             >
-              {/* Decorative quote glyph */}
+
               <Quote
                 aria-hidden="true"
                 className="absolute top-6 right-6 w-7 h-7 text-primary-100 group-hover:text-primary-200 transition-colors"
                 strokeWidth={1.5}
               />
 
-              {/* Stars */}
               <div className="flex items-center gap-0.5 mb-4">
                 {Array.from({ length: 5 }).map((_, s) => (
                   <Star
@@ -140,15 +138,12 @@ export default function Testimonials() {
                 ))}
               </div>
 
-              {/* Quote */}
               <blockquote className="flex-1 text-[14px] sm:text-[15px] text-slate-700 leading-relaxed">
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
 
-              {/* Divider */}
               <div className="my-5 h-px bg-slate-100" aria-hidden="true" />
 
-              {/* Author */}
               <footer className="flex items-center gap-3">
                 <div
                   aria-hidden="true"
@@ -169,7 +164,6 @@ export default function Testimonials() {
                 </div>
               </footer>
 
-              {/* Index badge for choreography */}
               <span className="sr-only">Testimonial {i + 1} of 3</span>
             </motion.article>
           ))}

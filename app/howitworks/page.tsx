@@ -259,7 +259,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,_rgba(168,85,247,0.18),transparent_45%),radial-gradient(circle_at_80%_30%,_rgba(99,102,241,0.14),transparent_50%),linear-gradient(180deg,_#ffffff_0%,_#faf8ff_45%,_#ffffff_100%)]" />
       <div className="absolute inset-0 bg-[conic-gradient(from_120deg_at_60%_40%,_rgba(168,85,247,0.10),_rgba(99,102,241,0.08),_transparent_60%)] opacity-70" />
       <div className="absolute inset-0 bg-[linear-gradient(rgba(132,92,245,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(132,92,245,0.06)_1px,transparent_1px)] bg-[size:120px_120px] [mask-image:radial-gradient(ellipse_at_center,black_35%,transparent_75%)]" />
-        
+
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {Array.from({ length: 20 }).map((_, i) => (
             <FloatingParticle key={i} seed={i} delay={i * 0.2} />
@@ -267,7 +267,7 @@ const HeroSection = () => {
       </div>
 
       <motion.div variants={staggerContainer} initial="hidden" animate="show" className="relative z-10 max-w-5xl text-center">
-        
+
         <motion.h1 variants={fadeUp} className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05]">
           <span className="block text-neutral-900">How we build</span>
           <span className="relative inline-block px-4 py-1 mt-2">
@@ -282,11 +282,11 @@ const HeroSection = () => {
           </span>
           <span className="block text-neutral-900 mt-2">for SaaS Companies</span>
         </motion.h1>
-        
+
         <motion.p variants={fadeUp} className="mt-6 text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
           For SaaS teams who rely on revenue mobility, we developed a reliable system that turns cold outbound into qualified pipeline in weeks, not quarters.
         </motion.p>
-        
+
         <motion.div variants={fadeUp} className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-5">
           <a
             href="/contact"
@@ -322,16 +322,16 @@ const FloatingParticle = ({ delay, seed }: { delay: number; seed: number }) => {
     }, [seed]);
 
     return (
-        <motion.div 
+        <motion.div
             className="absolute w-1 h-1 bg-slate-100 rounded-full"
             initial={{ x: `${randomX}vw`, y: `${randomY}vh`, opacity: 0 }}
-            animate={{ 
+            animate={{
                 y: [`${randomY}vh`, `${randomY - 20}vh`],
-                opacity: [0, 0.5, 0] 
+                opacity: [0, 0.5, 0]
             }}
-            transition={{ 
-                duration: duration, 
-                repeat: Infinity, 
+            transition={{
+                duration: duration,
+                repeat: Infinity,
                 delay: delay,
                 ease: "linear"
             }}
@@ -348,7 +348,7 @@ const SystemLayerSection = () => {
     if (!inView) return;
     const interval = setInterval(() => {
       setActiveStage((prev) => (prev + 1) % systemStages.length);
-    }, 2000); 
+    }, 2000);
     return () => clearInterval(interval);
   }, [inView]);
 
@@ -440,8 +440,8 @@ const SystemLayerSection = () => {
                 </motion.div>
             </motion.div>
 
-            <motion.div 
-                variants={fadeUp} 
+            <motion.div
+                variants={fadeUp}
                 className="relative aspect-[4/3] rounded-3xl border border-slate-200 bg-white overflow-hidden flex flex-col shadow-2xl"
             >
                 <div className="h-12 border-b border-slate-200 flex items-center justify-between px-6 bg-slate-50">
@@ -451,7 +451,7 @@ const SystemLayerSection = () => {
                         <div className="w-2.5 h-2.5 rounded-full bg-green-500/20 border border-green-500/50" />
                     </div>
                     <div className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">
-                        SYS.MONITOR.V2 // {activeStage < 2 ? "INGESTION" : activeStage < 4 ? "PROCESSING" : "OUTPUT"}
+                        SYS.MONITOR.V2
                     </div>
                 </div>
 
@@ -460,7 +460,7 @@ const SystemLayerSection = () => {
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(132,92,245,0.18),transparent_70%)]" />
 
                     <div className="absolute inset-0 w-full h-full">
-                        
+
                         <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid meet">
                             <ConnectionPath d="M 90 100 C 180 100, 180 200, 300 200" active={activeStage <= 1} />
                             <ConnectionPath d="M 90 300 C 180 300, 180 200, 300 200" active={activeStage <= 1} delay={0.1} />
@@ -640,7 +640,7 @@ const TimelineSection = () => {
                                         : "border-slate-200 hover:border-primary-200 hover:shadow-[0_14px_36px_-22px_rgba(132,92,245,0.28)]"
                                 }`}
                             >
-                                {/* Active accent bar */}
+
                                 <span
                                     aria-hidden="true"
                                     className={`absolute left-0 top-4 bottom-4 w-1 rounded-r-full transition-all ${
@@ -650,7 +650,6 @@ const TimelineSection = () => {
                                     }`}
                                 />
 
-                                {/* Number badge */}
                                 <div className="relative shrink-0">
                                     <span
                                         aria-hidden="true"
@@ -671,7 +670,6 @@ const TimelineSection = () => {
                                     </div>
                                 </div>
 
-                                {/* Title */}
                                 <h3
                                     className={`flex-1 min-w-0 font-bold text-[15px] lg:text-base leading-snug tracking-tight transition-colors ${
                                         isActive
@@ -682,7 +680,6 @@ const TimelineSection = () => {
                                     {week.title}
                                 </h3>
 
-                                {/* Arrow chevron — appears on hover/active */}
                                 <ArrowRight
                                     aria-hidden="true"
                                     className={`shrink-0 w-4 h-4 transition-all ${
@@ -708,10 +705,9 @@ const TimelineSection = () => {
                         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                         className="relative h-full flex flex-col rounded-3xl border border-slate-200 bg-white shadow-[0_28px_70px_-32px_rgba(132,92,245,0.22)] overflow-hidden"
                     >
-                        {/* Top gradient hairline */}
+
                         <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-primary-400 to-transparent" aria-hidden="true" />
 
-                        {/* Top-right dot grid texture */}
                         <div
                             aria-hidden="true"
                             className="absolute -top-2 -right-2 w-40 h-40 opacity-60 pointer-events-none"
@@ -726,7 +722,7 @@ const TimelineSection = () => {
                         />
 
                         <div className="relative p-6 lg:p-7 flex-1 flex flex-col min-h-0">
-                            {/* === Header band === */}
+
                             <div className="flex items-start justify-between gap-3 mb-4">
                                 <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-50 border border-primary-100 text-[10px] font-bold uppercase tracking-[0.22em] text-primary-700">
                                     <span className="relative flex h-1.5 w-1.5" aria-hidden="true">
@@ -740,15 +736,12 @@ const TimelineSection = () => {
                                 </div>
                             </div>
 
-                            {/* === Title === */}
                             <h3 className="text-xl lg:text-[24px] font-extrabold tracking-tight leading-[1.2] text-neutral-900">
                                 {currentWeek.title.replace(/^Week\s*\d+\s*[—–-]\s*/i, '')}
                             </h3>
 
-                            {/* === Soft divider === */}
                             <div className="my-5 h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
-                            {/* === What you do — horizontal pills === */}
                             <div className="mb-5">
                                 <div className="flex items-center gap-2 mb-3">
                                     <span className="w-6 h-6 rounded-md bg-primary-50 border border-primary-100 flex items-center justify-center text-primary-700">
@@ -781,7 +774,6 @@ const TimelineSection = () => {
                                 </div>
                             </div>
 
-                            {/* === What Thyleads does — 2-column chip grid === */}
                             <div>
                                 <div className="flex items-center gap-2 mb-3">
                                     <span className="w-6 h-6 rounded-md bg-primary-50 border border-primary-100 flex items-center justify-center text-primary-700">
@@ -817,7 +809,6 @@ const TimelineSection = () => {
                             </div>
                         </div>
 
-                        {/* === Target Outcome footer — light, compact === */}
                         <div className="relative mx-6 lg:mx-7 mb-6 lg:mb-7 rounded-xl bg-primary-50/70 border border-primary-200 px-4 py-3">
                             <div className="flex items-center gap-3">
                                 <div className="shrink-0 w-9 h-9 rounded-lg bg-white border border-primary-200 flex items-center justify-center text-primary-700 shadow-[0_4px_10px_-4px_rgba(132,92,245,0.30)]">
@@ -844,7 +835,7 @@ const TimelineSection = () => {
 
 const Layer2CTASection = () => (
     <section className="relative py-20 lg:py-28 px-6 sm:px-12 overflow-hidden bg-primary-700 font-sans">
-        {/* Ambient glows */}
+
         <div
             aria-hidden="true"
             className="absolute -top-40 left-1/4 w-160 h-160 rounded-full bg-primary-500/40 blur-3xl pointer-events-none"
@@ -854,7 +845,6 @@ const Layer2CTASection = () => (
             className="absolute -bottom-40 right-1/4 w-160 h-160 rounded-full bg-primary-800/50 blur-3xl pointer-events-none"
         />
 
-        {/* Subtle dot grid */}
         <div
             aria-hidden="true"
             className="absolute inset-0 opacity-30 pointer-events-none"
@@ -869,7 +859,6 @@ const Layer2CTASection = () => (
             }}
         />
 
-        {/* Soft top inner highlight */}
         <div
             aria-hidden="true"
             className="absolute -top-32 left-1/2 -translate-x-1/2 w-[140%] h-56 bg-white/10 blur-3xl pointer-events-none"
@@ -934,7 +923,7 @@ const DealAssistSection = () => {
     ];
 
     return (
-        <section className="py-24 px-6 overflow-hidden">
+        <section id="deal-assist" className="py-24 px-6 overflow-hidden scroll-mt-28">
             <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
                 <motion.div variants={staggerContainer} initial="hidden" whileInView="show" viewport={{ once: true }}>
                     <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold mb-4">
@@ -965,14 +954,14 @@ const DealAssistSection = () => {
                     className="relative"
                 >
                     <div className="absolute -inset-8 bg-blue-500/20 blur-[60px] rounded-full opacity-30" />
-                    
+
                     <div className="relative bg-white border border-slate-200 rounded-xl shadow-2xl max-w-md mx-auto overflow-hidden">
                          <div className="p-4 pb-3">
                              <div className="flex gap-3">
                                  <div className="relative">
-                                     <img 
-                                         src="/images/ss.png" 
-                                         alt="Rahul Dev" 
+                                     <img
+                                         src="/images/ss.png"
+                                         alt="Rahul Dev"
                                          className="w-12 h-12 rounded-full object-cover"
                                      />
                                      <div className="absolute -bottom-0.5 -right-0.5 w-5 h-5 bg-[#C4A052] rounded-[4px] border-2 border-white flex items-center justify-center">
@@ -1209,12 +1198,12 @@ const SignalIntelligenceSection = () => {
                     style={{ transform: `rotate(${outerRingRotation}deg) translateZ(0)` }}
                 >
                     {[...Array(8)].map((_, i) => (
-                        <div 
+                        <div
                             key={i}
                             className="absolute w-1.5 h-1.5 rounded-full bg-indigo-400/40"
-                            style={{ 
-                                top: '50%', 
-                                left: '50%', 
+                            style={{
+                                top: '50%',
+                                left: '50%',
                                 transform: `rotate(${i * 45}deg) translateX(260px) translateY(-50%)`,
                             }}
                         />
@@ -1223,7 +1212,7 @@ const SignalIntelligenceSection = () => {
 
                 <div
                     className="absolute w-[360px] h-[360px] rounded-full border-2 border-transparent will-change-transform"
-                    style={{ 
+                    style={{
                         transform: `rotate(${innerRingRotation}deg) translateZ(0)`,
                         background: 'linear-gradient(white, white) padding-box, linear-gradient(135deg, rgba(129,140,248,0.5), rgba(168,85,247,0.5), rgba(34,211,238,0.2)) border-box'
                     }}
@@ -1263,7 +1252,7 @@ const SignalIntelligenceSection = () => {
                         const offsetAngle = (360 / signalIntelligence.length) * index;
                         const currentAngle = rotation + offsetAngle;
                         const radian = (currentAngle * Math.PI) / 180;
-                        
+
                         const x = Math.cos(radian) * radius;
                         const y = Math.sin(radian) * radius;
 
@@ -1273,10 +1262,10 @@ const SignalIntelligenceSection = () => {
                             <React.Fragment key={index}>
                                 <div
                                     className={`absolute left-1/2 top-1/2 h-[1px] origin-left will-change-transform ${isActive ? "opacity-60" : "opacity-20"}`}
-                                    style={{ 
+                                    style={{
                                         width: radius - 30,
                                         transform: `rotate(${currentAngle}deg) translateZ(0)`,
-                                        background: isActive 
+                                        background: isActive
                                             ? 'linear-gradient(90deg, rgba(129,140,248,0.5), rgba(129,140,248,0.1))'
                                             : 'linear-gradient(90deg, rgba(255,255,255,0.1), transparent)'
                                    }}
@@ -1289,12 +1278,12 @@ const SignalIntelligenceSection = () => {
                                             ? "bg-gradient-to-br from-primary-500 to-primary-700 border-primary-300 shadow-[0_0_30px_rgba(132,92,245,0.55)] scale-110 z-30"
                                             : "bg-white border-slate-200 hover:border-primary-400 hover:bg-primary-50"
                                         }`}
-                                    style={{ 
+                                    style={{
                                         transform: `translate(${x}px, ${y}px) translateZ(0)`
                                     }}
                                 >
                                     <signal.icon className={`w-4 h-4 ${isActive ? "text-white" : "text-slate-700 group-hover:text-primary-700"}`} />
-                                    
+
                                     <div className={`absolute -bottom-9 left-1/2 -translate-x-1/2 px-2.5 py-1 bg-white border rounded-md text-[10px] whitespace-nowrap pointer-events-none font-bold tracking-wide transition-all
                                         ${isActive
                                             ? "opacity-100 border-primary-500 text-primary-700 shadow-[0_8px_22px_-8px_rgba(132,92,245,0.55)]"
@@ -1368,7 +1357,7 @@ const SignalIntelligenceSection = () => {
 
 const TeamSection = () => {
     return (
-        <section className="py-24 px-6 bg-white relative overflow-hidden">
+        <section id="human-layer" className="py-24 px-6 bg-white relative overflow-hidden scroll-mt-28">
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px] opacity-30" />
             <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[120px]" />
             <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[100px]" />
@@ -1411,13 +1400,12 @@ const TeamSection = () => {
                             whileHover={{ y: -4 }}
                             className="group relative rounded-3xl bg-gradient-to-br from-primary-50/70 via-primary-50/40 to-white border border-primary-100 p-7 lg:p-8 transition-all hover:border-primary-300 hover:shadow-[0_22px_56px_-26px_rgba(132,92,245,0.40)] overflow-hidden"
                         >
-                            {/* Top hairline */}
+
                             <span
                                 aria-hidden="true"
                                 className="absolute top-0 left-7 right-7 h-px bg-gradient-to-r from-transparent via-primary-300 to-transparent"
                             />
 
-                            {/* Title + tagline */}
                             <h3 className="text-xl font-extrabold tracking-tight text-neutral-900">
                                 {card.title}
                             </h3>
@@ -1425,20 +1413,16 @@ const TeamSection = () => {
                                 {card.tagline}
                             </p>
 
-                            {/* Quote */}
                             <p className="mt-5 text-[14px] italic text-slate-600 leading-relaxed">
                                 &ldquo;{card.quote}&rdquo;
                             </p>
 
-                            {/* Divider */}
                             <div className="my-6 h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
-                            {/* Subheader */}
                             <h4 className="text-[13.5px] font-bold text-neutral-900 mb-3">
                                 {card.subheader}
                             </h4>
 
-                            {/* List */}
                             <ul className="space-y-2">
                                 {card.items.map((item, i) => (
                                     <li
@@ -1470,15 +1454,14 @@ const TeamSection = () => {
 const FinalCTASection = () => (
     <section className="py-20 lg:py-28 px-6 sm:px-12 relative overflow-hidden">
         <div className="relative max-w-5xl mx-auto">
-            {/* Outer glow */}
+
             <div
                 aria-hidden="true"
                 className="absolute -inset-6 bg-primary-300/30 blur-3xl rounded-[40px] pointer-events-none"
             />
 
-            {/* Boxed CTA — light surface */}
             <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-white via-primary-50/60 to-primary-50 border border-primary-100 shadow-[0_30px_80px_-30px_rgba(132,92,245,0.30)]">
-                {/* Subtle dot grid */}
+
                 <div
                     aria-hidden="true"
                     className="absolute inset-0 opacity-50 pointer-events-none"
@@ -1492,7 +1475,6 @@ const FinalCTASection = () => (
                     }}
                 />
 
-                {/* Ambient corner glows */}
                 <div
                     aria-hidden="true"
                     className="absolute -top-32 -left-16 w-72 h-72 rounded-full bg-primary-200/50 blur-3xl pointer-events-none"
@@ -1540,7 +1522,6 @@ const FinalCTASection = () => (
     </section>
 )
 
-
 const sectionVariants = {
   hidden: { opacity: 0 },
   show: { opacity: 1, transition: { duration: 0.8 } },
@@ -1574,7 +1555,7 @@ const GlobalStyles = () => (
         background-size: 200% 200%;
         animation: gradient-x 3s ease infinite;
       }
-      
+
       .noise-overlay {
         position: fixed;
         top: 0;
@@ -1586,7 +1567,7 @@ const GlobalStyles = () => (
         opacity: 0.03;
         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
       }
-      
+
       .custom-scrollbar::-webkit-scrollbar {
           width: 4px;
       }

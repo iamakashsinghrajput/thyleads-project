@@ -76,7 +76,7 @@ export default function FintechReality() {
         viewport={{ once: true, amount: 0.15 }}
         className="relative z-10 max-w-6xl mx-auto"
       >
-        {/* Header */}
+
         <div className="text-center mb-12 lg:mb-14 max-w-3xl mx-auto">
           <motion.div variants={itemVariants} className="mb-5">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-50 border border-primary-200 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-700">
@@ -110,9 +110,8 @@ export default function FintechReality() {
           </motion.p>
         </div>
 
-        {/* === BENTO GRID === */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-5 lg:auto-rows-[1fr]">
-          {/* === FEATURED WALL 01 === */}
+
           <motion.article
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -121,7 +120,7 @@ export default function FintechReality() {
             whileHover={{ y: -4 }}
             className="group relative lg:row-span-2 rounded-3xl bg-gradient-to-br from-primary-50 via-white to-primary-50/40 border-2 border-primary-200 p-7 lg:p-9 overflow-hidden shadow-[0_20px_50px_-25px_rgba(132,92,245,0.25)] hover:shadow-[0_30px_70px_-25px_rgba(132,92,245,0.35)] transition-all"
           >
-            {/* Subtle dot grid */}
+
             <div
               aria-hidden="true"
               className="absolute inset-0 opacity-50 pointer-events-none"
@@ -135,14 +134,13 @@ export default function FintechReality() {
               }}
             />
 
-            {/* Glow blob */}
             <div
               aria-hidden="true"
               className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-primary-200/35 blur-3xl pointer-events-none"
             />
 
             <div className="relative flex flex-col h-full">
-              {/* Top row: badge + icon */}
+
               <div className="flex items-start justify-between mb-6">
                 <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white border border-primary-200 text-[9px] font-bold uppercase tracking-[0.22em] text-primary-700 shadow-sm">
                   Featured wall
@@ -152,24 +150,20 @@ export default function FintechReality() {
                 </div>
               </div>
 
-              {/* Big editorial numeral */}
               <div className="text-7xl lg:text-[110px] font-extrabold leading-none tracking-tighter tabular-nums bg-gradient-to-br from-primary-500 to-primary-700 bg-clip-text text-transparent mb-5">
                 {featured.number}
               </div>
 
-              {/* Title */}
               <h3 className="text-2xl lg:text-[28px] font-extrabold text-neutral-900 tracking-tight leading-tight mb-4">
                 {featured.title}
               </h3>
 
-              {/* Description */}
               <p className="text-[14px] sm:text-[15px] text-slate-700 leading-relaxed mt-auto">
                 {featured.desc}
               </p>
             </div>
           </motion.article>
 
-          {/* === Smaller walls 02 & 03 === */}
           {smaller.map((wall, i) => {
             const Icon = wall.icon;
             return (
@@ -186,7 +180,7 @@ export default function FintechReality() {
                 whileHover={{ y: -4 }}
                 className="group relative rounded-3xl bg-white border border-slate-200 p-6 lg:p-7 hover:border-primary-200 hover:shadow-[0_20px_50px_-22px_rgba(132,92,245,0.25)] transition-all overflow-hidden"
               >
-                {/* Tiny corner watermark numeral */}
+
                 <span
                   aria-hidden="true"
                   className="absolute -top-2 -right-1 text-[80px] font-extrabold leading-none tracking-tighter tabular-nums text-primary-50 select-none pointer-events-none group-hover:text-primary-100 transition-colors"
@@ -195,7 +189,7 @@ export default function FintechReality() {
                 </span>
 
                 <div className="relative flex flex-col h-full">
-                  {/* Top: icon + number */}
+
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 rounded-xl bg-primary-50 border border-primary-100 flex items-center justify-center text-primary-700 group-hover:bg-primary-100 transition-colors">
                       <Icon className="w-4 h-4" strokeWidth={2} />
@@ -205,12 +199,10 @@ export default function FintechReality() {
                     </span>
                   </div>
 
-                  {/* Title */}
                   <h3 className="text-lg lg:text-xl font-extrabold text-neutral-900 tracking-tight leading-tight mb-2">
                     {wall.title}
                   </h3>
 
-                  {/* Description */}
                   <p className="text-[13px] sm:text-sm text-slate-600 leading-relaxed">
                     {wall.desc}
                   </p>

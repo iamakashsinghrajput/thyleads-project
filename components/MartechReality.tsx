@@ -63,7 +63,7 @@ export default function MartechReality() {
         viewport={{ once: true, amount: 0.15 }}
         className="relative z-10 max-w-6xl mx-auto"
       >
-        {/* Header */}
+
         <div className="text-center max-w-3xl mx-auto">
           <motion.div variants={itemVariants} className="mb-5">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-50 border border-primary-200 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-700">
@@ -95,7 +95,6 @@ export default function MartechReality() {
           </motion.p>
         </div>
 
-        {/* Wall cards */}
         <div className="mt-12 lg:mt-14 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
           {walls.map((wall, i) => {
             const Icon = wall.icon;
@@ -113,13 +112,12 @@ export default function MartechReality() {
                 whileHover={{ y: -4 }}
                 className="group relative rounded-2xl bg-white border border-slate-200 hover:border-primary-200 p-6 sm:p-7 shadow-[0_4px_18px_-10px_rgba(15,23,42,0.08)] hover:shadow-[0_22px_48px_-22px_rgba(132,92,245,0.32)] transition-all overflow-hidden"
               >
-                {/* Top hairline */}
+
                 <span
                   aria-hidden="true"
                   className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-primary-300 to-transparent"
                 />
 
-                {/* Icon tile */}
                 <div className="relative mb-5">
                   <span
                     aria-hidden="true"
@@ -130,28 +128,23 @@ export default function MartechReality() {
                   </div>
                 </div>
 
-                {/* Eyebrow */}
                 <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-primary-700 mb-2.5">
                   {wall.eyebrow}
                 </div>
 
-                {/* Title */}
                 <h3 className="text-[17px] font-extrabold text-neutral-900 leading-snug">
                   {wall.title}
                 </h3>
 
-                {/* Underline accent */}
                 <span
                   aria-hidden="true"
                   className="block mt-3 h-[2px] w-7 bg-primary-600 rounded-full origin-left transition-transform duration-300 group-hover:scale-x-[1.6]"
                 />
 
-                {/* Description */}
                 <p className="mt-4 text-[13.5px] text-slate-600 leading-relaxed">
                   {wall.description}
                 </p>
 
-                {/* Accent footer chip */}
                 <div className="mt-6 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-50 border border-primary-100 text-[10px] font-bold uppercase tracking-[0.18em] text-primary-700">
                   <span className="w-1 h-1 rounded-full bg-primary-600" />
                   {wall.accent}

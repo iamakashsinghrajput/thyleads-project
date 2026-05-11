@@ -32,7 +32,7 @@ const features = [
 const ClientDashboard = () => {
   return (
     <section className="relative w-full bg-slate-50 overflow-hidden flex flex-col items-center px-6 sm:px-12 font-sans py-20 lg:py-28">
-      {/* Top divider — matches the rest of the site */}
+
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl flex items-center justify-center pointer-events-none">
         <div className="flex-1 h-px bg-gradient-to-r from-transparent via-primary-200/70 to-primary-300/80" />
         <div className="relative flex items-center justify-center mx-3">
@@ -45,7 +45,6 @@ const ClientDashboard = () => {
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-          {/* Left column — copy & CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -82,7 +81,6 @@ const ClientDashboard = () => {
             </Link>
           </motion.div>
 
-          {/* Right column — feature list */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

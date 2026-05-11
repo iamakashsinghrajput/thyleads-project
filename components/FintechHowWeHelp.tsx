@@ -59,7 +59,7 @@ const pillars: Pillar[] = [
 export default function FintechHowWeHelp() {
   return (
     <section className="relative py-12 lg:py-16 px-6 sm:px-12 overflow-hidden bg-white font-sans">
-      {/* Soft accents */}
+
       <div
         aria-hidden="true"
         className="absolute -top-32 left-1/4 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
@@ -76,7 +76,7 @@ export default function FintechHowWeHelp() {
         viewport={{ once: true, amount: 0.15 }}
         className="relative z-10 max-w-6xl mx-auto"
       >
-        {/* === Header === */}
+
         <div className="text-center mb-12 lg:mb-14 max-w-3xl mx-auto">
           <motion.div variants={itemVariants} className="mb-5">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-50 border border-primary-200 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-700">
@@ -112,7 +112,6 @@ export default function FintechHowWeHelp() {
           </motion.p>
         </div>
 
-        {/* === 3 PILLAR CARDS === */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-5">
           {pillars.map((pillar, i) => (
             <motion.article
@@ -128,22 +127,19 @@ export default function FintechHowWeHelp() {
               whileHover={{ y: -4 }}
               className="group relative rounded-2xl bg-gradient-to-br from-primary-50 via-primary-50/60 to-white border border-primary-100 px-6 py-7 hover:border-primary-300 hover:shadow-[0_20px_50px_-20px_rgba(132,92,245,0.30),0_8px_20px_-12px_rgba(132,92,245,0.10)] transition-all overflow-hidden"
             >
-              {/* Eyebrow pill */}
+
               <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-white border border-primary-200 text-[9px] font-bold uppercase tracking-[0.22em] text-primary-700 mb-5 shadow-sm">
                 {pillar.eyebrow}
               </span>
 
-              {/* Big gradient numeral */}
               <div className="text-5xl sm:text-[52px] font-extrabold leading-none tracking-tighter tabular-nums bg-gradient-to-br from-primary-400 to-primary-700 bg-clip-text text-transparent mb-3">
                 {pillar.number}
               </div>
 
-              {/* Title */}
               <h3 className="text-lg font-extrabold text-neutral-900 tracking-tight leading-tight mb-3">
                 {pillar.title}
               </h3>
 
-              {/* Description */}
               <p className="text-[13px] sm:text-sm text-slate-700 leading-relaxed">
                 {pillar.desc}
               </p>

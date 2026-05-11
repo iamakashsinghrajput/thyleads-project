@@ -27,19 +27,19 @@ const Testimonial = () => {
 
   return (
     <section className="relative w-full min-h-[600px] flex items-center justify-center bg-slate-950 py-24 px-6 overflow-hidden">
-      
+
       <div className="absolute inset-0 w-full h-full pointer-events-none">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20" />
 
         <motion.div
           animate={{ x: [0, 50, 0], y: [0, 30, 0], opacity: [0.2, 0.4, 0.2] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-0 left-0 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[120px]" 
+          className="absolute top-0 left-0 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[120px]"
         />
-        <motion.div 
+        <motion.div
           animate={{ x: [0, -30, 0], y: [0, -50, 0], opacity: [0.1, 0.3, 0.1] }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[120px]" 
+          className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[120px]"
         />
       </div>
 
@@ -51,7 +51,7 @@ const Testimonial = () => {
           variants={containerVariants}
           className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center"
         >
-          
+
           <div className="lg:col-span-5 flex flex-col space-y-12 relative">
             <div className="hidden lg:block absolute -right-12 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-slate-800 to-transparent" />
 
@@ -59,8 +59,8 @@ const Testimonial = () => {
               <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight tracking-tight">
                 <span className="inline-block relative h-12 w-48 my-1 align-middle">
                   <img
-                    src="/images/mynd.svg" 
-                    alt="MYND Logo" 
+                    src="/images/mynd.svg"
+                    alt="MYND Logo"
                     className="w-full h-full object-contain object-left filter brightness-100 opacity-90"
                     onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
                       const target = e.currentTarget;
@@ -81,7 +81,7 @@ const Testimonial = () => {
               <div className="relative shrink-0">
                 <div className="w-16 h-16 rounded-full overflow-hidden ring-2 ring-indigo-500/20 shadow-2xl">
                   <img
-                    src="/ArghaKarmakar.jpeg" 
+                    src="/ArghaKarmakar.jpeg"
                     alt="Argha Karmakar"
                     className="w-full h-full object-cover"
                   />
@@ -99,16 +99,15 @@ const Testimonial = () => {
             </motion.div>
           </div>
 
-
           <div className="lg:col-span-7 relative">
             <motion.div variants={itemVariants} className="relative pl-0 lg:pl-8">
-              
+
               <Quote className="absolute -top-10 -left-6 lg:left-0 w-20 h-20 text-indigo-500/10 rotate-180 pointer-events-none" />
 
               <blockquote className="relative z-10">
                 <p className="text-xl md:text-2xl text-slate-300 font-light leading-relaxed tracking-wide">
-                  &quot;In over a decade of experience in <span className="text-white font-medium">Strategy & Marketing</span>, I have worked with several &apos;Lead Agencies&apos; across a wide spectrum of premium price points. 
-                  <span className="text-indigo-200 font-normal"> Thyleads has outperformed them all </span> 
+                  &quot;In over a decade of experience in <span className="text-white font-medium">Strategy & Marketing</span>, I have worked with several &apos;Lead Agencies&apos; across a wide spectrum of premium price points.
+                  <span className="text-indigo-200 font-normal"> Thyleads has outperformed them all </span>
                   in terms of value for money, specifically regarding SaaS-based lead generation and connecting with relevant Key Decision Makers. The team&apos;s understanding of Ideal Customer Profiles and their deep technical expertise positions them exceptionally well.&quot;
                 </p>
               </blockquote>

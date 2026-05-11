@@ -76,7 +76,7 @@ export default function FintechFAQ() {
         viewport={{ once: true, amount: 0.15 }}
         className="relative z-10 max-w-4xl mx-auto"
       >
-        {/* Header */}
+
         <div className="text-center mb-10 lg:mb-12 max-w-3xl mx-auto">
           <motion.div variants={itemVariants} className="mb-5">
             <span className="inline-block text-[11px] font-semibold uppercase tracking-[0.28em] text-primary-700">
@@ -109,7 +109,6 @@ export default function FintechFAQ() {
           </motion.p>
         </div>
 
-        {/* FAQ list */}
         <div className="space-y-3">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;

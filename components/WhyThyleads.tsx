@@ -87,7 +87,7 @@ const WhyThyleadsRedesign: React.FC = () => {
 
   return (
     <section className="relative w-full min-h-screen bg-[#050505] overflow-hidden flex flex-col items-center justify-center font-sans text-white py-20">
-      
+
       <div className="absolute inset-0 z-0">
          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:40px_40px] opacity-[0.03]" />
          <motion.div
@@ -100,7 +100,7 @@ const WhyThyleadsRedesign: React.FC = () => {
       </div>
 
       <div className="relative z-10 w-full max-w-7xl px-4 lg:px-8 flex flex-col h-full justify-center">
-        
+
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-4">
             Why <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/40">Thyleads?</span>
@@ -113,34 +113,34 @@ const WhyThyleadsRedesign: React.FC = () => {
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-2 h-auto lg:h-[600px] w-full">
            {features.map((feature, idx) => {
              const isActive = activeTab === idx;
-             
+
              return (
                <motion.div
                  key={feature.id}
                  layout
                  onClick={() => setActiveTab(idx)}
                  className={`relative overflow-hidden rounded-2xl cursor-pointer border transition-all duration-500 ease-[0.32,0.72,0,1] flex-1 min-h-[220px] ${
-                   isActive 
-                     ? `lg:flex-[3] border-white/10 ${feature.shadow} shadow-2xl` 
+                   isActive
+                     ? `lg:flex-[3] border-white/10 ${feature.shadow} shadow-2xl`
                      : 'lg:flex-[0.3] border-white/5 hover:border-white/20 lg:hover:flex-[0.5]'
                  }`}
                >
                  <div className="absolute inset-0">
-                    <img 
-                      src={feature.image} 
-                      alt={feature.title} 
+                    <img
+                      src={feature.image}
+                      alt={feature.title}
                       className={`w-full h-full object-cover transition-transform duration-1000 ${isActive ? 'scale-100' : 'scale-150 grayscale opacity-40'}`}
                     />
                     <div className={`absolute inset-0 bg-gradient-to-b ${isActive ? feature.gradient : 'from-black/80 to-black/90'}`} />
                  </div>
 
                  <div className="relative h-full flex flex-col p-6 lg:p-10">
-                    
+
                     <div className="flex items-start justify-between">
                        <div className={`w-10 h-10 rounded-xl flex items-center justify-center backdrop-blur-md border border-white/10 ${isActive ? 'bg-white/10 text-white' : 'bg-black/40 text-white/50'}`}>
                           {feature.icon}
                        </div>
-                       
+
                        <div className="lg:hidden text-white/50">
                          {isActive ? <ChevronRight className="rotate-90 transition-transform" /> : <ChevronRight />}
                        </div>
@@ -169,7 +169,7 @@ const WhyThyleadsRedesign: React.FC = () => {
                              <h3 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
                                {feature.heading}
                              </h3>
-                             
+
                              <p className="text-lg text-white/70 leading-relaxed max-w-lg mb-8">
                                {feature.description}
                              </p>
@@ -186,17 +186,17 @@ const WhyThyleadsRedesign: React.FC = () => {
                           </motion.div>
                         )}
                     </div>
-                    
+
                     <div className="absolute right-4 bottom-4 text-[100px] font-black text-white/5 leading-none pointer-events-none select-none">
                       {feature.label}
                     </div>
 
                  </div>
-                 
+
                  {isActive && (
-                    <motion.div 
+                    <motion.div
                       layoutId="activeBorder"
-                      className={`absolute inset-0 border-2 ${feature.border} rounded-2xl pointer-events-none`} 
+                      className={`absolute inset-0 border-2 ${feature.border} rounded-2xl pointer-events-none`}
                     />
                  )}
                </motion.div>

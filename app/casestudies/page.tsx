@@ -211,7 +211,7 @@ export default function CaseStudiesPage() {
                         </div>
                       )}
                     </div>
-                    
+
                     <p className="text-slate-700 text-lg sm:text-xl font-medium mb-6 line-clamp-5 leading-relaxed flex-grow">
                       &quot;{story.quote}&quot;
                     </p>

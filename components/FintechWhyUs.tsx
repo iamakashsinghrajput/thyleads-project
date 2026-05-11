@@ -91,7 +91,7 @@ export default function FintechWhyUs() {
         viewport={{ once: true, amount: 0.15 }}
         className="relative z-10 max-w-6xl mx-auto grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-center"
       >
-        {/* === LEFT — Copy === */}
+
         <div>
           <motion.div variants={itemVariants} className="mb-5">
             <span className="inline-block text-[11px] font-semibold uppercase tracking-[0.28em] text-primary-700">
@@ -131,7 +131,7 @@ export default function FintechWhyUs() {
             className="mt-8 flex items-center gap-4"
           >
             <a
-              href="#"
+              href="/why-thyleads"
               className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-700 hover:bg-primary-800 text-white text-sm font-bold shadow-[0_10px_28px_-8px_rgba(132,92,245,0.50)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
             >
               Why Thyleads
@@ -148,11 +148,10 @@ export default function FintechWhyUs() {
           </motion.div>
         </div>
 
-        {/* === RIGHT — Team blueprint === */}
         <motion.div variants={itemVariants} className="relative">
-          {/* Outer panel — light primary wash */}
+
           <div className="relative rounded-3xl bg-gradient-to-br from-primary-50 via-white to-primary-50/40 border border-primary-100 p-5 sm:p-6 overflow-hidden shadow-[0_24px_60px_-30px_rgba(132,92,245,0.22)]">
-            {/* Subtle dot grid */}
+
             <div
               aria-hidden="true"
               className="absolute inset-0 opacity-50 pointer-events-none"
@@ -166,7 +165,6 @@ export default function FintechWhyUs() {
               }}
             />
 
-            {/* Header */}
             <div className="relative flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
                 <span className="relative flex h-1.5 w-1.5" aria-hidden="true">
@@ -182,7 +180,6 @@ export default function FintechWhyUs() {
               </span>
             </div>
 
-            {/* Role grid */}
             <div className="relative grid grid-cols-2 gap-3">
               {roles.map((r, i) => {
                 const Icon = r.icon;
@@ -200,7 +197,7 @@ export default function FintechWhyUs() {
                     whileHover={{ y: -3 }}
                     className="group relative rounded-2xl bg-white border border-primary-100 px-3.5 py-3.5 hover:border-primary-200 hover:shadow-[0_10px_26px_-12px_rgba(132,92,245,0.28)] transition-all"
                   >
-                    {/* Avatar + AI indicator */}
+
                     <div className="flex items-center gap-2 mb-2.5">
                       <div className="relative">
                         <div
@@ -212,7 +209,7 @@ export default function FintechWhyUs() {
                         >
                           {r.initials}
                         </div>
-                        {/* Mini icon badge */}
+
                         <span
                           aria-hidden="true"
                           className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-white border border-primary-100 flex items-center justify-center text-primary-700 shadow-sm"
@@ -222,7 +219,6 @@ export default function FintechWhyUs() {
                       </div>
                     </div>
 
-                    {/* Role + focus */}
                     <div className="text-[13px] font-extrabold text-neutral-900 leading-tight">
                       {r.role}
                     </div>
@@ -230,7 +226,6 @@ export default function FintechWhyUs() {
                       {r.focus}
                     </div>
 
-                    {/* Tags */}
                     <div className="flex flex-wrap gap-1">
                       {r.tags.map(tag => (
                         <span
@@ -246,7 +241,6 @@ export default function FintechWhyUs() {
               })}
             </div>
 
-            {/* Footer connector — "→ Tied to your growth" */}
             <motion.div
               initial={{ opacity: 0, y: 6 }}
               whileInView={{ opacity: 1, y: 0 }}

@@ -105,13 +105,12 @@ export default function SeriesBSocialProof() {
               whileHover={{ y: -4 }}
               className="group relative rounded-3xl bg-gradient-to-br from-white via-white to-primary-50/40 border border-slate-200 hover:border-primary-200 p-7 sm:p-8 shadow-[0_4px_18px_-10px_rgba(15,23,42,0.08)] hover:shadow-[0_28px_56px_-22px_rgba(132,92,245,0.32)] transition-all overflow-hidden"
             >
-              {/* Top hairline */}
+
               <span
                 aria-hidden="true"
                 className="absolute top-0 left-7 right-7 h-px bg-gradient-to-r from-transparent via-primary-300 to-transparent"
               />
 
-              {/* Top-right dot grid */}
               <div
                 aria-hidden="true"
                 className="absolute -top-2 -right-2 w-32 h-32 opacity-60 pointer-events-none"
@@ -125,7 +124,6 @@ export default function SeriesBSocialProof() {
                 }}
               />
 
-              {/* Brand chip */}
               <div className="relative flex items-start gap-3">
                 <div className="relative shrink-0">
                   <span
@@ -149,20 +147,16 @@ export default function SeriesBSocialProof() {
                 </div>
               </div>
 
-              {/* Title */}
               <h3 className="relative mt-5 text-[22px] sm:text-[24px] font-extrabold tracking-tight leading-[1.2] text-neutral-900">
                 {cs.title}
               </h3>
 
-              {/* Description */}
               <p className="relative mt-4 text-[14px] text-slate-600 leading-relaxed">
                 {cs.description}
               </p>
 
-              {/* Divider */}
               <div className="relative mt-6 h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
-              {/* Stats */}
               <div className="relative mt-6 grid grid-cols-3 gap-4">
                 {cs.stats.map((stat, j) => (
                   <div key={stat.label} className="relative">
@@ -186,7 +180,6 @@ export default function SeriesBSocialProof() {
                 ))}
               </div>
 
-              {/* Footer link */}
               <div className="relative mt-7 pt-5 border-t border-slate-100">
                 <a
                   href="/casestudies"

@@ -15,7 +15,7 @@ export default function CustomerStoryPage({ testimonial, onBack }: CustomerStory
   return (
     <div className="min-h-screen bg-white font-sans animate-in fade-in duration-500">
       <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 lg:px-12 bg-gradient-to-b from-black/60 to-transparent">
-        <button 
+        <button
           onClick={onBack}
           className="flex items-center gap-2 text-white/90 hover:text-white bg-white/10 hover:bg-white/20 backdrop-blur-md px-4 py-2 rounded-full transition-all text-sm font-medium border border-white/10"
         >
@@ -29,10 +29,10 @@ export default function CustomerStoryPage({ testimonial, onBack }: CustomerStory
 
       <header className="relative h-[85vh] w-full overflow-hidden flex items-end pb-20">
         <div className="absolute inset-0 w-full h-full bg-slate-900">
-          <video 
-            autoPlay 
-            muted 
-            loop 
+          <video
+            autoPlay
+            muted
+            loop
             playsInline
             className="w-full h-full object-cover opacity-60"
           >
@@ -48,7 +48,7 @@ export default function CustomerStoryPage({ testimonial, onBack }: CustomerStory
               <PlayCircle className="w-3 h-3 fill-current" />
               Watch Story
             </div>
-            
+
             <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight leading-[1.1] mb-8">
               How {testimonial.companyName} unlocked <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-[#C3F53C]">
@@ -58,8 +58,8 @@ export default function CustomerStoryPage({ testimonial, onBack }: CustomerStory
 
             <div className="flex flex-col md:flex-row gap-8 md:gap-16 pt-8 border-t border-white/10">
               <div className="flex items-center gap-4">
-                <img 
-                  src={testimonial.personImage} 
+                <img
+                  src={testimonial.personImage}
                   alt={testimonial.personName}
                   className="w-14 h-14 rounded-full border-2 border-white/20 object-cover"
                 />
@@ -86,15 +86,15 @@ export default function CustomerStoryPage({ testimonial, onBack }: CustomerStory
 
       <main className="relative z-10 bg-white">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 px-6 md:px-12 py-20">
-          
+
           <aside className="lg:col-span-3 hidden lg:block">
             <div className="sticky top-32 space-y-8">
               <div className="text-sm font-semibold text-gray-400 tracking-wider uppercase mb-4">Contents</div>
               <nav className="space-y-1">
                 {['The Challenge', 'The Solution', 'Key Results', 'Future Outlook'].map((item, i) => (
-                  <a 
-                    key={item} 
-                    href="#" 
+                  <a
+                    key={item}
+                    href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
                     className={`block py-2 text-lg transition-colors ${i === 0 ? 'text-blue-600 font-medium' : 'text-gray-500 hover:text-gray-900'}`}
                   >
                     {item}
@@ -117,7 +117,7 @@ export default function CustomerStoryPage({ testimonial, onBack }: CustomerStory
           </aside>
 
           <article className="lg:col-span-8 lg:col-start-5 space-y-12">
-            
+
             <div className="prose prose-lg md:prose-xl max-w-none text-slate-600">
               <p className="lead text-2xl font-normal leading-relaxed text-slate-900 mb-8">
                 As a global leader in travel, {testimonial.companyName} manages massive amounts of data across distributed teams. They needed a way to break down silos and make internal knowledge instantly accessible.

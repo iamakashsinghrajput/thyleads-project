@@ -252,7 +252,7 @@ export default function VWOCaseStudy() {
                         <div id="future-outlook" className="prose prose-lg max-w-none text-slate-600 scroll-mt-32">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Future Outlook</h3>
               <p className="mb-4">
-                The precision engine is now the baseline. The next phase moves from finding talent to Predictive Skill Orchestration. 
+                The precision engine is now the baseline. The next phase moves from finding talent to Predictive Skill Orchestration.
               </p>
               <p>
                 By leveraging the data captured in this phase, Zigtal and Thyleads are building a GTM model that predicts which companies are one Expert departure away from a project failure, ensuring Zigtal is there with the fix before the break happens.

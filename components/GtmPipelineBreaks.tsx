@@ -78,7 +78,7 @@ const gaps: Gap[] = [
 export default function GtmPipelineBreaks() {
   return (
     <section className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-white font-sans">
-      {/* Ambient glow */}
+
       <div
         aria-hidden="true"
         className="absolute -top-32 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
@@ -91,7 +91,7 @@ export default function GtmPipelineBreaks() {
         viewport={{ once: true, amount: 0.15 }}
         className="relative z-10 max-w-6xl mx-auto"
       >
-        {/* Header */}
+
         <div className="text-center max-w-3xl mx-auto">
           <motion.div variants={itemVariants} className="mb-5">
             <span className="inline-block text-[11px] font-semibold uppercase tracking-[0.28em] text-primary-700">
@@ -126,7 +126,6 @@ export default function GtmPipelineBreaks() {
           </motion.p>
         </div>
 
-        {/* Cards */}
         <div className="mt-12 lg:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4">
           {gaps.map((gap, i) => {
             const Icon = gap.icon;
@@ -144,13 +143,12 @@ export default function GtmPipelineBreaks() {
                 whileHover={{ y: -4 }}
                 className="group relative rounded-2xl bg-white border border-slate-200 hover:border-primary-200 px-5 py-6 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.08)] hover:shadow-[0_18px_40px_-16px_rgba(132,92,245,0.28)] transition-all overflow-hidden"
               >
-                {/* Top hairline */}
+
                 <span
                   aria-hidden="true"
                   className="absolute top-0 left-5 right-5 h-px bg-gradient-to-r from-transparent via-primary-300 to-transparent"
                 />
 
-                {/* Icon tile */}
                 <div className="relative mb-4">
                   <span
                     aria-hidden="true"
@@ -161,18 +159,15 @@ export default function GtmPipelineBreaks() {
                   </div>
                 </div>
 
-                {/* Title */}
                 <div className="text-[15px] font-extrabold text-neutral-900 leading-tight">
                   {gap.title}
                 </div>
 
-                {/* Underline accent */}
                 <span
                   aria-hidden="true"
                   className="block mt-2.5 h-[2px] w-7 bg-primary-600 rounded-full origin-left transition-transform duration-300 group-hover:scale-x-[1.6]"
                 />
 
-                {/* Description */}
                 <p className="mt-3 text-[13px] text-slate-600 leading-relaxed">
                   {gap.desc}
                 </p>
@@ -181,7 +176,6 @@ export default function GtmPipelineBreaks() {
           })}
         </div>
 
-        {/* Footer line */}
         <motion.div
           variants={itemVariants}
           className="mt-12 lg:mt-14 flex justify-center"

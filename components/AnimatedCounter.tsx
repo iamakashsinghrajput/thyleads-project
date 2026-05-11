@@ -10,12 +10,12 @@ interface AnimatedCounterProps {
   className?: string;
 }
 
-const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ 
-  value, 
-  prefix = "", 
-  suffix = "", 
-  decimals = 0, 
-  className = "" 
+const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
+  value,
+  prefix = "",
+  suffix = "",
+  decimals = 0,
+  className = ""
 }) => {
   const ref = useRef<HTMLSpanElement>(null);
   const motionValue = useMotionValue(value);

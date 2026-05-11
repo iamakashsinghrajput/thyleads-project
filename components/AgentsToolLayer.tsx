@@ -27,25 +27,22 @@ type Mcp = {
 };
 
 const mcps: Mcp[] = [
-  // Row 1 — Prospecting
+
   { category: 'Prospecting', name: 'Apollo MCP', description: 'Contact and company database used by Research and Stakeholder agents.' },
   { category: 'Prospecting', name: 'Crustdata MCP', description: 'India-strong B2B data and hiring signals for Research and Signal Detection.' },
   { category: 'Inbound', name: 'Apify MCP', description: 'Web scraping across LinkedIn, news, job boards, and filings.' },
   { category: 'Enrichment', name: 'Cosy MCP', description: 'Enrichment orchestration with AI columns used by Research and Content.' },
 
-  // Row 2 — Inbound / verification / outreach
   { category: 'Research', name: 'Sales Navigator MCP', description: 'Deep LinkedIn search for Research and Stakeholder Mapping agents.' },
   { category: 'Verification', name: 'ZeroBounce MCP', description: 'Email verification before any contact is added to a sequence.' },
   { category: 'Email Ops', name: 'Smartlead MCP', description: 'Campaign metrics and mailbox health for Deliverability and Reply Triage.' },
   { category: 'LinkedIn Ops', name: 'HeyReach MCP', description: 'LinkedIn campaign metrics plus cadence for Deliverability and Reply Triage.' },
 
-  // Row 3 — Meetings / scheduling / monitoring
   { category: 'Meetings', name: 'Fireflies MCP', description: 'Transcript ingestion for Meeting Intelligence Agent.' },
   { category: 'Scheduling', name: 'Google Calendar MCP', description: 'Meeting scheduling and event creation for Deal Momentum Agent.' },
   { category: 'Deliverability', name: 'Postmaster Tools MCP', description: 'Domain reputation and spam-rate monitoring.' },
   { category: 'Deliverability', name: 'MXToolbox MCP', description: 'Records and DNS checks for Deliverability Monitor Agent.' },
 
-  // Row 4 — Outbound channels / sourcing / memory
   { category: 'Outreach', name: 'Gupshup MCP', description: 'WhatsApp template sends for Deal Momentum Agent (India).' },
   { category: 'Verification', name: 'Gmail / Outlook MCP', description: '1-to-1 email tools for AE assist after handover.' },
   { category: 'Sourcing', name: 'Hunter / LeadMagic MCP', description: 'Email-finding fallback for Stakeholder Mapping.' },

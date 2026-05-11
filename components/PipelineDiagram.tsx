@@ -90,7 +90,7 @@ export default function PipelineDiagram() {
 
   return (
     <div className="relative w-full">
-      {/* Soft glows */}
+
       <div
         aria-hidden="true"
         className="absolute -top-12 -right-12 w-72 h-72 bg-primary-200/45 blur-3xl rounded-full pointer-events-none"
@@ -100,7 +100,6 @@ export default function PipelineDiagram() {
         className="absolute -bottom-12 -left-12 w-72 h-72 bg-emerald-100 blur-3xl rounded-full pointer-events-none"
       />
 
-      {/* Stacked back cards for depth */}
       <div
         aria-hidden="true"
         className="absolute inset-x-6 top-6 h-24 rounded-3xl bg-white border border-primary-100 shadow-[0_20px_40px_-20px_rgba(132,92,245,0.18)] -z-10 -rotate-2 origin-bottom-left"
@@ -110,7 +109,6 @@ export default function PipelineDiagram() {
         className="absolute inset-x-3 top-3 h-32 rounded-3xl bg-white border border-primary-100 shadow-[0_24px_50px_-20px_rgba(132,92,245,0.20)] -z-10 rotate-1 origin-bottom-right"
       />
 
-      {/* Main card */}
       <motion.div
         key={index}
         initial={{ opacity: 0, y: 12, scale: 0.98 }}
@@ -118,7 +116,7 @@ export default function PipelineDiagram() {
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         className="relative rounded-3xl bg-white ring-1 ring-primary-100 shadow-[0_30px_80px_-20px_rgba(132,92,245,0.28),0_8px_24px_-8px_rgba(132,92,245,0.10)] overflow-hidden"
       >
-        {/* Top status bar */}
+
         <div className="flex items-center justify-between px-5 py-3 border-b border-slate-100 bg-gradient-to-r from-white via-primary-50/50 to-white">
           <div className="flex items-center gap-2">
             <span className="relative flex h-2 w-2" aria-hidden="true">
@@ -144,7 +142,6 @@ export default function PipelineDiagram() {
           </div>
         </div>
 
-        {/* Profile header */}
         <div className="px-5 pt-5 pb-4">
           <AnimatePresence mode="wait">
             <motion.div
@@ -189,7 +186,6 @@ export default function PipelineDiagram() {
           </AnimatePresence>
         </div>
 
-        {/* Score bar */}
         <div className="px-5 pb-3">
           <div className="grid grid-cols-3 gap-2">
             <div className="rounded-xl bg-primary-50 border border-primary-100 px-3 py-2">
@@ -249,7 +245,6 @@ export default function PipelineDiagram() {
           </div>
         </div>
 
-        {/* Buying signals */}
         <div className="px-5 pb-3">
           <div className="text-[9px] font-bold uppercase tracking-[0.18em] text-slate-500 mb-1.5">
             Buying signals
@@ -276,7 +271,6 @@ export default function PipelineDiagram() {
           </AnimatePresence>
         </div>
 
-        {/* Personalized message preview */}
         <div className="px-5 pb-4">
           <div className="flex items-center justify-between mb-1.5">
             <div className="text-[9px] font-bold uppercase tracking-[0.18em] text-slate-500 inline-flex items-center gap-1">
@@ -301,7 +295,6 @@ export default function PipelineDiagram() {
           </AnimatePresence>
         </div>
 
-        {/* Footer — verified actions */}
         <div className="flex items-center justify-between px-5 py-3 border-t border-slate-100 bg-gradient-to-r from-emerald-50/60 via-white to-emerald-50/60">
           <div className="inline-flex items-center gap-1.5 text-emerald-700">
             <ShieldCheck className="w-3.5 h-3.5" strokeWidth={2.25} />
@@ -316,7 +309,6 @@ export default function PipelineDiagram() {
         </div>
       </motion.div>
 
-      {/* Pagination dots */}
       <div className="mt-3 flex items-center justify-center gap-1.5">
         {leads.map((_, i) => (
           <button

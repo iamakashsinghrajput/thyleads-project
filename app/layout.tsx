@@ -91,7 +91,7 @@ export default function RootLayout({
           `}
         </Script>
         <noscript>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
+
           <img src="//p.tgtag.io/event?property_group_id=tg-g-023752-001&event_name=pageview&no_script=1" width="1" height="1" style={{ display: 'none' }} alt="" />
         </noscript>
       </head>

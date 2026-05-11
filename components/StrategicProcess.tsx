@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
+import {
   Database,
   Target,
   FileText,
@@ -54,7 +54,7 @@ const GraphicFoundation = () => {
   return (
     <div className="relative w-full h-full flex flex-col items-center justify-center p-4">
       <div className={`flex items-center gap-3 transition-all duration-500 ${isLocked ? 'scale-105 gap-4' : 'scale-100'}`}>
-        
+
         <div className={`relative w-16 h-20 rounded-lg border flex flex-col items-center justify-center bg-slate-900/50 backdrop-blur-sm transition-colors duration-300 ${stage >= 0 ? 'border-blue-500/50 shadow-[0_0_15px_rgba(59,130,246,0.2)]' : 'border-white/5 opacity-30'}`}>
            <Database size={16} className={`mb-2 ${stage >= 0 ? 'text-blue-400' : 'text-slate-600'}`} />
            <div className="relative w-8 h-6">
@@ -62,7 +62,7 @@ const GraphicFoundation = () => {
                  className="absolute inset-0 bg-blue-500/20 rounded-sm border border-blue-500/30"
                  animate={stage >= 0 ? { y: [5, 0], scale: [0.8, 1], opacity: 1 } : { opacity: 0 }}
               />
-              <motion.div 
+              <motion.div
                  className="absolute inset-0 bg-blue-500/40 rounded-sm border border-blue-500/50"
                  animate={stage >= 0 ? { y: [10, -2], scale: [0.8, 1], opacity: 1 } : { opacity: 0 }}
                  transition={{ delay: 0.1 }}
@@ -85,12 +85,12 @@ const GraphicFoundation = () => {
               {[...Array(6)].map((_, i) => {
                  const isTarget = [1, 4].includes(i);
                  return (
-                    <motion.div 
+                    <motion.div
                       key={i}
                       className={`w-2 h-2 rounded-full ${isTarget ? 'bg-red-500' : 'bg-slate-700'}`}
-                      animate={stage >= 1 ? { 
-                         opacity: isTarget ? 1 : 0.2, 
-                         scale: isTarget ? 1.2 : 0.8 
+                      animate={stage >= 1 ? {
+                         opacity: isTarget ? 1 : 0.2,
+                         scale: isTarget ? 1.2 : 0.8
                       } : { opacity: 0 }}
                       transition={{ delay: 0.1 * i }}
                     />
@@ -127,20 +127,20 @@ const GraphicFoundation = () => {
         <div className={`relative w-16 h-20 rounded-lg border flex flex-col items-center justify-center bg-slate-900/50 backdrop-blur-sm transition-colors duration-300 ${stage >= 3 ? 'border-emerald-500/50 shadow-[0_0_15px_rgba(16,185,129,0.2)]' : 'border-white/5 opacity-30'}`}>
            <Settings size={16} className={`mb-2 ${stage >= 3 ? 'text-emerald-400' : 'text-slate-600'}`} />
            <div className="flex items-center gap-1">
-              <motion.div 
+              <motion.div
                  className="w-3 h-3 rounded bg-blue-500/20 border border-blue-500 flex items-center justify-center"
                  animate={stage >= 3 ? { scale: [0, 1] } : { scale: 0 }}
               >
                  <Linkedin size={8} className="text-blue-400" />
               </motion.div>
-              
-              <motion.div 
-                 className="h-0.5 bg-emerald-500" 
+
+              <motion.div
+                 className="h-0.5 bg-emerald-500"
                  animate={stage >= 3 ? { width: 12 } : { width: 0 }}
                  transition={{ delay: 0.2 }}
               />
 
-              <motion.div 
+              <motion.div
                  className="w-3 h-3 rounded bg-emerald-500/20 border border-emerald-500 flex items-center justify-center"
                  animate={stage >= 3 ? { scale: [0, 1] } : { scale: 0 }}
                  transition={{ delay: 0.3 }}
@@ -160,7 +160,7 @@ const GraphicFoundation = () => {
 
       <AnimatePresence>
         {isLocked && (
-          <motion.div 
+          <motion.div
             className="absolute inset-x-8 bottom-4 h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent"
             initial={{ scaleX: 0, opacity: 0 }}
             animate={{ scaleX: 1, opacity: 1 }}
@@ -174,9 +174,9 @@ const GraphicFoundation = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      
+
       {isLocked && (
-         <motion.div 
+         <motion.div
             className="absolute inset-4 rounded-xl border border-white/5"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1.05 }}
@@ -208,7 +208,7 @@ const GraphicActivation = () => {
   return (
     <div className="relative w-full h-full flex items-center justify-center">
       <div className="absolute top-1/2 left-4 right-4 h-0.5 bg-white/10 -translate-y-1/2 rounded-full" />
-      
+
       <motion.div
         className="absolute top-1/2 left-4 h-0.5 bg-purple-500 -translate-y-1/2 rounded-full z-0"
         animate={{ width: `${(activeIdx / (steps.length - 1)) * 80 + 10}%` }}
@@ -230,15 +230,15 @@ const GraphicActivation = () => {
               >
                 <step.icon size={20} />
               </motion.div>
-              <motion.span 
+              <motion.span
                 className={`text-[9px] font-bold uppercase tracking-wider ${isActive ? 'text-white' : 'text-white/20'}`}
                 animate={{ opacity: isActive ? 1 : 0.3 }}
               >
                 {step.label}
               </motion.span>
-              
+
               {isCurrent && (
-                <motion.div 
+                <motion.div
                   className="absolute -bottom-4 w-1 h-1 bg-purple-500 rounded-full"
                   layoutId="activeDot"
                 />
@@ -280,14 +280,14 @@ const GraphicQualification = () => {
           <div className="w-8 h-8 rounded bg-indigo-500/20 flex items-center justify-center shrink-0 z-10 text-indigo-300">
             <phase.icon size={16} />
           </div>
-          
+
           <div className="flex flex-col z-10">
             <span className="text-xs font-bold text-white">{phase.label}</span>
             <span className="text-[9px] text-white/50 uppercase tracking-wider">{phase.desc}</span>
           </div>
 
           <div className="ml-auto z-10">
-             <motion.div 
+             <motion.div
                initial={{ scale: 0 }}
                animate={{ scale: 1 }}
                transition={{ delay: i * 0.3 + 1.5 }}
@@ -313,7 +313,7 @@ const GraphicMomentum = () => {
   return (
     <div className="relative w-full h-full flex items-center justify-center">
       <div className="absolute w-[240px] h-[240px] border border-white/5 rounded-full" />
-      <motion.div 
+      <motion.div
          className="absolute w-[200px] h-[200px] border border-emerald-500/20 rounded-full border-dashed"
          animate={{ rotate: 360 }}
          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
@@ -359,7 +359,7 @@ const GraphicMomentum = () => {
 const GraphicScale = () => {
   return (
     <div className="relative w-full h-full flex items-center justify-center">
-      
+
       <div className="relative flex items-center justify-center mr-12">
          <motion.div
            className="w-32 h-32 rounded-full border border-pink-500/30 border-dashed"
@@ -367,7 +367,7 @@ const GraphicScale = () => {
            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
          />
          <div className="absolute inset-0 flex items-center justify-center">
-            <motion.div 
+            <motion.div
                className="w-12 h-12 bg-pink-950 border border-pink-500 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(236,72,153,0.4)]"
                animate={{ scale: [1, 1.1, 1] }}
                transition={{ duration: 2, repeat: Infinity }}
@@ -377,8 +377,8 @@ const GraphicScale = () => {
          </div>
 
          {[
-           { icon: Handshake, bg: "bg-blue-500" }, 
-           { icon: Database, bg: "bg-purple-500" }, 
+           { icon: Handshake, bg: "bg-blue-500" },
+           { icon: Database, bg: "bg-purple-500" },
            { icon: BarChart, bg: "bg-emerald-500" }
          ].map((item, i) => (
             <motion.div
@@ -387,7 +387,7 @@ const GraphicScale = () => {
                animate={{ rotate: 360 }}
                transition={{ duration: 8, repeat: Infinity, ease: "linear", delay: -i * 2.6 }}
             >
-               <div 
+               <div
                  className={`absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full ${item.bg} border-2 border-white/20 flex items-center justify-center text-white`}
                  style={{ transform: 'rotate(0deg)' }}
                >
@@ -399,9 +399,9 @@ const GraphicScale = () => {
 
       <div className="absolute right-8 bottom-12 flex items-end gap-1.5 h-32">
          <div className="absolute -left-12 top-1/2 -translate-y-1/2 w-10 h-[1px] bg-gradient-to-r from-pink-500 to-transparent" />
-         
+
          {[0.3, 0.5, 0.7, 1.0].map((h, i) => (
-           <motion.div 
+           <motion.div
              key={i}
              className="w-6 bg-gradient-to-t from-pink-900 to-pink-500 rounded-t-sm relative"
              initial={{ height: 10 }}
@@ -409,7 +409,7 @@ const GraphicScale = () => {
              transition={{ duration: 1, delay: i * 0.2, type: "spring" }}
            >
               {i === 3 && (
-                 <motion.div 
+                 <motion.div
                    className="absolute -top-8 left-1/2 -translate-x-1/2 flex flex-col items-center"
                    initial={{ opacity: 0, y: 10 }}
                    animate={{ opacity: 1, y: 0 }}
@@ -422,14 +422,13 @@ const GraphicScale = () => {
            </motion.div>
          ))}
       </div>
-      
+
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[10px] font-bold text-white/40 uppercase tracking-widest whitespace-nowrap">
          Insight Loop → Growth
       </div>
     </div>
   );
 };
-
 
 const steps = [
   {

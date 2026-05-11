@@ -58,7 +58,6 @@ export default function AgentsHumanLayer() {
           </span>
         </motion.h2>
 
-        {/* Role pills */}
         <motion.div
           variants={itemVariants}
           className="mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-3"

@@ -40,6 +40,7 @@ const testimonials = [
     initials: 'US',
     name: 'Umar Salman',
     role: 'Head of Marketing, Tazapay',
+    photo: '/tazapay.png',
     quote:
       'Thyleads qualify, set context, and make sure our sales team walks into calls knowing why the prospect is there and what problem they’re trying to solve.',
   },
@@ -47,6 +48,7 @@ const testimonials = [
     initials: 'AK',
     name: 'Argha Karmakar',
     role: 'GM Marketing, MYND',
+    photo: '/ArghaKarmakar.jpeg',
     quote:
       'In over a decade of experience in Strategy & Marketing, I have worked with several “Lead Agencies” across a wide spectrum of premium price points. Thyleads has outperformed them all in terms of value for money.',
   },
@@ -67,7 +69,7 @@ export default function FintechSocialProof() {
         viewport={{ once: true, amount: 0.15 }}
         className="relative z-10 max-w-6xl mx-auto"
       >
-        {/* Header */}
+
         <div className="text-center mb-12 lg:mb-14 max-w-3xl mx-auto">
           <motion.div variants={itemVariants} className="mb-5">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-50 border border-primary-200 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-700">
@@ -93,26 +95,23 @@ export default function FintechSocialProof() {
           </motion.h2>
         </div>
 
-        {/* === Two-column: case study + testimonials === */}
         <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-5 lg:gap-6 items-start">
-          {/* === LEFT — Case study === */}
+
           <motion.article
             variants={itemVariants}
             whileHover={{ y: -3 }}
             transition={{ duration: 0.3 }}
             className="group relative rounded-3xl bg-white border border-slate-200 p-6 lg:p-8 shadow-[0_24px_60px_-30px_rgba(15,23,42,0.12)] hover:shadow-[0_30px_70px_-30px_rgba(132,92,245,0.20)] hover:border-primary-200 transition-all"
           >
-            {/* Tag */}
+
             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-50 border border-primary-200 text-[10px] font-bold uppercase tracking-[0.18em] text-primary-700 mb-5">
               FinTech &middot; Dice
             </span>
 
-            {/* Title */}
             <h3 className="text-xl lg:text-[26px] font-extrabold text-neutral-900 tracking-tight leading-tight mb-3">
               Helped Dice land sales-qualified leads from month one
             </h3>
 
-            {/* Description */}
             <p className="text-[14px] sm:text-[15px] text-slate-600 leading-relaxed mb-6">
               Dice needed to reach decision-makers across specific target
               regions without losing the first 90 days to ramp-up. Thyleads ran
@@ -121,7 +120,6 @@ export default function FintechSocialProof() {
               partnership and holding that pace through the engagement.
             </p>
 
-            {/* Stats row */}
             <div className="grid grid-cols-3 gap-4 lg:gap-6 pt-5 border-t border-slate-100">
               {stats.map((stat, i) => (
                 <motion.div
@@ -145,9 +143,8 @@ export default function FintechSocialProof() {
               ))}
             </div>
 
-            {/* Read story link */}
             <a
-              href="#"
+              href="/casestudies/dice"
               className="group/link inline-flex items-center gap-1.5 mt-6 text-[13px] font-bold text-primary-700 hover:text-primary-800 transition-colors"
             >
               Read the full story
@@ -158,7 +155,6 @@ export default function FintechSocialProof() {
             </a>
           </motion.article>
 
-          {/* === RIGHT — Testimonials stack === */}
           <div className="flex flex-col gap-4 lg:gap-5">
             {testimonials.map((t, i) => (
               <motion.article
@@ -174,7 +170,7 @@ export default function FintechSocialProof() {
                 whileHover={{ y: -3 }}
                 className="group relative rounded-2xl bg-white border border-slate-200 p-5 lg:p-6 hover:border-primary-200 hover:shadow-[0_18px_40px_-20px_rgba(132,92,245,0.20)] transition-all"
               >
-                {/* Quote glyph */}
+
                 <Quote
                   aria-hidden="true"
                   className="w-5 h-5 text-primary-300 mb-3 group-hover:text-primary-400 transition-colors"
@@ -182,22 +178,30 @@ export default function FintechSocialProof() {
                   fill="currentColor"
                 />
 
-                {/* Quote text */}
                 <blockquote className="text-[13px] sm:text-sm text-slate-700 leading-relaxed mb-4">
                   {t.quote}
                 </blockquote>
 
-                {/* Divider */}
                 <div className="h-px bg-slate-100 mb-3" aria-hidden="true" />
 
-                {/* Author */}
                 <footer className="flex items-center gap-2.5">
-                  <div
-                    aria-hidden="true"
-                    className="shrink-0 w-9 h-9 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 text-white flex items-center justify-center text-[11px] font-bold ring-2 ring-white shadow-[0_4px_12px_-4px_rgba(132,92,245,0.45)]"
-                  >
-                    {t.initials}
-                  </div>
+                  {t.photo ? (
+                    <div className="shrink-0 w-9 h-9 rounded-full overflow-hidden bg-slate-100 ring-2 ring-white shadow-[0_4px_12px_-4px_rgba(132,92,245,0.45)]">
+
+                      <img
+                        src={t.photo}
+                        alt={t.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      aria-hidden="true"
+                      className="shrink-0 w-9 h-9 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 text-white flex items-center justify-center text-[11px] font-bold ring-2 ring-white shadow-[0_4px_12px_-4px_rgba(132,92,245,0.45)]"
+                    >
+                      {t.initials}
+                    </div>
+                  )}
                   <div className="min-w-0 leading-tight">
                     <div className="text-[13px] font-bold text-neutral-900">
                       {t.name}

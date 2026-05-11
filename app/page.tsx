@@ -24,7 +24,7 @@ export default function Home() {
         <ClientDashboard/>
         <Testimonial/>
         <WhyUs/>
-        {/* <StrategicProcessRedesign/> */}
+
         <CaseStudies/>
         <FAQSection/>
         <CTASection theme="dark" />

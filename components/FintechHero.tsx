@@ -54,14 +54,13 @@ const stages = [
   },
 ];
 
-// Animation timing — each step waits for previous arrow to draw
-const heroToFlowGap = 1.0; // hero settles, then flow starts
-const stagePerStep = 0.5; // each stage takes 0.5s to land + connect to next
+const heroToFlowGap = 1.0;
+const stagePerStep = 0.5;
 
 export default function FintechHero() {
   return (
     <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-12 lg:pb-16 px-6 sm:px-12 overflow-hidden bg-white font-sans">
-      {/* Soft ambient backdrop */}
+
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-gradient-to-b from-primary-50/40 via-white to-white pointer-events-none"
@@ -81,7 +80,7 @@ export default function FintechHero() {
         animate="visible"
         className="relative z-10 max-w-6xl mx-auto"
       >
-        {/* === HERO COPY (centered) === */}
+
         <div className="text-center max-w-3xl mx-auto">
           <motion.div variants={itemVariants} className="mb-6">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-50 border border-primary-200 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-700">
@@ -132,7 +131,7 @@ export default function FintechHero() {
             className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3"
           >
             <a
-              href="#"
+              href="/contact"
               className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-700 hover:bg-primary-800 text-white text-sm font-bold shadow-[0_10px_28px_-8px_rgba(132,92,245,0.50)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
             >
               Talk to us
@@ -142,7 +141,7 @@ export default function FintechHero() {
               />
             </a>
             <a
-              href="#how-it-works"
+              href="/howitworks"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white hover:bg-primary-50 border border-primary-200 hover:border-primary-300 text-primary-800 text-sm font-bold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
             >
               See how it works
@@ -150,9 +149,8 @@ export default function FintechHero() {
           </motion.div>
         </div>
 
-        {/* === HORIZONTAL COMPLIANCE FLOW === */}
         <div className="relative mt-16 lg:mt-20">
-          {/* Mini eyebrow */}
+
           <motion.div
             initial={{ opacity: 0, y: 6 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -167,14 +165,13 @@ export default function FintechHero() {
             <span className="h-px flex-1 max-w-[80px] bg-slate-200" aria-hidden="true" />
           </motion.div>
 
-          {/* Flow */}
           <div className="relative grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-3">
             {stages.map((stage, i) => {
               const Icon = stage.icon;
               const stageDelay = heroToFlowGap + i * stagePerStep;
               return (
                 <div key={stage.title} className="relative">
-                  {/* Card */}
+
                   <motion.div
                     initial={{ opacity: 0, y: 12 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -187,17 +184,15 @@ export default function FintechHero() {
                     whileHover={{ y: -4 }}
                     className="relative h-full rounded-2xl bg-white border border-slate-200 px-4 py-5 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.10)] hover:border-primary-200 hover:shadow-[0_12px_28px_-12px_rgba(132,92,245,0.20)] transition-all"
                   >
-                    {/* Step number */}
+
                     <span className="absolute top-3 right-3 text-[10px] font-bold tabular-nums text-slate-300">
                       0{i + 1}
                     </span>
 
-                    {/* Icon tile */}
                     <div className="w-10 h-10 rounded-xl bg-primary-50 border border-primary-100 flex items-center justify-center text-primary-700 mb-3">
                       <Icon className="w-4 h-4" strokeWidth={2} />
                     </div>
 
-                    {/* Title */}
                     <div className="text-[14px] font-extrabold text-neutral-900 leading-tight">
                       {stage.title}
                     </div>
@@ -205,7 +200,6 @@ export default function FintechHero() {
                       {stage.desc}
                     </div>
 
-                    {/* Cleared badge — pops in after card */}
                     <motion.span
                       initial={{ opacity: 0, scale: 0.85 }}
                       whileInView={{ opacity: 1, scale: 1 }}
@@ -222,7 +216,6 @@ export default function FintechHero() {
                     </motion.span>
                   </motion.div>
 
-                  {/* Connector arrow to next card (desktop only) */}
                   {i < stages.length && (
                     <div
                       aria-hidden="true"
@@ -247,7 +240,6 @@ export default function FintechHero() {
                     </div>
                   )}
 
-                  {/* Mobile vertical connector */}
                   <div
                     aria-hidden="true"
                     className="md:hidden flex justify-center py-1"
@@ -269,7 +261,6 @@ export default function FintechHero() {
               );
             })}
 
-            {/* === FINAL — CFO Signs card === */}
             <div className="relative">
               <motion.div
                 initial={{ opacity: 0, y: 14, scale: 0.96 }}
@@ -282,7 +273,7 @@ export default function FintechHero() {
                 }}
                 className="relative h-full"
               >
-                {/* Soft glow halo */}
+
                 <motion.div
                   aria-hidden="true"
                   initial={{ opacity: 0 }}
@@ -296,7 +287,7 @@ export default function FintechHero() {
                 />
 
                 <div className="relative h-full rounded-2xl bg-gradient-to-br from-primary-100 via-primary-50 to-primary-100 border-2 border-primary-300 text-primary-900 px-4 py-5 shadow-[0_18px_40px_-12px_rgba(132,92,245,0.25)] overflow-hidden">
-                  {/* Subtle dot grid */}
+
                   <div
                     aria-hidden="true"
                     className="absolute inset-0 opacity-50 pointer-events-none"
@@ -310,17 +301,14 @@ export default function FintechHero() {
                     }}
                   />
 
-                  {/* Step number */}
                   <span className="absolute top-3 right-3 text-[10px] font-bold tabular-nums text-primary-400">
                     04
                   </span>
 
-                  {/* Icon tile — white card */}
                   <div className="relative w-10 h-10 rounded-xl bg-white border border-primary-200 flex items-center justify-center text-primary-700 shadow-sm mb-3">
                     <Crown className="w-4 h-4" strokeWidth={2} />
                   </div>
 
-                  {/* Title */}
                   <div className="relative text-[14px] font-extrabold text-primary-900 leading-tight">
                     CFO Signs
                   </div>
@@ -328,7 +316,6 @@ export default function FintechHero() {
                     Deal closed · contract live
                   </div>
 
-                  {/* APPROVED badge */}
                   <motion.span
                     initial={{ opacity: 0, scale: 0.85, y: 4 }}
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
@@ -345,7 +332,6 @@ export default function FintechHero() {
                     Approved
                   </motion.span>
 
-                  {/* Live pulse */}
                   <span
                     aria-hidden="true"
                     className="absolute top-3 left-3 flex h-2 w-2"

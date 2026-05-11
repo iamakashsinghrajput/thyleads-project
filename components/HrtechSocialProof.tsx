@@ -79,7 +79,7 @@ export default function HrtechSocialProof() {
         </div>
 
         <div className="mt-12 lg:mt-14 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-5">
-          {/* Case study card */}
+
           <motion.article
             variants={itemVariants}
             className="group relative rounded-3xl bg-gradient-to-br from-white via-white to-primary-50/40 border border-slate-200 p-7 sm:p-8 shadow-[0_4px_18px_-10px_rgba(15,23,42,0.08)] hover:shadow-[0_24px_52px_-22px_rgba(132,92,245,0.32)] transition-all overflow-hidden"
@@ -189,7 +189,6 @@ export default function HrtechSocialProof() {
             </div>
           </motion.article>
 
-          {/* Testimonials */}
           <div className="flex flex-col gap-5">
             {testimonials.map((t, i) => (
               <motion.article

@@ -38,7 +38,6 @@ const curve: CurvePoint[] = [
   { year: 5, multiplier: '2X', range: '$36M → $72M+', value: 72 },
 ];
 
-// Chart constants
 const W = 720;
 const H = 360;
 const PAD_X = 60;
@@ -53,7 +52,7 @@ function point(i: number, value: number) {
 }
 
 export default function SaasGrowthCurveTrajectory() {
-  // Build path strings
+
   const linePath = curve
     .map((p, i) => {
       const { x, y } = point(i, p.value);
@@ -65,7 +64,6 @@ export default function SaasGrowthCurveTrajectory() {
     H - PAD_BOT
   } L ${point(0, 0).x} ${H - PAD_BOT} Z`;
 
-  // Depth offset path for 3D effect
   const depthOffset = 12;
   const depthPath = curve
     .map((p, i) => {
@@ -88,7 +86,7 @@ export default function SaasGrowthCurveTrajectory() {
         viewport={{ once: true, amount: 0.2 }}
         className="relative z-10 max-w-5xl mx-auto"
       >
-        {/* Header */}
+
         <div className="text-center mb-12 lg:mb-14">
           <motion.div
             variants={itemVariants}
@@ -121,12 +119,11 @@ export default function SaasGrowthCurveTrajectory() {
           </motion.p>
         </div>
 
-        {/* === Trajectory chart === */}
         <motion.div
           variants={itemVariants}
           className="relative rounded-3xl bg-gradient-to-b from-primary-50/40 via-white to-white border border-primary-100 p-6 sm:p-8 overflow-hidden"
         >
-          {/* Faint grid */}
+
           <div
             aria-hidden="true"
             className="absolute inset-6 sm:inset-8 opacity-[0.05] pointer-events-none rounded-2xl"
@@ -156,7 +153,6 @@ export default function SaasGrowthCurveTrajectory() {
               </filter>
             </defs>
 
-            {/* Y-axis ticks */}
             {[0, 18, 36, 54, 72].map(v => {
               const y = H - PAD_BOT - (v / MAX_VAL) * (H - PAD_TOP - PAD_BOT);
               return (
@@ -184,7 +180,6 @@ export default function SaasGrowthCurveTrajectory() {
               );
             })}
 
-            {/* Depth shadow line (3D back layer) */}
             <path
               d={depthPath}
               fill="none"
@@ -196,7 +191,6 @@ export default function SaasGrowthCurveTrajectory() {
               filter="url(#traj-glow)"
             />
 
-            {/* Area fill */}
             <motion.path
               d={areaPath}
               fill="url(#traj-area)"
@@ -206,7 +200,6 @@ export default function SaasGrowthCurveTrajectory() {
               transition={{ duration: 1, delay: 0.3 }}
             />
 
-            {/* Main line */}
             <motion.path
               d={linePath}
               fill="none"
@@ -220,7 +213,6 @@ export default function SaasGrowthCurveTrajectory() {
               transition={{ duration: 1.4, ease: easeOut, delay: 0.2 }}
             />
 
-            {/* Data points + callouts */}
             {curve.map((p, i) => {
               const { x, y } = point(i, p.value);
               return (
@@ -236,13 +228,12 @@ export default function SaasGrowthCurveTrajectory() {
                   }}
                   style={{ transformOrigin: `${x}px ${y}px` }}
                 >
-                  {/* Outer glow ring */}
+
                   <circle cx={x} cy={y} r="14" fill="#845cf5" fillOpacity="0.15" />
-                  {/* Data dot */}
+
                   <circle cx={x} cy={y} r="7" fill="#fff" stroke="#7040e8" strokeWidth="3" />
                   <circle cx={x} cy={y} r="3" fill="#7040e8" />
 
-                  {/* Multiplier callout */}
                   <g transform={`translate(${x}, ${y - 32})`}>
                     <rect
                       x="-22"
@@ -266,7 +257,6 @@ export default function SaasGrowthCurveTrajectory() {
                     </text>
                   </g>
 
-                  {/* Year label below */}
                   <text
                     x={x}
                     y={H - PAD_BOT + 22}

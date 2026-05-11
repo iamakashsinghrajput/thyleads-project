@@ -35,28 +35,26 @@ const WhyGlobalSaaS = () => {
   return (
     <section className="w-full bg-white py-20 lg:py-28 px-6 sm:px-12 font-sans overflow-hidden">
       <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row gap-16 xl:gap-24 items-center lg:items-start">
-        
-        {/* Left Column: Image with Plus Decorator */}
-        <motion.div 
+
+        <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.7, ease: 'easeOut' }}
           className="w-full lg:w-[45%] relative"
         >
-          {/* Main Image Container */}
+
           <div className="relative z-10 rounded-tl-[4rem] rounded-tr-[4rem] rounded-br-[4rem] rounded-bl-none overflow-hidden aspect-[4/5] shadow-xl">
-            <img 
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop" 
-              alt="Team collaborating on SaaS growth" 
+            <img
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
+              alt="Team collaborating on SaaS growth"
               className="w-full h-full object-cover"
             />
-            {/* Subtle overlay */}
+
             <div className="absolute inset-0 bg-primary-900/10 mix-blend-multiply" />
           </div>
         </motion.div>
 
-        {/* Right Column: Content */}
         <div className="w-full lg:w-[55%] flex flex-col pt-4 lg:pt-8">
 
           <motion.div
@@ -74,14 +72,12 @@ const WhyGlobalSaaS = () => {
               </div>
             </div>
 
-            {/* Block Highlight Heading */}
             <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold text-neutral-900 leading-[1.1] tracking-tight mb-8">
               Why <span className="bg-primary-100 text-primary-700 px-4 py-1 inline-block mt-2 rounded-md">Global SaaS</span><br />
               Leaders <span className="bg-primary-100 text-primary-700 px-4 py-1 inline-block mt-2 rounded-md">bet on us</span>
             </h2>
           </motion.div>
 
-          {/* Features Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-10">
             {features.map((feature, i) => {
               const Icon = feature.icon;
@@ -94,13 +90,12 @@ const WhyGlobalSaaS = () => {
                   transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
                   className="flex gap-5 items-start"
                 >
-                  {/* Icon with underline accent */}
+
                   <div className="flex flex-col items-center shrink-0 pt-1">
                     <Icon className="w-8 h-8 text-primary-600" strokeWidth={1.5} />
                     <div className="w-6 h-[2px] bg-primary-500 mt-3 rounded-full" />
                   </div>
 
-                  {/* Feature Text */}
                   <div>
                     <h3 className="font-bold text-lg text-neutral-900 mb-2 leading-snug">
                       {feature.title}

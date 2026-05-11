@@ -66,7 +66,7 @@ const rows: Row[] = [
 export default function WhyThyleadsHero() {
   return (
     <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-12 lg:pb-16 px-6 sm:px-12 overflow-hidden bg-white font-sans">
-      {/* Subtle ambient backdrop */}
+
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-gradient-to-b from-primary-50/50 via-white to-white pointer-events-none"
@@ -82,7 +82,7 @@ export default function WhyThyleadsHero() {
         animate="visible"
         className="relative z-10 max-w-5xl mx-auto"
       >
-        {/* === HERO COPY === */}
+
         <div className="text-center max-w-3xl mx-auto mb-14 lg:mb-20">
           <motion.div variants={itemVariants} className="mb-6">
             <span className="inline-block text-[11px] font-semibold uppercase tracking-[0.28em] text-primary-700">
@@ -129,7 +129,7 @@ export default function WhyThyleadsHero() {
             className="mt-8 flex items-center justify-center gap-3"
           >
             <a
-              href="#"
+              href="/contact"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold shadow-[0_8px_24px_-8px_rgba(132,92,245,0.45)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
             >
               Book a demo
@@ -144,18 +144,16 @@ export default function WhyThyleadsHero() {
           </motion.div>
         </div>
 
-        {/* === COMPARISON PANEL === */}
         <motion.div
           variants={itemVariants}
           className="relative rounded-2xl bg-white ring-1 ring-slate-200 shadow-[0_24px_60px_-30px_rgba(15,23,42,0.18)] overflow-hidden"
         >
-          {/* Right column subtle highlight */}
+
           <div
             aria-hidden="true"
             className="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-b from-primary-50/40 to-transparent pointer-events-none"
           />
 
-          {/* Column headers */}
           <div className="relative grid grid-cols-1 md:grid-cols-[140px_1fr_1fr] border-b border-slate-200 bg-slate-50/60">
             <div className="hidden md:block px-6 py-4 border-r border-slate-200" />
             <div className="px-5 py-4 md:border-r border-slate-200">
@@ -176,7 +174,6 @@ export default function WhyThyleadsHero() {
             </div>
           </div>
 
-          {/* Rows */}
           <ul className="relative">
             {rows.map((row, i) => (
               <motion.li
@@ -193,7 +190,6 @@ export default function WhyThyleadsHero() {
                   </span>
                 </div>
 
-                {/* Mobile category label */}
                 <div className="md:hidden px-5 pt-3 pb-1">
                   <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">
                     {row.category}
@@ -222,7 +218,6 @@ export default function WhyThyleadsHero() {
           </ul>
         </motion.div>
 
-        {/* === Closing line === */}
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -83,18 +83,18 @@ export default function AgentsMemory() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5">
-          {/* Project Memory (light primary card) */}
+
           <motion.article
             variants={itemVariants}
             whileHover={{ y: -4 }}
             className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary-50 via-white to-primary-50/40 border border-primary-200 p-7 sm:p-8 shadow-[0_18px_44px_-22px_rgba(132,92,245,0.32)] transition-shadow hover:shadow-[0_28px_56px_-22px_rgba(132,92,245,0.44)]"
           >
-            {/* Top hairline */}
+
             <span
               aria-hidden="true"
               className="absolute top-0 left-7 right-7 h-px bg-gradient-to-r from-transparent via-primary-400 to-transparent"
             />
-            {/* Dot grid */}
+
             <div
               aria-hidden="true"
               className="absolute inset-0 opacity-40 pointer-events-none"
@@ -141,7 +141,6 @@ export default function AgentsMemory() {
             </div>
           </motion.article>
 
-          {/* Cross-Client Repository (light card) */}
           <motion.article
             variants={itemVariants}
             whileHover={{ y: -4 }}

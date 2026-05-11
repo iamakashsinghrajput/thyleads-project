@@ -15,8 +15,8 @@ const BlogPage = () => {
 
   const categories = ['All', 'Sales Intelligence', 'Lead Generation', 'Email Outreach', 'Data Enrichment', 'Outbound Sales', 'GTM Strategy', 'Appointment Setting', 'Automation'];
 
-  const filteredPosts = activeCategory === 'All' 
-    ? allPosts 
+  const filteredPosts = activeCategory === 'All'
+    ? allPosts
     : allPosts.filter(post => post.category === activeCategory);
 
   const featuredPost = allPosts.find(p => p.featured);
@@ -49,11 +49,11 @@ const BlogPage = () => {
             <div className="max-w-md mx-auto relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
               <div className="relative flex p-1 rounded-xl bg-black border border-white/10">
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email for weekly updates..." 
+                  placeholder="Enter your email for weekly updates..."
                   className="w-full bg-transparent text-white placeholder-neutral-500 px-4 py-3 outline-none"
                 />
                 <button className="bg-white text-black px-6 py-2 rounded-lg font-bold hover:bg-neutral-200 transition-colors flex items-center gap-2 whitespace-nowrap">

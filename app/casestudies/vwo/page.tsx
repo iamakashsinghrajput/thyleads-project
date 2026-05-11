@@ -239,7 +239,7 @@ export default function VWOCaseStudy() {
             <div id="future-outlook" className="prose prose-lg max-w-none text-slate-600 scroll-mt-32">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Future Outlook</h3>
               <p className="mb-4">
-                VWO is no longer chasing the market; they are anticipating it. The next phase of the Thyleads-VWO partnership involves Intent-Sensing GTM. 
+                VWO is no longer chasing the market; they are anticipating it. The next phase of the Thyleads-VWO partnership involves Intent-Sensing GTM.
               </p>
               <p>
                 We are building a system that monitors tech-stack maturity signals across the globe, triggering an automated, hyper-personalized VWO &quot;activation play&quot; the moment a company’s data volume outweighs their ability to test it.

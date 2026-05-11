@@ -39,7 +39,7 @@ const stats = [
 export default function GtmFrameworkHero() {
   return (
     <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-16 lg:pb-24 px-6 sm:px-12 overflow-hidden bg-white font-sans">
-      {/* Soft ambient backdrop */}
+
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-gradient-to-b from-primary-50/40 via-white to-white pointer-events-none"
@@ -59,7 +59,7 @@ export default function GtmFrameworkHero() {
         animate="visible"
         className="relative z-10 max-w-6xl mx-auto"
       >
-        {/* === HERO COPY (centered) === */}
+
         <div className="text-center max-w-4xl mx-auto">
           <motion.div variants={itemVariants} className="mb-6">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-50 border border-primary-200 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-700">
@@ -132,12 +132,11 @@ export default function GtmFrameworkHero() {
           </motion.div>
         </div>
 
-        {/* === STATS BAR — elevated white cards === */}
         <motion.div
           variants={itemVariants}
           className="relative mt-14 lg:mt-20"
         >
-          {/* Eyebrow line */}
+
           <div className="flex items-center justify-center gap-3 mb-6">
             <span
               aria-hidden="true"
@@ -171,24 +170,21 @@ export default function GtmFrameworkHero() {
                 whileHover={{ y: -4 }}
                 className="group relative rounded-2xl bg-white border border-slate-200 hover:border-primary-200 px-5 py-6 sm:px-6 sm:py-7 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.08)] hover:shadow-[0_18px_40px_-16px_rgba(132,92,245,0.28)] transition-all overflow-hidden"
               >
-                {/* Top accent stroke */}
+
                 <span
                   aria-hidden="true"
                   className="absolute top-0 left-5 right-5 h-px bg-gradient-to-r from-transparent via-primary-300 to-transparent"
                 />
 
-                {/* Value */}
                 <div className="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] text-neutral-900 tabular-nums leading-none">
                   {stat.value}
                 </div>
 
-                {/* Underline accent that grows on hover */}
                 <span
                   aria-hidden="true"
                   className="block mt-3 h-[2px] w-8 bg-primary-600 rounded-full origin-left transition-transform duration-300 group-hover:scale-x-150"
                 />
 
-                {/* Label */}
                 <div className="mt-3 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
                   {stat.label}
                 </div>
