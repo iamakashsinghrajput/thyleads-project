@@ -24,10 +24,10 @@ const testimonials: Testimonial[] = [
     companyName: 'CleverTap',
     logo: '/images/CleverTap.svg',
     brandColor: 'text-[#003580]',
-    quote: "I've been burned by agencies in the past and Thyleads has exceeded my expectations because of their commitments to our success",
-    personName: 'Roopesh Balakrishna',
-    personTitle: 'Regional VP',
-    personImage: '/clevertap.png'
+    quote: 'Thyleads brought a level of precision to our outbound that complemented our in-house SDR team well. Their signal-driven approach ensured we were reaching the right accounts at the right time, the deal momentum was real, and the results have been material to our growth; some accounts they sourced now sit among our top revenue contributors.',
+    personName: 'Deepak Lamba',
+    personTitle: 'Chief Revenue Officer',
+    personImage: '/deepak-lamba.jpg'
   },
   {
     id:'tazapay',
@@ -299,7 +299,13 @@ export default function TestimonialSection() {
                       />
                     </div>
 
-                    <blockquote className="text-xl md:text-2xl leading-relaxed text-slate-800 font-medium tracking-tight">
+                    <blockquote
+                      className={`leading-relaxed text-slate-800 font-medium tracking-tight ${
+                        testimonial.id === 'clevertap'
+                          ? 'text-sm md:text-base'
+                          : 'text-xl md:text-2xl'
+                      }`}
+                    >
                       &quot;{testimonial.quote}&quot;
                     </blockquote>
                   </div>

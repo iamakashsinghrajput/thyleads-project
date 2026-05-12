@@ -9,10 +9,10 @@ import Footer from '@/components/Footer';
 export default function CleverTapCaseStudy() {
   const testimonial = {
     companyName: 'CleverTap',
-    personName: 'Roopesh Balakrishna',
-    personTitle: 'Regional VP',
-    personImage: '/clevertap.png',
-    quote: "Working with Thyleads to scale our B2B lead generation has felt more like adding a dedicated team than hiring an agency. Their focus on quality and detail has consistently delivered strong Sales Qualified Leads."
+    personName: 'Deepak Lamba',
+    personTitle: 'Chief Revenue Officer',
+    personImage: '/deepak-lamba.jpg',
+    quote: 'Thyleads brought a level of precision to our outbound that complemented our in-house SDR team well. Their signal-driven approach ensured we were reaching the right accounts at the right time, the deal momentum was real, and the results have been material to our growth; some accounts they sourced now sit among our top revenue contributors.'
   };
 
   return (
@@ -118,7 +118,7 @@ export default function CleverTapCaseStudy() {
               <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-blue-500 to-[#C3F53C]" />
               <div className="pl-8 md:pl-12">
                 <Quote className="w-12 h-12 text-blue-100 mb-6" />
-                <h3 className="text-3xl md:text-4xl font-medium text-slate-900 leading-tight mb-6">
+                <h3 className="text-lg md:text-xl lg:text-2xl font-medium text-slate-900 leading-relaxed mb-6">
                   &quot;{testimonial.quote}&quot;
                 </h3>
                 <div className="flex items-center gap-4">

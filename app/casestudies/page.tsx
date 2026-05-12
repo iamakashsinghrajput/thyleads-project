@@ -17,10 +17,10 @@ const testimonials = [
     companyName: 'CleverTap',
     logo: '/images/CleverTap.svg',
     brandColor: 'text-[#003580]',
-    quote: "I've been burned by agencies in the past and Thyleads has exceeded my expectations because of their commitments to our sucess",
-    personName: 'Roopesh Balakrishna',
-    personTitle: 'Regional VP',
-    personImage: '/clevertap.png',
+    quote: 'Thyleads brought a level of precision to our outbound that complemented our in-house SDR team well. Their signal-driven approach ensured we were reaching the right accounts at the right time, the deal momentum was real, and the results have been material to our growth; some accounts they sourced now sit among our top revenue contributors.',
+    personName: 'Deepak Lamba',
+    personTitle: 'Chief Revenue Officer',
+    personImage: '/deepak-lamba.jpg',
     stats: { label: 'Pipeline', value: '3X' }
   },
   {
@@ -155,7 +155,7 @@ export default function CaseStudiesPage() {
                 />
               </div>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight">
+              <h2 className="text-base md:text-lg lg:text-xl font-semibold text-white mb-6 leading-relaxed">
                 &quot;{featuredCaseStudy.quote}&quot;
               </h2>
             </div>

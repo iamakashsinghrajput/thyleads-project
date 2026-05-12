@@ -35,32 +35,36 @@ type Testimonial = {
   role: string;
   company: string;
   quote: string;
+  photo?: string;
 };
 
 const testimonials: Testimonial[] = [
   {
-    initials: 'SK',
-    name: 'Sharma Kumar',
-    role: 'CEO',
+    initials: 'DL',
+    name: 'Deepak Lamba',
+    role: 'Chief Revenue Officer',
     company: 'CleverTap',
+    photo: '/deepak-lamba.jpg',
     quote:
-      'Thyleads transformed our outbound process. We went from struggling to hit $1M ARR to closing 3× more deals in 6 months. The qualification process alone saved us countless hours.',
+      'Thyleads brought a level of precision to our outbound that complemented our in-house SDR team well. Their signal-driven approach ensured we were reaching the right accounts at the right time, the deal momentum was real, and the results have been material to our growth; some accounts they sourced now sit among our top revenue contributors.',
   },
   {
-    initials: 'RP',
-    name: 'Ravi Patel',
-    role: 'VP Sales',
+    initials: 'IA',
+    name: 'Ishan Acharya',
+    role: 'Director of Business Operations',
     company: 'Dice',
+    photo: '/dice.png',
     quote:
-      'The AI-powered follow-ups are incredible. Our AEs used to spend 40% of their time on manual follow-ups. Now it\'s automated and smarter — our deal velocity increased by 2.5×.',
+      'Thyleads gets highly sales-qualified leads within the provided target regions from the very first month of our partnership. Their working style, culture, and ethics are highly commendable.',
   },
   {
-    initials: 'MJ',
-    name: 'Maya Johnson',
-    role: 'Head of GTM',
+    initials: 'NR',
+    name: 'Nitin Ravi',
+    role: 'Head of Global Sales',
     company: 'Pazo',
+    photo: '/pazo.png',
     quote:
-      'Every high-intent opportunity gets captured now. We implemented Thyleads\' system and immediately saw 40% better conversion rates. This is predictable revenue done right.',
+      'We always believed outbound could work, but lacked a structured approach. Thyleads changed that by building a repeatable system that delivers high-value meetings. Now, we’re having quality conversations with the right people with real buying intent.',
   },
 ];
 
@@ -145,15 +149,28 @@ export default function Testimonials() {
               <div className="my-5 h-px bg-slate-100" aria-hidden="true" />
 
               <footer className="flex items-center gap-3">
-                <div
-                  aria-hidden="true"
-                  className="shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 text-white flex items-center justify-center text-[12px] font-bold shadow-[0_6px_16px_-6px_rgba(132,92,245,0.5)] ring-2 ring-white"
-                  style={{
-                    transform: `translateZ(0)`,
-                  }}
-                >
-                  {t.initials}
-                </div>
+                {t.photo ? (
+                  <div
+                    className="shrink-0 w-10 h-10 rounded-full overflow-hidden bg-slate-100 ring-2 ring-white shadow-[0_6px_16px_-6px_rgba(132,92,245,0.5)]"
+                    style={{ transform: 'translateZ(0)' }}
+                  >
+                    <img
+                      src={t.photo}
+                      alt={t.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div
+                    aria-hidden="true"
+                    className="shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 text-white flex items-center justify-center text-[12px] font-bold shadow-[0_6px_16px_-6px_rgba(132,92,245,0.5)] ring-2 ring-white"
+                    style={{
+                      transform: `translateZ(0)`,
+                    }}
+                  >
+                    {t.initials}
+                  </div>
+                )}
                 <div className="min-w-0 leading-tight">
                   <div className="text-sm font-bold text-neutral-900">
                     {t.name}

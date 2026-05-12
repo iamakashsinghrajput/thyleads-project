@@ -653,6 +653,7 @@ const TEAM = [
     gradient: "from-emerald-500 to-primary-600",
     photo: "/team/akash-singh.jpg",
     linkedin: "https://www.linkedin.com/in/akashsingh21/",
+    featured: true,
   },
   {
     name: "Sandeep Kalura",
@@ -688,7 +689,7 @@ const TEAM = [
     desc: "Finds the right accounts and crafts the strategy to convert them.",
     initials: "KS",
     gradient: "from-teal-500 to-primary-600",
-    photo: "/team/krishna-sharma.jpg",
+    photo: "/team/krishna-sharma.png",
     linkedin: "https://www.linkedin.com/in/krishna-sharma-00b003390/",
   },
 ];
@@ -742,15 +743,30 @@ function Team() {
                 delay: (i % 3) * 0.08 + Math.floor(i / 3) * 0.05,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="group relative rounded-[1.75rem] bg-white border border-slate-200 p-6 sm:p-7 hover:border-primary-200 hover:-translate-y-2 hover:shadow-[0_24px_60px_-22px_rgba(132,92,245,0.32)] transition-all duration-500 overflow-hidden"
+              className={`group relative rounded-[1.75rem] p-6 sm:p-7 hover:-translate-y-2 transition-all duration-500 overflow-hidden ${
+                member.featured
+                  ? "bg-gradient-to-br from-primary-50 via-white to-primary-50/40 border-2 border-primary-300 shadow-[0_18px_44px_-18px_rgba(132,92,245,0.45)] hover:border-primary-500 hover:shadow-[0_28px_70px_-22px_rgba(132,92,245,0.55)]"
+                  : "bg-white border border-slate-200 hover:border-primary-200 hover:shadow-[0_24px_60px_-22px_rgba(132,92,245,0.32)]"
+              }`}
             >
 
               <div
                 aria-hidden="true"
-                className="absolute -top-20 -right-12 w-44 h-44 rounded-full bg-primary-100/60 blur-3xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                className={`absolute -top-20 -right-12 w-44 h-44 rounded-full bg-primary-100/60 blur-3xl pointer-events-none transition-opacity duration-500 ${
+                  member.featured ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                }`}
               />
 
-              <div className="absolute top-0 left-5 right-5 h-px bg-gradient-to-r from-transparent via-primary-200/80 to-transparent" />
+              <div className={`absolute top-0 left-5 right-5 h-px bg-gradient-to-r from-transparent ${
+                member.featured ? "via-primary-400" : "via-primary-200/80"
+              } to-transparent`} />
+
+              {member.featured && (
+                <span
+                  aria-hidden="true"
+                  className="absolute -top-px left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-primary-500 to-transparent"
+                />
+              )}
 
               <div className="relative z-10 flex flex-col h-full">
 
@@ -759,7 +775,11 @@ function Team() {
 
                     <span
                       aria-hidden="true"
-                      className="absolute -inset-1.5 rounded-full bg-gradient-to-br from-primary-300/0 to-primary-300/0 group-hover:from-primary-300/40 group-hover:to-primary-500/40 blur transition-all duration-500"
+                      className={`absolute -inset-1.5 rounded-full bg-gradient-to-br blur transition-all duration-500 ${
+                        member.featured
+                          ? "from-primary-300/40 to-primary-500/40"
+                          : "from-primary-300/0 to-primary-300/0 group-hover:from-primary-300/40 group-hover:to-primary-500/40"
+                      }`}
                     />
                     <div className="relative">
                       <PhotoAvatar
@@ -772,9 +792,15 @@ function Team() {
                     </div>
                   </div>
 
-                  <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-[0.2em] text-primary-300 tabular-nums">
-                    {String(i + 1).padStart(2, "0")} / {String(TEAM.length).padStart(2, "0")}
-                  </span>
+                  {member.featured ? (
+                    <span className="inline-flex items-center gap-1.5 px-2 py-1 rounded-full bg-primary-600 text-white text-[9.5px] font-bold uppercase tracking-[0.18em] shadow-[0_6px_16px_-6px_rgba(132,92,245,0.55)]">
+                      That&apos;s me
+                    </span>
+                  ) : (
+                    <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-[0.2em] text-primary-300 tabular-nums">
+                      {String(i + 1).padStart(2, "0")} / {String(TEAM.length).padStart(2, "0")}
+                    </span>
+                  )}
                 </div>
 
                 <h3 className="text-lg font-extrabold tracking-tight text-neutral-900 leading-tight">
