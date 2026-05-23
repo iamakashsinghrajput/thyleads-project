@@ -155,12 +155,12 @@ export default function Hero() {
               <Bot className="w-3 h-3" strokeWidth={2.5} />
             </span>
             <span className="text-sm font-medium text-slate-700">
-              End-to-End Outbound for SaaS in India
+              End-to-End Outbound for SaaS
             </span>
           </motion.div>
 
           <h1 className="text-[2.5rem] md:text-5xl lg:text-[3.5rem] xl:text-[64px] font-extrabold tracking-tight leading-[1.1] text-neutral-900 max-w-4xl">
-            Focused in India,{' '}
+            AI-Powered Lead Generation{' '}
             <span className="relative inline-block px-3 py-0.5">
               <motion.span
                 aria-hidden="true"
@@ -185,8 +185,8 @@ export default function Hero() {
           </h1>
 
           <p className="mt-6 text-base md:text-lg text-slate-600 max-w-2xl leading-relaxed font-medium">
-            We help Global SaaS companies build and convert demand in India.
-            Automate outbound, qualify inbound, and accelerate deal momentum.
+            We help SaaS companies sell into the accounts that matter most.
+            Automate Outbount, qualify inbound, and accelerate post-meeting follow-ups from one single place.
           </p>
 
           <motion.div
