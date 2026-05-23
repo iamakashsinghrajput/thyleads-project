@@ -175,7 +175,8 @@ export default function Hero() {
 
           <p className="mt-6 text-base md:text-lg text-slate-600 max-w-2xl leading-relaxed font-medium">
             We help SaaS companies sell into the accounts that matter most.
-            Automate Outbount, qualify inbound, and accelerate post-meeting follow-ups from one single place.
+            <br />
+            Automate Outbound, qualify inbound, and accelerate post-meeting follow-ups from one single place.
           </p>
 
           <motion.div
