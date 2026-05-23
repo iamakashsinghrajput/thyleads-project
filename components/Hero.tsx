@@ -171,17 +171,6 @@ export default function Hero() {
                 Engineered for SaaS.
               </span>
             </span>
-            <br />
-            <span className="relative inline-block px-3 py-0.5 mt-2">
-              <motion.span
-                aria-hidden="true"
-                variants={highlightVariants}
-                className="absolute inset-0 bg-primary-100 rounded-md origin-left"
-              />
-              <span className="relative text-primary-700">
-                Driven by Revenue.
-              </span>
-            </span>
           </h1>
 
           <p className="mt-6 text-base md:text-lg text-slate-600 max-w-2xl leading-relaxed font-medium">
