@@ -84,7 +84,7 @@ export default function FintechHero() {
         <div className="text-center max-w-3xl mx-auto">
           <motion.div variants={itemVariants} className="mb-6">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-50 border border-primary-200 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-700">
-              For FinTech SaaS in India
+              For FinTech SaaS
             </span>
           </motion.div>
 

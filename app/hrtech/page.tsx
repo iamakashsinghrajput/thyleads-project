@@ -11,7 +11,7 @@ import HrtechCTA from '@/components/HrtechCTA';
 export const metadata = {
   title: 'HRTech Outbound · Thyleads',
   description:
-    'Specialized B2B outbound for HRTech SaaS in India. Lands right in CHRO inboxes and keeps multi-stakeholder deals moving through the buying committee.',
+    'Specialized B2B outbound for HRTech SaaS. Lands right in CHRO inboxes and keeps multi-stakeholder deals moving through the buying committee.',
 };
 
 export default function HrtechPage() {

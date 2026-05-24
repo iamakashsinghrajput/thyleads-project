@@ -40,7 +40,7 @@ const faqs: FAQ[] = [
     question:
       'How do you write outbound that doesn’t sound like every other “AI fraud detection” pitch?',
     answer:
-      'We build messaging from your actual differentiators: settlement speed, reconciliation depth, India compliance posture, or a specific persona pain (e.g., dispute volume for payment ops, false-positive rate for risk teams).',
+      'We build messaging from your actual differentiators: settlement speed, reconciliation depth, compliance posture, or a specific persona pain (e.g., dispute volume for payment ops, false-positive rate for risk teams).',
   },
   {
     question:

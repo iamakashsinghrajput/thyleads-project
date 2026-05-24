@@ -40,7 +40,7 @@ const moves = [
     number: '03',
     title: 'Stay Top of Mind Until the Decision',
     description:
-      'Indian marketing buyers shortlist fast and decide fast. We run a tight post-meeting nurture sequence that reinforces your positioning at every stage of their evaluation, so you’re still in the conversation when they make the call.',
+      'Marketing buyers shortlist fast and decide fast. We run a tight post-meeting nurture sequence that reinforces your positioning at every stage of their evaluation, so you’re still in the conversation when they make the call.',
   },
 ];
 

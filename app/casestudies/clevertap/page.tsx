@@ -156,7 +156,7 @@ export default function CleverTapCaseStudy() {
             <div id="solution" className="prose prose-lg max-w-none text-slate-600 scroll-mt-32">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">The Solution: Treating GTM Like a Product Problem, Not a Volume Problem</h3>
               <p className="mb-6">
-                Instead of tweaking and twisting subject lines or adding more SDR hours, Thyleads treated the outbound engine like a broken codebase. We performed GTM surgery, building the system from the primitives up across India, Africa, Turkey, and the Middle East.
+                Instead of tweaking and twisting subject lines or adding more SDR hours, Thyleads treated the outbound engine like a broken codebase. We performed GTM surgery, building the system from the primitives up across Africa, Turkey, and the Middle East.
               </p>
               <p className="text-xl font-semibold text-slate-800 mb-6">What changed:</p>
 

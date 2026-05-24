@@ -209,7 +209,7 @@ export default function BillCustomerStory() {
               <ul className="space-y-2 my-4">
                 {[
                   '37 Total Qualified Meetings generated within the first 90 days.',
-                  '4 Closed-Won Deals (including India’s most prominent coworking chain).',
+                  '4 Closed-Won Deals (including a leading coworking chain).',
                   '80% Lead Qualification Rate, moving from junk volume to Tier 1 precision.',
                   '3X Reply Rate in the Coworking vertical post-optimization.',
                   '2X Signal-to-Pipeline Conversion compared to all previous outbound efforts.'

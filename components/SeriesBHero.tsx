@@ -67,8 +67,7 @@ export default function SeriesBHero() {
             You&apos;ve raised the round. You&apos;ve hit product-market fit.
             Now you need a pipeline that scales faster than headcount, without
             burning your AEs or your burn multiple. Thyleads plugs in as an
-            outbound engine built for SaaS teams scaling beyond Series B in
-            India.
+            outbound engine built for SaaS teams scaling beyond Series B.
           </p>
 
           <motion.div

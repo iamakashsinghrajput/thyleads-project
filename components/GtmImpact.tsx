@@ -45,16 +45,16 @@ const caseStudies: CaseStudy[] = [
   {
     brand: 'CleverTap',
     logo: '/images/CleverTap.svg',
-    meta: 'India GTM · MarTech',
+    meta: 'GTM · MarTech',
     headline: '90+ qualified appointments in 3 months',
     description:
-      'CleverTap needed to expand into India enterprise accounts without diluting brand positioning. Thyleads rebuilt the ICP, ran vertical-trained outbound, and delivered a 3× surge in appointment volume with a 30% SQL-to-closed-won rate.',
+      'CleverTap needed to expand into enterprise accounts without diluting brand positioning. Thyleads rebuilt the ICP, ran vertical-trained outbound, and delivered a 3× surge in appointment volume with a 30% SQL-to-closed-won rate.',
     stats: [
       { value: '90+', label: 'Qualified meetings in 90 days' },
       { value: '3×', label: 'Appointment volume' },
       { value: '30%', label: 'SQL to closed-won' },
     ],
-    engagement: '3-month engagement · India · 2024',
+    engagement: '3-month engagement · 2024',
     slug: 'clevertap',
   },
   {

@@ -42,9 +42,9 @@ const features = [
   },
   {
     icon: Globe,
-    title: 'Built for Selling SaaS in India',
+    title: 'Built for Selling SaaS',
     description:
-      'We understand how Indian buyers think, evaluate, and decide, so your outreach actually lands and converts.',
+      'We understand how enterprise buyers think, evaluate, and decide, so your outreach actually lands and converts.',
   },
 ];
 

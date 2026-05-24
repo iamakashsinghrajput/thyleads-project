@@ -34,9 +34,9 @@ const caseStudies: CaseStudy[] = [
   {
     brand: 'CleverTap',
     logo: '/images/CleverTap.svg',
-    title: 'From stalled outbound to a predictable India pipeline',
+    title: 'From stalled outbound to a predictable pipeline',
     description:
-      'CleverTap’s India GTM needed repeatable pipeline without doubling SDR headcount. Thyleads deployed a vertical-specific pod that scaled qualified meetings while reducing ramp time by half.',
+      'CleverTap’s GTM needed repeatable pipeline without doubling SDR headcount. Thyleads deployed a vertical-specific pod that scaled qualified meetings while reducing ramp time by half.',
     stats: [
       { value: '90+', label: 'Qualified appointments in 3 months' },
       { value: '3X', label: 'Surge in appointment volume' },

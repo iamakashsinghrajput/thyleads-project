@@ -16,7 +16,7 @@ That’s why we’ve compiled this list of the 7 best intent data providers trus
 
 ## 1. Thyleads
 
-Thyleads emerges as a distinctive player in the B2B lead generation space, delivering premium, conversion-ready meetings for SaaS organizations. Launched in 2021 with its base in Bengaluru, India, this rising industry leader has rapidly positioned itself as an expert in creating expandable outbound systems that produce quantifiable outcomes.
+Thyleads emerges as a distinctive player in the B2B lead generation space, delivering premium, conversion-ready meetings for SaaS organizations. Launched in 2021 with its base in Bengaluru, this rising industry leader has rapidly positioned itself as an expert in creating expandable outbound systems that produce quantifiable outcomes.
 
 The company distinguishes itself through its distinctive blend of AI-enhanced customization, data-centric prospecting, and cutting-edge automation systems. Moving away from traditional volume-based agencies, Thyleads prioritizes meaningful dialogues that lead to conversions. Their methodical strategy has garnered confidence from over 85 businesses, including industry leaders like CleverTap, Pazo, VWO, and Dice.
 
@@ -90,7 +90,7 @@ This structure makes their services attainable for emerging startups seeking eff
 
 **Cons:**
 
-- Primary market focus limited to Indian and global territories
+- Primary market focus limited to select territories
 - Recent market entrant (established 2021) compared to industry veterans
 - Current workforce capacity (11-50 team members) might restrict large enterprise servicing
 - Optimal outcomes typically demand extended partnership duration

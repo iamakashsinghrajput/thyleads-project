@@ -9,7 +9,7 @@ import GtmCTA from '@/components/GtmCTA';
 export const metadata = {
   title: 'GTM Framework · Thyleads',
   description:
-    'How Thyleads runs your GTM — a 5-step operating system for building a predictable pipeline. Built for SaaS teams targeting India-first growth.',
+    'How Thyleads runs your GTM — a 5-step operating system for building a predictable pipeline. Built for SaaS teams targeting outbound growth.',
 };
 
 export default function GtmFrameworkPage() {

@@ -20,7 +20,7 @@ Most RetailTech buyers ignore or distrust emails from foreign IPs. If your outre
 - Pair with Smartlead or Instantly.ai for domain rotation
 - Monitor spam scores with GlockApps or Mail-Tester
 
-- Shared IPs (especially from India/Eastern Europe)
+- Shared IPs (especially from Eastern Europe)
 - Sending from generic domains (e.g., @gmail.com)
 
 ## Sales Navigator is Broken (Here’s How to Fix Your Targeting)

@@ -64,7 +64,7 @@ export default function GtmCTA() {
           variants={itemVariants}
           className="text-4xl sm:text-5xl lg:text-6xl xl:text-[64px] font-extrabold tracking-[-0.02em] leading-[1.08] text-white"
         >
-          Your next 15 qualified Indian enterprise meetings are closer than you
+          Your next 15 qualified enterprise meetings are closer than you
           think.
         </motion.h2>
 

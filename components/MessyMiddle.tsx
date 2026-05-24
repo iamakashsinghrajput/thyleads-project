@@ -128,7 +128,7 @@ const MessyMiddle = () => {
 
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-20">
               <div className="px-3.5 py-1 rounded-full bg-primary-500 text-white text-[10px] font-bold uppercase tracking-wider shadow-md whitespace-nowrap">
-                ★ India&rsquo;s Biggest Gap
+                ★ The Biggest Gap
               </div>
             </div>
 

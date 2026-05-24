@@ -91,7 +91,7 @@ export default function GtmFrameworkHero() {
           <p className="mt-2 text-sm sm:text-base text-slate-500">
             Built for SaaS teams targeting{' '}
             <span className="font-semibold text-primary-700">
-              India-first growth.
+              outbound growth.
             </span>
           </p>
 

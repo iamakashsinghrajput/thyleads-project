@@ -24,7 +24,7 @@ const features = [
   {
     title: 'We extend your team, not replace it',
     description:
-      'We work alongside your SDRs and AEs as an India-specialist layer, handling the nuance, timing, and multi-stakeholder complexity others miss.',
+      'We work alongside your SDRs and AEs as a specialist layer, handling the nuance, timing, and multi-stakeholder complexity others miss.',
   },
   {
     title: 'Knowledge that compounds over time',

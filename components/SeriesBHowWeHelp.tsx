@@ -26,7 +26,7 @@ const pillars = [
     number: '01',
     title: 'Consistent Pipeline Generation',
     description:
-      'We run a dedicated outbound motion targeting your Indian enterprise ICP, using intent signals, AI personalisation, and multi-channel execution.',
+      'We run a dedicated outbound motion targeting your enterprise ICP, using intent signals, AI personalisation, and multi-channel execution.',
   },
   {
     tag: 'Efficient Growth',

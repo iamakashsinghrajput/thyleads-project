@@ -11,7 +11,7 @@ import SeriesBCTA from '@/components/SeriesBCTA';
 export const metadata = {
   title: 'Scaling SaaS Outbound · Series B and Beyond · Thyleads',
   description:
-    'For SaaS teams scaling beyond Series B in India. A plug-in revenue engine that delivers consistent pipeline, CAC-optimised qualification, and enterprise deal momentum — without scaling headcount.',
+    'For SaaS teams scaling beyond Series B. A plug-in revenue engine that delivers consistent pipeline, CAC-optimised qualification, and enterprise deal momentum — without scaling headcount.',
 };
 
 export default function SeriesBPage() {

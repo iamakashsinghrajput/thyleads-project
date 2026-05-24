@@ -143,12 +143,12 @@ export default function MartechSocialProof() {
             </div>
 
             <h4 className="relative mt-6 text-2xl font-extrabold tracking-tight leading-[1.2] text-neutral-900">
-              Built enterprise pipeline for one of India&apos;s leading CEPs
+              Built enterprise pipeline for a leading CEP
             </h4>
 
             <p className="relative mt-4 text-[14.5px] text-slate-600 leading-relaxed">
-              CleverTap needed to expand into enterprise accounts across India
-              and SEA without diluting brand positioning. Thyleads ran
+              CleverTap needed to expand into enterprise accounts across SEA
+              without diluting brand positioning. Thyleads ran
               vertical-trained outbound calibrated to each account&apos;s growth
               stage and channel mix, reaching CMOs and Heads of Growth with
               use-case-led messaging, not generic feature pitches.

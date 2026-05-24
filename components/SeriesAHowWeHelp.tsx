@@ -24,7 +24,7 @@ const itemVariants: Variants = {
 const pillars = [
   {
     number: '01',
-    title: 'Find the Right Buyers in India',
+    title: 'Find the Right Buyers',
     description:
       'We understand your product and your ICP, then map high-intent accounts using real signals, so you don’t waste time on prospecting through Ads.',
   },

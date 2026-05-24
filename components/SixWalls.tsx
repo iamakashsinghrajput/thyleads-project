@@ -124,7 +124,7 @@ const SixWalls = () => {
               <span className="bg-primary-100 text-primary-700 px-3 py-1 inline-block mt-2 rounded-md">
                 six walls
               </span>{' '}
-              while scaling in India.
+              while scaling.
             </h2>
 
             <p className="mt-6 text-base lg:text-lg text-neutral-500 leading-relaxed max-w-md">

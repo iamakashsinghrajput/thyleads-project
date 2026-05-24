@@ -67,7 +67,7 @@ export default function FintechCTA() {
           variants={itemVariants}
           className="text-3xl sm:text-4xl lg:text-5xl xl:text-[56px] font-extrabold tracking-[-0.02em] leading-[1.1] text-neutral-900"
         >
-          Your next 15 qualified Indian enterprise meetings are{' '}
+          Your next 15 qualified enterprise meetings are{' '}
           <span className="relative inline-block px-3 py-1 mt-2">
             <motion.span
               aria-hidden="true"

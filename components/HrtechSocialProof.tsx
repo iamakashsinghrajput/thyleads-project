@@ -130,7 +130,7 @@ export default function HrtechSocialProof() {
                   </span>
                 </div>
                 <p className="mt-0.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary-700/90">
-                  Talent Acquisition · India
+                  Talent Acquisition
                 </p>
               </div>
 

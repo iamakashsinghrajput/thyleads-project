@@ -11,7 +11,7 @@ import MartechCTA from '@/components/MartechCTA';
 export const metadata = {
   title: 'MarTech Outbound · Thyleads',
   description:
-    'Specialized B2B outbound for MarTech SaaS in India. Vertical-trained pods, signal-driven targeting, and messaging that earns replies from CMOs and growth founders.',
+    'Specialized B2B outbound for MarTech SaaS. Vertical-trained pods, signal-driven targeting, and messaging that earns replies from CMOs and growth founders.',
 };
 
 export default function MartechPage() {

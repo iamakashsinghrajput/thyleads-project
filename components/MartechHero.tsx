@@ -58,7 +58,7 @@ export default function MartechHero() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-primary-500 opacity-75 animate-ping" />
                 <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary-600" />
               </span>
-              For MarTech SaaS in India
+              For MarTech SaaS
             </span>
           </motion.div>
 

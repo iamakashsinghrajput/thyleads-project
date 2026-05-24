@@ -29,7 +29,7 @@ type Mcp = {
 const mcps: Mcp[] = [
 
   { category: 'Prospecting', name: 'Apollo MCP', description: 'Contact and company database used by Research and Stakeholder agents.' },
-  { category: 'Prospecting', name: 'Crustdata MCP', description: 'India-strong B2B data and hiring signals for Research and Signal Detection.' },
+  { category: 'Prospecting', name: 'Crustdata MCP', description: 'B2B data and hiring signals for Research and Signal Detection.' },
   { category: 'Inbound', name: 'Apify MCP', description: 'Web scraping across LinkedIn, news, job boards, and filings.' },
   { category: 'Enrichment', name: 'Cosy MCP', description: 'Enrichment orchestration with AI columns used by Research and Content.' },
 
@@ -43,7 +43,7 @@ const mcps: Mcp[] = [
   { category: 'Deliverability', name: 'Postmaster Tools MCP', description: 'Domain reputation and spam-rate monitoring.' },
   { category: 'Deliverability', name: 'MXToolbox MCP', description: 'Records and DNS checks for Deliverability Monitor Agent.' },
 
-  { category: 'Outreach', name: 'Gupshup MCP', description: 'WhatsApp template sends for Deal Momentum Agent (India).' },
+  { category: 'Outreach', name: 'Gupshup MCP', description: 'WhatsApp template sends for Deal Momentum Agent.' },
   { category: 'Verification', name: 'Gmail / Outlook MCP', description: '1-to-1 email tools for AE assist after handover.' },
   { category: 'Sourcing', name: 'Hunter / LeadMagic MCP', description: 'Email-finding fallback for Stakeholder Mapping.' },
   { category: 'Memory', name: 'Thyleads Dashboard MCP', description: 'Read/write to Project Memory — used by all agents.' },

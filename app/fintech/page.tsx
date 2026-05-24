@@ -11,7 +11,7 @@ import FintechCTA from '@/components/FintechCTA';
 export const metadata = {
   title: 'FinTech Outbound · Thyleads',
   description:
-    'Specialized B2B outbound for FinTech SaaS in India. Earn replies from CFOs, Heads of Risk, and CIOs — and keep deals alive through legal, procurement, and security review.',
+    'Specialized B2B outbound for FinTech SaaS. Earn replies from CFOs, Heads of Risk, and CIOs — and keep deals alive through legal, procurement, and security review.',
 };
 
 export default function FintechPage() {

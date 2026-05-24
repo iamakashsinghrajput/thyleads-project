@@ -82,7 +82,7 @@ export default function HrtechReality() {
             <span className="text-primary-700 bg-primary-200/80 box-decoration-clone px-2 py-0.5 rounded-md">
               HRTech SaaS company
             </span>{' '}
-            hits in India.
+            hits.
           </motion.h2>
 
           <motion.p

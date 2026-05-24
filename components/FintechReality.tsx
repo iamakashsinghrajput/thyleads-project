@@ -97,7 +97,7 @@ export default function FintechReality() {
               />
               <span className="relative text-primary-700">FinTech SaaS</span>
             </span>{' '}
-            company hits in India.
+            company hits.
           </motion.h2>
 
           <motion.p

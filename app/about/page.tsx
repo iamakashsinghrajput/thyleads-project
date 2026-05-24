@@ -118,7 +118,7 @@ function Founders() {
       role: "Co-Founder",
       initials: "PD",
       photo: "/team/prachi-dev.jpg",
-      bio: "When Rahul walked me through what he was building, the thing that stood out wasn't the service. It was the intent to build something that truly works for India. Having seen how SaaS companies struggled to design outbound systems for generating consistent revenue, it became clear that there was a deeper problem to solve. I realised this wasn't another lead generation agency. It was an opportunity to build something far more impactful, where real innovation could take place. What I'm most proud of is that our clients don't feel like they outsourced their work. They feel like they added a team.",
+      bio: "When Rahul walked me through what he was building, the thing that stood out wasn't the service. It was the intent to build something that truly works. Having seen how SaaS companies struggled to design outbound systems for generating consistent revenue, it became clear that there was a deeper problem to solve. I realised this wasn't another lead generation agency. It was an opportunity to build something far more impactful, where real innovation could take place. What I'm most proud of is that our clients don't feel like they outsourced their work. They feel like they added a team.",
       linkedin: "https://www.linkedin.com/in/prachi-dev-ba55b320b/",
     },
   ];
@@ -211,7 +211,7 @@ const STORY_MILESTONES = [
   {
     year: "2023",
     title: "The Playbook",
-    desc: "We grew into lead generation and built the first structured outbound playbook for SaaS companies selling in India.",
+    desc: "We grew into lead generation and built the first structured outbound playbook for SaaS companies.",
   },
   {
     year: "2024",
@@ -464,7 +464,7 @@ function NorthStar() {
                   Our Mission
                 </h3>
                 <p className="text-base text-slate-600 leading-relaxed max-w-md md:max-w-none mx-auto md:mx-0">
-                  Building India&apos;s most predictable sales engine by managing the entire outbound process from first contact to closed deal.
+                  Building the most predictable sales engine by managing the entire outbound process from first contact to closed deal.
                 </p>
               </motion.div>
 
@@ -485,7 +485,7 @@ function NorthStar() {
                   Our Vision
                 </h3>
                 <p className="text-base text-slate-600 leading-relaxed max-w-md md:max-w-none mx-auto md:mx-0">
-                  To become the go-to revenue partner for SaaS companies worldwide looking to win in India.
+                  To become the go-to revenue partner for SaaS companies looking to build predictable pipeline.
                 </p>
               </motion.div>
             </div>
@@ -506,7 +506,7 @@ function NorthStar() {
             <span className="hidden sm:inline text-slate-300">·</span>
             <span className="hidden sm:inline-flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-sky-500" />
-              Built for India
+              Built for SaaS
             </span>
           </div>
         </motion.div>
@@ -727,7 +727,7 @@ function Team() {
             </span>
           </h2>
           <p className="mt-5 text-base sm:text-lg text-slate-600 leading-relaxed">
-            A team focused on building revenue engines for global SaaS companies in India.
+            A team focused on building revenue engines for SaaS companies.
           </p>
         </motion.div>
 
@@ -883,7 +883,7 @@ function ClosingCTA() {
         className="relative z-10 max-w-4xl mx-auto text-center"
       >
         <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-[64px] font-extrabold tracking-[-0.02em] leading-[1.08] text-neutral-900">
-          Your next 15 qualified Indian enterprise meetings are{" "}
+          Your next 15 qualified enterprise meetings are{" "}
           <span className="bg-primary-100 text-primary-700 px-4 py-1 inline-block mt-2 rounded-md">
             closer than you think.
           </span>

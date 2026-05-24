@@ -70,7 +70,7 @@ This approach makes their services accessible to early-stage startups looking to
 
 ### Cons:
 
-- Geographic focus primarily on Indian and global markets
+- Geographic focus primarily on select markets
 - Relatively new company (founded 2021) compared to some competitors
 - Team size (11-50 employees) may limit capacity for enterprise-scale clients
 - Best results likely require longer-term engagement

@@ -27,7 +27,7 @@ const walls = [
     eyebrow: 'Wall 01',
     title: 'The Evaluation Window Slams Shut Fast',
     description:
-      'Indian CMOs move from "interested" to "next vendor, please" in 2–3 weeks if follow-up is slow or the value isn’t reinforced. Most outbound stops at the first meeting. By the time your AE circles back, the CMO has already shortlisted someone else.',
+      'CMOs move from "interested" to "next vendor, please" in 2–3 weeks if follow-up is slow or the value isn’t reinforced. Most outbound stops at the first meeting. By the time your AE circles back, the CMO has already shortlisted someone else.',
     accent: 'Window: 2–3 weeks',
   },
   {
@@ -43,7 +43,7 @@ const walls = [
     eyebrow: 'Wall 03',
     title: 'Long Sales Cycles Swallow Good Leads',
     description:
-      'MarTech deals in India stretch across months of demos, pilots, and stakeholder reviews. Promising conversations go cold between touchpoints, champions leave mid-cycle, and qualified leads quietly slip out of the pipeline while your team chases the next one.',
+      'MarTech deals stretch across months of demos, pilots, and stakeholder reviews. Promising conversations go cold between touchpoints, champions leave mid-cycle, and qualified leads quietly slip out of the pipeline while your team chases the next one.',
     accent: 'Cycle: 4–9 months',
   },
 ];
@@ -83,7 +83,7 @@ export default function MartechReality() {
             <span className="text-primary-700 bg-primary-200/80 box-decoration-clone px-2 py-0.5 rounded-md">
               MarTech SaaS company
             </span>{' '}
-            hits in India.
+            hits.
           </motion.h2>
 
           <motion.p

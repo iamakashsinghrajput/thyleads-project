@@ -62,7 +62,7 @@ export const blogPosts: BlogPost[] = [
           {
             heading: "Thyleads",
             content: [
-              "Thyleads emerges as a distinctive player in the B2B lead generation space, delivering premium, conversion-ready meetings for SaaS organizations. Launched in 2021 with its base in Bengaluru, India, this rising industry leader has rapidly positioned itself as an expert in creating expandable outbound systems that produce quantifiable outcomes."
+              "Thyleads emerges as a distinctive player in the B2B lead generation space, delivering premium, conversion-ready meetings for SaaS organizations. Launched in 2021 with its base in Bengaluru, this rising industry leader has rapidly positioned itself as an expert in creating expandable outbound systems that produce quantifiable outcomes."
       ,
               "The company distinguishes itself through its distinctive blend of AI-enhanced customization, data-centric prospecting, and cutting-edge automation systems. Moving away from traditional volume-based agencies, Thyleads prioritizes meaningful dialogues that lead to conversions. Their methodical strategy has garnered confidence from over 85 businesses, including industry leaders like CleverTap, Pazo, VWO, and Dice."
       ,
@@ -196,7 +196,7 @@ export const blogPosts: BlogPost[] = [
               {
                 type: 'list',
                 items: [
-                  'Primary market focus limited to Indian and global territories',
+                  'Primary market focus limited to select territories',
                   'Recent market entrant (established 2021) compared to industry veterans',
                   'Current workforce capacity (11-50 team members) might restrict large enterprise servicing',
                   'Optimal outcomes typically demand extended partnership duration'
@@ -1270,7 +1270,7 @@ export const blogPosts: BlogPost[] = [
             {
               type: 'list',
               items: [
-                'Geographic focus primarily on Indian and global markets',
+                'Geographic focus primarily on select markets',
                 'Relatively new company (founded 2021) compared to some competitors',
                 'Team size (11-50 employees) may limit capacity for enterprise-scale clients',
                 'Best results likely require longer-term engagement'
@@ -3479,7 +3479,7 @@ export const blogPosts: BlogPost[] = [
                 'Use US-based SMTP servers (e.g., SocketLabs, Amazon SES)',
                 'Pair with Smartlead or Instantly.ai for domain rotation',
                 'Monitor spam scores with GlockApps or Mail-Tester',
-                'Shared IPs (especially from India/Eastern Europe)',
+                'Shared IPs (especially from Eastern Europe)',
                 'Sending from generic domains (e.g., @gmail.com)'
               ]
             }
