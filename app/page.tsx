@@ -3,7 +3,6 @@ import Hero from "../components/Hero";
 import TrustedBy from "../components/TrustedBy";
 import SixWalls from "../components/SixWalls";
 import CaseStudies from "@/components/CaseStudies";
-import StrategicProcessRedesign from "@/components/StrategicProcess";
 import MessyMiddle from "@/components/MessyMiddle";
 import ClientDashboard from "@/components/ClientDashboard";
 import Testimonial from "@/components/Testimonial";
