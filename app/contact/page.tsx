@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -19,6 +19,22 @@ const ContactPage = () => {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [formLoadTime] = useState(Date.now());
+
+  useEffect(() => {
+    if (document.cookie.includes("thy_human")) return;
+
+    const events = ["mousemove", "keydown", "touchstart", "scroll", "pointerdown"] as const;
+    const markHuman = () => {
+      document.cookie = "thy_human=1; path=/; max-age=86400; SameSite=Lax";
+      events.forEach((evt) => window.removeEventListener(evt, markHuman));
+    };
+
+    events.forEach((evt) => window.addEventListener(evt, markHuman, { once: true, passive: true }));
+
+    return () => {
+      events.forEach((evt) => window.removeEventListener(evt, markHuman));
+    };
+  }, []);
 
   const updateField = (key: keyof typeof formData) => (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({ ...prev, [key]: event.target.value }));
