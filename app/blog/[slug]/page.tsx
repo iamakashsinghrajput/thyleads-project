@@ -61,6 +61,20 @@ const renderContentBlock = (block: ContentBlock, index: number, isIntro: boolean
     );
   }
 
+  if (block.type === 'cta') {
+    return (
+      <div key={index} className="my-8">
+        <Link
+          href={block.href || '/contact'}
+          className="inline-flex items-center gap-2 px-7 py-3.5 bg-purple-600 hover:bg-purple-700 text-white text-base font-semibold rounded-full shadow-md hover:shadow-lg transition-all"
+        >
+          {block.text}
+          <ChevronRight size={18} />
+        </Link>
+      </div>
+    );
+  }
+
   if (block.type === 'list') {
     const ListTag = block.ordered ? 'ol' : 'ul';
     return (

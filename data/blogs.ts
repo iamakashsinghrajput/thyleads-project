@@ -13,6 +13,11 @@ export type ContentBlock =
       type: 'image';
       src: string;
       alt?: string;
+    }
+  | {
+      type: 'cta';
+      text: string;
+      href?: string;
     };
 
 export interface BlogPost {
@@ -1025,7 +1030,12 @@ export const blogPosts: BlogPost[] = [
             "The right choice depends on what is actually failing in your outreach right now.",
             "If data quality and deliverability are the problem and you are selling SaaS into a specific ICP, Thyleads is purpose-built for that. If you need enterprise-level account research for high-ticket deals, Belkins earns the longer timeline and higher cost. If you operate in Europe and compliance is the first filter, Sopro is the cleaner option. For simple campaigns without complexity, Mailshake is a fast, affordable starting point. For multi-geography outreach at volume, CIENCE has the infrastructure.",
 
-            "Want to see how Thyleads would approach your specific ICP and market? [Book a strategy call]"
+            "Want to see how Thyleads would approach your specific ICP and market?",
+            {
+              type: 'cta',
+              text: 'Book a strategy call',
+              href: '/contact'
+            }
           ]
         }
       ]
@@ -1657,6 +1667,11 @@ export const blogPosts: BlogPost[] = [
             "For SaaS outbound where multi-source accuracy and deliverability matter, Thyleads handles enrichment as part of a managed campaign. For real-time inbound qualification inside HubSpot or Salesforce, Clearbit is the cleaner fit. For an affordable combined database and outreach tool, Apollo is the starting point. For enterprise-scale depth across org charts, intent signals, and technographics, ZoomInfo is the right tool. For phone-heavy SDR workflows on LinkedIn, Lusha works.",
             
             "Want to see how Thyleads would enrich your ICP list?",
+            {
+              type: 'cta',
+              text: 'Book a demo',
+              href: '/contact'
+            }
           ]
         }
       ]
@@ -1675,7 +1690,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Oct 15, 2025",
     readTime: "3 min read",
-    image: "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&q=80&w=800",
+    image: "/blogs/5 best appointment scheduling service agencies.png",
     featured: false,
     content: {
       introduction: [
@@ -2061,7 +2076,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Oct 12, 2025",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&q=80&w=800",
+    image: "/blogs/Every job posting is a hiring signal.png",
     featured: false,
     content: {
       introduction: [
@@ -2299,7 +2314,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Oct 12, 2025",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&q=80&w=800",
+    image: "/blogs/Waterfall enrichment.png",
     featured: false,
     content: {
       introduction: [
@@ -2523,7 +2538,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Oct 12, 2025",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&q=80&w=800",
+    image: "/blogs/reddit for b2b lead generation.png",
     featured: false,
     content: {
       introduction: [
@@ -2834,7 +2849,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Oct 12, 2025",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&q=80&w=800",
+    image: "/blogs/10 data-driven outbound campaign.png",
     featured: false,
     content: {
       introduction: [
@@ -3093,7 +3108,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Oct 12, 2025",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&q=80&w=800",
+    image: "/blogs/wining in us retailtech.png",
     featured: false,
     content: {
       introduction: [
@@ -3250,7 +3265,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Oct 12, 2025",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&q=80&w=800",
+    image: "/blogs/10 hard-earned outreach lesson.png",
     featured: false,
     content: {
       introduction: [
@@ -3454,7 +3469,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Oct 12, 2025",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&q=80&w=800",
+    image: "/blogs/the ultimate guide.png",
     featured: false,
     content: {
       introduction: [
@@ -3727,7 +3742,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Mar 26, 2026",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=800",
+    image: "/blogs/india gtm playbook.png",
     featured: false,
     content: {
       introduction: [
@@ -3803,7 +3818,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Mar 24, 2026",
     readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800",
+    image: "/blogs/outsourced sdr vs in-house sales team.png",
     featured: false,
     content: {
       introduction: [
@@ -3874,7 +3889,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Mar 22, 2026",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f2?auto=format&fit=crop&q=80&w=800",
+    image: "/blogs/how fintech saas companies are winning enterprise deals.png",
     featured: false,
     content: {
       introduction: [
@@ -3938,7 +3953,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Mar 20, 2026",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    image: "/blogs/the martech opportunity in india.png",
     featured: false,
     content: {
       introduction: [
