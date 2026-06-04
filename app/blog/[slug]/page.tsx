@@ -49,6 +49,18 @@ const renderContentBlock = (block: ContentBlock, index: number, isIntro: boolean
     );
   }
 
+  if (block.type === 'image') {
+    return (
+      <div key={index} className="my-8 rounded-2xl overflow-hidden">
+        <img
+          src={block.src}
+          alt={block.alt || ''}
+          className="w-full h-auto object-cover"
+        />
+      </div>
+    );
+  }
+
   if (block.type === 'list') {
     const ListTag = block.ordered ? 'ol' : 'ul';
     return (
@@ -275,13 +287,15 @@ export default function BlogDetailPage() {
                 </div>
               </header>
 
-              <div className="mb-12 rounded-2xl overflow-hidden shadow-lg">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-auto object-cover"
-                />
-              </div>
+              {!post.hideHeroImage && (
+                <div className="mb-12 rounded-2xl overflow-hidden shadow-lg">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              )}
 
               <div className="prose prose-lg max-w-none">
                 <div className="mb-10">

@@ -95,18 +95,18 @@ const BlogPage = () => {
             >
               <div className="relative h-48 overflow-hidden">
                 <img
-                  src={post.image}
+                  src={post.cardImage || post.image}
                   alt={post.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute top-4 left-4">
+              </div>
+
+              <div className="p-6 flex flex-col flex-grow">
+                <div className="mb-3">
                   <span className="px-3 py-1 bg-purple-600 text-xs font-bold text-white rounded-full shadow-sm">
                     {post.category}
                   </span>
                 </div>
-              </div>
-
-              <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center gap-3 text-xs text-gray-500 mb-3">
                   <span className="flex items-center gap-1"><Calendar size={12} /> {post.date}</span>
                   <span className="flex items-center gap-1"><Clock size={12} /> {post.readTime}</span>
