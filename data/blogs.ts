@@ -733,8 +733,8 @@ export const blogPosts: BlogPost[] = [
     },
     date: "May 10, 2026",
     readTime: "5 min read",
-    image: "/blogs/Email outreach.png",
-    cardImage: "/blogs/Email outreach.png",
+    image: "/blogs/Email outreach.webp",
+    cardImage: "/blogs/Email outreach.webp",
     hideHeroImage: true,
     featured: false,
     content: {
@@ -745,7 +745,7 @@ export const blogPosts: BlogPost[] = [
 
         {
           type: 'image',
-          src: "/blogs/5 Best Email Outreach Service Providers secondary.png",
+          src: "/blogs/5 Best Email Outreach Service Providers secondary.webp",
           alt: "best email outreach service providers",
         }
       ],
@@ -757,7 +757,7 @@ export const blogPosts: BlogPost[] = [
             "The core of how Thyleads operates is the Waterfall Enrichment Engine, which pulls contact data from multiple sources and cross-verifies each record. That process keeps bounce rates low and protects domain reputation across campaigns. Domain warm-up, done properly, can improve email deliverability by up to 80%, and Thyleads treats it as a launch requirement rather than a setup checkbox. Thyleads has worked with 70+ SaaS clients and verifies over 100,000 emails per month. Outreach runs across email and LinkedIn, and each client gets a dedicated GTM engineer plus a shared Slack channel for live updates.",
             {
               type: 'image',
-              src: "/blogs/Tertiary Image.png",
+              src: "/blogs/Tertiary Image.webp",
               alt: "Waterfall Enrichment Engine"
             },
 
@@ -1054,8 +1054,8 @@ export const blogPosts: BlogPost[] = [
     },
     date: "May 20, 2026",
     readTime: "5 min read",
-    image: "/blogs/Top 5 Lead Generation Companies.png",
-    cardImage: "/blogs/Top 5 Lead Generation Companies.png",
+    image: "/blogs/Top 5 Lead Generation Companies.webp",
+    cardImage: "/blogs/Top 5 Lead Generation Companies.webp",
     hideHeroImage: true,
     featured: false,
     content: {
@@ -1064,7 +1064,7 @@ export const blogPosts: BlogPost[] = [
         "Outsourcing lead generation to a specialist changes that equation. The five companies below approach the problem differently. Some are built for scale, some for precision, and one is built specifically for SaaS outbound. Here is how they compare.",
         {
           type: 'image',
-          src: "/blogs/Top 6 secondary image.png",
+          src: "/blogs/Top 6 secondary image.webp",
           alt: "Top lead generation companies for 2026",
         },
       ],
@@ -1366,8 +1366,8 @@ export const blogPosts: BlogPost[] = [
     },
     date: "May 5, 2026",
     readTime: "5 min read",
-    image: "/blogs/5 Best Data enrichment service providers.png",
-    cardImage: "/blogs/5 Best Data enrichment service providers.png",
+    image: "/blogs/5 Best Data enrichment service providers.webp",
+    cardImage: "/blogs/5 Best Data enrichment service providers.webp",
     hideHeroImage: true,
     featured: false,
     content: {
@@ -1388,7 +1388,7 @@ export const blogPosts: BlogPost[] = [
 
             {
               type: 'image',
-              src: "/blogs/5-best-data-enrichment-seconday-image.png",
+              src: "/blogs/5-best-data-enrichment-seconday-image.webp",
               alt: "Top lead generation companies for 2026",
             },
           ]
@@ -1690,7 +1690,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Oct 15, 2025",
     readTime: "3 min read",
-    image: "/blogs/5 best appointment scheduling service agencies.png",
+    image: "/blogs/5 best appointment scheduling service agencies.webp",
     featured: false,
     content: {
       introduction: [
@@ -2076,7 +2076,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Oct 12, 2025",
     readTime: "7 min read",
-    image: "/blogs/Every job posting is a hiring signal.png",
+    image: "/blogs/Every job posting is a hiring signal.webp",
     featured: false,
     content: {
       introduction: [
@@ -2314,7 +2314,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Oct 12, 2025",
     readTime: "7 min read",
-    image: "/blogs/Waterfall enrichment.png",
+    image: "/blogs/Waterfall enrichment.webp",
     featured: false,
     content: {
       introduction: [
@@ -2538,7 +2538,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Oct 12, 2025",
     readTime: "7 min read",
-    image: "/blogs/reddit for b2b lead generation.png",
+    image: "/blogs/reddit for b2b lead generation.webp",
     featured: false,
     content: {
       introduction: [
@@ -2849,7 +2849,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Oct 12, 2025",
     readTime: "7 min read",
-    image: "/blogs/10 data-driven outbound campaign.png",
+    image: "/blogs/10 data-driven outbound campaign.webp",
     featured: false,
     content: {
       introduction: [
@@ -3108,7 +3108,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Oct 12, 2025",
     readTime: "7 min read",
-    image: "/blogs/wining in us retailtech.png",
+    image: "/blogs/wining in us retailtech.webp",
     featured: false,
     content: {
       introduction: [
@@ -3265,7 +3265,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Oct 12, 2025",
     readTime: "7 min read",
-    image: "/blogs/10 hard-earned outreach lesson.png",
+    image: "/blogs/10 hard-earned outreach lesson.webp",
     featured: false,
     content: {
       introduction: [
@@ -3469,7 +3469,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Oct 12, 2025",
     readTime: "7 min read",
-    image: "/blogs/the ultimate guide.png",
+    image: "/blogs/the ultimate guide.webp",
     featured: false,
     content: {
       introduction: [
@@ -3742,7 +3742,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Mar 26, 2026",
     readTime: "7 min read",
-    image: "/blogs/india gtm playbook.png",
+    image: "/blogs/india gtm playbook.webp",
     featured: false,
     content: {
       introduction: [
@@ -3818,7 +3818,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Mar 24, 2026",
     readTime: "6 min read",
-    image: "/blogs/outsourced sdr vs in-house sales team.png",
+    image: "/blogs/outsourced sdr vs in-house sales team.webp",
     featured: false,
     content: {
       introduction: [
@@ -3889,7 +3889,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Mar 22, 2026",
     readTime: "7 min read",
-    image: "/blogs/how fintech saas companies are winning enterprise deals.png",
+    image: "/blogs/how fintech saas companies are winning enterprise deals.webp",
     featured: false,
     content: {
       introduction: [
@@ -3953,7 +3953,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: "Mar 20, 2026",
     readTime: "7 min read",
-    image: "/blogs/the martech opportunity in india.png",
+    image: "/blogs/the martech opportunity in india.webp",
     featured: false,
     content: {
       introduction: [
