@@ -1,5 +1,4 @@
 "use client"
-import Image from 'next/image';
 import { motion, type Variants } from 'framer-motion';
 import { ArrowUpRight, Quote } from 'lucide-react';
 
@@ -108,21 +107,15 @@ export default function HrtechSocialProof() {
                   aria-hidden="true"
                   className="absolute -inset-1 bg-primary-300/40 blur-md rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"
                 />
-                <div className="relative w-12 h-12 rounded-xl bg-white border border-slate-200 ring-1 ring-white shadow-[0_8px_22px_-8px_rgba(132,92,245,0.30)] flex items-center justify-center overflow-hidden p-2">
-                  <Image
-                    src="/images/teamlease.png"
-                    alt="TeamLease"
-                    width={44}
-                    height={44}
-                    className="max-w-full max-h-full object-contain"
-                  />
+                <div className="relative w-12 h-12 rounded-xl bg-primary-600 ring-1 ring-white shadow-[0_8px_22px_-8px_rgba(132,92,245,0.30)] flex items-center justify-center overflow-hidden">
+                  <span className="text-xl font-extrabold text-white">S</span>
                 </div>
               </div>
 
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2">
                   <h3 className="text-lg font-extrabold tracking-tight text-neutral-900">
-                    TeamLease
+                    Skillate
                   </h3>
                   <span className="relative flex h-1.5 w-1.5" aria-hidden="true">
                     <span className="absolute inline-flex h-full w-full rounded-full bg-primary-500 opacity-75 animate-ping" />

@@ -5,6 +5,7 @@ import {
   Users,
   CreditCard,
   MessageCircle,
+  ShoppingBag,
   Bot,
 } from 'lucide-react';
 import HeroShowcase from './HeroShowcase';
@@ -13,7 +14,7 @@ const verticals = [
   { name: 'HRTech', Icon: Users },
   { name: 'FinTech', Icon: CreditCard },
   { name: 'MarTech', Icon: MessageCircle },
-  { name: 'AI Agents', Icon: Bot },
+  { name: 'RetailTech', Icon: ShoppingBag },
 ];
 
 type FloatingWord = {

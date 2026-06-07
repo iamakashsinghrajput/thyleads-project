@@ -99,7 +99,7 @@ function AgentConsole() {
         <div className="flex items-center gap-2">
           <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-50 border border-primary-100 text-[10px] font-bold uppercase tracking-[0.22em] text-primary-700">
             <ClaudeIcon className="w-3 h-3 text-primary-600" />
-            Claude Agents
+            AI Agents
           </span>
         </div>
         <span className="inline-flex items-center gap-1.5 px-2 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-[9.5px] font-bold uppercase tracking-[0.18em] text-emerald-700">
@@ -270,10 +270,6 @@ function AgentConsole() {
         <span className="inline-flex items-center gap-1.5 text-slate-500">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
           5 / 5 healthy
-        </span>
-        <span className="inline-flex items-center gap-1.5 text-primary-700">
-          <ClaudeIcon className="w-3 h-3" />
-          Opus 4.7
         </span>
       </div>
     </motion.div>

@@ -140,11 +140,6 @@ export default function FintechWhyUs() {
                 strokeWidth={2.5}
               />
             </a>
-            <span className="text-[12px] text-slate-500 font-semibold">
-              Trusted by{' '}
-              <span className="text-neutral-900 font-bold tabular-nums">70+</span>{' '}
-              FinTech teams
-            </span>
           </motion.div>
         </div>
 
