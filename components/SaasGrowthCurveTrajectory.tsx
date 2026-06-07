@@ -104,7 +104,7 @@ export default function SaasGrowthCurveTrajectory() {
           >
             Built for the{' '}
             <span className="bg-primary-100 text-primary-700 px-3 py-1 inline-block rounded-md">
-              3-3-2-2-2
+              T2D3
             </span>{' '}
             Curve.
           </motion.h2>
@@ -121,7 +121,7 @@ export default function SaasGrowthCurveTrajectory() {
 
         <motion.div
           variants={itemVariants}
-          className="relative rounded-3xl bg-gradient-to-b from-primary-50/40 via-white to-white border border-primary-100 p-6 sm:p-8 overflow-hidden"
+          className="relative max-w-3xl mx-auto rounded-3xl bg-gradient-to-b from-primary-50/40 via-white to-white border border-primary-100 p-6 sm:p-8 overflow-hidden"
         >
 
           <div

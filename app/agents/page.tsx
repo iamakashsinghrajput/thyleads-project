@@ -8,12 +8,9 @@ import AgentsSpecifications from '@/components/AgentsSpecifications';
 import AgentsToolLayer from '@/components/AgentsToolLayer';
 import AgentsHumanLayer from '@/components/AgentsHumanLayer';
 import AgentsCTA from '@/components/AgentsCTA';
+import { buildMetadata, pageSeo } from '@/lib/seo';
 
-export const metadata = {
-  title: 'Agents · Thyleads',
-  description:
-    'Your pipeline runs on 15 agents built on Claude. A multi-agent system on Anthropic’s Claude that researches accounts, writes content, monitors deliverability, and learns — improving every campaign with everything it has seen before.',
-};
+export const metadata = buildMetadata(pageSeo.aiSystem, '/agents');
 
 export default function AgentsPage() {
   return (

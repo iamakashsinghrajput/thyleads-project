@@ -5,6 +5,7 @@ import { ArrowRight, Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 type DropdownKey = 'solutions' | 'resources' | null;
 
@@ -44,6 +45,9 @@ const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<DropdownKey>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const pathname = usePathname();
+  const isActive = (href: string) =>
+    href === '/' ? pathname === '/' : pathname.startsWith(href.split('#')[0]);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -68,12 +72,14 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="fixed left-1/2 -translate-x-1/2 z-50 w-full max-w-5xl px-6 top-6">
-      <div
-        className={`relative flex items-center justify-between border border-neutral-200 rounded-2xl backdrop-blur-md py-3 px-5 lg:px-7 transition-all duration-300 ${
-          scrolled ? 'bg-white/85 shadow-lg' : 'bg-white/70'
-        }`}
-      >
+    <nav
+      className={`sticky top-0 z-50 w-full bg-white border-b transition-all duration-300 ${
+        scrolled
+          ? 'border-neutral-200/80 shadow-[0_6px_24px_-12px_rgba(15,23,42,0.18)]'
+          : 'border-neutral-100'
+      }`}
+    >
+      <div className="relative flex items-center justify-between max-w-6xl mx-auto py-3.5 px-6 lg:px-8">
 
         <Link
           href="/"
@@ -96,28 +102,32 @@ const Navbar: React.FC = () => {
           </span>
         </Link>
 
-        <div className="hidden lg:flex items-center gap-7 h-5">
+        <div className="hidden lg:flex items-center gap-0.5">
           {TOP_LINKS.map((l) => (
             <Link
               key={l.name}
               href={l.href}
-              className="inline-flex items-center h-5 leading-none text-[11px] font-bold text-neutral-500 hover:text-neutral-900 transition-colors tracking-[0.2em]"
+              className={`inline-flex items-center px-3 py-2 rounded-lg text-[11px] font-bold tracking-[0.18em] transition-colors ${
+                isActive(l.href)
+                  ? 'text-primary-700 bg-primary-50'
+                  : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100/80'
+              }`}
             >
               {l.name}
             </Link>
           ))}
 
           <div
-            className="relative inline-flex items-center h-5"
+            className="relative inline-flex items-center"
             onMouseEnter={() => openIt('solutions')}
             onMouseLeave={scheduleClose}
           >
             <button
               type="button"
-              className={`inline-flex items-center gap-1 h-5 leading-none text-[11px] font-bold tracking-[0.2em] transition-colors ${
+              className={`inline-flex items-center gap-1 px-3 py-2 rounded-lg text-[11px] font-bold tracking-[0.18em] transition-colors ${
                 openDropdown === 'solutions'
-                  ? 'text-neutral-900'
-                  : 'text-neutral-500 hover:text-neutral-900'
+                  ? 'text-neutral-900 bg-neutral-100/80'
+                  : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100/80'
               }`}
             >
               SOLUTIONS
@@ -131,16 +141,16 @@ const Navbar: React.FC = () => {
           </div>
 
           <div
-            className="relative inline-flex items-center h-5"
+            className="relative inline-flex items-center"
             onMouseEnter={() => openIt('resources')}
             onMouseLeave={scheduleClose}
           >
             <button
               type="button"
-              className={`inline-flex items-center gap-1 h-5 leading-none text-[11px] font-bold tracking-[0.2em] transition-colors ${
+              className={`inline-flex items-center gap-1 px-3 py-2 rounded-lg text-[11px] font-bold tracking-[0.18em] transition-colors ${
                 openDropdown === 'resources'
-                  ? 'text-neutral-900'
-                  : 'text-neutral-500 hover:text-neutral-900'
+                  ? 'text-neutral-900 bg-neutral-100/80'
+                  : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100/80'
               }`}
             >
               RESOURCES
@@ -181,7 +191,11 @@ const Navbar: React.FC = () => {
 
           <Link
             href="/about"
-            className="inline-flex items-center h-5 leading-none text-[11px] font-bold text-neutral-500 hover:text-neutral-900 transition-colors tracking-[0.2em]"
+            className={`inline-flex items-center px-3 py-2 rounded-lg text-[11px] font-bold tracking-[0.18em] transition-colors ${
+              isActive('/about')
+                ? 'text-primary-700 bg-primary-50'
+                : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100/80'
+            }`}
           >
             ABOUT US
           </Link>

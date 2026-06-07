@@ -71,9 +71,7 @@ const ClientDashboard = () => {
             </p>
 
             <Link
-              href="https://thyleadspods.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/agents"
               className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold text-sm rounded-full shadow-lg shadow-primary-500/25 transition-all group"
             >
               See Our AI System

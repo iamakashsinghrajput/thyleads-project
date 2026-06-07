@@ -33,7 +33,7 @@ const walls = [
   {
     icon: MessageSquareDashed,
     eyebrow: 'Wall 02',
-    title: 'HR Inboxes Are Saturated',
+    title: 'HR Inboxes are already Saturated',
     description:
       'Every HRTech SaaS company pitches "AI-powered HR." HR leaders ignore generic cold emails, and your SDRs burn cycles trying to break through with messaging that sounds like everyone else.',
     accent: 'Inbox: 300+ pitches/mo',

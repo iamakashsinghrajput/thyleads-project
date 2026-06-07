@@ -58,7 +58,7 @@ const pillars: Pillar[] = [
 
 export default function FintechHowWeHelp() {
   return (
-    <section className="relative py-12 lg:py-16 px-6 sm:px-12 overflow-hidden bg-white font-sans">
+    <section id="how-we-help" className="relative scroll-mt-28 py-12 lg:py-16 px-6 sm:px-12 overflow-hidden bg-white font-sans">
 
       <div
         aria-hidden="true"

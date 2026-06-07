@@ -7,12 +7,9 @@ import HrtechSocialProof from '@/components/HrtechSocialProof';
 import HrtechWhyUs from '@/components/HrtechWhyUs';
 import HrtechFAQ from '@/components/HrtechFAQ';
 import HrtechCTA from '@/components/HrtechCTA';
+import { buildMetadata, pageSeo } from '@/lib/seo';
 
-export const metadata = {
-  title: 'HRTech Outbound · Thyleads',
-  description:
-    'Specialized B2B outbound for HRTech SaaS. Lands right in CHRO inboxes and keeps multi-stakeholder deals moving through the buying committee.',
-};
+export const metadata = buildMetadata(pageSeo.hrtech, '/hrtech');
 
 export default function HrtechPage() {
   return (

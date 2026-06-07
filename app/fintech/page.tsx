@@ -7,12 +7,9 @@ import FintechSocialProof from '@/components/FintechSocialProof';
 import FintechWhyUs from '@/components/FintechWhyUs';
 import FintechFAQ from '@/components/FintechFAQ';
 import FintechCTA from '@/components/FintechCTA';
+import { buildMetadata, pageSeo } from '@/lib/seo';
 
-export const metadata = {
-  title: 'FinTech Outbound · Thyleads',
-  description:
-    'Specialized B2B outbound for FinTech SaaS. Earn replies from CFOs, Heads of Risk, and CIOs — and keep deals alive through legal, procurement, and security review.',
-};
+export const metadata = buildMetadata(pageSeo.fintech, '/fintech');
 
 export default function FintechPage() {
   return (

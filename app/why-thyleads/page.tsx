@@ -6,12 +6,9 @@ import SaasGrowthCurveTrajectory from '@/components/SaasGrowthCurveTrajectory';
 import TheNumbers from '@/components/TheNumbers';
 import Testimonials from '@/components/Testimonials';
 import WhyThyleadsCTA from '@/components/WhyThyleadsCTA';
+import { buildMetadata, pageSeo } from '@/lib/seo';
 
-export const metadata = {
-  title: 'Why Thyleads · The Right Choice for Predictable Outbound',
-  description:
-    'See why SaaS teams pick Thyleads over in-house SDRs — qualified leads, consistent follow-ups, and real deal momentum.',
-};
+export const metadata = buildMetadata(pageSeo.whyThyleads, '/why-thyleads');
 
 export default function WhyThyleadsPage() {
   return (

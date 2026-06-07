@@ -86,7 +86,7 @@ export default function SeriesAHero() {
               />
             </a>
             <a
-              href="/howitworks"
+              href="#how-we-help"
               className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white hover:bg-primary-50 border border-primary-200 hover:border-primary-300 text-primary-800 text-sm font-bold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
             >
               See how it works

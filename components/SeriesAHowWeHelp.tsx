@@ -1,6 +1,7 @@
 "use client"
 import { motion, type Variants } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 
 const easeOut: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -26,25 +27,28 @@ const pillars = [
     number: '01',
     title: 'Find the Right Buyers',
     description:
-      'We understand your product and your ICP, then map high-intent accounts using real signals, so you don’t waste time on prospecting through Ads.',
+      'We understand your product and ICP, then map high-intent accounts using real signals, so you don’t waste time prospecting through Ads.',
+    href: '/howitworks#signal-intelligence',
   },
   {
     number: '02',
     title: 'Run Outbound That Converts',
     description:
       'We handle multi-channel outreach, qualification, and meeting scheduling, so only sales-ready conversations reach your calendar.',
+    href: '/howitworks#system',
   },
   {
     number: '03',
     title: 'Keep Deals Moving to Close',
     description:
       'We manage follow-ups across stakeholders, keep the context alive, so deals stay warm and don’t get lost in long buying cycles.',
+    href: '/howitworks#deal-assist',
   },
 ];
 
 export default function SeriesAHowWeHelp() {
   return (
-    <section className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-gradient-to-b from-white via-primary-50/40 to-white font-sans">
+    <section id="how-we-help" className="relative scroll-mt-28 py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-gradient-to-b from-white via-primary-50/40 to-white font-sans">
       <div
         aria-hidden="true"
         className="absolute -top-32 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
@@ -58,10 +62,8 @@ export default function SeriesAHowWeHelp() {
         className="relative z-10 max-w-6xl mx-auto"
       >
         <div className="text-center max-w-3xl mx-auto">
-          <motion.div variants={itemVariants} className="mb-5">
-            <span className="inline-block text-[11px] font-semibold uppercase tracking-[0.28em] text-primary-700">
-              How Thyleads Helps
-            </span>
+          <motion.div variants={itemVariants} className="flex justify-center mb-5">
+            <Badge size="lg">How Thyleads Helps</Badge>
           </motion.div>
 
           <motion.h2
@@ -121,7 +123,7 @@ export default function SeriesAHowWeHelp() {
               </p>
 
               <a
-                href="/howitworks"
+                href={pillar.href}
                 className="group/link mt-6 inline-flex items-center gap-1.5 text-[13px] font-bold text-primary-700 hover:text-primary-800 transition-colors"
               >
                 Know more

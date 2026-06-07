@@ -7,12 +7,9 @@ import MartechSocialProof from '@/components/MartechSocialProof';
 import MartechWhyUs from '@/components/MartechWhyUs';
 import MartechFAQ from '@/components/MartechFAQ';
 import MartechCTA from '@/components/MartechCTA';
+import { buildMetadata, pageSeo } from '@/lib/seo';
 
-export const metadata = {
-  title: 'MarTech Outbound · Thyleads',
-  description:
-    'Specialized B2B outbound for MarTech SaaS. Vertical-trained pods, signal-driven targeting, and messaging that earns replies from CMOs and growth founders.',
-};
+export const metadata = buildMetadata(pageSeo.martech, '/martech');
 
 export default function MartechPage() {
   return (

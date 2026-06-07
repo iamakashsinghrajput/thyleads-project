@@ -1,5 +1,6 @@
 'use client'
 import React from 'react';
+import Link from 'next/link';
 import {
   Check, Radio, Filter, Zap,
   CheckCircle2
@@ -133,6 +134,12 @@ const MessyMiddle = () => {
             </div>
 
             <div className="absolute -right-10 -top-10 w-40 h-40 bg-primary-200/40 blur-[60px] rounded-full group-hover:bg-primary-300/50 transition-all duration-500" />
+
+            <Link
+              href="/howitworks#deal-assist"
+              aria-label="See the Deal Assist Pod on the How We Work page"
+              className="absolute inset-0 z-30 rounded-[2rem] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
+            />
 
             <div className="relative z-10">
               <div className="w-14 h-14 rounded-2xl bg-primary-50 border border-primary-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-sm">

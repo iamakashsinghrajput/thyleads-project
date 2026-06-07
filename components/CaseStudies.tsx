@@ -58,6 +58,26 @@ const testimonials: Testimonial[] = [
     personName: 'Harsh Sharma',
     personTitle: 'Senior Manager-APAC',
     personImage: '/vwo.png'
+  },
+  {
+    id: 'zigtal',
+    companyName: 'Zigtal',
+    logo: '/images/zigital.png',
+    brandColor: 'text-[#146EF5]',
+    quote: "The HR tech market is incredibly noisy, and our outreach was falling flat. Thyleads fixed this by re-engineering our messaging to finally resonate with decision-makers. They turned our struggle into a consistent pipeline of qualified demos.",
+    personName: 'Harsh Sharma',
+    personTitle: 'Senior Manager',
+    personImage: '/images/zigital.png'
+  },
+  {
+    id: 'onecap',
+    companyName: 'OneCap',
+    logo: '/images/onecap.png',
+    brandColor: 'text-[#146EF5]',
+    quote: "A pre-revenue HRTech startup needed pipeline fast before their runway ran out. Thyleads built our entire outbound motion from scratch — from zero to 47 qualified meetings in 90 days.",
+    personName: 'Aman Mehra',
+    personTitle: 'VP Sales',
+    personImage: '/images/onecap.png'
   }
 ];
 
@@ -294,14 +314,18 @@ export default function TestimonialSection() {
                         src={testimonial.logo}
                         alt={`${testimonial.companyName} logo`}
                         width={220}
-                        height={70}
-                        className="h-12 md:h-14 w-auto object-contain"
+                        height={120}
+                        className={`w-auto object-contain ${
+                          testimonial.id === 'zigtal' || testimonial.id === 'onecap'
+                            ? 'h-16 md:h-20'
+                            : 'h-12 md:h-14'
+                        }`}
                       />
                     </div>
 
                     <blockquote
                       className={`leading-relaxed text-slate-800 font-medium tracking-tight ${
-                        testimonial.id === 'clevertap'
+                        testimonial.id === 'clevertap' || testimonial.id === 'zigtal'
                           ? 'text-sm md:text-base'
                           : 'text-xl md:text-2xl'
                       }`}

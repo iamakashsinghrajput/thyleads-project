@@ -33,7 +33,7 @@ const walls = [
   {
     icon: MessageSquareDashed,
     eyebrow: 'Wall 02',
-    title: 'CMO Inboxes Are Saturated',
+    title: 'CMO Inboxes are already Saturated',
     description:
       'Every vendor pitches "AI segmentation" and "personalization at scale." CMOs and Growth heads ignore generic cold emails, and your SDRs burn weeks trying to break through with copy that sounds like everyone else.',
     accent: 'Inbox: 200+ pitches/month',

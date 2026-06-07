@@ -94,6 +94,30 @@ const testimonials = [
     personTitle: 'Head of Marketing',
     personImage: '/pipelex.png',
     stats: { label: 'Qualified', value: '100%' }
+  },
+  {
+    id: 'zigtal',
+    category: 'tech',
+    companyName: 'Zigtal',
+    logo: '/images/zigital.png',
+    brandColor: 'text-[#146EF5]',
+    quote: "The HR tech market is incredibly noisy, and our outreach was falling flat. Thyleads fixed this by re-engineering our messaging to finally resonate with decision-makers. They turned our struggle into a consistent pipeline of qualified demos.",
+    personName: 'Harsh Sharma',
+    personTitle: 'Senior Manager',
+    personImage: '/images/zigital.png',
+    stats: { label: 'Pipeline', value: '3X' }
+  },
+  {
+    id: 'onecap',
+    category: 'tech',
+    companyName: 'OneCap',
+    logo: '/images/onecap.png',
+    brandColor: 'text-[#146EF5]',
+    quote: "A pre-revenue HRTech startup needed pipeline fast before their runway ran out. Thyleads built our entire outbound motion from scratch — from zero to 47 qualified meetings in 90 days.",
+    personName: 'Aman Mehra',
+    personTitle: 'VP Sales',
+    personImage: '/images/onecap.png',
+    stats: { label: 'Meetings', value: '47' }
   }
 ];
 
@@ -202,8 +226,12 @@ export default function CaseStudiesPage() {
                         src={story.logo}
                         alt={`${story.companyName} logo`}
                         width={120}
-                        height={40}
-                        className="h-8 sm:h-10 w-auto object-contain"
+                        height={120}
+                        className={`w-auto object-contain ${
+                          story.id === 'zigtal' || story.id === 'onecap'
+                            ? 'h-12 sm:h-16'
+                            : 'h-8 sm:h-10'
+                        }`}
                       />
                       {!isNonClickable && (
                         <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 transform scale-0 group-hover:scale-110">
@@ -350,37 +378,55 @@ export default function CaseStudiesPage() {
               </div>
             </Link>
 
-            <div className="w-full max-w-[405px] mx-auto rounded-2xl overflow-hidden border border-gray-200 bg-white flex flex-col">
+            <Link
+              href="/casestudies/zigtal"
+              className="group w-full max-w-[405px] mx-auto rounded-2xl overflow-hidden border border-gray-200 bg-white hover:shadow-lg transition-all duration-300 flex flex-col"
+            >
               <div className="aspect-[16/9] md:h-[221px] md:aspect-auto bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 relative overflow-hidden flex items-center justify-center">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(255,255,255,0.9),transparent_50%)]" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(200,255,220,0.4),transparent_50%)]" />
-                <span className="relative z-10 text-xl font-bold text-slate-400">Coming Soon</span>
+                <Image
+                  src="/images/zigital.png"
+                  alt="Zigtal logo"
+                  width={120}
+                  height={120}
+                  className="relative z-10 h-20 md:h-24 w-auto object-contain"
+                />
               </div>
               <div className="flex-1 p-5 md:p-6 bg-white flex flex-col justify-between min-h-[160px] md:min-h-[190px]">
-                <p className="text-slate-400 font-normal text-lg md:text-[21px] leading-relaxed">
-                  More success stories on the way
+                <p className="text-slate-800 font-medium text-lg md:text-[21px] leading-relaxed">
+                  How Zigtal moved past the &lsquo;just HR tool&rsquo; category to win enterprise deals
                 </p>
-                <span className="text-slate-400 text-md font-normal mt-4">
-                  Stay tuned
+                <span className="text-slate-500 text-md font-normal group-hover:text-slate-600 transition-colors flex items-center gap-1 mt-4">
+                  Read the case study <ArrowRight className="w-3 h-3" />
                 </span>
               </div>
-            </div>
+            </Link>
 
-            <div className="w-full max-w-[405px] mx-auto rounded-2xl overflow-hidden border border-gray-200 bg-white flex flex-col">
+            <Link
+              href="/casestudies/onecap"
+              className="group w-full max-w-[405px] mx-auto rounded-2xl overflow-hidden border border-gray-200 bg-white hover:shadow-lg transition-all duration-300 flex flex-col"
+            >
               <div className="aspect-[16/9] md:h-[221px] md:aspect-auto bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden flex items-center justify-center">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_30%,rgba(255,255,255,0.9),transparent_50%)]" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_80%,rgba(200,210,255,0.4),transparent_50%)]" />
-                <span className="relative z-10 text-xl font-bold text-slate-400">Coming Soon</span>
+                <Image
+                  src="/images/onecap.png"
+                  alt="OneCap logo"
+                  width={180}
+                  height={120}
+                  className="relative z-10 h-20 md:h-24 w-auto object-contain"
+                />
               </div>
               <div className="flex-1 p-5 md:p-6 bg-white flex flex-col justify-between min-h-[160px] md:min-h-[190px]">
-                <p className="text-slate-400 font-normal text-lg md:text-[21px] leading-relaxed">
-                  More success stories on the way
+                <p className="text-slate-800 font-medium text-lg md:text-[21px] leading-relaxed">
+                  How OneCap built a repeatable outbound engine to reach CFOs and Finance Heads
                 </p>
-                <span className="text-slate-400 text-md font-normal mt-4">
-                  Stay tuned
+                <span className="text-slate-500 text-md font-normal group-hover:text-slate-600 transition-colors flex items-center gap-1 mt-4">
+                  Read the case study <ArrowRight className="w-3 h-3" />
                 </span>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>

@@ -10,6 +10,9 @@ import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import FAQSection from "@/components/FAQSection";
 import WhyUs from "@/components/WhyUs"
+import { buildMetadata, pageSeo } from "@/lib/seo";
+
+export const metadata = buildMetadata(pageSeo.home, "/");
 
 export default function Home() {
   return (

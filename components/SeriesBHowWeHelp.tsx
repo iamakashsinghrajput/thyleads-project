@@ -46,7 +46,7 @@ const pillars = [
 
 export default function SeriesBHowWeHelp() {
   return (
-    <section className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-gradient-to-b from-white via-primary-50/40 to-white font-sans">
+    <section id="how-we-help" className="relative scroll-mt-28 py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-gradient-to-b from-white via-primary-50/40 to-white font-sans">
       <div
         aria-hidden="true"
         className="absolute -top-32 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"

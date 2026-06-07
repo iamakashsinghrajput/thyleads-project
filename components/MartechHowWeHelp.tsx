@@ -31,7 +31,7 @@ const moves = [
   {
     tag: 'Intent-led prospecting',
     number: '02',
-    title: 'Signal-Tracked Targeting',
+    title: 'Signal-Tracked ICP Targeting',
     description:
       'We track the buying signals that matter in MarTech and turn them into "why now" triggers. Your outbound lands the week your buyer is actually rethinking their stack, not six months too early or late.',
   },

@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import { Plus } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 
 const easeOut: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -64,10 +65,8 @@ export default function SeriesAFAQ() {
         className="relative z-10 max-w-4xl mx-auto"
       >
         <div className="text-center max-w-3xl mx-auto mb-10 lg:mb-12">
-          <motion.div variants={itemVariants} className="mb-5">
-            <span className="inline-block text-[11px] font-semibold uppercase tracking-[0.28em] text-primary-700">
-              FAQ
-            </span>
+          <motion.div variants={itemVariants} className="flex justify-center mb-5">
+            <Badge size="lg">FAQ</Badge>
           </motion.div>
 
           <motion.h2
@@ -85,7 +84,7 @@ export default function SeriesAFAQ() {
             variants={itemVariants}
             className="mt-5 text-base sm:text-lg text-slate-600 leading-relaxed"
           >
-            The things early-stage teams ask us most.
+            The concerns of almost all early-stage teams.
           </motion.p>
         </div>
 

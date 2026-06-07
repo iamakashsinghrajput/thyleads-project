@@ -102,12 +102,6 @@ export default function FintechCTA() {
               strokeWidth={2.5}
             />
           </Link>
-
-          <span className="text-[12px] text-slate-500 font-semibold">
-            Trusted by{' '}
-            <span className="text-neutral-900 font-bold tabular-nums">70+</span>{' '}
-            SaaS teams
-          </span>
         </motion.div>
       </motion.div>
     </section>

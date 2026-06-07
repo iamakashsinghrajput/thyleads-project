@@ -7,12 +7,9 @@ import SeriesBSocialProof from '@/components/SeriesBSocialProof';
 import SeriesBWhyUs from '@/components/SeriesBWhyUs';
 import SeriesBFAQ from '@/components/SeriesBFAQ';
 import SeriesBCTA from '@/components/SeriesBCTA';
+import { buildMetadata, pageSeo } from '@/lib/seo';
 
-export const metadata = {
-  title: 'Scaling SaaS Outbound · Series B and Beyond · Thyleads',
-  description:
-    'For SaaS teams scaling beyond Series B. A plug-in revenue engine that delivers consistent pipeline, CAC-optimised qualification, and enterprise deal momentum — without scaling headcount.',
-};
+export const metadata = buildMetadata(pageSeo.seriesB, '/series-b');
 
 export default function SeriesBPage() {
   return (
