@@ -2353,24 +2353,22 @@ export const blogPosts: BlogPost[] = [
           content: [
             {
               type: 'subheading',
-              text: 'How It Actually Works (Visualized)'
+              text: 'How It Actually Works'
             }
     ,
-            "[Primary Vendor] -> 60% coverage"
+            "A waterfall runs your contact list through providers in sequence. Each tier catches what the one before it missed:",
+            {
+              type: 'list',
+              ordered: true,
+              items: [
+                'Primary vendor: covers about 60% of your list',
+                'Secondary vendor: adds another 25%',
+                'Tertiary vendor: adds a further 10%',
+                'Niche provider: catches the final 5%'
+              ]
+            }
     ,
-            "v"
-    ,
-            "[Secondary Vendor] -> +25% coverage"
-    ,
-            "v"
-    ,
-            "[Tertiary Vendor] -> +10% coverage"
-    ,
-            "v"
-    ,
-            "[Niche Provider] -> +5% coverage"
-    ,
-            "End result: 95%+ contactability vs. 60% with single providers. The idea is simple. When one vendor comes up empty, the lead falls through to the next, and so on, until you have a usable contact."
+            "End result: 95%+ contactability versus 60% with a single provider. When one vendor comes up empty, the lead falls through to the next, and so on, until you have a usable contact."
     ,
             {
               type: 'subheading',
@@ -2417,33 +2415,14 @@ export const blogPosts: BlogPost[] = [
         {
           heading: "4 Unavoidable Benefits",
           content: [
-            "3X More Conversations"
-    ,
-            "Contact 95% vs. 35% of your TAL."
-    ,
-            "Competitor-Free Prospects"
-    ,
-            "22% of contacts are vendor-exclusive (FullEnrich 2024)."
-    ,
-            "Perfect Market Coverage"
-    ,
-            "Automatic geo and vertical optimization."
-    ,
-            "Future-Proof Scaling"
-    ,
-            "New providers plug into the workflow instantly."
-    ,
+            "Running a waterfall instead of a single provider changes four things that show up directly in pipeline:",
             {
               type: 'list',
               items: [
-                '3X More Conversations',
-                'Contact 95% vs. 35% of your TAL',
-                'Competitor-Free Prospects',
-                '22% of contacts are vendor-exclusive (FullEnrich 2024)',
-                'Perfect Market Coverage',
-                'Automatic geo and vertical optimization',
-                'Future-Proof Scaling',
-                'New providers plug into the workflow instantly'
+                '**3x more conversations.** You reach 95% of your target account list instead of 35%.',
+                '**Competitor-free prospects.** 22% of contacts are vendor-exclusive, so you find people your competitors cannot (FullEnrich 2024).',
+                '**Full market coverage.** Geo and vertical gaps get filled automatically as each tier picks up what the last one missed.',
+                '**Future-proof scaling.** New providers plug into the same workflow, so coverage improves without a rebuild.'
               ]
             }
           ]
@@ -2452,20 +2431,7 @@ export const blogPosts: BlogPost[] = [
         {
           heading: "The Build vs. Buy Reality Check",
           content: [
-            "Why DIY Fails in 2025"
-    ,
-            "Time Sink: 150+ hrs/year maintaining APIs."
-    ,
-            "Coverage Gap: Limited to 3-4 providers at most."
-    ,
-            "Next-Gen Solutions"
-    ,
-            "FullEnrich: 17 providers, auto-optimization."
-    ,
-            "Clay: Smart routing based on lead attributes."
-    ,
-            "Clearbit: Built-in waterfall for enterprise."
-    ,
+            "You can wire up a waterfall yourself, but the maintenance rarely pays off.",
             {
               type: 'subheading',
               text: 'Why DIY Fails in 2025'
@@ -2474,22 +2440,22 @@ export const blogPosts: BlogPost[] = [
             {
               type: 'list',
               items: [
-                'Time Sink: 150+ hrs/year maintaining APIs',
-                'Coverage Gap: Limited to 3-4 providers at most'
+                '**Time sink.** Maintaining the APIs eats 150+ hours a year.',
+                '**Coverage gap.** A hand-built stack tops out at three or four providers.'
               ]
             }
     ,
             {
               type: 'subheading',
-              text: 'Next-Gen Solutions'
+              text: 'Tools That Do It For You'
             }
     ,
             {
               type: 'list',
               items: [
-                'FullEnrich: 17 providers, auto-optimization',
-                'Clay: Smart routing based on lead attributes',
-                'Clearbit: Built-in waterfall for enterprise'
+                '**FullEnrich:** 17 providers with automatic optimization.',
+                '**Clay:** smart routing based on lead attributes.',
+                '**Clearbit:** a built-in waterfall for enterprise teams.'
               ]
             }
           ]
@@ -2498,24 +2464,30 @@ export const blogPosts: BlogPost[] = [
         {
           heading: "Implementation Blueprint",
           content: [
-            "Step 1: Audit current coverage gaps"
+            "Four steps to get a waterfall running:",
+            {
+              type: 'list',
+              ordered: true,
+              items: [
+                'Audit your current coverage gaps',
+                'Stack vendors by geo and vertical strength',
+                'Set a maximum cost threshold per tier',
+                'Automate re-enrichment every 90 days'
+              ]
+            }
     ,
-            "Step 2: Stack vendors by geo and vertical strength"
-    ,
-            "Step 3: Set max cost thresholds per tier"
-    ,
-            "Step 4: Automate re-enrichment every 90 days"
-    ,
-            "Pro Tip: Try reverse waterfalling. Check niche providers first for hidden gems."
-    ,
+            "Pro tip: try reverse waterfalling. Check niche providers first for the hidden gems the big databases miss.",
             {
               type: 'subheading',
               text: 'The Future Is Multi-Source'
             }
     ,
-            "The 2025 winners will not pick one data provider over another. They will use them all, in a deliberate order. The question is not whether to run waterfall enrichment, but how fast you can put it in place."
-    ,
-            "Want our 2025 Waterfall Provider Scorecard? [Get the PDF]"
+            "The teams winning in 2025 will not pick one data provider over another. They use all of them, in a deliberate order. The question is not whether to run waterfall enrichment, but how fast you can put it in place.",
+            {
+              type: 'cta',
+              text: 'Get the 2025 Waterfall Provider Scorecard',
+              href: '/contact'
+            }
           ]
         }
       ]

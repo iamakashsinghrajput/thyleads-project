@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState, useRef, useMemo } from 'react';
+import { useEffect, useState, useRef, useMemo, type ReactNode } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { ChevronRight, Calendar, Clock, Share2, Twitter, Linkedin, Facebook } from 'lucide-react';
@@ -8,11 +8,38 @@ import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 import { getBlogBySlug, getRelatedPosts, ContentBlock } from '@/data/blogs';
 
-const parseBoldText = (text: string) => {
-  const parts = text.split(/(\*\*.*?\*\*)/g);
+// Renders inline markdown: **bold**, *italic*, and [text](url) links.
+const parseInline = (text: string) => {
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|\[[^\]]+\]\([^)]+\))/g);
   return parts.map((part, index) => {
+    if (!part) return null;
     if (part.startsWith('**') && part.endsWith('**')) {
-      return <strong key={index}>{part.slice(2, -2)}</strong>;
+      return (
+        <strong key={index} className="font-semibold text-gray-900">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (link) {
+      const isExternal = /^https?:\/\//.test(link[2]);
+      return (
+        <a
+          key={index}
+          href={link[2]}
+          {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+          className="font-medium text-purple-600 underline underline-offset-2 decoration-purple-300 hover:text-purple-700 hover:decoration-purple-500 transition-colors"
+        >
+          {link[1]}
+        </a>
+      );
+    }
+    if (part.length > 2 && part.startsWith('*') && part.endsWith('*')) {
+      return (
+        <em key={index} className="italic text-gray-700">
+          {part.slice(1, -1)}
+        </em>
+      );
     }
     return part;
   });
@@ -25,26 +52,53 @@ const generateSlug = (text: string) => {
     .replace(/(^-|-$)/g, '');
 };
 
-const renderContentBlock = (block: ContentBlock, index: number, isIntro: boolean = false) => {
+const PROS_CONS_RE = /^\s*\*{0,2}(Pros|Cons)\s*:?\s*\*{0,2}\s*$/i;
+const NUMBERED_ITEM_RE = /^(\d+)[.)]\s+(.*)$/;
+
+const renderContentBlock = (
+  block: ContentBlock,
+  index: number,
+  isIntro: boolean = false,
+  indent: boolean = false
+) => {
   if (typeof block === 'string') {
+    const prosCons = block.match(PROS_CONS_RE);
+    if (prosCons) {
+      const isPros = prosCons[1].toLowerCase() === 'pros';
+      return (
+        <p
+          key={index}
+          className={`pl-5 mt-5 mb-2.5 text-sm font-semibold uppercase tracking-wide ${
+            isPros ? 'text-emerald-600' : 'text-rose-500'
+          }`}
+        >
+          {isPros ? 'Pros' : 'Cons'}
+        </p>
+      );
+    }
     return (
       <p
         key={index}
-        className={`${isIntro ? 'text-xl' : 'text-lg'} text-gray-800 leading-relaxed mb-6 ${
+        className={`${
+          isIntro ? 'text-lg md:text-xl text-gray-700' : 'text-[17px] md:text-lg text-gray-700'
+        } leading-[1.85] mb-5 ${
           isIntro && index === 0
-            ? 'first-letter:text-5xl first-letter:font-bold first-letter:text-gray-900 first-letter:mr-2 first-letter:float-left'
+            ? 'first-letter:text-5xl first-letter:font-bold first-letter:text-gray-900 first-letter:mr-3 first-letter:mt-1 first-letter:float-left first-letter:leading-none'
             : ''
         }`}
       >
-        {parseBoldText(block)}
+        {parseInline(block)}
       </p>
     );
   }
 
   if (block.type === 'subheading') {
     return (
-      <h3 key={index} className="text-2xl font-bold text-gray-900 mb-4 mt-6">
-        {block.text}
+      <h3
+        key={index}
+        className="text-lg md:text-xl font-semibold text-gray-900 leading-snug border-l-[3px] border-purple-500 pl-3.5 mt-9 mb-3.5"
+      >
+        {parseInline(block.text)}
       </h3>
     );
   }
@@ -78,22 +132,115 @@ const renderContentBlock = (block: ContentBlock, index: number, isIntro: boolean
   if (block.type === 'list') {
     const ListTag = block.ordered ? 'ol' : 'ul';
     return (
-      <ListTag
-        key={index}
-        className={`mb-6 space-y-2 ${
-          block.ordered ? 'list-decimal list-inside' : 'list-disc list-inside'
-        } text-lg text-gray-700`}
-      >
-        {block.items.map((item, itemIndex) => (
-          <li key={itemIndex} className="leading-relaxed">
-            {parseBoldText(item)}
-          </li>
-        ))}
+      <ListTag key={index} className={`mb-7 mt-1 space-y-3 ${indent ? 'pl-5' : ''}`}>
+        {block.items.map((item, itemIndex) => {
+          const numMatch = block.ordered ? null : item.match(NUMBERED_ITEM_RE);
+          const isNumbered = block.ordered || Boolean(numMatch);
+          const number = block.ordered ? itemIndex + 1 : numMatch?.[1];
+          const text = numMatch ? numMatch[2] : item;
+          return (
+            <li
+              key={itemIndex}
+              className="flex gap-3 text-[17px] md:text-lg text-gray-700 leading-[1.8]"
+            >
+              {isNumbered ? (
+                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-purple-100 text-sm font-semibold text-purple-700">
+                  {number}
+                </span>
+              ) : (
+                <span className="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-purple-500" />
+              )}
+              <span className="flex-1">{parseInline(text)}</span>
+            </li>
+          );
+        })}
       </ListTag>
     );
   }
 
   return null;
+};
+
+// Markdown table helpers: "| a | b |" rows, with a "| --- | --- |" separator.
+const TABLE_ROW_RE = /^\s*\|.*\|\s*$/;
+const parseTableRow = (row: string) =>
+  row.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((cell) => cell.trim());
+const isTableSeparator = (row: string) =>
+  parseTableRow(row).every((cell) => /^:?-{2,}:?$/.test(cell));
+
+const renderTable = (rows: string[], key: number) => {
+  const dataRows = rows.filter((row) => !isTableSeparator(row));
+  if (dataRows.length === 0) return null;
+  const [headerRow, ...bodyRows] = dataRows;
+  const headers = parseTableRow(headerRow);
+  return (
+    <div key={key} className="my-7 overflow-x-auto rounded-xl border border-gray-200">
+      <table className="w-full border-collapse text-left text-[15px] md:text-base">
+        <thead className="bg-gray-50">
+          <tr>
+            {headers.map((header, hi) => (
+              <th
+                key={hi}
+                className="px-4 py-3 font-semibold text-gray-900 border-b border-gray-200 whitespace-nowrap"
+              >
+                {parseInline(header)}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {bodyRows.map((row, ri) => (
+            <tr key={ri} className={ri % 2 === 1 ? 'bg-gray-50/60' : 'bg-white'}>
+              {parseTableRow(row).map((cell, ci) => (
+                <td key={ci} className="px-4 py-3 text-gray-700 border-b border-gray-100 align-top">
+                  {parseInline(cell)}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+// Renders a content array. Groups consecutive markdown-table rows into a real
+// table, and indents Pros/Cons labels plus the list that follows each one so
+// they sit a tab in from the section heading.
+const renderBlocks = (blocks: ContentBlock[], isIntro: boolean = false) => {
+  const out: ReactNode[] = [];
+  let prosConsList = false;
+
+  for (let i = 0; i < blocks.length; i++) {
+    const block = blocks[i];
+
+    // Collect a run of consecutive table rows into one table.
+    if (typeof block === 'string' && TABLE_ROW_RE.test(block)) {
+      const rows: string[] = [];
+      let j = i;
+      while (j < blocks.length && typeof blocks[j] === 'string' && TABLE_ROW_RE.test(blocks[j] as string)) {
+        rows.push(blocks[j] as string);
+        j++;
+      }
+      out.push(renderTable(rows, i));
+      i = j - 1;
+      prosConsList = false;
+      continue;
+    }
+
+    let indent = false;
+    if (typeof block === 'string' && PROS_CONS_RE.test(block)) {
+      prosConsList = true; // the next list belongs to this Pros/Cons label
+    } else if (typeof block !== 'string' && block.type === 'list' && prosConsList) {
+      indent = true;
+      prosConsList = false;
+    } else {
+      prosConsList = false;
+    }
+    out.push(renderContentBlock(block, i, isIntro, indent));
+  }
+
+  return out;
 };
 
 interface TOCItem {
@@ -311,33 +458,33 @@ export default function BlogDetailClient() {
                 </div>
               )}
 
-              <div className="prose prose-lg max-w-none">
-                <div className="mb-10">
+              <div className="max-w-none">
+                <div className="mb-12">
                   {Array.isArray(post.content.introduction) ? (
-                    post.content.introduction.map((block, index) => renderContentBlock(block, index, true))
+                    renderBlocks(post.content.introduction, true)
                   ) : (
-                    <p className="text-xl text-gray-800 leading-relaxed mb-10 first-letter:text-5xl first-letter:font-bold first-letter:text-gray-900 first-letter:mr-2 first-letter:float-left">
-                      {parseBoldText(post.content.introduction)}
+                    <p className="text-lg md:text-xl text-gray-700 leading-[1.85] mb-10 first-letter:text-5xl first-letter:font-bold first-letter:text-gray-900 first-letter:mr-3 first-letter:mt-1 first-letter:float-left first-letter:leading-none">
+                      {parseInline(post.content.introduction)}
                     </p>
                   )}
                 </div>
 
                 {post.content.sections.map((section, index) => (
-                  <div key={index} className="mb-10">
+                  <section key={index} className="mb-12">
                     <h2
                       id={generateSlug(section.heading)}
-                      className="text-3xl font-bold text-gray-900 mb-5 mt-8 scroll-mt-28"
+                      className="text-2xl md:text-[28px] font-bold text-gray-900 leading-snug mb-6 mt-14 pb-3 border-b border-gray-200 scroll-mt-28"
                     >
                       {section.heading}
                     </h2>
                     {Array.isArray(section.content) ? (
-                      section.content.map((block, blockIndex) => renderContentBlock(block, blockIndex, false))
+                      renderBlocks(section.content, false)
                     ) : (
-                      <p className="text-lg text-gray-700 leading-relaxed">
-                        {parseBoldText(section.content)}
+                      <p className="text-[17px] md:text-lg text-gray-700 leading-[1.85]">
+                        {parseInline(section.content)}
                       </p>
                     )}
-                  </div>
+                  </section>
                 ))}
               </div>
 

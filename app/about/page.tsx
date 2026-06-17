@@ -745,7 +745,7 @@ function Team() {
               }}
               className={`group relative rounded-[1.75rem] p-6 sm:p-7 hover:-translate-y-2 transition-all duration-500 overflow-hidden ${
                 member.featured
-                  ? "bg-gradient-to-br from-primary-50 via-white to-primary-50/40 border-2 border-primary-300 shadow-[0_18px_44px_-18px_rgba(132,92,245,0.45)] hover:border-primary-500 hover:shadow-[0_28px_70px_-22px_rgba(132,92,245,0.55)]"
+                  ? "bg-gradient-to-br from-primary-50 via-white to-primary-50/40 border-2 border-gray-300 shadow-[0_18px_44px_-18px_rgba(132,92,245,0.45)] hover:border-gray-500 hover:shadow-[0_28px_70px_-22px_rgba(132,92,245,0.55)]"
                   : "bg-white border border-slate-200 hover:border-primary-200 hover:shadow-[0_24px_60px_-22px_rgba(132,92,245,0.32)]"
               }`}
             >
@@ -757,14 +757,13 @@ function Team() {
                 }`}
               />
 
-              <div className={`absolute top-0 left-5 right-5 h-px bg-gradient-to-r from-transparent ${
-                member.featured ? "via-primary-400" : "via-primary-200/80"
+              <div className={`absolute top-0 left-5 right-5 h-px bg-gradient-to-r from-transparent"
               } to-transparent`} />
 
               {member.featured && (
                 <span
                   aria-hidden="true"
-                  className="absolute -top-px left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-primary-500 to-transparent"
+                  className="absolute -top-px left-0 right-0 h-[3px] bg-gradient-to-r"
                 />
               )}
 
@@ -791,16 +790,6 @@ function Team() {
                       />
                     </div>
                   </div>
-
-                  {member.featured ? (
-                    <span className="inline-flex items-center gap-1.5 px-2 py-1 rounded-full bg-primary-600 text-white text-[9.5px] font-bold uppercase tracking-[0.18em] shadow-[0_6px_16px_-6px_rgba(132,92,245,0.55)]">
-                      That&apos;s me
-                    </span>
-                  ) : (
-                    <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-[0.2em] text-primary-300 tabular-nums">
-                      {String(i + 1).padStart(2, "0")} / {String(TEAM.length).padStart(2, "0")}
-                    </span>
-                  )}
                 </div>
 
                 <h3 className="text-lg font-extrabold tracking-tight text-neutral-900 leading-tight">
