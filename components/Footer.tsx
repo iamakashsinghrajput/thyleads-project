@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link href="tel:+918769673818" className="hover:text-white transition-colors">
-                  +91 87696 73818
+                  +91 87903 84032
                 </Link>
               </li>
               <li>
