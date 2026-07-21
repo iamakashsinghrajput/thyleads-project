@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
+import { Geist, Geist_Mono, Space_Grotesk, Inter_Tight } from "next/font/google";
 import Script from "next/script";
 import { Suspense } from "react";
 import VisitorTracker from "@/components/VisitorTracker";
@@ -15,6 +15,15 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+// Primary typeface. Replaces the Polysans @font-face block, whose .woff2 files
+// were never added to /public/fonts (every page 404'd and fell back to Arial).
+const interTight = Inter_Tight({
+  variable: "--font-inter-tight",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
 const spaceGrotesk = Space_Grotesk({
@@ -85,7 +94,7 @@ export default function RootLayout({
         </noscript>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased bg-black text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} ${interTight.variable} antialiased bg-black text-white`}
       >
         <Suspense fallback={null}>
           <VisitorTracker />

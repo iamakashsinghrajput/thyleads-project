@@ -112,11 +112,11 @@ const BlogPage = () => {
                   <span className="flex items-center gap-1"><Clock size={12} /> {post.readTime}</span>
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-purple-600 transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 min-h-[3.5rem] group-hover:text-purple-600 transition-colors">
                   {post.title}
                 </h3>
 
-                <p className="text-gray-600 text-sm line-clamp-3 mb-6 flex-grow">
+                <p className="text-gray-600 text-sm line-clamp-3 min-h-[3.75rem] mb-6 flex-grow">
                   {post.excerpt}
                 </p>
 
