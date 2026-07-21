@@ -180,13 +180,28 @@ void main () {
   float spec = pow(max(dot(n, normalize(vec3(-0.4, 0.7, 0.6))), 0.0), 18.0);
 
   vec3 col = uBase + c;
-  col += spec * 0.55 * (0.35 + 0.65 * c);
+  col += spec * 0.30 * c;
 
-  // Keep the middle calm so the centred headline always reads.
+  // Roll off by the peak channel so dense ink deepens in its own hue rather
+  // than clipping to white.
+  float peak = max(max(col.r, col.g), col.b);
+  col /= 1.0 + peak * 0.88;
+  col *= 1.62;
+
+  // Thin haze stays close to neutral and only dense ink carries full
+  // saturation. Colour then reads as deliberate accent rather than a wash.
+  float dens = clamp(length(c) * 1.5, 0.0, 1.0);
+  float luma = dot(col, vec3(0.299, 0.587, 0.114));
+  col = mix(vec3(luma) * 0.94, col, 0.62 + 0.38 * dens);
+
   float dc = length((vUv - vec2(0.5, 0.52)) * vec2(1.06, 1.0));
-  col *= mix(0.34, 1.0, smoothstep(0.10, 0.68, dc));
-  col *= mix(0.45, 1.0, smoothstep(0.0, 0.28, vUv.y));
-  col *= mix(1.0, 0.62, smoothstep(0.76, 1.0, vUv.y));
+  // Calm centre so the headline always reads.
+  col *= mix(0.34, 1.0, smoothstep(0.10, 0.66, dc));
+  // ...and a falloff at the outside, so brightness peaks in a ring and the
+  // corners keep real negative space instead of flooding with colour.
+  col *= mix(1.0, 0.70, smoothstep(0.62, 1.10, dc));
+  col *= mix(0.45, 1.0, smoothstep(0.0, 0.26, vUv.y));
+  col *= mix(1.0, 0.55, smoothstep(0.72, 1.0, vUv.y));
 
   gl_FragColor = vec4(col, 1.0);
 }
@@ -194,10 +209,10 @@ void main () {
 
 /** [background, dyeA, dyeB] per slide. */
 export const FLUID_PALETTES: string[][] = [
-  ['#180c33', '#8b5cf6', '#d8b4fe'],
-  ['#1b0a2e', '#d946ef', '#f5d0fe'],
-  ['#0c1633', '#3b82f6', '#a5e8ff'],
-  ['#240b16', '#fb4b6b', '#fecdd3'],
+  ['#161034', '#9b7cff', '#cfc2ff'],
+  ['#1a0e33', '#d081ee', '#f2caf2'],
+  ['#0e1638', '#6d9bf5', '#b4d8ff'],
+  ['#231020', '#ec8098', '#ffcdd5'],
 ];
 
 function hexToRgb(hex: string): [number, number, number] {
@@ -390,14 +405,14 @@ export default function HeroFluid({
     let splatSide = 0;
 
     /**
-     * Used only to seed the field on first paint, from the top-left and
-     * bottom-right corners in turn, each aimed down its diagonal. Nothing
-     * calls this on a timer: after the seed, the fluid is driven purely by
-     * the pointer.
+     * Injects ink from the top-left and bottom-right corners in turn, each
+     * aimed down its diagonal. Used to seed the field on first paint and then
+     * on a slow, low-strength cadence so the hero never drains to flat — far
+     * gentler than a constant jet.
      */
-    const seedSplat = (strength = 1) => {
+    const cornerSplat = (strength = 1) => {
       const pal = rgb[slideRef.current];
-      const c = rnd() < 0.5 ? pal[1] : pal[2];
+      const c = rnd() < 0.78 ? pal[1] : pal[2];
 
       // In splat space y = 1 is the top of the canvas.
       const topLeft = splatSide++ % 2 === 0;
@@ -447,11 +462,12 @@ export default function HeroFluid({
     resize();
 
     // Seed the field so the first frame is already interesting.
-    for (let i = 0; i < 16; i++) seedSplat(1.5);
+    for (let i = 0; i < 10; i++) cornerSplat(1.1);
 
     let raf = 0;
     let running = true;
     let last = performance.now();
+    let sinceSplat = 0;
 
     const step = (dt: number) => {
       gl.disable(gl.BLEND);
@@ -527,12 +543,18 @@ export default function HeroFluid({
       for (let i = 0; i < 3; i++) base[i] += (want[i] - base[i]) * k;
 
       if (!motionRef.current) {
+        // Ambient fire: one soft injection every few seconds, just enough to
+        // keep colour in the frame. The low dissipation does the rest.
+        sinceSplat += dt;
+        if (sinceSplat > 2.4) {
+          sinceSplat = 0;
+          cornerSplat(0.55);
+        }
         if (pointer?.moved) {
           pointer.moved = false;
-          const pal = rgb[slideRef.current];
-          const c = pal[1 + (rnd() < 0.5 ? 0 : 1)];
+          const c = rgb[slideRef.current][1];
           splat(pointer.x, pointer.y, pointer.dx, pointer.dy,
-            [c[0] * 0.42, c[1] * 0.42, c[2] * 0.42]);
+            [c[0] * 0.22, c[1] * 0.22, c[2] * 0.22]);
         }
         step(dt);
       }
