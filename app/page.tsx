@@ -1,6 +1,5 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import TrustedBy from "../components/TrustedBy";
 import SixWalls from "../components/SixWalls";
 import CaseStudies from "@/components/CaseStudies";
 import MessyMiddle from "@/components/MessyMiddle";
@@ -20,7 +19,6 @@ export default function Home() {
       <Navbar />
       <main className="min-h-screen">
         <Hero />
-        <TrustedBy theme="light" />
         <SixWalls />
         <MessyMiddle/>
         <ClientDashboard/>

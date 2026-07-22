@@ -9,6 +9,7 @@ import {
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import HeroSignal from './HeroSignal';
+import HeroLogoStrip from './HeroLogoStrip';
 import HeroShowcase from './HeroShowcase';
 
 const SLIDE_MS = 7000;
@@ -188,7 +189,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col px-6 pt-32 pb-16 sm:px-12 lg:pt-40">
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col px-6 pt-28 pb-6 sm:px-12 lg:pt-32">
         <div className="flex flex-1 flex-col items-center justify-center text-center">
           <AnimatePresence mode="wait">
             <motion.div
@@ -239,31 +240,11 @@ export default function Hero() {
             </motion.div>
           </AnimatePresence>
 
-          {/* Conversion path stays put across slides. */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: EASE_OUT }}
-            className="mt-10 w-full max-w-md"
-          >
-            <div className="flex flex-col items-center gap-3 rounded-2xl border border-white/15 bg-white/[0.07] p-2 backdrop-blur-md transition-all focus-within:border-primary-400/70 focus-within:ring-4 focus-within:ring-primary-500/20 sm:flex-row">
-              <input
-                type="email"
-                placeholder="Enter your work email"
-                aria-label="Work email"
-                className="w-full flex-1 bg-transparent px-4 py-3 text-sm font-medium text-white placeholder:text-white/45 focus:outline-none"
-              />
-              <button className="group flex w-full items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-neutral-900 transition-all hover:bg-primary-500 hover:text-white active:scale-[0.98] sm:w-auto">
-                Book a Demo
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </button>
-            </div>
-          </motion.div>
         </div>
       </div>
 
       {/* Slide tabs + scroll cue */}
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pb-10 sm:px-12">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pb-0 sm:px-12">
         <div className="flex items-end justify-between gap-6">
           {/* Only the tab strip pauses rotation — hovering the hero at large
               would stop it almost permanently. */}
@@ -323,6 +304,8 @@ export default function Hero() {
           </button>
         </div>
       </div>
+
+      <HeroLogoStrip />
     </section>
   );
 }
