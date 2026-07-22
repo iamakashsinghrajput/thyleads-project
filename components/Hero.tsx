@@ -6,9 +6,10 @@ import {
   useReducedMotion,
   type Variants,
 } from 'framer-motion';
-import { ArrowRight, ChevronDown, Bot } from 'lucide-react';
+import { ArrowRight, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
-import HeroFluid from './HeroFluid';
+import HeroSignal from './HeroSignal';
+import HeroShowcase from './HeroShowcase';
 
 const SLIDE_MS = 7000;
 
@@ -29,13 +30,7 @@ const SLIDES: Slide[] = [
       <>
         AI-Powered Lead Generation
         <br />
-        <span className="relative inline-block">
-          <span
-            aria-hidden="true"
-            className="absolute inset-x-[-0.35em] inset-y-[0.06em] -z-10 rounded-lg bg-primary-500/25"
-          />
-          <span className="text-primary-300">Engineered for SaaS.</span>
-        </span>
+        Engineered for SaaS.
       </>
     ),
     body: 'We help SaaS companies sell into the accounts that matter most. Automate Outbound, qualify inbound, and accelerate post-meeting follow-ups from one single place.',
@@ -170,23 +165,20 @@ export default function Hero() {
       ref={sectionRef}
       className="relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-[#07060d] text-white font-sans"
     >
-      {/* Static gradient underlay — also the fallback if WebGL is unavailable. */}
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-[radial-gradient(75%_65%_at_50%_45%,#1b0f3a_0%,#0d0722_45%,#07060d_100%)]"
       />
-      <HeroFluid slide={active} reduceMotion={Boolean(reduceMotion)} />
+      <HeroSignal slide={active} reduceMotion={Boolean(reduceMotion)} />
 
-      {/* Just enough scrim for text contrast — the ribbons stay visible. */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(50%_44%_at_50%_50%,rgba(7,6,13,0.80)_0%,rgba(7,6,13,0.42)_60%,transparent_100%)]"
+        className="absolute inset-0 bg-[radial-gradient(38%_30%_at_50%_50%,rgba(7,6,13,0.62)_0%,rgba(7,6,13,0.26)_58%,transparent_100%)]"
       />
       <div
         aria-hidden="true"
         className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-[#07060d] via-[#07060d]/60 to-transparent"
       />
-      {/* Fine grain, keeps the large gradients from banding. */}
       <div
         aria-hidden="true"
         className="absolute inset-0 opacity-[0.18] mix-blend-overlay"
@@ -209,11 +201,8 @@ export default function Hero() {
             >
               <motion.p
                 variants={lineVariants}
-                className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 py-1.5 pl-1.5 pr-4 backdrop-blur-md"
+                className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-1.5 backdrop-blur-md"
               >
-                <span className="grid h-6 w-6 place-items-center rounded-full bg-primary-500/30 text-primary-200">
-                  <Bot className="h-3.5 w-3.5" strokeWidth={2.4} />
-                </span>
                 <span className="text-[14px] font-medium tracking-[-0.01em] text-white/90">
                   {slide.eyebrow}
                 </span>
@@ -221,14 +210,14 @@ export default function Hero() {
 
               <motion.h1
                 variants={lineVariants}
-                className="mt-4 max-w-4xl text-[2.35rem] font-semibold leading-[1.1] tracking-[-0.022em] sm:text-5xl lg:text-[4rem]"
+                className="mt-4 max-w-4xl text-[2.35rem] font-semibold leading-[1.1] tracking-[-0.022em] [text-shadow:0_2px_28px_rgba(7,6,13,0.95),0_1px_5px_rgba(7,6,13,0.85)] sm:text-5xl lg:text-[4rem]"
               >
                 {slide.title}
               </motion.h1>
 
               <motion.p
                 variants={lineVariants}
-                className="mt-6 max-w-2xl text-base font-normal leading-relaxed text-white/65 md:text-lg"
+                className="mt-6 max-w-2xl text-base font-normal leading-relaxed text-white/70 [text-shadow:0_1px_16px_rgba(7,6,13,0.95)] md:text-lg"
               >
                 {slide.body}
               </motion.p>

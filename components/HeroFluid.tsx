@@ -27,10 +27,10 @@ import { useEffect, useRef } from 'react';
 const SIM_RES = 128;      // velocity/pressure grid
 const DYE_RES = 512;      // colour grid — higher, since it's what you see
 const PRESSURE_ITER = 20; // Jacobi sweeps per frame
-const VEL_DISSIPATION = 0.08;  // no auto-fire, so momentum must persist
-const DYE_DISSIPATION = 0.10;   // lower = ink lingers longer
+const VEL_DISSIPATION = 0.30;  // higher = ink settles instead of travelling on
+const DYE_DISSIPATION = 0.20;   // ink persists; damped velocity keeps it from spreading
 const CURL_STRENGTH = 30;
-const SPLAT_RADIUS = 0.22;
+const SPLAT_RADIUS = 0.11;   // tighter, more defined ink
 
 const BASE_VERT = `
 precision highp float;
@@ -192,7 +192,7 @@ void main () {
   // saturation. Colour then reads as deliberate accent rather than a wash.
   float dens = clamp(length(c) * 1.5, 0.0, 1.0);
   float luma = dot(col, vec3(0.299, 0.587, 0.114));
-  col = mix(vec3(luma) * 0.94, col, 0.62 + 0.38 * dens);
+  col = mix(vec3(luma) * 0.94, col, 0.72 + 0.28 * dens);
 
   float dc = length((vUv - vec2(0.5, 0.52)) * vec2(1.06, 1.0));
   // Calm centre so the headline always reads.
@@ -209,10 +209,10 @@ void main () {
 
 /** [background, dyeA, dyeB] per slide. */
 export const FLUID_PALETTES: string[][] = [
-  ['#161034', '#9b7cff', '#cfc2ff'],
-  ['#1a0e33', '#d081ee', '#f2caf2'],
-  ['#0e1638', '#6d9bf5', '#b4d8ff'],
-  ['#231020', '#ec8098', '#ffcdd5'],
+  ['#0a0719', '#9b7cff', '#cfc2ff'],
+  ['#0c0719', '#d081ee', '#f2caf2'],
+  ['#060b1e', '#6d9bf5', '#b4d8ff'],
+  ['#120713', '#ec8098', '#ffcdd5'],
 ];
 
 function hexToRgb(hex: string): [number, number, number] {
@@ -423,7 +423,7 @@ export default function HeroFluid({
       // Fire along the diagonal, toward the opposite corner, with a little
       // spray so the two jets never look mechanical.
       const ang = (topLeft ? -Math.PI / 4 : (3 * Math.PI) / 4) + (rnd() - 0.5) * 0.55;
-      const mag = (560 + rnd() * 640) * strength;
+      const mag = (300 + rnd() * 340) * strength;
 
       splat(x, y, Math.cos(ang) * mag, Math.sin(ang) * mag,
         [c[0] * 0.44 * strength, c[1] * 0.44 * strength, c[2] * 0.44 * strength]);
@@ -436,8 +436,8 @@ export default function HeroFluid({
       const x = (e.clientX - r.left) / r.width;
       const y = 1 - (e.clientY - r.top) / r.height;
       if (pointer) {
-        pointer.dx = (x - pointer.x) * 5200;
-        pointer.dy = (y - pointer.y) * 5200;
+        pointer.dx = (x - pointer.x) * 3400;
+        pointer.dy = (y - pointer.y) * 3400;
         pointer.x = x;
         pointer.y = y;
         pointer.moved = true;
@@ -462,7 +462,7 @@ export default function HeroFluid({
     resize();
 
     // Seed the field so the first frame is already interesting.
-    for (let i = 0; i < 10; i++) cornerSplat(1.1);
+    for (let i = 0; i < 11; i++) cornerSplat(1.15);
 
     let raf = 0;
     let running = true;
@@ -546,9 +546,9 @@ export default function HeroFluid({
         // Ambient fire: one soft injection every few seconds, just enough to
         // keep colour in the frame. The low dissipation does the rest.
         sinceSplat += dt;
-        if (sinceSplat > 2.4) {
+        if (sinceSplat > 1.7) {
           sinceSplat = 0;
-          cornerSplat(0.55);
+          cornerSplat(0.72);
         }
         if (pointer?.moved) {
           pointer.moved = false;
