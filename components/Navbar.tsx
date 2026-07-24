@@ -132,7 +132,7 @@ const RESOURCES: MenuItem[] = [
     image: '/nav/case-studies.jpg',
   },
   {
-    name: 'AI Tools Page',
+    name: 'AI Tools',
     href: '/agents',
     desc: 'The agents behind the work',
     image: '/nav/ai-tools.jpg',
