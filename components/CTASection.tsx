@@ -12,7 +12,7 @@ const CTASection: React.FC<CTASectionProps> = ({ theme = 'dark' }) => {
   const isLight = theme === 'light';
 
   return (
-    <section className={`relative w-full py-20 overflow-hidden ${isLight ? 'bg-gray-50' : 'bg-black'}`}>
+    <section className={`relative w-full py-20 lg:py-28 overflow-hidden ${isLight ? 'bg-[#f7f3eb]' : 'bg-black'}`}>
 
       <style>{`
         @keyframes spin-slow {

@@ -235,6 +235,9 @@ const labelVariants: Variants = {
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
+  // Utility strip collapses on scroll-down, reappears on scroll-up.
+  const [hideUtil, setHideUtil] = useState(false);
+  const lastY = useRef(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<DropdownKey>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -251,7 +254,15 @@ const Navbar: React.FC = () => {
   const overlay = isHome && !scrolled && !navHovered && !openDropdown;
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 20);
+      // Always show the strip near the top; otherwise follow scroll direction.
+      if (y < 80) setHideUtil(false);
+      else if (y > lastY.current + 4) setHideUtil(true);
+      else if (y < lastY.current - 4) setHideUtil(false);
+      lastY.current = y;
+    };
     handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -292,9 +303,17 @@ const Navbar: React.FC = () => {
           : 'bg-white border-neutral-100'
       }`}
     >
-      {/* Utility strip */}
+      {/* Utility strip — collapses when scrolling down and reappears when
+          scrolling up (and is always shown near the top of the page). The
+          outer wrapper animates its height/opacity; the inner div keeps the
+          border and links unchanged. */}
       <div
-        className={`hidden lg:block border-b transition-colors duration-300 ${
+        className={`hidden overflow-hidden transition-all duration-300 ease-out lg:block ${
+          hideUtil ? 'max-h-0 opacity-0' : 'max-h-12 opacity-100'
+        }`}
+      >
+      <div
+        className={`border-b transition-colors duration-300 ${
           overlay ? 'border-white/10' : 'border-neutral-200/70'
         }`}
       >
@@ -340,6 +359,7 @@ const Navbar: React.FC = () => {
             </a>
           </div>
         </div>
+      </div>
       </div>
 
       {/* Main bar — logo and links both hug the left, Bain-style. */}

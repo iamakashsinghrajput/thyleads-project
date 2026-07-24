@@ -33,7 +33,7 @@ const features = [
 
 const WhyGlobalSaaS = () => {
   return (
-    <section className="w-full bg-white py-20 lg:py-28 px-6 sm:px-12 font-sans overflow-hidden">
+    <section className="w-full bg-[#f7f3eb] py-20 lg:py-28 px-6 sm:px-12 font-sans overflow-hidden">
       <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row gap-16 xl:gap-24 items-center lg:items-start">
 
         <motion.div

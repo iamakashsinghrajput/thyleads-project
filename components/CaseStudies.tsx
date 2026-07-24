@@ -170,7 +170,7 @@ export default function TestimonialSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen w-full flex flex-col justify-center py-24 lg:py-28 overflow-hidden font-sans bg-slate-50">
+    <section className="relative min-h-screen w-full flex flex-col justify-center py-20 lg:py-28 overflow-hidden font-sans bg-[#f7f3eb]">
       <div className="max-w-[1400px] mx-auto w-full px-6 md:px-12 mb-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-end">
 

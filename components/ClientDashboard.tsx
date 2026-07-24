@@ -31,16 +31,7 @@ const features = [
 
 const ClientDashboard = () => {
   return (
-    <section className="relative w-full bg-slate-50 overflow-hidden flex flex-col items-center px-6 sm:px-12 font-sans py-20 lg:py-28">
-
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl flex items-center justify-center pointer-events-none">
-        <div className="flex-1 h-px bg-gradient-to-r from-transparent via-primary-200/70 to-primary-300/80" />
-        <div className="relative flex items-center justify-center mx-3">
-          <span className="absolute w-5 h-5 rounded-full bg-primary-300/30 blur-md" />
-          <span className="relative w-2 h-2 rounded-full bg-primary-500 shadow-[0_0_12px_rgba(94,48,208,0.6)]" />
-        </div>
-        <div className="flex-1 h-px bg-gradient-to-l from-transparent via-primary-200/70 to-primary-300/80" />
-      </div>
+    <section className="relative w-full bg-[#f7f3eb] overflow-hidden flex flex-col items-center px-6 sm:px-12 font-sans py-20 lg:py-28">
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -93,8 +84,8 @@ const ClientDashboard = () => {
                   key={i}
                   className={`group flex items-start gap-4 p-5 rounded-2xl transition-all duration-300 ${
                     feat.highlight
-                      ? 'bg-primary-50/60 border-primary-500'
-                      : 'border-transparent hover:bg-primary-50/40 hover:border-primary-300'
+                      ? 'bg-[#efe7d5] border-[#d8c9ab]'
+                      : 'border-transparent hover:bg-[#efe7d5] hover:border-[#e3d7c1]'
                   }`}
                 >
                   <div className="w-11 h-11 rounded-xl bg-primary-50 border border-primary-100 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">

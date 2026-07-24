@@ -51,9 +51,7 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="relative py-32 bg-white overflow-hidden font-geist">
-
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary-300/15 blur-[120px] rounded-full pointer-events-none" />
+    <section className="relative py-20 lg:py-28 bg-[#f7f3eb] overflow-hidden font-geist">
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
 
