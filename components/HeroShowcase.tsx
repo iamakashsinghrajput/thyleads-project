@@ -89,11 +89,11 @@ function AgentConsole() {
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.85, delay: 0.5, ease: easeOut }}
-      className="relative rounded-2xl bg-white border border-slate-200 shadow-[0_24px_60px_-22px_rgba(15,23,42,0.20)] overflow-hidden flex flex-col h-[460px]"
+      className="relative rounded-2xl bg-[#efe7d5] border border-slate-200 shadow-[0_24px_60px_-22px_rgba(15,23,42,0.20)] overflow-hidden flex flex-col h-[460px]"
     >
 
-      <div aria-hidden="true" className="absolute -top-20 -right-12 w-72 h-72 rounded-full bg-primary-100/55 blur-3xl pointer-events-none" />
-      <div aria-hidden="true" className="absolute -bottom-20 -left-12 w-72 h-72 rounded-full bg-primary-100/45 blur-3xl pointer-events-none" />
+      <div aria-hidden="true" className="absolute -top-20 -right-12 w-72 h-72 rounded-full bg-transparent blur-3xl pointer-events-none" />
+      <div aria-hidden="true" className="absolute -bottom-20 -left-12 w-72 h-72 rounded-full bg-transparent blur-3xl pointer-events-none" />
 
       <div className="relative z-10 px-5 pt-5 pb-3 border-b border-slate-100 flex items-center justify-between">
         <div className="flex items-center gap-2">
@@ -414,7 +414,7 @@ function CenterFlow() {
       >
         <motion.span
           aria-hidden="true"
-          className="absolute -inset-2 rounded-2xl bg-primary-300/40 blur-xl pointer-events-none"
+          className="absolute -inset-2 rounded-2xl bg-transparent blur-xl pointer-events-none"
           animate={{ opacity: [0.35, 0.65, 0.35] }}
           transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
         />
@@ -464,11 +464,11 @@ function ActivityCard() {
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.85, delay: 0.7, ease: easeOut }}
-      className="relative rounded-2xl bg-white border border-slate-200 shadow-[0_24px_60px_-22px_rgba(15,23,42,0.20)] overflow-hidden flex flex-col h-[460px]"
+      className="relative rounded-2xl bg-[#efe7d5] border border-slate-200 shadow-[0_24px_60px_-22px_rgba(15,23,42,0.20)] overflow-hidden flex flex-col h-[460px]"
     >
 
-      <div aria-hidden="true" className="absolute -top-20 -left-10 w-60 h-60 rounded-full bg-primary-100/50 blur-3xl pointer-events-none" />
-      <div aria-hidden="true" className="absolute -bottom-20 -right-12 w-60 h-60 rounded-full bg-primary-100/40 blur-3xl pointer-events-none" />
+      <div aria-hidden="true" className="absolute -top-20 -left-10 w-60 h-60 rounded-full bg-transparent blur-3xl pointer-events-none" />
+      <div aria-hidden="true" className="absolute -bottom-20 -right-12 w-60 h-60 rounded-full bg-transparent blur-3xl pointer-events-none" />
 
       <div className="relative z-10 px-5 pt-5 pb-3 border-b border-slate-100 flex items-start justify-between">
         <div>
@@ -536,7 +536,7 @@ function ActivityCard() {
               className="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 transition-colors"
             >
 
-              <span className="shrink-0 w-8 h-8 rounded-lg bg-white border border-slate-200 overflow-hidden flex items-center justify-center">
+              <span className="shrink-0 w-8 h-8 rounded-lg bg-[#efe7d5] border border-slate-200 overflow-hidden flex items-center justify-center">
                 <Image
                   src={a.logo}
                   alt={a.company}

@@ -56,10 +56,10 @@ const testimonials = [
 
 export default function FintechSocialProof() {
   return (
-    <section className="relative py-12 lg:py-16 px-6 sm:px-12 overflow-hidden bg-white font-sans">
+    <section className="relative py-12 lg:py-16 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
       <div
         aria-hidden="true"
-        className="absolute -top-32 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
+        className="absolute -top-32 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -101,7 +101,7 @@ export default function FintechSocialProof() {
             variants={itemVariants}
             whileHover={{ y: -3 }}
             transition={{ duration: 0.3 }}
-            className="group relative rounded-3xl bg-white border border-slate-200 p-6 lg:p-8 shadow-[0_24px_60px_-30px_rgba(15,23,42,0.12)] hover:shadow-[0_30px_70px_-30px_rgba(132,92,245,0.20)] hover:border-primary-200 transition-all"
+            className="group relative rounded-3xl bg-[#efe7d5] border border-slate-200 p-6 lg:p-8 shadow-[0_24px_60px_-30px_rgba(15,23,42,0.12)] hover:shadow-[0_30px_70px_-30px_rgba(150,132,96,0.20)] hover:border-primary-200 transition-all"
           >
 
             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-50 border border-primary-200 text-[10px] font-bold uppercase tracking-[0.18em] text-primary-700 mb-5">
@@ -168,7 +168,7 @@ export default function FintechSocialProof() {
                   ease: easeOut,
                 }}
                 whileHover={{ y: -3 }}
-                className="group relative rounded-2xl bg-white border border-slate-200 p-5 lg:p-6 hover:border-primary-200 hover:shadow-[0_18px_40px_-20px_rgba(132,92,245,0.20)] transition-all"
+                className="group relative rounded-2xl bg-[#efe7d5] border border-slate-200 p-5 lg:p-6 hover:border-primary-200 hover:shadow-[0_18px_40px_-20px_rgba(150,132,96,0.20)] transition-all"
               >
 
                 <Quote
@@ -186,7 +186,7 @@ export default function FintechSocialProof() {
 
                 <footer className="flex items-center gap-2.5">
                   {t.photo ? (
-                    <div className="shrink-0 w-9 h-9 rounded-full overflow-hidden bg-slate-100 ring-2 ring-white shadow-[0_4px_12px_-4px_rgba(132,92,245,0.45)]">
+                    <div className="shrink-0 w-9 h-9 rounded-full overflow-hidden bg-slate-100 ring-2 ring-white shadow-[0_4px_12px_-4px_rgba(150,132,96,0.45)]">
 
                       <img
                         src={t.photo}
@@ -197,7 +197,7 @@ export default function FintechSocialProof() {
                   ) : (
                     <div
                       aria-hidden="true"
-                      className="shrink-0 w-9 h-9 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 text-white flex items-center justify-center text-[11px] font-bold ring-2 ring-white shadow-[0_4px_12px_-4px_rgba(132,92,245,0.45)]"
+                      className="shrink-0 w-9 h-9 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 text-white flex items-center justify-center text-[11px] font-bold ring-2 ring-white shadow-[0_4px_12px_-4px_rgba(150,132,96,0.45)]"
                     >
                       {t.initials}
                     </div>

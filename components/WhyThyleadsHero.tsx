@@ -65,15 +65,15 @@ const rows: Row[] = [
 
 export default function WhyThyleadsHero() {
   return (
-    <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-12 lg:pb-16 px-6 sm:px-12 overflow-hidden bg-white font-sans">
+    <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-12 lg:pb-16 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
 
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-primary-50/50 via-white to-white pointer-events-none"
+        className="absolute inset-0 bg-gradient-to-b from-[#f7f3eb] via-[#f7f3eb] to-[#f7f3eb] pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute -top-40 left-1/2 -translate-x-1/2 w-[60rem] h-[40rem] rounded-full bg-primary-100/40 blur-3xl pointer-events-none"
+        className="absolute -top-40 left-1/2 -translate-x-1/2 w-[60rem] h-[40rem] rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -124,7 +124,7 @@ export default function WhyThyleadsHero() {
           >
             <a
               href="/contact"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold shadow-[0_8px_24px_-8px_rgba(132,92,245,0.45)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold shadow-[0_8px_24px_-8px_rgba(150,132,96,0.45)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
             >
               Book a demo
               <ArrowRight className="w-4 h-4" strokeWidth={2.25} />

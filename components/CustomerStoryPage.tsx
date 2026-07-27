@@ -13,7 +13,7 @@ export default function CustomerStoryPage({ testimonial, onBack }: CustomerStory
   const videoUrl = "https://videos.pexels.com/video-files/3129671/3129671-hd_1280_720_30fps.mp4";
 
   return (
-    <div className="min-h-screen bg-white font-sans animate-in fade-in duration-500">
+    <div className="min-h-screen bg-[#f7f3eb] font-sans animate-in fade-in duration-500">
       <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 lg:px-12 bg-gradient-to-b from-black/60 to-transparent">
         <button
           onClick={onBack}
@@ -84,7 +84,7 @@ export default function CustomerStoryPage({ testimonial, onBack }: CustomerStory
         </div>
       </header>
 
-      <main className="relative z-10 bg-white">
+      <main className="relative z-10 bg-[#f7f3eb]">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 px-6 md:px-12 py-20">
 
           <aside className="lg:col-span-3 hidden lg:block">

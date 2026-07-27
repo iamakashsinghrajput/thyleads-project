@@ -31,7 +31,7 @@ const highlightVariants: Variants = {
 
 export default function WhyThyleadsCTA() {
   return (
-    <section className="relative py-12 lg:py-16 px-6 sm:px-12 overflow-hidden bg-white font-sans">
+    <section className="relative py-12 lg:py-16 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -42,16 +42,16 @@ export default function WhyThyleadsCTA() {
 
         <motion.div
           variants={itemVariants}
-          className="relative rounded-4xl bg-gradient-to-br from-primary-50 via-white to-primary-50 ring-1 ring-primary-200/60 overflow-hidden shadow-[0_30px_80px_-30px_rgba(132,92,245,0.22)]"
+          className="relative rounded-4xl bg-[#efe7d5] ring-1 ring-primary-200/60 overflow-hidden shadow-[0_30px_80px_-30px_rgba(150,132,96,0.22)]"
         >
 
           <div
             aria-hidden="true"
-            className="absolute -top-32 -right-32 w-xl h-144 rounded-full bg-primary-200/40 blur-3xl pointer-events-none"
+            className="absolute -top-32 -right-32 w-xl h-144 rounded-full bg-transparent blur-3xl pointer-events-none"
           />
           <div
             aria-hidden="true"
-            className="absolute -bottom-32 -left-32 w-xl h-144 rounded-full bg-primary-100/55 blur-3xl pointer-events-none"
+            className="absolute -bottom-32 -left-32 w-xl h-144 rounded-full bg-transparent blur-3xl pointer-events-none"
           />
 
           <div
@@ -59,7 +59,7 @@ export default function WhyThyleadsCTA() {
             className="absolute inset-0 opacity-[0.30] pointer-events-none"
             style={{
               backgroundImage:
-                'radial-gradient(rgba(132,92,245,0.20) 1px, transparent 1px)',
+                'radial-gradient(rgba(150,132,96,0.20) 1px, transparent 1px)',
               backgroundSize: '28px 28px',
               mask: 'radial-gradient(ellipse 80% 70% at center, black 30%, transparent 80%)',
               WebkitMask:
@@ -70,7 +70,7 @@ export default function WhyThyleadsCTA() {
           <div className="relative px-6 sm:px-10 lg:px-16 py-16 lg:py-24 text-center">
 
             <motion.div variants={itemVariants} className="mb-6">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-primary-200 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-700 shadow-sm">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#efe7d5] border border-primary-200 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-700 shadow-sm">
                 Ready to scale
               </span>
             </motion.div>
@@ -106,7 +106,7 @@ export default function WhyThyleadsCTA() {
             >
               <a
                 href="/contact"
-                className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-700 hover:bg-primary-800 text-white text-sm font-bold shadow-[0_10px_28px_-8px_rgba(132,92,245,0.55)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-700 hover:bg-primary-800 text-white text-sm font-bold shadow-[0_10px_28px_-8px_rgba(150,132,96,0.55)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
               >
                 Book a meeting
                 <ArrowRight

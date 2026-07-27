@@ -14,7 +14,7 @@ export default function WhyThyleadsPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-[#f7f3eb]">
         <WhyThyleadsHero />
         <TheShift />
         <SaasGrowthCurveTrajectory />

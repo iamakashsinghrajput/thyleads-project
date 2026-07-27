@@ -46,10 +46,10 @@ const testimonials = [
 
 export default function HrtechSocialProof() {
   return (
-    <section className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-white font-sans">
+    <section className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
       <div
         aria-hidden="true"
-        className="absolute -top-32 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
+        className="absolute -top-32 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -81,7 +81,7 @@ export default function HrtechSocialProof() {
 
           <motion.article
             variants={itemVariants}
-            className="group relative rounded-3xl bg-gradient-to-br from-white via-white to-primary-50/40 border border-slate-200 p-7 sm:p-8 shadow-[0_4px_18px_-10px_rgba(15,23,42,0.08)] hover:shadow-[0_24px_52px_-22px_rgba(132,92,245,0.32)] transition-all overflow-hidden"
+            className="group relative rounded-3xl bg-[#efe7d5] border border-slate-200 p-7 sm:p-8 shadow-[0_4px_18px_-10px_rgba(15,23,42,0.08)] hover:shadow-[0_24px_52px_-22px_rgba(150,132,96,0.32)] transition-all overflow-hidden"
           >
             <span
               aria-hidden="true"
@@ -93,7 +93,7 @@ export default function HrtechSocialProof() {
               className="absolute -top-2 -right-2 w-32 h-32 opacity-60 pointer-events-none"
               style={{
                 backgroundImage:
-                  'radial-gradient(rgba(132,92,245,0.18) 1px, transparent 1px)',
+                  'radial-gradient(rgba(150,132,96,0.18) 1px, transparent 1px)',
                 backgroundSize: '12px 12px',
                 mask: 'radial-gradient(ellipse 80% 80% at top right, black 20%, transparent 70%)',
                 WebkitMask:
@@ -105,9 +105,9 @@ export default function HrtechSocialProof() {
               <div className="relative shrink-0">
                 <span
                   aria-hidden="true"
-                  className="absolute -inset-1 bg-primary-300/40 blur-md rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"
+                  className="absolute -inset-1 bg-transparent blur-md rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"
                 />
-                <div className="relative w-12 h-12 rounded-xl bg-primary-600 ring-1 ring-white shadow-[0_8px_22px_-8px_rgba(132,92,245,0.30)] flex items-center justify-center overflow-hidden">
+                <div className="relative w-12 h-12 rounded-xl bg-primary-600 ring-1 ring-white shadow-[0_8px_22px_-8px_rgba(150,132,96,0.30)] flex items-center justify-center overflow-hidden">
                   <span className="text-xl font-extrabold text-white">S</span>
                 </div>
               </div>
@@ -195,7 +195,7 @@ export default function HrtechSocialProof() {
                   ease: easeOut,
                 }}
                 whileHover={{ y: -3 }}
-                className="group relative flex-1 rounded-3xl bg-white border border-slate-200 hover:border-primary-200 p-6 sm:p-7 shadow-[0_4px_18px_-10px_rgba(15,23,42,0.06)] hover:shadow-[0_18px_44px_-22px_rgba(132,92,245,0.28)] transition-all overflow-hidden"
+                className="group relative flex-1 rounded-3xl bg-[#efe7d5] border border-slate-200 hover:border-primary-200 p-6 sm:p-7 shadow-[0_4px_18px_-10px_rgba(15,23,42,0.06)] hover:shadow-[0_18px_44px_-22px_rgba(150,132,96,0.28)] transition-all overflow-hidden"
               >
                 <span
                   aria-hidden="true"
@@ -213,7 +213,7 @@ export default function HrtechSocialProof() {
                 </p>
 
                 <div className="mt-5 pt-4 border-t border-slate-100 flex items-center gap-3">
-                  <div className="shrink-0 w-9 h-9 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 text-white text-[11px] font-extrabold flex items-center justify-center tracking-wide ring-2 ring-white shadow-[0_4px_12px_-4px_rgba(132,92,245,0.55)]">
+                  <div className="shrink-0 w-9 h-9 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 text-white text-[11px] font-extrabold flex items-center justify-center tracking-wide ring-2 ring-white shadow-[0_4px_12px_-4px_rgba(150,132,96,0.55)]">
                     {t.initials}
                   </div>
                   <div className="min-w-0">

@@ -78,15 +78,15 @@ const stats: Stat[] = [
 
 export default function TheNumbers() {
   return (
-    <section className="relative py-12 lg:py-16 px-6 sm:px-12 overflow-hidden bg-white font-sans">
+    <section className="relative py-12 lg:py-16 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
 
       <div
         aria-hidden="true"
-        className="absolute -top-32 right-1/4 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
+        className="absolute -top-32 right-1/4 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute -bottom-32 left-1/4 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
+        className="absolute -bottom-32 left-1/4 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -124,7 +124,7 @@ export default function TheNumbers() {
 
         <motion.div
           variants={itemVariants}
-          className="relative rounded-3xl bg-gradient-to-b from-primary-50/40 via-white to-white border border-primary-100 shadow-[0_24px_60px_-30px_rgba(132,92,245,0.20),0_8px_24px_-12px_rgba(132,92,245,0.08)] overflow-hidden"
+          className="relative rounded-3xl bg-gradient-to-b from-[#f7f3eb] via-[#f7f3eb] to-[#f7f3eb] border border-primary-100 shadow-[0_24px_60px_-30px_rgba(150,132,96,0.20),0_8px_24px_-12px_rgba(150,132,96,0.08)] overflow-hidden"
         >
 
           <svg
@@ -154,7 +154,7 @@ export default function TheNumbers() {
             className="absolute inset-0 opacity-50 pointer-events-none"
             style={{
               backgroundImage:
-                'radial-gradient(rgba(132,92,245,0.06) 1px, transparent 1px)',
+                'radial-gradient(rgba(150,132,96,0.06) 1px, transparent 1px)',
               backgroundSize: '24px 24px',
               mask: 'radial-gradient(ellipse 90% 80% at center, black 50%, transparent 100%)',
               WebkitMask:
@@ -193,7 +193,7 @@ function StatCell({ stat, index }: { stat: Stat; index: number }) {
       className="group relative px-6 py-8 lg:px-8 lg:py-10 flex flex-col items-center text-center transition-colors hover:bg-primary-50/30"
     >
 
-      <div className="mb-3 inline-flex items-center justify-center w-9 h-9 rounded-lg bg-white border border-primary-100 text-primary-600 shadow-sm group-hover:bg-primary-50 group-hover:border-primary-200 transition-colors">
+      <div className="mb-3 inline-flex items-center justify-center w-9 h-9 rounded-lg bg-[#efe7d5] border border-primary-100 text-primary-600 shadow-sm group-hover:bg-primary-50 group-hover:border-primary-200 transition-colors">
         <Icon className="w-4 h-4" strokeWidth={2} />
       </div>
 
@@ -209,7 +209,7 @@ function StatCell({ stat, index }: { stat: Stat; index: number }) {
 
         <span
           aria-hidden="true"
-          className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-12 h-2 bg-primary-300/40 blur-md rounded-full"
+          className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-12 h-2 bg-transparent blur-md rounded-full"
         />
       </div>
 

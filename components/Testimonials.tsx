@@ -70,11 +70,11 @@ const testimonials: Testimonial[] = [
 
 export default function Testimonials() {
   return (
-    <section className="relative py-12 lg:py-16 px-6 sm:px-12 overflow-hidden bg-white font-sans">
+    <section className="relative py-12 lg:py-16 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
 
       <div
         aria-hidden="true"
-        className="absolute -top-32 left-1/2 -translate-x-1/2 w-[60rem] h-[40rem] rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
+        className="absolute -top-32 left-1/2 -translate-x-1/2 w-[60rem] h-[40rem] rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -123,7 +123,7 @@ export default function Testimonials() {
               variants={itemVariants}
               whileHover={{ y: -4 }}
               transition={{ duration: 0.25, ease: easeOut }}
-              className="group relative flex flex-col rounded-2xl bg-white ring-1 ring-slate-200 hover:ring-primary-200 hover:shadow-[0_24px_60px_-30px_rgba(132,92,245,0.22),0_8px_20px_-12px_rgba(132,92,245,0.10)] transition-all p-6 lg:p-7"
+              className="group relative flex flex-col rounded-2xl bg-white ring-1 ring-slate-200 hover:ring-primary-200 hover:shadow-[0_24px_60px_-30px_rgba(150,132,96,0.22),0_8px_20px_-12px_rgba(150,132,96,0.10)] transition-all p-6 lg:p-7"
             >
 
               <Quote
@@ -151,7 +151,7 @@ export default function Testimonials() {
               <footer className="flex items-center gap-3">
                 {t.photo ? (
                   <div
-                    className="shrink-0 w-10 h-10 rounded-full overflow-hidden bg-slate-100 ring-2 ring-white shadow-[0_6px_16px_-6px_rgba(132,92,245,0.5)]"
+                    className="shrink-0 w-10 h-10 rounded-full overflow-hidden bg-slate-100 ring-2 ring-white shadow-[0_6px_16px_-6px_rgba(150,132,96,0.5)]"
                     style={{ transform: 'translateZ(0)' }}
                   >
                     <img
@@ -163,7 +163,7 @@ export default function Testimonials() {
                 ) : (
                   <div
                     aria-hidden="true"
-                    className="shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 text-white flex items-center justify-center text-[12px] font-bold shadow-[0_6px_16px_-6px_rgba(132,92,245,0.5)] ring-2 ring-white"
+                    className="shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 text-white flex items-center justify-center text-[12px] font-bold shadow-[0_6px_16px_-6px_rgba(150,132,96,0.5)] ring-2 ring-white"
                     style={{
                       transform: `translateZ(0)`,
                     }}

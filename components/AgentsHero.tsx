@@ -23,18 +23,18 @@ const itemVariants: Variants = {
 
 export default function AgentsHero() {
   return (
-    <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-12 lg:pb-16 px-6 sm:px-12 overflow-hidden bg-white font-sans">
+    <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-12 lg:pb-16 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-primary-50/40 via-white to-white pointer-events-none"
+        className="absolute inset-0 bg-gradient-to-b from-[#f7f3eb] via-[#f7f3eb] to-[#f7f3eb] pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute -top-40 left-1/4 w-160 h-160 rounded-full bg-primary-100/40 blur-3xl pointer-events-none"
+        className="absolute -top-40 left-1/4 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute -bottom-40 right-1/4 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
+        className="absolute -bottom-40 right-1/4 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -77,7 +77,7 @@ export default function AgentsHero() {
             >
               <a
                 href="/contact"
-                className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-primary-700 hover:bg-primary-800 text-white text-sm font-bold shadow-[0_10px_28px_-8px_rgba(132,92,245,0.50)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-primary-700 hover:bg-primary-800 text-white text-sm font-bold shadow-[0_10px_28px_-8px_rgba(150,132,96,0.50)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
               >
                 Book a Call
                 <ArrowRight
@@ -152,7 +152,7 @@ function LiveProcessFlow() {
 
       <div
         aria-hidden="true"
-        className="absolute -inset-6 bg-primary-200/30 blur-3xl rounded-[40px] pointer-events-none"
+        className="absolute -inset-6 bg-transparent blur-3xl rounded-[40px] pointer-events-none"
       />
 
       <div className="relative flex flex-col gap-0">
@@ -171,7 +171,7 @@ function OrchestratorBroadcast() {
   return (
     <motion.span
       aria-hidden="true"
-      className="absolute -inset-3 rounded-3xl bg-primary-300/35 blur-2xl pointer-events-none"
+      className="absolute -inset-3 rounded-3xl bg-transparent blur-2xl pointer-events-none"
       initial={{ opacity: 0.35 }}
       animate={{ opacity: [0.35, 0.65, 0.35] }}
       transition={{
@@ -216,7 +216,7 @@ function StageCard({
         <div className="relative">
 
           <OrchestratorBroadcast />
-          <div className="relative rounded-2xl overflow-hidden bg-white border border-primary-200 px-5 py-4 shadow-[0_18px_44px_-22px_rgba(132,92,245,0.40)]">
+          <div className="relative rounded-2xl overflow-hidden bg-[#efe7d5] border border-primary-200 px-5 py-4 shadow-[0_18px_44px_-22px_rgba(150,132,96,0.40)]">
 
             <span
               aria-hidden="true"
@@ -257,7 +257,7 @@ function StageCard({
                   },
                 }}
                 viewport={{ once: true }}
-                className="relative rounded-xl bg-white border border-primary-100 px-2.5 py-2 text-center"
+                className="relative rounded-xl bg-[#efe7d5] border border-primary-100 px-2.5 py-2 text-center"
               >
                 <ClusterActiveDot index={idx} />
                 <div className="text-[9px] font-bold uppercase tracking-[0.18em] text-primary-700">
@@ -291,7 +291,7 @@ function StageCard({
           {stage.memory?.map(m => (
             <div
               key={m}
-              className="rounded-xl bg-white border border-dashed border-primary-300 px-3 py-2.5 text-center"
+              className="rounded-xl bg-[#efe7d5] border border-dashed border-primary-300 px-3 py-2.5 text-center"
             >
               <div className="text-[11px] font-bold text-neutral-900 leading-tight">
                 {m}
@@ -390,7 +390,7 @@ function StatsBar() {
   return (
     <motion.div
       variants={itemVariants}
-      className="relative mt-12 lg:mt-16 rounded-3xl overflow-hidden bg-gradient-to-br from-primary-50 via-white to-primary-50/60 border border-primary-100 shadow-[0_24px_60px_-30px_rgba(132,92,245,0.30)]"
+      className="relative mt-12 lg:mt-16 rounded-3xl overflow-hidden bg-[#efe7d5] border border-primary-100 shadow-[0_24px_60px_-30px_rgba(150,132,96,0.30)]"
     >
 
       <span
@@ -403,7 +403,7 @@ function StatsBar() {
         className="absolute inset-0 opacity-50 pointer-events-none"
         style={{
           backgroundImage:
-            'radial-gradient(rgba(132,92,245,0.14) 1px, transparent 1px)',
+            'radial-gradient(rgba(150,132,96,0.14) 1px, transparent 1px)',
           backgroundSize: '20px 20px',
           mask: 'radial-gradient(ellipse 80% 90% at center, black 30%, transparent 85%)',
           WebkitMask:

@@ -25,18 +25,18 @@ const itemVariants: Variants = {
 
 export default function HrtechHero() {
   return (
-    <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-16 lg:pb-24 px-6 sm:px-12 overflow-hidden bg-white font-sans">
+    <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-16 lg:pb-24 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-primary-50/40 via-white to-white pointer-events-none"
+        className="absolute inset-0 bg-gradient-to-b from-[#f7f3eb] via-[#f7f3eb] to-[#f7f3eb] pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute -top-40 left-1/4 w-160 h-160 rounded-full bg-primary-100/40 blur-3xl pointer-events-none"
+        className="absolute -top-40 left-1/4 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute -bottom-40 right-1/4 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
+        className="absolute -bottom-40 right-1/4 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -75,7 +75,7 @@ export default function HrtechHero() {
           >
             <a
               href="/contact"
-              className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-700 hover:bg-primary-800 text-white text-sm font-bold shadow-[0_10px_28px_-8px_rgba(132,92,245,0.50)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+              className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-700 hover:bg-primary-800 text-white text-sm font-bold shadow-[0_10px_28px_-8px_rgba(150,132,96,0.50)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
             >
               Talk to us
               <ArrowRight
@@ -167,7 +167,7 @@ function BuyingCommittee() {
 
       <div
         aria-hidden="true"
-        className="absolute -inset-8 bg-primary-200/30 blur-3xl rounded-[48px] pointer-events-none"
+        className="absolute -inset-8 bg-transparent blur-3xl rounded-[48px] pointer-events-none"
       />
 
       <div
@@ -175,7 +175,7 @@ function BuyingCommittee() {
         className="absolute inset-0 opacity-50 pointer-events-none"
         style={{
           backgroundImage:
-            'radial-gradient(rgba(132,92,245,0.14) 1px, transparent 1px)',
+            'radial-gradient(rgba(150,132,96,0.14) 1px, transparent 1px)',
           backgroundSize: '20px 20px',
           mask: 'radial-gradient(ellipse 75% 75% at center, black 25%, transparent 80%)',
           WebkitMask:
@@ -283,10 +283,10 @@ function BuyingCommittee() {
           <div className="relative">
             <span
               aria-hidden="true"
-              className="absolute -inset-1.5 bg-primary-300/25 blur-md rounded-2xl pointer-events-none"
+              className="absolute -inset-1.5 bg-transparent blur-md rounded-2xl pointer-events-none"
             />
 
-            <div className="relative w-[150px] rounded-2xl bg-white border border-slate-200 px-3.5 py-3 shadow-[0_12px_30px_-14px_rgba(15,23,42,0.18)]">
+            <div className="relative w-[150px] rounded-2xl bg-[#efe7d5] border border-slate-200 px-3.5 py-3 shadow-[0_12px_30px_-14px_rgba(15,23,42,0.18)]">
               <span
                 aria-hidden="true"
                 className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-primary-300 to-transparent"
@@ -294,7 +294,7 @@ function BuyingCommittee() {
 
               <div className="flex items-center gap-2.5">
                 <div className="relative shrink-0">
-                  <div className="relative w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-primary-700 text-white text-[10px] font-extrabold flex items-center justify-center tracking-wide ring-2 ring-white shadow-[0_4px_12px_-4px_rgba(132,92,245,0.55)]">
+                  <div className="relative w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-primary-700 text-white text-[10px] font-extrabold flex items-center justify-center tracking-wide ring-2 ring-white shadow-[0_4px_12px_-4px_rgba(150,132,96,0.55)]">
                     {s.initials}
                   </div>
                 </div>
@@ -335,7 +335,7 @@ function BuyingCommittee() {
 
           <motion.div
             aria-hidden="true"
-            className="absolute -inset-5 bg-primary-300/35 blur-2xl rounded-full pointer-events-none"
+            className="absolute -inset-5 bg-transparent blur-2xl rounded-full pointer-events-none"
             animate={{ opacity: [0.6, 0.9, 0.6] }}
             transition={{
               duration: 4,
@@ -352,10 +352,10 @@ function BuyingCommittee() {
             style={{ willChange: 'transform' }}
           />
 
-          <div className="relative w-[112px] h-[112px] rounded-full bg-white ring-4 ring-white shadow-[0_22px_44px_-14px_rgba(132,92,245,0.55)] flex items-center justify-center overflow-hidden">
+          <div className="relative w-[112px] h-[112px] rounded-full bg-white ring-4 ring-white shadow-[0_22px_44px_-14px_rgba(150,132,96,0.55)] flex items-center justify-center overflow-hidden">
             <span
               aria-hidden="true"
-              className="absolute inset-1 rounded-full bg-gradient-to-br from-primary-50 via-white to-primary-50"
+              className="absolute inset-1 rounded-full bg-[#efe7d5]"
             />
             <Image
               src="/thylead.svg"
@@ -371,7 +371,7 @@ function BuyingCommittee() {
             initial={{ opacity: 0, y: -4 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.3, ease: easeOut }}
-            className="absolute -bottom-4 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-700 text-white text-[9px] font-bold uppercase tracking-[0.18em] shadow-[0_8px_22px_-8px_rgba(132,92,245,0.55)] whitespace-nowrap ring-2 ring-white"
+            className="absolute -bottom-4 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-700 text-white text-[9px] font-bold uppercase tracking-[0.18em] shadow-[0_8px_22px_-8px_rgba(150,132,96,0.55)] whitespace-nowrap ring-2 ring-white"
           >
             <span className="relative flex h-1.5 w-1.5" aria-hidden="true">
               <span className="absolute inline-flex h-full w-full rounded-full bg-white opacity-75 animate-ping" />

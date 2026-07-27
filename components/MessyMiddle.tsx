@@ -90,7 +90,7 @@ function RadarViz() {
       {[190, 140, 92].map((s, i) => (
         <span key={i} className="absolute rounded-full border-2 border-primary-300/55" style={{ width: s, height: s }} />
       ))}
-      <span className="relative z-10 grid h-12 w-12 place-items-center rounded-xl bg-primary-500 text-white shadow-[0_10px_22px_-8px_rgba(132,92,245,0.7)]">
+      <span className="relative z-10 grid h-12 w-12 place-items-center rounded-xl bg-primary-500 text-white shadow-[0_10px_22px_-8px_rgba(150,132,96,0.7)]">
         <Radio className="h-5 w-5" strokeWidth={2} />
       </span>
       {chips.map((c, i) => (
@@ -157,7 +157,7 @@ function MomentumViz() {
           <path d="M14 96 L70 74 L126 54 L182 20" fill="none" className="stroke-primary-600" strokeWidth="3" strokeLinecap="round" />
           <path d="M182 20 l-13 3 l6 -11 z" className="fill-primary-600" />
         </svg>
-        <span className="absolute -right-2 -top-2 grid h-9 w-9 place-items-center rounded-full bg-primary-500 text-white shadow-[0_10px_22px_-8px_rgba(132,92,245,0.7)]">
+        <span className="absolute -right-2 -top-2 grid h-9 w-9 place-items-center rounded-full bg-primary-500 text-white shadow-[0_10px_22px_-8px_rgba(150,132,96,0.7)]">
           <Zap className="h-4 w-4 fill-current" />
         </span>
       </div>

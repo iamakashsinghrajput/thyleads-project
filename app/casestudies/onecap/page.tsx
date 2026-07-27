@@ -186,7 +186,7 @@ export default function OneCapCaseStudy() {
   };
 
   return (
-    <div className="min-h-screen bg-white font-sans scroll-smooth">
+    <div className="min-h-screen bg-[#f7f3eb] font-sans scroll-smooth">
       <Navbar />
 
       {/* HERO */}
@@ -231,7 +231,7 @@ export default function OneCapCaseStudy() {
       </header>
 
       {/* BODY */}
-      <main className="relative bg-white">
+      <main className="relative bg-[#f7f3eb]">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 px-6 md:px-10 py-16 lg:py-20">
 
           {/* LEFT NAV */}
@@ -448,7 +448,7 @@ export default function OneCapCaseStudy() {
       </section>
 
       {/* MORE CASE STUDIES */}
-      <section className="bg-white py-20 lg:py-24">
+      <section className="bg-[#f7f3eb] py-20 lg:py-24">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <div className="text-center mb-12">
             <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-primary-700 mb-3">More Case Studies</p>

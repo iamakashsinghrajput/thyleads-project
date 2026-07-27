@@ -32,15 +32,15 @@ const highlightVariants: Variants = {
 
 export default function FintechCTA() {
   return (
-    <section className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-gradient-to-b from-white via-primary-50/60 to-primary-50 font-sans">
+    <section className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
 
       <div
         aria-hidden="true"
-        className="absolute -top-32 left-1/4 w-160 h-160 rounded-full bg-primary-200/40 blur-3xl pointer-events-none"
+        className="absolute -top-32 left-1/4 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute -bottom-40 right-1/4 w-160 h-160 rounded-full bg-primary-100/60 blur-3xl pointer-events-none"
+        className="absolute -bottom-40 right-1/4 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <div
@@ -48,7 +48,7 @@ export default function FintechCTA() {
         className="absolute inset-0 opacity-60 pointer-events-none"
         style={{
           backgroundImage:
-            'radial-gradient(rgba(132,92,245,0.12) 1px, transparent 1px)',
+            'radial-gradient(rgba(150,132,96,0.12) 1px, transparent 1px)',
           backgroundSize: '26px 26px',
           mask: 'radial-gradient(ellipse 70% 60% at center, black 30%, transparent 80%)',
           WebkitMask:
@@ -94,7 +94,7 @@ export default function FintechCTA() {
         >
           <Link
             href="/contact"
-            className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-primary-700 hover:bg-primary-800 text-white text-sm font-bold shadow-[0_14px_34px_-10px_rgba(132,92,245,0.55)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+            className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-primary-700 hover:bg-primary-800 text-white text-sm font-bold shadow-[0_14px_34px_-10px_rgba(150,132,96,0.55)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
           >
             Book a Meeting
             <ArrowRight

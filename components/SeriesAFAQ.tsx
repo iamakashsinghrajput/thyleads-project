@@ -51,10 +51,10 @@ export default function SeriesAFAQ() {
   };
 
   return (
-    <section className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-white font-sans">
+    <section className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
       <div
         aria-hidden="true"
-        className="absolute -top-32 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
+        className="absolute -top-32 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -97,7 +97,7 @@ export default function SeriesAFAQ() {
                 variants={itemVariants}
                 className={`group rounded-2xl border bg-white transition-all ${
                   isOpen
-                    ? 'border-primary-200 shadow-[0_24px_60px_-30px_rgba(132,92,245,0.32)]'
+                    ? 'border-primary-200 shadow-[0_24px_60px_-30px_rgba(150,132,96,0.32)]'
                     : 'border-primary-100/70 hover:border-primary-200'
                 }`}
               >

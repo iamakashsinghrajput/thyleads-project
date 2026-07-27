@@ -16,7 +16,7 @@ export default function DiceCaseStudy() {
   };
 
   return (
-    <div className="min-h-screen bg-white font-sans animate-in fade-in duration-500 scroll-smooth">
+    <div className="min-h-screen bg-[#f7f3eb] font-sans animate-in fade-in duration-500 scroll-smooth">
       <Navbar />
 
       <header className="relative w-full overflow-hidden bg-slate-950 min-h-screen flex items-center">
@@ -61,7 +61,7 @@ export default function DiceCaseStudy() {
         </div>
       </header>
 
-      <main className="relative z-10 bg-white">
+      <main className="relative z-10 bg-[#f7f3eb]">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 px-6 md:px-12 py-20">
 
           <aside className="lg:col-span-3 hidden lg:block">
@@ -231,13 +231,13 @@ export default function DiceCaseStudy() {
                         </li>
                       </ul>
                       <div className="mt-4 ml-7 space-y-2">
-                        <div className="bg-white border border-slate-200 rounded-lg px-4 py-2 text-slate-700">
+                        <div className="bg-[#efe7d5] border border-slate-200 rounded-lg px-4 py-2 text-slate-700">
                           &quot;Still chasing approval trails over email?&quot;
                         </div>
-                        <div className="bg-white border border-slate-200 rounded-lg px-4 py-2 text-slate-700">
+                        <div className="bg-[#efe7d5] border border-slate-200 rounded-lg px-4 py-2 text-slate-700">
                           &quot;Is Excel your petty cash system?&quot;
                         </div>
-                        <div className="bg-white border border-slate-200 rounded-lg px-4 py-2 text-slate-700">
+                        <div className="bg-[#efe7d5] border border-slate-200 rounded-lg px-4 py-2 text-slate-700">
                           &quot;How long do vendor SLAs go untracked?&quot;
                         </div>
                       </div>

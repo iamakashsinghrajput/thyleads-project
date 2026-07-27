@@ -194,12 +194,12 @@ export default function TestimonialSection() {
                     <>
                       <div
                         ref={progressBarRef}
-                        className="absolute top-6 left-0 h-[3px] bg-gradient-to-r from-primary-400 to-primary-600 rounded-full shadow-[0_0_10px_rgba(132,92,245,0.5)]"
+                        className="absolute top-6 left-0 h-[3px] bg-gradient-to-r from-primary-400 to-primary-600 rounded-full shadow-[0_0_10px_rgba(150,132,96,0.5)]"
                         style={{ width: '0%' }}
                       />
                       <div
                         ref={progressDotRef}
-                        className="absolute top-[25px] w-3 h-3 bg-primary-500 rounded-full shadow-[0_0_16px_rgba(132,92,245,0.9)] z-20 transform -translate-x-1/2 -translate-y-1/2"
+                        className="absolute top-[25px] w-3 h-3 bg-primary-500 rounded-full shadow-[0_0_16px_rgba(150,132,96,0.9)] z-20 transform -translate-x-1/2 -translate-y-1/2"
                         style={{ left: '0%' }}
                       >
                         <div className="absolute inset-0 bg-primary-400 rounded-full animate-ping opacity-75"></div>
@@ -255,7 +255,7 @@ export default function TestimonialSection() {
                 }
               }}
             >
-              <div className="rounded-4xl overflow-hidden shadow-[0_25px_50px_-15px_rgba(132,92,245,0.25)] h-full md:h-[420px] relative bg-white border border-neutral-200">
+              <div className="rounded-4xl overflow-hidden shadow-[0_25px_50px_-15px_rgba(150,132,96,0.25)] h-full md:h-[420px] relative bg-[#efe7d5] border border-neutral-200">
 
                 <div className="absolute left-0 top-0 bottom-0 w-[40%] hidden md:block">
                   <img

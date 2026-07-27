@@ -194,7 +194,7 @@ export default function CaseStudiesPage() {
         </Link>
       </div>
 
-      <section className="relative z-10 py-20 bg-white">
+      <section className="relative z-10 py-20 bg-[#f7f3eb]">
         <div className="max-w-[1400px] mx-auto px-6 mb-10">
           <h3 className="text-3xl font-bold text-slate-800 flex items-center gap-2">
             More Success Stories
@@ -271,7 +271,7 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      <section className="relative z-10 py-20 bg-white">
+      <section className="relative z-10 py-20 bg-[#f7f3eb]">
         <div className="max-w-[1300px] mx-auto px-6">
           <div className="mb-10 text-center">
             <p className="text-xs uppercase tracking-[0.3em] text-slate-500 mb-3">Case Studies</p>

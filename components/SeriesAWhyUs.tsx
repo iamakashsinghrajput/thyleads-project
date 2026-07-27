@@ -50,10 +50,10 @@ const features = [
 
 export default function SeriesAWhyUs() {
   return (
-    <section className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-white font-sans">
+    <section className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
       <div
         aria-hidden="true"
-        className="absolute -top-32 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
+        className="absolute -top-32 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -105,7 +105,7 @@ export default function SeriesAWhyUs() {
                   ease: easeOut,
                 }}
                 whileHover={{ y: -4 }}
-                className="group relative rounded-2xl bg-gradient-to-br from-primary-50/70 via-primary-50/40 to-white border border-primary-100 hover:border-primary-200 p-7 sm:p-8 shadow-[0_4px_18px_-10px_rgba(132,92,245,0.18)] hover:shadow-[0_24px_52px_-22px_rgba(132,92,245,0.40)] transition-all overflow-hidden"
+                className="group relative rounded-2xl bg-[#efe7d5] border border-primary-100 hover:border-primary-200 p-7 sm:p-8 shadow-[0_4px_18px_-10px_rgba(150,132,96,0.18)] hover:shadow-[0_24px_52px_-22px_rgba(150,132,96,0.40)] transition-all overflow-hidden"
               >
                 <span
                   aria-hidden="true"
@@ -115,9 +115,9 @@ export default function SeriesAWhyUs() {
                 <div className="relative mb-5">
                   <span
                     aria-hidden="true"
-                    className="absolute inset-0 -m-1 bg-primary-300/35 blur-md rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"
+                    className="absolute inset-0 -m-1 bg-transparent blur-md rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"
                   />
-                  <div className="relative w-11 h-11 rounded-xl bg-white border border-primary-200 flex items-center justify-center text-primary-700 group-hover:border-primary-300 transition-colors">
+                  <div className="relative w-11 h-11 rounded-xl bg-[#efe7d5] border border-primary-200 flex items-center justify-center text-primary-700 group-hover:border-primary-300 transition-colors">
                     <Icon className="w-5 h-5" strokeWidth={2.2} />
                   </div>
                 </div>

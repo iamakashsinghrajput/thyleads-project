@@ -45,10 +45,10 @@ const steps = [
 
 export default function AgentsLearning() {
   return (
-    <section className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-gradient-to-b from-white via-primary-50/30 to-white font-sans">
+    <section className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
       <div
         aria-hidden="true"
-        className="absolute -top-32 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
+        className="absolute -top-32 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -60,7 +60,7 @@ export default function AgentsLearning() {
       >
         <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-14">
           <motion.div variants={itemVariants} className="mb-5">
-            <span className="inline-block px-3 py-1 rounded-full bg-white border border-primary-200 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-700">
+            <span className="inline-block px-3 py-1 rounded-full bg-[#efe7d5] border border-primary-200 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-700">
               How the Learning Works
             </span>
           </motion.div>
@@ -110,7 +110,7 @@ export default function AgentsLearning() {
                 <div className="relative mx-auto w-14 h-14">
                   <span
                     aria-hidden="true"
-                    className="absolute -inset-1.5 bg-primary-300/30 blur-md rounded-full pointer-events-none"
+                    className="absolute -inset-1.5 bg-transparent blur-md rounded-full pointer-events-none"
                   />
 
                   {[0, 1.6].map(offset => (
@@ -129,7 +129,7 @@ export default function AgentsLearning() {
                       style={{ transformOrigin: '50% 50%' }}
                     />
                   ))}
-                  <div className="relative w-14 h-14 rounded-full bg-white border-2 border-primary-300 flex items-center justify-center text-primary-700 text-xl font-extrabold shadow-[0_8px_22px_-6px_rgba(132,92,245,0.35)]">
+                  <div className="relative w-14 h-14 rounded-full bg-[#efe7d5] border-2 border-primary-300 flex items-center justify-center text-primary-700 text-xl font-extrabold shadow-[0_8px_22px_-6px_rgba(150,132,96,0.35)]">
                     {step.num}
                   </div>
                 </div>

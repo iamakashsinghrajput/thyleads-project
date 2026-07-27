@@ -78,10 +78,10 @@ const roles: Role[] = [
 
 export default function FintechWhyUs() {
   return (
-    <section className="relative py-12 lg:py-16 px-6 sm:px-12 overflow-hidden bg-white font-sans">
+    <section className="relative py-12 lg:py-16 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
       <div
         aria-hidden="true"
-        className="absolute -top-32 right-1/4 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
+        className="absolute -top-32 right-1/4 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -132,7 +132,7 @@ export default function FintechWhyUs() {
           >
             <a
               href="/why-thyleads"
-              className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-700 hover:bg-primary-800 text-white text-sm font-bold shadow-[0_10px_28px_-8px_rgba(132,92,245,0.50)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+              className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-700 hover:bg-primary-800 text-white text-sm font-bold shadow-[0_10px_28px_-8px_rgba(150,132,96,0.50)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
             >
               Why Thyleads
               <ArrowRight
@@ -145,14 +145,14 @@ export default function FintechWhyUs() {
 
         <motion.div variants={itemVariants} className="relative">
 
-          <div className="relative rounded-3xl bg-gradient-to-br from-primary-50 via-white to-primary-50/40 border border-primary-100 p-5 sm:p-6 overflow-hidden shadow-[0_24px_60px_-30px_rgba(132,92,245,0.22)]">
+          <div className="relative rounded-3xl bg-[#efe7d5] border border-primary-100 p-5 sm:p-6 overflow-hidden shadow-[0_24px_60px_-30px_rgba(150,132,96,0.22)]">
 
             <div
               aria-hidden="true"
               className="absolute inset-0 opacity-50 pointer-events-none"
               style={{
                 backgroundImage:
-                  'radial-gradient(rgba(132,92,245,0.10) 1px, transparent 1px)',
+                  'radial-gradient(rgba(150,132,96,0.10) 1px, transparent 1px)',
                 backgroundSize: '22px 22px',
                 mask: 'radial-gradient(ellipse 80% 70% at center, black 30%, transparent 80%)',
                 WebkitMask:
@@ -190,13 +190,13 @@ export default function FintechWhyUs() {
                       ease: easeOut,
                     }}
                     whileHover={{ y: -3 }}
-                    className="group relative rounded-2xl bg-white border border-primary-100 px-3.5 py-3.5 hover:border-primary-200 hover:shadow-[0_10px_26px_-12px_rgba(132,92,245,0.28)] transition-all"
+                    className="group relative rounded-2xl bg-[#efe7d5] border border-primary-100 px-3.5 py-3.5 hover:border-primary-200 hover:shadow-[0_10px_26px_-12px_rgba(150,132,96,0.28)] transition-all"
                   >
 
                     <div className="flex items-center gap-2 mb-2.5">
                       <div className="relative">
                         <div
-                          className={`shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-[11px] font-bold ring-2 ring-white shadow-[0_4px_12px_-4px_rgba(132,92,245,0.40)] ${
+                          className={`shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-[11px] font-bold ring-2 ring-white shadow-[0_4px_12px_-4px_rgba(150,132,96,0.40)] ${
                             r.ai
                               ? 'bg-slate-900 text-white'
                               : 'bg-gradient-to-br from-primary-500 to-primary-700 text-white'
@@ -207,7 +207,7 @@ export default function FintechWhyUs() {
 
                         <span
                           aria-hidden="true"
-                          className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-white border border-primary-100 flex items-center justify-center text-primary-700 shadow-sm"
+                          className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-[#efe7d5] border border-primary-100 flex items-center justify-center text-primary-700 shadow-sm"
                         >
                           <Icon className="w-2.5 h-2.5" strokeWidth={2.5} />
                         </span>
@@ -241,7 +241,7 @@ export default function FintechWhyUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.7, ease: easeOut }}
-              className="relative mt-4 flex items-center gap-2 px-3 py-2.5 rounded-xl bg-white border border-primary-100"
+              className="relative mt-4 flex items-center gap-2 px-3 py-2.5 rounded-xl bg-[#efe7d5] border border-primary-100"
             >
               <div className="shrink-0 w-7 h-7 rounded-lg bg-gradient-to-br from-primary-600 to-primary-800 text-white flex items-center justify-center">
                 <ArrowRight className="w-3.5 h-3.5" strokeWidth={2.5} />

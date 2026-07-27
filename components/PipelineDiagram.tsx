@@ -93,7 +93,7 @@ export default function PipelineDiagram() {
 
       <div
         aria-hidden="true"
-        className="absolute -top-12 -right-12 w-72 h-72 bg-primary-200/45 blur-3xl rounded-full pointer-events-none"
+        className="absolute -top-12 -right-12 w-72 h-72 bg-transparent blur-3xl rounded-full pointer-events-none"
       />
       <div
         aria-hidden="true"
@@ -102,11 +102,11 @@ export default function PipelineDiagram() {
 
       <div
         aria-hidden="true"
-        className="absolute inset-x-6 top-6 h-24 rounded-3xl bg-white border border-primary-100 shadow-[0_20px_40px_-20px_rgba(132,92,245,0.18)] -z-10 -rotate-2 origin-bottom-left"
+        className="absolute inset-x-6 top-6 h-24 rounded-3xl bg-[#efe7d5] border border-primary-100 shadow-[0_20px_40px_-20px_rgba(150,132,96,0.18)] -z-10 -rotate-2 origin-bottom-left"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-x-3 top-3 h-32 rounded-3xl bg-white border border-primary-100 shadow-[0_24px_50px_-20px_rgba(132,92,245,0.20)] -z-10 rotate-1 origin-bottom-right"
+        className="absolute inset-x-3 top-3 h-32 rounded-3xl bg-[#efe7d5] border border-primary-100 shadow-[0_24px_50px_-20px_rgba(150,132,96,0.20)] -z-10 rotate-1 origin-bottom-right"
       />
 
       <motion.div
@@ -114,10 +114,10 @@ export default function PipelineDiagram() {
         initial={{ opacity: 0, y: 12, scale: 0.98 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-        className="relative rounded-3xl bg-white ring-1 ring-primary-100 shadow-[0_30px_80px_-20px_rgba(132,92,245,0.28),0_8px_24px_-8px_rgba(132,92,245,0.10)] overflow-hidden"
+        className="relative rounded-3xl bg-white ring-1 ring-primary-100 shadow-[0_30px_80px_-20px_rgba(150,132,96,0.28),0_8px_24px_-8px_rgba(150,132,96,0.10)] overflow-hidden"
       >
 
-        <div className="flex items-center justify-between px-5 py-3 border-b border-slate-100 bg-gradient-to-r from-white via-primary-50/50 to-white">
+        <div className="flex items-center justify-between px-5 py-3 border-b border-slate-100 bg-[#efe7d5]">
           <div className="flex items-center gap-2">
             <span className="relative flex h-2 w-2" aria-hidden="true">
               <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />

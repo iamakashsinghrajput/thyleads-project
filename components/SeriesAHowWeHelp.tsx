@@ -48,10 +48,10 @@ const pillars = [
 
 export default function SeriesAHowWeHelp() {
   return (
-    <section id="how-we-help" className="relative scroll-mt-28 py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-gradient-to-b from-white via-primary-50/40 to-white font-sans">
+    <section id="how-we-help" className="relative scroll-mt-28 py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
       <div
         aria-hidden="true"
-        className="absolute -top-32 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
+        className="absolute -top-32 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -98,7 +98,7 @@ export default function SeriesAHowWeHelp() {
                 ease: easeOut,
               }}
               whileHover={{ y: -4 }}
-              className="group relative rounded-2xl bg-gradient-to-br from-primary-50/80 via-primary-50/50 to-white border border-primary-100 hover:border-primary-200 p-7 sm:p-8 shadow-[0_4px_18px_-10px_rgba(132,92,245,0.18)] hover:shadow-[0_24px_52px_-22px_rgba(132,92,245,0.40)] transition-all overflow-hidden"
+              className="group relative rounded-2xl bg-[#efe7d5] border border-primary-100 hover:border-primary-200 p-7 sm:p-8 shadow-[0_4px_18px_-10px_rgba(150,132,96,0.18)] hover:shadow-[0_24px_52px_-22px_rgba(150,132,96,0.40)] transition-all overflow-hidden"
             >
               <span
                 aria-hidden="true"

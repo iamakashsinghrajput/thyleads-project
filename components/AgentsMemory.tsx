@@ -41,10 +41,10 @@ const crossClientItems = [
 
 export default function AgentsMemory() {
   return (
-    <section className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-white font-sans">
+    <section className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
       <div
         aria-hidden="true"
-        className="absolute -top-32 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
+        className="absolute -top-32 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -87,7 +87,7 @@ export default function AgentsMemory() {
           <motion.article
             variants={itemVariants}
             whileHover={{ y: -4 }}
-            className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary-50 via-white to-primary-50/40 border border-primary-200 p-7 sm:p-8 shadow-[0_18px_44px_-22px_rgba(132,92,245,0.32)] transition-shadow hover:shadow-[0_28px_56px_-22px_rgba(132,92,245,0.44)]"
+            className="relative rounded-3xl overflow-hidden bg-[#efe7d5] border border-primary-200 p-7 sm:p-8 shadow-[0_18px_44px_-22px_rgba(150,132,96,0.32)] transition-shadow hover:shadow-[0_28px_56px_-22px_rgba(150,132,96,0.44)]"
           >
 
             <span
@@ -100,7 +100,7 @@ export default function AgentsMemory() {
               className="absolute inset-0 opacity-40 pointer-events-none"
               style={{
                 backgroundImage:
-                  'radial-gradient(rgba(132,92,245,0.16) 1px, transparent 1px)',
+                  'radial-gradient(rgba(150,132,96,0.16) 1px, transparent 1px)',
                 backgroundSize: '14px 14px',
                 mask: 'radial-gradient(ellipse 80% 80% at top right, black 20%, transparent 70%)',
                 WebkitMask:
@@ -109,7 +109,7 @@ export default function AgentsMemory() {
             />
 
             <div className="relative">
-              <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-white border border-primary-200 text-primary-700 shadow-[0_6px_16px_-6px_rgba(132,92,245,0.30)]">
+              <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-[#efe7d5] border border-primary-200 text-primary-700 shadow-[0_6px_16px_-6px_rgba(150,132,96,0.30)]">
                 <Database className="w-5 h-5" strokeWidth={2} />
               </div>
 
@@ -144,7 +144,7 @@ export default function AgentsMemory() {
           <motion.article
             variants={itemVariants}
             whileHover={{ y: -4 }}
-            className="group relative rounded-3xl overflow-hidden bg-white border border-slate-200 hover:border-primary-200 p-7 sm:p-8 shadow-[0_4px_18px_-10px_rgba(15,23,42,0.08)] hover:shadow-[0_28px_56px_-22px_rgba(132,92,245,0.32)] transition-all"
+            className="group relative rounded-3xl overflow-hidden bg-[#efe7d5] border border-slate-200 hover:border-primary-200 p-7 sm:p-8 shadow-[0_4px_18px_-10px_rgba(15,23,42,0.08)] hover:shadow-[0_28px_56px_-22px_rgba(150,132,96,0.32)] transition-all"
           >
             <span
               aria-hidden="true"

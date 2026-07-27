@@ -351,7 +351,7 @@ export default function BlogDetailClient() {
 
   if (!post) {
     return (
-      <div className="font-polysans min-h-screen bg-white flex items-center justify-center">
+      <div className="font-polysans min-h-screen bg-[#f7f3eb] flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Blog Post Not Found</h1>
           <Link href="/blog" className="text-purple-600 hover:text-purple-700 font-medium">

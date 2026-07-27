@@ -73,10 +73,10 @@ export default function SaasGrowthCurveTrajectory() {
     .join(' ');
 
   return (
-    <section className="relative py-12 lg:py-16 px-6 sm:px-12 overflow-hidden bg-white font-sans">
+    <section className="relative py-12 lg:py-16 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
       <div
         aria-hidden="true"
-        className="absolute top-1/3 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-primary-100/40 blur-3xl pointer-events-none"
+        className="absolute top-1/3 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -121,7 +121,7 @@ export default function SaasGrowthCurveTrajectory() {
 
         <motion.div
           variants={itemVariants}
-          className="relative max-w-3xl mx-auto rounded-3xl bg-gradient-to-b from-primary-50/40 via-white to-white border border-primary-100 p-6 sm:p-8 overflow-hidden"
+          className="relative max-w-3xl mx-auto rounded-3xl bg-gradient-to-b from-[#f7f3eb] via-[#f7f3eb] to-[#f7f3eb] border border-primary-100 p-6 sm:p-8 overflow-hidden"
         >
 
           <div

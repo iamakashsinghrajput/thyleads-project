@@ -31,18 +31,18 @@ const itemVariants: Variants = {
 
 export default function SeriesAHero() {
   return (
-    <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-16 lg:pb-24 px-6 sm:px-12 overflow-hidden bg-white font-sans">
+    <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-16 lg:pb-24 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-primary-50/40 via-white to-white pointer-events-none"
+        className="absolute inset-0 bg-gradient-to-b from-[#f7f3eb] via-[#f7f3eb] to-[#f7f3eb] pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute -top-40 left-1/4 w-160 h-160 rounded-full bg-primary-100/40 blur-3xl pointer-events-none"
+        className="absolute -top-40 left-1/4 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute -bottom-40 right-1/4 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
+        className="absolute -bottom-40 right-1/4 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -77,7 +77,7 @@ export default function SeriesAHero() {
           >
             <a
               href="/contact"
-              className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-primary-700 hover:bg-primary-800 text-white text-sm font-bold shadow-[0_10px_28px_-8px_rgba(132,92,245,0.50)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+              className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-primary-700 hover:bg-primary-800 text-white text-sm font-bold shadow-[0_10px_28px_-8px_rgba(150,132,96,0.50)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
             >
               Start your Growth
               <ArrowRight
@@ -161,11 +161,11 @@ function PipelineTimeline() {
 
       <div
         aria-hidden="true"
-        className="absolute -inset-6 bg-primary-300/30 blur-3xl rounded-[40px] pointer-events-none"
+        className="absolute -inset-6 bg-transparent blur-3xl rounded-[40px] pointer-events-none"
       />
 
       <div className="relative flex items-center justify-between mb-5">
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-primary-100 shadow-[0_6px_18px_-8px_rgba(132,92,245,0.30)]">
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#efe7d5] border border-primary-100 shadow-[0_6px_18px_-8px_rgba(150,132,96,0.30)]">
           <span className="relative flex h-1.5 w-1.5" aria-hidden="true">
             <span className="absolute inline-flex h-full w-full rounded-full bg-primary-500 opacity-75 animate-ping" />
             <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary-600" />
@@ -220,7 +220,7 @@ function PipelineTimeline() {
             Booked this quarter
           </span>
         </div>
-        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-700 text-white text-[10px] font-bold uppercase tracking-[0.18em] shadow-[0_6px_18px_-6px_rgba(132,92,245,0.55)]">
+        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-700 text-white text-[10px] font-bold uppercase tracking-[0.18em] shadow-[0_6px_18px_-6px_rgba(150,132,96,0.55)]">
           <TrendingUp className="w-3 h-3" strokeWidth={2.5} />
           3X month-over-month
         </span>
@@ -283,7 +283,7 @@ function TimelineRow({
       <div className="flex items-center gap-3.5">
 
         <div className="relative shrink-0">
-          <div className="relative w-10 h-10 rounded-xl bg-white border border-slate-200 ring-2 ring-white shadow-[0_5px_14px_-4px_rgba(132,92,245,0.20)] flex items-center justify-center overflow-hidden p-1.5">
+          <div className="relative w-10 h-10 rounded-xl bg-[#efe7d5] border border-slate-200 ring-2 ring-white shadow-[0_5px_14px_-4px_rgba(150,132,96,0.20)] flex items-center justify-center overflow-hidden p-1.5">
             <Image
               src={activity.logo}
               alt={activity.company}

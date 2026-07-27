@@ -59,19 +59,19 @@ const stagePerStep = 0.5;
 
 export default function FintechHero() {
   return (
-    <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-12 lg:pb-16 px-6 sm:px-12 overflow-hidden bg-white font-sans">
+    <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-12 lg:pb-16 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
 
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-primary-50/40 via-white to-white pointer-events-none"
+        className="absolute inset-0 bg-gradient-to-b from-[#f7f3eb] via-[#f7f3eb] to-[#f7f3eb] pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute -top-40 left-1/4 w-160 h-160 rounded-full bg-primary-100/40 blur-3xl pointer-events-none"
+        className="absolute -top-40 left-1/4 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute -bottom-40 right-1/4 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
+        className="absolute -bottom-40 right-1/4 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -126,7 +126,7 @@ export default function FintechHero() {
           >
             <a
               href="/contact"
-              className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-700 hover:bg-primary-800 text-white text-sm font-bold shadow-[0_10px_28px_-8px_rgba(132,92,245,0.50)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+              className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-700 hover:bg-primary-800 text-white text-sm font-bold shadow-[0_10px_28px_-8px_rgba(150,132,96,0.50)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
             >
               Talk to us
               <ArrowRight
@@ -176,7 +176,7 @@ export default function FintechHero() {
                       ease: easeOut,
                     }}
                     whileHover={{ y: -4 }}
-                    className="relative h-full rounded-2xl bg-white border border-slate-200 px-4 py-5 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.10)] hover:border-primary-200 hover:shadow-[0_12px_28px_-12px_rgba(132,92,245,0.20)] transition-all"
+                    className="relative h-full rounded-2xl bg-[#efe7d5] border border-slate-200 px-4 py-5 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.10)] hover:border-primary-200 hover:shadow-[0_12px_28px_-12px_rgba(150,132,96,0.20)] transition-all"
                   >
 
                     <span className="absolute top-3 right-3 text-[10px] font-bold tabular-nums text-slate-300">
@@ -224,7 +224,7 @@ export default function FintechHero() {
                           delay: stageDelay + 0.4,
                           ease: easeOut,
                         }}
-                        className="w-6 h-6 rounded-full bg-white border border-primary-200 flex items-center justify-center text-primary-600 shadow-sm"
+                        className="w-6 h-6 rounded-full bg-[#efe7d5] border border-primary-200 flex items-center justify-center text-primary-600 shadow-sm"
                       >
                         <ArrowRight
                           className="w-3 h-3"
@@ -277,17 +277,17 @@ export default function FintechHero() {
                     duration: 0.8,
                     delay: heroToFlowGap + stages.length * stagePerStep + 0.1,
                   }}
-                  className="absolute -inset-2 bg-primary-300/35 blur-2xl rounded-3xl pointer-events-none"
+                  className="absolute -inset-2 bg-transparent blur-2xl rounded-3xl pointer-events-none"
                 />
 
-                <div className="relative h-full rounded-2xl bg-gradient-to-br from-primary-100 via-primary-50 to-primary-100 border-2 border-primary-300 text-primary-900 px-4 py-5 shadow-[0_18px_40px_-12px_rgba(132,92,245,0.25)] overflow-hidden">
+                <div className="relative h-full rounded-2xl bg-[#efe7d5] border-2 border-primary-300 text-primary-900 px-4 py-5 shadow-[0_18px_40px_-12px_rgba(150,132,96,0.25)] overflow-hidden">
 
                   <div
                     aria-hidden="true"
                     className="absolute inset-0 opacity-50 pointer-events-none"
                     style={{
                       backgroundImage:
-                        'radial-gradient(rgba(132,92,245,0.12) 1px, transparent 1px)',
+                        'radial-gradient(rgba(150,132,96,0.12) 1px, transparent 1px)',
                       backgroundSize: '18px 18px',
                       mask: 'radial-gradient(ellipse 80% 70% at center, black 30%, transparent 80%)',
                       WebkitMask:
@@ -299,7 +299,7 @@ export default function FintechHero() {
                     04
                   </span>
 
-                  <div className="relative w-10 h-10 rounded-xl bg-white border border-primary-200 flex items-center justify-center text-primary-700 shadow-sm mb-3">
+                  <div className="relative w-10 h-10 rounded-xl bg-[#efe7d5] border border-primary-200 flex items-center justify-center text-primary-700 shadow-sm mb-3">
                     <Crown className="w-4 h-4" strokeWidth={2} />
                   </div>
 
@@ -320,7 +320,7 @@ export default function FintechHero() {
                         heroToFlowGap + stages.length * stagePerStep + 0.4,
                       ease: easeOut,
                     }}
-                    className="relative inline-flex items-center gap-1 mt-3 px-2 py-0.5 rounded-md bg-primary-700 text-white text-[9px] font-bold uppercase tracking-[0.18em] shadow-[0_4px_12px_-4px_rgba(132,92,245,0.50)]"
+                    className="relative inline-flex items-center gap-1 mt-3 px-2 py-0.5 rounded-md bg-primary-700 text-white text-[9px] font-bold uppercase tracking-[0.18em] shadow-[0_4px_12px_-4px_rgba(150,132,96,0.50)]"
                   >
                     <Check className="w-2.5 h-2.5" strokeWidth={3} />
                     Approved

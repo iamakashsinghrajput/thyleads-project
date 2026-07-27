@@ -58,15 +58,15 @@ const pillars: Pillar[] = [
 
 export default function FintechHowWeHelp() {
   return (
-    <section id="how-we-help" className="relative scroll-mt-28 py-12 lg:py-16 px-6 sm:px-12 overflow-hidden bg-white font-sans">
+    <section id="how-we-help" className="relative scroll-mt-28 py-12 lg:py-16 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
 
       <div
         aria-hidden="true"
-        className="absolute -top-32 left-1/4 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
+        className="absolute -top-32 left-1/4 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute -bottom-32 right-1/4 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
+        className="absolute -bottom-32 right-1/4 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -125,10 +125,10 @@ export default function FintechHowWeHelp() {
                 ease: easeOut,
               }}
               whileHover={{ y: -4 }}
-              className="group relative rounded-2xl bg-gradient-to-br from-primary-50 via-primary-50/60 to-white border border-primary-100 px-6 py-7 hover:border-primary-300 hover:shadow-[0_20px_50px_-20px_rgba(132,92,245,0.30),0_8px_20px_-12px_rgba(132,92,245,0.10)] transition-all overflow-hidden"
+              className="group relative rounded-2xl bg-[#efe7d5] border border-primary-100 px-6 py-7 hover:border-primary-300 hover:shadow-[0_20px_50px_-20px_rgba(150,132,96,0.30),0_8px_20px_-12px_rgba(150,132,96,0.10)] transition-all overflow-hidden"
             >
 
-              <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-white border border-primary-200 text-[9px] font-bold uppercase tracking-[0.22em] text-primary-700 mb-5 shadow-sm">
+              <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-[#efe7d5] border border-primary-200 text-[9px] font-bold uppercase tracking-[0.22em] text-primary-700 mb-5 shadow-sm">
                 {pillar.eyebrow}
               </span>
 

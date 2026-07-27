@@ -15,7 +15,7 @@ export default function FintechPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-[#f7f3eb]">
         <FintechHero />
         <FintechReality />
         <FintechHowWeHelp />

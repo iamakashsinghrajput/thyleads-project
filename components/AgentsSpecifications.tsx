@@ -198,10 +198,10 @@ export default function AgentsSpecifications() {
   const [openIndex, setOpenIndex] = useState<number>(0);
 
   return (
-    <section className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-white font-sans">
+    <section className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
       <div
         aria-hidden="true"
-        className="absolute -top-32 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
+        className="absolute -top-32 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -272,7 +272,7 @@ function ClusterSection({
       variants={itemVariants}
       className={`rounded-2xl border bg-white transition-all overflow-hidden ${
         isOpen
-          ? 'border-primary-200 shadow-[0_24px_60px_-30px_rgba(132,92,245,0.32)]'
+          ? 'border-primary-200 shadow-[0_24px_60px_-30px_rgba(150,132,96,0.32)]'
           : 'border-slate-200 hover:border-primary-200'
       }`}
     >
@@ -286,7 +286,7 @@ function ClusterSection({
           <span
             className={`shrink-0 w-9 h-9 rounded-xl flex items-center justify-center transition-colors ${
               isOpen
-                ? 'bg-primary-700 text-white shadow-[0_8px_18px_-6px_rgba(132,92,245,0.55)]'
+                ? 'bg-primary-700 text-white shadow-[0_8px_18px_-6px_rgba(150,132,96,0.55)]'
                 : 'bg-primary-50 border border-primary-100 text-primary-700'
             }`}
           >
@@ -333,7 +333,7 @@ function ClusterSection({
                 {cluster.agents.map(a => (
                   <article
                     key={a.name}
-                    className="relative rounded-xl bg-gradient-to-br from-primary-50/70 via-primary-50/30 to-white border border-primary-100 p-4 sm:p-5 overflow-hidden"
+                    className="relative rounded-xl bg-[#efe7d5] border border-primary-100 p-4 sm:p-5 overflow-hidden"
                   >
                     <span
                       aria-hidden="true"
@@ -354,7 +354,7 @@ function ClusterSection({
                       {a.outputs.map(o => (
                         <span
                           key={o}
-                          className="inline-flex items-center px-2 py-0.5 rounded-md bg-white border border-primary-200 text-primary-700 text-[10px] font-semibold"
+                          className="inline-flex items-center px-2 py-0.5 rounded-md bg-[#efe7d5] border border-primary-200 text-primary-700 text-[10px] font-semibold"
                         >
                           {o}
                         </span>

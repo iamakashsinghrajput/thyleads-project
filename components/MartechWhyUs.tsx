@@ -29,10 +29,10 @@ const pills = [
 
 export default function MartechWhyUs() {
   return (
-    <section className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-white font-sans">
+    <section className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
       <div
         aria-hidden="true"
-        className="absolute -top-32 right-1/4 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
+        className="absolute -top-32 right-1/4 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -74,7 +74,7 @@ export default function MartechWhyUs() {
           <motion.div variants={itemVariants} className="mt-8">
             <a
               href="/why-thyleads"
-              className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-700 hover:bg-primary-800 text-white text-sm font-bold shadow-[0_10px_28px_-8px_rgba(132,92,245,0.50)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+              className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-700 hover:bg-primary-800 text-white text-sm font-bold shadow-[0_10px_28px_-8px_rgba(150,132,96,0.50)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
             >
               Why Thyleads
               <ArrowRight
@@ -89,10 +89,10 @@ export default function MartechWhyUs() {
 
           <div
             aria-hidden="true"
-            className="absolute -inset-6 bg-primary-200/30 blur-3xl rounded-[40px] pointer-events-none"
+            className="absolute -inset-6 bg-transparent blur-3xl rounded-[40px] pointer-events-none"
           />
 
-          <div className="relative rounded-3xl bg-gradient-to-br from-primary-50/60 via-white to-primary-50/30 border border-primary-100 p-5 sm:p-6 shadow-[0_22px_56px_-26px_rgba(132,92,245,0.32)]">
+          <div className="relative rounded-3xl bg-[#efe7d5] border border-primary-100 p-5 sm:p-6 shadow-[0_22px_56px_-26px_rgba(150,132,96,0.32)]">
 
             <span
               aria-hidden="true"
@@ -114,7 +114,7 @@ export default function MartechWhyUs() {
                       ease: easeOut,
                     }}
                     whileHover={{ x: 4 }}
-                    className="group relative flex items-center gap-4 px-4 py-3.5 rounded-2xl bg-white border border-slate-200 hover:border-primary-200 hover:shadow-[0_10px_28px_-14px_rgba(132,92,245,0.32)] transition-all overflow-hidden"
+                    className="group relative flex items-center gap-4 px-4 py-3.5 rounded-2xl bg-[#efe7d5] border border-slate-200 hover:border-primary-200 hover:shadow-[0_10px_28px_-14px_rgba(150,132,96,0.32)] transition-all overflow-hidden"
                   >
 
                     <span
@@ -125,7 +125,7 @@ export default function MartechWhyUs() {
                     <div className="relative shrink-0">
                       <span
                         aria-hidden="true"
-                        className="absolute -inset-1 bg-primary-300/35 blur-md rounded-xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"
+                        className="absolute -inset-1 bg-transparent blur-md rounded-xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"
                       />
                       <div className="relative w-10 h-10 rounded-xl bg-primary-50 border border-primary-100 flex items-center justify-center text-primary-700 group-hover:bg-primary-100 transition-colors">
                         <Icon className="w-4 h-4" strokeWidth={2.2} />

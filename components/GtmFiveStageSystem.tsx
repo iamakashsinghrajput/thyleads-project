@@ -137,12 +137,12 @@ export default function GtmFiveStageSystem() {
   return (
     <section
       id="framework"
-      className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-white font-sans"
+      className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans"
     >
 
       <div
         aria-hidden="true"
-        className="absolute -top-40 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
+        className="absolute -top-40 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -193,7 +193,7 @@ export default function GtmFiveStageSystem() {
           className="mt-12 lg:mt-14 grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-5"
         >
 
-          <div className="lg:col-span-3 rounded-2xl bg-white border border-slate-200 p-2.5 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.06)]">
+          <div className="lg:col-span-3 rounded-2xl bg-[#efe7d5] border border-slate-200 p-2.5 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.06)]">
             <ul className="flex flex-col">
               {stages.map((stage, i) => {
                 const isActive = i === activeIndex;
@@ -244,14 +244,14 @@ export default function GtmFiveStageSystem() {
           </div>
 
           <div className="lg:col-span-4">
-            <div className="relative h-full min-h-[320px] rounded-2xl bg-gradient-to-br from-primary-50 via-primary-50/60 to-white border border-primary-100 overflow-hidden">
+            <div className="relative h-full min-h-[320px] rounded-2xl bg-[#efe7d5] border border-primary-100 overflow-hidden">
 
               <div
                 aria-hidden="true"
                 className="absolute inset-0 opacity-50 pointer-events-none"
                 style={{
                   backgroundImage:
-                    'radial-gradient(rgba(132,92,245,0.10) 1px, transparent 1px)',
+                    'radial-gradient(rgba(150,132,96,0.10) 1px, transparent 1px)',
                   backgroundSize: '22px 22px',
                   mask: 'radial-gradient(ellipse 80% 70% at center, black 30%, transparent 80%)',
                   WebkitMask:
@@ -261,7 +261,7 @@ export default function GtmFiveStageSystem() {
 
               <div
                 aria-hidden="true"
-                className="absolute -top-20 left-1/2 -translate-x-1/2 w-72 h-72 rounded-full bg-primary-200/50 blur-3xl pointer-events-none"
+                className="absolute -top-20 left-1/2 -translate-x-1/2 w-72 h-72 rounded-full bg-transparent blur-3xl pointer-events-none"
               />
 
               <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/80 backdrop-blur border border-primary-100 text-[10px] font-bold uppercase tracking-[0.22em] text-primary-700 shadow-sm">
@@ -290,7 +290,7 @@ export default function GtmFiveStageSystem() {
           </div>
 
           <div className="lg:col-span-5">
-            <div className="relative h-full rounded-2xl bg-white border border-slate-200 p-6 sm:p-8 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.06)] overflow-hidden">
+            <div className="relative h-full rounded-2xl bg-[#efe7d5] border border-slate-200 p-6 sm:p-8 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.06)] overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={active.id}

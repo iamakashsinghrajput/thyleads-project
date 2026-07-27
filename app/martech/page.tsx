@@ -15,7 +15,7 @@ export default function MartechPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-[#f7f3eb]">
         <MartechHero />
         <MartechReality />
         <MartechHowWeHelp />

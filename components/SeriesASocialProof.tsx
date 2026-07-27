@@ -36,7 +36,7 @@ const caseStudies: CaseStudy[] = [
     logo: '/images/onecap.png',
     title: 'From 0 to 47 qualified meetings in 90 days',
     description:
-      'A pre-revenue HRTech startup needed pipeline fast before their runway ran out. We built their entire outbound motion from scratch.',
+      'A pre-revenue FinTech startup needed pipeline fast before their runway ran out. We built their entire outbound motion from scratch.',
     stats: [
       { value: '47', label: 'Qualified meetings in 90 days' },
       { value: '3X', label: 'Pipeline growth' },
@@ -48,7 +48,7 @@ const caseStudies: CaseStudy[] = [
     logo: '/images/zigital.png',
     title: '3x pipeline in 60 days post-fundraise',
     description:
-      'After closing their Series A, this FinTech needed to prove traction immediately. We delivered a repeatable outbound system that scaled.',
+      'After closing their Series A, this HRTech needed to prove traction immediately. We delivered a repeatable outbound system that scaled.',
     stats: [
       { value: '3X', label: 'Pipeline in 60 days' },
       { value: '40+', label: 'Net-new appointments' },
@@ -59,10 +59,10 @@ const caseStudies: CaseStudy[] = [
 
 export default function SeriesASocialProof() {
   return (
-    <section className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-white font-sans">
+    <section className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
       <div
         aria-hidden="true"
-        className="absolute -top-32 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
+        className="absolute -top-32 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -110,7 +110,7 @@ export default function SeriesASocialProof() {
                 ease: easeOut,
               }}
               whileHover={{ y: -4 }}
-              className="group relative rounded-3xl bg-gradient-to-br from-white via-white to-primary-50/40 border border-slate-200 hover:border-primary-200 p-7 sm:p-8 shadow-[0_4px_18px_-10px_rgba(15,23,42,0.08)] hover:shadow-[0_28px_56px_-22px_rgba(132,92,245,0.32)] transition-all overflow-hidden"
+              className="group relative rounded-3xl bg-[#efe7d5] border border-slate-200 hover:border-primary-200 p-7 sm:p-8 shadow-[0_4px_18px_-10px_rgba(15,23,42,0.08)] hover:shadow-[0_28px_56px_-22px_rgba(150,132,96,0.32)] transition-all overflow-hidden"
             >
               <span
                 aria-hidden="true"
@@ -122,7 +122,7 @@ export default function SeriesASocialProof() {
                 className="absolute -top-2 -right-2 w-32 h-32 opacity-60 pointer-events-none"
                 style={{
                   backgroundImage:
-                    'radial-gradient(rgba(132,92,245,0.18) 1px, transparent 1px)',
+                    'radial-gradient(rgba(150,132,96,0.18) 1px, transparent 1px)',
                   backgroundSize: '12px 12px',
                   mask: 'radial-gradient(ellipse 80% 80% at top right, black 20%, transparent 70%)',
                   WebkitMask:
@@ -134,9 +134,9 @@ export default function SeriesASocialProof() {
                 <div className="relative shrink-0">
                   <span
                     aria-hidden="true"
-                    className="absolute -inset-1 bg-primary-300/40 blur-md rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"
+                    className="absolute -inset-1 bg-transparent blur-md rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"
                   />
-                  <div className="relative w-11 h-11 rounded-xl bg-white border border-slate-200 ring-1 ring-white shadow-[0_8px_22px_-8px_rgba(132,92,245,0.30)] flex items-center justify-center overflow-hidden p-1.5">
+                  <div className="relative w-11 h-11 rounded-xl bg-[#efe7d5] border border-slate-200 ring-1 ring-white shadow-[0_8px_22px_-8px_rgba(150,132,96,0.30)] flex items-center justify-center overflow-hidden p-1.5">
                     <Image
                       src={cs.logo}
                       alt={cs.brand}

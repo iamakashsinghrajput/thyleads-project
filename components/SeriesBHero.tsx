@@ -24,18 +24,18 @@ const itemVariants: Variants = {
 
 export default function SeriesBHero() {
   return (
-    <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-16 lg:pb-24 px-6 sm:px-12 overflow-hidden bg-white font-sans">
+    <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-16 lg:pb-24 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-primary-50/40 via-white to-white pointer-events-none"
+        className="absolute inset-0 bg-gradient-to-b from-[#f7f3eb] via-[#f7f3eb] to-[#f7f3eb] pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute -top-40 left-1/4 w-160 h-160 rounded-full bg-primary-100/40 blur-3xl pointer-events-none"
+        className="absolute -top-40 left-1/4 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute -bottom-40 right-1/4 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
+        className="absolute -bottom-40 right-1/4 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -76,7 +76,7 @@ export default function SeriesBHero() {
           >
             <a
               href="/contact"
-              className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-700 hover:bg-primary-800 text-white text-sm font-bold shadow-[0_10px_28px_-8px_rgba(132,92,245,0.50)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+              className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-700 hover:bg-primary-800 text-white text-sm font-bold shadow-[0_10px_28px_-8px_rgba(150,132,96,0.50)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
             >
               Scale your Growth
               <ArrowRight
@@ -144,10 +144,10 @@ function ScalingChart() {
 
       <div
         aria-hidden="true"
-        className="absolute -inset-6 bg-primary-200/30 blur-3xl rounded-[40px] pointer-events-none"
+        className="absolute -inset-6 bg-transparent blur-3xl rounded-[40px] pointer-events-none"
       />
 
-      <div className="relative rounded-3xl bg-white border border-slate-200 shadow-[0_28px_70px_-30px_rgba(132,92,245,0.32)] overflow-hidden">
+      <div className="relative rounded-3xl bg-[#efe7d5] border border-slate-200 shadow-[0_28px_70px_-30px_rgba(150,132,96,0.32)] overflow-hidden">
 
         <span
           aria-hidden="true"
@@ -244,7 +244,7 @@ function ScalingChart() {
                   cx={p.x}
                   cy={p.y}
                   r="6"
-                  fill="rgba(132,92,245,0.20)"
+                  fill="rgba(150,132,96,0.20)"
                   initial={{ scale: 0, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{
@@ -385,7 +385,7 @@ function ScalingChart() {
           </svg>
         </div>
 
-        <div className="px-6 py-4 border-t border-slate-100 flex items-center justify-between gap-3 bg-gradient-to-br from-primary-50/40 to-white">
+        <div className="px-6 py-4 border-t border-slate-100 flex items-center justify-between gap-3 bg-[#efe7d5]">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1.5">
               <span

@@ -69,11 +69,11 @@ export default function TheShift() {
   const bottomRow = shifts.slice(3);
 
   return (
-    <section className="relative py-12 lg:py-16 px-6 sm:px-12 overflow-hidden bg-white font-sans">
+    <section className="relative py-12 lg:py-16 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
 
       <div
         aria-hidden="true"
-        className="absolute top-1/3 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-primary-100/40 blur-3xl pointer-events-none"
+        className="absolute top-1/3 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -145,9 +145,9 @@ function ShiftCard({ shift }: { shift: Shift }) {
       whileHover={{ y: -4 }}
       transition={{ duration: 0.25, ease: easeOut }}
     >
-      <Card className="group border-primary-100 bg-primary-50/40 hover:bg-white hover:border-primary-200 hover:shadow-[0_24px_60px_-20px_rgba(132,92,245,0.22),0_8px_20px_-10px_rgba(132,92,245,0.10)] transition-all">
+      <Card className="group border-primary-100 bg-primary-50/40 hover:bg-white hover:border-primary-200 hover:shadow-[0_24px_60px_-20px_rgba(150,132,96,0.22),0_8px_20px_-10px_rgba(150,132,96,0.10)] transition-all">
         <CardHeader className="gap-4">
-          <div className="w-10 h-10 rounded-lg bg-white border border-primary-100 flex items-center justify-center text-primary-600 group-hover:bg-primary-50 transition-colors">
+          <div className="w-10 h-10 rounded-lg bg-[#efe7d5] border border-primary-100 flex items-center justify-center text-primary-600 group-hover:bg-primary-50 transition-colors">
             <Icon className="w-5 h-5" strokeWidth={2} />
           </div>
           <CardTitle>{shift.title}</CardTitle>

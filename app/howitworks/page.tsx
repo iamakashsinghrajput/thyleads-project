@@ -258,7 +258,7 @@ const HeroSection = () => {
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,_rgba(168,85,247,0.18),transparent_45%),radial-gradient(circle_at_80%_30%,_rgba(99,102,241,0.14),transparent_50%),linear-gradient(180deg,_#ffffff_0%,_#faf8ff_45%,_#ffffff_100%)]" />
       <div className="absolute inset-0 bg-[conic-gradient(from_120deg_at_60%_40%,_rgba(168,85,247,0.10),_rgba(99,102,241,0.08),_transparent_60%)] opacity-70" />
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(132,92,245,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(132,92,245,0.06)_1px,transparent_1px)] bg-[size:120px_120px] [mask-image:radial-gradient(ellipse_at_center,black_35%,transparent_75%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(150,132,96,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(150,132,96,0.06)_1px,transparent_1px)] bg-[size:120px_120px] [mask-image:radial-gradient(ellipse_at_center,black_35%,transparent_75%)]" />
 
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {Array.from({ length: 20 }).map((_, i) => (
@@ -290,7 +290,7 @@ const HeroSection = () => {
         <motion.div variants={fadeUp} className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-5">
           <a
             href="/contact"
-            className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-primary-700 px-8 font-medium text-white transition-all hover:bg-primary-800 hover:scale-105 shadow-[0_18px_40px_-14px_rgba(132,92,245,0.55)]"
+            className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-primary-700 px-8 font-medium text-white transition-all hover:bg-primary-800 hover:scale-105 shadow-[0_18px_40px_-14px_rgba(150,132,96,0.55)]"
           >
             <span className="mr-2 uppercase tracking-widest text-xs font-bold">Book a Meeting</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -390,16 +390,16 @@ const SystemLayerSection = () => {
                     {systemStages.map((stage, index) => (
                         <React.Fragment key={index}>
                             <div
-                                className={`flex items-start gap-3 px-3.5 py-2.5 rounded-xl bg-white border transition-all duration-500 ${
+                                className={`flex items-start gap-3 px-3.5 py-2.5 rounded-xl bg-[#efe7d5] border transition-all duration-500 ${
                                     activeStage === index
-                                        ? "border-primary-200 shadow-[0_14px_36px_-20px_rgba(132,92,245,0.40)] -translate-y-0.5"
+                                        ? "border-primary-200 shadow-[0_14px_36px_-20px_rgba(150,132,96,0.40)] -translate-y-0.5"
                                         : "border-slate-200"
                                 }`}
                             >
                                 <div
                                     className={`shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[11px] font-bold text-white transition-all ${
                                         activeStage === index
-                                            ? "bg-primary-700 shadow-[0_5px_14px_-3px_rgba(132,92,245,0.55)] scale-105"
+                                            ? "bg-primary-700 shadow-[0_5px_14px_-3px_rgba(150,132,96,0.55)] scale-105"
                                             : "bg-primary-600"
                                     }`}
                                 >
@@ -455,9 +455,9 @@ const SystemLayerSection = () => {
                     </div>
                 </div>
 
-                <div className="relative flex-1 bg-gradient-to-br from-white via-primary-50/40 to-white">
-                    <div className="absolute inset-0 bg-[linear-gradient(rgba(132,92,245,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(132,92,245,0.06)_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_85%)]" />
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(132,92,245,0.18),transparent_70%)]" />
+                <div className="relative flex-1 bg-[#efe7d5]">
+                    <div className="absolute inset-0 bg-[linear-gradient(rgba(150,132,96,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(150,132,96,0.06)_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_85%)]" />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(150,132,96,0.18),transparent_70%)]" />
 
                     <div className="absolute inset-0 w-full h-full">
 
@@ -491,16 +491,16 @@ const SystemLayerSection = () => {
                                     transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
                                     className={`absolute inset-[-25px] rounded-full border border-dotted transition-colors duration-500 ${activeStage >= 1 && activeStage <= 4 ? "border-primary-300/60" : "border-slate-200"}`}
                                 />
-                                <div className="h-24 w-24 rounded-full bg-white border border-primary-200 flex items-center justify-center shadow-[0_18px_44px_-18px_rgba(132,92,245,0.45)] relative z-20">
-                                    <div className={`absolute inset-0 rounded-full bg-primary-300/30 blur-xl transition-opacity duration-300 ${activeStage >= 1 && activeStage <= 4 ? "opacity-100" : "opacity-0"}`} />
-                                    <Cpu className={`w-8 h-8 transition-all duration-300 ${activeStage >= 1 && activeStage <= 4 ? "text-primary-700 drop-shadow-[0_0_10px_rgba(132,92,245,0.55)]" : "text-slate-300"}`} />
+                                <div className="h-24 w-24 rounded-full bg-[#efe7d5] border border-primary-200 flex items-center justify-center shadow-[0_18px_44px_-18px_rgba(150,132,96,0.45)] relative z-20">
+                                    <div className={`absolute inset-0 rounded-full bg-transparent blur-xl transition-opacity duration-300 ${activeStage >= 1 && activeStage <= 4 ? "opacity-100" : "opacity-0"}`} />
+                                    <Cpu className={`w-8 h-8 transition-all duration-300 ${activeStage >= 1 && activeStage <= 4 ? "text-primary-700 drop-shadow-[0_0_10px_rgba(150,132,96,0.55)]" : "text-slate-300"}`} />
                                     {activeStage >= 1 && activeStage <= 4 && (
                                         <motion.div
                                             animate={{ rotate: 360 }}
                                             transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
                                             className="absolute inset-0 rounded-full"
                                         >
-                                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1 w-2 h-2 bg-primary-600 rounded-full shadow-[0_0_10px_rgba(132,92,245,0.9)]" />
+                                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1 w-2 h-2 bg-primary-600 rounded-full shadow-[0_0_10px_rgba(150,132,96,0.9)]" />
                                         </motion.div>
                                     )}
                                 </div>
@@ -542,7 +542,7 @@ const ConnectionPath = ({
   color?: string;
 }) => (
     <>
-        <path d={d} stroke="rgba(132,92,245,0.14)" strokeWidth="2" fill="none" />
+        <path d={d} stroke="rgba(150,132,96,0.14)" strokeWidth="2" fill="none" />
         <motion.path
             d={d}
             stroke={color}
@@ -604,7 +604,7 @@ const TimelineSection = () => {
   const youBrief = currentWeek.whatYouDo;
 
   return (
-    <section className="relative py-24 px-6 bg-slate-50/50">
+    <section className="relative py-24 px-6 bg-[#f7f3eb]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary-700 mb-4">Layer 2</p>
@@ -636,8 +636,8 @@ const TimelineSection = () => {
                                 onClick={() => setActiveIndex(index)}
                                 className={`group cursor-pointer relative flex-1 flex items-center gap-5 rounded-2xl border bg-white px-6 transition-all duration-300 overflow-hidden ${
                                     isActive
-                                        ? "border-primary-300 shadow-[0_18px_44px_-22px_rgba(132,92,245,0.45)]"
-                                        : "border-slate-200 hover:border-primary-200 hover:shadow-[0_14px_36px_-22px_rgba(132,92,245,0.28)]"
+                                        ? "border-primary-300 shadow-[0_18px_44px_-22px_rgba(150,132,96,0.45)]"
+                                        : "border-slate-200 hover:border-primary-200 hover:shadow-[0_14px_36px_-22px_rgba(150,132,96,0.28)]"
                                 }`}
                             >
 
@@ -653,7 +653,7 @@ const TimelineSection = () => {
                                 <div className="relative shrink-0">
                                     <span
                                         aria-hidden="true"
-                                        className={`absolute -inset-1.5 rounded-full bg-primary-300/35 blur-md transition-opacity ${
+                                        className={`absolute -inset-1.5 rounded-full bg-transparent blur-md transition-opacity ${
                                             isActive ? "opacity-100" : "opacity-0"
                                         }`}
                                     />
@@ -703,7 +703,7 @@ const TimelineSection = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                        className="relative h-full flex flex-col rounded-3xl border border-slate-200 bg-white shadow-[0_28px_70px_-32px_rgba(132,92,245,0.22)] overflow-hidden"
+                        className="relative h-full flex flex-col rounded-3xl border border-slate-200 bg-white shadow-[0_28px_70px_-32px_rgba(150,132,96,0.22)] overflow-hidden"
                     >
 
                         <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-primary-400 to-transparent" aria-hidden="true" />
@@ -713,7 +713,7 @@ const TimelineSection = () => {
                             className="absolute -top-2 -right-2 w-40 h-40 opacity-60 pointer-events-none"
                             style={{
                                 backgroundImage:
-                                    'radial-gradient(rgba(132,92,245,0.18) 1px, transparent 1px)',
+                                    'radial-gradient(rgba(150,132,96,0.18) 1px, transparent 1px)',
                                 backgroundSize: '14px 14px',
                                 mask: 'radial-gradient(ellipse 80% 80% at top right, black 20%, transparent 70%)',
                                 WebkitMask:
@@ -762,7 +762,7 @@ const TimelineSection = () => {
                                                 delay: 0.12 + i * 0.05,
                                                 ease: [0.16, 1, 0.3, 1],
                                             }}
-                                            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-white border border-slate-200 text-[11.5px] text-slate-700 font-medium"
+                                            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-[#efe7d5] border border-slate-200 text-[11.5px] text-slate-700 font-medium"
                                         >
                                             <span
                                                 aria-hidden="true"
@@ -794,7 +794,7 @@ const TimelineSection = () => {
                                                 delay: 0.2 + i * 0.04,
                                                 ease: [0.16, 1, 0.3, 1],
                                             }}
-                                            className="inline-flex items-start gap-2 px-3 py-2 rounded-lg bg-white border border-primary-100 text-[12px] text-slate-700 leading-snug"
+                                            className="inline-flex items-start gap-2 px-3 py-2 rounded-lg bg-[#efe7d5] border border-primary-100 text-[12px] text-slate-700 leading-snug"
                                         >
                                             <span
                                                 aria-hidden="true"
@@ -811,7 +811,7 @@ const TimelineSection = () => {
 
                         <div className="relative mx-6 lg:mx-7 mb-6 lg:mb-7 rounded-xl bg-primary-50/70 border border-primary-200 px-4 py-3">
                             <div className="flex items-center gap-3">
-                                <div className="shrink-0 w-9 h-9 rounded-lg bg-white border border-primary-200 flex items-center justify-center text-primary-700 shadow-[0_4px_10px_-4px_rgba(132,92,245,0.30)]">
+                                <div className="shrink-0 w-9 h-9 rounded-lg bg-[#efe7d5] border border-primary-200 flex items-center justify-center text-primary-700 shadow-[0_4px_10px_-4px_rgba(150,132,96,0.30)]">
                                     <Target className="w-4 h-4" strokeWidth={2.5} />
                                 </div>
                                 <div className="flex-1 min-w-0">
@@ -955,7 +955,7 @@ const DealAssistSection = () => {
                 >
                     <div className="absolute -inset-8 bg-blue-500/20 blur-[60px] rounded-full opacity-30" />
 
-                    <div className="relative bg-white border border-slate-200 rounded-xl shadow-2xl max-w-md mx-auto overflow-hidden">
+                    <div className="relative bg-[#efe7d5] border border-slate-200 rounded-xl shadow-2xl max-w-md mx-auto overflow-hidden">
                          <div className="p-4 pb-3">
                              <div className="flex gap-3">
                                  <div className="relative">
@@ -1005,7 +1005,7 @@ const DealAssistSection = () => {
                          </div>
 
                          <div className="mx-4 mb-3 rounded-lg overflow-hidden border border-slate-200">
-                             <div className="aspect-[1.91/1] bg-gradient-to-br from-primary-100 via-primary-50 to-primary-100 flex items-center justify-center relative">
+                             <div className="aspect-[1.91/1] bg-[#efe7d5] flex items-center justify-center relative">
                                  <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.02)_25%,rgba(255,255,255,0.02)_50%,transparent_50%,transparent_75%,rgba(255,255,255,0.02)_75%)] bg-[length:20px_20px]" />
                                  <div className="text-center z-10">
                                      <div className="w-16 h-16 mx-auto mb-3 rounded-xl bg-slate-100 backdrop-blur-sm flex items-center justify-center">
@@ -1098,7 +1098,7 @@ const SignalIntelligenceSection = () => {
     const active = signalIntelligence[activeSignal];
 
     return (
-      <section id="signal-intelligence" className="relative py-16 md:py-20 px-6 bg-white overflow-hidden scroll-mt-28">
+      <section id="signal-intelligence" className="relative py-16 md:py-20 px-6 bg-[#f7f3eb] overflow-hidden scroll-mt-28">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20" />
 
         <div className="lg:hidden max-w-2xl mx-auto">
@@ -1111,7 +1111,7 @@ const SignalIntelligenceSection = () => {
           </div>
 
           <div className="flex justify-center mb-6">
-            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary-100 via-white to-primary-50 border-2 border-indigo-500/50 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(129,140,248,0.3)]">
+            <div className="w-20 h-20 rounded-full bg-[#efe7d5] border-2 border-indigo-500/50 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(129,140,248,0.3)]">
               <span className="text-xl font-bold text-neutral-900">ICP</span>
               <span className="text-[8px] uppercase tracking-widest text-indigo-400">Core</span>
             </div>
@@ -1236,7 +1236,7 @@ const SignalIntelligenceSection = () => {
                     <circle cx="50%" cy="50%" r="48%" fill="none" stroke="url(#arcGradient)" strokeWidth="2" strokeDasharray="100 200" />
                 </svg>
 
-                <div className="absolute w-36 h-36 rounded-full bg-gradient-to-br from-primary-100 via-white to-primary-50 border-2 border-indigo-500/50 backdrop-blur-md z-20 flex flex-col items-center justify-center shadow-[0_0_60px_rgba(129,140,248,0.3)]">
+                <div className="absolute w-36 h-36 rounded-full bg-[#efe7d5] border-2 border-indigo-500/50 backdrop-blur-md z-20 flex flex-col items-center justify-center shadow-[0_0_60px_rgba(129,140,248,0.3)]">
                     <div className="absolute inset-2 rounded-full border border-indigo-400/30" />
                     <span className="text-4xl font-bold text-neutral-900">ICP</span>
                     <span className="text-[11px] uppercase tracking-widest text-indigo-400 mt-1">Core</span>
@@ -1275,8 +1275,8 @@ const SignalIntelligenceSection = () => {
                                     onClick={() => { setActiveSignal(index); setPaused(true); setTimeout(() => setPaused(false), 4000); }}
                                     className={`absolute left-1/2 top-1/2 -ml-6 -mt-6 w-12 h-12 rounded-full border-2 flex items-center justify-center group cursor-pointer z-20 will-change-transform transition-all
                                         ${isActive
-                                            ? "bg-gradient-to-br from-primary-500 to-primary-700 border-primary-300 shadow-[0_0_30px_rgba(132,92,245,0.55)] scale-110 z-30"
-                                            : "bg-white border-slate-200 hover:border-primary-400 hover:bg-primary-50"
+                                            ? "bg-gradient-to-br from-primary-500 to-primary-700 border-primary-300 shadow-[0_0_30px_rgba(150,132,96,0.55)] scale-110 z-30"
+                                            : "bg-[#efe7d5] border-slate-200 hover:border-primary-400 hover:bg-primary-50"
                                         }`}
                                     style={{
                                         transform: `translate(${x}px, ${y}px) translateZ(0)`
@@ -1284,9 +1284,9 @@ const SignalIntelligenceSection = () => {
                                 >
                                     <signal.icon className={`w-4 h-4 ${isActive ? "text-white" : "text-slate-700 group-hover:text-primary-700"}`} />
 
-                                    <div className={`absolute -bottom-9 left-1/2 -translate-x-1/2 px-2.5 py-1 bg-white border rounded-md text-[10px] whitespace-nowrap pointer-events-none font-bold tracking-wide transition-all
+                                    <div className={`absolute -bottom-9 left-1/2 -translate-x-1/2 px-2.5 py-1 bg-[#efe7d5] border rounded-md text-[10px] whitespace-nowrap pointer-events-none font-bold tracking-wide transition-all
                                         ${isActive
-                                            ? "opacity-100 border-primary-500 text-primary-700 shadow-[0_8px_22px_-8px_rgba(132,92,245,0.55)]"
+                                            ? "opacity-100 border-primary-500 text-primary-700 shadow-[0_8px_22px_-8px_rgba(150,132,96,0.55)]"
                                             : "opacity-0 group-hover:opacity-100 border-primary-200 text-primary-700"
                                         }
                                     `}>
@@ -1357,10 +1357,7 @@ const SignalIntelligenceSection = () => {
 
 const TeamSection = () => {
     return (
-        <section id="human-layer" className="py-24 px-6 bg-white relative overflow-hidden scroll-mt-28">
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px] opacity-30" />
-            <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[120px]" />
-            <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[100px]" />
+        <section id="human-layer" className="py-24 px-6 bg-[#f7f3eb] relative overflow-hidden scroll-mt-28">
 
             <div className="max-w-[1500px] mx-auto relative z-10 px-4">
                 <motion.div
@@ -1398,7 +1395,7 @@ const TeamSection = () => {
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                             whileHover={{ y: -4 }}
-                            className="group relative rounded-3xl bg-gradient-to-br from-primary-50/70 via-primary-50/40 to-white border border-primary-100 p-7 lg:p-8 transition-all hover:border-primary-300 hover:shadow-[0_22px_56px_-26px_rgba(132,92,245,0.40)] overflow-hidden"
+                            className="group relative rounded-3xl bg-[#efe7d5] border border-primary-100 p-7 lg:p-8 transition-all hover:border-primary-300 hover:shadow-[0_22px_56px_-26px_rgba(150,132,96,0.40)] overflow-hidden"
                         >
 
                             <span
@@ -1457,17 +1454,17 @@ const FinalCTASection = () => (
 
             <div
                 aria-hidden="true"
-                className="absolute -inset-6 bg-primary-300/30 blur-3xl rounded-[40px] pointer-events-none"
+                className="absolute -inset-6 bg-transparent blur-3xl rounded-[40px] pointer-events-none"
             />
 
-            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-white via-primary-50/60 to-primary-50 border border-primary-100 shadow-[0_30px_80px_-30px_rgba(132,92,245,0.30)]">
+            <div className="relative rounded-3xl overflow-hidden bg-[#efe7d5] border border-primary-100 shadow-[0_30px_80px_-30px_rgba(150,132,96,0.30)]">
 
                 <div
                     aria-hidden="true"
                     className="absolute inset-0 opacity-50 pointer-events-none"
                     style={{
                         backgroundImage:
-                            'radial-gradient(rgba(132,92,245,0.14) 1px, transparent 1px)',
+                            'radial-gradient(rgba(150,132,96,0.14) 1px, transparent 1px)',
                         backgroundSize: '26px 26px',
                         mask: 'radial-gradient(ellipse 70% 60% at center, black 30%, transparent 80%)',
                         WebkitMask:
@@ -1477,11 +1474,11 @@ const FinalCTASection = () => (
 
                 <div
                     aria-hidden="true"
-                    className="absolute -top-32 -left-16 w-72 h-72 rounded-full bg-primary-200/50 blur-3xl pointer-events-none"
+                    className="absolute -top-32 -left-16 w-72 h-72 rounded-full bg-transparent blur-3xl pointer-events-none"
                 />
                 <div
                     aria-hidden="true"
-                    className="absolute -bottom-32 -right-16 w-72 h-72 rounded-full bg-primary-100/70 blur-3xl pointer-events-none"
+                    className="absolute -bottom-32 -right-16 w-72 h-72 rounded-full bg-transparent blur-3xl pointer-events-none"
                 />
 
                 <div className="relative px-6 sm:px-12 lg:px-16 py-16 lg:py-20 text-center">
@@ -1507,7 +1504,7 @@ const FinalCTASection = () => (
                     <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
                         <a
                             href="/contact"
-                            className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-primary-700 hover:bg-primary-800 text-white text-base font-bold shadow-[0_18px_40px_-14px_rgba(132,92,245,0.55)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                            className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-primary-700 hover:bg-primary-800 text-white text-base font-bold shadow-[0_18px_40px_-14px_rgba(150,132,96,0.55)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
                         >
                             Book a Demo
                             <ArrowRight
@@ -1586,7 +1583,7 @@ const GlobalStyles = () => (
 
 const HowItWorksPage = () => {
   return (
-    <div className="bg-white text-neutral-900 font-sans selection:bg-primary-200 selection:text-primary-900">
+    <div className="bg-[#f7f3eb] text-neutral-900 font-sans selection:bg-primary-200 selection:text-primary-900">
       <GlobalStyles />
       <Navbar />
       <div className="noise-overlay" />

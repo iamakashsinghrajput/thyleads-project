@@ -22,7 +22,7 @@ const BlogPage = () => {
   const featuredPost = allPosts.find(p => p.featured);
 
   return (
-    <div className="font-polysans min-h-screen bg-white selection:bg-purple-600/20">
+    <div className="font-polysans min-h-screen bg-[#f7f3eb] selection:bg-purple-600/20">
 
       <Navbar/>
 

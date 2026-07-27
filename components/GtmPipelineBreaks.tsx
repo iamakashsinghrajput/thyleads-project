@@ -77,11 +77,11 @@ const gaps: Gap[] = [
 
 export default function GtmPipelineBreaks() {
   return (
-    <section className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-white font-sans">
+    <section className="relative py-16 lg:py-24 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
 
       <div
         aria-hidden="true"
-        className="absolute -top-32 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
+        className="absolute -top-32 left-1/2 -translate-x-1/2 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -141,7 +141,7 @@ export default function GtmPipelineBreaks() {
                   ease: easeOut,
                 }}
                 whileHover={{ y: -4 }}
-                className="group relative rounded-2xl bg-white border border-slate-200 hover:border-primary-200 px-5 py-6 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.08)] hover:shadow-[0_18px_40px_-16px_rgba(132,92,245,0.28)] transition-all overflow-hidden"
+                className="group relative rounded-2xl bg-[#efe7d5] border border-slate-200 hover:border-primary-200 px-5 py-6 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.08)] hover:shadow-[0_18px_40px_-16px_rgba(150,132,96,0.28)] transition-all overflow-hidden"
               >
 
                 <span
@@ -152,7 +152,7 @@ export default function GtmPipelineBreaks() {
                 <div className="relative mb-4">
                   <span
                     aria-hidden="true"
-                    className="absolute inset-0 -m-1 bg-primary-200/40 blur-md rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"
+                    className="absolute inset-0 -m-1 bg-transparent blur-md rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"
                   />
                   <div className="relative w-11 h-11 rounded-xl bg-primary-50 border border-primary-100 flex items-center justify-center text-primary-700 group-hover:bg-primary-100 group-hover:border-primary-200 transition-colors">
                     <Icon className="w-5 h-5" strokeWidth={2} />

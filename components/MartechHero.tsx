@@ -29,19 +29,19 @@ const itemVariants: Variants = {
 
 export default function MartechHero() {
   return (
-    <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-16 lg:pb-24 px-6 sm:px-12 overflow-hidden bg-white font-sans">
+    <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-16 lg:pb-24 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
 
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-primary-50/40 via-white to-white pointer-events-none"
+        className="absolute inset-0 bg-gradient-to-b from-[#f7f3eb] via-[#f7f3eb] to-[#f7f3eb] pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute -top-40 left-1/4 w-160 h-160 rounded-full bg-primary-100/40 blur-3xl pointer-events-none"
+        className="absolute -top-40 left-1/4 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute -bottom-40 right-1/4 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
+        className="absolute -bottom-40 right-1/4 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -81,7 +81,7 @@ export default function MartechHero() {
           >
             <a
               href="/contact"
-              className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-700 hover:bg-primary-800 text-white text-sm font-bold shadow-[0_10px_28px_-8px_rgba(132,92,245,0.50)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+              className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-700 hover:bg-primary-800 text-white text-sm font-bold shadow-[0_10px_28px_-8px_rgba(150,132,96,0.50)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
             >
               Talk to us
               <ArrowRight
@@ -130,23 +130,23 @@ function CmoLeadCard() {
 
       <div
         aria-hidden="true"
-        className="absolute -inset-8 bg-primary-300/25 blur-3xl rounded-[48px] pointer-events-none"
+        className="absolute -inset-8 bg-transparent blur-3xl rounded-[48px] pointer-events-none"
       />
 
       <div
         aria-hidden="true"
-        className="absolute inset-x-8 -bottom-3 h-3/4 rounded-3xl bg-white border border-slate-200 shadow-[0_10px_24px_-12px_rgba(15,23,42,0.10)] pointer-events-none scale-[0.92] -translate-y-3"
+        className="absolute inset-x-8 -bottom-3 h-3/4 rounded-3xl bg-[#efe7d5] border border-slate-200 shadow-[0_10px_24px_-12px_rgba(15,23,42,0.10)] pointer-events-none scale-[0.92] -translate-y-3"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-x-4 -bottom-1.5 h-3/4 rounded-3xl bg-white border border-slate-200 shadow-[0_14px_28px_-12px_rgba(15,23,42,0.12)] pointer-events-none scale-[0.96] -translate-y-1.5"
+        className="absolute inset-x-4 -bottom-1.5 h-3/4 rounded-3xl bg-[#efe7d5] border border-slate-200 shadow-[0_14px_28px_-12px_rgba(15,23,42,0.12)] pointer-events-none scale-[0.96] -translate-y-1.5"
       />
 
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.4, ease: easeOut }}
-        className="relative rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-[0_30px_70px_-30px_rgba(132,92,245,0.40)]"
+        className="relative rounded-3xl overflow-hidden bg-[#efe7d5] border border-slate-200 shadow-[0_30px_70px_-30px_rgba(150,132,96,0.40)]"
       >
 
         <div className="relative h-24 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 overflow-hidden">
@@ -186,9 +186,9 @@ function CmoLeadCard() {
           <div className="relative inline-block">
             <span
               aria-hidden="true"
-              className="absolute -inset-1.5 bg-primary-300/40 blur-md rounded-2xl pointer-events-none"
+              className="absolute -inset-1.5 bg-transparent blur-md rounded-2xl pointer-events-none"
             />
-            <div className="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 ring-4 ring-white text-white flex items-center justify-center text-xl font-extrabold tracking-[0.04em] shadow-[0_14px_30px_-10px_rgba(132,92,245,0.55)]">
+            <div className="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 ring-4 ring-white text-white flex items-center justify-center text-xl font-extrabold tracking-[0.04em] shadow-[0_14px_30px_-10px_rgba(150,132,96,0.55)]">
               RV
             </div>
 
@@ -252,7 +252,7 @@ function CmoLeadCard() {
           </ul>
         </div>
 
-        <div className="mx-6 mt-5 mb-6 rounded-2xl bg-gradient-to-br from-primary-50 to-white border border-primary-100 px-4 py-3.5">
+        <div className="mx-6 mt-5 mb-6 rounded-2xl bg-[#efe7d5] border border-primary-100 px-4 py-3.5">
           <div className="flex items-center justify-between mb-2">
             <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-slate-500">
               Intent score

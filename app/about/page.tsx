@@ -37,7 +37,7 @@ function PhotoAvatar({
   if (photo && !failed) {
     return (
       <div
-        className={`relative ${sizeClass} rounded-full overflow-hidden border-2 border-white shadow-[0_10px_30px_-12px_rgba(132,92,245,0.45)] shrink-0 bg-slate-100`}
+        className={`relative ${sizeClass} rounded-full overflow-hidden border-2 border-white shadow-[0_10px_30px_-12px_rgba(150,132,96,0.45)] shrink-0 bg-slate-100`}
       >
 
         <img
@@ -52,7 +52,7 @@ function PhotoAvatar({
 
   return (
     <div
-      className={`${sizeClass} rounded-full bg-gradient-to-br ${gradient} flex items-center justify-center text-white font-extrabold shadow-[0_10px_30px_-12px_rgba(132,92,245,0.45)] shrink-0`}
+      className={`${sizeClass} rounded-full bg-gradient-to-br ${gradient} flex items-center justify-center text-white font-extrabold shadow-[0_10px_30px_-12px_rgba(150,132,96,0.45)] shrink-0`}
     >
       {initials}
     </div>
@@ -64,7 +64,7 @@ function TopDivider() {
     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl flex items-center justify-center pointer-events-none">
       <div className="flex-1 h-px bg-gradient-to-r from-transparent via-primary-200/70 to-primary-300/80" />
       <div className="relative flex items-center justify-center mx-3">
-        <span className="absolute w-5 h-5 rounded-full bg-primary-300/30 blur-md" />
+        <span className="absolute w-5 h-5 rounded-full bg-transparent blur-md" />
         <span className="relative w-2 h-2 rounded-full bg-primary-500 shadow-[0_0_12px_rgba(94,48,208,0.6)]" />
       </div>
       <div className="flex-1 h-px bg-gradient-to-l from-transparent via-primary-200/70 to-primary-300/80" />
@@ -82,7 +82,7 @@ function WhoWeAre() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col items-center text-center"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-primary-700 shadow-sm mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#efe7d5] border border-primary-700 shadow-sm mb-6">
             <span className="text-sm font-medium text-primary-700">About Thyleads</span>
           </div>
 
@@ -157,9 +157,9 @@ function Founders() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group relative rounded-[2rem] bg-white border-2 border-transparent p-8 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.08)] hover:border-primary-100 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(132,92,245,0.20)] transition-all duration-500"
+              className="group relative rounded-[2rem] bg-[#efe7d5] border-2 border-transparent p-8 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.08)] hover:border-primary-100 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(150,132,96,0.20)] transition-all duration-500"
             >
-              <div className="absolute -right-10 -top-10 w-40 h-40 bg-primary-200/40 blur-[60px] rounded-full group-hover:bg-primary-300/50 transition-all duration-500" />
+              <div className="absolute -right-10 -top-10 w-40 h-40 bg-transparent blur-[60px] rounded-full group-hover:bg-transparent transition-all duration-500" />
 
               <div className="relative z-10">
                 <div className="flex items-center gap-4 mb-6">
@@ -234,16 +234,16 @@ function OurStory() {
   const railHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section className="relative w-full bg-white overflow-hidden flex flex-col items-center px-6 sm:px-12 font-sans py-20 lg:py-28">
+    <section className="relative w-full bg-[#f7f3eb] overflow-hidden flex flex-col items-center px-6 sm:px-12 font-sans py-20 lg:py-28">
       <TopDivider />
 
       <div
         aria-hidden="true"
-        className="absolute top-32 -left-32 w-[28rem] h-[28rem] rounded-full bg-primary-100/40 blur-3xl pointer-events-none"
+        className="absolute top-32 -left-32 w-[28rem] h-[28rem] rounded-full bg-transparent blur-3xl pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute bottom-32 -right-32 w-[28rem] h-[28rem] rounded-full bg-primary-100/40 blur-3xl pointer-events-none"
+        className="absolute bottom-32 -right-32 w-[28rem] h-[28rem] rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <div className="max-w-3xl mx-auto w-full relative z-10">
@@ -276,13 +276,13 @@ function OurStory() {
             className="absolute left-3 sm:left-5 top-2 bottom-2 w-px pointer-events-none"
             style={{
               backgroundImage:
-                "repeating-linear-gradient(to bottom, rgba(132,92,245,0.30) 0 5px, transparent 5px 11px)",
+                "repeating-linear-gradient(to bottom, rgba(150,132,96,0.30) 0 5px, transparent 5px 11px)",
             }}
           />
 
           <motion.span
             aria-hidden="true"
-            className="absolute left-3 sm:left-5 top-2 w-[2px] rounded-full bg-gradient-to-b from-primary-500 via-primary-600 to-primary-700 shadow-[0_0_10px_rgba(132,92,245,0.45)] pointer-events-none"
+            className="absolute left-3 sm:left-5 top-2 w-[2px] rounded-full bg-gradient-to-b from-primary-500 via-primary-600 to-primary-700 shadow-[0_0_10px_rgba(150,132,96,0.45)] pointer-events-none"
             style={{ height: railHeight }}
           />
 
@@ -324,11 +324,11 @@ function StoryRow({
       <div className="absolute -left-[34px] sm:-left-[44px] top-1.5 flex items-center justify-center">
         <motion.span
           aria-hidden="true"
-          className="absolute -inset-2 rounded-full bg-primary-300/40 blur-md pointer-events-none"
+          className="absolute -inset-2 rounded-full bg-transparent blur-md pointer-events-none"
           style={{ opacity: haloOpacity }}
         />
         <motion.span
-          className="relative block w-3 h-3 rounded-full bg-white border-[2.5px] border-primary-500 shadow-[0_0_0_3px_rgba(255,255,255,1),0_0_0_4px_rgba(132,92,245,0.18)]"
+          className="relative block w-3 h-3 rounded-full bg-[#efe7d5] border-[2.5px] border-primary-500 shadow-[0_0_0_3px_rgba(255,255,255,1),0_0_0_4px_rgba(150,132,96,0.18)]"
           style={{ opacity: dotOpacity, scale: dotScale }}
         />
       </div>
@@ -360,7 +360,7 @@ function NorthStar() {
         className="absolute inset-0 opacity-50 pointer-events-none"
         style={{
           backgroundImage:
-            "radial-gradient(rgba(132,92,245,0.12) 1.2px, transparent 1.2px)",
+            "radial-gradient(rgba(150,132,96,0.12) 1.2px, transparent 1.2px)",
           backgroundSize: "28px 28px",
           mask: "radial-gradient(ellipse 70% 70% at center, black 30%, transparent 90%)",
           WebkitMask:
@@ -370,11 +370,11 @@ function NorthStar() {
 
       <div
         aria-hidden="true"
-        className="absolute -top-32 -left-32 w-[36rem] h-[36rem] rounded-full bg-primary-100/40 blur-3xl pointer-events-none"
+        className="absolute -top-32 -left-32 w-[36rem] h-[36rem] rounded-full bg-transparent blur-3xl pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute -bottom-32 -right-32 w-[36rem] h-[36rem] rounded-full bg-primary-100/50 blur-3xl pointer-events-none"
+        className="absolute -bottom-32 -right-32 w-[36rem] h-[36rem] rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <div className="max-w-5xl mx-auto w-full relative z-10">
@@ -386,7 +386,7 @@ function NorthStar() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14 max-w-3xl mx-auto"
         >
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-white border border-primary-100 text-[10px] font-bold uppercase tracking-[0.25em] text-primary-600 mb-6">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#efe7d5] border border-primary-100 text-[10px] font-bold uppercase tracking-[0.25em] text-primary-600 mb-6">
             North Star
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight leading-[1.1] text-neutral-900">
@@ -413,7 +413,7 @@ function NorthStar() {
 
               <motion.span
                 aria-hidden="true"
-                className="absolute -inset-4 rounded-full bg-primary-300/40 blur-xl pointer-events-none"
+                className="absolute -inset-4 rounded-full bg-transparent blur-xl pointer-events-none"
                 animate={{ opacity: [0.35, 0.7, 0.35], scale: [1, 1.15, 1] }}
                 transition={{ duration: 4, repeat: Infinity, ease: [0.45, 0, 0.55, 1] }}
               />
@@ -425,13 +425,13 @@ function NorthStar() {
                 transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
               />
 
-              <div className="relative w-[72px] h-[72px] rounded-full bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center shadow-[0_18px_40px_-12px_rgba(132,92,245,0.55)] border-4 border-white">
+              <div className="relative w-[72px] h-[72px] rounded-full bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center shadow-[0_18px_40px_-12px_rgba(150,132,96,0.55)] border-4 border-white">
                 <Star className="w-7 h-7 text-white" strokeWidth={2.25} fill="currentColor" />
               </div>
             </div>
           </div>
 
-          <div className="relative rounded-[2rem] bg-white border border-primary-100 shadow-[0_24px_70px_-30px_rgba(132,92,245,0.30)] overflow-hidden">
+          <div className="relative rounded-[2rem] bg-[#efe7d5] border border-primary-100 shadow-[0_24px_70px_-30px_rgba(150,132,96,0.30)] overflow-hidden">
 
             <div className="absolute top-0 left-10 right-10 h-px bg-gradient-to-r from-transparent via-primary-300/70 to-transparent" />
 
@@ -562,7 +562,7 @@ function Philosophy() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16 max-w-3xl mx-auto"
         >
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-white border border-primary-100 text-[10px] font-bold uppercase tracking-[0.25em] text-primary-600 mb-6">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#efe7d5] border border-primary-100 text-[10px] font-bold uppercase tracking-[0.25em] text-primary-600 mb-6">
             Philosophy
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight leading-[1.1] text-neutral-900">
@@ -584,7 +584,7 @@ function Philosophy() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.55, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-              className={`${p.span} group relative rounded-2xl bg-white border border-slate-200 p-7 sm:p-8 hover:border-primary-200 hover:-translate-y-1 hover:shadow-[0_18px_50px_-22px_rgba(132,92,245,0.30)] transition-all duration-500 overflow-hidden`}
+              className={`${p.span} group relative rounded-2xl bg-[#efe7d5] border border-slate-200 p-7 sm:p-8 hover:border-primary-200 hover:-translate-y-1 hover:shadow-[0_18px_50px_-22px_rgba(150,132,96,0.30)] transition-all duration-500 overflow-hidden`}
             >
 
               <div className="absolute top-0 left-5 right-5 h-px bg-gradient-to-r from-transparent via-primary-200/80 to-transparent" />
@@ -701,11 +701,11 @@ function Team() {
 
       <div
         aria-hidden="true"
-        className="absolute top-1/3 -left-32 w-[28rem] h-[28rem] rounded-full bg-primary-100/40 blur-3xl pointer-events-none"
+        className="absolute top-1/3 -left-32 w-[28rem] h-[28rem] rounded-full bg-transparent blur-3xl pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute bottom-0 -right-32 w-[32rem] h-[32rem] rounded-full bg-primary-100/40 blur-3xl pointer-events-none"
+        className="absolute bottom-0 -right-32 w-[32rem] h-[32rem] rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
@@ -717,7 +717,7 @@ function Team() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14 max-w-3xl mx-auto"
         >
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-white border border-primary-100 text-[10px] font-bold uppercase tracking-[0.25em] text-primary-600 mb-6">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#efe7d5] border border-primary-100 text-[10px] font-bold uppercase tracking-[0.25em] text-primary-600 mb-6">
             The Team
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight leading-[1.1] text-neutral-900">
@@ -745,14 +745,14 @@ function Team() {
               }}
               className={`group relative rounded-[1.75rem] p-6 sm:p-7 hover:-translate-y-2 transition-all duration-500 overflow-hidden ${
                 member.featured
-                  ? "bg-gradient-to-br from-primary-50 via-white to-primary-50/40 border-2 border-gray-300 shadow-[0_18px_44px_-18px_rgba(132,92,245,0.45)] hover:border-gray-500 hover:shadow-[0_28px_70px_-22px_rgba(132,92,245,0.55)]"
-                  : "bg-white border border-slate-200 hover:border-primary-200 hover:shadow-[0_24px_60px_-22px_rgba(132,92,245,0.32)]"
+                  ? "bg-[#efe7d5] border-2 border-gray-300 shadow-[0_18px_44px_-18px_rgba(150,132,96,0.45)] hover:border-gray-500 hover:shadow-[0_28px_70px_-22px_rgba(150,132,96,0.55)]"
+                  : "bg-[#efe7d5] border border-slate-200 hover:border-primary-200 hover:shadow-[0_24px_60px_-22px_rgba(150,132,96,0.32)]"
               }`}
             >
 
               <div
                 aria-hidden="true"
-                className={`absolute -top-20 -right-12 w-44 h-44 rounded-full bg-primary-100/60 blur-3xl pointer-events-none transition-opacity duration-500 ${
+                className={`absolute -top-20 -right-12 w-44 h-44 rounded-full bg-transparent blur-3xl pointer-events-none transition-opacity duration-500 ${
                   member.featured ? "opacity-100" : "opacity-0 group-hover:opacity-100"
                 }`}
               />
@@ -839,16 +839,16 @@ function Team() {
 
 function ClosingCTA() {
   return (
-    <section className="relative py-20 lg:py-28 px-6 sm:px-12 overflow-hidden bg-gradient-to-br from-primary-50 via-white to-primary-50 font-sans">
+    <section className="relative py-20 lg:py-28 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
       <TopDivider />
 
       <div
         aria-hidden="true"
-        className="absolute -top-32 left-1/4 w-[36rem] h-[36rem] rounded-full bg-primary-200/40 blur-3xl pointer-events-none"
+        className="absolute -top-32 left-1/4 w-[36rem] h-[36rem] rounded-full bg-transparent blur-3xl pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute -bottom-32 right-1/4 w-[36rem] h-[36rem] rounded-full bg-primary-100/60 blur-3xl pointer-events-none"
+        className="absolute -bottom-32 right-1/4 w-[36rem] h-[36rem] rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <div
@@ -856,7 +856,7 @@ function ClosingCTA() {
         className="absolute inset-0 opacity-40 pointer-events-none"
         style={{
           backgroundImage:
-            "radial-gradient(rgba(132,92,245,0.12) 1px, transparent 1px)",
+            "radial-gradient(rgba(150,132,96,0.12) 1px, transparent 1px)",
           backgroundSize: "26px 26px",
           mask: "radial-gradient(ellipse 70% 60% at center, black 30%, transparent 80%)",
           WebkitMask:
@@ -885,7 +885,7 @@ function ClosingCTA() {
         <div className="mt-9 flex items-center justify-center">
           <a
             href="/contact"
-            className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white hover:bg-primary-50 text-primary-700 text-base font-bold shadow-[0_18px_40px_-14px_rgba(132,92,245,0.30)] border border-primary-100 hover:border-primary-200 transition-all"
+            className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white hover:bg-primary-50 text-primary-700 text-base font-bold shadow-[0_18px_40px_-14px_rgba(150,132,96,0.30)] border border-primary-100 hover:border-primary-200 transition-all"
           >
             Book a Meeting
             <CalendarDays className="w-4 h-4 text-primary-600 group-hover:translate-x-0.5 transition-transform" strokeWidth={2.25} />

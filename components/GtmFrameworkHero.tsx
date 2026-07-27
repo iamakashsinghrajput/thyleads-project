@@ -38,19 +38,19 @@ const stats = [
 
 export default function GtmFrameworkHero() {
   return (
-    <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-16 lg:pb-24 px-6 sm:px-12 overflow-hidden bg-white font-sans">
+    <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-16 lg:pb-24 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
 
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-primary-50/40 via-white to-white pointer-events-none"
+        className="absolute inset-0 bg-gradient-to-b from-[#f7f3eb] via-[#f7f3eb] to-[#f7f3eb] pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute -top-40 left-1/4 w-160 h-160 rounded-full bg-primary-100/40 blur-3xl pointer-events-none"
+        className="absolute -top-40 left-1/4 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
       <div
         aria-hidden="true"
-        className="absolute -bottom-40 right-1/4 w-160 h-160 rounded-full bg-primary-100/30 blur-3xl pointer-events-none"
+        className="absolute -bottom-40 right-1/4 w-160 h-160 rounded-full bg-transparent blur-3xl pointer-events-none"
       />
 
       <motion.div
@@ -101,7 +101,7 @@ export default function GtmFrameworkHero() {
           >
             <a
               href="/contact"
-              className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-primary-700 hover:bg-primary-800 text-white text-sm font-bold shadow-[0_14px_34px_-10px_rgba(132,92,245,0.55)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+              className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-primary-700 hover:bg-primary-800 text-white text-sm font-bold shadow-[0_14px_34px_-10px_rgba(150,132,96,0.55)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
             >
               Talk to us
               <ArrowRight
@@ -159,7 +159,7 @@ export default function GtmFrameworkHero() {
                   ease: easeOut,
                 }}
                 whileHover={{ y: -4 }}
-                className="group relative rounded-2xl bg-white border border-slate-200 hover:border-primary-200 px-5 py-6 sm:px-6 sm:py-7 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.08)] hover:shadow-[0_18px_40px_-16px_rgba(132,92,245,0.28)] transition-all overflow-hidden"
+                className="group relative rounded-2xl bg-[#efe7d5] border border-slate-200 hover:border-primary-200 px-5 py-6 sm:px-6 sm:py-7 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.08)] hover:shadow-[0_18px_40px_-16px_rgba(150,132,96,0.28)] transition-all overflow-hidden"
               >
 
                 <span
