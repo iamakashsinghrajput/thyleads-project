@@ -176,7 +176,7 @@ export default function FintechHero() {
                       ease: easeOut,
                     }}
                     whileHover={{ y: -4 }}
-                    className="relative h-full rounded-2xl bg-[#efe7d5] border border-slate-200 px-4 py-5 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.10)] hover:border-primary-200 hover:shadow-[0_12px_28px_-12px_rgba(150,132,96,0.20)] transition-all"
+                    className="relative h-full rounded-2xl bg-white border border-slate-200 px-4 py-5 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.10)] hover:border-primary-200 hover:shadow-[0_12px_28px_-12px_rgba(150,132,96,0.20)] transition-all"
                   >
 
                     <span className="absolute top-3 right-3 text-[10px] font-bold tabular-nums text-slate-300">
@@ -224,7 +224,7 @@ export default function FintechHero() {
                           delay: stageDelay + 0.4,
                           ease: easeOut,
                         }}
-                        className="w-6 h-6 rounded-full bg-[#efe7d5] border border-primary-200 flex items-center justify-center text-primary-600 shadow-sm"
+                        className="w-6 h-6 rounded-full bg-white border border-primary-200 flex items-center justify-center text-primary-600 shadow-sm"
                       >
                         <ArrowRight
                           className="w-3 h-3"
@@ -280,7 +280,7 @@ export default function FintechHero() {
                   className="absolute -inset-2 bg-transparent blur-2xl rounded-3xl pointer-events-none"
                 />
 
-                <div className="relative h-full rounded-2xl bg-[#efe7d5] border-2 border-primary-300 text-primary-900 px-4 py-5 shadow-[0_18px_40px_-12px_rgba(150,132,96,0.25)] overflow-hidden">
+                <div className="relative h-full rounded-2xl bg-white border-2 border-primary-300 text-primary-900 px-4 py-5 shadow-[0_18px_40px_-12px_rgba(150,132,96,0.25)] overflow-hidden">
 
                   <div
                     aria-hidden="true"
@@ -299,7 +299,7 @@ export default function FintechHero() {
                     04
                   </span>
 
-                  <div className="relative w-10 h-10 rounded-xl bg-[#efe7d5] border border-primary-200 flex items-center justify-center text-primary-700 shadow-sm mb-3">
+                  <div className="relative w-10 h-10 rounded-xl bg-white border border-primary-200 flex items-center justify-center text-primary-700 shadow-sm mb-3">
                     <Crown className="w-4 h-4" strokeWidth={2} />
                   </div>
 

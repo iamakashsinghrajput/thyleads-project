@@ -94,7 +94,7 @@ export default function AgentsArchitecture() {
 
         <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-14">
           <motion.div variants={itemVariants} className="mb-5">
-            <span className="inline-block px-3 py-1 rounded-full bg-[#efe7d5] border border-primary-200 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-700">
+            <span className="inline-block px-3 py-1 rounded-full bg-white border border-primary-200 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-700">
               How the System is Built
             </span>
           </motion.div>
@@ -137,7 +137,7 @@ export default function AgentsArchitecture() {
             }}
           />
 
-          <div className="relative rounded-3xl overflow-hidden bg-[#efe7d5] border border-primary-200 px-8 py-6 text-center shadow-[0_22px_56px_-22px_rgba(150,132,96,0.30)]">
+          <div className="relative rounded-3xl overflow-hidden bg-white border border-primary-200 px-8 py-6 text-center shadow-[0_22px_56px_-22px_rgba(150,132,96,0.30)]">
 
             <span
               aria-hidden="true"
@@ -188,7 +188,7 @@ export default function AgentsArchitecture() {
 
         <motion.div
           variants={itemVariants}
-          className="mx-auto max-w-2xl relative rounded-2xl overflow-hidden bg-[#efe7d5] border border-primary-300 px-6 py-5 shadow-[0_18px_44px_-20px_rgba(150,132,96,0.45)]"
+          className="mx-auto max-w-2xl relative rounded-2xl overflow-hidden bg-white border border-primary-300 px-6 py-5 shadow-[0_18px_44px_-20px_rgba(150,132,96,0.45)]"
         >
           <span
             aria-hidden="true"
@@ -239,7 +239,7 @@ function ClusterCard({ cluster, index }: { cluster: Cluster; index: number }) {
         ease: easeOut,
       }}
       whileHover={{ y: -3 }}
-      className="group relative rounded-2xl bg-[#efe7d5] border border-slate-200 hover:border-primary-200 p-5 shadow-[0_4px_18px_-10px_rgba(15,23,42,0.08)] hover:shadow-[0_18px_40px_-20px_rgba(150,132,96,0.32)] transition-shadow overflow-hidden"
+      className="group relative rounded-2xl bg-white border border-slate-200 hover:border-primary-200 p-5 shadow-[0_4px_18px_-10px_rgba(15,23,42,0.08)] hover:shadow-[0_18px_40px_-20px_rgba(150,132,96,0.32)] transition-shadow overflow-hidden"
     >
       <span
         aria-hidden="true"

@@ -82,7 +82,7 @@ function WhoWeAre() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col items-center text-center"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#efe7d5] border border-primary-700 shadow-sm mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-primary-700 shadow-sm mb-6">
             <span className="text-sm font-medium text-primary-700">About Thyleads</span>
           </div>
 
@@ -157,7 +157,7 @@ function Founders() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group relative rounded-[2rem] bg-[#efe7d5] border-2 border-transparent p-8 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.08)] hover:border-primary-100 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(150,132,96,0.20)] transition-all duration-500"
+              className="group relative rounded-[2rem] bg-white border-2 border-transparent p-8 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.08)] hover:border-primary-100 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(150,132,96,0.20)] transition-all duration-500"
             >
               <div className="absolute -right-10 -top-10 w-40 h-40 bg-transparent blur-[60px] rounded-full group-hover:bg-transparent transition-all duration-500" />
 
@@ -328,7 +328,7 @@ function StoryRow({
           style={{ opacity: haloOpacity }}
         />
         <motion.span
-          className="relative block w-3 h-3 rounded-full bg-[#efe7d5] border-[2.5px] border-primary-500 shadow-[0_0_0_3px_rgba(255,255,255,1),0_0_0_4px_rgba(150,132,96,0.18)]"
+          className="relative block w-3 h-3 rounded-full bg-white border-[2.5px] border-primary-500 shadow-[0_0_0_3px_rgba(255,255,255,1),0_0_0_4px_rgba(150,132,96,0.18)]"
           style={{ opacity: dotOpacity, scale: dotScale }}
         />
       </div>
@@ -386,7 +386,7 @@ function NorthStar() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14 max-w-3xl mx-auto"
         >
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#efe7d5] border border-primary-100 text-[10px] font-bold uppercase tracking-[0.25em] text-primary-600 mb-6">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-white border border-primary-100 text-[10px] font-bold uppercase tracking-[0.25em] text-primary-600 mb-6">
             North Star
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight leading-[1.1] text-neutral-900">
@@ -431,7 +431,7 @@ function NorthStar() {
             </div>
           </div>
 
-          <div className="relative rounded-[2rem] bg-[#efe7d5] border border-primary-100 shadow-[0_24px_70px_-30px_rgba(150,132,96,0.30)] overflow-hidden">
+          <div className="relative rounded-[2rem] bg-white border border-primary-100 shadow-[0_24px_70px_-30px_rgba(150,132,96,0.30)] overflow-hidden">
 
             <div className="absolute top-0 left-10 right-10 h-px bg-gradient-to-r from-transparent via-primary-300/70 to-transparent" />
 
@@ -562,7 +562,7 @@ function Philosophy() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16 max-w-3xl mx-auto"
         >
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#efe7d5] border border-primary-100 text-[10px] font-bold uppercase tracking-[0.25em] text-primary-600 mb-6">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-white border border-primary-100 text-[10px] font-bold uppercase tracking-[0.25em] text-primary-600 mb-6">
             Philosophy
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight leading-[1.1] text-neutral-900">
@@ -584,7 +584,7 @@ function Philosophy() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.55, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-              className={`${p.span} group relative rounded-2xl bg-[#efe7d5] border border-slate-200 p-7 sm:p-8 hover:border-primary-200 hover:-translate-y-1 hover:shadow-[0_18px_50px_-22px_rgba(150,132,96,0.30)] transition-all duration-500 overflow-hidden`}
+              className={`${p.span} group relative rounded-2xl bg-white border border-slate-200 p-7 sm:p-8 hover:border-primary-200 hover:-translate-y-1 hover:shadow-[0_18px_50px_-22px_rgba(150,132,96,0.30)] transition-all duration-500 overflow-hidden`}
             >
 
               <div className="absolute top-0 left-5 right-5 h-px bg-gradient-to-r from-transparent via-primary-200/80 to-transparent" />
@@ -717,7 +717,7 @@ function Team() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14 max-w-3xl mx-auto"
         >
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#efe7d5] border border-primary-100 text-[10px] font-bold uppercase tracking-[0.25em] text-primary-600 mb-6">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-white border border-primary-100 text-[10px] font-bold uppercase tracking-[0.25em] text-primary-600 mb-6">
             The Team
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight leading-[1.1] text-neutral-900">
@@ -745,8 +745,8 @@ function Team() {
               }}
               className={`group relative rounded-[1.75rem] p-6 sm:p-7 hover:-translate-y-2 transition-all duration-500 overflow-hidden ${
                 member.featured
-                  ? "bg-[#efe7d5] border-2 border-gray-300 shadow-[0_18px_44px_-18px_rgba(150,132,96,0.45)] hover:border-gray-500 hover:shadow-[0_28px_70px_-22px_rgba(150,132,96,0.55)]"
-                  : "bg-[#efe7d5] border border-slate-200 hover:border-primary-200 hover:shadow-[0_24px_60px_-22px_rgba(150,132,96,0.32)]"
+                  ? "bg-white border-2 border-gray-300 shadow-[0_18px_44px_-18px_rgba(150,132,96,0.45)] hover:border-gray-500 hover:shadow-[0_28px_70px_-22px_rgba(150,132,96,0.55)]"
+                  : "bg-white border border-slate-200 hover:border-primary-200 hover:shadow-[0_24px_60px_-22px_rgba(150,132,96,0.32)]"
               }`}
             >
 

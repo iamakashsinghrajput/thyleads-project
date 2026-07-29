@@ -42,7 +42,7 @@ export default function WhyThyleadsCTA() {
 
         <motion.div
           variants={itemVariants}
-          className="relative rounded-4xl bg-[#efe7d5] ring-1 ring-primary-200/60 overflow-hidden shadow-[0_30px_80px_-30px_rgba(150,132,96,0.22)]"
+          className="relative rounded-4xl bg-white ring-1 ring-primary-200/60 overflow-hidden shadow-[0_30px_80px_-30px_rgba(150,132,96,0.22)]"
         >
 
           <div
@@ -70,7 +70,7 @@ export default function WhyThyleadsCTA() {
           <div className="relative px-6 sm:px-10 lg:px-16 py-16 lg:py-24 text-center">
 
             <motion.div variants={itemVariants} className="mb-6">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#efe7d5] border border-primary-200 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-700 shadow-sm">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-primary-200 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-700 shadow-sm">
                 Ready to scale
               </span>
             </motion.div>

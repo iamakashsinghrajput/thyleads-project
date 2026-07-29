@@ -101,7 +101,7 @@ export default function FintechSocialProof() {
             variants={itemVariants}
             whileHover={{ y: -3 }}
             transition={{ duration: 0.3 }}
-            className="group relative rounded-3xl bg-[#efe7d5] border border-slate-200 p-6 lg:p-8 shadow-[0_24px_60px_-30px_rgba(15,23,42,0.12)] hover:shadow-[0_30px_70px_-30px_rgba(150,132,96,0.20)] hover:border-primary-200 transition-all"
+            className="group relative rounded-3xl bg-white border border-slate-200 p-6 lg:p-8 shadow-[0_24px_60px_-30px_rgba(15,23,42,0.12)] hover:shadow-[0_30px_70px_-30px_rgba(150,132,96,0.20)] hover:border-primary-200 transition-all"
           >
 
             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-50 border border-primary-200 text-[10px] font-bold uppercase tracking-[0.18em] text-primary-700 mb-5">
@@ -168,7 +168,7 @@ export default function FintechSocialProof() {
                   ease: easeOut,
                 }}
                 whileHover={{ y: -3 }}
-                className="group relative rounded-2xl bg-[#efe7d5] border border-slate-200 p-5 lg:p-6 hover:border-primary-200 hover:shadow-[0_18px_40px_-20px_rgba(150,132,96,0.20)] transition-all"
+                className="group relative rounded-2xl bg-white border border-slate-200 p-5 lg:p-6 hover:border-primary-200 hover:shadow-[0_18px_40px_-20px_rgba(150,132,96,0.20)] transition-all"
               >
 
                 <Quote

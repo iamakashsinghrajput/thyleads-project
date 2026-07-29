@@ -333,7 +333,7 @@ function ClusterSection({
                 {cluster.agents.map(a => (
                   <article
                     key={a.name}
-                    className="relative rounded-xl bg-[#efe7d5] border border-primary-100 p-4 sm:p-5 overflow-hidden"
+                    className="relative rounded-xl bg-white border border-primary-100 p-4 sm:p-5 overflow-hidden"
                   >
                     <span
                       aria-hidden="true"
@@ -354,7 +354,7 @@ function ClusterSection({
                       {a.outputs.map(o => (
                         <span
                           key={o}
-                          className="inline-flex items-center px-2 py-0.5 rounded-md bg-[#efe7d5] border border-primary-200 text-primary-700 text-[10px] font-semibold"
+                          className="inline-flex items-center px-2 py-0.5 rounded-md bg-white border border-primary-200 text-primary-700 text-[10px] font-semibold"
                         >
                           {o}
                         </span>

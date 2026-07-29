@@ -105,7 +105,7 @@ export default function AgentsToolLayer() {
                 ease: easeOut,
               }}
               whileHover={{ y: -3 }}
-              className="group relative rounded-2xl bg-[#efe7d5] border border-slate-200 hover:border-primary-200 p-4 shadow-[0_4px_14px_-8px_rgba(15,23,42,0.06)] hover:shadow-[0_18px_36px_-22px_rgba(150,132,96,0.32)] transition-all overflow-hidden"
+              className="group relative rounded-2xl bg-white border border-slate-200 hover:border-primary-200 p-4 shadow-[0_4px_14px_-8px_rgba(15,23,42,0.06)] hover:shadow-[0_18px_36px_-22px_rgba(150,132,96,0.32)] transition-all overflow-hidden"
             >
               <span
                 aria-hidden="true"

@@ -43,7 +43,7 @@ export default function AgentsHumanLayer() {
         className="relative z-10 max-w-4xl mx-auto text-center"
       >
         <motion.div variants={itemVariants} className="mb-5">
-          <span className="inline-block px-3 py-1 rounded-full bg-[#efe7d5] border border-primary-200 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-700">
+          <span className="inline-block px-3 py-1 rounded-full bg-white border border-primary-200 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-700">
             The Human Layer
           </span>
         </motion.div>
@@ -64,7 +64,7 @@ export default function AgentsHumanLayer() {
         >
           {roles.map((role, i) => (
             <div key={role.name} className="flex items-center gap-2 sm:gap-3">
-              <div className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-[#efe7d5] border border-primary-200 shadow-[0_6px_18px_-8px_rgba(150,132,96,0.30)]">
+              <div className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-white border border-primary-200 shadow-[0_6px_18px_-8px_rgba(150,132,96,0.30)]">
                 <span className="w-5 h-5 rounded-full bg-primary-100 text-primary-700 text-[10px] font-extrabold flex items-center justify-center">
                   {role.letter}
                 </span>

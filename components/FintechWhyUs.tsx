@@ -145,7 +145,7 @@ export default function FintechWhyUs() {
 
         <motion.div variants={itemVariants} className="relative">
 
-          <div className="relative rounded-3xl bg-[#efe7d5] border border-primary-100 p-5 sm:p-6 overflow-hidden shadow-[0_24px_60px_-30px_rgba(150,132,96,0.22)]">
+          <div className="relative rounded-3xl bg-white border border-primary-100 p-5 sm:p-6 overflow-hidden shadow-[0_24px_60px_-30px_rgba(150,132,96,0.22)]">
 
             <div
               aria-hidden="true"
@@ -190,7 +190,7 @@ export default function FintechWhyUs() {
                       ease: easeOut,
                     }}
                     whileHover={{ y: -3 }}
-                    className="group relative rounded-2xl bg-[#efe7d5] border border-primary-100 px-3.5 py-3.5 hover:border-primary-200 hover:shadow-[0_10px_26px_-12px_rgba(150,132,96,0.28)] transition-all"
+                    className="group relative rounded-2xl bg-white border border-primary-100 px-3.5 py-3.5 hover:border-primary-200 hover:shadow-[0_10px_26px_-12px_rgba(150,132,96,0.28)] transition-all"
                   >
 
                     <div className="flex items-center gap-2 mb-2.5">
@@ -207,7 +207,7 @@ export default function FintechWhyUs() {
 
                         <span
                           aria-hidden="true"
-                          className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-[#efe7d5] border border-primary-100 flex items-center justify-center text-primary-700 shadow-sm"
+                          className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-white border border-primary-100 flex items-center justify-center text-primary-700 shadow-sm"
                         >
                           <Icon className="w-2.5 h-2.5" strokeWidth={2.5} />
                         </span>
@@ -241,7 +241,7 @@ export default function FintechWhyUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.7, ease: easeOut }}
-              className="relative mt-4 flex items-center gap-2 px-3 py-2.5 rounded-xl bg-[#efe7d5] border border-primary-100"
+              className="relative mt-4 flex items-center gap-2 px-3 py-2.5 rounded-xl bg-white border border-primary-100"
             >
               <div className="shrink-0 w-7 h-7 rounded-lg bg-gradient-to-br from-primary-600 to-primary-800 text-white flex items-center justify-center">
                 <ArrowRight className="w-3.5 h-3.5" strokeWidth={2.5} />

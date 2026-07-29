@@ -103,14 +103,14 @@ export default function HrtechHowWeHelp() {
                 ease: easeOut,
               }}
               whileHover={{ y: -4 }}
-              className="group relative rounded-2xl bg-[#efe7d5] border border-primary-100 hover:border-primary-200 p-7 sm:p-8 shadow-[0_4px_18px_-10px_rgba(150,132,96,0.18)] hover:shadow-[0_24px_52px_-22px_rgba(150,132,96,0.40)] transition-all overflow-hidden"
+              className="group relative rounded-2xl bg-white border border-primary-100 hover:border-primary-200 p-7 sm:p-8 shadow-[0_4px_18px_-10px_rgba(150,132,96,0.18)] hover:shadow-[0_24px_52px_-22px_rgba(150,132,96,0.40)] transition-all overflow-hidden"
             >
               <span
                 aria-hidden="true"
                 className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-primary-300 to-transparent"
               />
 
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#efe7d5] border border-primary-200 text-[10px] font-bold uppercase tracking-[0.22em] text-primary-700 mb-6">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-white border border-primary-200 text-[10px] font-bold uppercase tracking-[0.22em] text-primary-700 mb-6">
                 {move.tag}
               </div>
 

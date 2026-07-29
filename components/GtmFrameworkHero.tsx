@@ -159,7 +159,7 @@ export default function GtmFrameworkHero() {
                   ease: easeOut,
                 }}
                 whileHover={{ y: -4 }}
-                className="group relative rounded-2xl bg-[#efe7d5] border border-slate-200 hover:border-primary-200 px-5 py-6 sm:px-6 sm:py-7 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.08)] hover:shadow-[0_18px_40px_-16px_rgba(150,132,96,0.28)] transition-all overflow-hidden"
+                className="group relative rounded-2xl bg-white border border-slate-200 hover:border-primary-200 px-5 py-6 sm:px-6 sm:py-7 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.08)] hover:shadow-[0_18px_40px_-16px_rgba(150,132,96,0.28)] transition-all overflow-hidden"
               >
 
                 <span

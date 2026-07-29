@@ -135,18 +135,18 @@ function CmoLeadCard() {
 
       <div
         aria-hidden="true"
-        className="absolute inset-x-8 -bottom-3 h-3/4 rounded-3xl bg-[#efe7d5] border border-slate-200 shadow-[0_10px_24px_-12px_rgba(15,23,42,0.10)] pointer-events-none scale-[0.92] -translate-y-3"
+        className="absolute inset-x-8 -bottom-3 h-3/4 rounded-3xl bg-white border border-slate-200 shadow-[0_10px_24px_-12px_rgba(15,23,42,0.10)] pointer-events-none scale-[0.92] -translate-y-3"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-x-4 -bottom-1.5 h-3/4 rounded-3xl bg-[#efe7d5] border border-slate-200 shadow-[0_14px_28px_-12px_rgba(15,23,42,0.12)] pointer-events-none scale-[0.96] -translate-y-1.5"
+        className="absolute inset-x-4 -bottom-1.5 h-3/4 rounded-3xl bg-white border border-slate-200 shadow-[0_14px_28px_-12px_rgba(15,23,42,0.12)] pointer-events-none scale-[0.96] -translate-y-1.5"
       />
 
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.4, ease: easeOut }}
-        className="relative rounded-3xl overflow-hidden bg-[#efe7d5] border border-slate-200 shadow-[0_30px_70px_-30px_rgba(150,132,96,0.40)]"
+        className="relative rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-[0_30px_70px_-30px_rgba(150,132,96,0.40)]"
       >
 
         <div className="relative h-24 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 overflow-hidden">
@@ -252,7 +252,7 @@ function CmoLeadCard() {
           </ul>
         </div>
 
-        <div className="mx-6 mt-5 mb-6 rounded-2xl bg-[#efe7d5] border border-primary-100 px-4 py-3.5">
+        <div className="mx-6 mt-5 mb-6 rounded-2xl bg-white border border-primary-100 px-4 py-3.5">
           <div className="flex items-center justify-between mb-2">
             <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-slate-500">
               Intent score

@@ -90,7 +90,7 @@ export default function HrtechWhyUs() {
             className="absolute -inset-6 bg-transparent blur-3xl rounded-[40px] pointer-events-none"
           />
 
-          <div className="relative rounded-3xl bg-[#efe7d5] border border-primary-100 p-5 sm:p-6 shadow-[0_22px_56px_-26px_rgba(150,132,96,0.32)]">
+          <div className="relative rounded-3xl bg-white border border-primary-100 p-5 sm:p-6 shadow-[0_22px_56px_-26px_rgba(150,132,96,0.32)]">
             <span
               aria-hidden="true"
               className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-primary-300 to-transparent"
@@ -111,7 +111,7 @@ export default function HrtechWhyUs() {
                       ease: easeOut,
                     }}
                     whileHover={{ x: 4 }}
-                    className="group relative flex items-center gap-4 px-4 py-3.5 rounded-2xl bg-[#efe7d5] border border-slate-200 hover:border-primary-200 hover:shadow-[0_10px_28px_-14px_rgba(150,132,96,0.32)] transition-all overflow-hidden"
+                    className="group relative flex items-center gap-4 px-4 py-3.5 rounded-2xl bg-white border border-slate-200 hover:border-primary-200 hover:shadow-[0_10px_28px_-14px_rgba(150,132,96,0.32)] transition-all overflow-hidden"
                   >
                     <span
                       aria-hidden="true"

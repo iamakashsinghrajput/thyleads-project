@@ -134,7 +134,7 @@ export default function GtmImpact() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 + i * 0.1, ease: easeOut }}
               whileHover={{ y: -4 }}
-              className="group relative rounded-2xl bg-[#efe7d5] border border-slate-200 hover:border-primary-200 p-6 sm:p-8 shadow-[0_4px_18px_-10px_rgba(15,23,42,0.08)] hover:shadow-[0_28px_56px_-22px_rgba(150,132,96,0.32)] transition-all overflow-hidden"
+              className="group relative rounded-2xl bg-white border border-slate-200 hover:border-primary-200 p-6 sm:p-8 shadow-[0_4px_18px_-10px_rgba(15,23,42,0.08)] hover:shadow-[0_28px_56px_-22px_rgba(150,132,96,0.32)] transition-all overflow-hidden"
             >
 
               <span
@@ -162,7 +162,7 @@ export default function GtmImpact() {
                     aria-hidden="true"
                     className="absolute -inset-1 bg-transparent blur-md rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"
                   />
-                  <div className="relative w-12 h-12 rounded-xl bg-[#efe7d5] border border-slate-200 ring-1 ring-white shadow-[0_8px_22px_-8px_rgba(150,132,96,0.30)] flex items-center justify-center overflow-hidden p-2">
+                  <div className="relative w-12 h-12 rounded-xl bg-white border border-slate-200 ring-1 ring-white shadow-[0_8px_22px_-8px_rgba(150,132,96,0.30)] flex items-center justify-center overflow-hidden p-2">
                     <Image
                       src={cs.logo}
                       alt={cs.brand}

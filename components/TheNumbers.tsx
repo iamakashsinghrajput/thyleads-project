@@ -193,7 +193,7 @@ function StatCell({ stat, index }: { stat: Stat; index: number }) {
       className="group relative px-6 py-8 lg:px-8 lg:py-10 flex flex-col items-center text-center transition-colors hover:bg-primary-50/30"
     >
 
-      <div className="mb-3 inline-flex items-center justify-center w-9 h-9 rounded-lg bg-[#efe7d5] border border-primary-100 text-primary-600 shadow-sm group-hover:bg-primary-50 group-hover:border-primary-200 transition-colors">
+      <div className="mb-3 inline-flex items-center justify-center w-9 h-9 rounded-lg bg-white border border-primary-100 text-primary-600 shadow-sm group-hover:bg-primary-50 group-hover:border-primary-200 transition-colors">
         <Icon className="w-4 h-4" strokeWidth={2} />
       </div>
 

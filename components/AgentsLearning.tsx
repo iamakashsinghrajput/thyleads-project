@@ -60,7 +60,7 @@ export default function AgentsLearning() {
       >
         <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-14">
           <motion.div variants={itemVariants} className="mb-5">
-            <span className="inline-block px-3 py-1 rounded-full bg-[#efe7d5] border border-primary-200 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-700">
+            <span className="inline-block px-3 py-1 rounded-full bg-white border border-primary-200 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-700">
               How the Learning Works
             </span>
           </motion.div>
@@ -129,7 +129,7 @@ export default function AgentsLearning() {
                       style={{ transformOrigin: '50% 50%' }}
                     />
                   ))}
-                  <div className="relative w-14 h-14 rounded-full bg-[#efe7d5] border-2 border-primary-300 flex items-center justify-center text-primary-700 text-xl font-extrabold shadow-[0_8px_22px_-6px_rgba(150,132,96,0.35)]">
+                  <div className="relative w-14 h-14 rounded-full bg-white border-2 border-primary-300 flex items-center justify-center text-primary-700 text-xl font-extrabold shadow-[0_8px_22px_-6px_rgba(150,132,96,0.35)]">
                     {step.num}
                   </div>
                 </div>

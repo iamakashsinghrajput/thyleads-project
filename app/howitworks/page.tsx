@@ -390,7 +390,7 @@ const SystemLayerSection = () => {
                     {systemStages.map((stage, index) => (
                         <React.Fragment key={index}>
                             <div
-                                className={`flex items-start gap-3 px-3.5 py-2.5 rounded-xl bg-[#efe7d5] border transition-all duration-500 ${
+                                className={`flex items-start gap-3 px-3.5 py-2.5 rounded-xl bg-white border transition-all duration-500 ${
                                     activeStage === index
                                         ? "border-primary-200 shadow-[0_14px_36px_-20px_rgba(150,132,96,0.40)] -translate-y-0.5"
                                         : "border-slate-200"
@@ -455,7 +455,7 @@ const SystemLayerSection = () => {
                     </div>
                 </div>
 
-                <div className="relative flex-1 bg-[#efe7d5]">
+                <div className="relative flex-1 bg-white">
                     <div className="absolute inset-0 bg-[linear-gradient(rgba(150,132,96,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(150,132,96,0.06)_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_85%)]" />
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(150,132,96,0.18),transparent_70%)]" />
 
@@ -491,7 +491,7 @@ const SystemLayerSection = () => {
                                     transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
                                     className={`absolute inset-[-25px] rounded-full border border-dotted transition-colors duration-500 ${activeStage >= 1 && activeStage <= 4 ? "border-primary-300/60" : "border-slate-200"}`}
                                 />
-                                <div className="h-24 w-24 rounded-full bg-[#efe7d5] border border-primary-200 flex items-center justify-center shadow-[0_18px_44px_-18px_rgba(150,132,96,0.45)] relative z-20">
+                                <div className="h-24 w-24 rounded-full bg-white border border-primary-200 flex items-center justify-center shadow-[0_18px_44px_-18px_rgba(150,132,96,0.45)] relative z-20">
                                     <div className={`absolute inset-0 rounded-full bg-transparent blur-xl transition-opacity duration-300 ${activeStage >= 1 && activeStage <= 4 ? "opacity-100" : "opacity-0"}`} />
                                     <Cpu className={`w-8 h-8 transition-all duration-300 ${activeStage >= 1 && activeStage <= 4 ? "text-primary-700 drop-shadow-[0_0_10px_rgba(150,132,96,0.55)]" : "text-slate-300"}`} />
                                     {activeStage >= 1 && activeStage <= 4 && (
@@ -762,7 +762,7 @@ const TimelineSection = () => {
                                                 delay: 0.12 + i * 0.05,
                                                 ease: [0.16, 1, 0.3, 1],
                                             }}
-                                            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-[#efe7d5] border border-slate-200 text-[11.5px] text-slate-700 font-medium"
+                                            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-[#f7f3eb] border border-slate-200 text-[11.5px] text-slate-700 font-medium"
                                         >
                                             <span
                                                 aria-hidden="true"
@@ -794,7 +794,7 @@ const TimelineSection = () => {
                                                 delay: 0.2 + i * 0.04,
                                                 ease: [0.16, 1, 0.3, 1],
                                             }}
-                                            className="inline-flex items-start gap-2 px-3 py-2 rounded-lg bg-[#efe7d5] border border-primary-100 text-[12px] text-slate-700 leading-snug"
+                                            className="inline-flex items-start gap-2 px-3 py-2 rounded-lg bg-[#f7f3eb] border border-primary-100 text-[12px] text-slate-700 leading-snug"
                                         >
                                             <span
                                                 aria-hidden="true"
@@ -811,7 +811,7 @@ const TimelineSection = () => {
 
                         <div className="relative mx-6 lg:mx-7 mb-6 lg:mb-7 rounded-xl bg-primary-50/70 border border-primary-200 px-4 py-3">
                             <div className="flex items-center gap-3">
-                                <div className="shrink-0 w-9 h-9 rounded-lg bg-[#efe7d5] border border-primary-200 flex items-center justify-center text-primary-700 shadow-[0_4px_10px_-4px_rgba(150,132,96,0.30)]">
+                                <div className="shrink-0 w-9 h-9 rounded-lg bg-white border border-primary-200 flex items-center justify-center text-primary-700 shadow-[0_4px_10px_-4px_rgba(150,132,96,0.30)]">
                                     <Target className="w-4 h-4" strokeWidth={2.5} />
                                 </div>
                                 <div className="flex-1 min-w-0">
@@ -955,7 +955,7 @@ const DealAssistSection = () => {
                 >
                     <div className="absolute -inset-8 bg-blue-500/20 blur-[60px] rounded-full opacity-30" />
 
-                    <div className="relative bg-[#efe7d5] border border-slate-200 rounded-xl shadow-2xl max-w-md mx-auto overflow-hidden">
+                    <div className="relative bg-white border border-slate-200 rounded-xl shadow-2xl max-w-md mx-auto overflow-hidden">
                          <div className="p-4 pb-3">
                              <div className="flex gap-3">
                                  <div className="relative">
@@ -1005,7 +1005,7 @@ const DealAssistSection = () => {
                          </div>
 
                          <div className="mx-4 mb-3 rounded-lg overflow-hidden border border-slate-200">
-                             <div className="aspect-[1.91/1] bg-[#efe7d5] flex items-center justify-center relative">
+                             <div className="aspect-[1.91/1] bg-white flex items-center justify-center relative">
                                  <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.02)_25%,rgba(255,255,255,0.02)_50%,transparent_50%,transparent_75%,rgba(255,255,255,0.02)_75%)] bg-[length:20px_20px]" />
                                  <div className="text-center z-10">
                                      <div className="w-16 h-16 mx-auto mb-3 rounded-xl bg-slate-100 backdrop-blur-sm flex items-center justify-center">
@@ -1111,7 +1111,7 @@ const SignalIntelligenceSection = () => {
           </div>
 
           <div className="flex justify-center mb-6">
-            <div className="w-20 h-20 rounded-full bg-[#efe7d5] border-2 border-indigo-500/50 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(129,140,248,0.3)]">
+            <div className="w-20 h-20 rounded-full bg-white border-2 border-indigo-500/50 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(129,140,248,0.3)]">
               <span className="text-xl font-bold text-neutral-900">ICP</span>
               <span className="text-[8px] uppercase tracking-widest text-indigo-400">Core</span>
             </div>
@@ -1236,7 +1236,7 @@ const SignalIntelligenceSection = () => {
                     <circle cx="50%" cy="50%" r="48%" fill="none" stroke="url(#arcGradient)" strokeWidth="2" strokeDasharray="100 200" />
                 </svg>
 
-                <div className="absolute w-36 h-36 rounded-full bg-[#efe7d5] border-2 border-indigo-500/50 backdrop-blur-md z-20 flex flex-col items-center justify-center shadow-[0_0_60px_rgba(129,140,248,0.3)]">
+                <div className="absolute w-36 h-36 rounded-full bg-white border-2 border-indigo-500/50 backdrop-blur-md z-20 flex flex-col items-center justify-center shadow-[0_0_60px_rgba(129,140,248,0.3)]">
                     <div className="absolute inset-2 rounded-full border border-indigo-400/30" />
                     <span className="text-4xl font-bold text-neutral-900">ICP</span>
                     <span className="text-[11px] uppercase tracking-widest text-indigo-400 mt-1">Core</span>
@@ -1276,7 +1276,7 @@ const SignalIntelligenceSection = () => {
                                     className={`absolute left-1/2 top-1/2 -ml-6 -mt-6 w-12 h-12 rounded-full border-2 flex items-center justify-center group cursor-pointer z-20 will-change-transform transition-all
                                         ${isActive
                                             ? "bg-gradient-to-br from-primary-500 to-primary-700 border-primary-300 shadow-[0_0_30px_rgba(150,132,96,0.55)] scale-110 z-30"
-                                            : "bg-[#efe7d5] border-slate-200 hover:border-primary-400 hover:bg-primary-50"
+                                            : "bg-white border-slate-200 hover:border-primary-400 hover:bg-primary-50"
                                         }`}
                                     style={{
                                         transform: `translate(${x}px, ${y}px) translateZ(0)`
@@ -1284,7 +1284,7 @@ const SignalIntelligenceSection = () => {
                                 >
                                     <signal.icon className={`w-4 h-4 ${isActive ? "text-white" : "text-slate-700 group-hover:text-primary-700"}`} />
 
-                                    <div className={`absolute -bottom-9 left-1/2 -translate-x-1/2 px-2.5 py-1 bg-[#efe7d5] border rounded-md text-[10px] whitespace-nowrap pointer-events-none font-bold tracking-wide transition-all
+                                    <div className={`absolute -bottom-9 left-1/2 -translate-x-1/2 px-2.5 py-1 bg-white border rounded-md text-[10px] whitespace-nowrap pointer-events-none font-bold tracking-wide transition-all
                                         ${isActive
                                             ? "opacity-100 border-primary-500 text-primary-700 shadow-[0_8px_22px_-8px_rgba(150,132,96,0.55)]"
                                             : "opacity-0 group-hover:opacity-100 border-primary-200 text-primary-700"
@@ -1395,7 +1395,7 @@ const TeamSection = () => {
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                             whileHover={{ y: -4 }}
-                            className="group relative rounded-3xl bg-[#efe7d5] border border-primary-100 p-7 lg:p-8 transition-all hover:border-primary-300 hover:shadow-[0_22px_56px_-26px_rgba(150,132,96,0.40)] overflow-hidden"
+                            className="group relative rounded-3xl bg-white border border-primary-100 p-7 lg:p-8 transition-all hover:border-primary-300 hover:shadow-[0_22px_56px_-26px_rgba(150,132,96,0.40)] overflow-hidden"
                         >
 
                             <span
@@ -1457,7 +1457,7 @@ const FinalCTASection = () => (
                 className="absolute -inset-6 bg-transparent blur-3xl rounded-[40px] pointer-events-none"
             />
 
-            <div className="relative rounded-3xl overflow-hidden bg-[#efe7d5] border border-primary-100 shadow-[0_30px_80px_-30px_rgba(150,132,96,0.30)]">
+            <div className="relative rounded-3xl overflow-hidden bg-white border border-primary-100 shadow-[0_30px_80px_-30px_rgba(150,132,96,0.30)]">
 
                 <div
                     aria-hidden="true"

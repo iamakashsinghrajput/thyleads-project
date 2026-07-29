@@ -125,10 +125,10 @@ export default function FintechHowWeHelp() {
                 ease: easeOut,
               }}
               whileHover={{ y: -4 }}
-              className="group relative rounded-2xl bg-[#efe7d5] border border-primary-100 px-6 py-7 hover:border-primary-300 hover:shadow-[0_20px_50px_-20px_rgba(150,132,96,0.30),0_8px_20px_-12px_rgba(150,132,96,0.10)] transition-all overflow-hidden"
+              className="group relative rounded-2xl bg-white border border-primary-100 px-6 py-7 hover:border-primary-300 hover:shadow-[0_20px_50px_-20px_rgba(150,132,96,0.30),0_8px_20px_-12px_rgba(150,132,96,0.10)] transition-all overflow-hidden"
             >
 
-              <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-[#efe7d5] border border-primary-200 text-[9px] font-bold uppercase tracking-[0.22em] text-primary-700 mb-5 shadow-sm">
+              <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-white border border-primary-200 text-[9px] font-bold uppercase tracking-[0.22em] text-primary-700 mb-5 shadow-sm">
                 {pillar.eyebrow}
               </span>
 

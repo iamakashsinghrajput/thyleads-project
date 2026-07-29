@@ -89,7 +89,7 @@ function AgentConsole() {
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.85, delay: 0.5, ease: easeOut }}
-      className="relative rounded-2xl bg-[#efe7d5] border border-slate-200 shadow-[0_24px_60px_-22px_rgba(15,23,42,0.20)] overflow-hidden flex flex-col h-[460px]"
+      className="relative rounded-2xl bg-white border border-slate-200 shadow-[0_24px_60px_-22px_rgba(15,23,42,0.20)] overflow-hidden flex flex-col h-[460px]"
     >
 
       <div aria-hidden="true" className="absolute -top-20 -right-12 w-72 h-72 rounded-full bg-transparent blur-3xl pointer-events-none" />
@@ -464,7 +464,7 @@ function ActivityCard() {
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.85, delay: 0.7, ease: easeOut }}
-      className="relative rounded-2xl bg-[#efe7d5] border border-slate-200 shadow-[0_24px_60px_-22px_rgba(15,23,42,0.20)] overflow-hidden flex flex-col h-[460px]"
+      className="relative rounded-2xl bg-white border border-slate-200 shadow-[0_24px_60px_-22px_rgba(15,23,42,0.20)] overflow-hidden flex flex-col h-[460px]"
     >
 
       <div aria-hidden="true" className="absolute -top-20 -left-10 w-60 h-60 rounded-full bg-transparent blur-3xl pointer-events-none" />
@@ -536,7 +536,7 @@ function ActivityCard() {
               className="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 transition-colors"
             >
 
-              <span className="shrink-0 w-8 h-8 rounded-lg bg-[#efe7d5] border border-slate-200 overflow-hidden flex items-center justify-center">
+              <span className="shrink-0 w-8 h-8 rounded-lg bg-white border border-slate-200 overflow-hidden flex items-center justify-center">
                 <Image
                   src={a.logo}
                   alt={a.company}

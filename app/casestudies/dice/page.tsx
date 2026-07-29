@@ -231,13 +231,13 @@ export default function DiceCaseStudy() {
                         </li>
                       </ul>
                       <div className="mt-4 ml-7 space-y-2">
-                        <div className="bg-[#efe7d5] border border-slate-200 rounded-lg px-4 py-2 text-slate-700">
+                        <div className="bg-white border border-slate-200 rounded-lg px-4 py-2 text-slate-700">
                           &quot;Still chasing approval trails over email?&quot;
                         </div>
-                        <div className="bg-[#efe7d5] border border-slate-200 rounded-lg px-4 py-2 text-slate-700">
+                        <div className="bg-white border border-slate-200 rounded-lg px-4 py-2 text-slate-700">
                           &quot;Is Excel your petty cash system?&quot;
                         </div>
-                        <div className="bg-[#efe7d5] border border-slate-200 rounded-lg px-4 py-2 text-slate-700">
+                        <div className="bg-white border border-slate-200 rounded-lg px-4 py-2 text-slate-700">
                           &quot;How long do vendor SLAs go untracked?&quot;
                         </div>
                       </div>

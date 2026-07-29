@@ -147,7 +147,7 @@ function ShiftCard({ shift }: { shift: Shift }) {
     >
       <Card className="group border-primary-100 bg-primary-50/40 hover:bg-white hover:border-primary-200 hover:shadow-[0_24px_60px_-20px_rgba(150,132,96,0.22),0_8px_20px_-10px_rgba(150,132,96,0.10)] transition-all">
         <CardHeader className="gap-4">
-          <div className="w-10 h-10 rounded-lg bg-[#efe7d5] border border-primary-100 flex items-center justify-center text-primary-600 group-hover:bg-primary-50 transition-colors">
+          <div className="w-10 h-10 rounded-lg bg-white border border-primary-100 flex items-center justify-center text-primary-600 group-hover:bg-primary-50 transition-colors">
             <Icon className="w-5 h-5" strokeWidth={2} />
           </div>
           <CardTitle>{shift.title}</CardTitle>

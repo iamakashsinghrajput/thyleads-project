@@ -103,7 +103,7 @@ export default function SeriesBSocialProof() {
                 ease: easeOut,
               }}
               whileHover={{ y: -4 }}
-              className="group relative rounded-3xl bg-[#efe7d5] border border-slate-200 hover:border-primary-200 p-7 sm:p-8 shadow-[0_4px_18px_-10px_rgba(15,23,42,0.08)] hover:shadow-[0_28px_56px_-22px_rgba(150,132,96,0.32)] transition-all overflow-hidden"
+              className="group relative rounded-3xl bg-white border border-slate-200 hover:border-primary-200 p-7 sm:p-8 shadow-[0_4px_18px_-10px_rgba(15,23,42,0.08)] hover:shadow-[0_28px_56px_-22px_rgba(150,132,96,0.32)] transition-all overflow-hidden"
             >
 
               <span
@@ -130,7 +130,7 @@ export default function SeriesBSocialProof() {
                     aria-hidden="true"
                     className="absolute -inset-1 bg-transparent blur-md rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"
                   />
-                  <div className="relative w-11 h-11 rounded-xl bg-[#efe7d5] border border-slate-200 ring-1 ring-white shadow-[0_8px_22px_-8px_rgba(150,132,96,0.30)] flex items-center justify-center overflow-hidden p-1.5">
+                  <div className="relative w-11 h-11 rounded-xl bg-white border border-slate-200 ring-1 ring-white shadow-[0_8px_22px_-8px_rgba(150,132,96,0.30)] flex items-center justify-center overflow-hidden p-1.5">
                     <Image
                       src={cs.logo}
                       alt={cs.brand}

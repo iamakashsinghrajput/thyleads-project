@@ -84,8 +84,8 @@ const ClientDashboard = () => {
                   key={i}
                   className={`group flex items-start gap-4 p-5 rounded-2xl transition-all duration-300 ${
                     feat.highlight
-                      ? 'bg-[#efe7d5] border-[#d8c9ab]'
-                      : 'border-transparent hover:bg-[#efe7d5] hover:border-[#e3d7c1]'
+                      ? 'bg-white border-[#d8c9ab]'
+                      : 'border-transparent hover:bg-white hover:border-[#e3d7c1]'
                   }`}
                 >
                   <div className="w-11 h-11 rounded-xl bg-primary-50 border border-primary-100 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">

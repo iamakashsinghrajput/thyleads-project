@@ -147,7 +147,7 @@ function ScalingChart() {
         className="absolute -inset-6 bg-transparent blur-3xl rounded-[40px] pointer-events-none"
       />
 
-      <div className="relative rounded-3xl bg-[#efe7d5] border border-slate-200 shadow-[0_28px_70px_-30px_rgba(150,132,96,0.32)] overflow-hidden">
+      <div className="relative rounded-3xl bg-white border border-slate-200 shadow-[0_28px_70px_-30px_rgba(150,132,96,0.32)] overflow-hidden">
 
         <span
           aria-hidden="true"
@@ -385,7 +385,7 @@ function ScalingChart() {
           </svg>
         </div>
 
-        <div className="px-6 py-4 border-t border-slate-100 flex items-center justify-between gap-3 bg-[#efe7d5]">
+        <div className="px-6 py-4 border-t border-slate-100 flex items-center justify-between gap-3 bg-white">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1.5">
               <span

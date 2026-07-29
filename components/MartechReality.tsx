@@ -110,7 +110,7 @@ export default function MartechReality() {
                   ease: easeOut,
                 }}
                 whileHover={{ y: -4 }}
-                className="group relative rounded-2xl bg-[#efe7d5] border border-slate-200 hover:border-primary-200 p-6 sm:p-7 shadow-[0_4px_18px_-10px_rgba(15,23,42,0.08)] hover:shadow-[0_22px_48px_-22px_rgba(150,132,96,0.32)] transition-all overflow-hidden"
+                className="group relative rounded-2xl bg-white border border-slate-200 hover:border-primary-200 p-6 sm:p-7 shadow-[0_4px_18px_-10px_rgba(15,23,42,0.08)] hover:shadow-[0_22px_48px_-22px_rgba(150,132,96,0.32)] transition-all overflow-hidden"
               >
 
                 <span

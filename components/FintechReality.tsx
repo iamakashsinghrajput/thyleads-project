@@ -118,7 +118,7 @@ export default function FintechReality() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.15, ease: easeOut }}
             whileHover={{ y: -4 }}
-            className="group relative lg:row-span-2 rounded-3xl bg-[#efe7d5] border-2 border-primary-200 p-7 lg:p-9 overflow-hidden shadow-[0_20px_50px_-25px_rgba(150,132,96,0.25)] hover:shadow-[0_30px_70px_-25px_rgba(150,132,96,0.35)] transition-all"
+            className="group relative lg:row-span-2 rounded-3xl bg-white border-2 border-primary-200 p-7 lg:p-9 overflow-hidden shadow-[0_20px_50px_-25px_rgba(150,132,96,0.25)] hover:shadow-[0_30px_70px_-25px_rgba(150,132,96,0.35)] transition-all"
           >
 
             <div
@@ -142,10 +142,10 @@ export default function FintechReality() {
             <div className="relative flex flex-col h-full">
 
               <div className="flex items-start justify-between mb-6">
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#efe7d5] border border-primary-200 text-[9px] font-bold uppercase tracking-[0.22em] text-primary-700 shadow-sm">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white border border-primary-200 text-[9px] font-bold uppercase tracking-[0.22em] text-primary-700 shadow-sm">
                   Featured wall
                 </span>
-                <div className="w-12 h-12 rounded-xl bg-[#efe7d5] border border-primary-200 flex items-center justify-center text-primary-700 shadow-sm group-hover:bg-primary-50 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-white border border-primary-200 flex items-center justify-center text-primary-700 shadow-sm group-hover:bg-primary-50 transition-colors">
                   <FeaturedIcon className="w-5 h-5" strokeWidth={2} />
                 </div>
               </div>
@@ -178,7 +178,7 @@ export default function FintechReality() {
                   ease: easeOut,
                 }}
                 whileHover={{ y: -4 }}
-                className="group relative rounded-3xl bg-[#efe7d5] border border-slate-200 p-6 lg:p-7 hover:border-primary-200 hover:shadow-[0_20px_50px_-22px_rgba(150,132,96,0.25)] transition-all overflow-hidden"
+                className="group relative rounded-3xl bg-white border border-slate-200 p-6 lg:p-7 hover:border-primary-200 hover:shadow-[0_20px_50px_-22px_rgba(150,132,96,0.25)] transition-all overflow-hidden"
               >
 
                 <span

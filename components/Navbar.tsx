@@ -254,18 +254,45 @@ const Navbar: React.FC = () => {
   const overlay = isHome && !scrolled && !navHovered && !openDropdown;
 
   useEffect(() => {
+    let raf = 0;
+    // Cooldown after each toggle: collapsing/expanding the strip changes layout
+    // height, which nudges scrollY and would otherwise re-trigger the handler in
+    // a loop (the "bouncing"). The lock + threshold keep it from ping-ponging.
+    let lockUntil = 0;
     const handleScroll = () => {
-      const y = window.scrollY;
-      setScrolled(y > 20);
-      // Always show the strip near the top; otherwise follow scroll direction.
-      if (y < 80) setHideUtil(false);
-      else if (y > lastY.current + 4) setHideUtil(true);
-      else if (y < lastY.current - 4) setHideUtil(false);
-      lastY.current = y;
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        const y = window.scrollY;
+        setScrolled(y > 20);
+        // Always show the strip near the top.
+        if (y < 80) {
+          setHideUtil(false);
+          lastY.current = y;
+          return;
+        }
+        const now = performance.now();
+        if (now < lockUntil) {
+          lastY.current = y;
+          return;
+        }
+        const delta = y - lastY.current;
+        if (delta > 10) {
+          setHideUtil(true);
+          lockUntil = now + 400;
+        } else if (delta < -10) {
+          setHideUtil(false);
+          lockUntil = now + 400;
+        }
+        lastY.current = y;
+      });
     };
     handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
   }, []);
 
   useEffect(() => {

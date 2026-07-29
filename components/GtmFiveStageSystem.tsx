@@ -193,7 +193,7 @@ export default function GtmFiveStageSystem() {
           className="mt-12 lg:mt-14 grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-5"
         >
 
-          <div className="lg:col-span-3 rounded-2xl bg-[#efe7d5] border border-slate-200 p-2.5 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.06)]">
+          <div className="lg:col-span-3 rounded-2xl bg-white border border-slate-200 p-2.5 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.06)]">
             <ul className="flex flex-col">
               {stages.map((stage, i) => {
                 const isActive = i === activeIndex;
@@ -244,7 +244,7 @@ export default function GtmFiveStageSystem() {
           </div>
 
           <div className="lg:col-span-4">
-            <div className="relative h-full min-h-[320px] rounded-2xl bg-[#efe7d5] border border-primary-100 overflow-hidden">
+            <div className="relative h-full min-h-[320px] rounded-2xl bg-white border border-primary-100 overflow-hidden">
 
               <div
                 aria-hidden="true"
@@ -290,7 +290,7 @@ export default function GtmFiveStageSystem() {
           </div>
 
           <div className="lg:col-span-5">
-            <div className="relative h-full rounded-2xl bg-[#efe7d5] border border-slate-200 p-6 sm:p-8 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.06)] overflow-hidden">
+            <div className="relative h-full rounded-2xl bg-white border border-slate-200 p-6 sm:p-8 shadow-[0_4px_16px_-8px_rgba(15,23,42,0.06)] overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={active.id}

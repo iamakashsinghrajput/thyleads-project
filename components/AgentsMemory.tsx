@@ -87,7 +87,7 @@ export default function AgentsMemory() {
           <motion.article
             variants={itemVariants}
             whileHover={{ y: -4 }}
-            className="relative rounded-3xl overflow-hidden bg-[#efe7d5] border border-primary-200 p-7 sm:p-8 shadow-[0_18px_44px_-22px_rgba(150,132,96,0.32)] transition-shadow hover:shadow-[0_28px_56px_-22px_rgba(150,132,96,0.44)]"
+            className="relative rounded-3xl overflow-hidden bg-white border border-primary-200 p-7 sm:p-8 shadow-[0_18px_44px_-22px_rgba(150,132,96,0.32)] transition-shadow hover:shadow-[0_28px_56px_-22px_rgba(150,132,96,0.44)]"
           >
 
             <span
@@ -109,7 +109,7 @@ export default function AgentsMemory() {
             />
 
             <div className="relative">
-              <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-[#efe7d5] border border-primary-200 text-primary-700 shadow-[0_6px_16px_-6px_rgba(150,132,96,0.30)]">
+              <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-white border border-primary-200 text-primary-700 shadow-[0_6px_16px_-6px_rgba(150,132,96,0.30)]">
                 <Database className="w-5 h-5" strokeWidth={2} />
               </div>
 
@@ -144,7 +144,7 @@ export default function AgentsMemory() {
           <motion.article
             variants={itemVariants}
             whileHover={{ y: -4 }}
-            className="group relative rounded-3xl overflow-hidden bg-[#efe7d5] border border-slate-200 hover:border-primary-200 p-7 sm:p-8 shadow-[0_4px_18px_-10px_rgba(15,23,42,0.08)] hover:shadow-[0_28px_56px_-22px_rgba(150,132,96,0.32)] transition-all"
+            className="group relative rounded-3xl overflow-hidden bg-white border border-slate-200 hover:border-primary-200 p-7 sm:p-8 shadow-[0_4px_18px_-10px_rgba(15,23,42,0.08)] hover:shadow-[0_28px_56px_-22px_rgba(150,132,96,0.32)] transition-all"
           >
             <span
               aria-hidden="true"

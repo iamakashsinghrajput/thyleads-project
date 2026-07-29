@@ -84,7 +84,7 @@ const FAQSection = () => {
               {faqs.map((faq, index) => (
                 <div
                   key={index}
-                  className={`group transition-all duration-200 bg-[#efe7d5] border rounded-2xl ${
+                  className={`group transition-all duration-200 bg-white border rounded-2xl ${
                     openIndex === index
                       ? 'border-primary-200 shadow-lg shadow-primary-500/10'
                       : 'border-neutral-200 hover:border-neutral-300'

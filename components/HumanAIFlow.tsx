@@ -189,7 +189,7 @@ export default function HumanAIFlow() {
         </div>
       </div>
 
-      <div className="rounded-2xl bg-[#efe7d5] border border-slate-200 shadow-sm px-4 py-3.5">
+      <div className="rounded-2xl bg-white border border-slate-200 shadow-sm px-4 py-3.5">
         <div className="flex items-center justify-between mb-3">
           <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-slate-500">
             Pipeline · Step {activeStep.id} of 06
@@ -227,7 +227,7 @@ export default function HumanAIFlow() {
                         ? 'bg-emerald-500 border-emerald-500 text-white shadow-md shadow-emerald-500/30'
                         : isPast
                         ? 'bg-emerald-500 border-emerald-500 text-white'
-                        : 'bg-[#efe7d5] border-slate-300 text-slate-400'
+                        : 'bg-white border-slate-300 text-slate-400'
                     }`}
                   >
                     {isPast ? (
@@ -256,8 +256,8 @@ export default function HumanAIFlow() {
         </div>
       </div>
 
-      <div className="rounded-2xl bg-[#efe7d5] border-2 border-primary-200 shadow-[0_18px_40px_rgba(150,132,96,0.14)] overflow-hidden">
-        <div className="flex items-center justify-between px-4 py-2 bg-[#efe7d5] border-b border-primary-100">
+      <div className="rounded-2xl bg-white border-2 border-primary-200 shadow-[0_18px_40px_rgba(150,132,96,0.14)] overflow-hidden">
+        <div className="flex items-center justify-between px-4 py-2 bg-white border-b border-primary-100">
           <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-primary-700">
             Now running
           </span>
@@ -346,7 +346,7 @@ export default function HumanAIFlow() {
         </div>
       </div>
 
-      <div className="rounded-2xl bg-[#efe7d5] border border-slate-200 px-4 py-2.5 flex items-center gap-3 shadow-sm">
+      <div className="rounded-2xl bg-white border border-slate-200 px-4 py-2.5 flex items-center gap-3 shadow-sm">
         <span className="flex items-center gap-1 text-[9px] font-bold uppercase tracking-[0.18em] text-emerald-600 shrink-0">
           <CheckCircle2 className="w-3 h-3" strokeWidth={2.5} />
           Just now

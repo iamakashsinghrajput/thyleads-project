@@ -98,7 +98,7 @@ export default function SeriesAHowWeHelp() {
                 ease: easeOut,
               }}
               whileHover={{ y: -4 }}
-              className="group relative rounded-2xl bg-[#efe7d5] border border-primary-100 hover:border-primary-200 p-7 sm:p-8 shadow-[0_4px_18px_-10px_rgba(150,132,96,0.18)] hover:shadow-[0_24px_52px_-22px_rgba(150,132,96,0.40)] transition-all overflow-hidden"
+              className="group relative rounded-2xl bg-white border border-primary-100 hover:border-primary-200 p-7 sm:p-8 shadow-[0_4px_18px_-10px_rgba(150,132,96,0.18)] hover:shadow-[0_24px_52px_-22px_rgba(150,132,96,0.40)] transition-all overflow-hidden"
             >
               <span
                 aria-hidden="true"

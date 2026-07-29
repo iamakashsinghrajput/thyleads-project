@@ -216,7 +216,7 @@ function StageCard({
         <div className="relative">
 
           <OrchestratorBroadcast />
-          <div className="relative rounded-2xl overflow-hidden bg-[#efe7d5] border border-primary-200 px-5 py-4 shadow-[0_18px_44px_-22px_rgba(150,132,96,0.40)]">
+          <div className="relative rounded-2xl overflow-hidden bg-white border border-primary-200 px-5 py-4 shadow-[0_18px_44px_-22px_rgba(150,132,96,0.40)]">
 
             <span
               aria-hidden="true"
@@ -257,7 +257,7 @@ function StageCard({
                   },
                 }}
                 viewport={{ once: true }}
-                className="relative rounded-xl bg-[#efe7d5] border border-primary-100 px-2.5 py-2 text-center"
+                className="relative rounded-xl bg-white border border-primary-100 px-2.5 py-2 text-center"
               >
                 <ClusterActiveDot index={idx} />
                 <div className="text-[9px] font-bold uppercase tracking-[0.18em] text-primary-700">
@@ -291,7 +291,7 @@ function StageCard({
           {stage.memory?.map(m => (
             <div
               key={m}
-              className="rounded-xl bg-[#efe7d5] border border-dashed border-primary-300 px-3 py-2.5 text-center"
+              className="rounded-xl bg-white border border-dashed border-primary-300 px-3 py-2.5 text-center"
             >
               <div className="text-[11px] font-bold text-neutral-900 leading-tight">
                 {m}
@@ -390,7 +390,7 @@ function StatsBar() {
   return (
     <motion.div
       variants={itemVariants}
-      className="relative mt-12 lg:mt-16 rounded-3xl overflow-hidden bg-[#efe7d5] border border-primary-100 shadow-[0_24px_60px_-30px_rgba(150,132,96,0.30)]"
+      className="relative mt-12 lg:mt-16 rounded-3xl overflow-hidden bg-white border border-primary-100 shadow-[0_24px_60px_-30px_rgba(150,132,96,0.30)]"
     >
 
       <span

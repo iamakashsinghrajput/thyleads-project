@@ -165,7 +165,7 @@ function PipelineTimeline() {
       />
 
       <div className="relative flex items-center justify-between mb-5">
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#efe7d5] border border-primary-100 shadow-[0_6px_18px_-8px_rgba(150,132,96,0.30)]">
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-primary-100 shadow-[0_6px_18px_-8px_rgba(150,132,96,0.30)]">
           <span className="relative flex h-1.5 w-1.5" aria-hidden="true">
             <span className="absolute inline-flex h-full w-full rounded-full bg-primary-500 opacity-75 animate-ping" />
             <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary-600" />
@@ -283,7 +283,7 @@ function TimelineRow({
       <div className="flex items-center gap-3.5">
 
         <div className="relative shrink-0">
-          <div className="relative w-10 h-10 rounded-xl bg-[#efe7d5] border border-slate-200 ring-2 ring-white shadow-[0_5px_14px_-4px_rgba(150,132,96,0.20)] flex items-center justify-center overflow-hidden p-1.5">
+          <div className="relative w-10 h-10 rounded-xl bg-white border border-slate-200 ring-2 ring-white shadow-[0_5px_14px_-4px_rgba(150,132,96,0.20)] flex items-center justify-center overflow-hidden p-1.5">
             <Image
               src={activity.logo}
               alt={activity.company}

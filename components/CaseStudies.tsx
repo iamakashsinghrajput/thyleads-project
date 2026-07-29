@@ -255,7 +255,7 @@ export default function TestimonialSection() {
                 }
               }}
             >
-              <div className="rounded-4xl overflow-hidden shadow-[0_25px_50px_-15px_rgba(150,132,96,0.25)] h-full md:h-[420px] relative bg-[#efe7d5] border border-neutral-200">
+              <div className="rounded-4xl overflow-hidden shadow-[0_25px_50px_-15px_rgba(150,132,96,0.25)] h-full md:h-[420px] relative bg-white border border-neutral-200">
 
                 <div className="absolute left-0 top-0 bottom-0 w-[40%] hidden md:block">
                   <img

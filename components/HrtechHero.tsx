@@ -286,7 +286,7 @@ function BuyingCommittee() {
               className="absolute -inset-1.5 bg-transparent blur-md rounded-2xl pointer-events-none"
             />
 
-            <div className="relative w-[150px] rounded-2xl bg-[#efe7d5] border border-slate-200 px-3.5 py-3 shadow-[0_12px_30px_-14px_rgba(15,23,42,0.18)]">
+            <div className="relative w-[150px] rounded-2xl bg-white border border-slate-200 px-3.5 py-3 shadow-[0_12px_30px_-14px_rgba(15,23,42,0.18)]">
               <span
                 aria-hidden="true"
                 className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-primary-300 to-transparent"
@@ -355,7 +355,7 @@ function BuyingCommittee() {
           <div className="relative w-[112px] h-[112px] rounded-full bg-white ring-4 ring-white shadow-[0_22px_44px_-14px_rgba(150,132,96,0.55)] flex items-center justify-center overflow-hidden">
             <span
               aria-hidden="true"
-              className="absolute inset-1 rounded-full bg-[#efe7d5]"
+              className="absolute inset-1 rounded-full bg-white"
             />
             <Image
               src="/thylead.svg"
