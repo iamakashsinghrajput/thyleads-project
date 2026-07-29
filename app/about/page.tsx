@@ -74,7 +74,7 @@ function TopDivider() {
 
 function WhoWeAre() {
   return (
-    <section className="relative min-h-[80vh] flex flex-col pt-32 lg:pt-36 pb-20 px-6 sm:px-12 overflow-hidden bg-slate-50 font-sans">
+    <section className="relative min-h-[80vh] flex flex-col pt-32 lg:pt-36 pb-20 px-6 sm:px-12 overflow-hidden bg-[#f7f3eb] font-sans">
       <div className="flex-1 flex flex-col justify-center w-full max-w-5xl mx-auto z-10 relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -124,7 +124,7 @@ function Founders() {
   ];
 
   return (
-    <section className="relative w-full bg-slate-50 overflow-hidden flex flex-col items-center px-6 sm:px-12 font-sans py-20 lg:py-28">
+    <section className="relative w-full bg-[#f7f3eb] overflow-hidden flex flex-col items-center px-6 sm:px-12 font-sans py-20 lg:py-28">
       <TopDivider />
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
@@ -352,7 +352,7 @@ function StoryRow({
 
 function NorthStar() {
   return (
-    <section className="relative w-full bg-slate-50 overflow-hidden flex flex-col items-center px-6 sm:px-12 font-sans py-20 lg:py-28">
+    <section className="relative w-full bg-[#f7f3eb] overflow-hidden flex flex-col items-center px-6 sm:px-12 font-sans py-20 lg:py-28">
       <TopDivider />
 
       <div
@@ -550,7 +550,7 @@ function Philosophy() {
   ];
 
   return (
-    <section className="relative w-full bg-slate-50 overflow-hidden flex flex-col items-center px-6 sm:px-12 font-sans py-20 lg:py-28">
+    <section className="relative w-full bg-[#f7f3eb] overflow-hidden flex flex-col items-center px-6 sm:px-12 font-sans py-20 lg:py-28">
       <TopDivider />
 
       <div className="max-w-6xl mx-auto w-full relative z-10">
@@ -696,7 +696,7 @@ const TEAM = [
 
 function Team() {
   return (
-    <section className="relative w-full bg-slate-50 overflow-hidden flex flex-col items-center px-6 sm:px-12 font-sans py-20 lg:py-28">
+    <section className="relative w-full bg-[#f7f3eb] overflow-hidden flex flex-col items-center px-6 sm:px-12 font-sans py-20 lg:py-28">
       <TopDivider />
 
       <div
