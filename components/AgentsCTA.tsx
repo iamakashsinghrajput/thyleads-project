@@ -71,7 +71,7 @@ export default function AgentsCTA() {
           variants={itemVariants}
           className="mt-6 max-w-2xl mx-auto text-base sm:text-lg text-primary-100 leading-relaxed"
         >
-          See what a 15-agent system built on Claude can book in your calendar
+          See what a 15-agent system can book in your calendar
           inside the first 30 days.
         </motion.p>
 

@@ -59,13 +59,13 @@ export default function AgentsHero() {
             <h1 className="text-4xl sm:text-5xl lg:text-[54px] xl:text-[58px] font-extrabold tracking-[-0.025em] leading-[1.4] text-neutral-900">
               Your pipeline runs on{' '}
               <span className="text-primary-700 bg-primary-100 box-decoration-clone px-2 py-0.5 rounded-md">
-                15 agents built on Claude.
+                15 agents, working as one.
               </span>
             </h1>
 
             <p className="mt-6 max-w-xl text-base sm:text-lg text-slate-600 leading-relaxed">
               We didn&apos;t wire together a stack of SaaS tools and call it AI.
-              We built a multi-agent system on Anthropic&apos;s Claude that
+              We engineered a purpose-built multi-agent system that
               researches accounts, writes content, monitors deliverability, and
               learns — improving every campaign with everything it&apos;s seen
               before.
@@ -115,7 +115,7 @@ const STAGES: {
 }[] = [
   {
     id: 'orchestrator',
-    title: 'Claude Opus 4',
+    title: 'Command Core',
     meta: 'Orchestrator',
     variant: 'hero',
   },

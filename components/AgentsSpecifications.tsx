@@ -54,7 +54,7 @@ const clusters: AgentCluster[] = [
     agents: [
       {
         name: 'Discovery Agent',
-        model: 'Opus 4 · Tier 1',
+        model: 'Reasoning Core · Tier 1',
         description:
           'Helps GTM engineers run better client discovery. Suggests category-specific interview questions, transcribes and structures customer conversations, and extracts the language bank — the verbatim phrases from real customer interviews that show up in replies later.',
         outputs: ['Structured interview summary', 'Language bank', 'Draft ICP brief'],
@@ -69,28 +69,28 @@ const clusters: AgentCluster[] = [
     agents: [
       {
         name: 'Research Agent',
-        model: 'Opus 4 · Synthesis · Tier 1',
+        model: 'Reasoning Core · Synthesis · Tier 1',
         description:
           'Pulls company-level and contact-level intelligence. For each account it generates a "why now" snippet — 1–2 sentences explaining the current trigger that makes outreach relevant today (raise, hire, expansion, RFP cycle).',
         outputs: ['Why-now snippet', 'Account intel', 'Suggested angle'],
       },
       {
         name: 'Account Scoring Agent',
-        model: 'Haiku · Tier 4',
+        model: 'Rapid Engine · Tier 4',
         description:
           'Applies the Thyleads scoring rubric. Grade fit (ICP fit), signals (recent signals), engagement (10pts), tools (the way new SDRs ramp). Accounts above 70 priority, active, scored. Accounts that don\'t respond well move down. Drops false positives.',
         outputs: ['Scored account list', 'Priority ranking', 'Auto-tiering decisions'],
       },
       {
         name: 'Signal Detection Agent',
-        model: 'Haiku · Tier 4 · Bulk Continuous',
+        model: 'Rapid Engine · Tier 4 · Bulk Continuous',
         description:
           'Monitors LinkedIn jobs, news scans across various sources for "new" hires (new VPs/Heads). New job listings, news, blog posts, funding announcements, and leadership changes. Surfaces accounts that should be re-prioritized or moved into reactivation.',
         outputs: ['Daily signal report', 'Re-activation queue', 'New triggers'],
       },
       {
         name: 'Stakeholder Mapping Agent',
-        model: 'Haiku · Tier 4',
+        model: 'Rapid Engine · Tier 4',
         description:
           'Verifies that mapped stakeholders actually hold the title at the company today. Catches the wrong person showing up at scale. Inactive contacts, exited contacts, and missed contacts. The output is a verified contact graph, with reporting line, account function, and lights to verify or skip.',
         outputs: ['Verification status', 'Reporting line', 'Active vs inactive flags'],
@@ -105,21 +105,21 @@ const clusters: AgentCluster[] = [
     agents: [
       {
         name: 'Content Agent',
-        model: 'Opus 4 · Tier 1',
+        model: 'Reasoning Core · Tier 1',
         description:
           'Drafts email and LinkedIn variants for each persona × use case × industry × signal combination. Reads the language bank (verbatim phrases from real customer interviews) so the output sounds like the prospect, not like an outreach template. Versions are tracked and surfaced to the QA Agent.',
         outputs: ['Email variants', 'LinkedIn variants', 'Subject lines'],
       },
       {
         name: 'QA Agent',
-        model: 'Haiku · Tier 4',
+        model: 'Rapid Engine · Tier 4',
         description:
           'Scores every drafted variant before it leaves a human reviewer. Reduces first-pass review time from 1 hour. Catches "too salesy" or "too formal" density, mobile readability, framework compliance, length, placement vibility, and brand on tone fit.',
         outputs: ['QA score', 'Pass/fail flags', 'Specific revisions'],
       },
       {
         name: 'Compliance Agent',
-        model: 'Haiku · Tier 4 · Bulk Auto',
+        model: 'Rapid Engine · Tier 4 · Bulk Auto',
         description:
           'A hard gate before any send. Validates RFC 5322 email standards, headers, claim visible to ISPs, CAN-SPAM compliance, and GDPR signals. The agent is deterministic — not learning. So no false sends. Approves auto-block on a compliance fail. Notifies you when sees a hard error.',
         outputs: ['Compliance status', 'Block reasons', 'Sending suspension hold'],
@@ -134,14 +134,14 @@ const clusters: AgentCluster[] = [
     agents: [
       {
         name: 'Reply Triage Agent',
-        model: 'Haiku · Tier 4',
+        model: 'Rapid Engine · Tier 4',
         description:
           'Classifies every inbound reply within minutes. Eliminates the human bottleneck on the 4-hour reply SLA. Categorizes: positive, soft positive, objection (resolvable), out-of-office, wrong contact, unsubscribe. Includes a snippet from the last touch and a suggested action.',
         outputs: ['Reply category', 'Confidence score', 'Suggested response'],
       },
       {
         name: 'Deliverability Monitor Agent',
-        model: 'Haiku · Tier 4 · Daily Cron',
+        model: 'Rapid Engine · Tier 4 · Daily Cron',
         description:
           'Continuous monitoring of mailbox health across Smartlead, Postmaster, and MXToolbox. Auto-pauses mailboxes hitting damage threshold reputation damage (Smartlead score below 90, reputation drops, spam-rate spikes, soft bounces). Detected = no false negatives in delivery.',
         outputs: ['Health-score baseline', 'Hourly inbox drift', 'Auto-pause status'],
@@ -156,14 +156,14 @@ const clusters: AgentCluster[] = [
     agents: [
       {
         name: 'Meeting Intelligence Agent',
-        model: 'Opus 4 · Tier 1',
+        model: 'Reasoning Core · Tier 1',
         description:
           'Processes Fireflies transcripts within 5 minutes of a meeting ending. Extracts structured intelligence: pain mentioned, competitors named, outcome stakeholders, objections raised, sequence pricing, and verbatim phrasing. Adds a 2-bullet summary card for the next mentioned, and verbatim attendee. AE inherits the data on the next-day check-in note.',
         outputs: ['Structured meeting brief', 'Objection list', 'Stakeholder map update'],
       },
       {
         name: 'Deal Momentum Agent',
-        model: 'Opus 4 · Tier 1',
+        model: 'Reasoning Core · Tier 1',
         description:
           'Tracks every post-meeting moment. Listens to the AE\'s state, based on meeting context. The agent does not send/draft. It generates 7–14 day follow-up timelines depending on stakeholder cycle. Pushes a WhatsApp template or email follow-up when the meeting opportunity needs to drop. AE controls all outbound, but never misses a window.',
         outputs: ['7-day post-meeting plan', 'Follow-up timeline', 'AE nudges'],
@@ -178,14 +178,14 @@ const clusters: AgentCluster[] = [
     agents: [
       {
         name: 'Targeting Feedback Agent',
-        model: 'Opus 4 · Nightly Cron',
+        model: 'Reasoning Core · Nightly Cron',
         description:
           'Continuously analyzes campaign, meeting, and deal data to surface patterns that should change targeting, messaging, or content. Routes recommendations to Content Agent, Research Agent, and Stakeholder Mapping Agent. Patterns are stored in Project Memory so every future client starts from this lesson, not the previous 17.',
         outputs: ['Nightly insight feed', 'Suggested prompt updates', 'New variant briefs'],
       },
       {
         name: 'Repository Agent',
-        model: 'Opus 4 · Quarterly Cron',
+        model: 'Reasoning Core · Quarterly Cron',
         description:
           'Promotes patterns from individual client Project Memories to the Cross-Client Repository when they appear across 3+ clients. Maintains anonymization. The Repository is what makes Thyleads compounding — every new client benefits from everything the system has learned across past campaigns, in the prevailing 17 months.',
         outputs: ['Repository merges', 'Promoted insights', 'Cross-vertical patterns'],
@@ -233,8 +233,8 @@ export default function AgentsSpecifications() {
             className="mt-5 text-base sm:text-lg text-slate-600 leading-relaxed"
           >
             15 agents. Each with a single job, a model tier matched to the task,
-            and a defined learning loop. Haiku handles high-volume
-            classification cheaply. Opus handles judgment, generation, and
+            and a defined learning loop. The Rapid Engine handles high-volume
+            classification cheaply. The Reasoning Core handles judgment, generation, and
             synthesis.
           </motion.p>
         </div>

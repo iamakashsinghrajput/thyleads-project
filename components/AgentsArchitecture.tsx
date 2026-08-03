@@ -113,7 +113,7 @@ export default function AgentsArchitecture() {
             variants={itemVariants}
             className="mt-5 text-base sm:text-lg text-slate-600 leading-relaxed"
           >
-            Claude Opus 4 sits at the top, routing every task to the right
+            The Command Core sits at the top, routing every task to the right
             specialist agent. Each agent has a single job, its own tools, and
             its own memory access. Adding a new capability means adding a new
             agent — not rebuilding something that already works.
@@ -166,7 +166,7 @@ export default function AgentsArchitecture() {
                 Orchestrator
               </div>
               <h3 className="mt-2 text-2xl sm:text-3xl font-extrabold text-neutral-900 tracking-tight">
-                Claude Opus 4
+                Command Core
               </h3>
               <p className="mt-2 text-[12.5px] text-slate-600">
                 Routes every task to the right agent · judges, synthesizes, and
