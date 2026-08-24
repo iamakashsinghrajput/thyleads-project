@@ -115,7 +115,7 @@ export const blogSeo: Record<string, SeoEntry> = {
   "5-best-data-enrichment-service-providers-2026-edition": {
     title: "Thyleads | Best Data Enrichment Providers for 2026",
     description:
-      "Compare the 5 best data enrichment providers for 2026: Thyleads, Clearbit, Apollo, ZoomInfo, and Lusha -- pros, cons, and which fits your team.",
+      "Compare the 5 best data enrichment providers for 2026: Thyleads, Clearbit, Apollo, ZoomInfo, and Lusha. Pros, cons, and which fits your team.",
   },
   "5-best-appointment-scheduling-service-agencies-2026": {
     title: "Thyleads | Best Appointment Setting Agencies 2026",
