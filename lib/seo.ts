@@ -128,9 +128,9 @@ export const blogSeo: Record<string, SeoEntry> = {
       "Learn how to decode hiring signals from job postings to uncover GTM priorities, expansion plans, budget shifts, and buying intent.",
   },
   "waterfall-enrichment-2026-playbook": {
-    title: "Thyleads | Waterfall Enrichment Playbook for 2025",
+    title: "Thyleads | Waterfall Enrichment Playbook for 2026",
     description:
-      "Master waterfall enrichment strategies to improve lead coverage, enrich prospect data, and maximize outbound campaign performance.",
+      "How waterfall enrichment stacks data providers in sequence to reach 95% contact coverage. Provider stack, costs, and build vs. buy for 2026.",
   },
   "reddit-for-b2b-lead-generation-untapped-goldmine": {
     title: "Thyleads | Reddit Strategies for B2B Lead Generation",
