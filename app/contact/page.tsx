@@ -69,6 +69,18 @@ const ContactPage = () => {
 
       setStatus("success");
 
+      try {
+        const harvin = (window as unknown as { HarvinInbound?: { track: (fields: Record<string, string>, form: string, consent?: boolean | null) => void } }).HarvinInbound;
+        harvin?.track({
+          full_name: formData.name,
+          company: formData.company,
+          work_email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          preferred_contact: mode,
+        }, "contact-form", null);
+      } catch {}
+
       if (typeof window !== "undefined" && typeof (window as unknown as Record<string, unknown>).gtag === "function") {
         (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", "conversion", {
           send_to: "AW-18052879052/nzV1CMDjk5QcEMylpKBD",
@@ -172,7 +184,7 @@ const ContactPage = () => {
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <form id="contact-form" data-hv-ignore onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <input
                 type="text"
                 name="website_url"
