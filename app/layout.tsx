@@ -59,6 +59,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" style={{ colorScheme: 'dark' }}>
       <head>
+        <script async src="https://portal-thyleads.com/api/inbound/script?k=hv_site_ShCyzJZChPm-9DiCxpleMw"></script>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-18052879052"
           strategy="afterInteractive"
